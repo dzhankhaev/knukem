@@ -3,6 +3,7 @@
 # include <math.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <string.h>
 # include <SDL2/SDL.h>
 # include <SDL2_ttf/SDL_ttf.h>
 # include <SDL2_image/SDL_image.h>
@@ -17,7 +18,7 @@
 # define FAR_Z 5					//TODO что это?
 # define NEAR_SIDE 1e-5f
 # define FAR_SIDE 20.f
-
+# define floor_diff 15
 # define EyeHeight 6				//camera height
 # define DuckHeight 2.5				//camera height when crouching
 # define HeadMargin 1				//how much room above before the head hits the ceiling
@@ -123,9 +124,8 @@ void			clean_up(t_engine *engine);
 void			draw(t_engine *engine);
 
 t_xy			rot_z(t_xy p, double angle);
-
 void			minimap(t_engine *engine, t_line wall);
-
+void			render_wall(t_engine *engine, unsigned s);
 void			render_line(t_line p, SDL_Surface *screen);
 void			angle_less_than_45_1(t_line p, SDL_Surface *screen);
 void			angle_more_than_45_1(t_line p, SDL_Surface *screen);

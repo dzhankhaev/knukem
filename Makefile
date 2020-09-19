@@ -19,6 +19,7 @@ HEADERS := engine.h\
 SRC := main.c\
 	render/rotate.c\
 	render/minimap.c\
+	render/render_wall.c\
 	render/line/render_line.c\
 	render/line/render_line_with_angle.c\
 	math_utilits/vector_operations.c\
@@ -39,8 +40,6 @@ SRCP :=		$(addprefix $(SRCDIR)/, $(SRC))
 OBJP :=		$(addprefix $(OBJDIR)/, $(SRC:.c=.o))
 ONLYDIR :=	$(foreach dir, $(OBJP), $(shell dirname $(dir)))
 
-LIB := -L libft/ -lft
-
 FLAG :=  -g #-Wall -Werror -Wextra
 
 PWD := $(shell pwd)
@@ -51,28 +50,24 @@ SDL := -F $(FRAMEWORKSDIR) -framework SDL2 -framework SDL2_ttf -framework SDL2_i
 TOTAL_FILES := $(shell echo $(SRC) | wc -w | sed -e 's/ //g')
 CURRENT_FILES = $(shell find $(PWD)/obj/ -type f 2> /dev/null | wc -l | sed -e 's/ //g')
 
-all : libft_comp $(NAME)
+all : $(NAME)
 
 $(NAME) : $(OBJP)
 			@gcc $(SDL) $(FLAG) $(OBJP) $(INC) $(LIB) -o $(NAME)
 			@echo "$(CLEAR_LINE)$(BLUE_FONT)[$(NAME)] $(YELLOW_FONT)Finished compilation. Output file : $(VIOLET_FONT)$(PWD)/$(NAME)$(RESET_FORM)"
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADERSP) libft/libft.a
+$(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADERSP)
 			@mkdir -p $(ONLYDIR)
 			@gcc -c $(FLAG) -F $(FRAMEWORKSDIR) $(INC) $< -o $@
 			@echo "$(CLEAR_LINE)$(BLUE_FONT)[$(NAME)] $(YELLOW_FONT)Compiling file [$(VIOLET_FONT)$<$(COL_YELLOW)]. ($(CURRENT_FILES) / $(TOTAL_FILES))$(RESET_FORM)$(BEGIN_LINE)"
 
-libft_comp:
-			@make -C libft
 
 clean :
 			@rm -rf $(OBJDIR)
-			@make clean -C libft
 			@echo "$(BLUE_FONT)[$(NAME)] $(YELLOW_FONT)Removed $(VIOLET_FONT)object files.$(RESET_FORM)"
 
 fclean :	clean
 			@rm -rf $(NAME)
-			@make fclean -C libft
 			@echo "$(BLUE_FONT)[$(NAME)] $(YELLOW_FONT)Removed $(VIOLET_FONT)$(NAME)$(RESET_FORM)"
 
 re :		fclean all

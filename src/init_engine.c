@@ -9,7 +9,7 @@ static int	ft_create_window(t_engine *engine)
 									0);
 	if (!engine->window)
 	{
-		ft_putendl("Failed to create window!");
+		printf("Failed to create window!");
 		return (1);
 	}
 	return (0);
@@ -20,7 +20,7 @@ static int	ft_load_screen(t_engine *engine)
 	engine->screen = SDL_GetWindowSurface(engine->window);
 	if (!engine->screen)
 	{
-		ft_putendl("Failed to load screen!");
+		printf("Failed to load screen!");
 		return (1);
 	}
 	return (0);
@@ -28,11 +28,11 @@ static int	ft_load_screen(t_engine *engine)
 
 int			init_engine(t_engine *engine)
 {
-	ft_bzero(engine, sizeof(*engine));
+	bzero(engine, sizeof(*engine));
 	load_data(engine);
 	if (SDL_Init(SDL_INIT_VIDEO) != 0)
 	{
-		ft_putendl("Couldn't initialize SDL!");
+		printf("Couldn't initialize SDL!");
 		return (1);
 	}
 	if (ft_create_window(engine) != 0 || ft_load_screen(engine) != 0)
