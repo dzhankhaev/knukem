@@ -8,6 +8,13 @@
 # include <SDL2_ttf/SDL_ttf.h>
 # include <SDL2_image/SDL_image.h>
 # include <SDL2_mixer/SDL_mixer.h>
+/*
+ * ВРЕМЕННОЕ решение, чтобы не было ошибок и IDE не ругалась на SDL функции
+ */
+# include <SDL.h>
+# include <SDL_ttf.h>
+# include <SDL_image.h>
+# include <SDL_mixer.h>
 # define W 1920
 # define H 1080
 //# define W 1280

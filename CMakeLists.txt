@@ -16,11 +16,11 @@ add_executable(d-k3d
         src/render/rotate.c
         includes/engine.h
         includes/arg_defines.h
-        includes/math_utilits.h
+        includes/math_utilits.h)
 
 include_directories(d-k3d frameworks/SDL2.framework/Headers
         frameworks/SDL2_image.framework/Headers
-        frameworks/SDL2_mixer.framework.framework/Headers
+        frameworks/SDL2_mixer.framework/Headers
         frameworks/SDL2_ttf.framework/Headers
         includes
         libft)
