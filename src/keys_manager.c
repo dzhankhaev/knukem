@@ -2,6 +2,7 @@
 
 static void keyboard_event(t_engine *engine)
 {
+	engine->player.eyeheight = EyeHeight;
 	while (SDL_PollEvent(&engine->player.event))
 		if (engine->player.event.type == SDL_KEYDOWN || engine->player.event.type == SDL_KEYUP)
 		{
@@ -22,10 +23,8 @@ static void keyboard_event(t_engine *engine)
 				}
 			}
 			else if (engine->player.event.key.keysym.sym == SDLK_LCTRL)
-			{
-				engine->player.ducking = engine->player.event.type == SDL_KEYDOWN;
-				engine->player.falling = 1;
-			}
+				engine->player.eyeheight = EyeHeight -
+						(engine->player.event.type == SDL_KEYDOWN) * DuckHeight;
 			else if (engine->player.event.key.keysym.sym == SDLK_ESCAPE)
 				engine->close_request = 1;
 
@@ -33,27 +32,48 @@ static void keyboard_event(t_engine *engine)
 		else if (engine->player.event.type == SDL_QUIT)
 			engine->close_request = 1;
 }
-//проверяет, выходит ли значение за границы, если выходит, вернет ближайшую границу
-static float clampf(float a, float min, float max)
-{
-	//	берём большее
-	a = a > min ? a : min;
-	//	берём меньшее
-	a = a < max ? a : max;
-	return (a);
-}
+
+#define acceleration_plus 0.6f
+#define acceleration_minus 0.8f
 
 static void mouse_event(t_engine *engine)
 {
 	int	x;
 	int	y;
 
-	SDL_GetRelativeMouseState(&x, &y);	//	СМЕЩЕНИЕ относительно предыдущей позиции
-	engine->player.angle += (float)x * 0.03f;	//	горизонтальный поворот
+	SDL_GetRelativeMouseState(&x, &y);	//	позиция относительно окна
+	engine->player.angle += x * 0.03f;	//	горизонтальный поворот
 	engine->player.anglesin = sinf(engine->player.angle);
 	engine->player.anglecos = cosf(engine->player.angle);
-
+	bzero(engine->player.move_vec, sizeof(engine->player.move_vec));
+	if (engine->player.wsad[0])
+	{
+		engine->player.move_vec[0] += engine->player.anglecos * 0.2f;
+		engine->player.move_vec[1] += engine->player.anglesin * 0.2f;
+	}
+	if (engine->player.wsad[1])
+	{
+		engine->player.move_vec[0] -= engine->player.anglecos * 0.2f;
+		engine->player.move_vec[1] -= engine->player.anglesin * 0.2f;
+	}
+	if (engine->player.wsad[2])
+	{
+		engine->player.move_vec[0] += engine->player.anglesin * 0.2f;
+		engine->player.move_vec[1] -= engine->player.anglecos * 0.2f;
+	}
+	if (engine->player.wsad[3])
+	{
+		engine->player.move_vec[0] -= engine->player.anglesin * 0.2f;
+		engine->player.move_vec[1] += engine->player.anglecos * 0.2f;
+	}
+	engine->player.pushing = engine->player.wsad[0] || engine->player.wsad[1] || engine->player.wsad[2] || engine->player.wsad[3];
+	engine->player.acceleration = engine->player.pushing ? acceleration_plus : acceleration_minus;
+	engine->player.velocity.x = engine->player.velocity.x * engine->player.acceleration + engine->player.move_vec[0] * engine->player.acceleration;
+	engine->player.velocity.y = engine->player.velocity.y * engine->player.acceleration + engine->player.move_vec[1] * engine->player.acceleration;
+	if (engine->player.pushing)
+		engine->player.moving = 1;
 }
+
 
 void	keys_manager(t_engine *engine)
 {

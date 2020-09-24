@@ -30,11 +30,11 @@ int check_repeating(unsigned *queue, int c)
 	return 1;
 }
 
-int show_line_on_minimap(t_engine *engine, int s)
+int show_line_on_minimap(t_engine *engine, int s, int color)
 {
 	if (fabs(engine->sectors[s].floor
 	- engine->sectors[engine->player.sector].floor) < floor_diff)
-		return (0xFFFFFF);
+		return (color);
 	return (0);
 }
 
@@ -47,10 +47,10 @@ void render_wall(t_engine *engine, unsigned s)
 	while (i < engine->sectors[s].npoints)
 	{
 		if (engine->sectors[s].neighbors[i] == -1)
-			color = show_line_on_minimap(engine, s);
+			color = show_line_on_minimap(engine, s, 0xFFFFFF);
 		else
 		{
-			color = 0;
+			color = show_line_on_minimap(engine, s, 0xFF4444);
 			if (engine->future + 1 != engine->queue + engine->max_queue
 				&& check_repeating(engine->queue, engine->sectors[s].neighbors[i]))
 				*(++engine->future) = engine->sectors[s].neighbors[i];

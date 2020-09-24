@@ -25,6 +25,7 @@ SRC := main.c\
 	math_utilits/vector_operations.c\
 	math_utilits/mathf.c\
 	init_engine.c\
+	move.c\
 	keys_manager.c\
 	manage_data.c\
 	start_game.c\

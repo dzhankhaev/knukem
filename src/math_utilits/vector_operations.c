@@ -44,15 +44,15 @@ t_xy			determine_intersection_point(float *arg)
 	return (a);
 }
 
-// Пересекаются ли два 2д квадрата (2d box)
+// Пересекаются ли две 2д коробки (2d box)
 int				determine_box_intersection(float *arg)
 {
 	int	a;
 	int	b;
 
 	// Overlap a:  Determine whether the two number ranges overlap.
-	a = fminf(X1, X2) <= fmaxf(X3, X4) & fminf(X3, X4) <= fmaxf(X1, X2);
+	a = (fminf(X1, X2) <= fmaxf(X3, X4)) && (fminf(X3, X4) <= fmaxf(X1, X2));
 	// Overlap b:  Determine whether the two number ranges overlap.
-	b = fminf(Y1, Y2) <= fmaxf(Y3, Y4) & fminf(Y3, Y4) <= fmaxf(Y1, Y2);
+	b = (fminf(Y1, Y2) <= fmaxf(Y3, Y4)) && (fminf(Y3, Y4) <= fmaxf(Y1, Y2));
 	return (a && b);
 }

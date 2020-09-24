@@ -28,7 +28,7 @@ void start_game(t_engine *engine)
 	{
 		SDL_LockSurface(engine->screen);
 		SDL_FillRect(engine->screen, NULL, 0x000000);
-//		move(engine);
+		move(engine);
 		draw(engine);
 		SDL_UnlockSurface(engine->screen);
 		SDL_UpdateWindowSurface(engine->window);

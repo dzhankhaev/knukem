@@ -9,6 +9,7 @@ add_executable(d-k3d
         src/manage_data.c
         src/start_game.c
         src/main.c
+        src/move.c
         src/math_utilits/vector_operations.c
         src/math_utilits/mathf.c
         src/render/line/render_line.c
@@ -16,11 +17,11 @@ add_executable(d-k3d
         src/render/rotate.c
         includes/engine.h
         includes/arg_defines.h
-        includes/math_utilits.h)
+        includes/math_utilits.h
 
 include_directories(d-k3d frameworks/SDL2.framework/Headers
         frameworks/SDL2_image.framework/Headers
-        frameworks/SDL2_mixer.framework/Headers
+        frameworks/SDL2_mixer.framework.framework/Headers
         frameworks/SDL2_ttf.framework/Headers
         includes
         libft)

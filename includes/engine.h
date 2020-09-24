@@ -8,13 +8,6 @@
 # include <SDL2_ttf/SDL_ttf.h>
 # include <SDL2_image/SDL_image.h>
 # include <SDL2_mixer/SDL_mixer.h>
-/*
- * ВРЕМЕННОЕ решение, чтобы не было ошибок и IDE не ругалась на SDL функции
- */
-# include <SDL.h>
-# include <SDL_ttf.h>
-# include <SDL_image.h>
-# include <SDL_mixer.h>
 # define W 1920
 # define H 1080
 //# define W 1280
@@ -25,7 +18,7 @@
 # define FAR_Z 5					//TODO что это?
 # define NEAR_SIDE 1e-5f
 # define FAR_SIDE 20.f
-# define floor_diff 15
+# define floor_diff 10
 # define EyeHeight 6				//camera height
 # define DuckHeight 2.5				//camera height when crouching
 # define HeadMargin 1				//how much room above before the head hits the ceiling
@@ -138,5 +131,10 @@ void			angle_less_than_45_1(t_line p, SDL_Surface *screen);
 void			angle_more_than_45_1(t_line p, SDL_Surface *screen);
 void			angle_less_than_45_2(t_line p, SDL_Surface *screen);
 void			angle_more_than_45_2(t_line p, SDL_Surface *screen);
+float			point_side(float px, float py, t_xy vert, t_xy vert1);
+t_xy			determine_intersection_point(float *arg);
+int				determine_box_intersection(float *arg);
+int				clamp(int a, int min, int max);
+void			move(t_engine *engine);
 
 #endif
