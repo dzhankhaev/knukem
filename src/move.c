@@ -28,12 +28,6 @@ void	move_player(float dx, float dy, t_engine *engine)
 	vert = sect->vertex;
 	while (s < sect->npoints)
 	{
-		/* Проверяет произошло ли пересечение сектора
-     	*
-     	* Because the edge vertices of each sector are defined in
-     	* clockwise order, PointSide will always return -1 for a point
-     	* that is outside the sector and 0 or 1 for a point that is inside.
-     	*/
 		X1 = px;
 		Y1 = py;
 		X2 = px + dx;
@@ -42,13 +36,21 @@ void	move_player(float dx, float dy, t_engine *engine)
 		Y3 = vert[s].y;
 		X4 = vert[s + 1].x;
 		Y4 = vert[s + 1].y;
+		/* Проверяет произошло ли пересечение стороны сектора
+     	*
+     	* Because the edge vertices of each sector are defined in
+     	* clockwise order, PointSide will always return -1 for a point
+     	* that is outside the sector and 0 or 1 for a point that is inside.
+     	*/
 		if (determine_box_intersection(arg) &&
 			point_side(px + dx, py + dy, vert[s], vert[s + 1]) < 0)
 		{
 			if (sect->neighbors[s] >= 0)
-			{
-				if (engine->sectors[engine->player.sector].floor + engine->player.eyeheight >= engine->sectors[sect->neighbors[s]].ceil
-				|| engine->sectors[engine->player.sector].floor + engine->player.eyeheight <= engine->sectors[sect->neighbors[s]].floor)
+			{	/*
+				*	Ударяемся ли головой? (HEADMARGIN)|| Можем ли перешагнуть? (KNEEHEIGHT)
+				*/
+				if (engine->sectors[engine->player.sector].floor + engine->player.eyeheight > engine->sectors[sect->neighbors[s]].ceil
+				|| engine->sectors[engine->player.sector].floor + KneeHeight < engine->sectors[sect->neighbors[s]].floor)
 					slide(vert[s], vert[s + 1], &dx, &dy);
 				else
 					engine->player.sector = sect->neighbors[s];

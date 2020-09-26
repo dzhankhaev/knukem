@@ -18,19 +18,24 @@ add_executable(d-k3d
         includes/engine.h
         includes/arg_defines.h
         includes/math_utilits.h
+        )
 
-include_directories(d-k3d frameworks/SDL2.framework/Headers
-        frameworks/SDL2_image.framework/Headers
-        frameworks/SDL2_mixer.framework.framework/Headers
-        frameworks/SDL2_ttf.framework/Headers
+include_directories(d-k3d
+        ~/.brew/Cellar/sdl2/2.0.12_1/include/SDL2/
+        ~/.brew/Cellar/sdl2_image/2.0.5/include/SDL2/
+        ~/.brew/Cellar/sdl2_mixer/2.0.4/include/SDL2/
+        ~/.brew/Cellar/sdl2_ttf/2.0.15/include/SDL2/
         includes
-        libft)
+        libft
+        )
 
-target_link_libraries(d-k3d ${PROJECT_SOURCE_DIR}/SDL/sdl2/2.0.12_1/lib/libSDL2-2.0.0.dylib
-        ${PROJECT_SOURCE_DIR}/SDL/sdl2/2.0.12_1/lib/libSDL2.dylib
-        ${PROJECT_SOURCE_DIR}/SDL/sdl2_image/2.0.5/lib/libSDL2_image-2.0.0.dylib
-        ${PROJECT_SOURCE_DIR}/SDL/sdl2_image/2.0.5/lib/libSDL2_image.dylib
-        ${PROJECT_SOURCE_DIR}/SDL/sdl2_mixer/2.0.4/lib/libSDL2_mixer-2.0.0.dylib
-        ${PROJECT_SOURCE_DIR}/SDL/sdl2_mixer/2.0.4/lib/libSDL2_mixer.dylib
-        ${PROJECT_SOURCE_DIR}/SDL/sdl2_ttf/2.0.15/lib/libSDL2_ttf-2.0.0.dylib
-        ${PROJECT_SOURCE_DIR}/SDL/sdl2_ttf/2.0.15/lib/libSDL2_ttf.dylib)
+target_link_libraries(d-k3d
+        ~/.brew/Cellar/sdl2/2.0.12_1/lib/libSDL2-2.0.0.dylib
+        ~/.brew/Cellar/sdl2/2.0.12_1/lib/libSDL2.dylib
+        ~/.brew/Cellar/sdl2_image/2.0.5/lib/libSDL2_image-2.0.0.dylib
+        ~/.brew/Cellar/sdl2_image/2.0.5/lib/libSDL2_image.dylib
+        ~/.brew/Cellar/sdl2_mixer/2.0.4/lib/libSDL2_mixer-2.0.0.dylib
+        ~/.brew/Cellar/sdl2_mixer/2.0.4/lib/libSDL2_mixer.dylib
+        ~/.brew/Cellar/sdl2_ttf/2.0.15/lib/libSDL2_ttf-2.0.0.dylib
+        ~/.brew/Cellar/sdl2_ttf/2.0.15/lib/libSDL2_ttf.dylib
+        )
