@@ -49,7 +49,7 @@ static void		render_perpendicular_line(t_line p, SDL_Surface *screen)
 	if (p.x0 == p.x1)
 	{
 		p = p.y0 > p.y1 ? swap_coords(p) : p;
-		while (p.y0 < p.y1 && p.y0 < H)
+		while (p.y0 < p.y1 && p.x0 >= 0 && p.x0 < W && p.y0 >= 0 && p.y0 < H)
 		{
 			temp[(p.y0 * W) + p.x0] = p.color;
 			p.y0++;
@@ -58,7 +58,7 @@ static void		render_perpendicular_line(t_line p, SDL_Surface *screen)
 	else
 	{
 		p = p.x0 > p.x1 ? swap_coords(p) : p;
-		while (p.x0 < p.x1 && p.x0 < W)
+		while (p.x0 < p.x1 && p.x0 >= 0 && p.x0 < W && p.y0 >= 0 && p.y0 < H)
 		{
 			temp[(p.y0 * W) + p.x0] = p.color;
 			p.x0++;
