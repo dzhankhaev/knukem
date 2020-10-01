@@ -20,7 +20,9 @@ void	move_player(float dx, float dy, t_engine *engine)
 	unsigned				s;
 	const t_xy				*vert;
 	const t_sector			*sect;
+	unsigned				old;
 
+	old = engine->player.sector;
 	s = 0;
 	px = engine->player.where.x;
 	py = engine->player.where.y;
@@ -59,6 +61,14 @@ void	move_player(float dx, float dy, t_engine *engine)
 				slide(vert[s], vert[s + 1], &dx, &dy);
 			break ;
 		}
+
+		s++;
+	}
+	s = 0;
+	while (s < sect->npoints)
+	{
+		if (point_side(px + dx, py + dy, vert[s], vert[s + 1]) < 0 && engine->player.sector == old)
+			return;
 		s++;
 	}
 	engine->player.where.x += dx;
