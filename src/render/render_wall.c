@@ -20,19 +20,19 @@ t_line	rotate_coords(t_engine *engine, t_line wall)
 	return wall;
 }
 */
-int check_repeating(unsigned *queue, int c)
+int check_repeating(t_queue_obj *queue, int c)
 {
 	for (int i = 0; i < 32; i++)
 	{
-		if (queue[i] == c)
+		if (queue[i].sectorno == c)
 			return 0;
 	}
 	return 1;
 }
 
-int show_line_on_minimap(t_engine *engine, int s, int color)
+int show_line_on_minimap(t_engine *engine, unsigned s, int color)
 {
-	if (fabs(engine->sectors[s].floor
+	if (fabsf(engine->sectors[s].floor
 	- engine->sectors[engine->player.sector].floor) < floor_diff)
 		return (color);
 	return (0);
@@ -53,7 +53,7 @@ void render_wall(t_engine *engine, unsigned s)
 			color = show_line_on_minimap(engine, s, 0xFF4444);
 			if (engine->future + 1 != engine->queue + engine->max_queue
 				&& check_repeating(engine->queue, engine->sectors[s].neighbors[i]))
-				*(++engine->future) = engine->sectors[s].neighbors[i];
+				(++engine->future)->sectorno = engine->sectors[s].neighbors[i];
 		}
 		minimap(engine, (t_line){engine->minimap_scale * engine->sectors[s].vertex[i].x,
 								 engine->minimap_scale * engine->sectors[s].vertex[i + 1].x,

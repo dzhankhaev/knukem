@@ -45,8 +45,6 @@ void	move_player(float dx, float dy, t_engine *engine)
      	* clockwise order, PointSide will always return -1 for a point
      	* that is outside the sector and 0 or 1 for a point that is inside.
      	*/
-		if (determine_box_intersection(arg))
-			printf("%i ПЕРЕСЕЧЕНИЕ\n", engine->tmp++);
 		if (determine_box_intersection(arg) &&
 			point_side(px + dx, py + dy, vert[s], vert[s + 1]) < 0)
 		{

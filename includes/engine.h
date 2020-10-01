@@ -37,12 +37,12 @@
 # define SECTORS engine.sectors
 # define Yaw(y, z) (y + z * engine->player.yaw)		// calculate yaw angle between y and z values (поворот игрока)
 
-typedef struct	item
+typedef struct	q_queue_obj
 {
 	int			sectorno;	//номер сектора
 	int			size_x1;		//
 	int			size_x2;		//
-}				t_item;
+}				t_queue_obj;
 
 typedef struct	s_delta
 {
@@ -114,9 +114,9 @@ typedef struct	s_engine
 	t_player	player;
 	t_sector	*sectors;		//	считанная карта
 	unsigned	num_sectors;	//	количество секторов в карте
-	unsigned	queue[32];
-	unsigned	*future;
-	unsigned	*present;
+	t_queue_obj		queue[32];
+	t_queue_obj		*future;
+	t_queue_obj		*present;
 	unsigned	max_queue;
 	unsigned	close_request;
 	int 		tmp;

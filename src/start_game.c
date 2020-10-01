@@ -5,20 +5,14 @@ void			draw(t_engine *engine)
 	engine->max_queue = 32;
 	engine->future = engine->queue;
 	engine->present = engine->queue;
-	*engine->present = CUR_SECT;
+	engine->present->sectorno = CUR_SECT;
 	while (engine->present + 1 != engine->queue + engine->max_queue)
 	{
-		render_wall(engine, *engine->present);
+		render_wall(engine, engine->present->sectorno);
 		engine->present++;
 	}
 
 }
-
-//void 			move(t_engine *engine)
-//{
-
-
-//}
 
 void start_game(t_engine *engine)
 {
