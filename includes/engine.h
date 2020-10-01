@@ -35,7 +35,7 @@
 # define vfov (.2f * H)				//vertical FOV
 # define PLAYER engine.player
 # define SECTORS engine.sectors
-# define Yaw(y, z) (y + z * engine->player.yaw)				// calculate yaw angle between y and z values (поворот игрока)
+# define Yaw(y, z) (y + z * engine->player.yaw)		// calculate yaw angle between y and z values (поворот игрока)
 
 typedef struct	item
 {
@@ -119,6 +119,7 @@ typedef struct	s_engine
 	unsigned	*present;
 	unsigned	max_queue;
 	unsigned	close_request;
+	int 		tmp;
 }				t_engine;
 
 

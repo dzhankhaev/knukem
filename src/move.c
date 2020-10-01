@@ -28,6 +28,7 @@ void	move_player(float dx, float dy, t_engine *engine)
 	py = engine->player.where.y;
 	sect = &engine->sectors[engine->player.sector];
 	vert = sect->vertex;
+	int i = 0;
 	while (s < sect->npoints)
 	{
 		X1 = px;
@@ -44,14 +45,16 @@ void	move_player(float dx, float dy, t_engine *engine)
      	* clockwise order, PointSide will always return -1 for a point
      	* that is outside the sector and 0 or 1 for a point that is inside.
      	*/
+		if (determine_box_intersection(arg))
+			printf("%i ПЕРЕСЕЧЕНИЕ\n", engine->tmp++);
 		if (determine_box_intersection(arg) &&
 			point_side(px + dx, py + dy, vert[s], vert[s + 1]) < 0)
 		{
 			if (sect->neighbors[s] >= 0)
 			{	/*
-				*	Ударяемся ли головой? (HEADMARGIN)|| Можем ли перешагнуть? (KNEEHEIGHT)
+				*	Ударяемся ли головой? (HEADMARGIN) (ПОКА ОТСУТСТВУЕТ) || Можем ли перешагнуть? (KNEEHEIGHT)
 				*/
-				if (engine->sectors[engine->player.sector].floor + engine->player.eyeheight > engine->sectors[sect->neighbors[s]].ceil
+				if (engine->sectors[engine->player.sector].floor + engine->player.eyeheight + HeadMargin > engine->sectors[sect->neighbors[s]].ceil
 				|| engine->sectors[engine->player.sector].floor + KneeHeight < engine->sectors[sect->neighbors[s]].floor)
 					slide(vert[s], vert[s + 1], &dx, &dy);
 				else

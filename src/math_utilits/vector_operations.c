@@ -44,7 +44,7 @@ t_xy			determine_intersection_point(float *arg)
 	return (a);
 }
 
-// Пересекаются ли две 2д коробки (2d box)
+// Пересекаются ли две плоскости (2d box)
 int				determine_box_intersection(float *arg)
 {
 	int	a;
