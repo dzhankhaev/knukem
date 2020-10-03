@@ -19,11 +19,11 @@ HEADERS := engine.h\
 SRC := main.c\
 	render/rotate.c\
 	render/minimap.c\
-	render/render_wall.c\
 	render/line/render_line.c\
 	render/line/render_line_with_angle.c\
 	math_utilits/vector_operations.c\
 	math_utilits/mathf.c\
+	fill_queue.c\
 	init_engine.c\
 	move.c\
 	keys_manager.c\

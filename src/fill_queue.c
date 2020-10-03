@@ -20,7 +20,7 @@ t_line	rotate_coords(t_engine *engine, t_line wall)
 	return wall;
 }
 */
-int check_repeating(t_queue_obj *queue, int c)
+static int	check_repeating(t_queue_obj *queue, int c)
 {
 	for (int i = 0; i < 32; i++)
 	{
@@ -30,7 +30,7 @@ int check_repeating(t_queue_obj *queue, int c)
 	return 1;
 }
 
-int show_line_on_minimap(t_engine *engine, unsigned s, int color)
+static int	minimap_set_line_color(t_engine *engine, unsigned s, int color)
 {
 	if (fabsf(engine->sectors[s].floor
 	- engine->sectors[engine->player.sector].floor) < floor_diff)
@@ -38,7 +38,7 @@ int show_line_on_minimap(t_engine *engine, unsigned s, int color)
 	return (0);
 }
 
-void render_wall(t_engine *engine, unsigned s)
+void 		fill_queue(t_engine *engine, unsigned s)
 {
 	int	color;
 	int i;
@@ -47,10 +47,10 @@ void render_wall(t_engine *engine, unsigned s)
 	while (i < engine->sectors[s].npoints)
 	{
 		if (engine->sectors[s].neighbors[i] == -1)
-			color = show_line_on_minimap(engine, s, 0xFFFFFF);
+			color = minimap_set_line_color(engine, s, 0xFFFFFF);
 		else
 		{
-			color = show_line_on_minimap(engine, s, 0xFF4444);
+			color = minimap_set_line_color(engine, s, 0xFF4444);
 			if (engine->future + 1 != engine->queue + engine->max_queue
 				&& check_repeating(engine->queue, engine->sectors[s].neighbors[i]))
 				(++engine->future)->sectorno = engine->sectors[s].neighbors[i];

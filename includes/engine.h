@@ -126,7 +126,7 @@ typedef struct	s_engine
 int				init_engine(t_engine *engine);
 void			load_data(t_engine *engine);
 void			unload_data(t_engine *engine);
-void			start_game(t_engine *engine);
+void			main_game_loop(t_engine *engine);
 void			move_player(float dx, float dy, t_engine *engine);
 void			keys_manager(t_engine *engine);
 void			clean_up(t_engine *engine);
@@ -134,7 +134,7 @@ void			draw(t_engine *engine);
 
 t_xy			rot_z(t_xy p, double angle);
 void			minimap(t_engine *engine, t_line wall);
-void			render_wall(t_engine *engine, unsigned s);
+void			fill_queue(t_engine *engine, unsigned s);
 void			render_line(t_line p, SDL_Surface *screen);
 void			angle_less_than_45_1(t_line p, SDL_Surface *screen);
 void			angle_more_than_45_1(t_line p, SDL_Surface *screen);

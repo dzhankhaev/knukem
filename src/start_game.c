@@ -8,13 +8,13 @@ void			draw(t_engine *engine)
 	engine->present->sectorno = CUR_SECT;
 	while (engine->present + 1 != engine->queue + engine->max_queue)
 	{
-		render_wall(engine, engine->present->sectorno);
+		fill_queue(engine, engine->present->sectorno);
 		engine->present++;
 	}
 
 }
 
-void start_game(t_engine *engine)
+void main_game_loop(t_engine *engine)
 {
 	engine->minimap_x_y = (t_xy){W / 2, H / 2};
 	engine->minimap_scale =  W / 50;

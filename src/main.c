@@ -6,7 +6,7 @@ int main()
 
 	if (init_engine(&engine) != 0)
 		return (1);
-	start_game(&engine);
+	main_game_loop(&engine);
 	clean_up(&engine);
 	return (0);
 }
