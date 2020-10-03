@@ -12,14 +12,14 @@
 
 #include "engine.h"
 
-t_xy	rot_z(t_xy p, double angle)
+t_xy	rot_z(t_xy p, float angle)
 {
-	int x;
-	int y;
+	float x;
+	float y;
 
 	x = p.x;
 	y = p.y;
-	p.x = x * cos(angle) - y * sin(angle);
-	p.y = x * sin(angle) + y * cos(angle);
+	p.x = x * cosf(angle) - y * sinf(angle);
+	p.y = x * sinf(angle) + y * cosf(angle);
 	return (p);
 }

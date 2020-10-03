@@ -55,10 +55,10 @@ void 		fill_queue(t_engine *engine, unsigned s)
 				&& check_repeating(engine->queue, engine->sectors[s].neighbors[i]))
 				(++engine->future)->sectorno = engine->sectors[s].neighbors[i];
 		}
-		minimap(engine, (t_line){engine->minimap_scale * engine->sectors[s].vertex[i].x,
-								 engine->minimap_scale * engine->sectors[s].vertex[i + 1].x,
-								 engine->minimap_scale * engine->sectors[s].vertex[i].y,
-								 engine->minimap_scale * engine->sectors[s].vertex[i + 1].y,
+		minimap(engine, (t_line){engine->minimap.scale * engine->sectors[s].vertex[i].x,
+								 engine->minimap.scale * engine->sectors[s].vertex[i + 1].x,
+								 engine->minimap.scale * engine->sectors[s].vertex[i].y,
+								 engine->minimap.scale * engine->sectors[s].vertex[i + 1].y,
 								 color});
 		i++;
 	}

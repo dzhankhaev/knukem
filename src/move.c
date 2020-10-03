@@ -28,7 +28,6 @@ void	move_player(float dx, float dy, t_engine *engine)
 	py = engine->player.where.y;
 	sect = &engine->sectors[engine->player.sector];
 	vert = sect->vertex;
-	int i = 0;
 	while (s < sect->npoints)
 	{
 		X1 = px;

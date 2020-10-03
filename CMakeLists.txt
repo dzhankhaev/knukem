@@ -7,8 +7,9 @@ add_executable(d-k3d
         src/init_engine.c
         src/keys_manager.c
         src/manage_data.c
-        src/start_game.c
+        src/game_loop.c
         src/main.c
+        src/fill_queue.c
         src/move.c
         src/math_utilits/vector_operations.c
         src/math_utilits/mathf.c

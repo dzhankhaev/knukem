@@ -105,12 +105,21 @@ typedef	struct	s_player
 	SDL_Event	event;
 }				t_player;
 
+typedef struct	s_minimap
+{
+	t_xy		point;				//центр миникарты
+	unsigned	scale;				//масштаб миникарты
+	t_line		player_vertical;	//стрелка игрока
+	t_line		player_horizontal;	//стрелка игрока
+	t_line		borders;			//границы отображения миникарты
+}				t_minimap;
+
 typedef struct	s_engine
 {
 	SDL_Window	*window;
 	SDL_Surface	*screen;
-	t_xy		minimap_x_y;	//центр миникарты
-	unsigned	minimap_scale;	//масштаб миникарты
+	t_minimap	minimap;
+	t_line		borders;			//границы отображения (установлены во всё окно)
 	t_player	player;
 	t_sector	*sectors;		//	считанная карта
 	unsigned	num_sectors;	//	количество секторов в карте
@@ -126,20 +135,20 @@ typedef struct	s_engine
 int				init_engine(t_engine *engine);
 void			load_data(t_engine *engine);
 void			unload_data(t_engine *engine);
-void			main_game_loop(t_engine *engine);
+void			game_loop(t_engine *engine);
 void			move_player(float dx, float dy, t_engine *engine);
 void			keys_manager(t_engine *engine);
 void			clean_up(t_engine *engine);
 void			draw(t_engine *engine);
 
-t_xy			rot_z(t_xy p, double angle);
+t_xy			rot_z(t_xy p, float angle);
 void			minimap(t_engine *engine, t_line wall);
 void			fill_queue(t_engine *engine, unsigned s);
-void			render_line(t_line p, SDL_Surface *screen);
-void			angle_less_than_45_1(t_line p, SDL_Surface *screen);
-void			angle_more_than_45_1(t_line p, SDL_Surface *screen);
-void			angle_less_than_45_2(t_line p, SDL_Surface *screen);
-void			angle_more_than_45_2(t_line p, SDL_Surface *screen);
+void			render_line(t_line p, SDL_Surface *screen, t_line borders);
+void			angle_less_than_45_1(t_line p, SDL_Surface *screen, t_line borders);
+void			angle_more_than_45_1(t_line p, SDL_Surface *screen, t_line borders);
+void			angle_less_than_45_2(t_line p, SDL_Surface *screen, t_line borders);
+void			angle_more_than_45_2(t_line p, SDL_Surface *screen, t_line borders);
 float			point_side(float px, float py, t_xy vert, t_xy vert1);
 t_xy			determine_intersection_point(float *arg);
 int				determine_box_intersection(float *arg);

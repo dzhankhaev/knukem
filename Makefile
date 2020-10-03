@@ -28,7 +28,7 @@ SRC := main.c\
 	move.c\
 	keys_manager.c\
 	manage_data.c\
-	start_game.c\
+	game_loop.c\
 
 
 OBJ := $(SRC:.c=.o)
