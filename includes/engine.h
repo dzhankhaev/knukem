@@ -5,9 +5,9 @@
 # include <stdio.h>
 # include <string.h>
 # include <SDL2/SDL.h>
-# include <SDL2_ttf/SDL_ttf.h>
-# include <SDL2_image/SDL_image.h>
-# include <SDL2_mixer/SDL_mixer.h>
+//# include <SDL2_ttf/SDL_ttf.h>
+//# include <SDL2_image/SDL_image.h>
+//# include <SDL2_mixer/SDL_mixer.h>
 /*
  * ЗАКОММЕНТИРУЙ, ЕСЛИ НЕ КОМПИЛИТСЯ! Временное решение
  */
@@ -16,10 +16,10 @@
 # include <SDL_image.h>
 # include <SDL_mixer.h>*/
 
-# define W 1920
-# define H 1080
-//# define W 1280
-//# define H 720
+//# define W 1920
+//# define H 1080
+# define W 1280
+# define H 720
 # define CUR_SECT engine->player.sector
 
 # define NEAR_Z 1e-4f				//TODO что это?
@@ -142,7 +142,7 @@ void			clean_up(t_engine *engine);
 void			draw(t_engine *engine);
 
 t_xy			rot_z(t_xy p, float angle);
-void			minimap(t_engine *engine, t_line wall);
+void			minimap(t_engine *engine, t_xy v0, t_xy v1, int color);
 void			fill_queue(t_engine *engine, unsigned s);
 void			render_line(t_line p, SDL_Surface *screen, t_line borders);
 void			angle_less_than_45_1(t_line p, SDL_Surface *screen, t_line borders);

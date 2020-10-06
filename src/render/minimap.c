@@ -12,45 +12,60 @@ static t_line rotate90_minimap(t_line wall)
 	return (wall);
 }
 
-static void render_borders(t_line borders, SDL_Surface *screen)
+static t_line rotate_minimap(t_line wall, t_player player)
+{
+	t_line	w;
+
+	w = wall;
+	wall.x0 = w.x0 * player.anglecos + w.y0 * player.anglesin;
+	wall.x1 = w.x1 * player.anglecos + w.y1 * player.anglesin;
+	wall.y0 = -w.x0 * player.anglesin + w.y0 * player.anglecos;
+	wall.y1 = -w.x1 * player.anglesin + w.y1 * player.anglecos;
+	return (wall);
+}
+
+static void render_minimap_hud(t_minimap minimap, SDL_Surface *screen)
 {
 	t_line w;
+	t_line borders;
 
+	borders = minimap.borders;
 	w = (t_line){borders.x0, borders.x1, borders.y0, borders.y0, borders.color};
 	render_line(w, screen, borders);
 	w = (t_line){borders.x0, borders.x0, borders.y0, borders.y1, borders.color};
 	render_line(w, screen, borders);
-	w = (t_line){borders.x0, borders.x1, borders.y1 - 1, borders.y1 - 1, borders.color};
+	w = (t_line){borders.x0, borders.x1, borders.y1 - 1, borders.y1 - 1,
+			  borders.color};
 	render_line(w, screen, borders);
-	w = (t_line){borders.x1 - 1, borders.x1 - 1, borders.y0, borders.y1, borders.color};
+	w = (t_line){borders.x1 - 1, borders.x1 - 1, borders.y0, borders.y1,
+			  borders.color};
 	render_line(w, screen, borders);
+	render_line(minimap.player_horizontal, screen, borders);
+	render_line(minimap.player_vertical, screen, borders);
 }
 
-void		minimap(t_engine *engine, t_line wall)
+void		minimap(t_engine *engine, t_xy v0, t_xy v1, int color)
 {
-	t_line			w;
+	t_line			wall;
 	t_player		player;
+	t_minimap		minimap;
 
 	player = engine->player;
-	render_line(engine->minimap.player_horizontal, engine->screen, engine->minimap.borders);
-	render_line(engine->minimap.player_vertical, engine->screen, engine->minimap.borders);
-	render_borders(engine->minimap.borders, engine->screen);
-	if (wall.color)
+	minimap = engine->minimap;
+	render_minimap_hud(minimap, engine->screen);
+	if (color)
 	{
-		wall.x0 -= engine->minimap.scale * player.where.x;
-		wall.y0 -= engine->minimap.scale * player.where.y;
-		wall.x1 -= engine->minimap.scale * player.where.x;
-		wall.y1 -= engine->minimap.scale * player.where.y;
+		wall.color = color;
+		wall.x0 = minimap.scale * v0.x - minimap.scale * player.where.x;
+		wall.x1 = minimap.scale * v1.x - minimap.scale * player.where.x;
+		wall.y0 = minimap.scale * v0.y - minimap.scale * player.where.y;
+		wall.y1 = minimap.scale * v1.y - minimap.scale * player.where.y;
 		wall = rotate90_minimap(wall);
-		w = wall;
-		wall.x0 = w.x0 * player.anglecos + w.y0 * player.anglesin;
-		wall.x1 = w.x1 * player.anglecos + w.y1 * player.anglesin;
-		wall.y0 = -w.x0 * player.anglesin + w.y0 * player.anglecos;
-		wall.y1 = -w.x1 * player.anglesin + w.y1 * player.anglecos;
-		wall.x0 += engine->minimap.point.x;
-		wall.y0 += engine->minimap.point.y;
-		wall.x1 += engine->minimap.point.x;
-		wall.y1 += engine->minimap.point.y;
+		wall = rotate_minimap(wall, player);
+		wall.x0 += minimap.point.x;
+		wall.x1 += minimap.point.x;
+		wall.y0 += minimap.point.y;
+		wall.y1 += minimap.point.y;
 		render_line(wall, engine->screen, engine->minimap.borders);
 	}
 }

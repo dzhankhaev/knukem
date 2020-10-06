@@ -1,4 +1,23 @@
 #include "engine.h"
+
+static int	check_repeating(t_queue_obj *queue, int c)
+{
+	for (int i = 0; i < 32; i++)
+	{
+		if (queue[i].sectorno == c)
+			return 0;
+	}
+	return 1;
+}
+
+static int	minimap_set_line_color(t_engine *engine, unsigned s, int color)
+{
+	if (fabsf(engine->sectors[s].floor
+	- engine->sectors[engine->player.sector].floor) < floor_diff)
+		return (color);
+	return (0);
+}
+
 /*
 t_line	rotate_coords(t_engine *engine, t_line wall)
 {
@@ -20,23 +39,6 @@ t_line	rotate_coords(t_engine *engine, t_line wall)
 	return wall;
 }
 */
-static int	check_repeating(t_queue_obj *queue, int c)
-{
-	for (int i = 0; i < 32; i++)
-	{
-		if (queue[i].sectorno == c)
-			return 0;
-	}
-	return 1;
-}
-
-static int	minimap_set_line_color(t_engine *engine, unsigned s, int color)
-{
-	if (fabsf(engine->sectors[s].floor
-	- engine->sectors[engine->player.sector].floor) < floor_diff)
-		return (color);
-	return (0);
-}
 
 void 		fill_queue(t_engine *engine, unsigned s)
 {
@@ -55,11 +57,8 @@ void 		fill_queue(t_engine *engine, unsigned s)
 				&& check_repeating(engine->queue, engine->sectors[s].neighbors[i]))
 				(++engine->future)->sectorno = engine->sectors[s].neighbors[i];
 		}
-		minimap(engine, (t_line){engine->minimap.scale * engine->sectors[s].vertex[i].x,
-								 engine->minimap.scale * engine->sectors[s].vertex[i + 1].x,
-								 engine->minimap.scale * engine->sectors[s].vertex[i].y,
-								 engine->minimap.scale * engine->sectors[s].vertex[i + 1].y,
-								 color});
+		minimap(engine, engine->sectors[s].vertex[i],
+				engine->sectors[s].vertex[i + 1], color);
 		i++;
 	}
 }
