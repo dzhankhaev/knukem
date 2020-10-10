@@ -93,6 +93,9 @@
 		<Unit filename="/home/chel/Desktop/knukem/includes/math_utilits.h">
 			<Option target="d-k3d"/>
 		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/cut_wall.c">
+			<Option target="d-k3d"/>
+		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/src/fill_queue.c">
 			<Option target="d-k3d"/>
 		</Unit>

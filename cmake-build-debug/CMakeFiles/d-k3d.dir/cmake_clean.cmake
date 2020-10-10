@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/d-k3d.dir/src/cut_wall.c.o"
   "CMakeFiles/d-k3d.dir/src/fill_queue.c.o"
   "CMakeFiles/d-k3d.dir/src/game_loop.c.o"
   "CMakeFiles/d-k3d.dir/src/init_engine.c.o"

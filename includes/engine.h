@@ -144,9 +144,10 @@ void			move_player(float dx, float dy, t_engine *engine);
 void			keys_manager(t_engine *engine);
 void			clean_up(t_engine *engine);
 void			draw(t_engine *engine);
-void			transform_wall(t_engine *engine, int i);
-t_xy			rot_z(t_xy p, float angle);
-void			minimap(t_engine *engine, t_xy v0, t_xy v1, int color);
+void			transform_wall(t_engine *engine, int i);						//
+t_fline			wall_cut(t_fline wall, t_xy i1, t_xy i2);						//разрезает стену для попадания в fov
+void			minimap(t_engine *engine, t_xy v0, t_xy v1, int color);			//рисуется отдельно для каждой стены
+void			render_minimap_hud(t_minimap minimap, SDL_Surface *screen);		//рисуется один раз на кадр
 void			fill_queue(t_engine *engine);
 void			render_line(t_line p, SDL_Surface *screen, t_line borders);
 void			angle_less_than_45_1(t_line p, SDL_Surface *screen, t_line borders);

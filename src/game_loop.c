@@ -1,6 +1,6 @@
 #include "engine.h"
 
-void			draw(t_engine *engine)
+void	draw(t_engine *engine)
 {
 	engine->max_queue = MAX_QUEUE;
 	engine->future = engine->queue;
@@ -11,10 +11,10 @@ void			draw(t_engine *engine)
 		fill_queue(engine);
 		engine->present++;
 	}
-
+	render_minimap_hud(engine->minimap, engine->screen);
 }
 
-void init_minimap(t_engine *engine)
+void	init_minimap(t_engine *engine)
 {
 	engine->minimap.point = (t_xy){((W - W / 1.5) + (W - W / 4)) / 2, (H - H / 1.25 + H - H / 5) / 2};
 //	engine->minimap.point = (t_xy){W - W / 8, H - H / 6};
@@ -35,7 +35,7 @@ void init_minimap(t_engine *engine)
 //									H - H / 3, H, 0x555555};
 }
 
-void game_loop(t_engine *engine)
+void	game_loop(t_engine *engine)
 {
 	engine->borders = (t_line){0, W, 0, H, 0};
 	init_minimap(engine);

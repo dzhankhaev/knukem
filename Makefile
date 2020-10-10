@@ -29,6 +29,7 @@ SRC := main.c\
 	init_engine.c\
 	move.c\
 	transform_wall.c\
+	cut_wall.c\
 	keys_manager.c\
 	manage_data.c\
 	game_loop.c\

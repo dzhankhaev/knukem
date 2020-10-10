@@ -143,6 +143,33 @@ d-k3d/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/build
 .PHONY : d-k3d/fast
 
+src/cut_wall.o: src/cut_wall.c.o
+
+.PHONY : src/cut_wall.o
+
+# target to build an object file
+src/cut_wall.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/cut_wall.c.o
+.PHONY : src/cut_wall.c.o
+
+src/cut_wall.i: src/cut_wall.c.i
+
+.PHONY : src/cut_wall.i
+
+# target to preprocess a source file
+src/cut_wall.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/cut_wall.c.i
+.PHONY : src/cut_wall.c.i
+
+src/cut_wall.s: src/cut_wall.c.s
+
+.PHONY : src/cut_wall.s
+
+# target to generate assembly for a file
+src/cut_wall.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/cut_wall.c.s
+.PHONY : src/cut_wall.c.s
+
 src/fill_queue.o: src/fill_queue.c.o
 
 .PHONY : src/fill_queue.o
@@ -557,6 +584,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... d-k3d"
+	@echo "... src/cut_wall.o"
+	@echo "... src/cut_wall.i"
+	@echo "... src/cut_wall.s"
 	@echo "... src/fill_queue.o"
 	@echo "... src/fill_queue.i"
 	@echo "... src/fill_queue.s"

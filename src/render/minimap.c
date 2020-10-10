@@ -24,7 +24,7 @@ static t_line rotate_minimap(t_line wall, t_player player)
 	return (wall);
 }
 
-static void render_minimap_hud(t_minimap minimap, SDL_Surface *screen)
+void	render_minimap_hud(t_minimap minimap, SDL_Surface *screen)
 {
 	t_line w;
 	t_line borders;
@@ -53,7 +53,6 @@ static void render_minimap_hud(t_minimap minimap, SDL_Surface *screen)
 
 	player = engine->player;
 	minimap = engine->minimap;
-	render_minimap_hud(minimap, engine->screen);
 	if (color)
 	{
 		wall.color = color;
@@ -78,7 +77,6 @@ void		minimap(t_engine *engine, t_xy v0, t_xy v1, int color)
 	t_minimap		minimap;
 
 	minimap = engine->minimap;
-	render_minimap_hud(minimap, engine->screen);
 	if (color)
 	{
 		wall.color = color;
