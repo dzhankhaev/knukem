@@ -170,33 +170,6 @@ src/cut_wall.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/cut_wall.c.s
 .PHONY : src/cut_wall.c.s
 
-src/fill_queue.o: src/fill_queue.c.o
-
-.PHONY : src/fill_queue.o
-
-# target to build an object file
-src/fill_queue.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/fill_queue.c.o
-.PHONY : src/fill_queue.c.o
-
-src/fill_queue.i: src/fill_queue.c.i
-
-.PHONY : src/fill_queue.i
-
-# target to preprocess a source file
-src/fill_queue.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/fill_queue.c.i
-.PHONY : src/fill_queue.c.i
-
-src/fill_queue.s: src/fill_queue.c.s
-
-.PHONY : src/fill_queue.s
-
-# target to generate assembly for a file
-src/fill_queue.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/fill_queue.c.s
-.PHONY : src/fill_queue.c.s
-
 src/game_loop.o: src/game_loop.c.o
 
 .PHONY : src/game_loop.o
@@ -548,6 +521,33 @@ src/render/minimap.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/minimap.c.s
 .PHONY : src/render/minimap.c.s
 
+src/run_queue.o: src/run_queue.c.o
+
+.PHONY : src/run_queue.o
+
+# target to build an object file
+src/run_queue.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/run_queue.c.o
+.PHONY : src/run_queue.c.o
+
+src/run_queue.i: src/run_queue.c.i
+
+.PHONY : src/run_queue.i
+
+# target to preprocess a source file
+src/run_queue.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/run_queue.c.i
+.PHONY : src/run_queue.c.i
+
+src/run_queue.s: src/run_queue.c.s
+
+.PHONY : src/run_queue.s
+
+# target to generate assembly for a file
+src/run_queue.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/run_queue.c.s
+.PHONY : src/run_queue.c.s
+
 src/transform_wall.o: src/transform_wall.c.o
 
 .PHONY : src/transform_wall.o
@@ -587,9 +587,6 @@ help:
 	@echo "... src/cut_wall.o"
 	@echo "... src/cut_wall.i"
 	@echo "... src/cut_wall.s"
-	@echo "... src/fill_queue.o"
-	@echo "... src/fill_queue.i"
-	@echo "... src/fill_queue.s"
 	@echo "... src/game_loop.o"
 	@echo "... src/game_loop.i"
 	@echo "... src/game_loop.s"
@@ -629,6 +626,9 @@ help:
 	@echo "... src/render/minimap.o"
 	@echo "... src/render/minimap.i"
 	@echo "... src/render/minimap.s"
+	@echo "... src/run_queue.o"
+	@echo "... src/run_queue.i"
+	@echo "... src/run_queue.s"
 	@echo "... src/transform_wall.o"
 	@echo "... src/transform_wall.i"
 	@echo "... src/transform_wall.s"

@@ -150,7 +150,7 @@ void			transform_wall(t_engine *engine, int i);						//
 t_fline			cut_wall(t_fline wall, t_xy i1, t_xy i2);						//разрезает стену для попадания в fov
 void			minimap(t_engine *engine, t_xy v0, t_xy v1, int color);			//рисуется отдельно для каждой стены
 void			render_minimap_hud(t_minimap minimap, SDL_Surface *screen);		//рисуется один раз на кадр
-void			fill_queue(t_engine *engine);
+void			run_queue(t_engine *engine);
 void			render_line(t_line p, SDL_Surface *screen, t_line borders);
 void			angle_less_than_45_1(t_line p, SDL_Surface *screen, t_line borders);
 void			angle_more_than_45_1(t_line p, SDL_Surface *screen, t_line borders);

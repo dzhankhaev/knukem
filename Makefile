@@ -25,7 +25,7 @@ SRC := main.c\
 	math_utilits/mathf.c\
 	math_utilits/intersection_point.c\
 	math_utilits/rotate_wall.c\
-	fill_queue.c\
+	run_queue.c\
 	init_engine.c\
 	move.c\
 	transform_wall.c\

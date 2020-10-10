@@ -12,7 +12,7 @@ add_executable(d-k3d
         src/manage_data.c
         src/game_loop.c
         src/main.c
-        src/fill_queue.c
+        src/run_queue.c
         src/move.c
         src/math_utilits/determine_intersection.c
         src/math_utilits/intersection_point.c

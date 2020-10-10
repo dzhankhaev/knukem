@@ -3,12 +3,13 @@
 void	draw(t_engine *engine)
 {
 	engine->max_queue = MAX_QUEUE;
-	engine->future = engine->queue;
+	engine->queue[engine->max_queue - 1].sectorno = 1;
+	engine->future = engine->queue + 1;
 	engine->present = engine->queue;
 	engine->present->sectorno = CUR_SECT;
-	while (engine->present + 1 != engine->queue + engine->max_queue)
+	while (engine->present != engine->future)
 	{
-		fill_queue(engine);
+		run_queue(engine);
 		engine->present++;
 	}
 	render_minimap_hud(engine->minimap, engine->screen);

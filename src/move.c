@@ -1,6 +1,5 @@
 #include <engine.h>
 #include "math_utilits.h"
-#include "arg_defines.h"
 
 void	slide(t_xy vert1, t_xy vert2, float *dx, float *dy)
 {
