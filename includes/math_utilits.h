@@ -4,8 +4,8 @@
 #include "engine.h"
 
 float			point_side(float px, float py, t_xy vert, t_xy vert1);
-t_xy			intersection_point(float *arg);
-int				determine_intersection(float *arg);
+t_xy			intersection_point(t_fline wall, t_fline twall);
+int				determine_intersection(t_fline wall, t_fline twall);
 int				clamp(int a, int min, int max);
 int				int_max(int a, int b);
 int				int_min(int a, int b);

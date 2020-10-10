@@ -17,7 +17,6 @@ void	move_player(float dx, float dy, t_engine *engine)
 {
 	float					px;
 	float					py;
-	float					arg[8];
 	unsigned				s;
 	const t_xy				*vert;
 	const t_sector			*sect;
@@ -31,21 +30,14 @@ void	move_player(float dx, float dy, t_engine *engine)
 	vert = sect->vertex;
 	while (s < sect->npoints)
 	{
-		X1 = px;
-		Y1 = py;
-		X2 = px + dx;
-		Y2 = py + dy;
-		X3 = vert[s].x;
-		Y3 = vert[s].y;
-		X4 = vert[s + 1].x;
-		Y4 = vert[s + 1].y;
 		/* Проверяет произошло ли пересечение стороны сектора
      	*
      	* Because the edge vertices of each sector are defined in
      	* clockwise order, PointSide will always return -1 for a point
      	* that is outside the sector and 0 or 1 for a point that is inside.
      	*/
-		if (determine_intersection(arg) &&
+		if (determine_intersection((t_fline){px, px + dx, py, py + dy},
+			(t_fline){vert[s].x, vert[s + 1].x, vert[s].y, vert[s + 1].y}) &&
 			point_side(px + dx, py + dy, vert[s], vert[s + 1]) < 0)
 		{
 			if (sect->neighbors[s] >= 0)

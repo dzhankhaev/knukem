@@ -1,5 +1,4 @@
 #include "engine.h"
-#include "arg_defines.h"
 #include "math_utilits.h"
 
 static t_fline swap(t_fline wall)
@@ -75,25 +74,9 @@ void	check_wall_behind(t_engine *engine)
 	t_fline	twall;
 
 	twall = fov_raycast(engine, LFOV);
-	X1 = twall.x0;
-	X2 = twall.x1;
-	X3 = engine->wall.x0;
-	X4 = engine->wall.x1;
-	Y1 = twall.y0;
-	Y2 = twall.y1;
-	Y3 = engine->wall.y0;
-	Y4 = engine->wall.y1;
-	i1 = intersection_point(arg);
+	i1 = intersection_point(engine->wall, twall);
 	twall = fov_raycast(engine, RFOV);
-	X1 = twall.x0;
-	X2 = twall.x1;
-	X3 = engine->wall.x0;
-	X4 = engine->wall.x1;
-	Y1 = twall.y0;
-	Y2 = twall.y1;
-	Y3 = engine->wall.y0;
-	Y4 = engine->wall.y1;
-	i2 = intersection_point(arg);
+	i2 = intersection_point(engine->wall, twall);
 	engine->wall = check(engine->wall, i1, i2);
 	//это миникарта для просмотра отсеченных стен
 	minimap(engine, (t_xy){engine->wall.x0, engine->wall.y0},

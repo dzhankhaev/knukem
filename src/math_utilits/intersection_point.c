@@ -2,57 +2,46 @@
 #include "math_utilits.h"
 #include "arg_defines.h"
 
-static void	swap(float *x0, float *x1, float *y0, float *y1)
-{
-	float	t;
-
-	t = *x0;
-	*x0 = *x1;
-	*x1 = t;
-	t = *y0;
-	*y0 = *y1;
-	*y1 = t;
-}
 //найдём Xa, Ya - точки пересечения двух прямых
-static t_xy	vertical1(float *arg)
+static t_xy	vertical1(t_fline wall, t_fline twall)
 {
 	float Xa;
 	float A2;
 	float b2;
 	float Ya;
 
-	Xa = X1;
-	A2 = (Y3 - Y4) / (X3 - X4);
-	b2 = Y3 - A2 * X3;
+	Xa = wall.x0;
+	A2 = (twall.y0 - twall.y1) / (twall.x0 - twall.x1);
+	b2 = twall.y0 - A2 * twall.x0;
 	Ya = A2 * Xa + b2;
-	if (X3 <= Xa && X4 >= Xa && fminf(Y1, Y2) <= Ya &&
-		fmaxf(Y1, Y2) >= Ya)
+	if (twall.x0 <= Xa && twall.x1 >= Xa && fminf(wall.y0, wall.y1) <= Ya &&
+		fmaxf(wall.y0, wall.y1) >= Ya)
 	{
 		return (t_xy){Xa, Ya};
 	}
 	return (t_xy){-1.f, -1.f};
 }
 //найдём Xa, Ya - точки пересечения двух прямых
-static t_xy	vertical2(float *arg)
+static t_xy	vertical2(t_fline wall, t_fline twall)
 {
 	float Xa;
 	float A1;
 	float b1;
 	float Ya;
 
-	Xa = X3;
-	A1 = (Y1 - Y2) / (X1 - X2);
-	b1 = Y1 - A1 * X1;
+	Xa = twall.x0;
+	A1 = (wall.y0 - wall.y1) / (wall.x0 - wall.x1);
+	b1 = wall.y0 - A1 * wall.x0;
 	Ya = A1 * Xa + b1;
-	if (X1 <= Xa && X2 >= Xa && fminf(Y3, Y4) <= Ya &&
-		fmaxf(Y3, Y4) >= Ya)
+	if (wall.x0 <= Xa && wall.x1 >= Xa && fminf(twall.y0, twall.y1) <= Ya &&
+		fmaxf(twall.y0, twall.y1) >= Ya)
 	{
 		return (t_xy){Xa, Ya};
 	}
 	return (t_xy){-1.f, -1.f};
 }
 
-static t_xy	general(float *arg)
+static t_xy	general(t_fline wall, t_fline twall)
 {
 	float A1;
 	float A2;
@@ -60,27 +49,41 @@ static t_xy	general(float *arg)
 	float b2;
 	float Xa;
 
-	A1 = (Y1 - Y2) / (X1 - X2);
-	A2 = (Y3 - Y4) / (X3 - X4);
-	b1 = Y1 - A1 * X1;
-	b2 = Y3 - A2 * X3;
+	A1 = (wall.y0 - wall.y1) / (wall.x0 - wall.x1);
+	A2 = (twall.y0 - twall.y1) / (twall.x0 - twall.x1);
+	b1 = wall.y0 - A1 * wall.x0;
+	b2 = twall.y0 - A2 * twall.x0;
 	if (A1 == A2)
 		return (t_xy){-1.f, -1.f}; //отрезки параллельны
 	Xa = (b2 - b1) / (A1 - A2);
-	if ((Xa < fmaxf(X1, X3)) || (Xa > fminf(X2, X4)))
+	if ((Xa < fmaxf(wall.x0, twall.x0)) || (Xa > fminf(wall.x1, twall.x1)))
 		return (t_xy){-1.f, -1.f}; //точка Xa находится вне пересечения проекций отрезков на ось X
 	else
 		return (t_xy){Xa, A2 * Xa + b2};
 }
 
-t_xy		intersection_point(float *arg)
+static t_fline swap(t_fline wall)
 {
-	if (X1 > X2)
-		swap(&X1, &X2, &Y1, &Y2);
-	if (X3 > X4)
-		swap(&X3, &X4, &Y3, &Y4);
+	float	t;
+
+	if (wall.x0 > wall.x1)
+	{
+		t = wall.x0;
+		wall.x0 = wall.x1;
+		wall.x1 = t;
+		t = wall.y0;
+		wall.y0 = wall.y1;
+		wall.y1 = t;
+	}
+	return (wall);
+}
+
+t_xy		intersection_point(t_fline wall, t_fline twall)
+{
+	wall = swap(wall);
+	twall = swap(twall);
 	//Если конец первого отрезка находится левее начала правого отрезка (по оси X), то отрезки точно не имеют точки пересечения.
-	if (X2 < X3)
+	if (wall.x1 < twall.x0)
 		return ((t_xy){-1.f, -1.f});
 	/* ЭТОТ КУСОК СКОРЕЕ ВСЕГО НЕ НУЖЕН
 	//если оба отрезка вертикальные
@@ -101,11 +104,11 @@ t_xy		intersection_point(float *arg)
 	}
 	*/
 	//если первый отрезок вертикальный
-	if (X1 == X2)
-		return (vertical1(arg));
+	if (wall.x0 == wall.x1)
+		return (vertical1(wall, twall));
 	// если второй отрезок вертикальный
-	else if (X3 == X4)
-		return (vertical2(arg));
+	else if (twall.x0 == twall.x1)
+		return (vertical2(wall, twall));
 	else //оба отрезка невертикальные
-		return (general(arg));
+		return (general(wall, twall));
 }
