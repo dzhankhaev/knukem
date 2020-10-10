@@ -1,4 +1,37 @@
 #include "engine.h"
+#include <fcntl.h>
+#include "libft.h"
+
+void	load_data_(t_engine *engine)
+{
+	char		*line;
+	struct s_xy	*vert;
+	struct s_xy	v;
+	int			n;
+	int			m;
+	int			NumVertices;
+	int			*num;
+	int			fd;
+	float		angle;
+
+	vert = NULL;
+	NumVertices = 0;
+	engine->sectors = NULL;
+
+	if (!(fd = open("map-clear.txt", O_RDONLY)))
+	{
+		perror("map-clear.txt");
+		exit(1);
+	}
+	while (get_next_line(fd, line))
+	{
+		
+	}
+	close(fd);
+
+
+}
+
 
 void	load_data(t_engine *engine)
 {
@@ -13,6 +46,7 @@ void	load_data(t_engine *engine)
 	struct s_xy *vert = NULL, v;
 	int n, m, NumVertices = 0;
 	while (fgets(Buf, sizeof Buf, fp))
+	{
 		switch (sscanf(ptr = Buf, "%32s%n", word, &n) == 1 ? word[0] : '\0')
 		{
 		case 'v': // vertex
@@ -24,7 +58,7 @@ void	load_data(t_engine *engine)
                 //vert массив всех вершин где к примеру строка vertex	0	0 6 28 хранится как 0 0, 0 6, 0 28
                 //никаких разделителей между строк нет
 			}
-			break;
+			break;  
 		case 's': // sector
 			engine->sectors = realloc(engine->sectors, ++engine->num_sectors * sizeof(*engine->sectors));
 			t_sector *sect = &engine->sectors[engine->num_sectors - 1];
@@ -66,6 +100,7 @@ void	load_data(t_engine *engine)
 			engine->player.sector = n;
 			engine->player.where.z = engine->sectors[engine->player.sector].floor + EyeHeight;
 		}
+	}
 	fclose(fp);
 	free(vert);
 }

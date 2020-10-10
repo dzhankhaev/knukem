@@ -45,7 +45,7 @@ FLAG :=  -g #-Wall -Werror -Wextra
 
 PWD := $(shell pwd)
 FRAMEWORKSDIR := $(PWD)/frameworks
-INC := -I includes
+INC := -I includes -I ./libft 
 SDL := -F $(FRAMEWORKSDIR) -framework SDL2 -framework SDL2_ttf -framework SDL2_image -framework SDL2_mixer -Wl -rpath $(FRAMEWORKSDIR)
 
 TOTAL_FILES := $(shell echo $(SRC) | wc -w | sed -e 's/ //g')
@@ -54,12 +54,12 @@ CURRENT_FILES = $(shell find $(PWD)/obj/ -type f 2> /dev/null | wc -l | sed -e '
 all : $(NAME)
 
 $(NAME) : $(OBJP)
-			@gcc $(SDL) $(FLAG) $(OBJP) $(INC) $(LIB) -o $(NAME)
+			@gcc $(SDL) $(FLAG) $(OBJP) $(INC) $(LIB)  -L./libft -lft  -o $(NAME)
 			@echo "$(CLEAR_LINE)$(BLUE_FONT)[$(NAME)] $(YELLOW_FONT)Finished compilation. Output file : $(VIOLET_FONT)$(PWD)/$(NAME)$(RESET_FORM)"
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADERSP)
 			@mkdir -p $(ONLYDIR)
-			@gcc -c $(FLAG) -F $(FRAMEWORKSDIR) $(INC) $< -o $@
+			@gcc -c $(FLAG)-F $(FRAMEWORKSDIR) $(INC) $< -o $@
 			@echo "$(CLEAR_LINE)$(BLUE_FONT)[$(NAME)] $(YELLOW_FONT)Compiling file [$(VIOLET_FONT)$<$(COL_YELLOW)]. ($(CURRENT_FILES) / $(TOTAL_FILES))$(RESET_FORM)$(BEGIN_LINE)"
 
 
