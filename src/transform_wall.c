@@ -38,8 +38,10 @@ void			transform_wall(t_engine *engine, int i)
 	if (engine->wall.x0 <= 0 && engine->wall.x1 <= 0)
 		return ; //стены за спиной не рендерятся
 	fov_wall_cut(engine);
-	if (engine->wall.x0 <= 0 || engine->wall.x1 <= 0)
-		return ; //то что не было отрезано и находится частично за спиной тоже не рендерим
+	if (engine->wall.x0 <= 0 || engine->wall.x1 <= 0
+	|| engine->wall.x0 * -K >= engine->wall.y0
+	|| engine->wall.x1 * K <= engine->wall.y1)
+		return ; //то что не было отрезано и находится частично за спиной, а так же то что целиком лежит вне видимости тоже не рендерим.
 	//это миникарта для просмотра отсеченных стен
 	minimap(engine, (t_xy){engine->wall.x0, engine->wall.y0},
 			(t_xy){engine->wall.x1, engine->wall.y1}, engine->wall.color);

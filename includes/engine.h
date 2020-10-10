@@ -26,6 +26,7 @@
 //вычисленные заранее координаты конечной точки луча видимости. Подробнее в transform_wall.c
 # define RAY_POINT_X 40.968075f			//50.f * cosf(FOV/2)
 # define RAY_POINT_Y 28.663858f			//50.f * sinf(FOV/2)
+# define K 0.7f						//Коэффицент уравнения прямой y = kx. Применяется к лучам видимости. Подробнее в transform_wall.c
 # define floor_diff 10				//Отображать на миникарте секторы с разницой в высоте не более floor_diff
 # define EyeHeight 6				//высота камеры
 # define DuckHeight 2.5				//высота камеры при приседе
