@@ -13,12 +13,12 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/chel/Desktop/knukem/src/math_utilits/determine_intersection.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/math_utilits/determine_intersection.c.o"
   "/home/chel/Desktop/knukem/src/math_utilits/intersection_point.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/math_utilits/intersection_point.c.o"
   "/home/chel/Desktop/knukem/src/math_utilits/mathf.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.o"
-  "/home/chel/Desktop/knukem/src/math_utilits/wall_transform.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/math_utilits/wall_transform.c.o"
+  "/home/chel/Desktop/knukem/src/math_utilits/rotate_wall.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/math_utilits/rotate_wall.c.o"
   "/home/chel/Desktop/knukem/src/move.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/move.c.o"
   "/home/chel/Desktop/knukem/src/render/line/render_line.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o"
   "/home/chel/Desktop/knukem/src/render/line/render_line_with_angle.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.o"
   "/home/chel/Desktop/knukem/src/render/minimap.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/minimap.c.o"
-  "/home/chel/Desktop/knukem/src/render/rotate.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/rotate.c.o"
+  "/home/chel/Desktop/knukem/src/transform_wall.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/transform_wall.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

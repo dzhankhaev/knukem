@@ -24,9 +24,11 @@ SRC := main.c\
 	math_utilits/determine_intersection.c\
 	math_utilits/mathf.c\
 	math_utilits/intersection_point.c\
+	math_utilits/rotate_wall.c\
 	fill_queue.c\
 	init_engine.c\
 	move.c\
+	transform_wall.c\
 	keys_manager.c\
 	manage_data.c\
 	game_loop.c\

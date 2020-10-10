@@ -1,6 +1,6 @@
 #include "engine.h"
 
-t_fline		normi_wall(t_sector sector, t_player player, int i)
+t_fline		normi_wall(t_sector sector, t_player player, int i, int color)
 {
 	t_fline		wall;
 
@@ -8,6 +8,7 @@ t_fline		normi_wall(t_sector sector, t_player player, int i)
 	wall.y0 = sector.vertex[i].y - player.where.y;
 	wall.x1 = sector.vertex[i + 1].x - player.where.x;
 	wall.y1 = sector.vertex[i + 1].y - player.where.y;
+	wall.color = color;
 	return (wall);
 }
 

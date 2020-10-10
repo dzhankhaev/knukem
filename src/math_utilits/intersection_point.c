@@ -59,7 +59,6 @@ static t_xy	general(float *arg)
 	float b1;
 	float b2;
 	float Xa;
-	float Ya;
 
 	A1 = (Y1 - Y2) / (X1 - X2);
 	A2 = (Y3 - Y4) / (X3 - X4);
@@ -68,11 +67,10 @@ static t_xy	general(float *arg)
 	if (A1 == A2)
 		return (t_xy){-1.f, -1.f}; //отрезки параллельны
 	Xa = (b2 - b1) / (A1 - A2);
-	Ya = A2 * Xa + b2;
 	if ((Xa < fmaxf(X1, X3)) || (Xa > fminf(X2, X4)))
 		return (t_xy){-1.f, -1.f}; //точка Xa находится вне пересечения проекций отрезков на ось X
 	else
-		return (t_xy){Xa, Ya};
+		return (t_xy){Xa, A2 * Xa + b2};
 }
 
 t_xy		intersection_point(float *arg)

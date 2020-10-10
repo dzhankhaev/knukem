@@ -33,9 +33,6 @@ static void keyboard_event(t_engine *engine)
 			engine->close_request = 1;
 }
 
-#define acceleration_plus 0.6f
-#define acceleration_minus 0.8f
-
 static void mouse_event(t_engine *engine)
 {
 	int	x;
@@ -70,8 +67,6 @@ static void mouse_event(t_engine *engine)
 	engine->player.acceleration = engine->player.pushing ? acceleration_plus : acceleration_minus;
 	engine->player.velocity.x = engine->player.velocity.x * engine->player.acceleration + engine->player.move_vec[0] * engine->player.acceleration;
 	engine->player.velocity.y = engine->player.velocity.y * engine->player.acceleration + engine->player.move_vec[1] * engine->player.acceleration;
-	if (engine->player.pushing)
-		engine->player.moving = 1;
 }
 
 
