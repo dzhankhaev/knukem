@@ -14,7 +14,8 @@ add_executable(d-k3d
         src/main.c
         src/fill_queue.c
         src/move.c
-        src/math_utilits/vector_operations.c
+        src/math_utilits/determine_intersection.c
+        src/math_utilits/intersection_point.c
         src/math_utilits/mathf.c
         src/render/line/render_line.c
         src/render/minimap.c
@@ -23,7 +24,7 @@ add_executable(d-k3d
         includes/engine.h
         includes/arg_defines.h
         includes/math_utilits.h
-        )
+        src/math_utilits/wall_transform.c)
 
 include_directories(d-k3d
         includes/

@@ -6,6 +6,8 @@
 
 #IncludeRegexTransform: 
 
+../includes/arg_defines.h
+
 ../includes/engine.h
 math.h
 -
@@ -24,9 +26,17 @@ SDL_image.h
 SDL_mixer.h
 -
 
-/home/chel/Desktop/knukem/src/render/minimap.c
+../includes/math_utilits.h
 engine.h
-/home/chel/Desktop/knukem/src/render/engine.h
+../includes/engine.h
+
+/home/chel/Desktop/knukem/src/fill_queue.c
+engine.h
+/home/chel/Desktop/knukem/src/engine.h
+arg_defines.h
+/home/chel/Desktop/knukem/src/arg_defines.h
+math_utilits.h
+/home/chel/Desktop/knukem/src/math_utilits.h
 
 /usr/include/SDL2/SDL.h
 SDL_main.h

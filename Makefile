@@ -21,8 +21,9 @@ SRC := main.c\
 	render/minimap.c\
 	render/line/render_line.c\
 	render/line/render_line_with_angle.c\
-	math_utilits/vector_operations.c\
+	math_utilits/determine_intersection.c\
 	math_utilits/mathf.c\
+	math_utilits/intersection_point.c\
 	fill_queue.c\
 	init_engine.c\
 	move.c\

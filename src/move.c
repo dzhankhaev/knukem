@@ -1,4 +1,5 @@
 #include <engine.h>
+#include "math_utilits.h"
 #include "arg_defines.h"
 
 void	slide(t_xy vert1, t_xy vert2, float *dx, float *dy)
@@ -44,7 +45,7 @@ void	move_player(float dx, float dy, t_engine *engine)
      	* clockwise order, PointSide will always return -1 for a point
      	* that is outside the sector and 0 or 1 for a point that is inside.
      	*/
-		if (determine_box_intersection(arg) &&
+		if (determine_intersection(arg) &&
 			point_side(px + dx, py + dy, vert[s], vert[s + 1]) < 0)
 		{
 			if (sect->neighbors[s] >= 0)
@@ -61,7 +62,6 @@ void	move_player(float dx, float dy, t_engine *engine)
 				slide(vert[s], vert[s + 1], &dx, &dy);
 			break ;
 		}
-
 		s++;
 	}
 	s = 0;

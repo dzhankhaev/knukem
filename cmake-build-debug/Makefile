@@ -59,10 +59,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/124/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/126/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/124/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/126/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -79,7 +79,7 @@ CMAKE_BINARY_DIR = /home/chel/Desktop/knukem/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/124/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/126/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -90,7 +90,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/124/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/126/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -305,6 +305,60 @@ src/manage_data.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/manage_data.c.s
 .PHONY : src/manage_data.c.s
 
+src/math_utilits/determine_intersection.o: src/math_utilits/determine_intersection.c.o
+
+.PHONY : src/math_utilits/determine_intersection.o
+
+# target to build an object file
+src/math_utilits/determine_intersection.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/math_utilits/determine_intersection.c.o
+.PHONY : src/math_utilits/determine_intersection.c.o
+
+src/math_utilits/determine_intersection.i: src/math_utilits/determine_intersection.c.i
+
+.PHONY : src/math_utilits/determine_intersection.i
+
+# target to preprocess a source file
+src/math_utilits/determine_intersection.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/math_utilits/determine_intersection.c.i
+.PHONY : src/math_utilits/determine_intersection.c.i
+
+src/math_utilits/determine_intersection.s: src/math_utilits/determine_intersection.c.s
+
+.PHONY : src/math_utilits/determine_intersection.s
+
+# target to generate assembly for a file
+src/math_utilits/determine_intersection.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/math_utilits/determine_intersection.c.s
+.PHONY : src/math_utilits/determine_intersection.c.s
+
+src/math_utilits/intersection_point.o: src/math_utilits/intersection_point.c.o
+
+.PHONY : src/math_utilits/intersection_point.o
+
+# target to build an object file
+src/math_utilits/intersection_point.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/math_utilits/intersection_point.c.o
+.PHONY : src/math_utilits/intersection_point.c.o
+
+src/math_utilits/intersection_point.i: src/math_utilits/intersection_point.c.i
+
+.PHONY : src/math_utilits/intersection_point.i
+
+# target to preprocess a source file
+src/math_utilits/intersection_point.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/math_utilits/intersection_point.c.i
+.PHONY : src/math_utilits/intersection_point.c.i
+
+src/math_utilits/intersection_point.s: src/math_utilits/intersection_point.c.s
+
+.PHONY : src/math_utilits/intersection_point.s
+
+# target to generate assembly for a file
+src/math_utilits/intersection_point.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/math_utilits/intersection_point.c.s
+.PHONY : src/math_utilits/intersection_point.c.s
+
 src/math_utilits/mathf.o: src/math_utilits/mathf.c.o
 
 .PHONY : src/math_utilits/mathf.o
@@ -332,32 +386,32 @@ src/math_utilits/mathf.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.s
 .PHONY : src/math_utilits/mathf.c.s
 
-src/math_utilits/vector_operations.o: src/math_utilits/vector_operations.c.o
+src/math_utilits/wall_transform.o: src/math_utilits/wall_transform.c.o
 
-.PHONY : src/math_utilits/vector_operations.o
+.PHONY : src/math_utilits/wall_transform.o
 
 # target to build an object file
-src/math_utilits/vector_operations.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.o
-.PHONY : src/math_utilits/vector_operations.c.o
+src/math_utilits/wall_transform.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/math_utilits/wall_transform.c.o
+.PHONY : src/math_utilits/wall_transform.c.o
 
-src/math_utilits/vector_operations.i: src/math_utilits/vector_operations.c.i
+src/math_utilits/wall_transform.i: src/math_utilits/wall_transform.c.i
 
-.PHONY : src/math_utilits/vector_operations.i
+.PHONY : src/math_utilits/wall_transform.i
 
 # target to preprocess a source file
-src/math_utilits/vector_operations.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.i
-.PHONY : src/math_utilits/vector_operations.c.i
+src/math_utilits/wall_transform.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/math_utilits/wall_transform.c.i
+.PHONY : src/math_utilits/wall_transform.c.i
 
-src/math_utilits/vector_operations.s: src/math_utilits/vector_operations.c.s
+src/math_utilits/wall_transform.s: src/math_utilits/wall_transform.c.s
 
-.PHONY : src/math_utilits/vector_operations.s
+.PHONY : src/math_utilits/wall_transform.s
 
 # target to generate assembly for a file
-src/math_utilits/vector_operations.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.s
-.PHONY : src/math_utilits/vector_operations.c.s
+src/math_utilits/wall_transform.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/math_utilits/wall_transform.c.s
+.PHONY : src/math_utilits/wall_transform.c.s
 
 src/move.o: src/move.c.o
 
@@ -521,12 +575,18 @@ help:
 	@echo "... src/manage_data.o"
 	@echo "... src/manage_data.i"
 	@echo "... src/manage_data.s"
+	@echo "... src/math_utilits/determine_intersection.o"
+	@echo "... src/math_utilits/determine_intersection.i"
+	@echo "... src/math_utilits/determine_intersection.s"
+	@echo "... src/math_utilits/intersection_point.o"
+	@echo "... src/math_utilits/intersection_point.i"
+	@echo "... src/math_utilits/intersection_point.s"
 	@echo "... src/math_utilits/mathf.o"
 	@echo "... src/math_utilits/mathf.i"
 	@echo "... src/math_utilits/mathf.s"
-	@echo "... src/math_utilits/vector_operations.o"
-	@echo "... src/math_utilits/vector_operations.i"
-	@echo "... src/math_utilits/vector_operations.s"
+	@echo "... src/math_utilits/wall_transform.o"
+	@echo "... src/math_utilits/wall_transform.i"
+	@echo "... src/math_utilits/wall_transform.s"
 	@echo "... src/move.o"
 	@echo "... src/move.i"
 	@echo "... src/move.s"

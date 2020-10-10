@@ -43,8 +43,26 @@ static void render_minimap_hud(t_minimap minimap, SDL_Surface *screen)
 	render_line(minimap.player_horizontal, screen, borders);
 	render_line(minimap.player_vertical, screen, borders);
 }
+/*
+			Аналогичным образом проверяется для 3д отрисовки
+			находятся ли стены за спиной, то есть вне видимости
+			Можно включить и для миникарты
+			if (render_wall(engine, v0, v1))
+				return ;
+static int		render_wall(t_engine *engine, t_xy v0, t_xy v1)
+{
+	t_line			wall;
+	wall.x0 = v0.x - engine->player.where.x;
+	wall.x1 = v1.x - engine->player.where.x;
+	wall.y0 = v0.y - engine->player.where.y;
+	wall.y1 = v1.y - engine->player.where.y;
+	wall = rotate_minimap(wall, engine->player);
+	if (wall.x0 <= 0 && wall.x1 <= 0)
+		return 1;
+	return 0;
+}
 
-void		minimap(t_engine *engine, t_xy v0, t_xy v1, int color)
+ void		minimap(t_engine *engine, t_xy v0, t_xy v1, int color)
 {
 	t_line			wall;
 	t_player		player;
@@ -61,6 +79,33 @@ void		minimap(t_engine *engine, t_xy v0, t_xy v1, int color)
 		wall.y0 = minimap.scale * v0.y - minimap.scale * player.where.y;
 		wall.y1 = minimap.scale * v1.y - minimap.scale * player.where.y;
 		wall = rotate90_minimap(wall);
+		wall = rotate_minimap(wall, player);
+		wall.x0 += minimap.point.x;
+		wall.x1 += minimap.point.x;
+		wall.y0 += minimap.point.y;
+		wall.y1 += minimap.point.y;
+		render_line(wall, engine->screen, engine->minimap.borders);
+	}
+}
+*/
+
+void		minimap(t_engine *engine, t_xy v0, t_xy v1, int color)
+{
+	t_line			wall;
+	t_player		player;
+	t_minimap		minimap;
+
+	player = engine->player;
+	minimap = engine->minimap;
+	render_minimap_hud(minimap, engine->screen);
+	if (color)
+	{
+		wall.color = color;
+		wall.x0 = minimap.scale * v0.x;
+		wall.x1 = minimap.scale * v1.x;
+		wall.y0 = minimap.scale * v0.y;
+		wall.y1 = minimap.scale * v1.y;
+//		wall = rotate90_minimap(wall);
 		wall = rotate_minimap(wall, player);
 		wall.x0 += minimap.point.x;
 		wall.x1 += minimap.point.x;

@@ -21,11 +21,15 @@
 # define W 1280
 # define H 720
 # define CUR_SECT engine->player.sector
+# define MAX_QUEUE 32
 
 # define NEAR_Z 1e-4f				//TODO что это?
 # define FAR_Z 5					//TODO что это?
 # define NEAR_SIDE 1e-5f
 # define FAR_SIDE 20.f
+# define FOV 1.2211f
+# define RFOV 0.6105f
+# define LFOV -0.6105f
 # define floor_diff 10
 # define EyeHeight 6				//camera height
 # define DuckHeight 2.5				//camera height when crouching
@@ -37,12 +41,12 @@
 # define SECTORS engine.sectors
 # define Yaw(y, z) (y + z * engine->player.yaw)		// calculate yaw angle between y and z values (поворот игрока)
 
-typedef struct	q_queue_obj
+typedef struct	q_queue
 {
 	int			sectorno;	//номер сектора
 	int			size_x1;		//
 	int			size_x2;		//
-}				t_queue_obj;
+}				t_queue;
 
 typedef struct	s_delta
 {
@@ -60,6 +64,15 @@ typedef struct	s_line
 	int			y1;
 	int			color;
 }				t_line;
+
+typedef struct	s_fline
+{
+	float			x0;
+	float			x1;
+	float			y0;
+	float			y1;
+	int			color;
+}				t_fline;
 
 typedef struct	s_xy
 {
@@ -123,12 +136,12 @@ typedef struct	s_engine
 	t_player	player;
 	t_sector	*sectors;		//	считанная карта
 	unsigned	num_sectors;	//	количество секторов в карте
-	t_queue_obj		queue[32];
-	t_queue_obj		*future;
-	t_queue_obj		*present;
+	t_queue		queue[MAX_QUEUE];
+	t_queue		*future;
+	t_queue		*present;
 	unsigned	max_queue;
 	unsigned	close_request;
-	int 		tmp;
+	t_fline		wall;
 }				t_engine;
 
 
@@ -143,16 +156,14 @@ void			draw(t_engine *engine);
 
 t_xy			rot_z(t_xy p, float angle);
 void			minimap(t_engine *engine, t_xy v0, t_xy v1, int color);
-void			fill_queue(t_engine *engine, unsigned s);
+void			fill_queue(t_engine *engine);
 void			render_line(t_line p, SDL_Surface *screen, t_line borders);
 void			angle_less_than_45_1(t_line p, SDL_Surface *screen, t_line borders);
 void			angle_more_than_45_1(t_line p, SDL_Surface *screen, t_line borders);
 void			angle_less_than_45_2(t_line p, SDL_Surface *screen, t_line borders);
 void			angle_more_than_45_2(t_line p, SDL_Surface *screen, t_line borders);
-float			point_side(float px, float py, t_xy vert, t_xy vert1);
-t_xy			determine_intersection_point(float *arg);
-int				determine_box_intersection(float *arg);
-int				clamp(int a, int min, int max);
+t_fline		normi_wall(t_sector sector, t_player player, int i);
+t_fline		rotate_wall(t_fline wall, t_player player);
 void			move(t_engine *engine);
 
 #endif

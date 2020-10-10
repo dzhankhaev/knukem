@@ -111,10 +111,16 @@
 		<Unit filename="/home/chel/Desktop/knukem/src/manage_data.c">
 			<Option target="d-k3d"/>
 		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/math_utilits/determine_intersection.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/math_utilits/intersection_point.c">
+			<Option target="d-k3d"/>
+		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/src/math_utilits/mathf.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/math_utilits/vector_operations.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/math_utilits/wall_transform.c">
 			<Option target="d-k3d"/>
 		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/src/move.c">
