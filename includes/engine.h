@@ -22,10 +22,10 @@
 # define H 720
 # define CUR_SECT engine->player.sector //текущий сектор
 # define MAX_QUEUE 32					//максимальная длина очереди секторов
-# define FOV 1.2211f				//фов в радианах (70)
+# define HFOV 1.2211f				//горизонтальный фов в радианах (70)
 //вычисленные заранее координаты конечной точки луча видимости. Подробнее в transform_wall.c
-# define RAY_POINT_X 40.968075f			//50.f * cosf(FOV/2)
-# define RAY_POINT_Y 28.663858f			//50.f * sinf(FOV/2)
+# define RAY_POINT_X 40.968075f			//50.f * cosf(HFOV/2)
+# define RAY_POINT_Y 28.663858f			//50.f * sinf(HFOV/2)
 # define K 0.7f						//Коэффицент уравнения прямой y = kx. Применяется к лучам видимости. Подробнее в transform_wall.c
 # define floor_diff 10				//Отображать на миникарте секторы с разницой в высоте не более floor_diff
 # define EyeHeight 6				//высота камеры
@@ -147,7 +147,7 @@ void			keys_manager(t_engine *engine);
 void			clean_up(t_engine *engine);
 void			draw(t_engine *engine);
 void			transform_wall(t_engine *engine, int i);						//
-t_fline			wall_cut(t_fline wall, t_xy i1, t_xy i2);						//разрезает стену для попадания в fov
+t_fline			cut_wall(t_fline wall, t_xy i1, t_xy i2);						//разрезает стену для попадания в fov
 void			minimap(t_engine *engine, t_xy v0, t_xy v1, int color);			//рисуется отдельно для каждой стены
 void			render_minimap_hud(t_minimap minimap, SDL_Surface *screen);		//рисуется один раз на кадр
 void			fill_queue(t_engine *engine);

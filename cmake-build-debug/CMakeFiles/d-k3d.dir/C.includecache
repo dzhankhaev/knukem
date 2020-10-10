@@ -28,6 +28,10 @@ SDL_mixer.h
 engine.h
 ../includes/engine.h
 
+/home/chel/Desktop/knukem/src/math_utilits/rotate_wall.c
+engine.h
+/home/chel/Desktop/knukem/src/math_utilits/engine.h
+
 /home/chel/Desktop/knukem/src/transform_wall.c
 engine.h
 /home/chel/Desktop/knukem/src/engine.h
