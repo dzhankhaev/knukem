@@ -43,7 +43,7 @@ void	render_minimap_hud(t_minimap minimap, SDL_Surface *screen)
 	render_line(minimap.player_horizontal, screen, borders);
 	render_line(minimap.player_vertical, screen, borders);
 }
-/*
+
 // Это обычная миникарта
  void		minimap(t_engine *engine, t_xy v0, t_xy v1, int color)
 {
@@ -69,9 +69,9 @@ void	render_minimap_hud(t_minimap minimap, SDL_Surface *screen)
 		render_line(wall, engine->screen, engine->minimap.borders);
 	}
 }
-*/
+
 //это миникарта для просмотра отсеченных стен
-void		minimap(t_engine *engine, t_xy v0, t_xy v1, int color)
+void		minimap_cut(t_engine *engine, t_xy v0, t_xy v1, int color)
 {
 	t_line			wall;
 	t_minimap		minimap;

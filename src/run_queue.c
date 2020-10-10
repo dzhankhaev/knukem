@@ -49,10 +49,24 @@ void 		run_queue(t_engine *engine)
 	{
 		fill_queue(engine, engine->present->sectorno, i);
 		//это обычная миникарта
-//		minimap(engine, engine->sectors[present->sectorno].vertex[i],
+//		minimap(engine, engine->sectors[engine->present->sectorno].vertex[i],
 //	engine->sectors[engine->present->sectorno].vertex[i + 1],
 //	engine->wall.color);
 		transform_wall(engine, i);
+		//это миникарта для просмотра отсеченных стен
+		minimap_cut(engine, (t_xy){engine->wall.x0, engine->wall.y0},
+				(t_xy){engine->wall.x1, engine->wall.y1}, engine->wall.color);
 		i++;
 	}
+	//это лучи обзора
+	render_line((t_line){0 + engine->minimap.point.x,
+			  RAY_POINT_Y * engine->minimap.scale + engine->minimap.point.x,
+			  0 + engine->minimap.point.y,
+			  -RAY_POINT_X * engine->minimap.scale + engine->minimap.point.y,
+			  0x0000FF}, engine->screen, engine->minimap.borders);
+	render_line((t_line){0 + engine->minimap.point.x,
+			 -RAY_POINT_Y * engine->minimap.scale + engine->minimap.point.x,
+			 0 + engine->minimap.point.y,
+			 -RAY_POINT_X * engine->minimap.scale + engine->minimap.point.y,
+			 0x0000FF}, engine->screen, engine->minimap.borders);
 }

@@ -16,10 +16,8 @@
 # include <SDL_image.h>
 # include <SDL_mixer.h>*/
 
-//# define W 1920
-//# define H 1080
-# define W 1280
-# define H 720
+# define W 1800
+# define H 950
 # define CUR_SECT engine->player.sector //текущий сектор
 # define MAX_QUEUE 32					//максимальная длина очереди секторов
 # define HFOV 1.2211f				//горизонтальный фов в радианах (70)
@@ -149,6 +147,7 @@ void			draw(t_engine *engine);
 void			transform_wall(t_engine *engine, int i);						//
 t_fline			cut_wall(t_fline wall, t_xy i1, t_xy i2);						//разрезает стену для попадания в fov
 void			minimap(t_engine *engine, t_xy v0, t_xy v1, int color);			//рисуется отдельно для каждой стены
+void			minimap_cut(t_engine *engine, t_xy v0, t_xy v1, int color);		//показывает только то, что в поле зрения
 void			render_minimap_hud(t_minimap minimap, SDL_Surface *screen);		//рисуется один раз на кадр
 void			run_queue(t_engine *engine);
 void			render_line(t_line p, SDL_Surface *screen, t_line borders);
