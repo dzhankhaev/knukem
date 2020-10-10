@@ -23,8 +23,9 @@
 # define CUR_SECT engine->player.sector //текущий сектор
 # define MAX_QUEUE 32					//максимальная длина очереди секторов
 # define FOV 1.2211f				//фов в радианах (70)
-# define RFOV 0.6105f				//Правый луч видимости
-# define LFOV -0.6105f				//Левый луч видимости
+//вычисленные заранее координаты конечной точки луча видимости. Подробнее в transform_wall.c
+# define RAY_POINT_X 40.968075f			//50.f * cosf(FOV/2)
+# define RAY_POINT_Y 28.663858f			//50.f * sinf(FOV/2)
 # define floor_diff 10				//Отображать на миникарте секторы с разницой в высоте не более floor_diff
 # define EyeHeight 6				//высота камеры
 # define DuckHeight 2.5				//высота камеры при приседе
