@@ -25,7 +25,7 @@
 # define RAY_POINT_X 40.968075f			//50.f * cosf(HFOV/2)
 # define RAY_POINT_Y 28.663858f			//50.f * sinf(HFOV/2)
 # define K 0.7f						//Коэффицент уравнения прямой y = kx. Применяется к лучам видимости. Подробнее в transform_wall.c
-# define floor_diff 10				//Отображать на миникарте секторы с разницой в высоте не более floor_diff
+# define floor_diff 6				//Отображать на миникарте секторы с разницой в высоте не более floor_diff
 # define EyeHeight 6				//высота камеры
 # define DuckHeight 2.5				//высота камеры при приседе
 # define HeadMargin 1				//how much room above before the head hits the ceiling
@@ -116,6 +116,7 @@ typedef struct	s_minimap
 	t_line		player_vertical;	//стрелка игрока
 	t_line		player_horizontal;	//стрелка игрока
 	t_line		borders;			//границы отображения миникарты
+	int			mod;
 }				t_minimap;
 
 typedef struct	s_engine
@@ -123,10 +124,10 @@ typedef struct	s_engine
 	SDL_Window	*window;
 	SDL_Surface	*screen;
 	t_minimap	minimap;
-	t_line		borders;			//границы отображения (установлены во всё окно)
+	t_line		borders;			//	границы отображения (установлены во всё окно)
 	t_player	player;
-	t_sector	*sectors;		//	считанная карта
-	unsigned	num_sectors;	//	количество секторов в карте
+	t_sector	*sectors;			//	считанная карта
+	unsigned	num_sectors;		//	количество секторов в карте
 	t_queue		queue[MAX_QUEUE];
 	t_queue		*future;
 	t_queue		*present;

@@ -30,6 +30,7 @@ void	render_minimap_hud(t_minimap minimap, SDL_Surface *screen)
 	t_line borders;
 
 	borders = minimap.borders;
+	//это границы по краям миникарты
 	w = (t_line){borders.x0, borders.x1, borders.y0, borders.y0, borders.color};
 	render_line(w, screen, borders);
 	w = (t_line){borders.x0, borders.x0, borders.y0, borders.y1, borders.color};
@@ -40,8 +41,18 @@ void	render_minimap_hud(t_minimap minimap, SDL_Surface *screen)
 	w = (t_line){borders.x1 - 1, borders.x1 - 1, borders.y0, borders.y1,
 			  borders.color};
 	render_line(w, screen, borders);
+	//это стрелка игрока
 	render_line(minimap.player_horizontal, screen, borders);
 	render_line(minimap.player_vertical, screen, borders);
+	//это лучи обзора
+	render_line((t_line){minimap.point.x,
+		RAY_POINT_Y * minimap.scale + minimap.point.x, minimap.point.y,
+		-RAY_POINT_X * minimap.scale + minimap.point.y, 0x0000FF},
+		screen, minimap.borders);
+	render_line((t_line){minimap.point.x,
+		-RAY_POINT_Y * minimap.scale + minimap.point.x, minimap.point.y,
+		-RAY_POINT_X * minimap.scale + minimap.point.y, 0x0000FF},
+		screen, minimap.borders);
 }
 
 // Это обычная миникарта
