@@ -18,7 +18,6 @@ static t_fline	swap(t_fline wall)
 
 static t_fline	cut1(t_fline wall, t_xy i1)
 {
-	wall = swap(wall);
 	if (fabsf(wall.x0 - wall.x1) > fabsf(wall.y0 - wall.y1)
 		&& wall.x0 > wall.x1)
 	{
@@ -35,7 +34,6 @@ static t_fline	cut1(t_fline wall, t_xy i1)
 
 static t_fline	cut2(t_fline wall, t_xy i2)
 {
-	wall = swap(wall);
 	if (fabsf(wall.x0 - wall.x1) < fabsf(wall.y0 - wall.y1)
 		|| wall.x0 > wall.x1)
 	{
@@ -53,6 +51,7 @@ static t_fline	cut2(t_fline wall, t_xy i2)
 //по левому лучу видимости и по правому
 t_fline 		cut_wall(t_fline wall, t_xy i1, t_xy i2)
 {
+	wall = swap(wall);
 	if (i1.x != -1)
 		wall = cut1(wall, i1);
 	if (i2.x != -1)

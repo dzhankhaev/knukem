@@ -16,15 +16,19 @@
 # include <SDL_image.h>
 # include <SDL_mixer.h>*/
 
-# define W 1800
-# define H 950
+# define W 1920
+# define H 1080
 # define CUR_SECT engine->player.sector //текущий сектор
 # define MAX_QUEUE 32					//максимальная длина очереди секторов
-# define HFOV 1.2211f				//горизонтальный фов в радианах (70)
+//# define HFOV 1.2211f					//горизонтальный фов в радианах (70)
 //вычисленные заранее координаты конечной точки луча видимости. Подробнее в transform_wall.c
-# define RAY_POINT_X 40.968075f			//50.f * cosf(HFOV/2)
-# define RAY_POINT_Y 28.663858f			//50.f * sinf(HFOV/2)
-# define K 0.7f						//Коэффицент уравнения прямой y = kx. Применяется к лучам видимости. Подробнее в transform_wall.c
+//# define RAY_POINT_X 40.968075f		//50.f * cosf(HFOV/2)
+//# define RAY_POINT_Y 28.663858f		//50.f * sinf(HFOV/2)
+//# define K 0.7f
+#define HFOV 1.57f					//горизонтальный фов в радианах (90)
+# define RAY_POINT_X 35.f
+# define RAY_POINT_Y 35.f
+# define K 1.f					//Коэффицент уравнения прямой y = kx. Применяется к лучам видимости. Подробнее в transform_wall.c
 # define floor_diff 6				//Отображать на миникарте секторы с разницой в высоте не более floor_diff
 # define EyeHeight 6				//высота камеры
 # define DuckHeight 2.5				//высота камеры при приседе
@@ -99,6 +103,7 @@ typedef	struct	s_player
 	float		yaw;			//	and player angle when looking up and down
 	unsigned	sector;			//	текущий сектор
 	int			wsad[4];		//	ключи передвижения. 1 - движение, 0 - его отсутстие
+	int			cntrl;
 	float		move_vec[2];
 	int			ground;
 	int			falling;		//	1 - игрок падает, 0 - не падает. Так же используется при приседании
@@ -119,6 +124,18 @@ typedef struct	s_minimap
 	int			mod;
 }				t_minimap;
 
+typedef struct	s_tmp
+{
+	float		xscale1;
+	float		yscale1;
+	float		xscale2;
+	float		yscale2;
+	int			x1;
+	int			x2;
+	float		yceil;
+	float		yfloor;
+}				t_tmp;
+
 typedef struct	s_engine
 {
 	SDL_Window	*window;
@@ -134,6 +151,7 @@ typedef struct	s_engine
 	unsigned	max_queue;
 	unsigned	close_request;
 	t_fline		wall;
+	t_tmp		tmp;
 }				t_engine;
 
 

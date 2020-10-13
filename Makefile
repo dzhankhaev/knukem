@@ -17,14 +17,6 @@ HEADERS := engine.h\
 
 
 SRC := main.c\
-	render/rotate.c\
-	render/minimap.c\
-	render/line/render_line.c\
-	render/line/render_line_with_angle.c\
-	math_utilits/determine_intersection.c\
-	math_utilits/mathf.c\
-	math_utilits/intersection_point.c\
-	math_utilits/rotate_wall.c\
 	run_queue.c\
 	init_engine.c\
 	move.c\
@@ -33,6 +25,13 @@ SRC := main.c\
 	keys_manager.c\
 	manage_data.c\
 	game_loop.c\
+	math_utilits/determine_intersection.c\
+    math_utilits/mathf.c\
+    math_utilits/intersection_point.c\
+    math_utilits/rotate_wall.c\
+	render/minimap.c\
+	render/line/render_line.c\
+	render/line/render_line_with_angle.c\
 
 
 OBJ := $(SRC:.c=.o)

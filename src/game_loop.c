@@ -30,16 +30,16 @@ void	init_minimap(t_engine *engine)
 	engine->minimap.player_vertical.y0 = engine->minimap.point.y - 11;
 	engine->minimap.player_vertical.x1 = engine->minimap.point.x;
 	engine->minimap.player_vertical.y1 = engine->minimap.point.y + 3;
-//	engine->minimap.borders = (t_line){0, W,
-//									0, H, 0x555555};
-	engine->minimap.borders = (t_line){W - W / 4, W,
-									H - H / 3, H, 0x555555};
+//	engine->minimap.borders = (t_line){0, W, 0, H, 0x555555};
+	engine->minimap.borders = (t_line){W - W / 4, W,H - H / 3, H, 0x555555};
 	engine->minimap.mod = 0;
 }
 
 void	game_loop(t_engine *engine)
 {
-	engine->borders = (t_line){0, W, 0, H, 0};
+	engine->borders = (t_line){0, W, 0, H, 0x555555};
+	engine->player.cntrl = 0;
+	engine->player.eyeheight = EyeHeight;
 	init_minimap(engine);
 	while (!engine->close_request)
 	{

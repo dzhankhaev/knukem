@@ -2,7 +2,6 @@
 
 static void keyboard_event(t_engine *engine)
 {
-	engine->player.eyeheight = EyeHeight;
 	while (SDL_PollEvent(&engine->player.event))
 	{
 		if (engine->player.event.type == SDL_KEYDOWN || engine->player.event.type == SDL_KEYUP)
