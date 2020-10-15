@@ -32,8 +32,6 @@ SRC := main.c\
 	render/minimap.c\
 	render/line/render_line.c\
 	render/line/render_line_with_angle.c\
-#	ft_col_dec.c\
-#	ft_render_walls.c\
 
 
 OBJ := $(SRC:.c=.o)
