@@ -12,7 +12,7 @@
 
 #include "engine.h"
 
-void	angle_less_than_45_1(t_line p, SDL_Surface *screen)
+void	angle_less_than_45_1(t_line p, SDL_Surface *screen, t_line borders)
 {
 	int		*temp;
 	t_delta	d;
@@ -24,7 +24,8 @@ void	angle_less_than_45_1(t_line p, SDL_Surface *screen)
 	d.derror = d.dy + 1;
 	while (p.x0 < p.x1)
 	{
-		if (p.x0 >= 0 && p.x0 < W && p.y0 >= 0 && p.y0 < H)
+		if (p.x0 >= borders.x0 && p.x0 < borders.x1
+		&& p.y0 >= borders.y0 && p.y0 < borders.y1)
 			temp[(p.y0 * W) + p.x0] = p.color;
 		d.error += d.derror;
 		if (d.error >= d.dx + 1)
@@ -36,7 +37,7 @@ void	angle_less_than_45_1(t_line p, SDL_Surface *screen)
 	}
 }
 
-void	angle_more_than_45_1(t_line p, SDL_Surface *screen)
+void	angle_more_than_45_1(t_line p, SDL_Surface *screen, t_line borders)
 {
 	int 	*temp;
 	t_delta	d;
@@ -48,7 +49,8 @@ void	angle_more_than_45_1(t_line p, SDL_Surface *screen)
 	d.derror = d.dx + 1;
 	while (p.y0 < p.y1)
 	{
-		if (p.x0 >= 0 && p.x0 < W && p.y0 >= 0 && p.y0 < H)
+		if (p.x0 >= borders.x0 && p.x0 < borders.x1
+		&& p.y0 >= borders.y0 && p.y0 < borders.y1)
 			temp[(p.y0 * W) + p.x0] = p.color;
 		d.error += d.derror;
 		if (d.error >= d.dy + 1)
@@ -60,7 +62,7 @@ void	angle_more_than_45_1(t_line p, SDL_Surface *screen)
 	}
 }
 
-void	angle_less_than_45_2(t_line p, SDL_Surface *screen)
+void	angle_less_than_45_2(t_line p, SDL_Surface *screen, t_line borders)
 {
 	int		*temp;
 	t_delta	d;
@@ -72,7 +74,8 @@ void	angle_less_than_45_2(t_line p, SDL_Surface *screen)
 	d.derror = d.dy + 1;
 	while (p.x0 > p.x1)
 	{
-		if (p.x0 >= 0 && p.x0 < W && p.y0 >= 0 && p.y0 < H)
+		if (p.x0 >= borders.x0 && p.x0 < borders.x1
+		&& p.y0 >= borders.y0 && p.y0 < borders.y1)
 			temp[(p.y0 * W) + p.x0] = p.color;
 		d.error += d.derror;
 		if (d.error >= d.dx + 1)
@@ -84,7 +87,7 @@ void	angle_less_than_45_2(t_line p, SDL_Surface *screen)
 	}
 }
 
-void	angle_more_than_45_2(t_line p, SDL_Surface *screen)
+void	angle_more_than_45_2(t_line p, SDL_Surface *screen, t_line borders)
 {
 	int		*temp;
 	t_delta	d;
@@ -96,7 +99,8 @@ void	angle_more_than_45_2(t_line p, SDL_Surface *screen)
 	d.derror = d.dx + 1;
 	while (p.y0 > p.y1)
 	{
-		if (p.x0 >= 0 && p.x0 < W && p.y0 >= 0 && p.y0 < H)
+		if (p.x0 >= borders.x0 && p.x0 < borders.x1
+		&& p.y0 >= borders.y0 && p.y0 < borders.y1)
 			temp[(p.y0 * W) + p.x0] = p.color;
 		d.error += d.derror;
 		if (d.error >= d.dy + 1)

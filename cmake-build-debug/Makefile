@@ -59,19 +59,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /snap/clion/124/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /snap/clion/124/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/dgruyere/projects/knukem
+CMAKE_SOURCE_DIR = /home/chel/Desktop/knukem
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/dgruyere/projects/knukem/cmake-build-debug
+CMAKE_BINARY_DIR = /home/chel/Desktop/knukem/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,7 +79,7 @@ CMAKE_BINARY_DIR = /Users/dgruyere/projects/knukem/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/124/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -90,7 +90,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/124/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dgruyere/projects/knukem/cmake-build-debug/CMakeFiles /Users/dgruyere/projects/knukem/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles /home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dgruyere/projects/knukem/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -142,6 +142,60 @@ d-k3d: cmake_check_build_system
 d-k3d/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/build
 .PHONY : d-k3d/fast
+
+src/fill_queue.o: src/fill_queue.c.o
+
+.PHONY : src/fill_queue.o
+
+# target to build an object file
+src/fill_queue.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/fill_queue.c.o
+.PHONY : src/fill_queue.c.o
+
+src/fill_queue.i: src/fill_queue.c.i
+
+.PHONY : src/fill_queue.i
+
+# target to preprocess a source file
+src/fill_queue.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/fill_queue.c.i
+.PHONY : src/fill_queue.c.i
+
+src/fill_queue.s: src/fill_queue.c.s
+
+.PHONY : src/fill_queue.s
+
+# target to generate assembly for a file
+src/fill_queue.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/fill_queue.c.s
+.PHONY : src/fill_queue.c.s
+
+src/game_loop.o: src/game_loop.c.o
+
+.PHONY : src/game_loop.o
+
+# target to build an object file
+src/game_loop.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/game_loop.c.o
+.PHONY : src/game_loop.c.o
+
+src/game_loop.i: src/game_loop.c.i
+
+.PHONY : src/game_loop.i
+
+# target to preprocess a source file
+src/game_loop.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/game_loop.c.i
+.PHONY : src/game_loop.c.i
+
+src/game_loop.s: src/game_loop.c.s
+
+.PHONY : src/game_loop.s
+
+# target to generate assembly for a file
+src/game_loop.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/game_loop.c.s
+.PHONY : src/game_loop.c.s
 
 src/init_engine.o: src/init_engine.c.o
 
@@ -386,6 +440,33 @@ src/render/line/render_line_with_angle.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.s
 .PHONY : src/render/line/render_line_with_angle.c.s
 
+src/render/minimap.o: src/render/minimap.c.o
+
+.PHONY : src/render/minimap.o
+
+# target to build an object file
+src/render/minimap.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/minimap.c.o
+.PHONY : src/render/minimap.c.o
+
+src/render/minimap.i: src/render/minimap.c.i
+
+.PHONY : src/render/minimap.i
+
+# target to preprocess a source file
+src/render/minimap.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/minimap.c.i
+.PHONY : src/render/minimap.c.i
+
+src/render/minimap.s: src/render/minimap.c.s
+
+.PHONY : src/render/minimap.s
+
+# target to generate assembly for a file
+src/render/minimap.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/minimap.c.s
+.PHONY : src/render/minimap.c.s
+
 src/render/rotate.o: src/render/rotate.c.o
 
 .PHONY : src/render/rotate.o
@@ -413,33 +494,6 @@ src/render/rotate.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/rotate.c.s
 .PHONY : src/render/rotate.c.s
 
-src/start_game.o: src/start_game.c.o
-
-.PHONY : src/start_game.o
-
-# target to build an object file
-src/start_game.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/start_game.c.o
-.PHONY : src/start_game.c.o
-
-src/start_game.i: src/start_game.c.i
-
-.PHONY : src/start_game.i
-
-# target to preprocess a source file
-src/start_game.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/start_game.c.i
-.PHONY : src/start_game.c.i
-
-src/start_game.s: src/start_game.c.s
-
-.PHONY : src/start_game.s
-
-# target to generate assembly for a file
-src/start_game.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/start_game.c.s
-.PHONY : src/start_game.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -449,6 +503,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... d-k3d"
+	@echo "... src/fill_queue.o"
+	@echo "... src/fill_queue.i"
+	@echo "... src/fill_queue.s"
+	@echo "... src/game_loop.o"
+	@echo "... src/game_loop.i"
+	@echo "... src/game_loop.s"
 	@echo "... src/init_engine.o"
 	@echo "... src/init_engine.i"
 	@echo "... src/init_engine.s"
@@ -476,12 +536,12 @@ help:
 	@echo "... src/render/line/render_line_with_angle.o"
 	@echo "... src/render/line/render_line_with_angle.i"
 	@echo "... src/render/line/render_line_with_angle.s"
+	@echo "... src/render/minimap.o"
+	@echo "... src/render/minimap.i"
+	@echo "... src/render/minimap.s"
 	@echo "... src/render/rotate.o"
 	@echo "... src/render/rotate.i"
 	@echo "... src/render/rotate.s"
-	@echo "... src/start_game.o"
-	@echo "... src/start_game.i"
-	@echo "... src/start_game.s"
 .PHONY : help
 
 

@@ -5,9 +5,9 @@
 # include <stdio.h>
 # include <string.h>
 # include <SDL2/SDL.h>
-# include <SDL2_ttf/SDL_ttf.h>
-# include <SDL2_image/SDL_image.h>
-# include <SDL2_mixer/SDL_mixer.h>
+//# include <SDL2_ttf/SDL_ttf.h>
+//# include <SDL2_image/SDL_image.h>
+//# include <SDL2_mixer/SDL_mixer.h>
 /*
  * ЗАКОММЕНТИРУЙ, ЕСЛИ НЕ КОМПИЛИТСЯ! Временное решение
  */
@@ -16,10 +16,10 @@
 # include <SDL_image.h>
 # include <SDL_mixer.h>*/
 
-# define W 1920
-# define H 1080
-//# define W 1280
-//# define H 720
+//# define W 1920
+//# define H 1080
+# define W 1280
+# define H 720
 # define CUR_SECT engine->player.sector
 
 # define NEAR_Z 1e-4f				//TODO что это?
@@ -35,14 +35,14 @@
 # define vfov (.2f * H)				//vertical FOV
 # define PLAYER engine.player
 # define SECTORS engine.sectors
-# define Yaw(y, z) (y + z * engine->player.yaw)				// calculate yaw angle between y and z values (поворот игрока)
+# define Yaw(y, z) (y + z * engine->player.yaw)		// calculate yaw angle between y and z values (поворот игрока)
 
-typedef struct	item
+typedef struct	q_queue_obj
 {
 	int			sectorno;	//номер сектора
 	int			size_x1;		//
 	int			size_x2;		//
-}				t_item;
+}				t_queue_obj;
 
 typedef struct	s_delta
 {
@@ -105,40 +105,50 @@ typedef	struct	s_player
 	SDL_Event	event;
 }				t_player;
 
+typedef struct	s_minimap
+{
+	t_xy		point;				//центр миникарты
+	unsigned	scale;				//масштаб миникарты
+	t_line		player_vertical;	//стрелка игрока
+	t_line		player_horizontal;	//стрелка игрока
+	t_line		borders;			//границы отображения миникарты
+}				t_minimap;
+
 typedef struct	s_engine
 {
 	SDL_Window	*window;
 	SDL_Surface	*screen;
-	t_xy		minimap_x_y;	//центр миникарты
-	unsigned	minimap_scale;	//масштаб миникарты
+	t_minimap	minimap;
+	t_line		borders;			//границы отображения (установлены во всё окно)
 	t_player	player;
 	t_sector	*sectors;		//	считанная карта
 	unsigned	num_sectors;	//	количество секторов в карте
-	unsigned	queue[32];
-	unsigned	*future;
-	unsigned	*present;
+	t_queue_obj		queue[32];
+	t_queue_obj		*future;
+	t_queue_obj		*present;
 	unsigned	max_queue;
 	unsigned	close_request;
+	int 		tmp;
 }				t_engine;
 
 
 int				init_engine(t_engine *engine);
 void			load_data(t_engine *engine);
 void			unload_data(t_engine *engine);
-void			start_game(t_engine *engine);
+void			game_loop(t_engine *engine);
 void			move_player(float dx, float dy, t_engine *engine);
 void			keys_manager(t_engine *engine);
 void			clean_up(t_engine *engine);
 void			draw(t_engine *engine);
 
-t_xy			rot_z(t_xy p, double angle);
-void			minimap(t_engine *engine, t_line wall);
-void			render_wall(t_engine *engine, unsigned s);
-void			render_line(t_line p, SDL_Surface *screen);
-void			angle_less_than_45_1(t_line p, SDL_Surface *screen);
-void			angle_more_than_45_1(t_line p, SDL_Surface *screen);
-void			angle_less_than_45_2(t_line p, SDL_Surface *screen);
-void			angle_more_than_45_2(t_line p, SDL_Surface *screen);
+t_xy			rot_z(t_xy p, float angle);
+void			minimap(t_engine *engine, t_xy v0, t_xy v1, int color);
+void			fill_queue(t_engine *engine, unsigned s);
+void			render_line(t_line p, SDL_Surface *screen, t_line borders);
+void			angle_less_than_45_1(t_line p, SDL_Surface *screen, t_line borders);
+void			angle_more_than_45_1(t_line p, SDL_Surface *screen, t_line borders);
+void			angle_less_than_45_2(t_line p, SDL_Surface *screen, t_line borders);
+void			angle_more_than_45_2(t_line p, SDL_Surface *screen, t_line borders);
 float			point_side(float px, float py, t_xy vert, t_xy vert1);
 t_xy			determine_intersection_point(float *arg);
 int				determine_box_intersection(float *arg);

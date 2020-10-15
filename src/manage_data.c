@@ -2,35 +2,35 @@
 #include <fcntl.h>
 #include "libft.h"
 
-void	load_data_(t_engine *engine)
-{
-	char		*line;
-	struct s_xy	*vert;
-	struct s_xy	v;
-	int			n;
-	int			m;
-	int			NumVertices;
-	int			*num;
-	int			fd;
-	float		angle;
+// void	load_data_(t_engine *engine)
+// {
+// 	char		*line;
+// 	struct s_xy	*vert;
+// 	struct s_xy	v;
+// 	int			n;
+// 	int			m;
+// 	int			NumVertices;
+// 	int			*num;
+// 	int			fd;
+// 	float		angle;
 
-	vert = NULL;
-	NumVertices = 0;
-	engine->sectors = NULL;
+// 	vert = NULL;
+// 	NumVertices = 0;
+// 	engine->sectors = NULL;
 
-	if (!(fd = open("map-clear.txt", O_RDONLY)))
-	{
-		perror("map-clear.txt");
-		exit(1);
-	}
-	while (get_next_line(fd, line))
-	{
+// 	if (!(fd = open("map-clear.txt", O_RDONLY)))
+// 	{
+// 		perror("map-clear.txt");
+// 		exit(1);
+// 	}
+// 	while (get_next_line(fd, line))
+// 	{
 		
-	}
-	close(fd);
+// 	}
+// 	close(fd);
 
 
-}
+// }
 
 
 void	load_data(t_engine *engine)

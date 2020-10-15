@@ -54,19 +54,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /snap/clion/124/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /snap/clion/124/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/dgruyere/projects/knukem
+CMAKE_SOURCE_DIR = /home/chel/Desktop/knukem
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/dgruyere/projects/knukem/cmake-build-debug
+CMAKE_BINARY_DIR = /home/chel/Desktop/knukem/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/d-k3d.dir/depend.make
@@ -79,158 +79,186 @@ include CMakeFiles/d-k3d.dir/flags.make
 
 CMakeFiles/d-k3d.dir/src/init_engine.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/init_engine.c.o: ../src/init_engine.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/d-k3d.dir/src/init_engine.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/init_engine.c.o   -c /Users/dgruyere/projects/knukem/src/init_engine.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/d-k3d.dir/src/init_engine.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/init_engine.c.o   -c /home/chel/Desktop/knukem/src/init_engine.c
 
 CMakeFiles/d-k3d.dir/src/init_engine.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/init_engine.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem/src/init_engine.c > CMakeFiles/d-k3d.dir/src/init_engine.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/init_engine.c > CMakeFiles/d-k3d.dir/src/init_engine.c.i
 
 CMakeFiles/d-k3d.dir/src/init_engine.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/init_engine.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem/src/init_engine.c -o CMakeFiles/d-k3d.dir/src/init_engine.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/init_engine.c -o CMakeFiles/d-k3d.dir/src/init_engine.c.s
 
 CMakeFiles/d-k3d.dir/src/keys_manager.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/keys_manager.c.o: ../src/keys_manager.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/d-k3d.dir/src/keys_manager.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/keys_manager.c.o   -c /Users/dgruyere/projects/knukem/src/keys_manager.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/d-k3d.dir/src/keys_manager.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/keys_manager.c.o   -c /home/chel/Desktop/knukem/src/keys_manager.c
 
 CMakeFiles/d-k3d.dir/src/keys_manager.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/keys_manager.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem/src/keys_manager.c > CMakeFiles/d-k3d.dir/src/keys_manager.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/keys_manager.c > CMakeFiles/d-k3d.dir/src/keys_manager.c.i
 
 CMakeFiles/d-k3d.dir/src/keys_manager.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/keys_manager.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem/src/keys_manager.c -o CMakeFiles/d-k3d.dir/src/keys_manager.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/keys_manager.c -o CMakeFiles/d-k3d.dir/src/keys_manager.c.s
 
 CMakeFiles/d-k3d.dir/src/manage_data.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/manage_data.c.o: ../src/manage_data.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/d-k3d.dir/src/manage_data.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/manage_data.c.o   -c /Users/dgruyere/projects/knukem/src/manage_data.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/d-k3d.dir/src/manage_data.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/manage_data.c.o   -c /home/chel/Desktop/knukem/src/manage_data.c
 
 CMakeFiles/d-k3d.dir/src/manage_data.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/manage_data.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem/src/manage_data.c > CMakeFiles/d-k3d.dir/src/manage_data.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/manage_data.c > CMakeFiles/d-k3d.dir/src/manage_data.c.i
 
 CMakeFiles/d-k3d.dir/src/manage_data.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/manage_data.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem/src/manage_data.c -o CMakeFiles/d-k3d.dir/src/manage_data.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/manage_data.c -o CMakeFiles/d-k3d.dir/src/manage_data.c.s
 
-CMakeFiles/d-k3d.dir/src/start_game.c.o: CMakeFiles/d-k3d.dir/flags.make
-CMakeFiles/d-k3d.dir/src/start_game.c.o: ../src/start_game.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/d-k3d.dir/src/start_game.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/start_game.c.o   -c /Users/dgruyere/projects/knukem/src/start_game.c
+CMakeFiles/d-k3d.dir/src/game_loop.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/game_loop.c.o: ../src/game_loop.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/d-k3d.dir/src/game_loop.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/game_loop.c.o   -c /home/chel/Desktop/knukem/src/game_loop.c
 
-CMakeFiles/d-k3d.dir/src/start_game.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/start_game.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem/src/start_game.c > CMakeFiles/d-k3d.dir/src/start_game.c.i
+CMakeFiles/d-k3d.dir/src/game_loop.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/game_loop.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/game_loop.c > CMakeFiles/d-k3d.dir/src/game_loop.c.i
 
-CMakeFiles/d-k3d.dir/src/start_game.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/start_game.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem/src/start_game.c -o CMakeFiles/d-k3d.dir/src/start_game.c.s
+CMakeFiles/d-k3d.dir/src/game_loop.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/game_loop.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/game_loop.c -o CMakeFiles/d-k3d.dir/src/game_loop.c.s
 
 CMakeFiles/d-k3d.dir/src/main.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/main.c.o: ../src/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/d-k3d.dir/src/main.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/main.c.o   -c /Users/dgruyere/projects/knukem/src/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/d-k3d.dir/src/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/main.c.o   -c /home/chel/Desktop/knukem/src/main.c
 
 CMakeFiles/d-k3d.dir/src/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/main.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem/src/main.c > CMakeFiles/d-k3d.dir/src/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/main.c > CMakeFiles/d-k3d.dir/src/main.c.i
 
 CMakeFiles/d-k3d.dir/src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/main.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem/src/main.c -o CMakeFiles/d-k3d.dir/src/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/main.c -o CMakeFiles/d-k3d.dir/src/main.c.s
+
+CMakeFiles/d-k3d.dir/src/fill_queue.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/fill_queue.c.o: ../src/fill_queue.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/d-k3d.dir/src/fill_queue.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/fill_queue.c.o   -c /home/chel/Desktop/knukem/src/fill_queue.c
+
+CMakeFiles/d-k3d.dir/src/fill_queue.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/fill_queue.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/fill_queue.c > CMakeFiles/d-k3d.dir/src/fill_queue.c.i
+
+CMakeFiles/d-k3d.dir/src/fill_queue.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/fill_queue.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/fill_queue.c -o CMakeFiles/d-k3d.dir/src/fill_queue.c.s
 
 CMakeFiles/d-k3d.dir/src/move.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/move.c.o: ../src/move.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/d-k3d.dir/src/move.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/move.c.o   -c /Users/dgruyere/projects/knukem/src/move.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/d-k3d.dir/src/move.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/move.c.o   -c /home/chel/Desktop/knukem/src/move.c
 
 CMakeFiles/d-k3d.dir/src/move.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/move.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem/src/move.c > CMakeFiles/d-k3d.dir/src/move.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/move.c > CMakeFiles/d-k3d.dir/src/move.c.i
 
 CMakeFiles/d-k3d.dir/src/move.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/move.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem/src/move.c -o CMakeFiles/d-k3d.dir/src/move.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/move.c -o CMakeFiles/d-k3d.dir/src/move.c.s
 
 CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.o: ../src/math_utilits/vector_operations.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.o   -c /Users/dgruyere/projects/knukem/src/math_utilits/vector_operations.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.o   -c /home/chel/Desktop/knukem/src/math_utilits/vector_operations.c
 
 CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem/src/math_utilits/vector_operations.c > CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/math_utilits/vector_operations.c > CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.i
 
 CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem/src/math_utilits/vector_operations.c -o CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/math_utilits/vector_operations.c -o CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.s
 
 CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.o: ../src/math_utilits/mathf.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.o   -c /Users/dgruyere/projects/knukem/src/math_utilits/mathf.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.o   -c /home/chel/Desktop/knukem/src/math_utilits/mathf.c
 
 CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem/src/math_utilits/mathf.c > CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/math_utilits/mathf.c > CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.i
 
 CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem/src/math_utilits/mathf.c -o CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/math_utilits/mathf.c -o CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.s
 
 CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o: ../src/render/line/render_line.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o   -c /Users/dgruyere/projects/knukem/src/render/line/render_line.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o   -c /home/chel/Desktop/knukem/src/render/line/render_line.c
 
 CMakeFiles/d-k3d.dir/src/render/line/render_line.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/line/render_line.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem/src/render/line/render_line.c > CMakeFiles/d-k3d.dir/src/render/line/render_line.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/render/line/render_line.c > CMakeFiles/d-k3d.dir/src/render/line/render_line.c.i
 
 CMakeFiles/d-k3d.dir/src/render/line/render_line.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/line/render_line.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem/src/render/line/render_line.c -o CMakeFiles/d-k3d.dir/src/render/line/render_line.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/render/line/render_line.c -o CMakeFiles/d-k3d.dir/src/render/line/render_line.c.s
+
+CMakeFiles/d-k3d.dir/src/render/minimap.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/render/minimap.c.o: ../src/render/minimap.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/d-k3d.dir/src/render/minimap.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/minimap.c.o   -c /home/chel/Desktop/knukem/src/render/minimap.c
+
+CMakeFiles/d-k3d.dir/src/render/minimap.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/minimap.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/render/minimap.c > CMakeFiles/d-k3d.dir/src/render/minimap.c.i
+
+CMakeFiles/d-k3d.dir/src/render/minimap.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/minimap.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/render/minimap.c -o CMakeFiles/d-k3d.dir/src/render/minimap.c.s
 
 CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.o: ../src/render/line/render_line_with_angle.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.o   -c /Users/dgruyere/projects/knukem/src/render/line/render_line_with_angle.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.o   -c /home/chel/Desktop/knukem/src/render/line/render_line_with_angle.c
 
 CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem/src/render/line/render_line_with_angle.c > CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/render/line/render_line_with_angle.c > CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.i
 
 CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem/src/render/line/render_line_with_angle.c -o CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/render/line/render_line_with_angle.c -o CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.s
 
 CMakeFiles/d-k3d.dir/src/render/rotate.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/render/rotate.c.o: ../src/render/rotate.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/d-k3d.dir/src/render/rotate.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/rotate.c.o   -c /Users/dgruyere/projects/knukem/src/render/rotate.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/d-k3d.dir/src/render/rotate.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/rotate.c.o   -c /home/chel/Desktop/knukem/src/render/rotate.c
 
 CMakeFiles/d-k3d.dir/src/render/rotate.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/rotate.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem/src/render/rotate.c > CMakeFiles/d-k3d.dir/src/render/rotate.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/render/rotate.c > CMakeFiles/d-k3d.dir/src/render/rotate.c.i
 
 CMakeFiles/d-k3d.dir/src/render/rotate.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/rotate.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem/src/render/rotate.c -o CMakeFiles/d-k3d.dir/src/render/rotate.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/render/rotate.c -o CMakeFiles/d-k3d.dir/src/render/rotate.c.s
 
 # Object files for target d-k3d
 d__k3d_OBJECTS = \
 "CMakeFiles/d-k3d.dir/src/init_engine.c.o" \
 "CMakeFiles/d-k3d.dir/src/keys_manager.c.o" \
 "CMakeFiles/d-k3d.dir/src/manage_data.c.o" \
-"CMakeFiles/d-k3d.dir/src/start_game.c.o" \
+"CMakeFiles/d-k3d.dir/src/game_loop.c.o" \
 "CMakeFiles/d-k3d.dir/src/main.c.o" \
+"CMakeFiles/d-k3d.dir/src/fill_queue.c.o" \
 "CMakeFiles/d-k3d.dir/src/move.c.o" \
 "CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.o" \
 "CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.o" \
 "CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o" \
+"CMakeFiles/d-k3d.dir/src/render/minimap.c.o" \
 "CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.o" \
 "CMakeFiles/d-k3d.dir/src/render/rotate.c.o"
 
@@ -240,25 +268,19 @@ d__k3d_EXTERNAL_OBJECTS =
 d-k3d: CMakeFiles/d-k3d.dir/src/init_engine.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/keys_manager.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/manage_data.c.o
-d-k3d: CMakeFiles/d-k3d.dir/src/start_game.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/game_loop.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/main.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/fill_queue.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/move.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/render/minimap.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/render/rotate.c.o
 d-k3d: CMakeFiles/d-k3d.dir/build.make
-d-k3d: ~/.brew/Cellar/sdl2/2.0.12_1/lib/libSDL2-2.0.0.dylib
-d-k3d: ~/.brew/Cellar/sdl2/2.0.12_1/lib/libSDL2.dylib
-d-k3d: ~/.brew/Cellar/sdl2_image/2.0.5/lib/libSDL2_image-2.0.0.dylib
-d-k3d: ~/.brew/Cellar/sdl2_image/2.0.5/lib/libSDL2_image.dylib
-d-k3d: ~/.brew/Cellar/sdl2_mixer/2.0.4/lib/libSDL2_mixer-2.0.0.dylib
-d-k3d: ~/.brew/Cellar/sdl2_mixer/2.0.4/lib/libSDL2_mixer.dylib
-d-k3d: ~/.brew/Cellar/sdl2_ttf/2.0.15/lib/libSDL2_ttf-2.0.0.dylib
-d-k3d: ~/.brew/Cellar/sdl2_ttf/2.0.15/lib/libSDL2_ttf.dylib
 d-k3d: CMakeFiles/d-k3d.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dgruyere/projects/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking C executable d-k3d"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking C executable d-k3d"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/d-k3d.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -271,6 +293,6 @@ CMakeFiles/d-k3d.dir/clean:
 .PHONY : CMakeFiles/d-k3d.dir/clean
 
 CMakeFiles/d-k3d.dir/depend:
-	cd /Users/dgruyere/projects/knukem/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/dgruyere/projects/knukem /Users/dgruyere/projects/knukem /Users/dgruyere/projects/knukem/cmake-build-debug /Users/dgruyere/projects/knukem/cmake-build-debug /Users/dgruyere/projects/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/chel/Desktop/knukem/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chel/Desktop/knukem /home/chel/Desktop/knukem /home/chel/Desktop/knukem/cmake-build-debug /home/chel/Desktop/knukem/cmake-build-debug /home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/d-k3d.dir/depend
 
