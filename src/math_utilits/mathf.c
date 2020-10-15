@@ -10,9 +10,9 @@ int	int_max(int a, int b)
 	return (((a) > (b)) ? (a) : (b));
 }
 
-int clamp(int a, int min, int max)
+float clamp(float a, float min, float max)
 {
-	return int_min(int_max(a, min), max);
+	return fminf(fmaxf(a, min), max);
 }
 
 //векторное произведение

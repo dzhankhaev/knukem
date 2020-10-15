@@ -1,4 +1,5 @@
 #include "engine.h"
+#include "math_utilits.h"
 
 static void keyboard_event(t_engine *engine)
 {
@@ -41,6 +42,8 @@ static void mouse_event(t_player *player)
 	int	y;
 
 	SDL_GetRelativeMouseState(&x, &y);	//	позиция относительно окна
+	player->temp_yaw = clamp(player->temp_yaw + y * 0.01f, -0.2f, 0.5f);
+	player->yaw = player->temp_yaw - player->velocity.z * 0.5f; //вертикальный поворот
 	player->angle += x * 0.03f;	//	горизонтальный поворот
 	player->anglesin = sinf(player->angle);
 	player->anglecos = cosf(player->angle);

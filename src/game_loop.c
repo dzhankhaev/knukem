@@ -40,6 +40,7 @@ void	game_loop(t_engine *engine)
 	engine->borders = (t_line){0, W, 0, H, 0x555555};
 	engine->player.cntrl = 0;
 	engine->player.eyeheight = EyeHeight;
+	engine->player.temp_yaw = 1.f;
 	init_minimap(engine);
 	while (!engine->close_request)
 	{

@@ -52,6 +52,7 @@ static t_fline	cut2(t_fline wall, t_xy i2)
 t_fline 		cut_wall(t_fline wall, t_xy i1, t_xy i2)
 {
 	wall = swap(wall);
+
 	if (i1.x != -1)
 		wall = cut1(wall, i1);
 	if (i2.x != -1)

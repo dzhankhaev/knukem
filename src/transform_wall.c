@@ -49,16 +49,42 @@ void			render_wall(t_engine *engine, t_sector sector)
 }
 */
 
-void			render_wall(t_engine *engine, t_sector sector)
+t_xyz	rot_y(t_xyz p, float gamma)
+{
+	float	x;
+	float	z;
+
+	x = p.x;
+	z = p.z;
+//	p.x = x * cosf(gamma) + z * sinf(gamma);
+	p.z = -x * sinf(gamma) + z * cosf(gamma);
+	return (p);
+}
+
+void			render_wall_borders(t_engine *engine, t_sector sector)
 {
 	t_line	wall;
+	float	z;
+	t_xyz	p0;
+	t_xyz	p1;
 
 	wall.color = engine->wall.color;
-	float z = engine->sectors[engine->player.sector].floor - sector.floor + engine->player.eyeheight;
-	wall.x0 = (int)(W / 2.f + engine->wall.y0 / engine->wall.x0 * (W / 2.f));
-	wall.x1 = (int)(W / 2.f + engine->wall.y1 / engine->wall.x1 * (W / 2.f));
-	wall.y0 = (int)(z / engine->wall.x0 * (H / 2.f));
-	wall.y1 = (int)(z / engine->wall.x1 * (H / 2.f));
+	z = engine->sectors[engine->player.sector].floor + engine->player.eyeheight - sector.floor;
+	p0 = rot_y((t_xyz){engine->wall.x0, engine->wall.y0, z}, engine->player.yaw);
+	p1 = rot_y((t_xyz){engine->wall.x1, engine->wall.y1, z}, engine->player.yaw);
+	wall.x0 = (int)((W >> 1) + p0.y / p0.x * (W >> 1));
+	wall.x1 = (int)((W >> 1) + p1.y / p1.x * (W >> 1));
+	wall.y0 = (int)((H >> 1) + p0.z / p0.x * (H >> 1));
+	wall.y1 = (int)((H >> 1) + p1.z / p1.x * (H >> 1));
+	render_line(wall, engine->screen, engine->borders);
+
+	z = engine->sectors[engine->player.sector].floor + engine->player.eyeheight - sector.ceil;
+	p0 = rot_y((t_xyz){engine->wall.x0, engine->wall.y0, z}, engine->player.yaw);
+	p1 = rot_y((t_xyz){engine->wall.x1, engine->wall.y1, z}, engine->player.yaw);
+	wall.x0 = (int)((W >> 1) + p0.y / p0.x * (W >> 1));
+	wall.x1 = (int)((W >> 1) + p1.y / p1.x * (W >> 1));
+	wall.y0 = (int)((H >> 1) + p0.z / p0.x * (H >> 1));
+	wall.y1 = (int)((H >> 1) + p1.z / p1.x * (H >> 1));
 	render_line(wall, engine->screen, engine->borders);
 }
 
@@ -82,5 +108,5 @@ void			transform_wall(t_engine *engine, int i)
 		engine->wall.color = 0;
 		return ; //то что не было отрезано и находится частично за спиной, а так же то что целиком лежит вне видимости тоже не рендерим.
 	}
-	render_wall(engine, sector);
+	render_wall_borders(engine, sector);
 }

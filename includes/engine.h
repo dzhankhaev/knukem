@@ -37,6 +37,25 @@
 # define acceleration_plus 0.6f		//множитель ускорения (увеличит)
 # define acceleration_minus 0.8f	//множитель ускорения (уменьшит)
 
+# define hfov (0.73f * H)
+# define vfov (.2f * H)
+# define PLAYER engine.player
+# define SECTORS engine.sectors
+# define min(a, b) (((a) < (b)) ? (a) : (b))
+# define max(a, b) (((a) > (b)) ? (a) : (b))
+# define clamp1(a, mi, ma) min(max(a, mi), ma)
+# define vxs(x0, y0, x1, y1) ((x0) * (y1) - (x1) * (y0))
+# define Overlap(a0, a1, b0, b1) (min(a0, a1) <= max(b0, b1) && min(b0, b1) <= max(a0, a1))
+# define IntersectBox(x0, y0, x1, y1, x2, y2, x3, y3) (Overlap(x0, x1, x2, x3) && Overlap(y0, y1, y2, y3))
+# define PointSide1(px, py, x0, y0, x1, y1) vxs((x1) - (x0), (y1) - (y0), (px) - (x0), (py) - (y0))
+# define Intersect(x1, y1, x2, y2, x3, y3, x4, y4) ((t_xy){                                                                        \
+	vxs(vxs(x1, y1, x2, y2), (x1) - (x2), vxs(x3, y3, x4, y4), (x3) - (x4)) / vxs((x1) - (x2), (y1) - (y2), (x3) - (x4), (y3) - (y4)), \
+	vxs(vxs(x1, y1, x2, y2), (y1) - (y2), vxs(x3, y3, x4, y4), (y3) - (y4)) / vxs((x1) - (x2), (y1) - (y2), (x3) - (x4), (y3) - (y4))})
+# define Yaw(y, z) (y + z * engine->player.yaw)
+
+
+
+
 typedef struct	q_queue
 {
 	int			sectorno;	//номер сектора
@@ -124,17 +143,61 @@ typedef struct	s_minimap
 	int			mod;
 }				t_minimap;
 
-typedef struct	s_tmp
+typedef struct	s_temp
 {
+	int			max_queue;
+	int			ytop[W];
+	int			ybottom[W];
+	float		vx1;
+	float		vx2;
+	float		vy1;
+	float		vy2;
+	float		pcos;
+	float		psin;
+	float		tx1;
+	float		tx2;
+	float		tz1;
+	float		tz2;
+	float		nearz;
+	float		farz;
+	float		nearside;
+	float		farside;
+	t_xy		i1;
+	t_xy		i2;
 	float		xscale1;
 	float		yscale1;
+	int			x1;
 	float		xscale2;
 	float		yscale2;
-	int			x1;
 	int			x2;
 	float		yceil;
 	float		yfloor;
-}				t_tmp;
+	int			neighbor;
+	float		nyceil;
+	float		nyfloor;
+	int			y1a;
+	int			y1b;
+	int			y2a;
+	int			y2b;
+	int			ny1a;
+	int			ny1b;
+	int			ny2a;
+	int			ny2b;
+	int			beginx;
+	int			endx;
+	int			z;
+	int			ya;
+	int			cya;
+	int			yb;
+	int			cyb;
+	int			nya;
+	int			cnya;
+	int			nyb;
+	int			cnyb;
+	unsigned	r1;
+	unsigned	r2;
+	unsigned	r;
+}				t_temp;
 
 typedef struct	s_engine
 {
@@ -151,7 +214,7 @@ typedef struct	s_engine
 	unsigned	max_queue;
 	unsigned	close_request;
 	t_fline		wall;
-	t_tmp		tmp;
+	t_temp		tmp;
 }				t_engine;
 
 
