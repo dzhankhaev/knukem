@@ -4,8 +4,9 @@
             "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/includes/",
-                "${workspaceFolder}/**"
-                
+                "${workspaceFolder}/libft/",
+                "${workspaceFolder}/frameworks/SDL2.framework/Headers/",
+                "${workspaceFolder}/"
             ],
             "defines": [],
             "macFrameworkPath": [

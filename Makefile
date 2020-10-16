@@ -30,6 +30,7 @@ SRC := main.c\
 	manage_data.c\
 	game_loop.c\
 
+SRCDASH := dash_board.c $(filter-out main.c, $(SRC))
 
 OBJ := $(SRC:.c=.o)
 
@@ -39,13 +40,15 @@ OBJDIR := obj
 HEADERSP := $(addprefix includes/, $(HEADERS))
 SRCP :=		$(addprefix $(SRCDIR)/, $(SRC))
 OBJP :=		$(addprefix $(OBJDIR)/, $(SRC:.c=.o))
+SRCPD :=	$(addprefix $(SRCDIR)/, $(SRCDASH))
+OBJPD :=	$(addprefix $(OBJDIR)/, $(SRCDASH:.c=.o))
 ONLYDIR :=	$(foreach dir, $(OBJP), $(shell dirname $(dir)))
 
 FLAG :=  -g #-Wall -Werror -Wextra
 
 PWD := $(shell pwd)
 FRAMEWORKSDIR := $(PWD)/frameworks
-INC := -I includes -I ./libft 
+INC := -I includes -I ./libft -I./frameworks/SDL2.framework/Headers/
 SDL := -F $(FRAMEWORKSDIR) -framework SDL2 -framework SDL2_ttf -framework SDL2_image -framework SDL2_mixer -Wl -rpath $(FRAMEWORKSDIR)
 
 TOTAL_FILES := $(shell echo $(SRC) | wc -w | sed -e 's/ //g')
@@ -62,6 +65,9 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADERSP)
 			@gcc -c $(FLAG)-F $(FRAMEWORKSDIR) $(INC) $< -o $@
 			@echo "$(CLEAR_LINE)$(BLUE_FONT)[$(NAME)] $(YELLOW_FONT)Compiling file [$(VIOLET_FONT)$<$(COL_YELLOW)]. ($(CURRENT_FILES) / $(TOTAL_FILES))$(RESET_FORM)$(BEGIN_LINE)"
 
+dash : $(OBJPD)
+			@gcc $(SDL) $(FLAG) $(OBJPD)  $(INC) $(LIB)  -L./libft -lft  -o $@
+			@echo "$(CLEAR_LINE)$(BLUE_FONT)[$(NAME)] $(YELLOW_FONT)Finished compilation. Output file : $(VIOLET_FONT)$(PWD)/$@$(RESET_FORM)"
 
 clean :
 			@rm -rf $(OBJDIR)

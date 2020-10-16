@@ -37,7 +37,7 @@ int			init_engine(t_engine *engine)
 	}
 	if (ft_create_window(engine) != 0 || ft_load_screen(engine) != 0)
 		return (1);
-	SDL_SetRelativeMouseMode(SDL_TRUE); //скрывает курсор, он движется относительно окна
+	// SDL_SetRelativeMouseMode(SDL_TRUE); //скрывает курсор, он движется относительно окна
 	return (0);
 }
 

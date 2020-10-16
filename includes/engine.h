@@ -4,7 +4,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <string.h>
-# include <SDL2/SDL.h>
+# include <SDL.h>
 //# include <SDL2_ttf/SDL_ttf.h>
 //# include <SDL2_image/SDL_image.h>
 //# include <SDL2_mixer/SDL_mixer.h>
@@ -12,14 +12,14 @@
  * ЗАКОММЕНТИРУЙ, ЕСЛИ НЕ КОМПИЛИТСЯ! Временное решение
  */
 /*# include <SDL.h>
-# include <SDL_ttf.h>
+# include <SDL_ttf.h> 
 # include <SDL_image.h>
 # include <SDL_mixer.h>*/
 
 //# define W 1920
 //# define H 1080
-# define W 1280
-# define H 720
+# define W 400
+# define H 600
 # define CUR_SECT engine->player.sector
 
 # define NEAR_Z 1e-4f				//TODO что это?
