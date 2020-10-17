@@ -14,6 +14,32 @@ typedef struct	s_patch
 	char			**colum;
 }				t_patch;
 
+char *load_wad(char *name_file)
+{
+	char	*mem;
+	int		fd;
+	size_t	fr;
+	size_t	size;
+
+	size = 0;
+	mem = (char*)malloc(100000);
+	fd = open(name_file, O_RDONLY);
+	while((fr = read(fd,mem,100000)))
+	{
+		size += fr;
+		printf("fr %zu\t",size);
+	}
+	close(fd);
+	free(mem);
+	mem = (char*)malloc(size);
+	fd = open(name_file, O_RDONLY);
+	// fr = 0;
+	fr = read(fd, mem, size);
+	close(fd);
+	return (mem);
+}
+
+
 void	update_win(t_engine *engine, SDL_Surface *surf)
 {
 	SDL_BlitScaled(surf,NULL,engine->screen,NULL);
@@ -60,6 +86,57 @@ void			pars_colum(char *colum, int col_s, SDL_Surface *surf,
 	}
 }
 
+void	go_to_block()
+{
+
+}
+
+typedef struct	s_directory
+{
+	int		filepos;
+	int		size;
+	char	name[8];
+}				t_directory;
+
+
+
+typedef struct	s_wad
+{
+	char			identification[4];
+	unsigned int	numlumps;
+	unsigned int	mem_start;
+	t_directory		*dirs;
+}				t_wad;
+
+void	 fill_wad(t_wad *wad, char *map)
+{
+	char	*mem;
+	size_t size;
+	size_t i;
+
+	mem = (char*)wad;
+	ft_memcpy(wad,map, 12);
+	// size = 12;
+	// i = 0;
+	// while (i < size)
+	// {
+	// 	*(mem + i) = *((char*)(map + wad->mem_start + i));
+	// 	i++;
+	// }
+	wad->dirs = (t_directory*)malloc(sizeof(t_directory) * wad->numlumps);
+	mem = (char*)wad->dirs;
+	ft_memcpy(mem,(void*)map + wad->mem_start,wad->numlumps * sizeof(t_directory));
+	// size = wad->numlumps * sizeof(t_directory) + 1;
+	// i = 0;
+	// while (i < size)
+	// {
+	// 	*(mem + i) = *((char*)(map + wad->mem_start + i));
+	// 	i++;
+	// }
+	// write(1,"", 0);	
+
+}
+
 SDL_Surface		*print_dash(char *lmp,t_engine *engine)
 {
 	//загрузить цветовую гамму
@@ -72,6 +149,7 @@ SDL_Surface		*print_dash(char *lmp,t_engine *engine)
 	int i = 0;
 	int *map;
 
+	// go_to_block();
 	fd = open("playpal.pal", O_RDONLY);
 	read(fd, colormap, 255 * 3);
 	close(fd);
@@ -99,8 +177,13 @@ SDL_Surface		*print_dash(char *lmp,t_engine *engine)
 int main()
 {
 	t_engine 	engine;
+	char		*mem;
+	t_wad		wad;
 	SDL_Surface	*lmp;
 
+	mem = load_wad("Doom1.WAD");
+	fill_wad(&wad, mem);
+	free(mem);
 	if (init_engine(&engine) != 0)
 		return (1);
 	int c = 0;
