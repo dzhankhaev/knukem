@@ -21,7 +21,7 @@ O_FILES = ft_memset.o ft_bzero.o ft_memcpy.o ft_memccpy.o ft_memmove.o ft_memchr
 all: $(NAME)
 
 $(NAME):	$(SRCS) libft.h
-			gcc -Wall -Wextra -Werror -c $(SRC)
+			gcc -g -Wall -Wextra -Werror -c $(SRC)
 			ar rc $(NAME) $(O_FILES)
 			ranlib $(NAME)
 
