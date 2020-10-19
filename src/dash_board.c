@@ -1,311 +1,299 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   dash_board.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/10/19 11:32:34 by ecelsa            #+#    #+#             */
+/*   Updated: 2020/10/19 22:59:08 by ecelsa           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "parse_wad.h"
 
 
-
-// char *load_wad(char *name_file)
-// {
-// 	char	*mem;
-// 	int		fd;
-// 	size_t	fr;
-// 	size_t	size;
-
-// 	size = 0;
-// 	mem = (char*)malloc(100000);
-// 	fd = open(name_file, O_RDONLY);
-// 	while((fr = read(fd,mem,100000)))
-// 		size += fr;
-// 	close(fd);
-// 	free(mem);
-// 	mem = (char*)malloc(size);
-// 	fd = open(name_file, O_RDONLY);
-// 	fr = read(fd, mem, size);
-// 	close(fd);
-// 	return (mem);
-// }
-
-void			pars_colum(char *colum, int col_s, SDL_Surface *surf, 
-									int col_n,unsigned char *colormap, t_engine *engine)
+void			pars_colum(SDL_Surface *scr, t_patch *patch, unsigned char *clp)
 {
-	unsigned int	*map;
-	unsigned int	space;
-	unsigned int	index;
-	unsigned int	color;
-	int				pxs;
-	char			*pt;
-	int				ret;
+	t_pars_colum sub;
 
-	pt = colum;
-	ret = 0;
-	while(!(ret))
-	{	
-		map = (unsigned int*)(surf->pixels + sizeof(int) * col_n);
-		space = *(pt++);
-		while (space > 0 )
-		{
-			map += surf->w;
-			space--;
-		}
-		pxs = *(pt++);
-		pt++;
-		while (pxs-- > 0)
-		{
-			index = (unsigned char)*pt;
-			color = 0xFF000000 + (colormap[index * 3] << 16) 
-				+ (colormap[index * 3 + 1] << 8) + colormap[index * 3 + 2];
-			*map = color;
-			map += surf->w;
-			pt++;
-		}
-		pt++;
-		if ((unsigned char)*pt == 0xff)
-			ret = 1;
-	}
-}
-
-// int		find_dirs(t_wad	*wad, char	*name)
-// {
-// 	int		i;
-
-// 	i = 0;
-// 	while(i < wad->numlumps)
-// 	{
-// 		if (ft_strcmp(name, wad->dirs[i].name) == 0)
-// 			return(i);
-// 		i++;
-// 	}
-// 	return (0);
-// }
-
-// void	fill_dirs(t_wad *wad, char *map)
-// {
-// 	int		i;
-
-// 	i = 0;
-// 	while (i < wad->numlumps)
-// 	{
-// 		ft_memcpy((char*)&wad->patchs[i], map + wad->dirs[i].filepos, 8);
-// 		ft_memcpy(wad->patchs[i].mem, map + wad->dirs[i].filepos, wad->dirs[i].size);
-// 		// wad->patchs[i].mem = (unsigned char*)(map + wad->dirs[i].filepos);
-// 		i++;
-// 	}
-// }
-
-// void	 fill_wad(t_wad *wad, char *map)
-// {
-// 	char	*mem;
-// 	size_t size;
-// 	size_t i;
-
-// 	i = 0;
-// 	mem = (char*)wad;
-// 	ft_memcpy(wad,map, 12);
-// 	wad->dirs = (t_directory*)malloc(sizeof(t_directory) * wad->numlumps);
-// 	wad->patchs = (t_patch*)malloc(sizeof(t_patch) * wad->numlumps);
-// 	mem = (char*)wad->dirs;
-// 	ft_memcpy(mem,(char*)map + wad->mem_start,wad->numlumps * sizeof(t_directory));
-// 	fill_dirs(wad, map);
-// }
-
-// SDL_Surface		*print_dash(char *lmp,t_engine *engine, t_wad *wad)
-// {
-// 	//загрузить цветовую гамму
-// 	char	*colormap;
-// 	int		fd;
-// 	t_patch		test;
-// 	SDL_Surface	*surf;
-// 	int	col_s;
-// 	int c = 0;
-// 	int i = 0;
-// 	int *map;
-// 	int	hm;
-	
-// 	ft_memcpy((char*)wad->colormap, wad->patchs[find_dirs(wad, "PLAYPAL")].mem,
-// 																255 * 3 * 14);
-// 	//загрузить дашборд
-// 	fd = open(lmp, O_RDONLY);
-// 	read(fd, (char*)&test, 8);
-// 	hm = find_dirs(wad, lmp);
-// 	// ft_memcpy(wad->patchs[hm].mem)
-// 	// wad->patchs[hm].columnofs = (int*)malloc(sizeof(int) * test.width);
-// 	test.columnofs = (int*)malloc(sizeof(int) * test.width);
-// 	// ft_memcpy(wad->patchs[hm].columnofs,wad->patchs[hm].mem,test.width * 4);
-// 	read(fd, (char*)test.columnofs, test.width * 4);
-// 	test.colum = (char**)malloc(sizeof(char*) * test.width);
-// 	surf = SDL_CreateRGBSurface(0,test.width,test.height,32,
-// 											0xff0000,0xff00,0xff,0xff000000);
-// 	ft_bzero(surf->pixels, surf->pitch * surf->h);
-// 	while (c < test.width)
-// 	{
-// 		if (c != test.width - 1)
-// 			col_s = test.columnofs[c + 1] - test.columnofs[c];
-// 		test.colum[c] = (char*)malloc(col_s);
-// 		read(fd, test.colum[c], col_s);
-// 		pars_colum(test.colum[c], col_s, surf, c, 
-// 									(unsigned char*)wad->colormap[0], engine);
-// 		c++;
-// 	}
-// 	close(fd);
-// 	return(surf);
-// }
-
-SDL_Surface		*surface_from_patch(t_patch *patch)
-{
-	SDL_Surface		*surf;
-	unsigned int	*map;
-	int				i;
-	int				y;
-
-	surf = SDL_CreateRGBSurface(0, patch->width, patch->height, 32, 0xff0000,
-													0xff00, 0xff, 0xff000000);
-	i = -1;
-	y = 0;
-	ft_memset(surf->pixels, 0xf, surf->pitch * surf->h);
-	// while (++i < patch->width)
-	// {
-	// 	map = (unsigned int*)(surf->pixels + sizeof(int) * i);
-	// 	map += patch->colum[i][y] * patch->width;
-	// 	while (++y < patch->colum[i][1])
-	// 	{
-	// 		*map = 0xffffff00;
-	// 		map += patch->width;
-	// 	}
-		
-	// }
-	return(NULL);
-}
-
-t_patch	*load_patch(char *name_file, char* name_dir)
-{
-	t_wad 		wad;
-	t_patch		*patch;
-
-	wad.fr = 1;
-	ft_strlen(name_dir);
-	if ((wad.fd = open(name_file,O_RDONLY)))
+	sub.x = -1;
+	while (++sub.x < patch->width)
 	{
-		read(wad.fd, (void*)&wad, 12);
-		lseek(wad.fd, wad.mem_start, 0);
-		while (ft_memcmp(name_dir,wad.dir.name, ft_strlen(name_dir)) && wad.fr)
-			wad.fr = read(wad.fd,(void*)&wad.dir,16);
-		if (!(ft_memcmp(name_dir,wad.dir.name,ft_strlen(name_dir))))
+		sub.size = (sub.x != patch->width - 1) ? patch->columnofs[sub.x + 1] -
+		patch->columnofs[sub.x] : patch->size_patch - patch->columnofs[sub.x];
+		sub.i = -1;
+		while (++sub.i < sub.size - 1)
 		{
-			lseek(wad.fd, wad.dir.filepos, 0);
-			patch = (t_patch*)malloc(sizeof(t_patch));
-			patch->size_patch = wad.dir.size;
-			patch->mem = (unsigned char*)malloc(sizeof(char) * wad.dir.size);
-			read(wad.fd, (void*)patch->mem, wad.dir.size);
-			close(wad.fd);
-			return(patch);
-		}
-		else
-			close(wad.fd);
-	}
-	return(NULL);
-}
-
-void		pars_patch(t_patch *patch)
-{
-	int i;
-
-	if (patch)
-	{
-		ft_memcpy(patch, patch->mem, 8);
-		if (patch->width > 640 || patch->width == 0 
-								|| patch->height > 640 || patch->height == 0)
-			patch->type = 1;
-		else
-		{
-			patch->type = 0;
-			patch->columnofs = (int*)malloc(sizeof(int) * patch->width);
-			ft_memcpy(patch->columnofs, patch->mem + 8, patch->width * 
-																sizeof(int));
-			patch->colum = (char**)malloc(sizeof(char*) * patch->width);
-			i = -1;
-			while(++i < patch->width)
+			sub.pixel = ((int*)scr->pixels + sub.x)
+										+ (scr->w * patch->colum[sub.x][sub.i]);
+			sub.col = patch->colum[sub.x][sub.i + 1];
+			sub.i += 3;
+			while (sub.col--)
 			{
-				patch->colum[i] = (char*)malloc(patch->columnofs[1] - 
-														patch->columnofs[0]);
-				ft_memcpy(patch->colum[i], patch->mem + patch->columnofs[i],
-									patch->columnofs[1] - patch->columnofs[0]);
+				sub.index = patch->colum[sub.x][sub.i] * 3;
+				*sub.pixel = AMASK | (clp[sub.index] << 16)
+							| (clp[sub.index + 1] << 8) | clp[sub.index + 2];
+				sub.pixel += patch->width;
+				sub.i++;
 			}
 		}
 	}
 }
 
-void	free_patch(t_patch *patch)
+t_patch			*init_patch(t_wad *wad)
+{
+	t_patch	*patch;
+
+	if ((patch = (t_patch*)malloc(sizeof(t_patch))))
+	{
+		patch->size_patch = wad->dir.size;
+		if ((patch->mem = (unsigned char*)malloc(sizeof(char) * wad->dir.size)))
+		{
+			patch->type = -1;
+			patch->colum = NULL;
+			patch->columnofs = NULL;
+			patch->surface = NULL;
+			ft_strcpy(patch->name, wad->dir.name);
+			return (patch);
+		}
+		else
+		{
+			free(patch);
+			return (NULL);
+		}
+	}
+	return (NULL);
+}
+
+void			free_patch(t_patch **patch)
 {
 	int	i;
 
-	if (patch)
+	i = -1;
+	if (*patch)
 	{
-		if (patch->type == 0)
+		if ((*patch)->colum)
 		{
-			i = -1;
-			while (++i < patch->width)
-				free(patch->colum[i]);
-			free(patch->columnofs);
-			free(patch->colum);
+			while (++i < (*patch)->width)
+				free((*patch)->colum[i]);
+			free((*patch)->colum);
 		}
-		free(patch->mem);
-		free(patch);
+		if ((*patch)->columnofs)
+			free((*patch)->columnofs);
+		if ((*patch)->surface)
+			free((*patch)->surface);
+		if ((*patch)->mem)
+			free((*patch)->mem);
+		free((*patch));
+	}
+	*patch = NULL;
+}
+
+void			fill_patch_columos(t_patch *patch)
+{
+	int		i;
+	int		size;
+
+	i = 0;
+	patch->columnofs = (int*)malloc(sizeof(int) * patch->width);
+	ft_memcpy(patch->columnofs, patch->mem + 8, patch->width * sizeof(int));
+	patch->colum = (unsigned char**)malloc(sizeof(char*) * patch->width);
+	i = -1;
+	while (++i < patch->width)
+	{
+		size = (i != patch->width - 1) ? patch->columnofs[i + 1] -
+				patch->columnofs[i] : patch->size_patch - patch->columnofs[i];
+		patch->colum[i] = (unsigned char*)malloc(size);
+		ft_memcpy(patch->colum[i], patch->mem + patch->columnofs[i], size);
 	}
 }
 
-SDL_Surface		*patch()
+void			pars_patch(t_patch *patch)
 {
-	SDL_Surface	*surf;
-
-	return(surf);
+	if (patch)
+	{
+		ft_memcpy(patch, patch->mem, 8);
+		if (patch->width > 640 || patch->width == 0
+								|| patch->height > 640 || patch->height == 0)
+			patch->type = 1;
+		else
+		{
+			patch->type = 0;
+			fill_patch_columos(patch);
+		}
+	}
 }
 
-int main()
+t_patch			*load_patch(char *name_file, char *name_dir)
 {
-	t_engine 	engine;
+	t_wad		wad;
+	t_patch		*patch;
+
+	wad.fr = 1;
+	if ((wad.fd = open(name_file, O_RDONLY)))
+	{
+		read(wad.fd, (void*)&wad, 12);
+		lseek(wad.fd, wad.mem_start, 0);
+		while (ft_memcmp(name_dir, wad.dir.name, ft_strlen(name_dir)) && wad.fr)
+			wad.fr = read(wad.fd, (void*)&wad.dir, 16);
+		if (!(ft_memcmp(name_dir, wad.dir.name, ft_strlen(name_dir))))
+		{
+			lseek(wad.fd, wad.dir.filepos, 0);
+			if ((patch = init_patch(&wad)))
+			{
+				read(wad.fd, (void*)patch->mem, wad.dir.size);
+				pars_patch(patch);
+			}
+			close(wad.fd);
+			return (patch);
+		}
+		else
+			close(wad.fd);
+	}
+	return (NULL);
+}
+
+SDL_Surface		*patch(t_patch *patch)
+{
+	return (patch->surface);
+}
+
+void			put_patch_on_scr(char *name_patch, SDL_Surface *dst_scr,
+										SDL_Rect *rect, unsigned char* colormap)
+{
+	t_patch		*patch;
+	SDL_Surface	*scr;
+
+	if ((patch = load_patch("Doom1.WAD", name_patch)))
+		{
+			scr = SDL_CreateRGBSurface(0, patch->width, patch->height,
+												32, RMASK, GMASK, BMASK, AMASK);
+			pars_colum(scr, patch, colormap);
+			SDL_BlitSurface(scr, NULL, dst_scr, rect);
+			free_patch(&patch);
+		}
+		SDL_FreeSurface(scr);
+}
+
+SDL_Surface		*hud(int hp, char armors, SDL_Surface *scr, unsigned char* colormap)
+{
+	char		ch_num[4][8];
+	char		st[8];
+	int			i;
+	SDL_Rect	rr;
+
+	ft_bzero(&ch_num, 4*8);
+	i = -1;
+	ft_strcpy(ch_num[0],"STTNUM");
+	ch_num[0][6] = hp / 100 + '0';
+	ft_strcpy(ch_num[1],"STTNUM");
+	ch_num[1][6] = (hp / 10) % 10 + '0' ;
+	ft_strcpy(ch_num[2],"STTNUM");
+	ch_num[2][6] = hp % 10 + '0';
+	ft_strcpy(ch_num[3],"STTPRCNT");
+	i = -1;
+	while (++i < 4)
+	{
+		rr = (SDL_Rect){.x = 49 + i * 14, .y = 4};
+		if (!(i == 0 && (hp / 100) == 0))
+			put_patch_on_scr(ch_num[i], scr, &rr, colormap);
+	}
+	rr = (SDL_Rect){.x = 104, .y = 0};
+	put_patch_on_scr("STARMS", scr, &rr, colormap);
+	rr = (SDL_Rect){.x = 111, .y = 4};
+	if (armors & 0b10)
+		put_patch_on_scr("STYSNUM2", scr, &rr, colormap);
+	else
+		put_patch_on_scr("STGNUM2", scr, &rr, colormap);
+	rr = (SDL_Rect){.x = 123, .y = 4};
+	if (armors & 0b100)
+		put_patch_on_scr("STYSNUM3", scr, &rr, colormap);
+	else
+		put_patch_on_scr("STGNUM3", scr, &rr, colormap);
+	rr = (SDL_Rect){.x = 135, .y = 4};
+	if (armors & 0b1000)
+		put_patch_on_scr("STYSNUM4", scr, &rr, colormap);
+	else
+		put_patch_on_scr("STGNUM4", scr, &rr, colormap);
+	rr = (SDL_Rect){.x = 111, .y = 14};
+	if (armors & 0b10000)
+		put_patch_on_scr("STYSNUM5", scr, &rr, colormap);
+	else
+		put_patch_on_scr("STGNUM5", scr, &rr, colormap);
+	rr = (SDL_Rect){.x = 123, .y = 14};
+	if (armors & 0b100000)
+		put_patch_on_scr("STYSNUM6", scr, &rr, colormap);
+	else
+		put_patch_on_scr("STGNUM6", scr, &rr, colormap);
+	rr = (SDL_Rect){.x = 135, .y = 14};
+	if (armors & 0b1000000)
+		put_patch_on_scr("STYSNUM7", scr, &rr, colormap);
+	else
+		put_patch_on_scr("STGNUM7", scr, &rr, colormap);
+	rr = (SDL_Rect){.x = 148, .y = 2};
+	put_patch_on_scr("STFST01", scr, &rr, colormap);
+	return(NULL);
+}
+
+int				main(int argc, char **argv)
+{
+	t_engine	engine;
 	char		*mem;
 	t_wad		wad;
 	SDL_Surface	*lmp;
 	t_patch		*patch;
-	char		colormap[14][255 * 3];
-	// mem = load_wad("Doom1.WAD");
-	// fill_wad(&wad, mem);
+	char		colormap[14][256 * 3];
+	int			pow;
+	int			pal = 0;
 
-	if ((patch = load_patch("Doom1.WAD","PLAYPAL")))
-		patch->type = -1;
-	pars_patch(patch);
-	ft_memcpy(&colormap, patch->mem, patch->size_patch);
-	free_patch(patch);
-
-	if ((patch = load_patch("Doom1.WAD","STGNUM2")))
-		patch->type = -1;
-	pars_patch(patch);	
-	lmp = surface_from_patch(patch);
-	free_patch(patch);
-	// free(patch->mem);
-	// free(patch);
-	// free(mem);
+	if (argc == 1)
+	{
+		write(1, "No patch Name\n", 14);
+		return(0);
+	}
+	lmp = NULL;
+	patch = load_patch("Doom1.WAD", "PLAYPAL");
+	ft_memcpy(colormap, patch->mem, patch->size_patch);
+	free_patch(&patch);
+	if ((patch = load_patch("Doom1.WAD", argv[1])))
+	{	
+		lmp = SDL_CreateRGBSurface(0, patch->width, patch->height,
+											32, RMASK, GMASK, BMASK, AMASK);
+		pars_colum(lmp, patch, (unsigned char*)colormap[pal]);
+	}
+	if (lmp)
+	{	
+		if (lmp->w > lmp->h)
+			pow = 1920 / lmp->w;
+		else
+			pow = 1080 / lmp->h;
+		engine = (t_engine){.w = lmp->w * pow, .h = lmp->h * pow};
+	}
+	else
+		engine = (t_engine){.w = 400, .h = 600};
+	free_patch(&patch);
+	hud(75,0b00111010, lmp, (unsigned char*)colormap[pal]);
 	if (init_engine(&engine) != 0)
 		return (1);
-	int c = 0;
-	// lmp = print_dash("STGNUM2.lmp", &engine, &wad);
-	SDL_BlitScaled(lmp,NULL,engine.screen,NULL);
+	SDL_BlitScaled(lmp, NULL, engine.screen, NULL);
 	SDL_UpdateWindowSurface(engine.window);
+	
 	while (!engine.close_request)
 	{
 		while (SDL_PollEvent(&engine.player.event))
-		if (engine.player.event.type == SDL_KEYDOWN || engine.player.event.type == SDL_KEYUP)
-		{
-
-			if (engine.player.event.key.keysym.sym == SDLK_LCTRL)
-				engine.player.eyeheight = EyeHeight -
+			if (engine.player.event.type == SDL_KEYDOWN
+									|| engine.player.event.type == SDL_KEYUP)
+			{
+				if (engine.player.event.key.keysym.sym == SDLK_LCTRL)
+					engine.player.eyeheight = EyeHeight -
 						(engine.player.event.type == SDL_KEYDOWN) * DuckHeight;
-			else if (engine.player.event.key.keysym.sym == SDLK_ESCAPE)
+				else if (engine.player.event.key.keysym.sym == SDLK_ESCAPE)
+					engine.close_request = 1;
+			}
+			else if (engine.player.event.type == SDL_QUIT)
 				engine.close_request = 1;
-
-		}
-		else if (engine.player.event.type == SDL_QUIT)
-			engine.close_request = 1;
-		SDL_UpdateWindowSurface(engine.window);
+			// SDL_UpdateWindowSurface(engine.window);
 	}
 	return (0);
 }

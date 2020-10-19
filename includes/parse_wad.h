@@ -7,6 +7,11 @@
 # include <stdlib.h>
 # include "libft.h"
 
+# define RMASK	0xff0000
+# define GMASK	0xff00
+# define BMASK	0xff
+# define AMASK	0xff000000
+
 typedef struct	s_patch
 {
 	unsigned short	width;
@@ -14,10 +19,12 @@ typedef struct	s_patch
 	unsigned short	l_offset;
 	unsigned short	r_offsrt;
 	int				*columnofs;
-	char			**colum;
+	unsigned char	**colum;
 	unsigned char	*mem;
 	size_t			size_patch;
 	int				type;
+	char			name[8];
+	SDL_Surface		*surface;
 }				t_patch;
 
 typedef struct	s_directory
@@ -51,5 +58,20 @@ typedef struct	s_value
 	int		rckt[2];
 	int		cell[2];
 }				t_value;
+
+typedef struct	s_pars_colum
+{
+	int			*pixel;
+	int			x;
+	int			i;
+	int			col;
+	int			index;
+	int			size;
+}				t_pars_colum;
+
+t_patch			*init_patch(t_wad *wad);
+// void			free_patch(t_patch *patch);
+void			pars_patch(t_patch *patch);
+t_patch			*load_patch(char *name_file, char *name_dir);
 
 #endif

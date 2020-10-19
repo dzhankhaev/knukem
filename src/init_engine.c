@@ -5,7 +5,7 @@ static int	ft_create_window(t_engine *engine)
 	engine->window = SDL_CreateWindow("Doom Nukem",
 									SDL_WINDOWPOS_CENTERED,
 									SDL_WINDOWPOS_CENTERED,
-									W, H,
+									engine->w, engine->h,
 									0);
 	if (!engine->window)
 	{
@@ -28,7 +28,7 @@ static int	ft_load_screen(t_engine *engine)
 
 int			init_engine(t_engine *engine)
 {
-	bzero(engine, sizeof(*engine));
+	bzero(engine, sizeof(*engine) - 12);
 	load_data(engine);
 	if (SDL_Init(SDL_INIT_VIDEO) != 0)
 	{

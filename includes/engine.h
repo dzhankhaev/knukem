@@ -129,6 +129,8 @@ typedef struct	s_engine
 	unsigned	max_queue;
 	unsigned	close_request;
 	int 		tmp;
+	int			w;				//размер окна
+	int			h;				//размер окна
 }				t_engine;
 
 
