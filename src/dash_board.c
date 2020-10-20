@@ -6,7 +6,7 @@
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 11:32:34 by ecelsa            #+#    #+#             */
-/*   Updated: 2020/10/19 22:59:08 by ecelsa           ###   ########.fr       */
+/*   Updated: 2020/10/20 15:46:13 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -232,7 +232,7 @@ SDL_Surface		*hud(int hp, char armors, SDL_Surface *scr, unsigned char* colormap
 	else
 		put_patch_on_scr("STGNUM7", scr, &rr, colormap);
 	rr = (SDL_Rect){.x = 148, .y = 2};
-	put_patch_on_scr("STFST01", scr, &rr, colormap);
+	put_patch_on_scr("STFTR00", scr, &rr, colormap);
 	return(NULL);
 }
 
@@ -245,7 +245,7 @@ int				main(int argc, char **argv)
 	t_patch		*patch;
 	char		colormap[14][256 * 3];
 	int			pow;
-	int			pal = 0;
+	int			pal = 10;
 
 	if (argc == 1)
 	{
@@ -273,7 +273,7 @@ int				main(int argc, char **argv)
 	else
 		engine = (t_engine){.w = 400, .h = 600};
 	free_patch(&patch);
-	hud(75,0b00111010, lmp, (unsigned char*)colormap[pal]);
+	hud(358,0b00110, lmp, (unsigned char*)colormap[pal]);
 	if (init_engine(&engine) != 0)
 		return (1);
 	SDL_BlitScaled(lmp, NULL, engine.screen, NULL);
