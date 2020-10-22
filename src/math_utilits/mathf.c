@@ -15,6 +15,11 @@ float clamp(float a, float min, float max)
 	return fminf(fmaxf(a, min), max);
 }
 
+int iclamp(int a, int min, int max)
+{
+	return int_min(int_max(a, min), max);
+}
+
 //векторное произведение
 float	vector_cross_product(float x0, float y0, float x1, float y1)
 {

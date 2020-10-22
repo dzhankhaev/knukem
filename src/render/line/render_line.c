@@ -25,22 +25,6 @@ static t_line	swap_coords(t_line p)
 	return (p);
 }
 
-static void		from_left_top_to_right_down(t_line p, SDL_Surface *screen, t_line borders)
-{
-	if (abs(p.x1 - p.x0) > abs(p.y1 - p.y0))
-		angle_less_than_45_1(p, screen, borders);
-	else
-		angle_more_than_45_1(p, screen, borders);
-}
-
-static void		from_right_top_to_left_down(t_line p, SDL_Surface *screen, t_line borders)
-{
-	if (abs(p.x1 - p.x0) > abs(p.y1 - p.y0))
-		angle_less_than_45_2(p, screen, borders);
-	else
-		angle_more_than_45_2(swap_coords(p), screen, borders);
-}
-
 static void		render_perpendicular_line(t_line p, SDL_Surface *screen, t_line borders)
 {
 	int	*temp;
@@ -72,14 +56,22 @@ static void		render_perpendicular_line(t_line p, SDL_Surface *screen, t_line bor
 
 void			render_line(t_line p, SDL_Surface *screen, t_line borders)
 {
+	if (p.x0 > p.x1)
+		p = swap_coords(p);
 	if (p.x0 == p.x1 || p.y0 == p.y1)
 		render_perpendicular_line(p, screen, borders);
-	else if (p.x0 < p.x1 && p.y0 < p.y1)
-		from_left_top_to_right_down(p, screen, borders);
-	else if (p.x0 > p.x1 && p.y0 > p.y1)
-		from_left_top_to_right_down(swap_coords(p), screen, borders);
-	else if (p.x0 > p.x1 && p.y0 < p.y1)
-		from_right_top_to_left_down(p, screen, borders);
-	else if (p.x0 < p.x1 && p.y0 > p.y1)
-		from_right_top_to_left_down(swap_coords(p), screen, borders);
+	else if (p.y0 < p.y1)
+	{
+		if (abs(p.x1 - p.x0) > abs(p.y1 - p.y0))
+			angle_less_than_45_1(p, screen, borders);
+		else
+			angle_more_than_45_1(p, screen, borders);
+	}
+	else
+	{
+		if (abs(p.x1 - p.x0) > abs(p.y1 - p.y0))
+			angle_less_than_45_2(swap_coords(p), screen, borders);
+		else
+			angle_more_than_45_2(p, screen, borders);
+	}
 }

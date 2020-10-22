@@ -44,6 +44,11 @@ void	game_loop(t_engine *engine)
 	init_minimap(engine);
 	while (!engine->close_request)
 	{
+		for(int i = 0; i < W; i++)
+		{
+			engine->top_line[i] = 0;
+			engine->bottom_line[i] = H - 1;
+		}
 		SDL_LockSurface(engine->screen);
 		SDL_FillRect(engine->screen, NULL, 0x000000);
 		keys_manager(engine);

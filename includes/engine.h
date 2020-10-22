@@ -195,6 +195,11 @@ typedef struct	s_engine
 	unsigned	max_queue;
 	unsigned	close_request;
 	t_fline		wall;
+	int			top_line[W];
+	int			bottom_line[W];
+	int			begin;
+	int			end;
+	int			key;
 	t_temp		tmp;
 }				t_engine;
 
