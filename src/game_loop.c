@@ -7,11 +7,11 @@ void	draw(t_engine *engine)
 	engine->future = engine->queue + 1;
 	engine->present = engine->queue;
 	engine->present->sectorno = CUR_SECT;
-	while (engine->present != engine->future)
+	int i = 0;
+	while (engine->present != engine->future && i++ < 2)
 	{
 		run_queue(engine);
 		engine->present++;
-		break;
 	}
 	render_minimap_hud(engine->minimap, engine->screen);
 }
@@ -47,8 +47,8 @@ void	game_loop(t_engine *engine)
 	{
 		for(int i = 0; i < W; i++)
 		{
-			engine->top_line[i] = 0;
-			engine->bottom_line[i] = H - 1;
+			engine->top_line[i] = H - 1;
+			engine->bottom_line[i] = 0;
 		}
 		SDL_LockSurface(engine->screen);
 		SDL_FillRect(engine->screen, NULL, 0x000000);

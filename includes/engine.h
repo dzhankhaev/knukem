@@ -124,62 +124,6 @@ typedef struct	s_minimap
 	int			mod;
 }				t_minimap;
 
-typedef struct	s_temp
-{
-	int			max_queue;
-	int			ytop[W];
-	int			ybottom[W];
-	float		vx1;
-	float		vx2;
-	float		vy1;
-	float		vy2;
-	float		pcos;
-	float		psin;
-	float		tx1;
-	float		tx2;
-	float		tz1;
-	float		tz2;
-	float		nearz;
-	float		farz;
-	float		nearside;
-	float		farside;
-	t_xy		i1;
-	t_xy		i2;
-	float		xscale1;
-	float		yscale1;
-	int			x1;
-	float		xscale2;
-	float		yscale2;
-	int			x2;
-	float		yceil;
-	float		yfloor;
-	int			neighbor;
-	float		nyceil;
-	float		nyfloor;
-	int			y1a;
-	int			y1b;
-	int			y2a;
-	int			y2b;
-	int			ny1a;
-	int			ny1b;
-	int			ny2a;
-	int			ny2b;
-	int			beginx;
-	int			endx;
-	int			z;
-	int			ya;
-	int			cya;
-	int			yb;
-	int			cyb;
-	int			nya;
-	int			cnya;
-	int			nyb;
-	int			cnyb;
-	unsigned	r1;
-	unsigned	r2;
-	unsigned	r;
-}				t_temp;
-
 typedef struct	s_engine
 {
 	SDL_Window	*window;
@@ -197,10 +141,9 @@ typedef struct	s_engine
 	t_fline		wall;
 	int			top_line[W];
 	int			bottom_line[W];
-	int			begin;
-	int			end;
+	int			tline[W];
+	int			bline[W];
 	int			key;
-	t_temp		tmp;
 }				t_engine;
 
 
