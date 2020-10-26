@@ -11,6 +11,7 @@ void	draw(t_engine *engine)
 	{
 		run_queue(engine);
 		engine->present++;
+		break;
 	}
 	render_minimap_hud(engine->minimap, engine->screen);
 }

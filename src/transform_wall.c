@@ -26,25 +26,13 @@ t_xyz	rot_y(t_xyz p, float gamma)
 }
 
 
-void fff(t_engine *engine, t_line p)
-{
-	if (engine->key == 0)
-	{
-//		if (p.y0 > engine->bottom_line[p.x0])
-			engine->bottom_line[p.x0] = p.y0;
-	}
-	else
-//		if (p.y0 < engine->top_line[p.x0])
-			engine->top_line[p.x0] = p.y0;
+void fff(t_engine *engine, t_line p);
 
-}
 
-void	angle_less_1(t_line p, SDL_Surface *screen, t_line borders, t_engine *engine)
+void	angle_less_1(t_line p, t_engine *engine)
 {
-	int		*temp;
 	t_delta	d;
 
-	temp = (int *)screen->pixels;
 	d.dx = abs(p.x1 - p.x0);
 	d.dy = abs(p.y1 - p.y0);
 	d.error = 0;
@@ -65,12 +53,10 @@ void	angle_less_1(t_line p, SDL_Surface *screen, t_line borders, t_engine *engin
 	engine->end = p.x0;
 }
 
-void	angle_more_1(t_line p, SDL_Surface *screen, t_line borders, t_engine *engine)
+void	angle_more_1(t_line p, t_engine *engine)
 {
-	int 	*temp;
 	t_delta	d;
 
-	temp = (int *)screen->pixels;
 	d.dx = abs(p.x1 - p.x0);
 	d.dy = abs(p.y1 - p.y0);
 	d.error = 0;
@@ -91,12 +77,10 @@ void	angle_more_1(t_line p, SDL_Surface *screen, t_line borders, t_engine *engin
 	engine->end = p.x0;
 }
 
-void	angle_less_2(t_line p, SDL_Surface *screen, t_line borders, t_engine *engine)
+void	angle_less_2(t_line p, t_engine *engine)
 {
-	int		*temp;
 	t_delta	d;
 
-	temp = (int *)screen->pixels;
 	d.dx = abs(p.x1 - p.x0);
 	d.dy = abs(p.y1 - p.y0);
 	d.error = 0;
@@ -117,12 +101,10 @@ void	angle_less_2(t_line p, SDL_Surface *screen, t_line borders, t_engine *engin
 	engine->begin = p.x0;
 }
 
-void	angle_more_2(t_line p, SDL_Surface *screen, t_line borders, t_engine *engine)
+void	angle_more_2(t_line p, t_engine *engine)
 {
-	int		*temp;
 	t_delta	d;
 
-	temp = (int *)screen->pixels;
 	d.dx = abs(p.x1 - p.x0);
 	d.dy = abs(p.y1 - p.y0);
 	d.error = 0;
@@ -130,9 +112,6 @@ void	angle_more_2(t_line p, SDL_Surface *screen, t_line borders, t_engine *engin
 	engine->begin = p.x0;
 	while (p.y0 > p.y1)
 	{
-//		if (p.x0 >= borders.x0 && p.x0 < borders.x1
-//			&& p.y0 >= borders.y0 && p.y0 < borders.y1)
-//			temp[(p.y0 * W) + p.x0] = p.color;
 		fff(engine, p);
 		d.error += d.derror;
 		if (d.error >= d.dy + 1)
@@ -160,9 +139,6 @@ static t_line	swap_coords(t_line p)
 
 static void		render_perpendicular_line(t_line p, SDL_Surface *screen, t_line borders)
 {
-	int	*temp;
-
-	temp = (int *)screen->pixels;
 	if (p.x0 == p.x1)
 	{
 		p = p.y0 > p.y1 ? swap_coords(p) : p;
@@ -192,16 +168,16 @@ void			render_line1(t_line p, SDL_Surface *screen, t_line borders, t_engine *eng
 	else if (p.y0 < p.y1)
 	{
 		if (abs(p.x1 - p.x0) > abs(p.y1 - p.y0))
-			angle_less_1(p, screen, borders, engine);
+			angle_less_1(p, engine);
 		else
-			angle_more_1(p, screen, borders, engine);
+			angle_more_1(p, engine);
 	}
 	else
 	{
 		if (abs(p.x1 - p.x0) > abs(p.y1 - p.y0))
-			angle_less_2(swap_coords(p), screen, borders, engine);
+			angle_less_2(swap_coords(p), engine);
 		else
-			angle_more_2(p, screen, borders, engine);
+			angle_more_2(p, engine);
 	}
 }
 
@@ -218,6 +194,18 @@ static void		vline(t_line p, SDL_Surface *screen)
 		temp[(p.y0 * W) + p.x0] = p.color;
 		p.y0++;
 	}
+}
+
+void fff(t_engine *engine, t_line p)
+{
+	if (engine->key == 0)
+	{
+//		if (p.y0 > engine->bottom_line[p.x0])
+		engine->bottom_line[p.x0] = p.y0;
+	}
+	else
+//		if (p.y0 < engine->top_line[p.x0])
+		engine->top_line[p.x0] = p.y0;
 }
 
 void			render_wall_borders(t_engine *engine, t_sector sector)
@@ -247,12 +235,15 @@ void			render_wall_borders(t_engine *engine, t_sector sector)
 	wall.y1 = (int)((H >> 1) + p1.z / p1.x * (H >> 1));
 	engine->key = 1;
 	render_line1(wall, engine->screen, engine->borders, engine);
-	int i = engine->begin;
-	while (i < engine->end)
-	{
 
-		vline((t_line){i, i, 0, engine->top_line[i], 0xFFFFFF}, engine->screen);
-		vline((t_line){i, i, engine->bottom_line[i], H, 0xFFFFFF}, engine->screen);
+	if (wall.x1 < wall.x0)
+		wall = swap_coords(wall);
+
+	int i = wall.x0;
+	while (i < wall.x1)
+	{
+//		vline((t_line){i, i, 0, engine->top_line[i], 0xFFFFFF}, engine->screen);
+//		vline((t_line){i, i, engine->bottom_line[i], H, 0xFFFFFF}, engine->screen);
 		if (engine->wall.color == 0xFFFFFF)
 			vline((t_line){i, i, engine->top_line[i], engine->bottom_line[i], 0xaaaaff}, engine->screen);
 		else

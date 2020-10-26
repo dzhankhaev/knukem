@@ -5,7 +5,7 @@
 		<Option title="d-k3d"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SDL2\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\SDL2\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/chel/Desktop/knukem/cmake-build-debug"/>
@@ -44,7 +44,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/SDL2"/>
+					<Add directory="/usr/local/include/SDL2"/>
 					<Add directory="/home/chel/Desktop/knukem/d-k3d"/>
 					<Add directory="/home/chel/Desktop/knukem/includes"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
@@ -67,7 +67,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/SDL2"/>
+					<Add directory="/usr/local/include/SDL2"/>
 					<Add directory="/home/chel/Desktop/knukem/d-k3d"/>
 					<Add directory="/home/chel/Desktop/knukem/includes"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
@@ -144,8 +144,11 @@
 		<Unit filename="/home/chel/Desktop/knukem/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/../../../../usr/lib/x86_64-linux-gnu/cmake/SDL2/sdl2-config.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SDL2\"/>
+		<Unit filename="/home/chel/Desktop/knukem/../../../../usr/local/lib/cmake/SDL2/sdl2-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\SDL2\"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/../../../../usr/local/lib/cmake/SDL2/sdl2-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\SDL2\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>
