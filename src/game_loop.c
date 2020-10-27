@@ -2,13 +2,17 @@
 
 void	draw(t_engine *engine)
 {
+	unsigned	i;
+
+	i = 0;
+	while (i < engine->num_sectors)
+		engine->sectors[i++].flag = 1;
 	engine->max_queue = MAX_QUEUE;
 	engine->queue[engine->max_queue - 1].sectorno = 1;
 	engine->future = engine->queue + 1;
 	engine->present = engine->queue;
 	engine->present->sectorno = CUR_SECT;
-	int i = 0;
-	while (engine->present != engine->future && i++ < 2)
+	while (engine->present != engine->future)
 	{
 		run_queue(engine);
 		engine->present++;
@@ -47,8 +51,9 @@ void	game_loop(t_engine *engine)
 	{
 		for(int i = 0; i < W; i++)
 		{
-			engine->top_line[i] = H - 1;
-			engine->bottom_line[i] = 0;
+			engine->top_line[i] = 0;
+			engine->bottom_line[i] = H - 1;
+			engine->tline[i] = 1;
 		}
 		SDL_LockSurface(engine->screen);
 		SDL_FillRect(engine->screen, NULL, 0x000000);
