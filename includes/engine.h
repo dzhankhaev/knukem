@@ -3,7 +3,6 @@
 # include <math.h>
 # include <stdlib.h>
 # include <stdio.h>
-# include <unistd.h>
 # include <string.h>
 # include <SDL2/SDL.h>
 //# include <SDL2_ttf/SDL_ttf.h>
@@ -37,13 +36,12 @@
 # define KneeHeight 2				//how tall obj are those can be walked over without jumping
 # define acceleration_plus 0.6f		//множитель ускорения (увеличит)
 # define acceleration_minus 0.8f	//множитель ускорения (уменьшит)
-# define RAYSTEP 1.57f / W
 
 typedef struct	q_queue
 {
 	int			sectorno;	//номер сектора
-	int			x1;		//
-	int			x2;		//
+	int			size_x1;		//
+	int			size_x2;		//
 }				t_queue;
 
 typedef struct	s_delta
@@ -92,7 +90,6 @@ typedef struct	s_sector
 	t_xy		*vertex;		//	Координаты всех вершин данного сектора, причем первая координата дублируется в конце
 	int 		*neighbors;		//	Номера всех соседей данного сектора
 	unsigned	npoints;		//	Количество соседей
-	int			flag;
 }				t_sector;
 
 typedef	struct	s_player

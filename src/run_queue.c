@@ -1,5 +1,19 @@
 #include "engine.h"
 
+static int	check_repeating(t_queue *queue, unsigned max_queue, int c)
+{
+	int	i;
+
+	i = 0;
+	while (i < queue[max_queue - 1].sectorno)
+	{
+		if (queue[i].sectorno == c)
+			return 0;
+		i++;
+	}
+	return 1;
+}
+
 static int	color(t_engine *engine, unsigned s, int color)
 {
 	if (fabsf(engine->sectors[s].floor
@@ -16,9 +30,9 @@ static void	fill_queue(t_engine *engine, int sectorno, int i)
 	{
 		engine->wall.color = color(engine, sectorno, 0xFF4444);
 		if (engine->future + 1 != engine->queue + engine->max_queue
-			&& engine->sectors[engine->sectors[sectorno].neighbors[i]].flag)
+			&& check_repeating(engine->queue, engine->max_queue,
+							   engine->sectors[sectorno].neighbors[i]))
 		{
-			engine->sectors[engine->sectors[sectorno].neighbors[i]].flag = 0;
 			engine->queue[engine->max_queue - 1].sectorno += 1;
 			(engine->future++)->sectorno =
 					engine->sectors[sectorno].neighbors[i];

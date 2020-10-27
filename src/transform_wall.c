@@ -32,14 +32,12 @@ void fff(t_engine *engine, t_line p);
 void	angle_less_1(t_line p, t_engine *engine)
 {
 	t_delta	d;
-	int		a;
 
 	d.dx = abs(p.x1 - p.x0);
 	d.dy = abs(p.y1 - p.y0);
 	d.error = 0;
 	d.derror = d.dy + 1;
-	a = SDL_GetTicks();
-	while (p.x0 < p.x1 && SDL_GetTicks() - a < 5)
+	while (p.x0 < p.x1)
 	{
 
 		fff(engine, p);
@@ -56,14 +54,12 @@ void	angle_less_1(t_line p, t_engine *engine)
 void	angle_more_1(t_line p, t_engine *engine)
 {
 	t_delta	d;
-	int		a;
 
 	d.dx = abs(p.x1 - p.x0);
 	d.dy = abs(p.y1 - p.y0);
 	d.error = 0;
 	d.derror = d.dx + 1;
-	a = SDL_GetTicks();
-	while (p.y0 < p.y1 && SDL_GetTicks() - a < 5)
+	while (p.y0 < p.y1)
 	{
 
 		fff(engine, p);
@@ -80,14 +76,12 @@ void	angle_more_1(t_line p, t_engine *engine)
 void	angle_less_2(t_line p, t_engine *engine)
 {
 	t_delta	d;
-	int		a;
 
 	d.dx = abs(p.x1 - p.x0);
 	d.dy = abs(p.y1 - p.y0);
 	d.error = 0;
 	d.derror = d.dy + 1;
-	a = SDL_GetTicks();
-	while (p.x0 > p.x1 && SDL_GetTicks() - a < 5)
+	while (p.x0 > p.x1)
 	{
 
 		fff(engine, p);
@@ -104,14 +98,12 @@ void	angle_less_2(t_line p, t_engine *engine)
 void	angle_more_2(t_line p, t_engine *engine)
 {
 	t_delta	d;
-	int		a;
 
 	d.dx = abs(p.x1 - p.x0);
 	d.dy = abs(p.y1 - p.y0);
 	d.error = 0;
 	d.derror = d.dx + 1;
-	a = SDL_GetTicks();
-	while (p.y0 > p.y1 && SDL_GetTicks() - a < 5)
+	while (p.y0 > p.y1)
 	{
 		fff(engine, p);
 		d.error += d.derror;
@@ -137,38 +129,28 @@ static t_line	swap_coords(t_line p)
 	return (p);
 }
 
-static void		perpendicular_line(t_engine *engine, t_line p)
+static void		render_perpendicular_line(t_line p)
 {
-	int	a;
-
-	a = SDL_GetTicks();
 	if (p.x0 == p.x1)
 	{
 		p = p.y0 > p.y1 ? swap_coords(p) : p;
-		if (engine->key == 0)
-			fff(engine, p);
-		while (p.y0 < p.y1 && SDL_GetTicks() - a < 5)
+		while (p.y0 < p.y1)
 			p.y0++;
-		if (engine->key == 1)
-			fff(engine, p);
 	}
 	else
 	{
 		p = p.x0 > p.x1 ? swap_coords(p) : p;
-		while (p.x0 < p.x1 && SDL_GetTicks() - a < 5)
-		{
-			fff(engine, p);
+		while (p.x0 < p.x1)
 			p.x0++;
-		}
 	}
 }
 
-void			brazenheim(t_line p, t_engine *engine)
+void			render_line1(t_line p, t_engine *engine)
 {
 	if (p.x0 > p.x1)
 		p = swap_coords(p);
 	if (p.x0 == p.x1 || p.y0 == p.y1)
-		perpendicular_line(engine, p);
+		render_perpendicular_line(p);
 	else if (p.y0 < p.y1)
 	{
 		if (abs(p.x1 - p.x0) > abs(p.y1 - p.y0))
@@ -190,74 +172,83 @@ static void		vline(t_line p, SDL_Surface *screen)
 	int	*temp;
 
 	temp = (int *)screen->pixels;
+//	p = p.y0 > p.y1 ? swap_coords(p) : p;
 	p.y0 = p.y0 < 0 ? 0 : p.y0;
 	p.y0 = p.y0 > H - 1 ? H - 1 : p.y0;
 	p.y1 = p.y1 > H - 1 ? H - 1 : p.y1;
 	p.y1 = p.y1 < 0 ? 0 : p.y1;
 	while (p.y0 < p.y1)
 	{
-//		if (p.y0 >= 0 && p.y0 < H - 1)
-			temp[(p.y0 * W) + p.x0] = p.color;
+		temp[(p.y0 * W) + p.x0] = p.color;
 		p.y0++;
 	}
 }
 
 void fff(t_engine *engine, t_line p)
 {
+	static int a;
 	if (engine->key == 0)
 	{
-		engine->top_line[p.x0] = p.y0;
+		a = engine->top_line[p.x0];
+		engine->top_line[p.x0] = iclamp(p.y0, 0, engine->top_line[p.x0]);
+		if (a < engine->top_line[p.x0])
+			engine->top_line[p.x0] = a;
 	}
 	else
 	{
-		engine->bottom_line[p.x0] = p.y0;
+
+		engine->bottom_line[p.x0] = iclamp(p.y0, engine->bottom_line[p.x0], H - 1);
+		if (a < engine->bottom_line[p.x0])
+			engine->bottom_line[p.x0] = engine->top_line[p.x0];
 	}
-}
-
-t_line			calc_floor_and_ceil(t_engine *engine, t_sector sector)
-{
-	float	z;
-	t_xyz	p0;
-	t_xyz	p1;
-	t_line	wall;
-
-	wall.color = engine->wall.color;
-	z = engine->sectors[engine->player.sector].floor + engine->player.eyeheight - sector.ceil;
-	p0 = rot_y((t_xyz){engine->wall.x0, engine->wall.y0, z}, engine->player.yaw);
-	p1 = rot_y((t_xyz){engine->wall.x1, engine->wall.y1, z}, engine->player.yaw);
-	wall.x0 = (int)((W >> 1) + p0.y / p0.x * (W >> 1));
-	wall.x1 = (int)((W >> 1) + p1.y / p1.x * (W >> 1));
-	wall.y0 = (int)((H >> 1) + p0.z / p0.x * (H >> 1));
-	wall.y1 = (int)((H >> 1) + p1.z / p1.x * (H >> 1));
-	engine->key = 0;
-	brazenheim(wall, engine);
-	z = engine->sectors[engine->player.sector].floor + engine->player.eyeheight - sector.floor;
-	p0 = rot_y((t_xyz){engine->wall.x0, engine->wall.y0, z}, engine->player.yaw);
-	p1 = rot_y((t_xyz){engine->wall.x1, engine->wall.y1, z}, engine->player.yaw);
-	wall.x0 = (int)((W >> 1) + p0.y / p0.x * (W >> 1));
-	wall.x1 = (int)((W >> 1) + p1.y / p1.x * (W >> 1));
-	wall.y0 = (int)((H >> 1) + p0.z / p0.x * (H >> 1));
-	wall.y1 = (int)((H >> 1) + p1.z / p1.x * (H >> 1));
-	engine->key = 1;
-	brazenheim(wall, engine);
-	return (wall);
 }
 
 void			render_wall_borders(t_engine *engine, t_sector sector)
 {
 	t_line	wall;
-	int		i;
+	float	z;
+	t_xyz	p0;
+	t_xyz	p1;
 
-	wall = calc_floor_and_ceil(engine, sector);
-	if (wall.x1 < wall.x0)
-		wall = swap_coords(wall);
-	i = wall.x0;
-	while (i < wall.x1 && engine->present->sectorno == engine->player.sector)
+	if (engine->wall.color == 0xFFFFFF)
 	{
-		vline((t_line){i, i, 0, engine->top_line[i], 0x4455FF}, engine->screen);
-		vline((t_line){i, i, engine->bottom_line[i], H, 0x44ff44}, engine->screen);
-		vline((t_line){i, i, engine->top_line[i], engine->bottom_line[i], engine->wall.color}, engine->screen);
-		i++;
+		wall.color = engine->wall.color;
+		z = engine->sectors[engine->player.sector].floor + engine->player.eyeheight - sector.ceil;
+		p0 = rot_y((t_xyz){engine->wall.x0, engine->wall.y0, z}, engine->player.yaw);
+		p1 = rot_y((t_xyz){engine->wall.x1, engine->wall.y1, z}, engine->player.yaw);
+		wall.x0 = (int)((W >> 1) + p0.y / p0.x * (W >> 1));
+		wall.x1 = (int)((W >> 1) + p1.y / p1.x * (W >> 1));
+		wall.y0 = (int)((H >> 1) + p0.z / p0.x * (H >> 1));
+		wall.y1 = (int)((H >> 1) + p1.z / p1.x * (H >> 1));
+		engine->key = 0;
+		render_line1(wall, engine);
+
+		z = engine->sectors[engine->player.sector].floor + engine->player.eyeheight - sector.floor;
+		p0 = rot_y((t_xyz){engine->wall.x0, engine->wall.y0, z}, engine->player.yaw);
+		p1 = rot_y((t_xyz){engine->wall.x1, engine->wall.y1, z}, engine->player.yaw);
+		wall.x0 = (int)((W >> 1) + p0.y / p0.x * (W >> 1));
+		wall.x1 = (int)((W >> 1) + p1.y / p1.x * (W >> 1));
+		wall.y0 = (int)((H >> 1) + p0.z / p0.x * (H >> 1));
+		wall.y1 = (int)((H >> 1) + p1.z / p1.x * (H >> 1));
+		engine->key = 1;
+		render_line1(wall, engine);
+
+		if (wall.x1 < wall.x0)
+			wall = swap_coords(wall);
+		int color = engine->wall.color;
+		char *t = &color;
+		t[0] = (int)t[0] - p1.x * 3;
+		t[1] = (int)t[1] - p1.x * 3;
+		t[2] = (int)t[2] - p1.x * 3;
+		int i = wall.x0;
+		while (i < wall.x1)
+		{
+//		vline((t_line){i, i, 0, engine->top_line[i], 0xFFFFFF}, engine->screen);
+//		vline((t_line){i, i, engine->bottom_line[i], H, 0xFFFFFF}, engine->screen);
+		vline((t_line){i, i, engine->top_line[i], engine->bottom_line[i], color}, engine->screen);
+//		engine->top_line[i] = engine->bottom_line[i] + 1;
+			i++;
+		}
 	}
 }
 
@@ -281,38 +272,5 @@ void			transform_wall(t_engine *engine, int i)
 		engine->wall.color = 0;
 		return ; //то что не было отрезано и находится частично за спиной, а так же то что целиком лежит вне видимости тоже не рендерим.
 	}
-//	render_wall_borders(engine, sector);
+	render_wall_borders(engine, sector);
 }
-
-/*
-
-void fff(t_engine *engine, t_line p)
-{
-	static int a;
-	static int b;
-	if (engine->key == 0)
-	{
-		if (p.y0 > engine->top_line[p.x0])
-		{
-			engine->tline[p.x0] = p.y0;
-		}
-		else
-		{
-			engine->top_line[p.x0] = p.y0;
-			engine->tline[p.x0] = p.y0;
-		}
-	}
-	else
-	{
-		if (p.y0 < engine->bottom_line[p.x0])
-		{
-			engine->bline[p.x0] = p.y0;
-		}
-		else
-		{
-			engine->bottom_line[p.x0] = p.y0;
-			engine->bline[p.x0] = p.y0;
-		}
-	}
-}
- */

@@ -13,8 +13,6 @@ stdlib.h
 -
 stdio.h
 -
-unistd.h
--
 string.h
 -
 SDL2/SDL.h
