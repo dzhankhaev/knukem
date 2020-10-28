@@ -19,7 +19,6 @@ add_executable(d-k3d
         src/math_utilits/mathf.c
         src/render/line/render_line.c
         src/render/minimap.c
-        src/render/line/render_line_with_angle.c
         includes/engine.h
         includes/arg_defines.h
         includes/math_utilits.h

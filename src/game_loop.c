@@ -42,26 +42,24 @@ void	init_minimap(t_engine *engine)
 
 void	game_loop(t_engine *engine)
 {
+	int		time;
+
 	engine->borders = (t_line){0, W, 0, H, 0x555555};
 	engine->player.cntrl = 0;
 	engine->player.eyeheight = EyeHeight;
 	engine->player.temp_yaw = 1.f;
 	init_minimap(engine);
+	time = 0;
 	while (!engine->close_request)
 	{
-		for(int i = 0; i < W; i++)
-		{
-			engine->top_line[i] = 0;
-			engine->bottom_line[i] = H - 1;
-			engine->tline[i] = 1;
-		}
-		SDL_LockSurface(engine->screen);
-		SDL_FillRect(engine->screen, NULL, 0x000000);
 		keys_manager(engine);
 		move(engine);
+		SDL_LockSurface(engine->screen);
 		draw(engine);
 		SDL_UnlockSurface(engine->screen);
+		if (SDL_GetTicks() - time < 32)
+			SDL_Delay(32 - SDL_GetTicks() + time);
+		time = SDL_GetTicks();
 		SDL_UpdateWindowSurface(engine->window);
-		SDL_Delay(10);
 	}
 }

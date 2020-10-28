@@ -233,22 +233,9 @@ CMakeFiles/d-k3d.dir/src/render/minimap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/minimap.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/render/minimap.c -o CMakeFiles/d-k3d.dir/src/render/minimap.c.s
 
-CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.o: CMakeFiles/d-k3d.dir/flags.make
-CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.o: ../src/render/line/render_line_with_angle.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.o   -c /home/chel/Desktop/knukem/src/render/line/render_line_with_angle.c
-
-CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/render/line/render_line_with_angle.c > CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.i
-
-CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/render/line/render_line_with_angle.c -o CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.s
-
 CMakeFiles/d-k3d.dir/src/math_utilits/rotate_wall.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/math_utilits/rotate_wall.c.o: ../src/math_utilits/rotate_wall.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/d-k3d.dir/src/math_utilits/rotate_wall.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/d-k3d.dir/src/math_utilits/rotate_wall.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/math_utilits/rotate_wall.c.o   -c /home/chel/Desktop/knukem/src/math_utilits/rotate_wall.c
 
 CMakeFiles/d-k3d.dir/src/math_utilits/rotate_wall.c.i: cmake_force
@@ -261,7 +248,7 @@ CMakeFiles/d-k3d.dir/src/math_utilits/rotate_wall.c.s: cmake_force
 
 CMakeFiles/d-k3d.dir/src/transform_wall.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/transform_wall.c.o: ../src/transform_wall.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/d-k3d.dir/src/transform_wall.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/d-k3d.dir/src/transform_wall.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/transform_wall.c.o   -c /home/chel/Desktop/knukem/src/transform_wall.c
 
 CMakeFiles/d-k3d.dir/src/transform_wall.c.i: cmake_force
@@ -274,7 +261,7 @@ CMakeFiles/d-k3d.dir/src/transform_wall.c.s: cmake_force
 
 CMakeFiles/d-k3d.dir/src/cut_wall.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/cut_wall.c.o: ../src/cut_wall.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/d-k3d.dir/src/cut_wall.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/d-k3d.dir/src/cut_wall.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/cut_wall.c.o   -c /home/chel/Desktop/knukem/src/cut_wall.c
 
 CMakeFiles/d-k3d.dir/src/cut_wall.c.i: cmake_force
@@ -299,7 +286,6 @@ d__k3d_OBJECTS = \
 "CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.o" \
 "CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o" \
 "CMakeFiles/d-k3d.dir/src/render/minimap.c.o" \
-"CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.o" \
 "CMakeFiles/d-k3d.dir/src/math_utilits/rotate_wall.c.o" \
 "CMakeFiles/d-k3d.dir/src/transform_wall.c.o" \
 "CMakeFiles/d-k3d.dir/src/cut_wall.c.o"
@@ -319,13 +305,12 @@ d-k3d: CMakeFiles/d-k3d.dir/src/math_utilits/intersection_point.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/render/minimap.c.o
-d-k3d: CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/math_utilits/rotate_wall.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/transform_wall.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/cut_wall.c.o
 d-k3d: CMakeFiles/d-k3d.dir/build.make
 d-k3d: CMakeFiles/d-k3d.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking C executable d-k3d"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking C executable d-k3d"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/d-k3d.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -142,11 +142,6 @@ typedef struct	s_engine
 	unsigned	max_queue;
 	unsigned	close_request;
 	t_fline		wall;
-	int			top_line[W];
-	int			bottom_line[W];
-	int			tline[W];
-	int			bline[W];
-	int			key;
 }				t_engine;
 
 
@@ -165,10 +160,9 @@ void			minimap_cut(t_engine *engine, t_xy v0, t_xy v1, int color);		//показ
 void			render_minimap_hud(t_minimap minimap, SDL_Surface *screen);		//рисуется один раз на кадр
 void			run_queue(t_engine *engine);
 void			render_line(t_line p, SDL_Surface *screen, t_line borders);
-void			angle_less_than_45_1(t_line p, SDL_Surface *screen, t_line borders);
-void			angle_more_than_45_1(t_line p, SDL_Surface *screen, t_line borders);
-void			angle_less_than_45_2(t_line p, SDL_Surface *screen, t_line borders);
-void			angle_more_than_45_2(t_line p, SDL_Surface *screen, t_line borders);
+void			swap_point(int *a, int *b);
+int 			normi_line(t_line *p);
+t_delta			get_delta(t_line p);
 void			move(t_engine *engine);
 
 #endif

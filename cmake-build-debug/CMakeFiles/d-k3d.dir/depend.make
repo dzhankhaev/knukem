@@ -45,9 +45,6 @@ CMakeFiles/d-k3d.dir/src/move.c.o: ../src/move.c
 CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o: ../includes/engine.h
 CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o: ../src/render/line/render_line.c
 
-CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.o: ../includes/engine.h
-CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.o: ../src/render/line/render_line_with_angle.c
-
 CMakeFiles/d-k3d.dir/src/render/minimap.c.o: ../includes/engine.h
 CMakeFiles/d-k3d.dir/src/render/minimap.c.o: ../src/render/minimap.c
 
