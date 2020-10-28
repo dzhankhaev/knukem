@@ -6,8 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../includes/arg_defines.h
-
 ../includes/engine.h
 math.h
 -
@@ -32,55 +30,7 @@ SDL_mixer.h
 engine.h
 ../includes/engine.h
 
-/home/chel/Desktop/knukem/src/keys_manager.c
-engine.h
-/home/chel/Desktop/knukem/src/engine.h
-math_utilits.h
-/home/chel/Desktop/knukem/src/math_utilits.h
-
-/home/chel/Desktop/knukem/src/main.c
-engine.h
-/home/chel/Desktop/knukem/src/engine.h
-arg_defines.h
-/home/chel/Desktop/knukem/src/arg_defines.h
-math_utilits.h
-/home/chel/Desktop/knukem/src/math_utilits.h
-
-/home/chel/Desktop/knukem/src/math_utilits/determine_intersection.c
-math_utilits.h
-/home/chel/Desktop/knukem/src/math_utilits/math_utilits.h
-engine.h
-/home/chel/Desktop/knukem/src/math_utilits/engine.h
-
-/home/chel/Desktop/knukem/src/math_utilits/intersection_point.c
-engine.h
-/home/chel/Desktop/knukem/src/math_utilits/engine.h
-math_utilits.h
-/home/chel/Desktop/knukem/src/math_utilits/math_utilits.h
-arg_defines.h
-/home/chel/Desktop/knukem/src/math_utilits/arg_defines.h
-
-/home/chel/Desktop/knukem/src/math_utilits/mathf.c
-math_utilits.h
-/home/chel/Desktop/knukem/src/math_utilits/math_utilits.h
-
-/home/chel/Desktop/knukem/src/math_utilits/perspective_transform.c
-math_utilits.h
-/home/chel/Desktop/knukem/src/math_utilits/math_utilits.h
-
-/home/chel/Desktop/knukem/src/move.c
-engine.h
--
-math_utilits.h
-/home/chel/Desktop/knukem/src/math_utilits.h
-
 /home/chel/Desktop/knukem/src/render/render_wall.c
 math_utilits.h
 /home/chel/Desktop/knukem/src/render/math_utilits.h
-
-/home/chel/Desktop/knukem/src/transform_wall.c
-engine.h
-/home/chel/Desktop/knukem/src/engine.h
-math_utilits.h
-/home/chel/Desktop/knukem/src/math_utilits.h
 

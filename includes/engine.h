@@ -37,8 +37,8 @@
 typedef struct	q_queue
 {
 	int			sectorno;	//номер сектора
+	int			x0;		//
 	int			x1;		//
-	int			x2;		//
 }				t_queue;
 
 typedef struct	s_delta
@@ -60,10 +60,10 @@ typedef struct	s_line
 
 typedef struct	s_fline
 {
-	float			x0;
-	float			x1;
-	float			y0;
-	float			y1;
+	float		x0;
+	float		x1;
+	float		y0;
+	float		y1;
 	int			color;
 }				t_fline;
 
@@ -151,7 +151,7 @@ void			keys_manager(t_engine *engine);
 void			clean_up(t_engine *engine);
 void			draw(t_engine *engine);
 int 			transform_wall(t_engine *engine, int i);
-void			render_wall(t_engine *engine, t_sector sector);
+void			render_wall(t_engine *engine, t_sector sector, int neighbor);
 t_fline			cut_wall(t_fline wall, t_xy i1, t_xy i2);						//разрезает стену для попадания в fov
 void			minimap(t_engine *engine, t_xy v0, t_xy v1, int color);			//рисуется отдельно для каждой стены
 void			minimap_cut(t_engine *engine, t_xy v0, t_xy v1, int color);		//показывает только то, что в поле зрения

@@ -36,7 +36,7 @@ float			point_side(float px, float py, t_xy vert, t_xy vert1)
 int				y_for_x(t_line wall, int x)
 {
 	int y;
-//волшебная формула
+//уравнение прямой
 	y = (x - wall.x0) * (wall.y1 - wall.y0) / (wall.x1 - wall.x0) + wall.y0;
 	return (y);
 }

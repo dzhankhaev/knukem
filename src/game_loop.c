@@ -17,7 +17,7 @@ void	draw(t_engine *engine)
 	engine->queue[engine->max_queue - 1].sectorno = 1;
 	engine->future = engine->queue + 1;
 	engine->present = engine->queue;
-	engine->present->sectorno = CUR_SECT;
+	*engine->present = (t_queue){CUR_SECT, 0, W - 1};
 	while (engine->present != engine->future)
 	{
 		run_queue(engine);
