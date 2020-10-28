@@ -120,7 +120,10 @@
 		<Unit filename="/home/chel/Desktop/knukem/src/math_utilits/mathf.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/math_utilits/rotate_wall.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/math_utilits/perspective_transform.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/math_utilits/rotates.c">
 			<Option target="d-k3d"/>
 		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/src/move.c">
@@ -133,6 +136,9 @@
 			<Option target="d-k3d"/>
 		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/src/render/minimap.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/render/render_wall.c">
 			<Option target="d-k3d"/>
 		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/src/run_queue.c">

@@ -35,9 +35,13 @@ CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.o
  ../includes/engine.h
  ../includes/math_utilits.h
  /home/chel/Desktop/knukem/src/math_utilits/mathf.c
-CMakeFiles/d-k3d.dir/src/math_utilits/rotate_wall.c.o
+CMakeFiles/d-k3d.dir/src/math_utilits/perspective_transform.c.o
  ../includes/engine.h
- /home/chel/Desktop/knukem/src/math_utilits/rotate_wall.c
+ ../includes/math_utilits.h
+ /home/chel/Desktop/knukem/src/math_utilits/perspective_transform.c
+CMakeFiles/d-k3d.dir/src/math_utilits/rotates.c.o
+ ../includes/engine.h
+ /home/chel/Desktop/knukem/src/math_utilits/rotates.c
 CMakeFiles/d-k3d.dir/src/move.c.o
  ../includes/engine.h
  ../includes/math_utilits.h
@@ -51,6 +55,10 @@ CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o
 CMakeFiles/d-k3d.dir/src/render/minimap.c.o
  ../includes/engine.h
  /home/chel/Desktop/knukem/src/render/minimap.c
+CMakeFiles/d-k3d.dir/src/render/render_wall.c.o
+ ../includes/engine.h
+ ../includes/math_utilits.h
+ /home/chel/Desktop/knukem/src/render/render_wall.c
 CMakeFiles/d-k3d.dir/src/run_queue.c.o
  ../includes/engine.h
  /home/chel/Desktop/knukem/src/run_queue.c

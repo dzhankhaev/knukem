@@ -386,32 +386,59 @@ src/math_utilits/mathf.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.s
 .PHONY : src/math_utilits/mathf.c.s
 
-src/math_utilits/rotate_wall.o: src/math_utilits/rotate_wall.c.o
+src/math_utilits/perspective_transform.o: src/math_utilits/perspective_transform.c.o
 
-.PHONY : src/math_utilits/rotate_wall.o
+.PHONY : src/math_utilits/perspective_transform.o
 
 # target to build an object file
-src/math_utilits/rotate_wall.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/math_utilits/rotate_wall.c.o
-.PHONY : src/math_utilits/rotate_wall.c.o
+src/math_utilits/perspective_transform.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/math_utilits/perspective_transform.c.o
+.PHONY : src/math_utilits/perspective_transform.c.o
 
-src/math_utilits/rotate_wall.i: src/math_utilits/rotate_wall.c.i
+src/math_utilits/perspective_transform.i: src/math_utilits/perspective_transform.c.i
 
-.PHONY : src/math_utilits/rotate_wall.i
+.PHONY : src/math_utilits/perspective_transform.i
 
 # target to preprocess a source file
-src/math_utilits/rotate_wall.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/math_utilits/rotate_wall.c.i
-.PHONY : src/math_utilits/rotate_wall.c.i
+src/math_utilits/perspective_transform.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/math_utilits/perspective_transform.c.i
+.PHONY : src/math_utilits/perspective_transform.c.i
 
-src/math_utilits/rotate_wall.s: src/math_utilits/rotate_wall.c.s
+src/math_utilits/perspective_transform.s: src/math_utilits/perspective_transform.c.s
 
-.PHONY : src/math_utilits/rotate_wall.s
+.PHONY : src/math_utilits/perspective_transform.s
 
 # target to generate assembly for a file
-src/math_utilits/rotate_wall.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/math_utilits/rotate_wall.c.s
-.PHONY : src/math_utilits/rotate_wall.c.s
+src/math_utilits/perspective_transform.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/math_utilits/perspective_transform.c.s
+.PHONY : src/math_utilits/perspective_transform.c.s
+
+src/math_utilits/rotates.o: src/math_utilits/rotates.c.o
+
+.PHONY : src/math_utilits/rotates.o
+
+# target to build an object file
+src/math_utilits/rotates.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/math_utilits/rotates.c.o
+.PHONY : src/math_utilits/rotates.c.o
+
+src/math_utilits/rotates.i: src/math_utilits/rotates.c.i
+
+.PHONY : src/math_utilits/rotates.i
+
+# target to preprocess a source file
+src/math_utilits/rotates.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/math_utilits/rotates.c.i
+.PHONY : src/math_utilits/rotates.c.i
+
+src/math_utilits/rotates.s: src/math_utilits/rotates.c.s
+
+.PHONY : src/math_utilits/rotates.s
+
+# target to generate assembly for a file
+src/math_utilits/rotates.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/math_utilits/rotates.c.s
+.PHONY : src/math_utilits/rotates.c.s
 
 src/move.o: src/move.c.o
 
@@ -521,6 +548,33 @@ src/render/minimap.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/minimap.c.s
 .PHONY : src/render/minimap.c.s
 
+src/render/render_wall.o: src/render/render_wall.c.o
+
+.PHONY : src/render/render_wall.o
+
+# target to build an object file
+src/render/render_wall.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_wall.c.o
+.PHONY : src/render/render_wall.c.o
+
+src/render/render_wall.i: src/render/render_wall.c.i
+
+.PHONY : src/render/render_wall.i
+
+# target to preprocess a source file
+src/render/render_wall.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_wall.c.i
+.PHONY : src/render/render_wall.c.i
+
+src/render/render_wall.s: src/render/render_wall.c.s
+
+.PHONY : src/render/render_wall.s
+
+# target to generate assembly for a file
+src/render/render_wall.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_wall.c.s
+.PHONY : src/render/render_wall.c.s
+
 src/run_queue.o: src/run_queue.c.o
 
 .PHONY : src/run_queue.o
@@ -611,9 +665,12 @@ help:
 	@echo "... src/math_utilits/mathf.o"
 	@echo "... src/math_utilits/mathf.i"
 	@echo "... src/math_utilits/mathf.s"
-	@echo "... src/math_utilits/rotate_wall.o"
-	@echo "... src/math_utilits/rotate_wall.i"
-	@echo "... src/math_utilits/rotate_wall.s"
+	@echo "... src/math_utilits/perspective_transform.o"
+	@echo "... src/math_utilits/perspective_transform.i"
+	@echo "... src/math_utilits/perspective_transform.s"
+	@echo "... src/math_utilits/rotates.o"
+	@echo "... src/math_utilits/rotates.i"
+	@echo "... src/math_utilits/rotates.s"
 	@echo "... src/move.o"
 	@echo "... src/move.i"
 	@echo "... src/move.s"
@@ -626,6 +683,9 @@ help:
 	@echo "... src/render/minimap.o"
 	@echo "... src/render/minimap.i"
 	@echo "... src/render/minimap.s"
+	@echo "... src/render/render_wall.o"
+	@echo "... src/render/render_wall.i"
+	@echo "... src/render/render_wall.s"
 	@echo "... src/run_queue.o"
 	@echo "... src/run_queue.i"
 	@echo "... src/run_queue.s"

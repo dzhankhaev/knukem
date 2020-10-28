@@ -35,8 +35,12 @@ CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.o: ../includes/engine.h
 CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.o: ../includes/math_utilits.h
 CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.o: ../src/math_utilits/mathf.c
 
-CMakeFiles/d-k3d.dir/src/math_utilits/rotate_wall.c.o: ../includes/engine.h
-CMakeFiles/d-k3d.dir/src/math_utilits/rotate_wall.c.o: ../src/math_utilits/rotate_wall.c
+CMakeFiles/d-k3d.dir/src/math_utilits/perspective_transform.c.o: ../includes/engine.h
+CMakeFiles/d-k3d.dir/src/math_utilits/perspective_transform.c.o: ../includes/math_utilits.h
+CMakeFiles/d-k3d.dir/src/math_utilits/perspective_transform.c.o: ../src/math_utilits/perspective_transform.c
+
+CMakeFiles/d-k3d.dir/src/math_utilits/rotates.c.o: ../includes/engine.h
+CMakeFiles/d-k3d.dir/src/math_utilits/rotates.c.o: ../src/math_utilits/rotates.c
 
 CMakeFiles/d-k3d.dir/src/move.c.o: ../includes/engine.h
 CMakeFiles/d-k3d.dir/src/move.c.o: ../includes/math_utilits.h
@@ -50,6 +54,10 @@ CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o: ../src/render/line/render
 
 CMakeFiles/d-k3d.dir/src/render/minimap.c.o: ../includes/engine.h
 CMakeFiles/d-k3d.dir/src/render/minimap.c.o: ../src/render/minimap.c
+
+CMakeFiles/d-k3d.dir/src/render/render_wall.c.o: ../includes/engine.h
+CMakeFiles/d-k3d.dir/src/render/render_wall.c.o: ../includes/math_utilits.h
+CMakeFiles/d-k3d.dir/src/render/render_wall.c.o: ../src/render/render_wall.c
 
 CMakeFiles/d-k3d.dir/src/run_queue.c.o: ../includes/engine.h
 CMakeFiles/d-k3d.dir/src/run_queue.c.o: ../src/run_queue.c

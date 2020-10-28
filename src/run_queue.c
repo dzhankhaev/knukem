@@ -38,7 +38,8 @@ void 		run_queue(t_engine *engine)
 	{
 		fill_queue(engine, sectorno, i);
 		color = engine->wall.color;
-		transform_wall(engine, i);
+		if (transform_wall(engine, i))
+			render_wall(engine, engine->sectors[sectorno]);
 		if (engine->minimap.mod)
 			minimap(engine, engine->sectors[sectorno].vertex[i],
 	engine->sectors[sectorno].vertex[i + 1], color);

@@ -137,6 +137,8 @@ typedef struct	s_engine
 	unsigned	max_queue;
 	unsigned	close_request;
 	t_fline		wall;
+	int			tline[W];
+	int			bline[W];
 }				t_engine;
 
 
@@ -148,7 +150,8 @@ void			move_player(float dx, float dy, t_engine *engine);
 void			keys_manager(t_engine *engine);
 void			clean_up(t_engine *engine);
 void			draw(t_engine *engine);
-void			transform_wall(t_engine *engine, int i);						//
+int 			transform_wall(t_engine *engine, int i);
+void			render_wall(t_engine *engine, t_sector sector);
 t_fline			cut_wall(t_fline wall, t_xy i1, t_xy i2);						//разрезает стену для попадания в fov
 void			minimap(t_engine *engine, t_xy v0, t_xy v1, int color);			//рисуется отдельно для каждой стены
 void			minimap_cut(t_engine *engine, t_xy v0, t_xy v1, int color);		//показывает только то, что в поле зрения

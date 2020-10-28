@@ -32,3 +32,24 @@ float			point_side(float px, float py, t_xy vert, t_xy vert1)
 	return (vector_cross_product(vert1.x - vert.x, vert1.y - vert.y,
 								 px - vert.x, py - vert.y));
 }
+
+int				y_for_x(t_line wall, int x)
+{
+	int y;
+//волшебная формула
+	y = (x - wall.x0) * (wall.y1 - wall.y0) / (wall.x1 - wall.x0) + wall.y0;
+	return (y);
+}
+
+t_line			swap_coords(t_line p)
+{
+	int t;
+
+	t = p.x0;
+	p.x0 = p.x1;
+	p.x1 = t;
+	t = p.y0;
+	p.y0 = p.y1;
+	p.y1 = t;
+	return (p);
+}

@@ -1,6 +1,6 @@
 #include "engine.h"
 
-t_fline		normi_wall(t_sector sector, t_player player, int i, int color)
+static t_fline	normi_wall(t_sector sector, t_player player, int i, int color)
 {
 	t_fline		wall;
 
@@ -12,14 +12,22 @@ t_fline		normi_wall(t_sector sector, t_player player, int i, int color)
 	return (wall);
 }
 
-t_fline		rotate_wall(t_fline wall, t_player player)
+t_fline			rotate_wall(t_sector sector, t_player player, int i, int color)
 {
 	t_fline	w;
+	t_fline	wall;
 
+	wall = normi_wall(sector, player, i, color);
 	w = wall;
 	wall.x0 = w.x0 * player.anglecos + w.y0 * player.anglesin;
 	wall.x1 = w.x1 * player.anglecos + w.y1 * player.anglesin;
 	wall.y0 = -w.x0 * player.anglesin + w.y0 * player.anglecos;
 	wall.y1 = -w.x1 * player.anglesin + w.y1 * player.anglecos;
 	return (wall);
+}
+
+t_xyz			vrotate(t_xyz p, float angle)
+{
+	p.z = -p.x * sinf(angle) + p.z * cosf(angle);
+	return (p);
 }

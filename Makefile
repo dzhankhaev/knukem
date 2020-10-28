@@ -28,8 +28,10 @@ SRC := main.c\
 	math_utilits/determine_intersection.c\
     math_utilits/mathf.c\
     math_utilits/intersection_point.c\
-    math_utilits/rotate_wall.c\
+    math_utilits/rotates.c\
+    math_utilits/perspective_transform.c\
 	render/minimap.c\
+	render/render_wall.c\
 	render/line/render_line.c\
 	render/line/render_vline.c\
 

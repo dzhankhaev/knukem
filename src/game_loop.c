@@ -7,6 +7,12 @@ void	draw(t_engine *engine)
 	i = 0;
 	while (i < engine->num_sectors)
 		engine->sectors[i++].flag = 1;
+	i = 0;
+	while (i < W)
+	{
+		engine->tline[i] = 0;
+		engine->bline[i++] = H - 1;
+	}
 	engine->max_queue = MAX_QUEUE;
 	engine->queue[engine->max_queue - 1].sectorno = 1;
 	engine->future = engine->queue + 1;
