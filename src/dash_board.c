@@ -6,12 +6,20 @@
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 11:32:34 by ecelsa            #+#    #+#             */
-/*   Updated: 2020/10/20 15:46:13 by ecelsa           ###   ########.fr       */
+/*   Updated: 2020/10/22 15:08:22 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse_wad.h"
 
+char			**playpal()
+{
+	static char pyp[2][3] = {"a1a","a2a"};
+	char		**bla;
+	// playpal = 0;
+	printf("%s %s", pyp[0], pyp[1]);
+ 	return ((char**)pyp);
+}
 
 void			pars_colum(SDL_Surface *scr, t_patch *patch, unsigned char *clp)
 {
@@ -245,8 +253,11 @@ int				main(int argc, char **argv)
 	t_patch		*patch;
 	char		colormap[14][256 * 3];
 	int			pow;
-	int			pal = 10;
+	int			pal = 0;
 
+	char **ddd;
+	ddd = playpal();
+	// printf("%s | %s", ddd[0], ddd[1]);
 	if (argc == 1)
 	{
 		write(1, "No patch Name\n", 14);
@@ -254,6 +265,7 @@ int				main(int argc, char **argv)
 	}
 	lmp = NULL;
 	patch = load_patch("Doom1.WAD", "PLAYPAL");
+	// // colormap = playpal();
 	ft_memcpy(colormap, patch->mem, patch->size_patch);
 	free_patch(&patch);
 	if ((patch = load_patch("Doom1.WAD", argv[1])))

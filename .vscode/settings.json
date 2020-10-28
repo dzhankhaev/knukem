@@ -11,7 +11,10 @@
 		"unordered_map": "c",
 		"utility": "c",
 		"vector": "c",
-		"ratio": "c"
+		"ratio": "c",
+		"chrono": "cpp",
+		"iostream": "cpp",
+		"algorithm": "cpp"
 	}
 
 }
