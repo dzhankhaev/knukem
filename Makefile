@@ -31,6 +31,7 @@ SRC := main.c\
     math_utilits/rotate_wall.c\
 	render/minimap.c\
 	render/line/render_line.c\
+	render/line/render_vline.c\
 
 
 OBJ := $(SRC:.c=.o)

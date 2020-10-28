@@ -21,7 +21,7 @@ t_xyz	rot_y(t_xyz p, float gamma)
 	x = p.x;
 	z = p.z;
 //	p.x = x * cosf(gamma) + z * sinf(gamma);
-//	p.z = -x * sinf(gamma) + z * cosf(gamma);
+	p.z = -x * sinf(gamma) + z * cosf(gamma);
 	return (p);
 }
 
@@ -38,68 +38,58 @@ static t_line	swap_coords(t_line p)
 	return (p);
 }
 
-static void		vline(t_line p, SDL_Surface *screen)
-{
-	int	*temp;
-
-	temp = (int *)screen->pixels;
-	p.y0 = p.y0 < 0 ? 0 : p.y0;
-	p.y0 = p.y0 > H - 1 ? H - 1 : p.y0;
-	p.y1 = p.y1 > H - 1 ? H - 1 : p.y1;
-	p.y1 = p.y1 < 0 ? 0 : p.y1;
-	while (p.y0 < p.y1)
-	{
-//		if (p.y0 >= 0 && p.y0 < H - 1)
-			temp[(p.y0 * W) + p.x0] = p.color;
-		p.y0++;
-	}
-}
-
-void			render_wall_borders(t_engine *engine, t_sector sector)
+t_line	perspective_transform(t_engine *engine, float height, int color)
 {
 	t_line	wall;
-	t_line	wall2;
 	float	z;
 	t_xyz	p0;
 	t_xyz	p1;
-	int		i;
-	int		ytop[W];
-	int 	ybottom[W];
 
-	for(int ii = 0; ii < W; ii++)
-	{
-		ytop[ii] = 0;
-		ybottom[ii] = H - 1;
-	}
-	wall.color = engine->wall.color;
-	wall2.color = engine->wall.color;
-	z = engine->sectors[engine->player.sector].floor + engine->player.eyeheight - sector.ceil;
-	p0 = rot_y((t_xyz){engine->wall.x0, engine->wall.y0, z}, engine->player.yaw);
-	p1 = rot_y((t_xyz){engine->wall.x1, engine->wall.y1, z}, engine->player.yaw);
-	wall2.x0 = (int)((W >> 1) + p0.y / p0.x * (W >> 1));
-	wall2.x1 = (int)((W >> 1) + p1.y / p1.x * (W >> 1));
-	wall2.y0 = (int)((H >> 1) + p0.z / p0.x * (H >> 1));
-	wall2.y1 = (int)((H >> 1) + p1.z / p1.x * (H >> 1));
-	z = engine->sectors[engine->player.sector].floor + engine->player.eyeheight - sector.floor;
-	p0 = rot_y((t_xyz){engine->wall.x0, engine->wall.y0, z}, engine->player.yaw);
-	p1 = rot_y((t_xyz){engine->wall.x1, engine->wall.y1, z}, engine->player.yaw);
+	wall.color = color;
+	z = engine->sectors[engine->player.sector].floor
+			+ engine->player.eyeheight - height;
+	p0 = rot_y((t_xyz){engine->wall.x0, engine->wall.y0, z},
+			engine->player.yaw);
+	p1 = rot_y((t_xyz){engine->wall.x1, engine->wall.y1, z},
+			engine->player.yaw);
 	wall.x0 = (int)((W >> 1) + p0.y / p0.x * (W >> 1));
 	wall.x1 = (int)((W >> 1) + p1.y / p1.x * (W >> 1));
 	wall.y0 = (int)((H >> 1) + p0.z / p0.x * (H >> 1));
 	wall.y1 = (int)((H >> 1) + p1.z / p1.x * (H >> 1));
+	return (wall);
+}
 
-	if (wall.x1 < wall.x0)
-		wall = swap_coords(wall);
-	i = wall.x0;
-	while (i < wall.x1 && engine->present->sectorno == engine->player.sector)
+int				calculate_y_for_x(t_line wall, int x)
+{
+	int y;
+
+	y = (x - wall.x0) * (wall.y1 - wall.y0) / (wall.x1 - wall.x0) + wall.y0;
+	return (y);
+}
+
+void			render_walls(t_engine *engine, t_sector sector)
+{
+	t_line	wall[2];
+	int		y[2];
+	int		i;
+	int		top_line[W] = {0};
+	int 	bottom_line[W];
+
+	i = 0;
+	while (i < W)
+		bottom_line[i++] = H - 1;
+	wall[0] = perspective_transform(engine, sector.ceil, 0x4455FF);
+	wall[1] = perspective_transform(engine, sector.floor, 0x44ff44);
+	if (wall[0].x1 < wall[0].x0)
+		wall[0] = swap_coords(wall[0]);
+	i = wall[0].x0;
+	while (i < wall[0].x1 && engine->present->sectorno == engine->player.sector)
 	{
-		int ya = (i - wall2.x0) * (wall2.y1 - wall2.y0) / (wall2.x1 - wall2.x0) + wall2.y0;
-		int yb = (i - wall.x0) * (wall.y1 - wall.y0) / (wall.x1 - wall.x0) + wall.y0;
-		int cya = iclamp(ya, ytop[i], ybottom[i]);
-		int cyb = iclamp(yb, ytop[i], ybottom[i]);
-		vline((t_line){i, i, ytop[i], cya - 1, 0x4455FF}, engine->screen);
-		vline((t_line){i, i, cyb + 1, ybottom[i], 0x44ff44}, engine->screen);
-		vline((t_line){i, i, cya - 1, cyb + 1, engine->wall.color}, engine->screen);
+		y[0] = iclamp(calculate_y_for_x(wall[0], i), top_line[i], bottom_line[i]) - 1;
+		y[1] = iclamp(calculate_y_for_x(wall[1], i), top_line[i], bottom_line[i]) + 1;
+		render_vline((t_line){i, i, top_line[i], y[0], wall[0].color}, engine->screen);
+		render_vline((t_line){i, i, y[1], bottom_line[i], wall[1].color}, engine->screen);
+		render_vline((t_line){i, i, y[0], y[1], engine->wall.color}, engine->screen);
 		i++;
 	}
 }
@@ -124,5 +114,5 @@ void			transform_wall(t_engine *engine, int i)
 		engine->wall.color = 0;
 		return ; //то что не было отрезано и находится частично за спиной, а так же то что целиком лежит вне видимости тоже не рендерим.
 	}
-	render_wall_borders(engine, sector);
+	render_walls(engine, sector);
 }

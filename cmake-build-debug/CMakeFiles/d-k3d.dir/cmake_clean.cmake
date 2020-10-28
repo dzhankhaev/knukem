@@ -11,6 +11,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/d-k3d.dir/src/math_utilits/rotate_wall.c.o"
   "CMakeFiles/d-k3d.dir/src/move.c.o"
   "CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o"
+  "CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o"
   "CMakeFiles/d-k3d.dir/src/render/minimap.c.o"
   "CMakeFiles/d-k3d.dir/src/run_queue.c.o"
   "CMakeFiles/d-k3d.dir/src/transform_wall.c.o"

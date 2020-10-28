@@ -21,23 +21,18 @@
 # define H 1080
 # define CUR_SECT engine->player.sector //текущий сектор
 # define MAX_QUEUE 32					//максимальная длина очереди секторов
-//# define HFOV 1.2211f					//горизонтальный фов в радианах (70)
+#define HFOV 1.57f						//горизонтальный фов в радианах (90)
 //вычисленные заранее координаты конечной точки луча видимости. Подробнее в transform_wall.c
-//# define RAY_POINT_X 40.968075f		//50.f * cosf(HFOV/2)
-//# define RAY_POINT_Y 28.663858f		//50.f * sinf(HFOV/2)
-//# define K 0.7f
-#define HFOV 1.57f					//горизонтальный фов в радианах (90)
-# define RAY_POINT_X 35.f
-# define RAY_POINT_Y 35.f
-# define K 1.f					//Коэффицент уравнения прямой y = kx. Применяется к лучам видимости. Подробнее в transform_wall.c
-# define floor_diff 6				//Отображать на миникарте секторы с разницой в высоте не более floor_diff
-# define EyeHeight 6				//высота камеры
-# define DuckHeight 2.5				//высота камеры при приседе
-# define HeadMargin 1				//how much room above before the head hits the ceiling
-# define KneeHeight 2				//how tall obj are those can be walked over without jumping
-# define acceleration_plus 0.6f		//множитель ускорения (увеличит)
-# define acceleration_minus 0.8f	//множитель ускорения (уменьшит)
-# define RAYSTEP 1.57f / W
+# define RAY_POINT_X 35.f				//50.f * cosf(HFOV/2)
+# define RAY_POINT_Y 35.f				//50.f * sinf(HFOV/2)
+# define K 1.f							//Коэффицент уравнения прямой y = kx. Применяется к лучам видимости. Подробнее в transform_wall.c
+# define floor_diff 6					//Отображать на миникарте секторы с разницой в высоте не более floor_diff
+# define EyeHeight 6					//высота камеры
+# define DuckHeight 2.5					//высота камеры при приседе
+# define HeadMargin 1					//how much room above before the head hits the ceiling
+# define KneeHeight 2					//how tall obj are those can be walked over without jumping
+# define acceleration_plus 0.6f			//множитель ускорения (увеличит)
+# define acceleration_minus 0.8f		//множитель ускорения (уменьшит)
 
 typedef struct	q_queue
 {
@@ -159,10 +154,8 @@ void			minimap(t_engine *engine, t_xy v0, t_xy v1, int color);			//рисует�
 void			minimap_cut(t_engine *engine, t_xy v0, t_xy v1, int color);		//показывает только то, что в поле зрения
 void			render_minimap_hud(t_minimap minimap, SDL_Surface *screen);		//рисуется один раз на кадр
 void			run_queue(t_engine *engine);
-void			render_line(t_line p, SDL_Surface *screen, t_line borders);
-void			swap_point(int *a, int *b);
-int 			normi_line(t_line *p);
-t_delta			get_delta(t_line p);
+void			render_line(t_line p, SDL_Surface *screen, t_line borders);		//линия в пределах указанных границ
+void			render_vline(t_line p, SDL_Surface *screen);							//вертикальная линия сверху вниз
 void			move(t_engine *engine);
 
 #endif

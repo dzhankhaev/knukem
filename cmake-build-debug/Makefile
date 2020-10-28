@@ -467,6 +467,33 @@ src/render/line/render_line.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/line/render_line.c.s
 .PHONY : src/render/line/render_line.c.s
 
+src/render/line/render_vline.o: src/render/line/render_vline.c.o
+
+.PHONY : src/render/line/render_vline.o
+
+# target to build an object file
+src/render/line/render_vline.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o
+.PHONY : src/render/line/render_vline.c.o
+
+src/render/line/render_vline.i: src/render/line/render_vline.c.i
+
+.PHONY : src/render/line/render_vline.i
+
+# target to preprocess a source file
+src/render/line/render_vline.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.i
+.PHONY : src/render/line/render_vline.c.i
+
+src/render/line/render_vline.s: src/render/line/render_vline.c.s
+
+.PHONY : src/render/line/render_vline.s
+
+# target to generate assembly for a file
+src/render/line/render_vline.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.s
+.PHONY : src/render/line/render_vline.c.s
+
 src/render/minimap.o: src/render/minimap.c.o
 
 .PHONY : src/render/minimap.o
@@ -593,6 +620,9 @@ help:
 	@echo "... src/render/line/render_line.o"
 	@echo "... src/render/line/render_line.i"
 	@echo "... src/render/line/render_line.s"
+	@echo "... src/render/line/render_vline.o"
+	@echo "... src/render/line/render_vline.i"
+	@echo "... src/render/line/render_vline.s"
 	@echo "... src/render/minimap.o"
 	@echo "... src/render/minimap.i"
 	@echo "... src/render/minimap.s"

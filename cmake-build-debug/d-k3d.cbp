@@ -129,6 +129,9 @@
 		<Unit filename="/home/chel/Desktop/knukem/src/render/line/render_line.c">
 			<Option target="d-k3d"/>
 		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/render/line/render_vline.c">
+			<Option target="d-k3d"/>
+		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/src/render/minimap.c">
 			<Option target="d-k3d"/>
 		</Unit>

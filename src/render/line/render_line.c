@@ -12,7 +12,7 @@
 
 #include "engine.h"
 
-void		swap_point(int *a, int *b)
+static void		swap_point(int *a, int *b)
 {
 	int t;
 	t = *a;
@@ -20,7 +20,7 @@ void		swap_point(int *a, int *b)
 	*b = t;
 }
 
-static void	render(t_line p, t_line borders, SDL_Surface *screen)
+static void		render(t_line p, t_line borders, SDL_Surface *screen)
 {
 	int	*temp;
 
@@ -30,7 +30,7 @@ static void	render(t_line p, t_line borders, SDL_Surface *screen)
 		temp[(p.y0 * W) + p.x0] = p.color;
 }
 
-int 		normi_line(t_line *p)
+static int		normi_line(t_line *p)
 {
 	int	steep;
 
@@ -50,7 +50,7 @@ int 		normi_line(t_line *p)
 	return (steep);
 }
 
-t_delta	get_delta(t_line p)
+static t_delta	get_delta(t_line p)
 {
 	t_delta	d;
 
@@ -61,7 +61,7 @@ t_delta	get_delta(t_line p)
 	return (d);
 }
 
-void render_line(t_line p, SDL_Surface *screen, t_line borders)
+void 			render_line(t_line p, SDL_Surface *screen, t_line borders)
 {
 	int		steep;
 	t_delta	d;
