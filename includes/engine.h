@@ -20,7 +20,7 @@
 # define W 1920
 # define H 1080
 # define CUR_SECT engine->player.sector //текущий сектор
-# define MAX_QUEUE 32					//максимальная длина очереди секторов
+# define MAX_QUEUE 32				//максимальная длина очереди секторов
 #define HFOV 1.57f						//горизонтальный фов в радианах (90)
 //вычисленные заранее координаты конечной точки луча видимости. Подробнее в transform_wall.c
 # define RAY_POINT_X 35.f				//50.f * cosf(HFOV/2)

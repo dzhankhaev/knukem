@@ -61,6 +61,7 @@ void	game_loop(t_engine *engine)
 		keys_manager(engine);
 		move(engine);
 		SDL_LockSurface(engine->screen);
+		SDL_FillRect(engine->screen, NULL, 0);
 		draw(engine);
 		SDL_UnlockSurface(engine->screen);
 		if (SDL_GetTicks() - time < 32)
