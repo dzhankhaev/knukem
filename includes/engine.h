@@ -19,26 +19,26 @@
 
 # define W 1920
 # define H 1080
-# define CUR_SECT engine->player.sector //текущий сектор
 # define MAX_QUEUE 32				//максимальная длина очереди секторов
-#define HFOV 1.57f						//горизонтальный фов в радианах (90)
+#define HFOV 1.57f					//горизонтальный фов в радианах (90)
 //вычисленные заранее координаты конечной точки луча видимости. Подробнее в transform_wall.c
-# define RAY_POINT_X 35.f				//50.f * cosf(HFOV/2)
-# define RAY_POINT_Y 35.f				//50.f * sinf(HFOV/2)
-# define K 1.f							//Коэффицент уравнения прямой y = kx. Применяется к лучам видимости. Подробнее в transform_wall.c
-# define floor_diff 6					//Отображать на миникарте секторы с разницой в высоте не более floor_diff
-# define EyeHeight 6					//высота камеры
-# define DuckHeight 2.5					//высота камеры при приседе
-# define HeadMargin 1					//how much room above before the head hits the ceiling
-# define KneeHeight 2					//how tall obj are those can be walked over without jumping
-# define acceleration_plus 0.6f			//множитель ускорения (увеличит)
-# define acceleration_minus 0.8f		//множитель ускорения (уменьшит)
+# define RAY_POINT_X 35.f			//50.f * cosf(HFOV/2)
+# define RAY_POINT_Y 35.f			//50.f * sinf(HFOV/2)
+# define K 1.f						//Коэффицент уравнения прямой y = kx. Применяется к лучам видимости. Подробнее в transform_wall.c
+# define floor_diff 20				//Отображать на миникарте секторы с разницой в высоте не более floor_diff
+# define EyeHeight 6				//высота камеры
+# define DuckHeight 2.5				//высота камеры при приседе
+# define HeadMargin 1				//how much room above before the head hits the ceiling
+# define KneeHeight 2				//how tall obj are those can be walked over without jumping
+# define acceleration_plus 0.6f		//множитель ускорения (увеличит)
+# define acceleration_minus 0.8f	//множитель ускорения (уменьшит)
 
 typedef struct	q_queue
 {
 	int			sectorno;	//номер сектора
 	int			x0;		//
 	int			x1;		//
+	int			psec;		//номер предыдущего сектора
 }				t_queue;
 
 typedef struct	s_delta
@@ -55,7 +55,7 @@ typedef struct	s_line
 	int			x1;
 	int			y0;
 	int			y1;
-	int			color;
+	unsigned	color;
 }				t_line;
 
 typedef struct	s_fline
@@ -64,7 +64,7 @@ typedef struct	s_fline
 	float		x1;
 	float		y0;
 	float		y1;
-	int			color;
+	unsigned	color;
 }				t_fline;
 
 typedef struct	s_xy
@@ -87,7 +87,6 @@ typedef struct	s_sector
 	t_xy		*vertex;		//	Координаты всех вершин данного сектора, причем первая координата дублируется в конце
 	int 		*neighbors;		//	Номера всех соседей данного сектора
 	unsigned	npoints;		//	Количество соседей
-	int			flag;
 }				t_sector;
 
 typedef	struct	s_player
@@ -131,7 +130,7 @@ typedef struct	s_engine
 	t_player	player;
 	t_sector	*sectors;			//	считанная карта
 	unsigned	num_sectors;		//	количество секторов в карте
-	t_queue		queue[MAX_QUEUE];
+	t_queue		*queue;
 	t_queue		*future;
 	t_queue		*present;
 	unsigned	max_queue;
@@ -151,7 +150,7 @@ void			keys_manager(t_engine *engine);
 void			clean_up(t_engine *engine);
 void			draw(t_engine *engine);
 int 			transform_wall(t_engine *engine, int i);
-void			render_wall(t_engine *engine, t_sector sector, int neighbor);
+void			render_wall(t_engine *engine, int sectorno, int neighbor);
 t_fline			cut_wall(t_fline wall, t_xy i1, t_xy i2);						//разрезает стену для попадания в fov
 void			minimap(t_engine *engine, t_xy v0, t_xy v1, int color);			//рисуется отдельно для каждой стены
 void			minimap_cut(t_engine *engine, t_xy v0, t_xy v1, int color);		//показывает только то, что в поле зрения

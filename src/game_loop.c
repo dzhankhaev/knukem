@@ -5,24 +5,24 @@ void	draw(t_engine *engine)
 	unsigned	i;
 
 	i = 0;
-	while (i < engine->num_sectors)
-		engine->sectors[i++].flag = 1;
-	i = 0;
 	while (i < W)
 	{
 		engine->tline[i] = 0;
 		engine->bline[i++] = H - 1;
 	}
 	engine->max_queue = MAX_QUEUE;
+	t_queue queue[engine->max_queue];
+	engine->queue = queue;
 	engine->queue[engine->max_queue - 1].sectorno = 1;
 	engine->future = engine->queue + 1;
 	engine->present = engine->queue;
-	*engine->present = (t_queue){CUR_SECT, 0, W - 1};
+	*engine->present = (t_queue){engine->player.sector, 0, W - 1, -1};
 	while (engine->present != engine->future)
 	{
 		run_queue(engine);
 		engine->present++;
 	}
+	printf("\n");
 	render_minimap_hud(engine->minimap, engine->screen);
 }
 
