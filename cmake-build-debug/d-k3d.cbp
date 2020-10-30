@@ -126,7 +126,10 @@
 		<Unit filename="/home/chel/Desktop/knukem/src/math_utilits/rotates.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/move.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/moving/fall.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/moving/move.c">
 			<Option target="d-k3d"/>
 		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/src/render/line/render_line.c">

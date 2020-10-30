@@ -19,13 +19,16 @@ static void keyboard_event(t_engine *engine)
 			{
 				if (engine->player.ground)
 				{
-					engine->player.velocity.z += 0.5f;
+					engine->player.velocity.z += VSPEED;
 					engine->player.falling = 1;
 				}
 			}
 			else if (engine->player.event.key.keysym.sym == SDLK_LCTRL)
 				engine->player.eyeheight = EYE_HEIGHT -
-						(engine->player.event.type == SDL_KEYDOWN) * SIT_HEIGHT;
+					(engine->player.event.type == SDL_KEYDOWN) * SIT_HEIGHT;
+			else if (engine->player.event.key.keysym.sym == 'c')
+				engine->player.eyeheight = EYE_HEIGHT -
+					(engine->player.event.type == SDL_KEYDOWN) * FALL_HEIGHT;
 			else if (engine->player.event.key.keysym.sym == SDLK_ESCAPE)
 				engine->close_request = 1;
 		}
@@ -43,8 +46,7 @@ static void mouse_event(t_player *player)
 	float		move_vec[2];
 
 	SDL_GetRelativeMouseState(&x, &y);	//	позиция относительно предыдущей позиции
-	player->tvangle = clamp(player->tvangle + y * 0.01f, -0.2f, 0.5f);
-	player->vangle = player->tvangle - player->velocity.z * 0.5f; //вертикальный поворот
+	player->vangle = clamp(player->vangle + y * 0.01f, -0.2f, 0.5f);	//вертикальный поворот
 	player->angle += x * 0.03f;	//	горизонтальный поворот
 	player->anglesin = sinf(player->angle);
 	player->anglecos = cosf(player->angle);
@@ -80,4 +82,5 @@ void	keys_manager(t_engine *engine)
 {
 	keyboard_event(engine);
 	mouse_event(&engine->player);
+	fall(&engine->player, engine->sectors);
 }

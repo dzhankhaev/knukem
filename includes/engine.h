@@ -19,7 +19,7 @@
 
 # define W 1920
 # define H 1080
-# define MAX_QUEUE 32				//	максимальная длина очереди секторов
+# define MAX_QUEUE 64				//	максимальная длина очереди секторов
 //вычисленные заранее координаты конечной точки лучей видимости для фов 90. Подробнее в transform_wall.c
 # define RAY_POINT_X 35.f			//	50.f * cosf(HFOV/2)
 # define RAY_POINT_Y 35.f			//	50.f * sinf(HFOV/2)
@@ -33,12 +33,13 @@
 # define BOT_COLOR 0xAAAAAA			//	нижняя линия раздела
 # define EYE_HEIGHT 6				//	высота камеры
 # define SIT_HEIGHT 2.5				//	изменение высоты камеры при приседе
-# define FALL_HEIGHT 5				//	изменение высоты камеры при падении
+# define FALL_HEIGHT 5				//	изменение высоты камеры при ползании
 # define HEAD_HEIGHT 1				//	прибавить к высоте игрока для проверки коллизии при перемещении под объект
 # define KNEE_HEIGHT 2				//	высота объекта, которую можно перешагивать
 # define ACCELERATION_PLUS 0.6f		//	множитель ускорения (увеличит)
 # define ACCELERATION_MINUS 0.8f	//	множитель ускорения (уменьшит)
 # define MAX_SPEED 0.2f				//	[0.1;**]
+# define VSPEED 0.5f				//	вертикальная начальная скорость
 
 typedef struct	q_queue
 {
@@ -103,7 +104,6 @@ typedef	struct	s_player
 	float		angle;			//	угол поворота
 	float		anglesin;		//	синус угла поворота
 	float		anglecos;		//	косинус угла поворота
-	float		tvangle;		//
 	float		vangle;			//	угол вертикального поворота
 	int 		sector;			//	текущий сектор
 	int			wsad[4];		//	ключи передвижения. 1 - движение, 0 - его отсутстие
@@ -151,7 +151,6 @@ int				init_engine(t_engine *engine);
 void			load_data(t_engine *engine);
 void			unload_data(t_engine *engine);
 void			game_loop(t_engine *engine);
-void			move_player(float dx, float dy, t_engine *engine);
 void			keys_manager(t_engine *engine);
 void			clean_up(t_engine *engine);
 void			draw(t_engine *engine);
@@ -166,6 +165,7 @@ int				check_repeat(t_engine *engine, int sectorno, int neighbor);
 void			render_line(t_line p, SDL_Surface *screen, t_line borders);		//линия в пределах указанных границ
 void			render_vline(t_line p, SDL_Surface *screen);					//вертикальная линия сверху вниз
 void			move(t_engine *engine);
+void			fall(t_player *player, t_sector *sectors);
 int				color_distance(t_engine *engine, t_line wall, int x);			//модификатор освещения в зависимости от дальности
 unsigned		get_shadow(int z, unsigned color);								//применить модификатор освещения
 

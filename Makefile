@@ -19,12 +19,13 @@ SRC := main.c\
 	run_queue.c\
 	init_engine.c\
 	lighting.c\
-	move.c\
 	transform_wall.c\
 	cut_wall.c\
 	keys_manager.c\
 	manage_data.c\
 	game_loop.c\
+	moving/move.c\
+	moving/fall.c\
 	math_utilits/determine_intersection.c\
     math_utilits/mathf.c\
     math_utilits/intersection_point.c\

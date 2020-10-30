@@ -467,32 +467,59 @@ src/math_utilits/rotates.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/math_utilits/rotates.c.s
 .PHONY : src/math_utilits/rotates.c.s
 
-src/move.o: src/move.c.o
+src/moving/fall.o: src/moving/fall.c.o
 
-.PHONY : src/move.o
+.PHONY : src/moving/fall.o
 
 # target to build an object file
-src/move.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/move.c.o
-.PHONY : src/move.c.o
+src/moving/fall.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/moving/fall.c.o
+.PHONY : src/moving/fall.c.o
 
-src/move.i: src/move.c.i
+src/moving/fall.i: src/moving/fall.c.i
 
-.PHONY : src/move.i
+.PHONY : src/moving/fall.i
 
 # target to preprocess a source file
-src/move.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/move.c.i
-.PHONY : src/move.c.i
+src/moving/fall.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/moving/fall.c.i
+.PHONY : src/moving/fall.c.i
 
-src/move.s: src/move.c.s
+src/moving/fall.s: src/moving/fall.c.s
 
-.PHONY : src/move.s
+.PHONY : src/moving/fall.s
 
 # target to generate assembly for a file
-src/move.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/move.c.s
-.PHONY : src/move.c.s
+src/moving/fall.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/moving/fall.c.s
+.PHONY : src/moving/fall.c.s
+
+src/moving/move.o: src/moving/move.c.o
+
+.PHONY : src/moving/move.o
+
+# target to build an object file
+src/moving/move.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/moving/move.c.o
+.PHONY : src/moving/move.c.o
+
+src/moving/move.i: src/moving/move.c.i
+
+.PHONY : src/moving/move.i
+
+# target to preprocess a source file
+src/moving/move.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/moving/move.c.i
+.PHONY : src/moving/move.c.i
+
+src/moving/move.s: src/moving/move.c.s
+
+.PHONY : src/moving/move.s
+
+# target to generate assembly for a file
+src/moving/move.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/moving/move.c.s
+.PHONY : src/moving/move.c.s
 
 src/render/line/render_line.o: src/render/line/render_line.c.o
 
@@ -701,9 +728,12 @@ help:
 	@echo "... src/math_utilits/rotates.o"
 	@echo "... src/math_utilits/rotates.i"
 	@echo "... src/math_utilits/rotates.s"
-	@echo "... src/move.o"
-	@echo "... src/move.i"
-	@echo "... src/move.s"
+	@echo "... src/moving/fall.o"
+	@echo "... src/moving/fall.i"
+	@echo "... src/moving/fall.s"
+	@echo "... src/moving/move.o"
+	@echo "... src/moving/move.i"
+	@echo "... src/moving/move.s"
 	@echo "... src/render/line/render_line.o"
 	@echo "... src/render/line/render_line.i"
 	@echo "... src/render/line/render_line.s"

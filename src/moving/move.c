@@ -29,25 +29,27 @@ void	move_player(float dx, float dy, t_engine *engine)
 	vert = sect->vertex;
 	while (s < sect->npoints)
 	{
-		/* Проверяет произошло ли пересечение стороны сектора
-     	*
-     	* Because the edge vertices of each sector are defined in
-     	* clockwise order, PointSide will always return -1 for a point
-     	* that is outside the sector and 0 or 1 for a point that is inside.
-     	*/
+		// Проверяет произошло ли пересечение стороны сектора
 		if (determine_intersection((t_fline){px, px + dx, py, py + dy},
 			(t_fline){vert[s].x, vert[s + 1].x, vert[s].y, vert[s + 1].y}) &&
 			point_side(px + dx, py + dy, vert[s], vert[s + 1]) < 0)
 		{
 			if (sect->neighbors[s] >= 0)
-			{	/*
-				*	Ударяемся ли головой? (HEADMARGIN) (ПОКА ОТСУТСТВУЕТ) || Можем ли перешагнуть? (KNEEHEIGHT)
-				*/
-				if (engine->sectors[engine->player.sector].floor + engine->player.eyeheight + HEAD_HEIGHT > engine->sectors[sect->neighbors[s]].ceil
-				|| engine->sectors[engine->player.sector].floor + KNEE_HEIGHT < engine->sectors[sect->neighbors[s]].floor)
+			{
+				//	Ударяемся ли головой? || Можем ли перешагнуть?
+				if (engine->player.where.z + HEAD_HEIGHT > engine->sectors[sect->neighbors[s]].ceil
+				|| engine->player.where.z - engine->player.eyeheight + KNEE_HEIGHT < engine->sectors[sect->neighbors[s]].floor)
 					slide(vert[s], vert[s + 1], &dx, &dy);
 				else
+				{
 					engine->player.sector = sect->neighbors[s];
+					if (!engine->player.falling)
+					{
+						engine->player.falling = 1;
+						engine->player.ground = 0;
+						engine->player.velocity.z -= VSPEED;
+					}
+				}
 			}
 			else if (sect->neighbors[s] == -1)
 				slide(vert[s], vert[s + 1], &dx, &dy);

@@ -13,7 +13,7 @@ add_executable(d-k3d
         src/game_loop.c
         src/main.c
         src/run_queue.c
-        src/move.c
+        src/moving/move.c
         src/math_utilits/determine_intersection.c
         src/math_utilits/intersection_point.c
         src/math_utilits/mathf.c
@@ -26,7 +26,7 @@ add_executable(d-k3d
         src/cut_wall.c
         src/render/line/render_vline.c
         src/render/render_wall.c
-        src/math_utilits/perspective_transform.c src/lighting.c)
+        src/math_utilits/perspective_transform.c src/lighting.c src/moving/fall.c)
 
 include_directories(d-k3d
         includes/

@@ -28,7 +28,7 @@ static void		init_ceil_and_floor(t_engine *engine, t_sector sector,
 {
 	float	z;
 
-	z = engine->sectors[engine->player.sector].floor + engine->player.eyeheight;
+	z = engine->player.where.z;
 	wall[0] = perspective_transform(engine->wall, z - sector.ceil,
 									engine->player.vangle, CEIL_COLOR);
 	wall[1] = perspective_transform(engine->wall, z - sector.floor,
@@ -39,7 +39,7 @@ static void		init_edge(t_engine *engine, t_sector sector, t_line *wall)
 {
 	float	z;
 
-	z = engine->sectors[engine->player.sector].floor + engine->player.eyeheight;
+	z = engine->player.where.z;
 	wall[2] = perspective_transform(engine->wall,z - sector.ceil,
 									engine->player.vangle, TOP_COLOR);
 	wall[3] = perspective_transform(engine->wall,z - sector.floor,

@@ -44,9 +44,12 @@ CMakeFiles/d-k3d.dir/src/math_utilits/perspective_transform.c.o: ../src/math_uti
 CMakeFiles/d-k3d.dir/src/math_utilits/rotates.c.o: ../includes/engine.h
 CMakeFiles/d-k3d.dir/src/math_utilits/rotates.c.o: ../src/math_utilits/rotates.c
 
-CMakeFiles/d-k3d.dir/src/move.c.o: ../includes/engine.h
-CMakeFiles/d-k3d.dir/src/move.c.o: ../includes/math_utilits.h
-CMakeFiles/d-k3d.dir/src/move.c.o: ../src/move.c
+CMakeFiles/d-k3d.dir/src/moving/fall.c.o: ../includes/engine.h
+CMakeFiles/d-k3d.dir/src/moving/fall.c.o: ../src/moving/fall.c
+
+CMakeFiles/d-k3d.dir/src/moving/move.c.o: ../includes/engine.h
+CMakeFiles/d-k3d.dir/src/moving/move.c.o: ../includes/math_utilits.h
+CMakeFiles/d-k3d.dir/src/moving/move.c.o: ../src/moving/move.c
 
 CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o: ../includes/engine.h
 CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o: ../src/render/line/render_line.c
