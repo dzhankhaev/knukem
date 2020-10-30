@@ -43,8 +43,8 @@ void	move_player(float dx, float dy, t_engine *engine)
 			{	/*
 				*	Ударяемся ли головой? (HEADMARGIN) (ПОКА ОТСУТСТВУЕТ) || Можем ли перешагнуть? (KNEEHEIGHT)
 				*/
-				if (engine->sectors[engine->player.sector].floor + engine->player.eyeheight + HeadMargin > engine->sectors[sect->neighbors[s]].ceil
-				|| engine->sectors[engine->player.sector].floor + KneeHeight < engine->sectors[sect->neighbors[s]].floor)
+				if (engine->sectors[engine->player.sector].floor + engine->player.eyeheight + HEAD_HEIGHT > engine->sectors[sect->neighbors[s]].ceil
+				|| engine->sectors[engine->player.sector].floor + KNEE_HEIGHT < engine->sectors[sect->neighbors[s]].floor)
 					slide(vert[s], vert[s + 1], &dx, &dy);
 				else
 					engine->player.sector = sect->neighbors[s];

@@ -62,9 +62,9 @@ void	load_data(t_engine *engine)
 			engine->player.angle = angle;
 			engine->player.anglecos = 0;
 			engine->player.anglesin = 0;
-			engine->player.yaw = 0;
+			engine->player.vangle = 0;
 			engine->player.sector = n;
-			engine->player.where.z = engine->sectors[engine->player.sector].floor + EyeHeight;
+			engine->player.where.z = engine->sectors[engine->player.sector].floor + EYE_HEIGHT;
 		}
 	fclose(fp);
 	free(vert);

@@ -15,7 +15,6 @@ CMakeFiles/d-k3d.dir/src/keys_manager.c.o
  ../includes/math_utilits.h
  /home/chel/Desktop/knukem/src/keys_manager.c
 CMakeFiles/d-k3d.dir/src/main.c.o
- ../includes/arg_defines.h
  ../includes/engine.h
  ../includes/math_utilits.h
  /home/chel/Desktop/knukem/src/main.c
@@ -27,7 +26,6 @@ CMakeFiles/d-k3d.dir/src/math_utilits/determine_intersection.c.o
  ../includes/math_utilits.h
  /home/chel/Desktop/knukem/src/math_utilits/determine_intersection.c
 CMakeFiles/d-k3d.dir/src/math_utilits/intersection_point.c.o
- ../includes/arg_defines.h
  ../includes/engine.h
  ../includes/math_utilits.h
  /home/chel/Desktop/knukem/src/math_utilits/intersection_point.c

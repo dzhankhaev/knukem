@@ -46,9 +46,9 @@ static void		init_ceil_and_floor(t_engine *engine, t_sector sector,
 
 	z = engine->sectors[engine->player.sector].floor + engine->player.eyeheight;
 	wall[0] = perspective_transform(engine->wall, z - sector.ceil,
-									engine->player.yaw, 0x0D384F);
+									engine->player.vangle, CEIL_COLOR);
 	wall[1] = perspective_transform(engine->wall, z - sector.floor,
-									engine->player.yaw, 0x4F3B0D);
+									engine->player.vangle, FLOOR_COLOR);
 	if (wall[0].x0 > wall[0].x1)
 		wall[0] = swap_coords(wall[0]);
 	if (wall[1].x0 > wall[1].x1)
@@ -61,9 +61,9 @@ static void		init_edge(t_engine *engine, t_sector sector, t_line *wall)
 
 	z = engine->sectors[engine->player.sector].floor + engine->player.eyeheight;
 	wall[2] = perspective_transform(engine->wall,z - sector.ceil,
-									engine->player.yaw, 0xDDDDDD);
+									engine->player.vangle, TOP_COLOR);
 	wall[3] = perspective_transform(engine->wall,z - sector.floor,
-									engine->player.yaw, 0xAAAAAA);
+									engine->player.vangle, BOT_COLOR);
 	if (wall[2].x0 > wall[2].x1)
 		wall[2] = swap_coords(wall[2]);
 	if (wall[3].x0 > wall[3].x1)
@@ -88,17 +88,19 @@ int				check_repeat(t_engine *engine, int sectorno, int neighbor)
 	return (1);
 }
 
-int		color_distance(t_engine *engine, t_line *wall, int x)
+int		color_distance(t_engine *engine, t_line wall, int x)
 {
 	int	z;
 
-	z = ((float)(x - wall[0].x0) * (engine->wall.x1 - engine->wall.x0)
-				 / (float)(wall[0].x1 - wall[0].x0) + engine->wall.x0) * 8.f;
+	z = ((float)(x - wall.x0) * (engine->wall.x1 - engine->wall.x0)
+				 / (float)(wall.x1 - wall.x0) + engine->wall.x0) * 8.f;
+
 	return (z);
 }
 
 void			render_wall(t_engine *engine, int sectorno, int neighbor)
 {	//0 потолок, 1 пол, 2 потолок соседа и верхняя линия раздела, 3 пол соседа и нижняя линия раздела
+	//соседи отображаются нак грани текущего сектора, если они имеют общую грань
 	t_line		wall[4];
 	int			y[4];
 	int			x0;
@@ -119,7 +121,7 @@ void			render_wall(t_engine *engine, int sectorno, int neighbor)
 	}
 	while (x0 < x1)
 	{
-		z = color_distance(engine, wall, x0);
+		z = color_distance(engine, wall[0], x0);
 		render_ceil_and_floor(engine, x0, wall, y, z);
 		if (neighbor != -1)
 			render_edge(engine, x0, wall, y, z);

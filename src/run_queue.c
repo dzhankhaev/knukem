@@ -3,7 +3,7 @@
 static int	get_color(t_engine *engine, unsigned s, int color)
 {
 	if (fabsf(engine->sectors[s].floor
-	- engine->sectors[engine->player.sector].floor) < floor_diff)
+	- engine->sectors[engine->player.sector].floor) < FLOOR_DIFF)
 		return (color);
 	return (0);
 }
@@ -19,10 +19,9 @@ void 		run_queue(t_engine *engine)
 	while (i < engine->sectors[sectorno].npoints)
 	{
 		if (engine->sectors[sectorno].neighbors[i] == -1)
-			engine->wall.color = get_color(engine, sectorno, 0xDDDDDD);
+			engine->wall.color = WALL_COLOR;
 		else
-			engine->wall.color = get_color(engine, sectorno, 0xFF4444);
-//		fill_queue(engine, sectorno, i);
+			engine->wall.color = EDGE_COLOR;
 		color = engine->wall.color;
 		if (transform_wall(engine, i))
 			render_wall(engine, sectorno,	//текущий сектор

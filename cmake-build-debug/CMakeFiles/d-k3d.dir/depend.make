@@ -14,7 +14,6 @@ CMakeFiles/d-k3d.dir/src/keys_manager.c.o: ../includes/engine.h
 CMakeFiles/d-k3d.dir/src/keys_manager.c.o: ../includes/math_utilits.h
 CMakeFiles/d-k3d.dir/src/keys_manager.c.o: ../src/keys_manager.c
 
-CMakeFiles/d-k3d.dir/src/main.c.o: ../includes/arg_defines.h
 CMakeFiles/d-k3d.dir/src/main.c.o: ../includes/engine.h
 CMakeFiles/d-k3d.dir/src/main.c.o: ../includes/math_utilits.h
 CMakeFiles/d-k3d.dir/src/main.c.o: ../src/main.c
@@ -26,7 +25,6 @@ CMakeFiles/d-k3d.dir/src/math_utilits/determine_intersection.c.o: ../includes/en
 CMakeFiles/d-k3d.dir/src/math_utilits/determine_intersection.c.o: ../includes/math_utilits.h
 CMakeFiles/d-k3d.dir/src/math_utilits/determine_intersection.c.o: ../src/math_utilits/determine_intersection.c
 
-CMakeFiles/d-k3d.dir/src/math_utilits/intersection_point.c.o: ../includes/arg_defines.h
 CMakeFiles/d-k3d.dir/src/math_utilits/intersection_point.c.o: ../includes/engine.h
 CMakeFiles/d-k3d.dir/src/math_utilits/intersection_point.c.o: ../includes/math_utilits.h
 CMakeFiles/d-k3d.dir/src/math_utilits/intersection_point.c.o: ../src/math_utilits/intersection_point.c

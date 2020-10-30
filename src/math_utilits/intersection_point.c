@@ -1,6 +1,5 @@
 #include "engine.h"
 #include "math_utilits.h"
-#include "arg_defines.h"
 
 //найдём Xa, Ya - точки пересечения двух прямых
 static t_xy	vertical1(t_fline wall, t_fline twall)

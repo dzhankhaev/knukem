@@ -1,14 +1,14 @@
 #include "math_utilits.h"
 
-t_line	perspective_transform(t_fline w, float z, float yaw, int color)
+t_line	perspective_transform(t_fline w, float z, float vangle, int color)
 {
 	t_line	wall;
 	t_xyz	p0;
 	t_xyz	p1;
 
 	wall.color = color;
-	p0 = vrotate((t_xyz){w.x0, w.y0, z}, yaw);
-	p1 = vrotate((t_xyz){w.x1, w.y1, z}, yaw);
+	p0 = vrotate((t_xyz){w.x0, w.y0, z}, vangle);
+	p1 = vrotate((t_xyz){w.x1, w.y1, z}, vangle);
 	wall.x0 = (int)((W >> 1) + p0.y / p0.x * (W >> 1));
 	wall.x1 = (int)((W >> 1) + p1.y / p1.x * (W >> 1));
 	wall.y0 = (int)((H >> 1) + p0.z / p0.x * (H >> 1));

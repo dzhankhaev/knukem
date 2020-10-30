@@ -24,8 +24,8 @@ static void keyboard_event(t_engine *engine)
 				}
 			}
 			else if (engine->player.event.key.keysym.sym == SDLK_LCTRL)
-				engine->player.eyeheight = EyeHeight -
-						(engine->player.event.type == SDL_KEYDOWN) * DuckHeight;
+				engine->player.eyeheight = EYE_HEIGHT -
+						(engine->player.event.type == SDL_KEYDOWN) * SIT_HEIGHT;
 			else if (engine->player.event.key.keysym.sym == SDLK_ESCAPE)
 				engine->close_request = 1;
 		}
@@ -38,40 +38,41 @@ static void keyboard_event(t_engine *engine)
 
 static void mouse_event(t_player *player)
 {
-	int	x;
-	int	y;
+	int			x;
+	int			y;
+	float		move_vec[2];
 
-	SDL_GetRelativeMouseState(&x, &y);	//	позиция относительно окна
-	player->temp_yaw = clamp(player->temp_yaw + y * 0.01f, -0.2f, 0.5f);
-	player->yaw = player->temp_yaw - player->velocity.z * 0.5f; //вертикальный поворот
+	SDL_GetRelativeMouseState(&x, &y);	//	позиция относительно предыдущей позиции
+	player->tvangle = clamp(player->tvangle + y * 0.01f, -0.2f, 0.5f);
+	player->vangle = player->tvangle - player->velocity.z * 0.5f; //вертикальный поворот
 	player->angle += x * 0.03f;	//	горизонтальный поворот
 	player->anglesin = sinf(player->angle);
 	player->anglecos = cosf(player->angle);
-	bzero(player->move_vec, sizeof(player->move_vec));
+	bzero(move_vec, sizeof(move_vec));
 	if (player->wsad[0])
 	{
-		player->move_vec[0] += player->anglecos * 0.2f;
-		player->move_vec[1] += player->anglesin * 0.2f;
+		move_vec[0] += player->anglecos * MAX_SPEED;
+		move_vec[1] += player->anglesin * MAX_SPEED;
 	}
 	if (player->wsad[1])
 	{
-		player->move_vec[0] -= player->anglecos * 0.2f;
-		player->move_vec[1] -= player->anglesin * 0.2f;
+		move_vec[0] -= player->anglecos * MAX_SPEED;
+		move_vec[1] -= player->anglesin * MAX_SPEED;
 	}
 	if (player->wsad[2])
 	{
-		player->move_vec[0] += player->anglesin * 0.2f;
-		player->move_vec[1] -= player->anglecos * 0.2f;
+		move_vec[0] += player->anglesin * MAX_SPEED;
+		move_vec[1] -= player->anglecos * MAX_SPEED;
 	}
 	if (player->wsad[3])
 	{
-		player->move_vec[0] -= player->anglesin * 0.2f;
-		player->move_vec[1] += player->anglecos * 0.2f;
+		move_vec[0] -= player->anglesin * MAX_SPEED;
+		move_vec[1] += player->anglecos * MAX_SPEED;
 	}
 	player->pushing = player->wsad[0] || player->wsad[1] || player->wsad[2] || player->wsad[3];
-	player->acceleration = player->pushing ? acceleration_plus : acceleration_minus;
-	player->velocity.x = player->velocity.x * player->acceleration + player->move_vec[0] * player->acceleration;
-	player->velocity.y = player->velocity.y * player->acceleration + player->move_vec[1] * player->acceleration;
+	player->acceleration = player->pushing ? ACCELERATION_PLUS : ACCELERATION_MINUS;
+	player->velocity.x = player->velocity.x * player->acceleration + move_vec[0] * player->acceleration;
+	player->velocity.y = player->velocity.y * player->acceleration + move_vec[1] * player->acceleration;
 }
 
 

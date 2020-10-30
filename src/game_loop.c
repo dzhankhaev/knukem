@@ -1,6 +1,6 @@
 #include "engine.h"
 
-void	draw(t_engine *engine)
+void		draw(t_engine *engine)
 {
 	unsigned	i;
 
@@ -26,9 +26,8 @@ void	draw(t_engine *engine)
 	render_minimap_hud(engine->minimap, engine->screen);
 }
 
-void	init_minimap(t_engine *engine)
+void		init_minimap(t_engine *engine)
 {
-//	engine->minimap.point = (t_xy){((W - W / 1.5) + (W - W / 4)) / 2, (H - H / 1.25 + H - H / 5) / 2};
 	engine->minimap.point = (t_xy){W - W / 8, H - H / 6};
 	engine->minimap.scale =  W / 125;
 	engine->minimap.player_horizontal.color = 0x4444FF;
@@ -41,20 +40,25 @@ void	init_minimap(t_engine *engine)
 	engine->minimap.player_vertical.y0 = engine->minimap.point.y - 11;
 	engine->minimap.player_vertical.x1 = engine->minimap.point.x;
 	engine->minimap.player_vertical.y1 = engine->minimap.point.y + 3;
-//	engine->minimap.borders = (t_line){0, W, 0, H, 0x555555};
-	engine->minimap.borders = (t_line){W - W / 4, W,H - H / 3, H, 0x555555};
+	engine->minimap.borders = (t_line){W - W / 4, W,H - H / 3, H,
+									0x555555};
 	engine->minimap.mod = 0;
 }
 
-void	game_loop(t_engine *engine)
+static void general_init(t_engine *engine)
+{
+	engine->borders = (t_line){0, W, 0, H, 0x555555};
+	engine->player.cntrl = 0;
+	engine->player.eyeheight = EYE_HEIGHT;
+	engine->player.tvangle = 1.f;
+	init_minimap(engine);
+}
+
+void		game_loop(t_engine *engine)
 {
 	int		time;
 
-	engine->borders = (t_line){0, W, 0, H, 0x555555};
-	engine->player.cntrl = 0;
-	engine->player.eyeheight = EyeHeight;
-	engine->player.temp_yaw = 1.f;
-	init_minimap(engine);
+	general_init(engine);
 	time = 0;
 	while (!engine->close_request)
 	{

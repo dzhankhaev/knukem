@@ -20,9 +20,13 @@ add_executable(d-k3d
         src/render/line/render_line.c
         src/render/minimap.c
         includes/engine.h
-        includes/arg_defines.h
         includes/math_utilits.h
-        src/math_utilits/rotates.c src/transform_wall.c src/cut_wall.c src/render/line/render_vline.c src/render/render_wall.c src/math_utilits/perspective_transform.c)
+        src/math_utilits/rotates.c
+        src/transform_wall.c
+        src/cut_wall.c
+        src/render/line/render_vline.c
+        src/render/render_wall.c
+        src/math_utilits/perspective_transform.c)
 
 include_directories(d-k3d
         includes/
