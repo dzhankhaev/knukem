@@ -46,7 +46,6 @@ void	move_player(float dx, float dy, t_engine *engine)
 					if (!engine->player.falling)
 					{
 						engine->player.falling = 1;
-						engine->player.ground = 0;
 						engine->player.velocity.z -= VSPEED;
 					}
 				}
@@ -70,5 +69,6 @@ void	move_player(float dx, float dy, t_engine *engine)
 
 void	move(t_engine *engine)
 {
+	fall(&engine->player, engine->sectors);
 	move_player(engine->player.velocity.x, engine->player.velocity.y, engine);
 }

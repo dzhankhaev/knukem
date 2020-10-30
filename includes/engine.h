@@ -32,14 +32,15 @@
 # define TOP_COLOR 0xDDDDDD			//	верхняя линия раздела
 # define BOT_COLOR 0xAAAAAA			//	нижняя линия раздела
 # define EYE_HEIGHT 6				//	высота камеры
-# define SIT_HEIGHT 2.5				//	изменение высоты камеры при приседе
-# define FALL_HEIGHT 5				//	изменение высоты камеры при ползании
+# define DSIT_HEIGHT 2.5			//	изменение высоты камеры при приседе
+# define DFALL_HEIGHT 5				//	изменение высоты камеры при ползании
 # define HEAD_HEIGHT 1				//	прибавить к высоте игрока для проверки коллизии при перемещении под объект
 # define KNEE_HEIGHT 2				//	высота объекта, которую можно перешагивать
-# define ACCELERATION_PLUS 0.6f		//	множитель ускорения (увеличит)
-# define ACCELERATION_MINUS 0.8f	//	множитель ускорения (уменьшит)
+# define ACCELERATION_PLUS 0.6f		//	ускорение. плюс для ускорения
+# define ACCELERATION_MINUS 0.8f	//	ускорение. минус для торможения
 # define MAX_SPEED 0.2f				//	[0.1;**]
 # define VSPEED 0.5f				//	вертикальная начальная скорость
+# define VACCEL 0.05f				//	вертикальное ускорение
 
 typedef struct	q_queue
 {
@@ -107,11 +108,7 @@ typedef	struct	s_player
 	float		vangle;			//	угол вертикального поворота
 	int 		sector;			//	текущий сектор
 	int			wsad[4];		//	ключи передвижения. 1 - движение, 0 - его отсутстие
-	int			cntrl;			//	присед
-	int			ground;
-	int			falling;		//	1 - игрок падает, 0 - не падает. Так же используется при приседании
-	int			ducking;		//	приседание. 1 - есть, 0 - нет
-	int			pushing;		//	приложена ли сила к игроку
+	int			falling;		//	1 - игрок падает, 0 - не падает
 	float		acceleration;	//	текущее ускорение игрока
 	float		eyeheight;		//	текущая высота камеры
 	SDL_Event	event;

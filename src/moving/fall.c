@@ -2,30 +2,22 @@
 
 void	fall(t_player *player, t_sector *sectors)
 {
-	player->ground = !player->falling;
 	if (player->falling)
 	{
-		player->velocity.z -= 0.05f; /* Add gravity */
-		float nextz = player->where.z + player->velocity.z;
-		if (player->velocity.z < 0 && nextz < sectors[player->sector].floor + player->eyeheight) // When going down
+		player->velocity.z -= VACCEL;
+		//если падаю вниз и если достиг пола - останавливаю падение и зануляю скорость
+		if (player->velocity.z < 0 && player->where.z + player->velocity.z
+		        < sectors[player->sector].floor + player->eyeheight)
 		{
-			/* Fix to ground */
-			player->where.z = sectors[player->sector].floor + player->eyeheight;
 			player->velocity.z = 0;
 			player->falling = 0;
-			player->ground  = 1;
 		}
-		else if (player->velocity.z > 0 && nextz > sectors[player->sector].ceil) // When going up
-		{
-			/* Prevent jumping above ceiling */
+		//если лечу вверх и если достиг потолка - зануляю скорость
+		else if (player->velocity.z > 0 && player->where.z + player->velocity.z
+				> sectors[player->sector].ceil)
 			player->velocity.z = 0;
-			player->falling = 1;
-		}
 		if (player->falling)
-		{
 			player->where.z += player->velocity.z;
-//			moving = 1;
-		}
 	}
 	else
 		player->where.z = sectors[player->sector].floor + player->eyeheight;

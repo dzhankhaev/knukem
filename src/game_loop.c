@@ -47,7 +47,7 @@ void		init_minimap(t_engine *engine)
 static void general_init(t_engine *engine)
 {
 	engine->borders = (t_line){0, W, 0, H, 0x555555};
-	engine->player.cntrl = 0;
+	engine->player.falling = 0;
 	engine->player.eyeheight = EYE_HEIGHT;
 	engine->player.vangle = 1.f;
 	init_minimap(engine);
