@@ -1,21 +1,5 @@
 #include "math_utilits.h"
 
-unsigned		get_shadow(int z, unsigned color)
-{
-	unsigned	r;
-	unsigned	g;
-	unsigned	b;
-
-	r = color >> 16;
-	g = ((color >> 8) & 255);
-	b = color & 255;
-	r = iclamp(r - z, 0, 255);
-	g = iclamp(g - z, 0, 255);
-	b = iclamp(b - z, 0, 255);
-	color = (r << 16) | (g << 8) | b;
-	return (color);
-}
-
 static void		render_ceil_and_floor(t_engine *engine, int x, t_line *wall,
 										 int *y, int z)
 {
@@ -49,10 +33,6 @@ static void		init_ceil_and_floor(t_engine *engine, t_sector sector,
 									engine->player.vangle, CEIL_COLOR);
 	wall[1] = perspective_transform(engine->wall, z - sector.floor,
 									engine->player.vangle, FLOOR_COLOR);
-	if (wall[0].x0 > wall[0].x1)
-		wall[0] = swap_coords(wall[0]);
-	if (wall[1].x0 > wall[1].x1)
-		wall[1] = swap_coords(wall[1]);
 }
 
 static void		init_edge(t_engine *engine, t_sector sector, t_line *wall)
@@ -64,38 +44,6 @@ static void		init_edge(t_engine *engine, t_sector sector, t_line *wall)
 									engine->player.vangle, TOP_COLOR);
 	wall[3] = perspective_transform(engine->wall,z - sector.floor,
 									engine->player.vangle, BOT_COLOR);
-	if (wall[2].x0 > wall[2].x1)
-		wall[2] = swap_coords(wall[2]);
-	if (wall[3].x0 > wall[3].x1)
-		wall[3] = swap_coords(wall[3]);
-}
-
-int				check_repeat(t_engine *engine, int sectorno, int neighbor)
-{
-	t_queue *temp;
-
-	temp = engine->queue;
-	while (temp != engine->future)
-	{
-		/*
-		 * мы перемещаемся из А в В. Если в очереди был переход из В в А, то это возврат назад. Так делать нельзя.
-		 * это справедливо для выпуклых секторов
-		 */
-		if (temp->psec == neighbor && temp->sectorno == sectorno)
-			return (0);
-		temp++;
-	}
-	return (1);
-}
-
-int		color_distance(t_engine *engine, t_line wall, int x)
-{
-	int	z;
-
-	z = ((float)(x - wall.x0) * (engine->wall.x1 - engine->wall.x0)
-				 / (float)(wall.x1 - wall.x0) + engine->wall.x0) * 8.f;
-
-	return (z);
 }
 
 void			render_wall(t_engine *engine, int sectorno, int neighbor)

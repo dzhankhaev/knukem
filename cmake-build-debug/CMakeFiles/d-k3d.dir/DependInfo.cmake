@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/chel/Desktop/knukem/src/game_loop.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/game_loop.c.o"
   "/home/chel/Desktop/knukem/src/init_engine.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/init_engine.c.o"
   "/home/chel/Desktop/knukem/src/keys_manager.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/keys_manager.c.o"
+  "/home/chel/Desktop/knukem/src/lighting.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/lighting.c.o"
   "/home/chel/Desktop/knukem/src/main.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/main.c.o"
   "/home/chel/Desktop/knukem/src/manage_data.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/manage_data.c.o"
   "/home/chel/Desktop/knukem/src/math_utilits/determine_intersection.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/math_utilits/determine_intersection.c.o"

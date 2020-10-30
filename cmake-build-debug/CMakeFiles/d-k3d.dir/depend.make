@@ -14,6 +14,10 @@ CMakeFiles/d-k3d.dir/src/keys_manager.c.o: ../includes/engine.h
 CMakeFiles/d-k3d.dir/src/keys_manager.c.o: ../includes/math_utilits.h
 CMakeFiles/d-k3d.dir/src/keys_manager.c.o: ../src/keys_manager.c
 
+CMakeFiles/d-k3d.dir/src/lighting.c.o: ../includes/engine.h
+CMakeFiles/d-k3d.dir/src/lighting.c.o: ../includes/math_utilits.h
+CMakeFiles/d-k3d.dir/src/lighting.c.o: ../src/lighting.c
+
 CMakeFiles/d-k3d.dir/src/main.c.o: ../includes/engine.h
 CMakeFiles/d-k3d.dir/src/main.c.o: ../includes/math_utilits.h
 CMakeFiles/d-k3d.dir/src/main.c.o: ../src/main.c

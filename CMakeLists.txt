@@ -26,7 +26,7 @@ add_executable(d-k3d
         src/cut_wall.c
         src/render/line/render_vline.c
         src/render/render_wall.c
-        src/math_utilits/perspective_transform.c)
+        src/math_utilits/perspective_transform.c src/lighting.c)
 
 include_directories(d-k3d
         includes/

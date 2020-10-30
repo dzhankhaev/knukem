@@ -251,6 +251,33 @@ src/keys_manager.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/keys_manager.c.s
 .PHONY : src/keys_manager.c.s
 
+src/lighting.o: src/lighting.c.o
+
+.PHONY : src/lighting.o
+
+# target to build an object file
+src/lighting.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/lighting.c.o
+.PHONY : src/lighting.c.o
+
+src/lighting.i: src/lighting.c.i
+
+.PHONY : src/lighting.i
+
+# target to preprocess a source file
+src/lighting.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/lighting.c.i
+.PHONY : src/lighting.c.i
+
+src/lighting.s: src/lighting.c.s
+
+.PHONY : src/lighting.s
+
+# target to generate assembly for a file
+src/lighting.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/lighting.c.s
+.PHONY : src/lighting.c.s
+
 src/main.o: src/main.c.o
 
 .PHONY : src/main.o
@@ -650,6 +677,9 @@ help:
 	@echo "... src/keys_manager.o"
 	@echo "... src/keys_manager.i"
 	@echo "... src/keys_manager.s"
+	@echo "... src/lighting.o"
+	@echo "... src/lighting.i"
+	@echo "... src/lighting.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

@@ -18,6 +18,7 @@ HEADERS := engine.h\
 SRC := main.c\
 	run_queue.c\
 	init_engine.c\
+	lighting.c\
 	move.c\
 	transform_wall.c\
 	cut_wall.c\

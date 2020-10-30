@@ -102,6 +102,9 @@
 		<Unit filename="/home/chel/Desktop/knukem/src/keys_manager.c">
 			<Option target="d-k3d"/>
 		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/lighting.c">
+			<Option target="d-k3d"/>
+		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/src/main.c">
 			<Option target="d-k3d"/>
 		</Unit>

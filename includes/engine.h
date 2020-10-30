@@ -162,8 +162,11 @@ void			minimap(t_engine *engine, t_xy v0, t_xy v1, int color);			//рисует�
 void			minimap_cut(t_engine *engine, t_xy v0, t_xy v1, int color);		//показывает только то, что в поле зрения
 void			render_minimap_hud(t_minimap minimap, SDL_Surface *screen);		//рисуется один раз на кадр
 void			run_queue(t_engine *engine);
+int				check_repeat(t_engine *engine, int sectorno, int neighbor);
 void			render_line(t_line p, SDL_Surface *screen, t_line borders);		//линия в пределах указанных границ
 void			render_vline(t_line p, SDL_Surface *screen);					//вертикальная линия сверху вниз
 void			move(t_engine *engine);
+int				color_distance(t_engine *engine, t_line wall, int x);			//модификатор освещения в зависимости от дальности
+unsigned		get_shadow(int z, unsigned color);								//применить модификатор освещения
 
 #endif

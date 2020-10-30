@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/d-k3d.dir/src/game_loop.c.o"
   "CMakeFiles/d-k3d.dir/src/init_engine.c.o"
   "CMakeFiles/d-k3d.dir/src/keys_manager.c.o"
+  "CMakeFiles/d-k3d.dir/src/lighting.c.o"
   "CMakeFiles/d-k3d.dir/src/main.c.o"
   "CMakeFiles/d-k3d.dir/src/manage_data.c.o"
   "CMakeFiles/d-k3d.dir/src/math_utilits/determine_intersection.c.o"

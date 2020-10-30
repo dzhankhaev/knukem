@@ -8,6 +8,24 @@ static int	get_color(t_engine *engine, unsigned s, int color)
 	return (0);
 }
 
+int				check_repeat(t_engine *engine, int sectorno, int neighbor)
+{
+	t_queue *temp;
+
+	temp = engine->queue;
+	while (temp != engine->future)
+	{
+		/*
+		 * мы перемещаемся из А в В. Если в очереди был переход из В в А, то это возврат назад. Так делать нельзя.
+		 * это справедливо для выпуклых секторов
+		 */
+		if (temp->psec == neighbor && temp->sectorno == sectorno)
+			return (0);
+		temp++;
+	}
+	return (1);
+}
+
 void 		run_queue(t_engine *engine)
 {
 	int		i;

@@ -22,14 +22,13 @@ void		draw(t_engine *engine)
 		run_queue(engine);
 		engine->present++;
 	}
-	printf("\n");
 	render_minimap_hud(engine->minimap, engine->screen);
 }
 
 void		init_minimap(t_engine *engine)
 {
 	engine->minimap.point = (t_xy){W - W / 8, H - H / 6};
-	engine->minimap.scale =  W / 125;
+	engine->minimap.scale =  W / 100;
 	engine->minimap.player_horizontal.color = 0x4444FF;
 	engine->minimap.player_horizontal.x0 = engine->minimap.point.x - 5;
 	engine->minimap.player_horizontal.y0 = engine->minimap.point.y;

@@ -1,21 +1,5 @@
 #include "engine.h"
 
-static t_fline	swap(t_fline wall)
-{
-	float	t;
-
-	if (wall.y0 > wall.y1)
-	{
-		t = wall.x0;
-		wall.x0 = wall.x1;
-		wall.x1 = t;
-		t = wall.y0;
-		wall.y0 = wall.y1;
-		wall.y1 = t;
-	}
-	return (wall);
-}
-
 static t_fline	cut1(t_fline wall, t_xy i1)
 {
 	if (fabsf(wall.x0 - wall.x1) > fabsf(wall.y0 - wall.y1)
@@ -51,8 +35,17 @@ static t_fline	cut2(t_fline wall, t_xy i2)
 //по левому лучу видимости и по правому
 t_fline 		cut_wall(t_fline wall, t_xy i1, t_xy i2)
 {
-	wall = swap(wall);
+	float	t;
 
+	if (wall.y0 > wall.y1)
+	{
+		t = wall.x0;
+		wall.x0 = wall.x1;
+		wall.x1 = t;
+		t = wall.y0;
+		wall.y0 = wall.y1;
+		wall.y1 = t;
+	}
 	if (i1.x != -1)
 		wall = cut1(wall, i1);
 	if (i2.x != -1)

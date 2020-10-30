@@ -14,6 +14,10 @@ CMakeFiles/d-k3d.dir/src/keys_manager.c.o
  ../includes/engine.h
  ../includes/math_utilits.h
  /home/chel/Desktop/knukem/src/keys_manager.c
+CMakeFiles/d-k3d.dir/src/lighting.c.o
+ ../includes/engine.h
+ ../includes/math_utilits.h
+ /home/chel/Desktop/knukem/src/lighting.c
 CMakeFiles/d-k3d.dir/src/main.c.o
  ../includes/engine.h
  ../includes/math_utilits.h
