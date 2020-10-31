@@ -38,7 +38,10 @@
 # define KNEE_HEIGHT 2				//	высота объекта, которую можно перешагивать
 # define ACCELERATION_PLUS 0.6f		//	ускорение. плюс для ускорения
 # define ACCELERATION_MINUS 0.8f	//	ускорение. минус для торможения
-# define MAX_SPEED 0.2f				//	[0.1;**]
+# define MOVE_SPEED 0.2f			//	[0.1;**]
+# define DFALL_SPEED -0.11f			//	изменение скорости при падении на живот
+# define DSIT_SPEED -0.07f			//	изменение скорости при приседе
+# define DSPRINT_SPEED 0.1f			//	изменение скорости при беге
 # define VSPEED 0.5f				//	вертикальная начальная скорость
 # define VACCEL 0.05f				//	вертикальное ускорение
 
@@ -108,10 +111,11 @@ typedef	struct	s_player
 	float		vangle;			//	угол вертикального поворота
 	int 		sector;			//	текущий сектор
 	int			wsad[4];		//	ключи передвижения. 1 - движение, 0 - его отсутстие
-	int			falling;		//	1 - игрок падает, 0 - не падает
-	int			flying;
-	int			ground;
+	int			falling;		//	1 - игрок падает, 0 - не падает. Игрок может падать вверх. Если 1, будет применено ускорение
+	int			flying;			//	флаг = 1 только если игрок летит вверх или вниз. ФЛАГ НЕ ОПРЕДЕЛЯЕТ НАХОДИТСЯ ИГРОК В РЕЖИМЕ ПОЛЕТА ИЛИ НЕТ
+	int			ground;			//	грок стоит на земле
 	float		eyeheight;		//	текущая высота камеры
+	float		speed;			//	текущая максимальная скорость
 	SDL_Event	event;
 }				t_player;
 

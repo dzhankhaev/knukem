@@ -28,7 +28,7 @@ void		draw(t_engine *engine)
 void		init_minimap(t_engine *engine)
 {
 	engine->minimap.point = (t_xy){W - W / 8, H - H / 6};
-	engine->minimap.scale =  W / 100;
+	engine->minimap.scale =  W / 200;
 	engine->minimap.player_horizontal.color = 0x4444FF;
 	engine->minimap.player_horizontal.x0 = engine->minimap.point.x - 5;
 	engine->minimap.player_horizontal.y0 = engine->minimap.point.y;
@@ -52,6 +52,7 @@ static void general_init(t_engine *engine)
 	engine->player.ground = 1;
 	engine->player.eyeheight = EYE_HEIGHT;
 	engine->player.vangle = 1.f;
+	engine->player.speed = MOVE_SPEED;
 	init_minimap(engine);
 }
 
