@@ -1,11 +1,14 @@
 #include "math_utilits.h"
 
-int				color_distance(t_engine *engine, t_line wall, int x)
+int				color_distance(t_engine *engine, t_line wall, int x, float ceil)
 {
 	int		z;
 	//нужно проверить с какой стороны мы смотрим на стену
 	//если слева - правая координата будет падать, если справа - будет расти
+	//некорректно работает, если смотреть сверху
 	//возможно не применимо для наклонных полов или потолков
+	if (engine->player.where.z > ceil) //КОСТЫЛЬ частично помогает
+		return (color_distance(engine, (t_line){wall.x0, wall.x1, wall.y1, wall.y0}, x, engine->player.where.z + 1));
 	if (wall.y0 <= wall.y1)
 	{
 		//нужно проверить какая из координат является более дальней

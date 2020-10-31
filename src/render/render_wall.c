@@ -60,23 +60,19 @@ void			render_wall(t_engine *engine, int sectorno, int neighbor)
 	x1 = int_min(wall[0].x1, engine->present->x1);	//иксы у пола и потолка всегда равны
 	if (neighbor != -1)
 	{
-		if ((x1 > x0) && engine->future + 1 != engine->queue + engine->max_queue)
-		{
-			if (check_repeat(engine, sectorno, neighbor))
-				*(engine->future++) = (t_queue){neighbor, x0, x1, sectorno};
-		}
+		if ((x1 > x0) && engine->future + 1 != engine->queue + engine->max_queue &&
+			check_repeat(engine, sectorno, neighbor))
+			*(engine->future++) = (t_queue){neighbor, x0, x1, sectorno};
 		init_edge(engine, engine->sectors[neighbor], wall);
 	}
 	while (x0 < x1)
 	{
-		z = color_distance(engine, wall[0], x0);
+		z = color_distance(engine, wall[0], x0, engine->sectors[sectorno].ceil);
 		render_ceil_and_floor(engine, x0, wall, y, z);
 		if (neighbor != -1)
 			render_edge(engine, x0, wall, y, z);
 		else
-		{
 			render_vline((t_line){x0, x0, y[0], y[1], get_shadow(z, engine->wall.color)}, engine->screen); //если стена, заполняем полностью
-		}
 		x0++;
 	}
 

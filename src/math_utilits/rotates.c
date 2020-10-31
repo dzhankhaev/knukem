@@ -25,9 +25,3 @@ t_fline			rotate_wall(t_sector sector, t_player player, int i, int color)
 	wall.y1 = -w.x1 * player.anglesin + w.y1 * player.anglecos;
 	return (wall);
 }
-
-t_xyz			vrotate(t_xyz p, float vangle)
-{
-	p.z = -p.x * sinf(vangle) + p.z * cosf(vangle);
-	return (p);
-}

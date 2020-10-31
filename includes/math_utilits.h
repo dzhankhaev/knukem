@@ -14,6 +14,5 @@ int				int_min(int a, int b);
 int				iclamp(int a, int min, int max);
 float			vector_cross_product(float x0, float y0, float x1, float y1);
 t_fline			rotate_wall(t_sector sector, t_player player, int i, int color);
-t_xyz			vrotate(t_xyz p, float angle);
 t_line			perspective_transform(t_fline w, float z, float yaw, int color);
 #endif

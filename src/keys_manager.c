@@ -108,15 +108,13 @@ static void		get_move_vector(t_player *player, float *move_vec)
 		move_vec[1] += player->anglecos * player->speed;
 	}
 }
-
+//не выходим за пределы круга [~0;~359]
 static float	angle_fix(float angle)
 {
-	if (angle > 6.283185f)
+	if (angle > 6.265732f)
 		return (0.0001f);
-	if (angle < -6.283185f)
-		return (-0.0001f);
-	if (angle == 0)
-		return (0.0001f);
+	if (angle < 0.0001f)
+		return (6.265732f);
 	return (angle);
 }
 
@@ -131,8 +129,8 @@ void			keys_manager(t_engine *engine)
 	player = &engine->player;
 	keyboard_event(engine, player);
 	SDL_GetRelativeMouseState(&x, &y);	//	позиция относительно предыдущей позиции
-	player->vangle = clamp(player->vangle + y * 0.01f, -0.2f, 0.5f);	//вертикальный поворот
-	player->angle = angle_fix(player->angle + x * 0.03f); //	горизонтальный поворот
+	player->vangle = clamp(player->vangle + y * CAMERA_DY, -VLIMIT, VLIMIT);	//вертикальный поворот
+	player->angle = angle_fix(player->angle + x * CAMERA_DX); //	горизонтальный поворот
 	player->anglesin = sinf(player->angle);
 	player->anglecos = cosf(player->angle);
 	get_move_vector(player, move_vec);

@@ -17,12 +17,15 @@ int			transform_wall(t_engine *engine, int i)
 {
 	engine->wall = rotate_wall(engine->sectors[engine->present->sectorno],
 							engine->player, i, engine->wall.color);
+	//после поворота координата X является глубиной
+	//Y - положение слева (отрицательный) или справа (положительный)
 	if (engine->wall.x0 <= 0 && engine->wall.x1 <= 0)
 	{
 		engine->wall.color = 0;
 		return (0); //стены за спиной не рендерятся
 	}
 	engine->wall = fov_wall_cut(engine->wall);
+	//обрезаем частично попавшие в поле зрения стены
 	if (engine->wall.x0 <= 0 || engine->wall.x1 <= 0
 	|| engine->wall.x0 * -K > engine->wall.y0
 	|| engine->wall.x1 * K < engine->wall.y1)

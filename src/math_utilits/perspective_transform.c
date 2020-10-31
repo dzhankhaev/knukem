@@ -1,6 +1,13 @@
 #include "math_utilits.h"
 
-t_line	perspective_transform(t_fline w, float z, float vangle, int color)
+static t_xyz	vrotate(t_xyz p, float vangle) //используется для обработки вертикального угла взгляда
+{
+	p.z = p.z + p.x * vangle;
+	return (p);
+}
+
+t_line			perspective_transform(t_fline w, float z, float vangle,
+							   int color)
 {
 	t_line	wall;
 	t_xyz	p0;

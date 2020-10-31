@@ -51,7 +51,7 @@ static void general_init(t_engine *engine)
 	engine->player.flying = 0;
 	engine->player.ground = 1;
 	engine->player.eyeheight = EYE_HEIGHT;
-	engine->player.vangle = 1.f;
+	engine->player.vangle = 0.f;
 	engine->player.speed = MOVE_SPEED;
 	init_minimap(engine);
 }

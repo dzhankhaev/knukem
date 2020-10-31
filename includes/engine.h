@@ -36,14 +36,17 @@
 # define DFALL_HEIGHT 5				//	изменение высоты камеры при ползании
 # define HEAD_HEIGHT 1				//	прибавить к высоте игрока для проверки коллизии при перемещении под объект
 # define KNEE_HEIGHT 2				//	высота объекта, которую можно перешагивать
-# define ACCELERATION_PLUS 0.6f		//	ускорение. плюс для ускорения
-# define ACCELERATION_MINUS 0.8f	//	ускорение. минус для торможения
+# define ACCELERATION_PLUS 0.6f		//	ускорение. плюс при ускорении
+# define ACCELERATION_MINUS 0.8f	//	ускорение. минус при торможении
 # define MOVE_SPEED 0.2f			//	[0.1;**]
 # define DFALL_SPEED -0.11f			//	изменение скорости при падении на живот
 # define DSIT_SPEED -0.07f			//	изменение скорости при приседе
 # define DSPRINT_SPEED 0.1f			//	изменение скорости при беге
 # define VSPEED 0.5f				//	вертикальная начальная скорость
 # define VACCEL 0.05f				//	вертикальное ускорение
+# define CAMERA_DY -0.007f			//	чувствительность по оси Y
+# define CAMERA_DX 0.01f			//	чувствительность по оси X
+# define VLIMIT 2.5f				//	Граница вертикального поворота
 
 typedef struct	q_queue
 {
@@ -168,7 +171,7 @@ void			render_line(t_line p, SDL_Surface *screen, t_line borders);		//линия
 void			render_vline(t_line p, SDL_Surface *screen);					//вертикальная линия сверху вниз
 void			move(t_engine *engine);
 void			fall(t_player *player, t_sector *sectors);
-int				color_distance(t_engine *engine, t_line wall, int x);			//модификатор освещения в зависимости от дальности
+int				color_distance(t_engine *engine, t_line wall, int x, float ceil);			//модификатор освещения в зависимости от дальности
 unsigned		get_shadow(int z, unsigned color);								//применить модификатор освещения
 
 #endif
