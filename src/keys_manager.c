@@ -32,18 +32,22 @@ static void 	keyboard_event(t_engine *engine, t_player *player)
 			else if (player->event.key.keysym.sym == 'v')
 			{
 				player->flying = player->event.type == SDL_KEYDOWN;
-				player->ground = 0;
-				player->falling = 0;
 				if (player->flying)
+				{
+					player->ground = 0;
+					player->falling = 0;
 					player->velocity.z = VSPEED;
+				}
 			}
 			else if (player->event.key.keysym.sym == 'c')
 			{
 				player->flying = player->event.type == SDL_KEYDOWN;
-				player->ground = 0;
-				player->falling = 0;
 				if (player->flying)
+				{
+					player->ground = 0;
+					player->falling = 0;
 					player->velocity.z = -VSPEED;
+				}
 			}
 			else if (player->event.key.keysym.sym == SDLK_LCTRL)
 				player->eyeheight = EYE_HEIGHT -
