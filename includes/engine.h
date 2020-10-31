@@ -101,7 +101,7 @@ typedef struct	s_sector
 typedef	struct	s_player
 {
 	t_xyz		where;			//	текущая позиция
-	t_xyz		velocity;		//	вектор движения
+	t_xyz		velocity;		//	вектор скорости движения
 	float		angle;			//	угол поворота
 	float		anglesin;		//	синус угла поворота
 	float		anglecos;		//	косинус угла поворота
@@ -109,7 +109,8 @@ typedef	struct	s_player
 	int 		sector;			//	текущий сектор
 	int			wsad[4];		//	ключи передвижения. 1 - движение, 0 - его отсутстие
 	int			falling;		//	1 - игрок падает, 0 - не падает
-	float		acceleration;	//	текущее ускорение игрока
+	int			flying;
+	int			ground;
 	float		eyeheight;		//	текущая высота камеры
 	SDL_Event	event;
 }				t_player;

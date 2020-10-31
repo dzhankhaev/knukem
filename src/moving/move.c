@@ -5,6 +5,9 @@ void	slide(t_xy vert1, t_xy vert2, float *dx, float *dy)
 {
 	float	xd;
 	float	yd;
+	t_xy	v1;
+	t_xy	v2;
+
 
 	xd = fabs(vert2.x - vert1.x);
 	yd = fabs(vert2.y - vert1.y);
@@ -43,9 +46,10 @@ void	move_player(float dx, float dy, t_engine *engine)
 				else
 				{
 					engine->player.sector = sect->neighbors[s];
-					if (!engine->player.falling)
+					if (engine->player.ground)
 					{
 						engine->player.falling = 1;
+						engine->player.ground = 0;
 						engine->player.velocity.z -= VSPEED;
 					}
 				}
