@@ -1,8 +1,9 @@
 #include "engine.h"
+#include "events.h"
 
 void		draw(t_engine *engine)
 {
-	unsigned	i;
+	int	i;
 
 	i = 0;
 	while (i < W)
@@ -10,6 +11,7 @@ void		draw(t_engine *engine)
 		engine->tline[i] = 0;
 		engine->bline[i++] = H - 1;
 	}
+	engine->edit.mod_s = -1;
 	engine->max_queue = MAX_QUEUE;
 	t_queue queue[engine->max_queue];
 	engine->queue = queue;
@@ -67,7 +69,6 @@ void		game_loop(t_engine *engine)
 		keys_manager(engine);
 		move(engine);
 		SDL_LockSurface(engine->screen);
-		SDL_FillRect(engine->screen, NULL, 0);
 		draw(engine);
 		SDL_UnlockSurface(engine->screen);
 		if (SDL_GetTicks() - time < 32)

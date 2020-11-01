@@ -13,6 +13,7 @@ NAME :=	d-k3d
 
 HEADERS := engine.h\
 	math_utilits.h\
+	events.h\
 
 
 SRC := main.c\
@@ -21,9 +22,12 @@ SRC := main.c\
 	lighting.c\
 	transform_wall.c\
 	cut_wall.c\
-	keys_manager.c\
 	manage_data.c\
 	game_loop.c\
+	key_events/keys_manager.c\
+	key_events/event_edit.c\
+	key_events/event_movement.c\
+	editor/real_time_edit.c\
 	moving/move.c\
 	moving/fall.c\
 	math_utilits/determine_intersection.c\

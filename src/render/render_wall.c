@@ -17,7 +17,8 @@ static void		render_edge(t_engine *engine, int x, t_line *wall, int *y, int z)
 				  engine->tline[x], engine->bline[x]) - 1;
 	y[3] = iclamp(y_for_x(wall[3], x),
 				  engine->tline[x], engine->bline[x]) + 1;
-	render_vline((t_line){x, x, y[0], y[2], get_shadow(z, wall[2].color)}, engine->screen); //	верхняя линия раздела
+	//int_min(y[2], y[1]) если потолок соседа ниже пола, то рисуем до пола, иначе до потолка
+	render_vline((t_line){x, x, y[0], int_min(y[2], y[1]), get_shadow(z, wall[2].color)}, engine->screen); //	верхняя линия раздела
 	render_vline((t_line){x, x, y[3], y[1], get_shadow(z, wall[3].color)}, engine->screen); //	нижняя линия раздела
 	engine->tline[x] = iclamp(int_max(y[0], y[2]), engine->tline[x], H - 1);
 	engine->bline[x] = iclamp(int_min(y[1], y[3]), 0, engine->bline[x]);

@@ -24,7 +24,7 @@
 # define RAY_POINT_X 35.f			//	50.f * cosf(HFOV/2)
 # define RAY_POINT_Y 35.f			//	50.f * sinf(HFOV/2)
 # define K 1.f						//	Коэффицент уравнения прямой y = kx. Применяется к лучам видимости. Подробнее в transform_wall.c
-# define FLOOR_DIFF 20				//	Отображать на миникарте секторы с разницой в высоте не более floor_diff
+# define FLOOR_DIFF 12				//	Отображать на миникарте секторы с разницой в высоте не более floor_diff
 # define WALL_COLOR 0xDDDDDD		//	Цвета по умолчанию
 # define FLOOR_COLOR 0x4F3B0D
 # define CEIL_COLOR 0x0D384F
@@ -132,11 +132,19 @@ typedef struct	s_minimap
 	int			mod;				//режим миникарты
 }				t_minimap;
 
+typedef struct	s_edit
+{
+	int			hchange[4];			//	модификаторы
+	int 		mod_s;				//	 этот сектор будет модифицирован
+	int			mod;				//	режим модификатора !не используется!
+}				t_edit;
+
 typedef struct	s_engine
 {
 	SDL_Window	*window;
 	SDL_Surface	*screen;
 	t_minimap	minimap;
+	t_edit		edit;
 	t_line		borders;			//	границы отображения (установлены во всё окно)
 	t_player	player;
 	t_sector	*sectors;			//	считанная карта
@@ -156,7 +164,6 @@ int				init_engine(t_engine *engine);
 void			load_data(t_engine *engine);
 void			unload_data(t_engine *engine);
 void			game_loop(t_engine *engine);
-void			keys_manager(t_engine *engine);
 void			clean_up(t_engine *engine);
 void			draw(t_engine *engine);
 int 			transform_wall(t_engine *engine, int i);
@@ -173,5 +180,6 @@ void			move(t_engine *engine);
 void			fall(t_player *player, t_sector *sectors);
 int				color_distance(t_engine *engine, t_line wall, int x, float ceil);			//модификатор освещения в зависимости от дальности
 unsigned		get_shadow(int z, unsigned color);								//применить модификатор освещения
+void			real_time_edit(t_engine *engine);
 
 #endif

@@ -8,7 +8,7 @@ include_directories(${SDL2_INCLUDE_DIRS})
 add_executable(d-k3d
         #[[SRC]]
         src/init_engine.c
-        src/keys_manager.c
+        src/key_events/keys_manager.c
         src/manage_data.c
         src/game_loop.c
         src/main.c
@@ -26,7 +26,7 @@ add_executable(d-k3d
         src/cut_wall.c
         src/render/line/render_vline.c
         src/render/render_wall.c
-        src/math_utilits/perspective_transform.c src/lighting.c src/moving/fall.c)
+        src/math_utilits/perspective_transform.c src/lighting.c src/moving/fall.c src/editor/real_time_edit.c src/key_events/event_edit.c includes/events.h src/key_events/event_movement.c)
 
 include_directories(d-k3d
         includes/
