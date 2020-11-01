@@ -13,20 +13,20 @@ add_executable(d-k3d
         src/game_loop.c
         src/main.c
         src/run_queue.c
-        src/moving/move.c
-        src/math_utilits/determine_intersection.c
-        src/math_utilits/intersection_point.c
-        src/math_utilits/mathf.c
+        src/movement/move.c
+        src/utilits/math_utilits/determine_intersection.c
+        src/utilits/math_utilits/intersection_point.c
+        src/utilits/math_utilits/mathf.c
         src/render/line/render_line.c
         src/render/minimap.c
         includes/engine.h
-        includes/math_utilits.h
-        src/math_utilits/rotates.c
+        includes/utilits.h
+        src/utilits/math_utilits/rotates.c
         src/transform_wall.c
         src/cut_wall.c
         src/render/line/render_vline.c
         src/render/render_wall.c
-        src/math_utilits/perspective_transform.c src/lighting.c src/moving/fall.c src/editor/real_time_edit.c src/key_events/event_edit.c includes/events.h src/key_events/event_movement.c)
+        src/utilits/math_utilits/perspective_transform.c src/lighting.c src/movement/fall.c src/editor/real_time_edit.c src/key_events/event_edit.c includes/events.h src/key_events/event_movement.c src/utilits/swap.c src/utilits/utilits.c)
 
 include_directories(d-k3d
         includes/

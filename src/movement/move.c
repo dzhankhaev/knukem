@@ -1,12 +1,10 @@
 #include <engine.h>
-#include "math_utilits.h"
+#include "utilits.h"
 
 void	slide(t_xy vert1, t_xy vert2, float *dx, float *dy)
 {
 	float	xd;
 	float	yd;
-	t_xy	v1;
-	t_xy	v2;
 
 
 	xd = fabs(vert2.x - vert1.x);

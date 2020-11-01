@@ -26,17 +26,11 @@ SDL_image.h
 SDL_mixer.h
 -
 
-../includes/math_utilits.h
+../includes/utilits.h
 engine.h
 ../includes/engine.h
 
-/home/chel/Desktop/knukem/src/keys_manager.c
-engine.h
-/home/chel/Desktop/knukem/src/engine.h
-math_utilits.h
-/home/chel/Desktop/knukem/src/math_utilits.h
-
-/home/chel/Desktop/knukem/src/moving/fall.c
-engine.h
-/home/chel/Desktop/knukem/src/moving/engine.h
+/home/chel/Desktop/knukem/src/render/render_wall.c
+utilits.h
+/home/chel/Desktop/knukem/src/render/utilits.h
 

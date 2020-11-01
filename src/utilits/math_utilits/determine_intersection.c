@@ -1,4 +1,4 @@
-#include "math_utilits.h"
+#include "utilits.h"
 #include "engine.h"
 
 // Пересекаются ли два отрезка

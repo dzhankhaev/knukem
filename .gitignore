@@ -1,4 +1,4 @@
-/cmake_build_debug/*
+/cmake-build-debug/*
 /.DS_Store/*
 /.idea/*
 /obj/*

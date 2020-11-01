@@ -28,8 +28,8 @@ SRC := main.c\
 	key_events/event_edit.c\
 	key_events/event_movement.c\
 	editor/real_time_edit.c\
-	moving/move.c\
-	moving/fall.c\
+	movement/move.c\
+	movement/fall.c\
 	math_utilits/determine_intersection.c\
     math_utilits/mathf.c\
     math_utilits/intersection_point.c\

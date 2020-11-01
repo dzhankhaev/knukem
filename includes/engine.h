@@ -178,7 +178,7 @@ void			render_line(t_line p, SDL_Surface *screen, t_line borders);		//линия
 void			render_vline(t_line p, SDL_Surface *screen);					//вертикальная линия сверху вниз
 void			move(t_engine *engine);
 void			fall(t_player *player, t_sector *sectors);
-int				color_distance(t_engine *engine, t_line wall, int x, float ceil);			//модификатор освещения в зависимости от дальности
+int				color_distance(t_engine *engine, t_line wall, int x);			//модификатор освещения в зависимости от дальности
 unsigned		get_shadow(int z, unsigned color);								//применить модификатор освещения
 void			real_time_edit(t_engine *engine);
 

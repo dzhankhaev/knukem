@@ -4,52 +4,46 @@
 CMakeFiles/d-k3d.dir/src/cut_wall.c.o: ../includes/engine.h
 CMakeFiles/d-k3d.dir/src/cut_wall.c.o: ../src/cut_wall.c
 
+CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.o: ../includes/engine.h
+CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.o: ../src/editor/real_time_edit.c
+
 CMakeFiles/d-k3d.dir/src/game_loop.c.o: ../includes/engine.h
+CMakeFiles/d-k3d.dir/src/game_loop.c.o: ../includes/events.h
 CMakeFiles/d-k3d.dir/src/game_loop.c.o: ../src/game_loop.c
 
 CMakeFiles/d-k3d.dir/src/init_engine.c.o: ../includes/engine.h
 CMakeFiles/d-k3d.dir/src/init_engine.c.o: ../src/init_engine.c
 
-CMakeFiles/d-k3d.dir/src/keys_manager.c.o: ../includes/engine.h
-CMakeFiles/d-k3d.dir/src/keys_manager.c.o: ../includes/math_utilits.h
-CMakeFiles/d-k3d.dir/src/keys_manager.c.o: ../src/keys_manager.c
+CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.o: ../includes/engine.h
+CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.o: ../includes/events.h
+CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.o: ../src/key_events/event_edit.c
+
+CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.o: ../includes/engine.h
+CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.o: ../includes/events.h
+CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.o: ../src/key_events/event_movement.c
+
+CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.o: ../includes/engine.h
+CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.o: ../includes/events.h
+CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.o: ../includes/utilits.h
+CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.o: ../src/key_events/keys_manager.c
 
 CMakeFiles/d-k3d.dir/src/lighting.c.o: ../includes/engine.h
-CMakeFiles/d-k3d.dir/src/lighting.c.o: ../includes/math_utilits.h
+CMakeFiles/d-k3d.dir/src/lighting.c.o: ../includes/utilits.h
 CMakeFiles/d-k3d.dir/src/lighting.c.o: ../src/lighting.c
 
 CMakeFiles/d-k3d.dir/src/main.c.o: ../includes/engine.h
-CMakeFiles/d-k3d.dir/src/main.c.o: ../includes/math_utilits.h
+CMakeFiles/d-k3d.dir/src/main.c.o: ../includes/utilits.h
 CMakeFiles/d-k3d.dir/src/main.c.o: ../src/main.c
 
 CMakeFiles/d-k3d.dir/src/manage_data.c.o: ../includes/engine.h
 CMakeFiles/d-k3d.dir/src/manage_data.c.o: ../src/manage_data.c
 
-CMakeFiles/d-k3d.dir/src/math_utilits/determine_intersection.c.o: ../includes/engine.h
-CMakeFiles/d-k3d.dir/src/math_utilits/determine_intersection.c.o: ../includes/math_utilits.h
-CMakeFiles/d-k3d.dir/src/math_utilits/determine_intersection.c.o: ../src/math_utilits/determine_intersection.c
+CMakeFiles/d-k3d.dir/src/movement/fall.c.o: ../includes/engine.h
+CMakeFiles/d-k3d.dir/src/movement/fall.c.o: ../src/movement/fall.c
 
-CMakeFiles/d-k3d.dir/src/math_utilits/intersection_point.c.o: ../includes/engine.h
-CMakeFiles/d-k3d.dir/src/math_utilits/intersection_point.c.o: ../includes/math_utilits.h
-CMakeFiles/d-k3d.dir/src/math_utilits/intersection_point.c.o: ../src/math_utilits/intersection_point.c
-
-CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.o: ../includes/engine.h
-CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.o: ../includes/math_utilits.h
-CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.o: ../src/math_utilits/mathf.c
-
-CMakeFiles/d-k3d.dir/src/math_utilits/perspective_transform.c.o: ../includes/engine.h
-CMakeFiles/d-k3d.dir/src/math_utilits/perspective_transform.c.o: ../includes/math_utilits.h
-CMakeFiles/d-k3d.dir/src/math_utilits/perspective_transform.c.o: ../src/math_utilits/perspective_transform.c
-
-CMakeFiles/d-k3d.dir/src/math_utilits/rotates.c.o: ../includes/engine.h
-CMakeFiles/d-k3d.dir/src/math_utilits/rotates.c.o: ../src/math_utilits/rotates.c
-
-CMakeFiles/d-k3d.dir/src/moving/fall.c.o: ../includes/engine.h
-CMakeFiles/d-k3d.dir/src/moving/fall.c.o: ../src/moving/fall.c
-
-CMakeFiles/d-k3d.dir/src/moving/move.c.o: ../includes/engine.h
-CMakeFiles/d-k3d.dir/src/moving/move.c.o: ../includes/math_utilits.h
-CMakeFiles/d-k3d.dir/src/moving/move.c.o: ../src/moving/move.c
+CMakeFiles/d-k3d.dir/src/movement/move.c.o: ../includes/engine.h
+CMakeFiles/d-k3d.dir/src/movement/move.c.o: ../includes/utilits.h
+CMakeFiles/d-k3d.dir/src/movement/move.c.o: ../src/movement/move.c
 
 CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o: ../includes/engine.h
 CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o: ../src/render/line/render_line.c
@@ -61,13 +55,40 @@ CMakeFiles/d-k3d.dir/src/render/minimap.c.o: ../includes/engine.h
 CMakeFiles/d-k3d.dir/src/render/minimap.c.o: ../src/render/minimap.c
 
 CMakeFiles/d-k3d.dir/src/render/render_wall.c.o: ../includes/engine.h
-CMakeFiles/d-k3d.dir/src/render/render_wall.c.o: ../includes/math_utilits.h
+CMakeFiles/d-k3d.dir/src/render/render_wall.c.o: ../includes/utilits.h
 CMakeFiles/d-k3d.dir/src/render/render_wall.c.o: ../src/render/render_wall.c
 
 CMakeFiles/d-k3d.dir/src/run_queue.c.o: ../includes/engine.h
 CMakeFiles/d-k3d.dir/src/run_queue.c.o: ../src/run_queue.c
 
 CMakeFiles/d-k3d.dir/src/transform_wall.c.o: ../includes/engine.h
-CMakeFiles/d-k3d.dir/src/transform_wall.c.o: ../includes/math_utilits.h
+CMakeFiles/d-k3d.dir/src/transform_wall.c.o: ../includes/utilits.h
 CMakeFiles/d-k3d.dir/src/transform_wall.c.o: ../src/transform_wall.c
+
+CMakeFiles/d-k3d.dir/src/utilits/math_utilits/determine_intersection.c.o: ../includes/engine.h
+CMakeFiles/d-k3d.dir/src/utilits/math_utilits/determine_intersection.c.o: ../includes/utilits.h
+CMakeFiles/d-k3d.dir/src/utilits/math_utilits/determine_intersection.c.o: ../src/utilits/math_utilits/determine_intersection.c
+
+CMakeFiles/d-k3d.dir/src/utilits/math_utilits/intersection_point.c.o: ../includes/engine.h
+CMakeFiles/d-k3d.dir/src/utilits/math_utilits/intersection_point.c.o: ../includes/utilits.h
+CMakeFiles/d-k3d.dir/src/utilits/math_utilits/intersection_point.c.o: ../src/utilits/math_utilits/intersection_point.c
+
+CMakeFiles/d-k3d.dir/src/utilits/math_utilits/mathf.c.o: ../includes/engine.h
+CMakeFiles/d-k3d.dir/src/utilits/math_utilits/mathf.c.o: ../includes/utilits.h
+CMakeFiles/d-k3d.dir/src/utilits/math_utilits/mathf.c.o: ../src/utilits/math_utilits/mathf.c
+
+CMakeFiles/d-k3d.dir/src/utilits/math_utilits/perspective_transform.c.o: ../includes/engine.h
+CMakeFiles/d-k3d.dir/src/utilits/math_utilits/perspective_transform.c.o: ../includes/utilits.h
+CMakeFiles/d-k3d.dir/src/utilits/math_utilits/perspective_transform.c.o: ../src/utilits/math_utilits/perspective_transform.c
+
+CMakeFiles/d-k3d.dir/src/utilits/math_utilits/rotates.c.o: ../includes/engine.h
+CMakeFiles/d-k3d.dir/src/utilits/math_utilits/rotates.c.o: ../src/utilits/math_utilits/rotates.c
+
+CMakeFiles/d-k3d.dir/src/utilits/swap.c.o: ../includes/engine.h
+CMakeFiles/d-k3d.dir/src/utilits/swap.c.o: ../includes/utilits.h
+CMakeFiles/d-k3d.dir/src/utilits/swap.c.o: ../src/utilits/swap.c
+
+CMakeFiles/d-k3d.dir/src/utilits/utilits.c.o: ../includes/engine.h
+CMakeFiles/d-k3d.dir/src/utilits/utilits.c.o: ../includes/utilits.h
+CMakeFiles/d-k3d.dir/src/utilits/utilits.c.o: ../src/utilits/utilits.c
 
