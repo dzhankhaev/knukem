@@ -45,6 +45,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/usr/local/include/SDL2"/>
+					<Add directory="/usr/include/SDL2"/>
 					<Add directory="/home/chel/Desktop/knukem/d-k3d"/>
 					<Add directory="/home/chel/Desktop/knukem/includes"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
@@ -68,6 +69,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/usr/local/include/SDL2"/>
+					<Add directory="/usr/include/SDL2"/>
 					<Add directory="/home/chel/Desktop/knukem/d-k3d"/>
 					<Add directory="/home/chel/Desktop/knukem/includes"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
@@ -169,6 +171,9 @@
 			<Option target="d-k3d"/>
 		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/FindSDL2_image.cmake">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/../../../../usr/local/lib/cmake/SDL2/sdl2-config-version.cmake">

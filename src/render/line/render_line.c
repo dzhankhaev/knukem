@@ -22,9 +22,9 @@ static void		swap_point(int *a, int *b)
 
 static void		render(t_line p, t_line borders, SDL_Surface *screen)
 {
-	int	*temp;
+	Uint32	*temp;
 
-	temp = (int *)screen->pixels;
+	temp = (Uint32 *)screen->pixels;
 	if (p.x0 >= borders.x0 && p.x0 < borders.x1
 		&& p.y0 >= borders.y0 && p.y0 < borders.y1)
 		temp[(p.y0 * W) + p.x0] = p.color;

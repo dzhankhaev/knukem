@@ -130,7 +130,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=d-k3d
+CMAKE_PROJECT_NAME:STATIC=doom-nukem
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -203,11 +203,26 @@ ProcessorCount_cmd_sysctl:FILEPATH=/sbin/sysctl
 //The directory containing a CMake configuration file for SDL2.
 SDL2_DIR:PATH=/usr/local/lib/cmake/SDL2
 
+//Path to a file.
+SDL2_IMAGE_INCLUDE_DIR:PATH=/usr/include/SDL2
+
+//Path to a library.
+SDL2_IMAGE_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libSDL2_image.so
+
+//The directory containing a CMake configuration file for SDL2_image.
+SDL2_image_DIR:PATH=SDL2_image_DIR-NOTFOUND
+
 //Value Computed by CMake
 d-k3d_BINARY_DIR:STATIC=/home/chel/Desktop/knukem/cmake-build-debug
 
 //Value Computed by CMake
 d-k3d_SOURCE_DIR:STATIC=/home/chel/Desktop/knukem
+
+//Value Computed by CMake
+doom-nukem_BINARY_DIR:STATIC=/home/chel/Desktop/knukem/cmake-build-debug
+
+//Value Computed by CMake
+doom-nukem_SOURCE_DIR:STATIC=/home/chel/Desktop/knukem
 
 
 ########################
@@ -345,8 +360,14 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding SDL2_image
+FIND_PACKAGE_MESSAGE_DETAILS_SDL2_image:INTERNAL=[/usr/lib/x86_64-linux-gnu/libSDL2_image.so][/usr/include/SDL2][v()]
 //ADVANCED property for variable: ProcessorCount_cmd_nproc
 ProcessorCount_cmd_nproc-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: ProcessorCount_cmd_sysctl
 ProcessorCount_cmd_sysctl-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: SDL2_IMAGE_INCLUDE_DIR
+SDL2_IMAGE_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: SDL2_IMAGE_LIBRARY
+SDL2_IMAGE_LIBRARY-ADVANCED:INTERNAL=1
 

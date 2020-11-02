@@ -1,19 +1,19 @@
 #include "utilits.h"
 
-int				color_distance(t_engine *engine, t_line wall, int x)
+Uint32			color_distance(t_engine *engine, t_line wall, int x)
 {
-	int		z;
+	Uint32		z;
 
-	z = ((float)(x - wall.x0) * (engine->wall.x1 - engine->wall.x0)
-			/ (float)(wall.x1 - wall.x0) + engine->wall.x0) * 8.f;
+	z = (Uint32)(((float)(x - wall.x0) * (engine->wall.x1 - engine->wall.x0)
+			/ (float)(wall.x1 - wall.x0) + engine->wall.x0) * 8.f);
 	return (z);
 }
-//		z = ((float)(x - wall.x0) * (engine->wall.x0 - engine->wall.x1) / (float)(wall.x1 - wall.x0) + engine->wall.x1) * 8.f;
-unsigned		get_shadow(int z, unsigned color)
+
+Uint32		get_shadow(Uint32 z, Uint32 color)
 {
-	unsigned	r;
-	unsigned	g;
-	unsigned	b;
+	Uint32	r;
+	Uint32	g;
+	Uint32	b;
 
 	r = color >> 16;
 	g = ((color >> 8) & 255);

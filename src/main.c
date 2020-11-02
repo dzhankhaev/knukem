@@ -1,12 +1,15 @@
 #include "engine.h"
 #include "utilits.h"
+
 int main()
 {
 	t_engine engine;
 
-	if (init_engine(&engine) != 0)
-		return (1);
+	init_engine(&engine);
+	general_init(&engine);
+	get_filename(&engine, "wall.png", 0);
+	load_img(&engine, 0);
 	game_loop(&engine);
-	clean_up(&engine);
+	clean(&engine);
 	return (0);
 }

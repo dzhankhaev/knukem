@@ -1,10 +1,10 @@
 #include "engine.h"
 
-void			render_vline(t_line p, SDL_Surface *screen)
+void			render_vline(SDL_Surface *screen, t_line p)
 {
-	int	*temp;
+	Uint32	*temp;
 
-	temp = (int *)screen->pixels;
+	temp = (Uint32 *)screen->pixels;
 	p.y0 = p.y0 < 0 ? 0 : p.y0;
 	p.y0 = p.y0 > H - 1 ? H - 1 : p.y0;
 	p.y1 = p.y1 > H - 1 ? H - 1 : p.y1;

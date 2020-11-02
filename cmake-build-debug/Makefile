@@ -224,32 +224,32 @@ src/game_loop.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/game_loop.c.s
 .PHONY : src/game_loop.c.s
 
-src/init_engine.o: src/init_engine.c.o
+src/init.o: src/init.c.o
 
-.PHONY : src/init_engine.o
+.PHONY : src/init.o
 
 # target to build an object file
-src/init_engine.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/init_engine.c.o
-.PHONY : src/init_engine.c.o
+src/init.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/init.c.o
+.PHONY : src/init.c.o
 
-src/init_engine.i: src/init_engine.c.i
+src/init.i: src/init.c.i
 
-.PHONY : src/init_engine.i
+.PHONY : src/init.i
 
 # target to preprocess a source file
-src/init_engine.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/init_engine.c.i
-.PHONY : src/init_engine.c.i
+src/init.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/init.c.i
+.PHONY : src/init.c.i
 
-src/init_engine.s: src/init_engine.c.s
+src/init.s: src/init.c.s
 
-.PHONY : src/init_engine.s
+.PHONY : src/init.s
 
 # target to generate assembly for a file
-src/init_engine.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/init_engine.c.s
-.PHONY : src/init_engine.c.s
+src/init.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/init.c.s
+.PHONY : src/init.c.s
 
 src/key_events/event_edit.o: src/key_events/event_edit.c.o
 
@@ -629,140 +629,194 @@ src/transform_wall.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/transform_wall.c.s
 .PHONY : src/transform_wall.c.s
 
-src/utilits/math_utilits/determine_intersection.o: src/utilits/math_utilits/determine_intersection.c.o
+src/utilits/exit_options.o: src/utilits/exit_options.c.o
 
-.PHONY : src/utilits/math_utilits/determine_intersection.o
-
-# target to build an object file
-src/utilits/math_utilits/determine_intersection.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math_utilits/determine_intersection.c.o
-.PHONY : src/utilits/math_utilits/determine_intersection.c.o
-
-src/utilits/math_utilits/determine_intersection.i: src/utilits/math_utilits/determine_intersection.c.i
-
-.PHONY : src/utilits/math_utilits/determine_intersection.i
-
-# target to preprocess a source file
-src/utilits/math_utilits/determine_intersection.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math_utilits/determine_intersection.c.i
-.PHONY : src/utilits/math_utilits/determine_intersection.c.i
-
-src/utilits/math_utilits/determine_intersection.s: src/utilits/math_utilits/determine_intersection.c.s
-
-.PHONY : src/utilits/math_utilits/determine_intersection.s
-
-# target to generate assembly for a file
-src/utilits/math_utilits/determine_intersection.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math_utilits/determine_intersection.c.s
-.PHONY : src/utilits/math_utilits/determine_intersection.c.s
-
-src/utilits/math_utilits/intersection_point.o: src/utilits/math_utilits/intersection_point.c.o
-
-.PHONY : src/utilits/math_utilits/intersection_point.o
+.PHONY : src/utilits/exit_options.o
 
 # target to build an object file
-src/utilits/math_utilits/intersection_point.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math_utilits/intersection_point.c.o
-.PHONY : src/utilits/math_utilits/intersection_point.c.o
+src/utilits/exit_options.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.o
+.PHONY : src/utilits/exit_options.c.o
 
-src/utilits/math_utilits/intersection_point.i: src/utilits/math_utilits/intersection_point.c.i
+src/utilits/exit_options.i: src/utilits/exit_options.c.i
 
-.PHONY : src/utilits/math_utilits/intersection_point.i
+.PHONY : src/utilits/exit_options.i
 
 # target to preprocess a source file
-src/utilits/math_utilits/intersection_point.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math_utilits/intersection_point.c.i
-.PHONY : src/utilits/math_utilits/intersection_point.c.i
+src/utilits/exit_options.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.i
+.PHONY : src/utilits/exit_options.c.i
 
-src/utilits/math_utilits/intersection_point.s: src/utilits/math_utilits/intersection_point.c.s
+src/utilits/exit_options.s: src/utilits/exit_options.c.s
 
-.PHONY : src/utilits/math_utilits/intersection_point.s
+.PHONY : src/utilits/exit_options.s
 
 # target to generate assembly for a file
-src/utilits/math_utilits/intersection_point.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math_utilits/intersection_point.c.s
-.PHONY : src/utilits/math_utilits/intersection_point.c.s
+src/utilits/exit_options.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.s
+.PHONY : src/utilits/exit_options.c.s
 
-src/utilits/math_utilits/mathf.o: src/utilits/math_utilits/mathf.c.o
+src/utilits/load_img.o: src/utilits/load_img.c.o
 
-.PHONY : src/utilits/math_utilits/mathf.o
+.PHONY : src/utilits/load_img.o
 
 # target to build an object file
-src/utilits/math_utilits/mathf.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math_utilits/mathf.c.o
-.PHONY : src/utilits/math_utilits/mathf.c.o
+src/utilits/load_img.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/load_img.c.o
+.PHONY : src/utilits/load_img.c.o
 
-src/utilits/math_utilits/mathf.i: src/utilits/math_utilits/mathf.c.i
+src/utilits/load_img.i: src/utilits/load_img.c.i
 
-.PHONY : src/utilits/math_utilits/mathf.i
+.PHONY : src/utilits/load_img.i
 
 # target to preprocess a source file
-src/utilits/math_utilits/mathf.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math_utilits/mathf.c.i
-.PHONY : src/utilits/math_utilits/mathf.c.i
+src/utilits/load_img.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/load_img.c.i
+.PHONY : src/utilits/load_img.c.i
 
-src/utilits/math_utilits/mathf.s: src/utilits/math_utilits/mathf.c.s
+src/utilits/load_img.s: src/utilits/load_img.c.s
 
-.PHONY : src/utilits/math_utilits/mathf.s
+.PHONY : src/utilits/load_img.s
 
 # target to generate assembly for a file
-src/utilits/math_utilits/mathf.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math_utilits/mathf.c.s
-.PHONY : src/utilits/math_utilits/mathf.c.s
+src/utilits/load_img.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/load_img.c.s
+.PHONY : src/utilits/load_img.c.s
 
-src/utilits/math_utilits/perspective_transform.o: src/utilits/math_utilits/perspective_transform.c.o
+src/utilits/math/determine_intersection.o: src/utilits/math/determine_intersection.c.o
 
-.PHONY : src/utilits/math_utilits/perspective_transform.o
+.PHONY : src/utilits/math/determine_intersection.o
 
 # target to build an object file
-src/utilits/math_utilits/perspective_transform.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math_utilits/perspective_transform.c.o
-.PHONY : src/utilits/math_utilits/perspective_transform.c.o
+src/utilits/math/determine_intersection.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.o
+.PHONY : src/utilits/math/determine_intersection.c.o
 
-src/utilits/math_utilits/perspective_transform.i: src/utilits/math_utilits/perspective_transform.c.i
+src/utilits/math/determine_intersection.i: src/utilits/math/determine_intersection.c.i
 
-.PHONY : src/utilits/math_utilits/perspective_transform.i
+.PHONY : src/utilits/math/determine_intersection.i
 
 # target to preprocess a source file
-src/utilits/math_utilits/perspective_transform.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math_utilits/perspective_transform.c.i
-.PHONY : src/utilits/math_utilits/perspective_transform.c.i
+src/utilits/math/determine_intersection.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.i
+.PHONY : src/utilits/math/determine_intersection.c.i
 
-src/utilits/math_utilits/perspective_transform.s: src/utilits/math_utilits/perspective_transform.c.s
+src/utilits/math/determine_intersection.s: src/utilits/math/determine_intersection.c.s
 
-.PHONY : src/utilits/math_utilits/perspective_transform.s
+.PHONY : src/utilits/math/determine_intersection.s
 
 # target to generate assembly for a file
-src/utilits/math_utilits/perspective_transform.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math_utilits/perspective_transform.c.s
-.PHONY : src/utilits/math_utilits/perspective_transform.c.s
+src/utilits/math/determine_intersection.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.s
+.PHONY : src/utilits/math/determine_intersection.c.s
 
-src/utilits/math_utilits/rotates.o: src/utilits/math_utilits/rotates.c.o
+src/utilits/math/intersection_point.o: src/utilits/math/intersection_point.c.o
 
-.PHONY : src/utilits/math_utilits/rotates.o
+.PHONY : src/utilits/math/intersection_point.o
 
 # target to build an object file
-src/utilits/math_utilits/rotates.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math_utilits/rotates.c.o
-.PHONY : src/utilits/math_utilits/rotates.c.o
+src/utilits/math/intersection_point.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.o
+.PHONY : src/utilits/math/intersection_point.c.o
 
-src/utilits/math_utilits/rotates.i: src/utilits/math_utilits/rotates.c.i
+src/utilits/math/intersection_point.i: src/utilits/math/intersection_point.c.i
 
-.PHONY : src/utilits/math_utilits/rotates.i
+.PHONY : src/utilits/math/intersection_point.i
 
 # target to preprocess a source file
-src/utilits/math_utilits/rotates.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math_utilits/rotates.c.i
-.PHONY : src/utilits/math_utilits/rotates.c.i
+src/utilits/math/intersection_point.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.i
+.PHONY : src/utilits/math/intersection_point.c.i
 
-src/utilits/math_utilits/rotates.s: src/utilits/math_utilits/rotates.c.s
+src/utilits/math/intersection_point.s: src/utilits/math/intersection_point.c.s
 
-.PHONY : src/utilits/math_utilits/rotates.s
+.PHONY : src/utilits/math/intersection_point.s
 
 # target to generate assembly for a file
-src/utilits/math_utilits/rotates.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math_utilits/rotates.c.s
-.PHONY : src/utilits/math_utilits/rotates.c.s
+src/utilits/math/intersection_point.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.s
+.PHONY : src/utilits/math/intersection_point.c.s
+
+src/utilits/math/mathf.o: src/utilits/math/mathf.c.o
+
+.PHONY : src/utilits/math/mathf.o
+
+# target to build an object file
+src/utilits/math/mathf.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.o
+.PHONY : src/utilits/math/mathf.c.o
+
+src/utilits/math/mathf.i: src/utilits/math/mathf.c.i
+
+.PHONY : src/utilits/math/mathf.i
+
+# target to preprocess a source file
+src/utilits/math/mathf.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.i
+.PHONY : src/utilits/math/mathf.c.i
+
+src/utilits/math/mathf.s: src/utilits/math/mathf.c.s
+
+.PHONY : src/utilits/math/mathf.s
+
+# target to generate assembly for a file
+src/utilits/math/mathf.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.s
+.PHONY : src/utilits/math/mathf.c.s
+
+src/utilits/math/perspective_transform.o: src/utilits/math/perspective_transform.c.o
+
+.PHONY : src/utilits/math/perspective_transform.o
+
+# target to build an object file
+src/utilits/math/perspective_transform.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.o
+.PHONY : src/utilits/math/perspective_transform.c.o
+
+src/utilits/math/perspective_transform.i: src/utilits/math/perspective_transform.c.i
+
+.PHONY : src/utilits/math/perspective_transform.i
+
+# target to preprocess a source file
+src/utilits/math/perspective_transform.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.i
+.PHONY : src/utilits/math/perspective_transform.c.i
+
+src/utilits/math/perspective_transform.s: src/utilits/math/perspective_transform.c.s
+
+.PHONY : src/utilits/math/perspective_transform.s
+
+# target to generate assembly for a file
+src/utilits/math/perspective_transform.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.s
+.PHONY : src/utilits/math/perspective_transform.c.s
+
+src/utilits/math/rotates.o: src/utilits/math/rotates.c.o
+
+.PHONY : src/utilits/math/rotates.o
+
+# target to build an object file
+src/utilits/math/rotates.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.o
+.PHONY : src/utilits/math/rotates.c.o
+
+src/utilits/math/rotates.i: src/utilits/math/rotates.c.i
+
+.PHONY : src/utilits/math/rotates.i
+
+# target to preprocess a source file
+src/utilits/math/rotates.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.i
+.PHONY : src/utilits/math/rotates.c.i
+
+src/utilits/math/rotates.s: src/utilits/math/rotates.c.s
+
+.PHONY : src/utilits/math/rotates.s
+
+# target to generate assembly for a file
+src/utilits/math/rotates.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.s
+.PHONY : src/utilits/math/rotates.c.s
 
 src/utilits/swap.o: src/utilits/swap.c.o
 
@@ -836,9 +890,9 @@ help:
 	@echo "... src/game_loop.o"
 	@echo "... src/game_loop.i"
 	@echo "... src/game_loop.s"
-	@echo "... src/init_engine.o"
-	@echo "... src/init_engine.i"
-	@echo "... src/init_engine.s"
+	@echo "... src/init.o"
+	@echo "... src/init.i"
+	@echo "... src/init.s"
 	@echo "... src/key_events/event_edit.o"
 	@echo "... src/key_events/event_edit.i"
 	@echo "... src/key_events/event_edit.s"
@@ -881,21 +935,27 @@ help:
 	@echo "... src/transform_wall.o"
 	@echo "... src/transform_wall.i"
 	@echo "... src/transform_wall.s"
-	@echo "... src/utilits/math_utilits/determine_intersection.o"
-	@echo "... src/utilits/math_utilits/determine_intersection.i"
-	@echo "... src/utilits/math_utilits/determine_intersection.s"
-	@echo "... src/utilits/math_utilits/intersection_point.o"
-	@echo "... src/utilits/math_utilits/intersection_point.i"
-	@echo "... src/utilits/math_utilits/intersection_point.s"
-	@echo "... src/utilits/math_utilits/mathf.o"
-	@echo "... src/utilits/math_utilits/mathf.i"
-	@echo "... src/utilits/math_utilits/mathf.s"
-	@echo "... src/utilits/math_utilits/perspective_transform.o"
-	@echo "... src/utilits/math_utilits/perspective_transform.i"
-	@echo "... src/utilits/math_utilits/perspective_transform.s"
-	@echo "... src/utilits/math_utilits/rotates.o"
-	@echo "... src/utilits/math_utilits/rotates.i"
-	@echo "... src/utilits/math_utilits/rotates.s"
+	@echo "... src/utilits/exit_options.o"
+	@echo "... src/utilits/exit_options.i"
+	@echo "... src/utilits/exit_options.s"
+	@echo "... src/utilits/load_img.o"
+	@echo "... src/utilits/load_img.i"
+	@echo "... src/utilits/load_img.s"
+	@echo "... src/utilits/math/determine_intersection.o"
+	@echo "... src/utilits/math/determine_intersection.i"
+	@echo "... src/utilits/math/determine_intersection.s"
+	@echo "... src/utilits/math/intersection_point.o"
+	@echo "... src/utilits/math/intersection_point.i"
+	@echo "... src/utilits/math/intersection_point.s"
+	@echo "... src/utilits/math/mathf.o"
+	@echo "... src/utilits/math/mathf.i"
+	@echo "... src/utilits/math/mathf.s"
+	@echo "... src/utilits/math/perspective_transform.o"
+	@echo "... src/utilits/math/perspective_transform.i"
+	@echo "... src/utilits/math/perspective_transform.s"
+	@echo "... src/utilits/math/rotates.o"
+	@echo "... src/utilits/math/rotates.i"
+	@echo "... src/utilits/math/rotates.s"
 	@echo "... src/utilits/swap.o"
 	@echo "... src/utilits/swap.i"
 	@echo "... src/utilits/swap.s"

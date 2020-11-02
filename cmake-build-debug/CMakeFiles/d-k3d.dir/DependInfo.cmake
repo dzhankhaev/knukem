@@ -7,7 +7,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/chel/Desktop/knukem/src/cut_wall.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/cut_wall.c.o"
   "/home/chel/Desktop/knukem/src/editor/real_time_edit.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.o"
   "/home/chel/Desktop/knukem/src/game_loop.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/game_loop.c.o"
-  "/home/chel/Desktop/knukem/src/init_engine.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/init_engine.c.o"
+  "/home/chel/Desktop/knukem/src/init.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/init.c.o"
   "/home/chel/Desktop/knukem/src/key_events/event_edit.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.o"
   "/home/chel/Desktop/knukem/src/key_events/event_movement.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.o"
   "/home/chel/Desktop/knukem/src/key_events/keys_manager.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.o"
@@ -22,11 +22,13 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/chel/Desktop/knukem/src/render/render_wall.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/render_wall.c.o"
   "/home/chel/Desktop/knukem/src/run_queue.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/run_queue.c.o"
   "/home/chel/Desktop/knukem/src/transform_wall.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/transform_wall.c.o"
-  "/home/chel/Desktop/knukem/src/utilits/math_utilits/determine_intersection.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/utilits/math_utilits/determine_intersection.c.o"
-  "/home/chel/Desktop/knukem/src/utilits/math_utilits/intersection_point.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/utilits/math_utilits/intersection_point.c.o"
-  "/home/chel/Desktop/knukem/src/utilits/math_utilits/mathf.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/utilits/math_utilits/mathf.c.o"
-  "/home/chel/Desktop/knukem/src/utilits/math_utilits/perspective_transform.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/utilits/math_utilits/perspective_transform.c.o"
-  "/home/chel/Desktop/knukem/src/utilits/math_utilits/rotates.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/utilits/math_utilits/rotates.c.o"
+  "/home/chel/Desktop/knukem/src/utilits/exit_options.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.o"
+  "/home/chel/Desktop/knukem/src/utilits/load_img.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/utilits/load_img.c.o"
+  "/home/chel/Desktop/knukem/src/utilits/math/determine_intersection.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.o"
+  "/home/chel/Desktop/knukem/src/utilits/math/intersection_point.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.o"
+  "/home/chel/Desktop/knukem/src/utilits/math/mathf.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.o"
+  "/home/chel/Desktop/knukem/src/utilits/math/perspective_transform.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.o"
+  "/home/chel/Desktop/knukem/src/utilits/math/rotates.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.o"
   "/home/chel/Desktop/knukem/src/utilits/swap.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/utilits/swap.c.o"
   "/home/chel/Desktop/knukem/src/utilits/utilits.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/utilits/utilits.c.o"
   )
@@ -35,6 +37,7 @@ set(CMAKE_C_COMPILER_ID "GNU")
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
   "/usr/local/include/SDL2"
+  "/usr/include/SDL2"
   "../d-k3d"
   "../includes"
   )

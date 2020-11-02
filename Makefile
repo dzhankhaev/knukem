@@ -9,7 +9,7 @@ VIOLET_FONT	:= \033[1;35m
 CYAN_FONT	:= \033[1;36m
 WHITE_FONT	:= \033[1;37m
 
-NAME :=	d-k3d
+NAME :=	doom-nukem
 
 HEADERS := engine.h\
 	math_utilits.h\
@@ -18,7 +18,7 @@ HEADERS := engine.h\
 
 SRC := main.c\
 	run_queue.c\
-	init_engine.c\
+	init.c\
 	lighting.c\
 	transform_wall.c\
 	cut_wall.c\
@@ -30,11 +30,15 @@ SRC := main.c\
 	editor/real_time_edit.c\
 	movement/move.c\
 	movement/fall.c\
-	math_utilits/determine_intersection.c\
-    math_utilits/mathf.c\
-    math_utilits/intersection_point.c\
-    math_utilits/rotates.c\
-    math_utilits/perspective_transform.c\
+	utilits/math/determine_intersection.c\
+    utilits/math/mathf.c\
+    utilits/math/intersection_point.c\
+    utilits/math/rotates.c\
+    utilits/math/perspective_transform.c\
+    utilits/swap.c\
+    utilits/utilits.c\
+    utilits/exit_options.c\
+    utilits/load_img.c\
 	render/minimap.c\
 	render/render_wall.c\
 	render/line/render_line.c\

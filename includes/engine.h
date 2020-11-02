@@ -6,8 +6,8 @@
 # include <unistd.h>
 # include <string.h>
 # include <SDL2/SDL.h>
+# include <SDL_image.h>
 //# include <SDL2_ttf/SDL_ttf.h>
-//# include <SDL2_image/SDL_image.h>
 //# include <SDL2_mixer/SDL_mixer.h>
 /*
  * ЗАКОММЕНТИРУЙ, ЕСЛИ НЕ КОМПИЛИТСЯ! Временное решение
@@ -70,7 +70,7 @@ typedef struct	s_line		//	стена для экранных координат
 	int			x1;
 	int			y0;
 	int			y1;
-	unsigned	color;
+	Uint32		color;
 }				t_line;
 
 typedef struct	s_fline		//	стена для вычислений
@@ -79,7 +79,7 @@ typedef struct	s_fline		//	стена для вычислений
 	float		x1;
 	float		y0;
 	float		y1;
-	unsigned	color;
+	Uint32		color;
 }				t_fline;
 
 typedef struct	s_xy
@@ -139,6 +139,12 @@ typedef struct	s_edit
 	int			mod;				//	режим модификатора !не используется!
 }				t_edit;
 
+typedef struct	s_img
+{
+	SDL_Surface	*tx;
+	char		name[15];
+}				t_img;
+
 typedef struct	s_engine
 {
 	SDL_Window	*window;
@@ -157,29 +163,31 @@ typedef struct	s_engine
 	t_fline		wall;
 	int			tline[W];
 	int			bline[W];
+	t_img		img[1];
+	int x;
+	int y;
 }				t_engine;
 
 
-int				init_engine(t_engine *engine);
+void			init_engine(t_engine *engine);
+void			general_init(t_engine *engine);
 void			load_data(t_engine *engine);
 void			unload_data(t_engine *engine);
 void			game_loop(t_engine *engine);
-void			clean_up(t_engine *engine);
-void			draw(t_engine *engine);
 int 			transform_wall(t_engine *engine, int i);
 void			render_wall(t_engine *engine, int sectorno, int neighbor);
 t_fline			cut_wall(t_fline wall, t_xy i1, t_xy i2);						//разрезает стену для попадания в fov
-void			minimap(t_engine *engine, t_xy v0, t_xy v1, int color);			//рисуется отдельно для каждой стены
-void			minimap_cut(t_engine *engine, t_xy v0, t_xy v1, int color);		//показывает только то, что в поле зрения
+void			minimap(t_engine *engine, t_xy v0, t_xy v1, Uint32 color);			//рисуется отдельно для каждой стены
+void			minimap_cut(t_engine *engine, t_xy v0, t_xy v1, Uint32 color);		//показывает только то, что в поле зрения
 void			render_minimap_hud(t_minimap minimap, SDL_Surface *screen);		//рисуется один раз на кадр
 void			run_queue(t_engine *engine);
 int				check_repeat(t_engine *engine, int sectorno, int neighbor);
 void			render_line(t_line p, SDL_Surface *screen, t_line borders);		//линия в пределах указанных границ
-void			render_vline(t_line p, SDL_Surface *screen);					//вертикальная линия сверху вниз
+void			render_vline(SDL_Surface *screen, t_line p);			//вертикальная линия сверху вниз
 void			move(t_engine *engine);
 void			fall(t_player *player, t_sector *sectors);
-int				color_distance(t_engine *engine, t_line wall, int x);			//модификатор освещения в зависимости от дальности
-unsigned		get_shadow(int z, unsigned color);								//применить модификатор освещения
+Uint32			color_distance(t_engine *engine, t_line wall, int x);			//модификатор освещения в зависимости от дальности
+Uint32			get_shadow(Uint32 z, Uint32 color);								//применить модификатор освещения
 void			real_time_edit(t_engine *engine);
 
 #endif
