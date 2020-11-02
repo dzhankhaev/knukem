@@ -296,8 +296,14 @@ typedef struct	s_sub_hud
 
 typedef struct	s_hud
 {
-	char		colormap[14][256*3];
+	char		colormap[14][256 * 3];
+	int			pal;
+	t_patch		*patch;
 	t_sub_hud	**patches;
+	SDL_Surface	*lmp;
+	SDL_Surface	*scr;
+
+
 }				t_hud;
 
 typedef struct	s_value

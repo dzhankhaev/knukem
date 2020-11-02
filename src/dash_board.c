@@ -184,7 +184,7 @@ void			put_patch_on_scr(char *name_patch, SDL_Surface *dst_scr,
 		SDL_FreeSurface(scr);
 }
 
-SDL_Surface		*hud(int hp, char armors, SDL_Surface *scr, unsigned char* colormap)
+SDL_Surface		*print_hud(int hp, char armors, t_hud *hud)
 {
 	char		ch_num[4][8];
 	char		st[8];
@@ -205,90 +205,74 @@ SDL_Surface		*hud(int hp, char armors, SDL_Surface *scr, unsigned char* colormap
 	{
 		rr = (SDL_Rect){.x = 49 + i * 14, .y = 4};
 		if (!(i == 0 && (hp / 100) == 0))
-			put_patch_on_scr(ch_num[i], scr, &rr, colormap);
+			put_patch_on_scr(ch_num[i], hud->lmp, &rr, (unsigned char*)hud->colormap[hud->pal]);
 	}
 	rr = (SDL_Rect){.x = 104, .y = 0};
-	put_patch_on_scr("STARMS", scr, &rr, colormap);
+	put_patch_on_scr("STARMS", hud->lmp, &rr, (unsigned char*)hud->colormap[hud->pal]);
 	rr = (SDL_Rect){.x = 111, .y = 4};
 	if (armors & 0b10)
-		put_patch_on_scr("STYSNUM2", scr, &rr, colormap);
+		put_patch_on_scr("STYSNUM2",hud->lmp, &rr, (unsigned char*)hud->colormap[hud->pal]);
 	else
-		put_patch_on_scr("STGNUM2", scr, &rr, colormap);
+		put_patch_on_scr("STGNUM2",hud->lmp, &rr, (unsigned char*)hud->colormap[hud->pal]);
 	rr = (SDL_Rect){.x = 123, .y = 4};
 	if (armors & 0b100)
-		put_patch_on_scr("STYSNUM3", scr, &rr, colormap);
+		put_patch_on_scr("STYSNUM3",hud->lmp, &rr, (unsigned char*)hud->colormap[hud->pal]);
 	else
-		put_patch_on_scr("STGNUM3", scr, &rr, colormap);
+		put_patch_on_scr("STGNUM3",hud->lmp, &rr, (unsigned char*)hud->colormap[hud->pal]);
 	rr = (SDL_Rect){.x = 135, .y = 4};
 	if (armors & 0b1000)
-		put_patch_on_scr("STYSNUM4", scr, &rr, colormap);
+		put_patch_on_scr("STYSNUM4",hud->lmp, &rr, (unsigned char*)hud->colormap[hud->pal]);
 	else
-		put_patch_on_scr("STGNUM4", scr, &rr, colormap);
+		put_patch_on_scr("STGNUM4",hud->lmp, &rr, (unsigned char*)hud->colormap[hud->pal]);
 	rr = (SDL_Rect){.x = 111, .y = 14};
 	if (armors & 0b10000)
-		put_patch_on_scr("STYSNUM5", scr, &rr, colormap);
+		put_patch_on_scr("STYSNUM5",hud->lmp, &rr, (unsigned char*)hud->colormap[hud->pal]);
 	else
-		put_patch_on_scr("STGNUM5", scr, &rr, colormap);
+		put_patch_on_scr("STGNUM5",hud->lmp, &rr, (unsigned char*)hud->colormap[hud->pal]);
 	rr = (SDL_Rect){.x = 123, .y = 14};
 	if (armors & 0b100000)
-		put_patch_on_scr("STYSNUM6", scr, &rr, colormap);
+		put_patch_on_scr("STYSNUM6",hud->lmp, &rr, (unsigned char*)hud->colormap[hud->pal]);
 	else
-		put_patch_on_scr("STGNUM6", scr, &rr, colormap);
+		put_patch_on_scr("STGNUM6",hud->lmp, &rr, (unsigned char*)hud->colormap[hud->pal]);
 	rr = (SDL_Rect){.x = 135, .y = 14};
 	if (armors & 0b1000000)
-		put_patch_on_scr("STYSNUM7", scr, &rr, colormap);
+		put_patch_on_scr("STYSNUM7",hud->lmp, &rr, (unsigned char*)hud->colormap[hud->pal]);
 	else
-		put_patch_on_scr("STGNUM7", scr, &rr, colormap);
+		put_patch_on_scr("STGNUM7",hud->lmp, &rr, (unsigned char*)hud->colormap[hud->pal]);
 	rr = (SDL_Rect){.x = 148, .y = 2};
-	put_patch_on_scr("STFTR00", scr, &rr, colormap);
+	put_patch_on_scr("STFTR00",hud->lmp, &rr, (unsigned char*)hud->colormap[hud->pal]);
 	return(NULL);
+}
+
+int		put_hud(SDL_Surface *src)
+{
+	t_hud		hud;
+	return(1);
 }
 
 int				main(int argc, char **argv)
 {
 	t_engine	engine;
-	char		*mem;
-	t_wad		wad;
-	SDL_Surface	*lmp;
-	t_patch		*patch;
-	char		colormap[14][256 * 3];
-	int			pow;
-	int			pal = 0;
-
-	char **ddd;
-	ddd = playpal();
-	// printf("%s | %s", ddd[0], ddd[1]);
-	if (argc == 1)
-	{
-		write(1, "No patch Name\n", 14);
-		return(0);
-	}
-	lmp = NULL;
-	patch = load_patch("Doom1.WAD", "PLAYPAL");
-	// // colormap = playpal();
-	ft_memcpy(colormap, patch->mem, patch->size_patch);
-	free_patch(&patch);
-	if ((patch = load_patch("Doom1.WAD", argv[1])))
+	t_hud		hud;
+	hud.pal = 0;
+	hud.lmp = NULL;
+	hud.patch = load_patch("Doom1.WAD", "PLAYPAL");
+	ft_memcpy(hud.colormap, hud.patch->mem, hud.patch->size_patch);
+	free_patch(&hud.patch);
+	if ((hud.patch = load_patch("Doom1.WAD", "STBAR")))
 	{	
-		lmp = SDL_CreateRGBSurface(0, patch->width, patch->height,
+		hud.lmp = SDL_CreateRGBSurface(0, hud.patch->width, hud.patch->height,
 											32, RMASK, GMASK, BMASK, AMASK);
-		pars_colum(lmp, patch, (unsigned char*)colormap[pal]);
+		pars_colum(hud.lmp, hud.patch, (unsigned char*)hud.colormap[hud.pal]);
 	}
-	if (lmp)
-	{	
-		if (lmp->w > lmp->h)
-			pow = 1920 / lmp->w;
-		else
-			pow = 1080 / lmp->h;
-		engine = (t_engine){.w = lmp->w * pow, .h = lmp->h * pow};
-	}
-	else
-		engine = (t_engine){.w = 400, .h = 600};
-	free_patch(&patch);
-	hud(358,0b00110, lmp, (unsigned char*)colormap[pal]);
+	engine = (t_engine){.w = 1920, .h = 1080};
+	free_patch(&hud.patch);
+	print_hud(358,0b00110, &hud);
 	if (init_engine(&engine) != 0)
 		return (1);
-	SDL_BlitScaled(lmp, NULL, engine.screen, NULL);
+	SDL_Rect	hud_r;
+	hud_r = (SDL_Rect){.x = 0, .y = engine.h - engine.w / 10 , .w = engine.w , .h = engine.w / 10};
+	SDL_BlitScaled(hud.lmp, NULL, engine.screen, &hud_r);
 	SDL_UpdateWindowSurface(engine.window);
 	
 	while (!engine.close_request)
