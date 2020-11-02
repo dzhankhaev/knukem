@@ -73,20 +73,9 @@ void			render_wall(t_engine *engine, int sectorno, int neighbor)
 		init_edge(engine, engine->sectors[neighbor], wall);
 	}
 
-
-	t_fline q = engine->w;
-	float dq = sqrtf(powf(q.y1 - q.y0, 2) * powf(q.x1 - q.x0, 2));
-	t_line a = perspective_transform(engine->w, engine->player.where.z - engine->sectors[sectorno].ceil,
-									 engine->player.vangle, CEIL_COLOR);
-	float da = sqrtf(powf(a.y1 - a.y0, 2) * powf(a.x1 - a.x0, 2));
-	float d = dq / da;
-	float r = q.y0;
-	int x = x0;
-
 	to_x_order(wall);
 	while (x0 < x1)
 	{
-		r += 1;
 		render_ceil_and_floor(engine, x0, wall, y);
 		if (neighbor != -1)
 			render_edge(engine, x0, wall, y, deep_shading(engine, w, x0));
@@ -125,12 +114,13 @@ void			render_vline1(t_engine *engine, t_line p, int dx, int dy)
 	p.y1 = p.y1 > H - 1 ? H - 1 : p.y1;
 	p.y1 = p.y1 < 0 ? 0 : p.y1;
 	int step = dy;
-	while (dx >= engine->img[0].tx->pitch)
-		dx = dx - engine->img[0].tx->pitch;
+//	while (dx >= engine->img[0].tx->pitch)
+//		dx = dx - engine->img[0].tx->pitch;
 	while (p.y0 < p.y1)
 	{
 		dy = dy >= engine->img[0].tx->h ? step : dy + step;
-		temp[(p.y0 * W) + p.x0] = get_pixel_color(engine->img[0].tx, dx, dy);
+//		if (p.y0 > 0 && p.y1 < H)
+			temp[(p.y0 * W) + p.x0] = get_pixel_color(engine->img[0].tx, dx, dy);
 		p.y0++;
 	}
 }

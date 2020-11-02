@@ -24,7 +24,6 @@ void		save_wall_position(t_engine *engine)
 
 int			transform_wall(t_engine *engine, int i)
 {
-	engine->w = engine->wall;
 	engine->wall = rotate_wall(engine->sectors[engine->present->sectorno],
 							engine->player, i, engine->wall.color);
 	//после поворота координата X является глубиной
@@ -34,7 +33,7 @@ int			transform_wall(t_engine *engine, int i)
 		engine->wall.color = 0;
 		return (0); //стены за спиной не рендерятся
 	}
-//	save_wall_position(engine);
+	save_wall_position(engine);
 	engine->wall = fov_wall_cut(engine->wall);
 	//обрезаем частично попавшие в поле зрения стены
 	if (engine->wall.x0 <= 0 || engine->wall.x1 <= 0
