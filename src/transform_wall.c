@@ -13,8 +13,18 @@ static t_fline	fov_wall_cut(t_fline wall)
 	return (cut_wall(wall, i1, i2));
 }
 
+void		save_wall_position(t_engine *engine)
+{
+	engine->w = engine->wall;
+	engine->w.x0 = engine->wall.x0 + engine->player.where.x;
+	engine->w.y0 = engine->wall.y0 + engine->player.where.y;
+	engine->w.x1 = engine->wall.x1 + engine->player.where.x;
+	engine->w.y1 = engine->wall.y1 + engine->player.where.y;
+}
+
 int			transform_wall(t_engine *engine, int i)
 {
+	engine->w = engine->wall;
 	engine->wall = rotate_wall(engine->sectors[engine->present->sectorno],
 							engine->player, i, engine->wall.color);
 	//после поворота координата X является глубиной
@@ -24,6 +34,7 @@ int			transform_wall(t_engine *engine, int i)
 		engine->wall.color = 0;
 		return (0); //стены за спиной не рендерятся
 	}
+//	save_wall_position(engine);
 	engine->wall = fov_wall_cut(engine->wall);
 	//обрезаем частично попавшие в поле зрения стены
 	if (engine->wall.x0 <= 0 || engine->wall.x1 <= 0

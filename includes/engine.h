@@ -25,6 +25,7 @@
 # define RAY_POINT_Y 35.f			//	50.f * sinf(HFOV/2)
 # define K 1.f						//	Коэффицент уравнения прямой y = kx. Применяется к лучам видимости. Подробнее в transform_wall.c
 # define FLOOR_DIFF 12				//	Отображать на миникарте секторы с разницой в высоте не более floor_diff
+# define DEEP_SHADING 6.f			//	Модификатор затенения
 # define WALL_COLOR 0xDDDDDD		//	Цвета по умолчанию
 # define FLOOR_COLOR 0x4F3B0D
 # define CEIL_COLOR 0x0D384F
@@ -161,11 +162,10 @@ typedef struct	s_engine
 	int 		max_queue;
 	int 		close_request;
 	t_fline		wall;
+	t_fline		w;
 	int			tline[W];
 	int			bline[W];
 	t_img		img[1];
-	int x;
-	int y;
 }				t_engine;
 
 
@@ -186,7 +186,7 @@ void			render_line(t_line p, SDL_Surface *screen, t_line borders);		//линия
 void			render_vline(SDL_Surface *screen, t_line p);			//вертикальная линия сверху вниз
 void			move(t_engine *engine);
 void			fall(t_player *player, t_sector *sectors);
-Uint32			color_distance(t_engine *engine, t_line wall, int x);			//модификатор освещения в зависимости от дальности
+Uint32			deep_shading(t_engine *engine, t_line wall, int x);			//модификатор освещения в зависимости от дальности
 Uint32			get_shadow(Uint32 z, Uint32 color);								//применить модификатор освещения
 void			real_time_edit(t_engine *engine);
 

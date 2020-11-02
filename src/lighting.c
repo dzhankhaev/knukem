@@ -1,12 +1,13 @@
 #include "utilits.h"
 
-Uint32			color_distance(t_engine *engine, t_line wall, int x)
+Uint32			deep_shading(t_engine *engine, t_line wall, int x)
 {
-	Uint32		z;
-
-	z = (Uint32)(((float)(x - wall.x0) * (engine->wall.x1 - engine->wall.x0)
-			/ (float)(wall.x1 - wall.x0) + engine->wall.x0) * 8.f);
-	return (z);
+	float	z;
+//найти модификатор освещения в зависимости от дальности
+//эта формула линейной интерполяции https://en.wikipedia.org/wiki/Linear_interpolation
+	z = (((float)(x - wall.x0) * (engine->wall.x1 - engine->wall.x0)
+			/ (float)(wall.x1 - wall.x0) + engine->wall.x0));
+	return ((Uint32)(z * DEEP_SHADING));
 }
 
 Uint32		get_shadow(Uint32 z, Uint32 color)

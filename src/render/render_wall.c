@@ -48,6 +48,8 @@ static void		init_edge(t_engine *engine, t_sector sector, t_line *wall)
 									engine->player.vangle, BOT_COLOR);
 }
 
+void			render_vline1(t_engine *engine, t_line p, int dx, int dy);
+
 void			render_wall(t_engine *engine, int sectorno, int neighbor)
 {	//0 потолок, 1 пол, 2 потолок соседа и верхняя линия раздела, 3 пол соседа и нижняя линия раздела
 	//соседи отображаются нак грани текущего сектора, если они имеют общую грань
@@ -70,14 +72,65 @@ void			render_wall(t_engine *engine, int sectorno, int neighbor)
 			*(engine->future++) = (t_queue){neighbor, x0, x1, sectorno};
 		init_edge(engine, engine->sectors[neighbor], wall);
 	}
+
+
+	t_fline q = engine->w;
+	float dq = sqrtf(powf(q.y1 - q.y0, 2) * powf(q.x1 - q.x0, 2));
+	t_line a = perspective_transform(engine->w, engine->player.where.z - engine->sectors[sectorno].ceil,
+									 engine->player.vangle, CEIL_COLOR);
+	float da = sqrtf(powf(a.y1 - a.y0, 2) * powf(a.x1 - a.x0, 2));
+	float d = dq / da;
+	float r = q.y0;
+	int x = x0;
+
 	to_x_order(wall);
 	while (x0 < x1)
 	{
+		r += 1;
 		render_ceil_and_floor(engine, x0, wall, y);
 		if (neighbor != -1)
-			render_edge(engine, x0, wall, y, color_distance(engine, w, x0));
+			render_edge(engine, x0, wall, y, deep_shading(engine, w, x0));
 		else
-			render_vline(engine->screen, (t_line){x0, x0, y[0], y[1], get_shadow(color_distance(engine, w, x0), engine->wall.color)}); //если стена, заполняем полностью
+		{
+			render_vline(engine->screen,
+						  (t_line){x0, x0, y[0], y[1], get_shadow(
+								  deep_shading(engine, w, x0), engine->wall.color)}); //если стена, заполняем полностью
+//			render_vline1(engine,
+//						  (t_line){x0, x0, y[0], y[1], get_shadow(deep_shading(engine, w, x0), engine->wall.color)},
+//						  (int)(r),
+//						  1);
+		}
 		x0++;
+	}
+}
+
+Uint32		get_pixel_color(SDL_Surface *surface, int x, int y)
+{
+	Uint8	*p;
+	Uint32	rgb;
+
+	p = (Uint8 *)surface->pixels + y * surface->pitch + x
+							* surface->format->BytesPerPixel;
+	rgb = p[2] << 16 | p[1] << 8 | p[0];
+	return (rgb);
+}
+
+void			render_vline1(t_engine *engine, t_line p, int dx, int dy)
+{
+	Uint32	*temp;
+
+	temp = (Uint32 *)engine->screen->pixels;
+	p.y0 = p.y0 < 0 ? 0 : p.y0;
+	p.y0 = p.y0 > H - 1 ? H - 1 : p.y0;
+	p.y1 = p.y1 > H - 1 ? H - 1 : p.y1;
+	p.y1 = p.y1 < 0 ? 0 : p.y1;
+	int step = dy;
+	while (dx >= engine->img[0].tx->pitch)
+		dx = dx - engine->img[0].tx->pitch;
+	while (p.y0 < p.y1)
+	{
+		dy = dy >= engine->img[0].tx->h ? step : dy + step;
+		temp[(p.y0 * W) + p.x0] = get_pixel_color(engine->img[0].tx, dx, dy);
+		p.y0++;
 	}
 }

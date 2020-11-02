@@ -17,6 +17,7 @@ int				y_for_x(t_line wall, int x)
 {
 	int		y;
 //привести y к экранным координатам
+//эта формула линейной интерполяции https://en.wikipedia.org/wiki/Linear_interpolation
 	y = (x - wall.x0) * (wall.y1 - wall.y0) / (wall.x1 - wall.x0) + wall.y0;
 	return (y);
 }
