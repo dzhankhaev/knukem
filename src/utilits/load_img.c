@@ -15,7 +15,7 @@ static void	get_fname(char *name, char *fname)
 	fname[7] = 's';
 	fname[8] = '/';
 	i = 9;
-	while (i <= 24)
+	while (i < 24)
 		fname[i++] = '\0';
 	i = 9;
 	while (name[i - 9] != '\0')
