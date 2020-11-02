@@ -42,6 +42,7 @@ void 		load_img(t_engine *engine, int n)
 		exc(__FILE__, __FUNCTION__);
 	}
 	engine->img->tx = img;
+	write(1, "1\n", 2);
 }
 //https://habr.com/ru/post/456656/
 

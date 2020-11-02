@@ -12,7 +12,7 @@ WHITE_FONT	:= \033[1;37m
 NAME :=	doom-nukem
 
 HEADERS := engine.h\
-	math_utilits.h\
+	utilits.h\
 	events.h\
 
 

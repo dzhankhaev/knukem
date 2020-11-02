@@ -9,6 +9,7 @@ int main()
 	general_init(&engine);
 	get_filename(&engine, "wall.png", 0);
 	load_img(&engine, 0);
+	write(1, "2\n", 2);
 	game_loop(&engine);
 	clean(&engine);
 	return (0);
