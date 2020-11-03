@@ -14,7 +14,7 @@ t_line			swap_coords(t_line p)
 	return (p);
 }
 
-void			to_x_order(t_line *wall)
+void			to_x_order(t_line *wall)	//сортировать в порядке возрастания по х
 {
 	if (wall[0].x0 > wall[0].y1)
 		wall[0] = swap_coords(wall[0]);

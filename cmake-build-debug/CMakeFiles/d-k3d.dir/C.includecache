@@ -32,9 +32,15 @@ SDL_mixer.h
 engine.h
 ../includes/engine.h
 
-/home/chel/Desktop/knukem/src/lighting.c
+/home/chel/Desktop/knukem/src/render/wall/render_wall.c
 utilits.h
-/home/chel/Desktop/knukem/src/utilits.h
+/home/chel/Desktop/knukem/src/render/wall/utilits.h
+
+/home/chel/Desktop/knukem/src/utilits/swap.c
+engine.h
+/home/chel/Desktop/knukem/src/utilits/engine.h
+utilits.h
+/home/chel/Desktop/knukem/src/utilits/utilits.h
 
 /usr/include/SDL2/SDL.h
 SDL_main.h

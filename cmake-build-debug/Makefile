@@ -548,32 +548,86 @@ src/render/minimap.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/minimap.c.s
 .PHONY : src/render/minimap.c.s
 
-src/render/render_wall.o: src/render/render_wall.c.o
+src/render/wall/perspective_init.o: src/render/wall/perspective_init.c.o
 
-.PHONY : src/render/render_wall.o
+.PHONY : src/render/wall/perspective_init.o
 
 # target to build an object file
-src/render/render_wall.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_wall.c.o
-.PHONY : src/render/render_wall.c.o
+src/render/wall/perspective_init.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.o
+.PHONY : src/render/wall/perspective_init.c.o
 
-src/render/render_wall.i: src/render/render_wall.c.i
+src/render/wall/perspective_init.i: src/render/wall/perspective_init.c.i
 
-.PHONY : src/render/render_wall.i
+.PHONY : src/render/wall/perspective_init.i
 
 # target to preprocess a source file
-src/render/render_wall.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_wall.c.i
-.PHONY : src/render/render_wall.c.i
+src/render/wall/perspective_init.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.i
+.PHONY : src/render/wall/perspective_init.c.i
 
-src/render/render_wall.s: src/render/render_wall.c.s
+src/render/wall/perspective_init.s: src/render/wall/perspective_init.c.s
 
-.PHONY : src/render/render_wall.s
+.PHONY : src/render/wall/perspective_init.s
 
 # target to generate assembly for a file
-src/render/render_wall.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_wall.c.s
-.PHONY : src/render/render_wall.c.s
+src/render/wall/perspective_init.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.s
+.PHONY : src/render/wall/perspective_init.c.s
+
+src/render/wall/render_surfaces.o: src/render/wall/render_surfaces.c.o
+
+.PHONY : src/render/wall/render_surfaces.o
+
+# target to build an object file
+src/render/wall/render_surfaces.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/render_surfaces.c.o
+.PHONY : src/render/wall/render_surfaces.c.o
+
+src/render/wall/render_surfaces.i: src/render/wall/render_surfaces.c.i
+
+.PHONY : src/render/wall/render_surfaces.i
+
+# target to preprocess a source file
+src/render/wall/render_surfaces.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/render_surfaces.c.i
+.PHONY : src/render/wall/render_surfaces.c.i
+
+src/render/wall/render_surfaces.s: src/render/wall/render_surfaces.c.s
+
+.PHONY : src/render/wall/render_surfaces.s
+
+# target to generate assembly for a file
+src/render/wall/render_surfaces.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/render_surfaces.c.s
+.PHONY : src/render/wall/render_surfaces.c.s
+
+src/render/wall/render_wall.o: src/render/wall/render_wall.c.o
+
+.PHONY : src/render/wall/render_wall.o
+
+# target to build an object file
+src/render/wall/render_wall.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.o
+.PHONY : src/render/wall/render_wall.c.o
+
+src/render/wall/render_wall.i: src/render/wall/render_wall.c.i
+
+.PHONY : src/render/wall/render_wall.i
+
+# target to preprocess a source file
+src/render/wall/render_wall.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.i
+.PHONY : src/render/wall/render_wall.c.i
+
+src/render/wall/render_wall.s: src/render/wall/render_wall.c.s
+
+.PHONY : src/render/wall/render_wall.s
+
+# target to generate assembly for a file
+src/render/wall/render_wall.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.s
+.PHONY : src/render/wall/render_wall.c.s
 
 src/run_queue.o: src/run_queue.c.o
 
@@ -926,9 +980,15 @@ help:
 	@echo "... src/render/minimap.o"
 	@echo "... src/render/minimap.i"
 	@echo "... src/render/minimap.s"
-	@echo "... src/render/render_wall.o"
-	@echo "... src/render/render_wall.i"
-	@echo "... src/render/render_wall.s"
+	@echo "... src/render/wall/perspective_init.o"
+	@echo "... src/render/wall/perspective_init.i"
+	@echo "... src/render/wall/perspective_init.s"
+	@echo "... src/render/wall/render_surfaces.o"
+	@echo "... src/render/wall/render_surfaces.i"
+	@echo "... src/render/wall/render_surfaces.s"
+	@echo "... src/render/wall/render_wall.o"
+	@echo "... src/render/wall/render_wall.i"
+	@echo "... src/render/wall/render_wall.s"
 	@echo "... src/run_queue.o"
 	@echo "... src/run_queue.i"
 	@echo "... src/run_queue.s"

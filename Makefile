@@ -40,7 +40,9 @@ SRC := main.c\
     utilits/exit_options.c\
     utilits/load_img.c\
 	render/minimap.c\
-	render/render_wall.c\
+	render/wall/render_wall.c\
+	render/wall/perspective_init.c\
+	render/wall/render_surfaces.c\
 	render/line/render_line.c\
 	render/line/render_vline.c\
 

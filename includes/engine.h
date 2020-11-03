@@ -6,7 +6,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <SDL2/SDL.h>
-# include <SDL2_image/SDL_image.h>
+# include <SDL_image.h>
 //# include <SDL2_ttf/SDL_ttf.h>
 //# include <SDL2_mixer/SDL_mixer.h>
 /*
@@ -146,6 +146,14 @@ typedef struct	s_img
 	char		name[15];
 }				t_img;
 
+typedef struct	s_temp
+{
+	int			x0;
+	int			x1;
+	int			y[4];
+	t_line		wall[4];
+}				t_temp;
+
 typedef struct	s_engine
 {
 	SDL_Window	*window;
@@ -161,10 +169,13 @@ typedef struct	s_engine
 	t_queue		*present;			//	указатель считывания
 	int 		max_queue;
 	int 		close_request;
-	t_fline		wall;
-	t_fline		w;
-	int			tline[W];
-	int			bline[W];
+	t_fline		wall;				//	текущая стена со всеми преобразованиями
+	t_fline		ow;					//	текущая стена без отрезания частей, не попавших в кадр
+	int			tline[W];			//	верхняя линия раздела
+	int			bline[W];			//	нижняя линия раздела
+	int			u0;					//	начало и конец текстуры с учетом чати стены, которая не попала в кадр
+	int			u1;					//
+	t_temp		rend_wall;			//используется в rendel_Wall тобы обойти норму
 	t_img		img[1];
 }				t_engine;
 
@@ -176,6 +187,10 @@ void			unload_data(t_engine *engine);
 void			game_loop(t_engine *engine);
 int 			transform_wall(t_engine *engine, int i);
 void			render_wall(t_engine *engine, int sectorno, int neighbor);
+void			render_ceil_and_floor(t_engine *engine, int x, t_line *wall, int *y);
+void			render_edge(t_engine *engine, int x, t_line *wall, int *y, Uint32 z);
+void			init_ceil_floor(t_engine *engine, t_sector sector, t_line *wall);
+void			init_edge(t_engine *engine, t_sector sector, t_line *wall);
 t_fline			cut_wall(t_fline wall, t_xy i1, t_xy i2);						//разрезает стену для попадания в fov
 void			minimap(t_engine *engine, t_xy v0, t_xy v1, Uint32 color);			//рисуется отдельно для каждой стены
 void			minimap_cut(t_engine *engine, t_xy v0, t_xy v1, Uint32 color);		//показывает только то, что в поле зрения

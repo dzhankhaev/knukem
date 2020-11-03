@@ -13,13 +13,27 @@ static t_fline	fov_wall_cut(t_fline wall)
 	return (cut_wall(wall, i1, i2));
 }
 
-void		save_wall_position(t_engine *engine)
+void		tex_init(t_engine *engine)	//	сопоставим координаты текстуры координатам стены после отрезания не попавших в кадр частей
 {
-	engine->w = engine->wall;
-	engine->w.x0 = engine->wall.x0 + engine->player.where.x;
-	engine->w.y0 = engine->wall.y0 + engine->player.where.y;
-	engine->w.x1 = engine->wall.x1 + engine->player.where.x;
-	engine->w.y1 = engine->wall.y1 + engine->player.where.y;
+	t_fline	w;
+	t_fline	ow;
+
+	w = engine->wall;
+	ow = engine->ow;
+	if (fabsf(w.y1 - w.y0) > fabsf(w.x1 - w.x0))
+	{
+		engine->u0 = (w.y0 - ow.y0) * engine->img[0].tx->w
+					 / (ow.y1 - ow.y0);
+		engine->u1 = (w.y1 - ow.y0) * engine->img[0].tx->w
+					 / (ow.y1 - ow.y0);
+	}
+	else
+	{
+		engine->u0 = (w.x0 - ow.x0) * engine->img[0].tx->w
+					 / (ow.x1 - ow.x0);
+		engine->u1 = (w.x1 - ow.x0) * engine->img[0].tx->w
+					 / (ow.x1 - ow.x0);
+	}
 }
 
 int			transform_wall(t_engine *engine, int i)
@@ -33,9 +47,9 @@ int			transform_wall(t_engine *engine, int i)
 		engine->wall.color = 0;
 		return (0); //стены за спиной не рендерятся
 	}
-	save_wall_position(engine);
-	engine->wall = fov_wall_cut(engine->wall);
-	//обрезаем частично попавшие в поле зрения стены
+	engine->ow = engine->wall;
+	engine->wall = fov_wall_cut(engine->wall);	//обрезаем частично попавшие в поле зрения стены
+	tex_init(engine);
 	if (engine->wall.x0 <= 0 || engine->wall.x1 <= 0
 	|| engine->wall.x0 * -K > engine->wall.y0
 	|| engine->wall.x1 * K < engine->wall.y1)

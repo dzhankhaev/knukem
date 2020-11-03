@@ -1831,6 +1831,22 @@ static void DrawScreen(void)
                     int cnya = clamp(nya, ytop[x],ybottom[x]);
                     int cnyb = clamp(nyb, ytop[x],ybottom[x]);
                     /* If our ceiling is higher than their ceiling, render upper wall */
+/*
+ struct Scaler { int result, bop, fd, ca, cache; };
+
+u0*z1*(x2-x) + u1*z0*(x-x1) / ((x2-x)*z1 + (x-x1)*z0);
+
+#define Scaler_Init(a,b,c,d,f) \
+		{ d + (b-1 - a) * (f-d) / (c-a), ((f<d) ^ (c<a)) ? -1 : 1, \
+		  abs(f-d), abs(c-a), (int)((b-1-a) * abs(f-d)) % abs(c-a) }
+
+// Scaler_Next: Return (b++ - a) * (f-d) / (c-a) + d using the initial values passed to Scaler_Init().
+static int Scaler_Next(struct Scaler* i)
+{
+    for(i->cache += i->fd; i->cache >= i->ca; i->cache -= i->ca) i->result += i->bop;
+    return i->result;
+}
+ */
 #ifdef TextureMapping
                     vline2(x, cya, cnya-1, (struct Scaler)Scaler_Init(ya,cya,yb, 0,1023), txtx, &sect->uppertextures[s]);
 #else
@@ -1842,7 +1858,22 @@ static void DrawScreen(void)
                     vline(x, cya, cnya-1, 0, x==x1||x==x2 ? 0 : r1, 0);
 #endif
                     ytop[x] = clamp(max(cya, cnya), ytop[x], H-1);
+/*
+static void vline2(int x, int y1,int y2, struct Scaler ty,unsigned txtx, const struct TextureSet* t)
+{
+    int *pix = (int*) surface->pixels;
+    y1 = clamp(y1, 0, H-1);
+    y2 = clamp(y2, 0, H-1);
+    pix += y1 * W2 + x;
 
+    for(int y = y1; y <= y2; ++y)
+    {
+        unsigned txty = Scaler_Next(&ty);
+        *pix = t->texture[txtx % 1024][txty % 1024];
+        pix += W2;
+    }
+}
+ */
                     // If our floor is lower than their floor, render bottom wall
 #ifdef TextureMapping
                     vline2(x, cnyb+1, cyb, (struct Scaler)Scaler_Init(ya,cnyb+1,yb, 0,1023), txtx, &sect->lowertextures[s]);
