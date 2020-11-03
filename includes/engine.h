@@ -148,10 +148,14 @@ typedef struct	s_img
 
 typedef struct	s_temp
 {
+	int			txx;	//текстура по Х
+	int			x;
 	int			x0;
 	int			x1;
-	int			y[4];
-	t_line		wall[4];
+	int			y[4];		//0 потолок, 1 пол, 2 потолок соседа и верхняя линия раздела, 3 пол соседа и нижняя линия раздела
+	t_line		wall[4];	//0 потолок, 1 пол, 2 потолок соседа и верхняя линия раздела, 3 пол соседа и нижняя линия раздела
+	t_line		w;
+	t_fline		l;
 }				t_temp;
 
 typedef struct	s_engine

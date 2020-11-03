@@ -2,57 +2,61 @@
 
 void			render_vline1(t_engine *engine, t_line p, int dx, int dy);
 
-static void		loop(t_engine *engine, t_line *wall, int x0, int x1, int *y, int neighbor)
+static void		loop(t_engine *engine, int neighbor)
 {
-	int		txx;
-	t_line	w;
-	int		x;
+	t_temp	*a;
+
+	a = &engine->rend_wall;
 	//потребуется для вычисления света. Для других вычислений нужно упорядочить
-	w = (t_line){wall[0].x0, wall[0].x1, wall[0].y0, wall[0].y1};
-	to_x_order(wall);
-	t_fline ew = engine->wall;
-	x = x0;
-	while (x < x1)
+	a->w = (t_line){a->wall[0].x0, a->wall[0].x1, a->wall[0].y0, a->wall[0].y1};
+	to_x_order(a->wall);
+	a->l = engine->wall;
+	a->x = a->x0;
+	while (a->x < a->x1)
 	{
 //		X координата текстуры с учетом перспективы. ew.x - координата глубины. Остальные х - экранная координата ширины
 //		https://en.wikipedia.org/wiki/Texture_mapping#Perspective_correctness
 //		формула оптимизирована a = (x-wall[0].x0) / (wall[0].x1-wall[0].x0)
-		txx = (engine->u0 * ((wall[0].x1 - x) * ew.x1) + engine->u1 * ((x - wall[0].x0) * ew.x0))
-			  / ((wall[0].x1 - x) * ew.x1 + (x - wall[0].x0) * ew.x0);
-		render_ceil_and_floor(engine, x, wall, y);
+		a->txx = (engine->u0 * ((a->wall[0].x1 - a->x) * a->l.x1)
+		+ engine->u1 *((a->x - a->wall[0].x0) * a->l.x0))
+		/ ((a->wall[0].x1 - a->x) * a->l.x1 + (a->x - a->wall[0].x0) * a->l.x0);
+		render_ceil_and_floor(engine, a->x, a->wall, a->y);
 		if (neighbor != -1)
-			render_edge(engine, x, wall, y, deep_shading(engine, w, x));
+			render_edge(engine, a->x, a->wall, a->y, deep_shading(engine, a->w, a->x));
 		else
 		{
 			render_vline1(engine,
-						  (t_line){x, x, y[0], y[1], engine->wall.color},
-						  txx,
+						  (t_line){a->x, a->x, a->y[0], a->y[1], engine->wall.color},
+						  a->txx,
 						  1);
 		}
-		x++;
+		a->x++;
+	}
+}
+
+static void		render_init(t_engine *engine, int sectorno, int neighbor)
+{	//0 потолок, 1 пол, 2 потолок соседа и верхняя линия раздела, 3 пол соседа и нижняя линия раздела
+	//соседи (линии раздела) отображаются нак грани текущего сектора, если они имеют общую грань
+	t_temp		*a;
+
+	a = &engine->rend_wall;
+	init_ceil_floor(engine, engine->sectors[sectorno], a->wall);
+	//стены строго вертикально, потому у 0 и 1 иксы одинаковы
+	a->x0 = imax(imin(a->wall[0].x0, a->wall[0].x1), engine->present->x0);			//заполняем в промежутке текущей стены
+	a->x1 = imin(imax(a->wall[1].x0, a->wall[1].x1), engine->present->x1);			//иксы у пола и потолка всегда равны
+	if (neighbor != -1)
+	{
+		if ((a->x1 > a->x0) && engine->future + 1 != engine->queue + engine->max_queue &&
+			check_repeat(engine, sectorno, neighbor))
+			*(engine->future++) = (t_queue){neighbor, a->x0, a->x1, sectorno};
+		init_edge(engine, engine->sectors[neighbor], a->wall);
 	}
 }
 
 void			render_wall(t_engine *engine, int sectorno, int neighbor)
-{	//0 потолок, 1 пол, 2 потолок соседа и верхняя линия раздела, 3 пол соседа и нижняя линия раздела
-	//соседи отображаются нак грани текущего сектора, если они имеют общую грань
-	t_line		wall[4];
-	int			x0;
-	int			x1;
-	int			y[4];
-
-	init_ceil_floor(engine, engine->sectors[sectorno], wall);
-	//стены строго вертикально, потому у 0 и 1 иксы одинаковы
-	x0 = imax(imin(wall[0].x0, wall[0].x1), engine->present->x0);			//заполняем в промежутке текущей стены
-	x1 = imin(imax(wall[1].x0, wall[1].x1), engine->present->x1);			//иксы у пола и потолка всегда равны
-	if (neighbor != -1)
-	{
-		if ((x1 > x0) && engine->future + 1 != engine->queue + engine->max_queue &&
-			check_repeat(engine, sectorno, neighbor))
-			*(engine->future++) = (t_queue){neighbor, x0, x1, sectorno};
-		init_edge(engine, engine->sectors[neighbor], wall);
-	}
-	loop(engine, wall, x0, x1, y, neighbor);
+{
+	render_init(engine, sectorno, neighbor);
+	loop(engine, neighbor);
 }
 
 Uint32		get_pixel_color(SDL_Surface *surface, int x, int y)
