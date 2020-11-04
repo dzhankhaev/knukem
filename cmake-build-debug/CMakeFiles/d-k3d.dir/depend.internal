@@ -649,6 +649,7 @@ CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o
  /usr/include/SDL2/close_code.h
 CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o
  ../includes/engine.h
+ ../includes/utilits.h
  /home/chel/Desktop/knukem/src/render/line/render_vline.c
  /usr/include/SDL2/SDL.h
  /usr/include/SDL2/SDL_assert.h

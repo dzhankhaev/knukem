@@ -155,7 +155,7 @@ typedef struct	s_temp
 	int			x;			//	текущий х
 	int			x0;			//	начальный х
 	int			x1;			//	конечный х
-	int 		oy[4];		//	текущая точка в перспективе до обрезания по краям экрана
+	int 		oy[4];		//	текущая точка в перспективе до обрезания по краям экрана (origin)
 	int			y[4];		//	текущая точка в перспективе. 0 потолок, 1 пол, 2 потолок соседа и верхняя линия раздела, 3 пол соседа и нижняя линия раздела
 	t_line		wall[4];	//	координаты стены в перспективе. 0 потолок, 1 пол, 2 потолок соседа и верхняя линия раздела, 3 пол соседа и нижняя линия раздела
 	t_line		w;			//	координаты стены до обрезания по лучам видимости
@@ -181,6 +181,14 @@ typedef struct	s_engine
 	t_fline		ow;					//	текущая стена без отрезания частей, не попавших в кадр
 	int			tline[W];			//	верхняя линия раздела
 	int			bline[W];			//	нижняя линия раздела
+	int			yctop[W];			//	экранные y потолка
+	int			ycbot[W];			//	экранные y потолка
+	int			yftop[W];			//	экранные y пола
+	int			yfbot[W];			//	экранные y пола
+	int			octop[W];
+	int			ocbot[W];
+	int			oftop[W];
+	int			ofbot[W];
 	int			u0;					//	начало и конец текстуры с учетом чати стены, которая не попала в кадр
 	int			u1;					//
 	t_temp		rend_wall;			//используется в rendel_Wall тобы обойти норму
@@ -209,7 +217,7 @@ void			render_minimap_hud(t_minimap minimap, SDL_Surface *screen);		//рисуе
 void			run_queue(t_engine *engine);
 int				check_repeat(t_engine *engine, int sectorno, int neighbor);
 void			render_line(t_line p, SDL_Surface *screen, t_line borders);		//линия в пределах указанных границ
-void			render_vline(SDL_Surface *screen, t_line p);			//вертикальная линия сверху вниз
+void			render_vline(t_engine *engine, t_line p, t_line op, int texture_n);			//вертикальная линия сверху вниз
 void			move(t_engine *engine);
 void			fall(t_player *player, t_sector *sectors);
 Uint32			deep_shading(t_engine *engine, t_line wall, int x);			//модификатор освещения в зависимости от дальности

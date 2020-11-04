@@ -10,7 +10,11 @@ static void	reset(t_engine *engine)
 	while (i < W)
 	{
 		engine->tline[i] = 0;
-		engine->bline[i++] = H - 1;
+		engine->bline[i] = H - 1;
+		engine->yctop[i] = 0;
+		engine->ycbot[i] = H - 1;
+		engine->yftop[i] = 0;
+		engine->yfbot[i++] = H - 1;
 	}
 	engine->edit.mod_s = -1;	//запрет на модификацию (прежде нужно найти цель)
 

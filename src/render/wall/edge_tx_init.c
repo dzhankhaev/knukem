@@ -1,6 +1,7 @@
 #include "engine.h"
 #include "utilits.h"
 
+//get origin p
 t_line		get_op1(t_temp *a)
 {
 	return ((t_line){0, 0, a->oy[0],

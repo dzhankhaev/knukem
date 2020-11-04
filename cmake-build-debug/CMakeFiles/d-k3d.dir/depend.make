@@ -648,6 +648,7 @@ CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o: /usr/include/SDL2/begin_co
 CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o: /usr/include/SDL2/close_code.h
 
 CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o: ../includes/engine.h
+CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o: ../includes/utilits.h
 CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o: ../src/render/line/render_vline.c
 CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o: /usr/include/SDL2/SDL.h
 CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o: /usr/include/SDL2/SDL_assert.h

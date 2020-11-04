@@ -35,11 +35,11 @@ static void		loop(t_engine *engine, int neighbor)
 //		https://en.wikipedia.org/wiki/Texture_mapping#Perspective_correctness
 //		формула оптимизирована a = (x-wall[0].x0) / (wall[0].x1-wall[0].x0)
 		a->txx = (engine->u0 * ((a->w.x1 - a->x) * a->l.x1)
-				+ engine->u1 * ((a->x - a->w.x0) * a->l.x0))
-				/ ((a->w.x1 - a->x) * a->l.x1 + (a->x - a->w.x0) * a->l.x0);
+				  + engine->u1 * ((a->x - a->w.x0) * a->l.x0))
+				 / ((a->w.x1 - a->x) * a->l.x1 + (a->x - a->w.x0) * a->l.x0);
 		render_ceil_and_floor(engine);		//y[0] и y[1] мы получаем тут путем линейной интерполяции
 		render_edge(engine, neighbor, deep_shading(engine, a->w, a->x));
-		a->x++;
+		a->x += 1;
 	}
 }
 
@@ -48,4 +48,3 @@ void			render_wall(t_engine *engine, int sectorno, int neighbor)
 	render_init(engine, sectorno, neighbor);
 	loop(engine, neighbor);
 }
-

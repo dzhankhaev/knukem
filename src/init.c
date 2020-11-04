@@ -29,7 +29,7 @@ void general_init(t_engine *engine)
 	engine->player.eyeheight = EYE_HEIGHT;
 	engine->player.vangle = 0.f;
 	engine->player.speed = MOVE_SPEED;
-	engine->player.deep_sh = 1;
+	engine->player.deep_sh = 0;
 	init_minimap(engine);
 }
 
