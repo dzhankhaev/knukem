@@ -148,14 +148,15 @@ typedef struct	s_img
 
 typedef struct	s_temp
 {
-	int			txx;	//текстура по Х
-	int			x;
-	int			x0;
-	int			x1;
-	int			y[4];		//0 потолок, 1 пол, 2 потолок соседа и верхняя линия раздела, 3 пол соседа и нижняя линия раздела
-	t_line		wall[4];	//0 потолок, 1 пол, 2 потолок соседа и верхняя линия раздела, 3 пол соседа и нижняя линия раздела
-	t_line		w;
-	t_fline		l;
+	int			txx;		//	текстура по Х
+	int			x;			//	текущий х
+	int			x0;			//	начальный х
+	int			x1;			//	конечный х
+	int 		oy[2];		//	текущая точка в перспективе до обрезания по краям экрана (потолок и пол текущего сектора)
+	int			y[4];		//	текущая точка в перспективе. 0 потолок, 1 пол, 2 потолок соседа и верхняя линия раздела, 3 пол соседа и нижняя линия раздела
+	t_line		wall[4];	//	координаты стены в перспективе. 0 потолок, 1 пол, 2 потолок соседа и верхняя линия раздела, 3 пол соседа и нижняя линия раздела
+	t_line		w;			//	координаты стены до обрезания по лучам видимости
+	t_fline		l;			//	короткая запись engine->wall
 }				t_temp;
 
 typedef struct	s_engine
@@ -191,8 +192,8 @@ void			unload_data(t_engine *engine);
 void			game_loop(t_engine *engine);
 int 			transform_wall(t_engine *engine, int i);
 void			render_wall(t_engine *engine, int sectorno, int neighbor);
-void			render_ceil_and_floor(t_engine *engine, int x, t_line *wall, int *y);
-void			render_edge(t_engine *engine, int x, t_line *wall, int *y, Uint32 z);
+void			render_ceil_and_floor(t_engine *engine);
+void			render_edge(t_engine *engine, int neighbor, Uint32 z);
 void			init_ceil_floor(t_engine *engine, t_sector sector, t_line *wall);
 void			init_edge(t_engine *engine, t_sector sector, t_line *wall);
 t_fline			cut_wall(t_fline wall, t_xy i1, t_xy i2);						//разрезает стену для попадания в fov
