@@ -7,8 +7,9 @@ int main()
 
 	init_engine(&engine);
 	general_init(&engine);
-	get_filename(&engine, "wall.png", 0);
-	load_img(&engine, 0);
+	load_img(&engine, "wall1.png", 0);
+	load_img(&engine, "wall2.png", 1);
+	load_img(&engine, "wall3.png", 2);
 	game_loop(&engine);
 	clean(&engine);
 	return (0);

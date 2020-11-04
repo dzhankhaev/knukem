@@ -16,12 +16,15 @@ Uint32		get_shadow(Uint32 z, Uint32 color)
 	Uint32	g;
 	Uint32	b;
 
-	r = color >> 16;
-	g = ((color >> 8) & 255);
-	b = color & 255;
-	r = iclamp(r - z, 0, 255);
-	g = iclamp(g - z, 0, 255);
-	b = iclamp(b - z, 0, 255);
-	color = (r << 16) | (g << 8) | b;
+	r = (color >> 16u);
+	g = (((color >> 8u) & 255u));
+	b = (color & 255u);
+	r = z > r ? 0u : r - z;
+	r = r > 255u ? 255u : r;
+	g = z > g ? 0u : g - z;
+	g = g > 255u ? 255u : g;
+	b = z > b ? 0u : b - z;
+	b = b > 255u ? 255u : b;
+	color = (r << 16u) | (g << 8u) | b;
 	return (color);
 }

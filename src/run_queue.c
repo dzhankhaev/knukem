@@ -36,7 +36,7 @@ void 		run_queue(t_engine *engine)
 	sectorno = engine->present->sectorno;
 	while (i < engine->sectors[sectorno].npoints)
 	{
-		if (engine->sectors[sectorno].neighbors[i] == -1)
+		if (engine->sectors[sectorno].neighbors[i] <= -1)
 			engine->wall.color = WALL_COLOR;
 		else
 			engine->wall.color = EDGE_COLOR;

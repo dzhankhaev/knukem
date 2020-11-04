@@ -19,6 +19,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/chel/Desktop/knukem/src/render/line/render_line.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o"
   "/home/chel/Desktop/knukem/src/render/line/render_vline.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o"
   "/home/chel/Desktop/knukem/src/render/minimap.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/minimap.c.o"
+  "/home/chel/Desktop/knukem/src/render/wall/edge_tx_init.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/wall/edge_tx_init.c.o"
   "/home/chel/Desktop/knukem/src/render/wall/perspective_init.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.o"
   "/home/chel/Desktop/knukem/src/render/wall/render_surfaces.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/wall/render_surfaces.c.o"
   "/home/chel/Desktop/knukem/src/render/wall/render_wall.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.o"

@@ -144,15 +144,17 @@ typedef struct	s_img
 {
 	SDL_Surface	*tx;
 	char		name[15];
+	int			n;
 }				t_img;
 
 typedef struct	s_temp
 {
 	int			txx;		//	текстура по Х
+	int			z;			//	Глубина (для затенения)
 	int			x;			//	текущий х
 	int			x0;			//	начальный х
 	int			x1;			//	конечный х
-	int 		oy[2];		//	текущая точка в перспективе до обрезания по краям экрана (потолок и пол текущего сектора)
+	int 		oy[4];		//	текущая точка в перспективе до обрезания по краям экрана
 	int			y[4];		//	текущая точка в перспективе. 0 потолок, 1 пол, 2 потолок соседа и верхняя линия раздела, 3 пол соседа и нижняя линия раздела
 	t_line		wall[4];	//	координаты стены в перспективе. 0 потолок, 1 пол, 2 потолок соседа и верхняя линия раздела, 3 пол соседа и нижняя линия раздела
 	t_line		w;			//	координаты стены до обрезания по лучам видимости
@@ -181,7 +183,7 @@ typedef struct	s_engine
 	int			u0;					//	начало и конец текстуры с учетом чати стены, которая не попала в кадр
 	int			u1;					//
 	t_temp		rend_wall;			//используется в rendel_Wall тобы обойти норму
-	t_img		img[1];
+	t_img		img[10];
 }				t_engine;
 
 
@@ -194,6 +196,9 @@ int 			transform_wall(t_engine *engine, int i);
 void			render_wall(t_engine *engine, int sectorno, int neighbor);
 void			render_ceil_and_floor(t_engine *engine);
 void			render_edge(t_engine *engine, int neighbor, Uint32 z);
+t_line			get_op1(t_temp *a);
+t_line			get_op2(t_temp *a);
+t_line			get_op3(t_temp *a);
 void			init_ceil_floor(t_engine *engine, t_sector sector, t_line *wall);
 void			init_edge(t_engine *engine, t_sector sector, t_line *wall);
 t_fline			cut_wall(t_fline wall, t_xy i1, t_xy i2);						//разрезает стену для попадания в fov

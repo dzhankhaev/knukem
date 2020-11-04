@@ -25,11 +25,12 @@ static void	get_fname(char *name, char *fname)
 	}
 }
 
-void 		load_img(t_engine *engine, int n)
+void 		load_img(t_engine *engine, char *name, int n)
 {
 	SDL_Surface *img;
 	char		fname[24];
 
+	get_filename(engine, name, n);
 	get_fname(engine->img[n].name, fname);
 	if (!(img = IMG_Load(fname)))
 	{
@@ -41,7 +42,7 @@ void 		load_img(t_engine *engine, int n)
 		clean(engine);
 		exc(__FILE__, __FUNCTION__);
 	}
-	engine->img->tx = img;
+	engine->img[n].tx = img;
 }
 //https://habr.com/ru/post/456656/
 

@@ -72,7 +72,8 @@ void		additional(t_player *player)
 						(player->event.type == SDL_KEYDOWN) * DFALL_SPEED;
 	}
 	else if (player->event.key.keysym.sym == SDLK_LSHIFT
-			 && player->speed == MOVE_SPEED) //	только при нормальной текущей скорости (игрок стоит)
+		&& (player->speed == MOVE_SPEED
+		|| player->speed == MOVE_SPEED + DSPRINT_SPEED)) //	только когда игрок стоит или бежит
 	{
 		player->speed = MOVE_SPEED +
 						(player->event.type == SDL_KEYDOWN) * DSPRINT_SPEED;

@@ -14,6 +14,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o"
   "CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o"
   "CMakeFiles/d-k3d.dir/src/render/minimap.c.o"
+  "CMakeFiles/d-k3d.dir/src/render/wall/edge_tx_init.c.o"
   "CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.o"
   "CMakeFiles/d-k3d.dir/src/render/wall/render_surfaces.c.o"
   "CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.o"

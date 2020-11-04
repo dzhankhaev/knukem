@@ -18,7 +18,7 @@ t_fline			rotate_wall(t_sector sector, t_player player, int i, int color);
 t_line			perspective_transform(t_fline w, float z, float yaw, int color);
 void			exc(const char *file, const char *function);
 void			clean(t_engine *engine);
-void 			load_img(t_engine *engine, int n);
+void 			load_img(t_engine *engine, char *name, int n);
 void			get_filename(t_engine *engine, char *name, int n);
 
 #endif

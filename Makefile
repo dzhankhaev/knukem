@@ -43,6 +43,7 @@ SRC := main.c\
 	render/wall/render_wall.c\
 	render/wall/perspective_init.c\
 	render/wall/render_surfaces.c\
+	render/wall/edge_tx_init.c\
 	render/line/render_line.c\
 	render/line/render_vline.c\
 

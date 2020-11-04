@@ -548,6 +548,33 @@ src/render/minimap.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/minimap.c.s
 .PHONY : src/render/minimap.c.s
 
+src/render/wall/edge_tx_init.o: src/render/wall/edge_tx_init.c.o
+
+.PHONY : src/render/wall/edge_tx_init.o
+
+# target to build an object file
+src/render/wall/edge_tx_init.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/edge_tx_init.c.o
+.PHONY : src/render/wall/edge_tx_init.c.o
+
+src/render/wall/edge_tx_init.i: src/render/wall/edge_tx_init.c.i
+
+.PHONY : src/render/wall/edge_tx_init.i
+
+# target to preprocess a source file
+src/render/wall/edge_tx_init.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/edge_tx_init.c.i
+.PHONY : src/render/wall/edge_tx_init.c.i
+
+src/render/wall/edge_tx_init.s: src/render/wall/edge_tx_init.c.s
+
+.PHONY : src/render/wall/edge_tx_init.s
+
+# target to generate assembly for a file
+src/render/wall/edge_tx_init.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/edge_tx_init.c.s
+.PHONY : src/render/wall/edge_tx_init.c.s
+
 src/render/wall/perspective_init.o: src/render/wall/perspective_init.c.o
 
 .PHONY : src/render/wall/perspective_init.o
@@ -980,6 +1007,9 @@ help:
 	@echo "... src/render/minimap.o"
 	@echo "... src/render/minimap.i"
 	@echo "... src/render/minimap.s"
+	@echo "... src/render/wall/edge_tx_init.o"
+	@echo "... src/render/wall/edge_tx_init.i"
+	@echo "... src/render/wall/edge_tx_init.s"
 	@echo "... src/render/wall/perspective_init.o"
 	@echo "... src/render/wall/perspective_init.i"
 	@echo "... src/render/wall/perspective_init.s"
