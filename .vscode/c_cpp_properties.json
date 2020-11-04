@@ -6,6 +6,7 @@
                 "${workspaceFolder}/includes/",
                 "${workspaceFolder}/libft/",
                 "${workspaceFolder}/frameworks/SDL2.framework/Headers/",
+                "${workspaceFolder}/frameworks/SDL2_image.framework/Headers/",
                 "${workspaceFolder}/includes"
             ],
             "defines": [],

@@ -6,7 +6,7 @@
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 11:32:34 by ecelsa            #+#    #+#             */
-/*   Updated: 2020/10/22 15:08:22 by ecelsa           ###   ########.fr       */
+/*   Updated: 2020/11/04 20:33:57 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -244,16 +244,11 @@ SDL_Surface		*print_hud(int hp, char armors, t_hud *hud)
 	return(NULL);
 }
 
-int		put_hud(SDL_Surface *src)
+int		put_hud(SDL_Surface *scr, int health, int weapons)
 {
 	t_hud		hud;
-	return(1);
-}
+	SDL_Rect	hud_r;
 
-int				main(int argc, char **argv)
-{
-	t_engine	engine;
-	t_hud		hud;
 	hud.pal = 0;
 	hud.lmp = NULL;
 	hud.patch = load_patch("Doom1.WAD", "PLAYPAL");
@@ -265,14 +260,23 @@ int				main(int argc, char **argv)
 											32, RMASK, GMASK, BMASK, AMASK);
 		pars_colum(hud.lmp, hud.patch, (unsigned char*)hud.colormap[hud.pal]);
 	}
-	engine = (t_engine){.w = 1920, .h = 1080};
 	free_patch(&hud.patch);
-	print_hud(358,0b00110, &hud);
+	print_hud(health,weapons, &hud);
+	hud_r = (SDL_Rect){.x = 0, .y = scr->h - scr->w / 10 , .w = scr->w , .h = scr->w / 10};
+	SDL_BlitScaled(hud.lmp, NULL, scr, &hud_r);
+	return(1);
+}
+
+int				main(int argc, char **argv)
+{
+	t_engine	engine;
+	t_hud		hud;
+	
+	engine = (t_engine){.w = 1920, .h = 1080};
+	
 	if (init_engine(&engine) != 0)
 		return (1);
-	SDL_Rect	hud_r;
-	hud_r = (SDL_Rect){.x = 0, .y = engine.h - engine.w / 10 , .w = engine.w , .h = engine.w / 10};
-	SDL_BlitScaled(hud.lmp, NULL, engine.screen, &hud_r);
+	put_hud(engine.screen, 328, 0b01110);
 	SDL_UpdateWindowSurface(engine.window);
 	
 	while (!engine.close_request)
