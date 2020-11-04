@@ -16,6 +16,8 @@ Uint32		get_shadow(Uint32 z, Uint32 color)
 	Uint32	g;
 	Uint32	b;
 
+	if (z == 0u)
+		return (color);
 	r = (color >> 16u);
 	g = (((color >> 8u) & 255u));
 	b = (color & 255u);

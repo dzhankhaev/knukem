@@ -33,16 +33,17 @@ void			render_vline1(t_engine *engine, t_line p, t_line op, int texture_n)
 {
 	Uint32	*temp;
 	int		txy;
+	int		t;
 	t_temp	*a;
 
 	temp = (Uint32 *)engine->screen->pixels;
 	a = &engine->rend_wall;
 	p.y0 = iclamp(p.y0, 0, H - 1);
 	p.y1 = iclamp(p.y1, 0, H - 1);
+	t = op.y1 - op.y0 == 0 ? 1 : (op.y1 - op.y0);
 	while (p.y0 < p.y1)
 	{
-		txy = (p.y0 - op.y0) * engine->img[texture_n].tx->h
-				/ ((op.y1 - op.y0) == 0 ? 1 : (op.y1 - op.y0));
+		txy = (p.y0 - op.y0) * engine->img[texture_n].tx->h / t;
 		temp[(p.y0 * W) + p.x0] = get_shadow(a->z,
 			get_pixel_color(engine->img[texture_n].tx, a->txx, txy));
 		p.y0++;
@@ -54,7 +55,7 @@ void		render_edge(t_engine *engine, int neighbor, Uint32 z)
 	t_temp	*a;
 
 	a = &engine->rend_wall;
-	a->z = deep_shading(engine, a->w, a->x);
+	a->z = engine->player.deep_sh ? deep_shading(engine, a->w, a->x) : 0;
 	if (neighbor > -1)
 	{
 		a->oy[2] = y_for_x(a->wall[2], a->x);
