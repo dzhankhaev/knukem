@@ -12,32 +12,34 @@ Uint32		get_tx(SDL_Surface *surface, int x, int y)
 	return (rgb);
 }
 
-void			render_hline(t_engine *engine, int y, int xbegin, int xend, int dist, int txno)
-{
-	Uint32	*temp;
-	int		x;
+void			render_hline(t_engine *engine, int y, int xbegin, int xend, int dist, int txno) {
+	Uint32 *temp;
+	int x;
 
-	int du = (int)(dist * engine->player.anglesin) % W;
-	int dv = (int)(-1 * dist * engine->player.anglecos) % H;
-	int u = ((x + (int)((float)dist * engine->player.anglecos)) * W) % W;
-	int v = ((y + (int)((float)dist * engine->player.anglesin)) * H) % H;
+	int du = (int) (dist * engine->player.anglesin) % W;
+	int dv = (int) (-1 * dist * engine->player.anglecos) % H;
+	int u = ((x + (int) ((float) dist * engine->player.anglecos)) * W) % W;
+	int v = ((y + (int) ((float) dist * engine->player.anglesin)) * H) % H;
 
-	temp = (Uint32 *)engine->screen->pixels;
+	temp = (Uint32 *) engine->screen->pixels;
 	x = xbegin;
-	while (x < xend)
-	{
-		temp[(y * W) + x] = get_tx(engine->img[txno].tx, u, v);
+	while (x < xend) {
+//		temp[(y * W) + x] = get_tx(engine->img[txno].tx, u, v);
+//		temp[(y * W) + x] = get_shadow(dist, 0x00ff00u);
+		temp[(y * W) + x] = 0x00ff00u;
 		u += du;
 		v += dv;
 		x++;
 	}
 }
 
-static void		loop(t_engine *engine, int *y_top, int *y_bot, int *x_table, int dist)
+static void		loop(t_engine *engine, int *y_top, int *y_bot, int *x_table, int z, int offset)
 {
 	int y1;
 	int y2;
 	int x;
+	int zd;
+	int	dist;
 
 	x = engine->vpfloor.MinX;
 	while (x <= engine->vpfloor.MaxX)
@@ -50,15 +52,23 @@ static void		loop(t_engine *engine, int *y_top, int *y_bot, int *x_table, int di
 			x_table[--(*y_top)] = x;
 		while (y2 > *y_bot)		//если нижняя линия опускается
 			x_table[++(*y_bot)] = x;
+		zd = *y_top - offset + 1;
+		dist = z;
 		while (*y_top < y1)		//если верхняя линия опускается
 		{
+			dist = z / (zd == 0 ? 0.1f : zd);
 			render_hline(engine, *y_top, x_table[*y_top], x, dist, 3);
 			(*y_top)++;
+			zd++;
 		}
+		zd = *y_bot - offset + 1;
+		dist = z;
 		while (*y_bot > y2)		//если нижняя линия поднимается
 		{
+			dist = z / (zd == 0 ? 0.1f : zd);
 			render_hline(engine, *y_bot, x_table[*y_bot], x, dist, 3);
 			(*y_bot)--;
+			zd--;
 		}
 		x++;
 	}
@@ -70,19 +80,24 @@ void			render_floor(t_engine *engine)
 	int	x_table[H];
 	int y_top;
 	int y_bot;
-	int	dist = (engine->player.where.z - engine->sectors[engine->present->sectorno].floor) * (H >> 1);
+	// WindowYCenterWithOffset=WindowYCenter+tan(M_PI/180.0*PlayerAngleVertical)*WindowHeight/2;
+	int offset = (H >> 1) + tan(engine->player.vangle) * (H >> 1);
+	int	z = (engine->player.where.z - engine->sectors[engine->present->sectorno].floor) * (H >> 1);
 
 	y_top = engine->vpfloor.TopY[engine->vpfloor.MinX];
 	y_bot = engine->vpfloor.BotY[engine->vpfloor.MinX];
 	y = y_top;
 	while (y <= y_bot)
 		x_table[y++] = engine->vpfloor.MinX;
-	loop(engine, &y_top, &y_bot, x_table, dist);
+	loop(engine, &y_top, &y_bot, x_table, z, offset);
 	//заливаем промежуток между top и bottom
 	y = y_top;
+	int zd = y_top - offset + 1;
 	while (y <= y_bot)
 	{
+		int dist = z / (zd == 0 ? 1 : zd);
 		render_hline(engine, y, x_table[y], engine->vpfloor.MaxX, dist, 3);
 		y++;
+		zd++;
 	}
 }

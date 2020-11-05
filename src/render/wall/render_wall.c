@@ -1,4 +1,5 @@
 #include "utilits.h"
+#include "engine.h"
 
 static void		render_init(t_engine *engine, int sectorno, int neighbor)
 {	//0 потолок, 1 пол, 2 потолок соседа и верхняя линия раздела, 3 пол соседа и нижняя линия раздела

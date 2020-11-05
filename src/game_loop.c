@@ -45,6 +45,7 @@ void		game_loop(t_engine *engine)
 	time = 0;
 	while (!engine->close_request)
 	{
+		SDL_SetRelativeMouseMode(SDL_TRUE); //скрывает курсор, он движется относительно окна
 		keys_manager(engine);
 		move(engine);
 		SDL_LockSurface(engine->screen);
