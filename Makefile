@@ -44,7 +44,7 @@ SRCPD :=	$(addprefix $(SRCDIR)/, $(SRCDASH))
 OBJPD :=	$(addprefix $(OBJDIR)/, $(SRCDASH:.c=.o))
 ONLYDIR :=	$(foreach dir, $(OBJP), $(shell dirname $(dir)))
 
-FLAG :=  -g #-Wall -Werror -Wextra
+FLAG :=  -g -Wall #-Werror -Wextra
 
 PWD := $(shell pwd)
 FRAMEWORKSDIR := $(PWD)/frameworks

@@ -6,7 +6,7 @@
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 22:47:49 by ecelsa            #+#    #+#             */
-/*   Updated: 2020/11/05 02:26:07 by ecelsa           ###   ########.fr       */
+/*   Updated: 2020/11/05 20:16:47 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ typedef struct	s_hud
 	SDL_Surface		*scr;
 	SDL_Rect		rect;
 	int				health;
-	int				weapons;
+	int				weapon;
 	int				face;
 	SDL_Surface		*hud;
 	SDL_Surface		*arms;
@@ -28,6 +28,18 @@ typedef struct	s_hud
 	SDL_Surface		*num_wp_y[10];
 	SDL_Surface		*face_s[3];
 }				t_hud;
+
+typedef struct	s_inp_hud
+{
+	int				health;
+	int				weapons;
+	int				curr_weap;
+	int				ammo[6];
+	int				face;
+	int				fire;
+	int 			flag;
+}				t_inp_hud;
+
 
 int				load_hud_face_pis_yenum(t_hud *hud, char *file_name, int len, int i)
 {
@@ -79,17 +91,18 @@ t_hud			*load_surfaces(const char *dirs)
 	t_hud	*hud;
 	char	*file_name;
 	int		len;
-	int		i;
 
-	hud = (t_hud*)malloc(sizeof(t_hud));
+	hud = (t_hud*)malloc(sizeof(t_hud));	
 	hud->health = -1;
-	hud->weapons = -1;
+	hud->weapon = -1;
 	hud->face = -1;
 	len = ft_strlen(dirs);
 	file_name = (char*)malloc(len + 13);
 	ft_strcpy(file_name, dirs);
 	ft_strcpy(file_name + len, "STBAR.png");
 	hud->hud = IMG_Load(file_name);
+	ft_strcpy(file_name + len, "STARMS.png");
+	hud->arms = IMG_Load(file_name);
 	hud->scr = SDL_CreateRGBSurface(0, 320, 32, 32,
 											0xff0000, 0xff00, 0xff, 0xff000000);
 	SDL_BlitSurface(hud->hud, NULL, hud->scr, NULL);
@@ -99,41 +112,61 @@ t_hud			*load_surfaces(const char *dirs)
 	return (hud);
 }
 
-void			put_hud(SDL_Surface *scr, int health, int weapon, int face)
+void			put_hud(SDL_Surface *scr, t_inp_hud *inp)
 {
-	static t_hud	*hud = NULL;
-	int				b;
-	int				i;
-	int				coef;
+	static t_hud			*hud = NULL;
+	static unsigned int		last_tick = 0;
+	unsigned int			curr_tick;
+	static int				b = 0;
+	int						i;
+	int						coef;
 
-	b = 0;
 	if (hud == NULL)
 		hud = load_surfaces("textur/");
-	if (health != hud->health || weapon != hud->weapons || face != hud->face)
+	if (last_tick == 0)
+		last_tick = SDL_GetTicks();
+	curr_tick = SDL_GetTicks();
+
+	if (curr_tick > (last_tick + 100))
 	{
+		last_tick = curr_tick;
+		if (inp->fire && b < 2)
+			b++;
+		else
+		{
+			inp->fire = 0;
+			b = 0;
+		}
+	}
+	// if (inp->health != hud->health || inp->weapons != hud->weapon || inp->face != hud->face || inp->fire)
+	{
+		ft_bzero(scr->pixels,scr->pitch * scr->h);
+		hud->health = inp->health;
+		hud->weapon = inp->weapons;
+		hud->face = inp->face;
 		SDL_BlitSurface(hud->scr, NULL, hud->hud, NULL);
-		if (health / 100 > 0)
+		if (inp->health / 100 > 0)
 		{
 			hud->rect = (SDL_Rect){.x = 49 + 0 * 14, .y = 4};
-			SDL_BlitSurface(hud->num_h[health / 100], NULL, hud->scr, &hud->rect);
+			SDL_BlitSurface(hud->num_h[inp->health / 100], NULL, hud->scr, &hud->rect);
 		}
 		hud->rect = (SDL_Rect){.x = 49 + 1 * 14, .y = 4};
-		SDL_BlitSurface(hud->num_h[(health / 10) % 10], NULL,
+		SDL_BlitSurface(hud->num_h[(inp->health / 10) % 10], NULL,
 														hud->scr, &hud->rect);
 		hud->rect = (SDL_Rect){.x = 49 + 2 * 14, .y = 4};
-		SDL_BlitSurface(hud->num_h[health % 10], NULL, hud->scr, &hud->rect);
+		SDL_BlitSurface(hud->num_h[inp->health % 10], NULL, hud->scr, &hud->rect);
 		hud->rect = (SDL_Rect){.x = 49 + 3 * 14, .y = 4};
 		SDL_BlitSurface(hud->num_h[10], NULL, hud->scr, &hud->rect);
 		hud->rect = (SDL_Rect){.x = 104, .y = 0};
 		SDL_BlitSurface(hud->arms, NULL, hud->scr, &hud->rect);
 		i = 1;
-		while (++i < 7)
+		while (++i < 8)
 		{
 			if (i < 5)
 				hud->rect = (SDL_Rect){.x = 111 + (i - 2) * 12, .y = 4};
 			else
 				hud->rect = (SDL_Rect){.x = 111 + (i - 5) * 12, .y = 14};
-			if (weapon & (1 << (i - 1)))
+			if (inp->weapons & (1 << (i - 1)))
 				SDL_BlitSurface(hud->num_wp_y[i], NULL, hud->scr, &hud->rect);
 			else
 				SDL_BlitSurface(hud->num_wp_g[i], NULL, hud->scr, &hud->rect);
@@ -145,20 +178,29 @@ void			put_hud(SDL_Surface *scr, int health, int weapon, int face)
 												.w = scr->w, .h = scr->w / 10};
 		SDL_BlitScaled(hud->scr, NULL, scr, &hud->rect);
 		hud->rect = (SDL_Rect){.x = (scr->w - hud->pis[b]->w * coef) >> 1,
-					.y = scr->h - hud->hud->h * coef - hud->pis[b]->h * coef,
+					.y = scr->h - scr->w / 10 - hud->pis[b]->h * coef,
 						.w = hud->pis[b]->w * coef, .h = hud->pis[b]->h * coef};
 		SDL_BlitScaled(hud->pis[b], NULL, scr, &hud->rect);
+		if (b == 1)
+		{
+			hud->rect = (SDL_Rect){.x = ((scr->w - (hud->pis[b]->w - 72) * coef) >> 1),
+					.y = scr->h - scr->w / 10 - (hud->pis[b]->h + 21) * coef,
+						.w = hud->pis[5]->w * coef, .h = hud->pis[5]->h * coef};
+			SDL_BlitScaled(hud->pis[5], NULL, scr, &hud->rect);
+		}
 	}
 }
 
-int				main(int argc, char const *argv[])
+int				main(int argc, char const **argv)
 {
 	t_engine	engine;
+	t_inp_hud	input_hud;
 
-	engine = (t_engine){.w = 1920, .h = 1080};
+	input_hud = (t_inp_hud){.weapons = 0b01101, .health = 125, .face = 1, .flag = 0, .fire = 0};
+	engine = (t_engine){.w = 800, .h = 500};
 	if (init_engine(&engine) != 0)
 		return (1);
-	put_hud(engine.screen, 98, 0b11010, 0);
+	put_hud(engine.screen, &input_hud);
 	SDL_UpdateWindowSurface(engine.window);
 	while (!engine.close_request)
 	{
@@ -171,9 +213,16 @@ int				main(int argc, char const *argv[])
 						(engine.player.event.type == SDL_KEYDOWN) * DuckHeight;
 				else if (engine.player.event.key.keysym.sym == SDLK_ESCAPE)
 					engine.close_request = 1;
+				else if (engine.player.event.key.keysym.sym == SDLK_SPACE)
+				{
+					input_hud.fire = 1;
+					write(1,"space\n",6);
+				}
 			}
 			else if (engine.player.event.type == SDL_QUIT)
 				engine.close_request = 1;
+		
+		put_hud(engine.screen, &input_hud);
 		SDL_UpdateWindowSurface(engine.window);
 	}
 	return (0);
