@@ -1,21 +1,7 @@
 #include "engine.h"
 #include "utilits.h"
 
-void			render_vline1(SDL_Surface *screen, t_line p)
-{
-	Uint32	*temp;
-
-	temp = (Uint32 *)screen->pixels;
-	p.y0 = iclamp(p.y0, 0, H - 1);
-	p.y1 = iclamp(p.y1, 0, H - 1);
-	while (p.y0 < p.y1)
-	{
-		temp[(p.y0 * W) + p.x0] = p.color;
-		p.y0++;
-	}
-}
-
-void		render_ceil_and_floor(t_engine *engine)
+void		ceil_and_floor(t_engine *engine)
 {
 	t_temp	*a;
 
@@ -26,16 +12,17 @@ void		render_ceil_and_floor(t_engine *engine)
 					 engine->tline[a->x], engine->bline[a->x]);		//линия потолка тек
 	a->y[1] = iclamp(a->oy[1],
 					 engine->tline[a->x], engine->bline[a->x]);		//линия пола тек
-	engine->yctop[a->x] = engine->tline[a->x];
-	engine->ycbot[a->x] = a->y[0];
-	engine->yftop[a->x] = a->y[1];
-	engine->yfbot[a->x] = engine->bline[a->x];
-	render_vline1(engine->screen, (t_line){a->x, a->x, engine->tline[a->x], a->y[0], a->wall[0].color});	//потолок
-	render_vline1(engine->screen, (t_line){a->x, a->x, a->y[1], engine->bline[a->x], a->wall[1].color});	//пол
-
+	engine->vpceil.MinX = a->x0;
+	engine->vpceil.MaxX = a->x1;
+	engine->vpceil.TopY[a->x] = engine->tline[a->x];	//верхняя линия пола
+	engine->vpceil.BotY[a->x] = a->y[0];				//нижняя линия пола
+	engine->vpfloor.MinX = a->x0;
+	engine->vpfloor.MaxX = a->x1;
+	engine->vpfloor.TopY[a->x] = a->y[1];				//верхняя линия пола
+	engine->vpfloor.BotY[a->x] = engine->bline[a->x];	//нижняя линия пола
 }
 
-void		render_edge(t_engine *engine, int neighbor, Uint32 z)
+void		render_edge(t_engine *engine, int neighbor)
 {
 	t_temp	*a;
 

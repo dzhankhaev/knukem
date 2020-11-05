@@ -162,6 +162,14 @@ typedef struct	s_temp
 	t_fline		l;			//	короткая запись engine->wall
 }				t_temp;
 
+typedef struct	s_vplanes
+{
+	int MinX;//минимальная координата X области
+	int MaxX;//максимальная координата X области
+	int TopY[W];//верхняя координата
+	int BotY[W];//нижняя координата
+}				t_vplanes;
+
 typedef struct	s_engine
 {
 	SDL_Window	*window;
@@ -185,10 +193,8 @@ typedef struct	s_engine
 	int			ycbot[W];			//	экранные y потолка
 	int			yftop[W];			//	экранные y пола
 	int			yfbot[W];			//	экранные y пола
-	int			octop[W];
-	int			ocbot[W];
-	int			oftop[W];
-	int			ofbot[W];
+	t_vplanes	vpfloor;			//	таблица для заполнения пола
+	t_vplanes	vpceil;				//	таблица для заполнения потолка
 	int			u0;					//	начало и конец текстуры с учетом чати стены, которая не попала в кадр
 	int			u1;					//
 	t_temp		rend_wall;			//используется в rendel_Wall тобы обойти норму
@@ -203,8 +209,8 @@ void			unload_data(t_engine *engine);
 void			game_loop(t_engine *engine);
 int 			transform_wall(t_engine *engine, int i);
 void			render_wall(t_engine *engine, int sectorno, int neighbor);
-void			render_ceil_and_floor(t_engine *engine);
-void			render_edge(t_engine *engine, int neighbor, Uint32 z);
+void			ceil_and_floor(t_engine *engine);
+void			render_edge(t_engine *engine, int neighbor);
 t_line			get_op1(t_temp *a);
 t_line			get_op2(t_temp *a);
 t_line			get_op3(t_temp *a);
@@ -223,5 +229,6 @@ void			fall(t_player *player, t_sector *sectors);
 Uint32			deep_shading(t_engine *engine, t_line wall, int x);			//модификатор освещения в зависимости от дальности
 Uint32			get_shadow(Uint32 z, Uint32 color);								//применить модификатор освещения
 void			real_time_edit(t_engine *engine);
+void			render_floor(t_engine *engine);
 
 #endif

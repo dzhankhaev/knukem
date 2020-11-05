@@ -52,7 +52,7 @@ static void sdl(t_engine *engine)
 		SDL_Quit();
 		exc(__FILE__, __FUNCTION__);
 	}
-	SDL_SetRelativeMouseMode(SDL_TRUE); //скрывает курсор, он движется относительно окна
+//	SDL_SetRelativeMouseMode(SDL_TRUE); //скрывает курсор, он движется относительно окна
 }
 
 static void sdl_img(t_engine *engine)

@@ -27,7 +27,7 @@ add_executable(d-k3d
         src/cut_wall.c
         src/render/line/render_vline.c
         src/render/wall/render_wall.c
-        src/utilits/math/perspective_transform.c src/lighting.c src/movement/fall.c src/editor/real_time_edit.c src/key_events/event_edit.c includes/events.h src/key_events/event_movement.c src/utilits/swap.c src/utilits/utilits.c src/utilits/exit_options.c src/utilits/load_img.c src/render/wall/perspective_init.c src/render/wall/render_surfaces.c src/render/wall/edge_tx_init.c)
+        src/utilits/math/perspective_transform.c src/lighting.c src/movement/fall.c src/editor/real_time_edit.c src/key_events/event_edit.c includes/events.h src/key_events/event_movement.c src/utilits/swap.c src/utilits/utilits.c src/utilits/exit_options.c src/utilits/load_img.c src/render/wall/perspective_init.c src/render/wall/render_surfaces.c src/render/wall/edge_tx_init.c src/render/render_floor.c)
 
 include_directories(d-k3d
         includes/

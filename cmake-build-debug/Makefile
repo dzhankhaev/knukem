@@ -548,6 +548,33 @@ src/render/minimap.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/minimap.c.s
 .PHONY : src/render/minimap.c.s
 
+src/render/render_floor.o: src/render/render_floor.c.o
+
+.PHONY : src/render/render_floor.o
+
+# target to build an object file
+src/render/render_floor.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_floor.c.o
+.PHONY : src/render/render_floor.c.o
+
+src/render/render_floor.i: src/render/render_floor.c.i
+
+.PHONY : src/render/render_floor.i
+
+# target to preprocess a source file
+src/render/render_floor.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_floor.c.i
+.PHONY : src/render/render_floor.c.i
+
+src/render/render_floor.s: src/render/render_floor.c.s
+
+.PHONY : src/render/render_floor.s
+
+# target to generate assembly for a file
+src/render/render_floor.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_floor.c.s
+.PHONY : src/render/render_floor.c.s
+
 src/render/wall/edge_tx_init.o: src/render/wall/edge_tx_init.c.o
 
 .PHONY : src/render/wall/edge_tx_init.o
@@ -1007,6 +1034,9 @@ help:
 	@echo "... src/render/minimap.o"
 	@echo "... src/render/minimap.i"
 	@echo "... src/render/minimap.s"
+	@echo "... src/render/render_floor.o"
+	@echo "... src/render/render_floor.i"
+	@echo "... src/render/render_floor.s"
 	@echo "... src/render/wall/edge_tx_init.o"
 	@echo "... src/render/wall/edge_tx_init.i"
 	@echo "... src/render/wall/edge_tx_init.s"
