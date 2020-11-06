@@ -6,7 +6,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <SDL2/SDL.h>
-# include <SDL2_image/SDL_image.h>
+# include <SDL_image.h>
 //# include <SDL2_ttf/SDL_ttf.h>
 //# include <SDL2_mixer/SDL_mixer.h>
 /*
@@ -164,10 +164,10 @@ typedef struct	s_temp
 
 typedef struct	s_vplanes
 {
-	int MinX;//минимальная координата X области
-	int MaxX;//максимальная координата X области
-	int TopY[W];//верхняя координата
-	int BotY[W];//нижняя координата
+	int minx;//минимальная координата X области
+	int maxx;//максимальная координата X области
+	int topy[W];//верхняя координата
+	int boty[W];//нижняя координата
 }				t_vplanes;
 
 typedef struct	s_engine

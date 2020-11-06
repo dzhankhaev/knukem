@@ -12,14 +12,14 @@ void		ceil_and_floor(t_engine *engine)
 					 engine->tline[a->x], engine->bline[a->x]);		//линия потолка тек
 	a->y[1] = iclamp(a->oy[1],
 					 engine->tline[a->x], engine->bline[a->x]);		//линия пола тек
-	engine->vpceil.MinX = a->x0;
-	engine->vpceil.MaxX = a->x1;
-	engine->vpceil.TopY[a->x] = engine->tline[a->x];	//верхняя линия пола
-	engine->vpceil.BotY[a->x] = a->y[0];				//нижняя линия пола
-	engine->vpfloor.MinX = a->x0;
-	engine->vpfloor.MaxX = a->x1;
-	engine->vpfloor.TopY[a->x] = a->y[1];				//верхняя линия пола
-	engine->vpfloor.BotY[a->x] = engine->bline[a->x];	//нижняя линия пола
+	engine->vpceil.minx = a->x0;
+	engine->vpceil.maxx = a->x1;
+	engine->vpceil.topy[a->x] = engine->tline[a->x];	//верхняя линия пола
+	engine->vpceil.boty[a->x] = a->y[0];				//нижняя линия пола
+	engine->vpfloor.minx = a->x0;
+	engine->vpfloor.maxx = a->x1;
+	engine->vpfloor.topy[a->x] = a->y[1];				//верхняя линия пола
+	engine->vpfloor.boty[a->x] = engine->bline[a->x];	//нижняя линия пола
 }
 
 void		render_edge(t_engine *engine, int neighbor)

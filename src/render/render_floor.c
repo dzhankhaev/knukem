@@ -12,63 +12,67 @@ Uint32		get_tx(SDL_Surface *surface, int x, int y)
 	return (rgb);
 }
 
-void			render_hline(t_engine *engine, int y, int xbegin, int xend, int dist, int txno) {
+void			render_hline(t_engine *engine, int y, int xbegin, int xend, int txno) {
 	Uint32 *temp;
 	int x;
 
-	int du = (int) (dist * engine->player.anglesin) % W;
-	int dv = (int) (-1 * dist * engine->player.anglecos) % H;
-	int u = ((x + (int) ((float) dist * engine->player.anglecos)) * W) % W;
-	int v = ((y + (int) ((float) dist * engine->player.anglesin)) * H) % H;
-
-	temp = (Uint32 *) engine->screen->pixels;
 	x = xbegin;
-	while (x < xend) {
-//		temp[(y * W) + x] = get_tx(engine->img[txno].tx, u, v);
-//		temp[(y * W) + x] = get_shadow(dist, 0x00ff00u);
-		temp[(y * W) + x] = 0x00ff00u;
-		u += du;
-		v += dv;
+	temp = (Uint32 *) engine->screen->pixels;
+
+//	float X = (engine->player.where.z - engine->sectors[engine->present->sectorno].floor) / (((float)(y << 1) / H - 1) - engine->player.vangle);
+//	float Y = X * (((float)x - (W / 2.f)) / (W / 2.f));
+//	float rtx = X * cosf(-engine->player.angle) + Y * sinf(-engine->player.angle);
+//	float rtz = -X * sinf(-engine->player.angle) + Y * cosf(-engine->player.angle);
+//	Y = (rtx + engine->player.where.x) * 256;
+//	X = (rtz + engine->player.where.y) * 256;
+//	float X1 = X;
+//	float Y1 = X1 * (((float)(x + 1) - (W / 2.f)) / (W / 2.f));
+//	rtx = X1 * cosf(-engine->player.angle) + Y1 * sinf(-engine->player.angle);
+//	rtz = -X1 * sinf(-engine->player.angle) + Y1 * cosf(-engine->player.angle);
+//	Y1 = (rtx + engine->player.where.x) * 256;
+//	X1 = (rtz + engine->player.where.y) * 256;
+//	float dx = (X1 - X);
+//	float dy = (Y1 - y);
+	while (x < xend)
+	{
+		float X = (engine->player.where.z - engine->sectors[engine->present->sectorno].floor) / (((float)(y << 1) / H - 1) - engine->player.vangle);
+		float Y = X * (((float)x - (W / 2.f)) / (W / 2.f));
+		float rtx = X * cosf(-engine->player.angle) + Y * sinf(-engine->player.angle);
+		float rtz = -X * sinf(-engine->player.angle) + Y * cosf(-engine->player.angle);
+		Y = (rtx + engine->player.where.x) * 256;
+		X = (rtz + engine->player.where.y) * 256;
+		temp[(y * W) + x] = get_tx(engine->img[txno].tx, (int)X % engine->img[txno].tx->w, (int)Y % engine->img[txno].tx->h);
 		x++;
+//		X += dx;
 	}
 }
 
-static void		loop(t_engine *engine, int *y_top, int *y_bot, int *x_table, int z, int offset)
+static void		loop(t_engine *engine, int *y_top, int *y_bot, int *x_table)
 {
 	int y1;
 	int y2;
 	int x;
-	int zd;
-	int	dist;
 
-	x = engine->vpfloor.MinX;
-	while (x <= engine->vpfloor.MaxX)
+	x = engine->vpfloor.minx;
+	while (x <= engine->vpfloor.maxx)
 	{
-		y1 = engine->vpfloor.TopY[x];
-		y2 = engine->vpfloor.BotY[x];
+		y1 = engine->vpfloor.topy[x];
+		y2 = engine->vpfloor.boty[x];
 		if (y2 < y1)
 			continue ;	//	при возможных пропусках точек на границах (а они есть), алгоритм развалится
 		while (y1 < *y_top)		//если верхняя линия поднимается
 			x_table[--(*y_top)] = x;
 		while (y2 > *y_bot)		//если нижняя линия опускается
 			x_table[++(*y_bot)] = x;
-		zd = *y_top - offset + 1;
-		dist = z;
 		while (*y_top < y1)		//если верхняя линия опускается
 		{
-			dist = z / (zd == 0 ? 0.1f : zd);
-			render_hline(engine, *y_top, x_table[*y_top], x, dist, 3);
+			render_hline(engine, *y_top, x_table[*y_top], x, 3);
 			(*y_top)++;
-			zd++;
 		}
-		zd = *y_bot - offset + 1;
-		dist = z;
 		while (*y_bot > y2)		//если нижняя линия поднимается
 		{
-			dist = z / (zd == 0 ? 0.1f : zd);
-			render_hline(engine, *y_bot, x_table[*y_bot], x, dist, 3);
+			render_hline(engine, *y_bot, x_table[*y_bot], x, 3);
 			(*y_bot)--;
-			zd--;
 		}
 		x++;
 	}
@@ -81,23 +85,18 @@ void			render_floor(t_engine *engine)
 	int y_top;
 	int y_bot;
 	// WindowYCenterWithOffset=WindowYCenter+tan(M_PI/180.0*PlayerAngleVertical)*WindowHeight/2;
-	int offset = (H >> 1) + tan(engine->player.vangle) * (H >> 1);
-	int	z = (engine->player.where.z - engine->sectors[engine->present->sectorno].floor) * (H >> 1);
 
-	y_top = engine->vpfloor.TopY[engine->vpfloor.MinX];
-	y_bot = engine->vpfloor.BotY[engine->vpfloor.MinX];
+	y_top = engine->vpfloor.topy[engine->vpfloor.minx];
+	y_bot = engine->vpfloor.boty[engine->vpfloor.minx];
 	y = y_top;
 	while (y <= y_bot)
-		x_table[y++] = engine->vpfloor.MinX;
-	loop(engine, &y_top, &y_bot, x_table, z, offset);
+		x_table[y++] = engine->vpfloor.minx;
+	loop(engine, &y_top, &y_bot, x_table);
 	//заливаем промежуток между top и bottom
 	y = y_top;
-	int zd = y_top - offset + 1;
 	while (y <= y_bot)
 	{
-		int dist = z / (zd == 0 ? 1 : zd);
-		render_hline(engine, y, x_table[y], engine->vpfloor.MaxX, dist, 3);
+		render_hline(engine, y, x_table[y], engine->vpfloor.maxx, 3);
 		y++;
-		zd++;
 	}
 }
