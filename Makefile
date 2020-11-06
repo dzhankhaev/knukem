@@ -31,6 +31,7 @@ SRC := main.c\
 	game_loop.c\
 
 SRCDASH := hud.c $(filter-out main.c, $(SRC))
+SRCARCH := archiver.c $(filter-out main.c, $(SRC))
 
 OBJ := $(SRC:.c=.o)
 
@@ -42,6 +43,8 @@ SRCP :=		$(addprefix $(SRCDIR)/, $(SRC))
 OBJP :=		$(addprefix $(OBJDIR)/, $(SRC:.c=.o))
 SRCPD :=	$(addprefix $(SRCDIR)/, $(SRCDASH))
 OBJPD :=	$(addprefix $(OBJDIR)/, $(SRCDASH:.c=.o))
+SRCAR :=	$(addprefix $(SRCDIR)/, $(SRCARCH))
+OBJAR :=	$(addprefix $(OBJDIR)/, $(SRCARCH:.c=.o))
 ONLYDIR :=	$(foreach dir, $(OBJP), $(shell dirname $(dir)))
 
 FLAG :=  -g -Wall #-Werror -Wextra
@@ -68,6 +71,11 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADERSP)
 dash : $(OBJPD)
 			@gcc $(SDL) $(FLAG) $(OBJPD)  $(INC) $(LIB)  -L./libft -lft  -o $@
 			@echo "$(CLEAR_LINE)$(BLUE_FONT)[$(NAME)] $(YELLOW_FONT)Finished compilation. Output file : $(VIOLET_FONT)$(PWD)/$@$(RESET_FORM)"
+
+arch : $(OBJAR)
+			@gcc $(SDL) $(FLAG) $(OBJAR)  $(INC) $(LIB)  -L./libft -lft  -o $@
+			@echo "$(CLEAR_LINE)$(BLUE_FONT)[$(NAME)] $(YELLOW_FONT)Finished compilation. Output file : $(VIOLET_FONT)$(PWD)/$@$(RESET_FORM)"
+
 
 clean :
 			@rm -rf $(OBJDIR)
