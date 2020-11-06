@@ -1,49 +1,30 @@
 #include "engine.h"
 #include "utilits.h"
 
-Uint32		get_tx(SDL_Surface *surface, int x, int y)
+void			render_hline(t_engine *engine, int y, int xbegin, int xend, int txno)
 {
-	Uint8	*p;
-	Uint32	rgb;
-
-	p = (Uint8 *)(surface->pixels + y * surface->pitch
-				  + (x * surface->format->BytesPerPixel));
-	rgb = p[2] << 16 | p[1] << 8 | p[0];
-	return (rgb);
-}
-
-void			render_hline(t_engine *engine, int y, int xbegin, int xend, int txno) {
 	Uint32 *temp;
+	t_temp2 *a;
 	int x;
 
+	a = &engine->rend_plane;
 	x = xbegin;
 	temp = (Uint32 *) engine->screen->pixels;
-
-//	float X = (engine->player.where.z - engine->sectors[engine->present->sectorno].floor) / (((float)(y << 1) / H - 1) - engine->player.vangle);
-//	float Y = X * (((float)x - (W / 2.f)) / (W / 2.f));
-//	float rtx = X * cosf(-engine->player.angle) + Y * sinf(-engine->player.angle);
-//	float rtz = -X * sinf(-engine->player.angle) + Y * cosf(-engine->player.angle);
-//	Y = (rtx + engine->player.where.x) * 256;
-//	X = (rtz + engine->player.where.y) * 256;
-//	float X1 = X;
-//	float Y1 = X1 * (((float)(x + 1) - (W / 2.f)) / (W / 2.f));
-//	rtx = X1 * cosf(-engine->player.angle) + Y1 * sinf(-engine->player.angle);
-//	rtz = -X1 * sinf(-engine->player.angle) + Y1 * cosf(-engine->player.angle);
-//	Y1 = (rtx + engine->player.where.x) * 256;
-//	X1 = (rtz + engine->player.where.y) * 256;
-//	float dx = (X1 - X);
-//	float dy = (Y1 - y);
+	a->mapx = (engine->player.where.z -
+			engine->sectors[engine->present->sectorno].floor) /
+					(((float)(y << 1) / H - 1) - engine->player.vangle);
+	a->cosx = a->mapx * a->pcos;
+	a->sinx = -a->mapx * a->psin;
 	while (x < xend)
 	{
-		float X = (engine->player.where.z - engine->sectors[engine->present->sectorno].floor) / (((float)(y << 1) / H - 1) - engine->player.vangle);
-		float Y = X * (((float)x - (W / 2.f)) / (W / 2.f));
-		float rtx = X * cosf(-engine->player.angle) + Y * sinf(-engine->player.angle);
-		float rtz = -X * sinf(-engine->player.angle) + Y * cosf(-engine->player.angle);
-		Y = (rtx + engine->player.where.x) * 256;
-		X = (rtz + engine->player.where.y) * 256;
-		temp[(y * W) + x] = get_tx(engine->img[txno].tx, (int)X % engine->img[txno].tx->w, (int)Y % engine->img[txno].tx->h);
+		a->mapy = a->mapx * (((float)x - (W >> 1)) / (W >> 1));
+		a->txy = (int)(((a->cosx + a->mapy * a->psin) + engine->player.where.x)
+					   * 256) % engine->img[txno].tx->h;
+		a->txx = (int)(((a->sinx + a->mapy * a->pcos) + engine->player.where.y)
+					   * 256) % engine->img[txno].tx->w;
+		temp[(y * W) + x] = get_pixel_color(engine->img[txno].tx,
+											a->txx, a->txy);
 		x++;
-//		X += dx;
 	}
 }
 
@@ -65,15 +46,9 @@ static void		loop(t_engine *engine, int *y_top, int *y_bot, int *x_table)
 		while (y2 > *y_bot)		//если нижняя линия опускается
 			x_table[++(*y_bot)] = x;
 		while (*y_top < y1)		//если верхняя линия опускается
-		{
-			render_hline(engine, *y_top, x_table[*y_top], x, 3);
-			(*y_top)++;
-		}
+			render_hline(engine, *y_top, x_table[(*y_top)++], x, 3);
 		while (*y_bot > y2)		//если нижняя линия поднимается
-		{
-			render_hline(engine, *y_bot, x_table[*y_bot], x, 3);
-			(*y_bot)--;
-		}
+			render_hline(engine, *y_bot, x_table[(*y_bot)--], x, 3);
 		x++;
 	}
 }
@@ -84,7 +59,6 @@ void			render_floor(t_engine *engine)
 	int	x_table[H];
 	int y_top;
 	int y_bot;
-	// WindowYCenterWithOffset=WindowYCenter+tan(M_PI/180.0*PlayerAngleVertical)*WindowHeight/2;
 
 	y_top = engine->vpfloor.topy[engine->vpfloor.minx];
 	y_bot = engine->vpfloor.boty[engine->vpfloor.minx];

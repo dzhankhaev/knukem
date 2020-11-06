@@ -467,6 +467,33 @@ src/movement/move.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/movement/move.c.s
 .PHONY : src/movement/move.c.s
 
+src/render/line/render_hline.o: src/render/line/render_hline.c.o
+
+.PHONY : src/render/line/render_hline.o
+
+# target to build an object file
+src/render/line/render_hline.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.o
+.PHONY : src/render/line/render_hline.c.o
+
+src/render/line/render_hline.i: src/render/line/render_hline.c.i
+
+.PHONY : src/render/line/render_hline.i
+
+# target to preprocess a source file
+src/render/line/render_hline.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.i
+.PHONY : src/render/line/render_hline.c.i
+
+src/render/line/render_hline.s: src/render/line/render_hline.c.s
+
+.PHONY : src/render/line/render_hline.s
+
+# target to generate assembly for a file
+src/render/line/render_hline.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.s
+.PHONY : src/render/line/render_hline.c.s
+
 src/render/line/render_line.o: src/render/line/render_line.c.o
 
 .PHONY : src/render/line/render_line.o
@@ -1025,6 +1052,9 @@ help:
 	@echo "... src/movement/move.o"
 	@echo "... src/movement/move.i"
 	@echo "... src/movement/move.s"
+	@echo "... src/render/line/render_hline.o"
+	@echo "... src/render/line/render_hline.i"
+	@echo "... src/render/line/render_hline.s"
 	@echo "... src/render/line/render_line.o"
 	@echo "... src/render/line/render_line.i"
 	@echo "... src/render/line/render_line.s"

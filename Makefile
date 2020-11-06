@@ -47,6 +47,7 @@ SRC := main.c\
 	render/wall/edge_tx_init.c\
 	render/line/render_line.c\
 	render/line/render_vline.c\
+	render/line/render_hline.c\
 
 
 OBJ := $(SRC:.c=.o)

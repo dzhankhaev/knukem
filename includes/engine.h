@@ -162,6 +162,18 @@ typedef struct	s_temp
 	t_fline		l;			//	короткая запись engine->wall
 }				t_temp;
 
+typedef struct	s_temp2
+{
+	int			txx;		//текстура по х
+	int 		txy;		//текстура по у
+	float		mapx;		//координаты пикселя на карта
+	float		mapy;		//
+	float		cosx;		//с учетом mapx (mapx вычисляется один раз на столбец)
+	float		sinx;
+	float		pcos;		//для игрока
+	float		psin;
+}				t_temp2;
+
 typedef struct	s_vplanes
 {
 	int minx;//минимальная координата X области
@@ -198,6 +210,7 @@ typedef struct	s_engine
 	int			u0;					//	начало и конец текстуры с учетом чати стены, которая не попала в кадр
 	int			u1;					//
 	t_temp		rend_wall;			//используется в rendel_Wall тобы обойти норму
+	t_temp2		rend_plane;			//используется при рендеринге пола и потолка
 	t_img		img[10];
 }				t_engine;
 

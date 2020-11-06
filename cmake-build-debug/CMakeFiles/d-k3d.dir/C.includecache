@@ -32,6 +32,12 @@ SDL_mixer.h
 engine.h
 ../includes/engine.h
 
+/home/chel/Desktop/knukem/src/render/line/render_hline.c
+engine.h
+/home/chel/Desktop/knukem/src/render/line/engine.h
+utilits.h
+/home/chel/Desktop/knukem/src/render/line/utilits.h
+
 /home/chel/Desktop/knukem/src/render/render_floor.c
 engine.h
 /home/chel/Desktop/knukem/src/render/engine.h

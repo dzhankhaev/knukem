@@ -11,6 +11,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/d-k3d.dir/src/manage_data.c.o"
   "CMakeFiles/d-k3d.dir/src/movement/fall.c.o"
   "CMakeFiles/d-k3d.dir/src/movement/move.c.o"
+  "CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.o"
   "CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o"
   "CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o"
   "CMakeFiles/d-k3d.dir/src/render/minimap.c.o"
