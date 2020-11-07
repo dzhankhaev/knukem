@@ -6,7 +6,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <SDL2/SDL.h>
-# include <SDL_image.h>
+# include <SDL2_image/SDL_image.h>
 //# include <SDL2_ttf/SDL_ttf.h>
 //# include <SDL2_mixer/SDL_mixer.h>
 /*
@@ -164,6 +164,7 @@ typedef struct	s_temp
 
 typedef struct	s_temp2
 {
+	float		z;			//высота
 	int			txx;		//текстура по х
 	int 		txy;		//текстура по у
 	float		mapx;		//координаты пикселя на карта
@@ -237,11 +238,14 @@ void			run_queue(t_engine *engine);
 int				check_repeat(t_engine *engine, int sectorno, int neighbor);
 void			render_line(t_line p, SDL_Surface *screen, t_line borders);		//линия в пределах указанных границ
 void			render_vline(t_engine *engine, t_line p, t_line op, int texture_n);			//вертикальная линия сверху вниз
+void			render_hline(t_engine *engine, int y, int xbegin, int xend, int txno);
 void			move(t_engine *engine);
 void			fall(t_player *player, t_sector *sectors);
 Uint32			deep_shading(t_engine *engine, t_line wall, int x);			//модификатор освещения в зависимости от дальности
 Uint32			get_shadow(Uint32 z, Uint32 color);								//применить модификатор освещения
 void			real_time_edit(t_engine *engine);
 void			render_floor(t_engine *engine);
+void			render_ceil(t_engine *engine);
+void			render_sky(t_engine *engine);
 
 #endif

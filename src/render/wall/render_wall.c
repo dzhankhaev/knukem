@@ -49,4 +49,5 @@ void			render_wall(t_engine *engine, int sectorno, int neighbor)
 	render_init(engine, sectorno, neighbor);
 	loop(engine, neighbor);
 	render_floor(engine);
+	render_ceil(engine);
 }

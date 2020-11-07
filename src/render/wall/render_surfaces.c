@@ -14,8 +14,8 @@ void		ceil_and_floor(t_engine *engine)
 					 engine->tline[a->x], engine->bline[a->x]);		//линия пола тек
 	engine->vpceil.minx = a->x0;
 	engine->vpceil.maxx = a->x1;
-	engine->vpceil.topy[a->x] = engine->tline[a->x];	//верхняя линия пола
-	engine->vpceil.boty[a->x] = a->y[0];				//нижняя линия пола
+	engine->vpceil.topy[a->x] = engine->tline[a->x];	//верхняя линия потолка
+	engine->vpceil.boty[a->x] = a->y[0];				//нижняя линия потолка
 	engine->vpfloor.minx = a->x0;
 	engine->vpfloor.maxx = a->x1;
 	engine->vpfloor.topy[a->x] = a->y[1];				//верхняя линия пола

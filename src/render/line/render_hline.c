@@ -1,7 +1,7 @@
 #include "engine.h"
 #include "utilits.h"
 
-void			render_hline1(t_engine *engine, int y, int xbegin, int xend, int txno)
+void			render_hline(t_engine *engine, int y, int xbegin, int xend, int txno)
 {
 	Uint32 *temp;
 	t_temp2 *a;
@@ -10,7 +10,7 @@ void			render_hline1(t_engine *engine, int y, int xbegin, int xend, int txno)
 	a = &engine->rend_plane;
 	x = xbegin;
 	temp = (Uint32 *) engine->screen->pixels;
-	a->mapx = (engine->player.where.z - engine->sectors[engine->present->sectorno].floor) / (((float)(y << 1) / H - 1) - engine->player.vangle);
+	a->mapx = a->z / (((float)(y << 1) / H - 1) - engine->player.vangle);
 	a->cosx = a->mapx * a->pcos;
 	a->sinx = -a->mapx * a->psin;
 	while (x < xend)

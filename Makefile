@@ -41,6 +41,8 @@ SRC := main.c\
     utilits/load_img.c\
 	render/minimap.c\
 	render/render_floor.c\
+	render/render_ceil.c\
+	render/render_sky.c\
 	render/wall/render_wall.c\
 	render/wall/perspective_init.c\
 	render/wall/render_surfaces.c\

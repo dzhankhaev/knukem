@@ -1,7 +1,7 @@
 #include "engine.h"
 #include "utilits.h"
 
-void			render_hline(t_engine *engine, int y, int xbegin, int xend, int txno)
+void			render_hline21(t_engine *engine, int y, int xbegin, int xend, int txno)
 {
 	Uint32 *temp;
 	t_temp2 *a;
@@ -53,6 +53,7 @@ static void		loop(t_engine *engine, int *y_top, int *y_bot, int *x_table)
 	}
 }
 
+
 void			render_floor(t_engine *engine)
 {
 	int y;
@@ -62,6 +63,7 @@ void			render_floor(t_engine *engine)
 
 	y_top = engine->vpfloor.topy[engine->vpfloor.minx];
 	y_bot = engine->vpfloor.boty[engine->vpfloor.minx];
+	engine->rend_plane.z = engine->player.where.z - engine->sectors[engine->present->sectorno].floor;
 	y = y_top;
 	while (y <= y_bot)
 		x_table[y++] = engine->vpfloor.minx;
