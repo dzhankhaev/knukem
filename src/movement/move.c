@@ -19,7 +19,7 @@ void	move_player(float dx, float dy, t_engine *engine)
 	float					py;
 	unsigned				s;
 	const t_xy				*vert;
-	const t_sector			*sect;
+	const t_sect			*sect;
 	unsigned				old;
 
 	old = engine->player.sector;

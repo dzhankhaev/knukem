@@ -8,6 +8,18 @@ find_package(SDL2_image REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS} ${SDL2_IMAGE_INCLUDE_DIRS})
 
 add_executable(d-k3d
+        src/map_editor/draw.c
+        src/map_editor/draw_utils.c
+        src/map_editor/draw_utils2.c
+        src/map_editor/errors.c
+        src/map_editor/events.c
+        src/map_editor/init.c
+        src/map_editor/main.c
+        src/map_editor/map_events.c
+        src/map_editor/neighbors.c
+        src/map_editor/reader.c
+        src/map_editor/texture.c
+        src/map_editor/write.c
         src/init.c
         src/key_events/keys_manager.c
         src/manage_data.c
@@ -21,6 +33,7 @@ add_executable(d-k3d
         src/render/line/render_line.c
         src/render/minimap.c
         includes/engine.h
+        includes/editor.h
         includes/utilits.h
         src/utilits/math/rotates.c
         src/transform_wall.c

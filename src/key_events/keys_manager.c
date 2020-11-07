@@ -17,6 +17,8 @@ static void 	keyboard_event(t_engine *engine, t_player *player, t_edit *edit)
 				engine->minimap.mod = engine->minimap.mod ? 0 : 1;
 			else if (player->event.key.keysym.sym == SDLK_l)	//	затенение
 				engine->player.deep_sh = engine->player.deep_sh ? 0 : 1;
+			else if (player->event.key.keysym.sym == SDLK_e)	//	map editor
+				engine->edit.mod = engine->edit.mod ? 0 : 1;
 			else if (player->event.key.keysym.sym == SDLK_ESCAPE)	//	закрытие
 				engine->close_request = 1;
 		}

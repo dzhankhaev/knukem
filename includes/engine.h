@@ -1,6 +1,7 @@
 #ifndef ENGINE_H
 # define ENGINE_H
 # include <math.h>
+# include "editor.h"
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
@@ -82,7 +83,7 @@ typedef struct	s_fline		//	стена для вычислений
 	float		y1;
 	Uint32		color;
 }				t_fline;
-
+/*
 typedef struct	s_xy
 {
 	float		x;
@@ -103,7 +104,7 @@ typedef struct	s_sector
 	t_xy		*vertex;		//	Координаты всех вершин данного сектора, причем первая координата дублируется в конце
 	int 		*neighbors;		//	Номера всех соседей данного сектора, им соответствуют вершины i, i+1
 	int 		npoints;		//	Количество соседей
-}				t_sector;
+}				t_sect;
 
 typedef	struct	s_player
 {
@@ -123,7 +124,7 @@ typedef	struct	s_player
 	int			deep_sh;		//	затенение
 	SDL_Event	event;
 }				t_player;
-
+*/
 typedef struct	s_minimap
 {
 	t_xy		point;				//центр миникарты
@@ -191,7 +192,7 @@ typedef struct	s_engine
 	t_edit		edit;
 	t_line		borders;			//	границы отображения (установлены во всё окно)
 	t_player	player;
-	t_sector	*sectors;			//	считанная карта
+	t_sect	*sectors;			//	считанная карта
 	int 		num_sectors;		//	количество секторов в карте
 	t_queue		*queue;				//	очередь секторов
 	t_queue		*future;			//	указатель заполнения
@@ -216,11 +217,11 @@ typedef struct	s_engine
 }				t_engine;
 
 
-void			init_engine(t_engine *engine);
+void			init_engine(t_engine *engine, t_all *all);
 void			general_init(t_engine *engine);
 void			load_data(t_engine *engine);
 void			unload_data(t_engine *engine);
-void			game_loop(t_engine *engine);
+void			game_loop(t_engine *engine, t_all *all);
 int 			transform_wall(t_engine *engine, int i);
 void			render_wall(t_engine *engine, int sectorno, int neighbor);
 void			ceil_and_floor(t_engine *engine);
@@ -228,8 +229,8 @@ void			render_edge(t_engine *engine, int neighbor);
 t_line			get_op1(t_temp *a);
 t_line			get_op2(t_temp *a);
 t_line			get_op3(t_temp *a);
-void			init_ceil_floor(t_engine *engine, t_sector sector, t_line *wall);
-void			init_edge(t_engine *engine, t_sector sector, t_line *wall);
+void			init_ceil_floor(t_engine *engine, t_sect sector, t_line *wall);
+void			init_edge(t_engine *engine, t_sect sector, t_line *wall);
 t_fline			cut_wall(t_fline wall, t_xy i1, t_xy i2);						//разрезает стену для попадания в fov
 void			minimap(t_engine *engine, t_xy v0, t_xy v1, Uint32 color);			//рисуется отдельно для каждой стены
 void			minimap_cut(t_engine *engine, t_xy v0, t_xy v1, Uint32 color);		//показывает только то, что в поле зрения
@@ -240,12 +241,13 @@ void			render_line(t_line p, SDL_Surface *screen, t_line borders);		//линия
 void			render_vline(t_engine *engine, t_line p, t_line op, int texture_n);			//вертикальная линия сверху вниз
 void			render_hline(t_engine *engine, int y, int xbegin, int xend, int txno);
 void			move(t_engine *engine);
-void			fall(t_player *player, t_sector *sectors);
+void			fall(t_player *player, t_sect *sectors);
 Uint32			deep_shading(t_engine *engine, t_line wall, int x);			//модификатор освещения в зависимости от дальности
 Uint32			get_shadow(Uint32 z, Uint32 color);								//применить модификатор освещения
 void			real_time_edit(t_engine *engine);
 void			render_floor(t_engine *engine);
 void			render_ceil(t_engine *engine);
 void			render_sky(t_engine *engine);
+int 			main_editor(t_engine *engine, char *name, t_all *all);
 
 #endif

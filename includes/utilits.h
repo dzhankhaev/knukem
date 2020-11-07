@@ -14,7 +14,7 @@ t_line			swap_coords(t_line p);
 void			to_x_order(t_line *wall);
 t_xy			intersection_point(t_fline wall, t_fline twall);
 int				determine_intersection(t_fline wall, t_fline twall);
-t_fline			rotate_wall(t_sector sector, t_player player, int i, int color);
+t_fline			rotate_wall(t_sect sector, t_player player, int i, int color);
 t_line			perspective_transform(t_fline w, float z, float yaw, int color);
 void			exc(const char *file, const char *function);
 void			clean(t_engine *engine);

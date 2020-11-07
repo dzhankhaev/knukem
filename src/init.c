@@ -1,4 +1,5 @@
 #include "engine.h"
+#include "editor.h"
 #include "utilits.h"
 
 static void	init_minimap(t_engine *engine)
@@ -65,10 +66,15 @@ static void sdl_img(t_engine *engine)
 	}
 }
 
-void		init_engine(t_engine *engine)
+void		init_engine(t_engine *engine, t_all *all)
 {
 	bzero(engine, sizeof(*engine));
 	load_data(engine);
 	sdl(engine);
+	all->sdl = (t_sdl *)malloc(sizeof(t_sdl) * 1);
+	all->sdl->window = engine->window;
+	all->sdl->screen = engine->screen;
+	all->sectors = engine->sectors;
+	all->player = engine->player;
 	sdl_img(engine);
 }

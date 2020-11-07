@@ -14,6 +14,7 @@ NAME :=	doom-nukem
 HEADERS := engine.h\
 	utilits.h\
 	events.h\
+	editor.h\
 
 
 SRC := main.c\
@@ -50,6 +51,18 @@ SRC := main.c\
 	render/line/render_line.c\
 	render/line/render_vline.c\
 	render/line/render_hline.c\
+	map_editor/main.c\
+	map_editor/draw.c\
+	map_editor/draw_utils.c\
+	map_editor/draw_utils2.c\
+	map_editor/errors.c\
+	map_editor/events.c\
+	map_editor/init.c\
+	map_editor/map_events.c\
+	map_editor/neighbors.c\
+	map_editor/reader.c\
+	map_editor/texture.c\
+	map_editor/write.c\
 
 
 OBJ := $(SRC:.c=.o)
@@ -72,10 +85,18 @@ SDL := -F $(FRAMEWORKSDIR) -framework SDL2 -framework SDL2_ttf -framework SDL2_i
 TOTAL_FILES := $(shell echo $(SRC) | wc -w | sed -e 's/ //g')
 CURRENT_FILES = $(shell find $(PWD)/obj/ -type f 2> /dev/null | wc -l | sed -e 's/ //g')
 
-all : $(NAME)
+FT		= ./libft/
+FT_LIB	= $(addprefix $(FT),libft.a)
+FT_INC	= -I ./libft
+FT_LNK	= -L ./libft -l ft -l pthread
+
+all : $(FT_LIB) $(NAME)
+
+$(FT_LIB):
+	@make -C $(FT)
 
 $(NAME) : $(OBJP)
-			@gcc $(SDL) $(FLAG) $(OBJP) $(INC) $(LIB) -o $(NAME)
+			@gcc -g $(SDL) $(FLAG) $(OBJP) $(FT_LNK) $(INC) $(LIB) -o $(NAME)
 			@echo "$(CLEAR_LINE)$(BLUE_FONT)[$(NAME)] $(YELLOW_FONT)Finished compilation. Output file : $(VIOLET_FONT)$(PWD)/$(NAME)$(RESET_FORM)"
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADERSP)
@@ -87,9 +108,10 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADERSP)
 clean :
 			@rm -rf $(OBJDIR)
 			@echo "$(BLUE_FONT)[$(NAME)] $(YELLOW_FONT)Removed $(VIOLET_FONT)object files.$(RESET_FORM)"
+			make -C $(FT) clean
 
 fclean :	clean
 			@rm -rf $(NAME)
 			@echo "$(BLUE_FONT)[$(NAME)] $(YELLOW_FONT)Removed $(VIOLET_FONT)$(NAME)$(RESET_FORM)"
-
+			make -C $(FT) fclean
 re :		fclean all

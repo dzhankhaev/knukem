@@ -27,7 +27,7 @@ void	load_data(t_engine *engine)
 			break;
 		case 's': // sector
 			engine->sectors = realloc(engine->sectors, ++engine->num_sectors * sizeof(*engine->sectors));
-			t_sector *sect = &engine->sectors[engine->num_sectors - 1];
+			t_sect *sect = &engine->sectors[engine->num_sectors - 1];
 			int *num = NULL;
 			//считывает пол и потолок
 			sscanf(ptr += n, "%f%f%n", &sect->floor, &sect->ceil, &n);

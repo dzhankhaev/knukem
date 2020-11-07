@@ -38,14 +38,20 @@ static void	draw(t_engine *engine)
 	render_minimap_hud(engine->minimap, engine->screen);
 }
 
-void		game_loop(t_engine *engine)
+void		game_loop(t_engine *engine, t_all *all)
 {
 	int		time;
 
 	time = 0;
+	engine->edit.mod = 1;
 	while (!engine->close_request)
 	{
-//		SDL_SetRelativeMouseMode(SDL_TRUE); //скрывает курсор, он движется относительно окна
+		if (engine->edit.mod)
+		{
+			SDL_SetRelativeMouseMode(SDL_FALSE);
+			engine->edit.mod = main_editor(engine, "map-clear", all);
+			SDL_SetRelativeMouseMode(SDL_TRUE); //скрывает курсор, он движется относительно окна
+		}
 		keys_manager(engine);
 		move(engine);
 		SDL_LockSurface(engine->screen);

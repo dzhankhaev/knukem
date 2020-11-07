@@ -1,6 +1,6 @@
 #include "engine.h"
 
-static t_fline	normi_wall(t_sector sector, t_player player, int i, int color)
+static t_fline	normi_wall(t_sect sector, t_player player, int i, int color)
 {
 	t_fline		wall;
 
@@ -12,7 +12,7 @@ static t_fline	normi_wall(t_sector sector, t_player player, int i, int color)
 	return (wall);
 }
 
-t_fline			rotate_wall(t_sector sector, t_player player, int i, int color)
+t_fline			rotate_wall(t_sect sector, t_player player, int i, int color)
 {
 	t_fline	w;
 	t_fline	wall;
