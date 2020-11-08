@@ -97,6 +97,13 @@ typedef struct	s_xyz
 	float		z;
 }				t_xyz;
 
+typedef struct	s_ixyz
+{
+	int 		x;
+	int 		y;
+	int 		z;
+}				t_ixyz;
+
 typedef struct	s_sector
 {
 	float		floor;
@@ -165,24 +172,27 @@ typedef struct	s_temp
 
 typedef struct	s_temp2
 {
+	int			y_top;
+	int			y_bot;
 	float		z;			//высота
 	int			txx;		//текстура по х
 	int 		txy;		//текстура по у
-	float		mapx;		//координаты пикселя на карта
+	float		mapx;		//координаты пикселя на карте
 	float		mapy;		//
 	float		cosx;		//с учетом mapx (mapx вычисляется один раз на столбец)
 	float		sinx;
 	float		pcos;		//для игрока
 	float		psin;
+	SDL_Surface	*tx;
 }				t_temp2;
 
 typedef struct	s_vplane
 {
-	int minx;//минимальная координата X области
-	int maxx;//максимальная координата X области
-	int topy[W];//верхняя координата
-	int boty[W];//нижняя координата
-	float	z;
+	int 		minx;//минимальная координата X области
+	int 		maxx;//максимальная координата X области
+	int 		topy[W];//верхняя координата
+	int 		boty[W];//нижняя координата
+	float		z;
 }				t_vplane;
 
 typedef struct	s_engine
@@ -226,7 +236,7 @@ void			game_loop(t_engine *engine);
 int 			transform_wall(t_engine *engine, int i);
 void			render_scene(t_engine *engine, int sectorno, int neighbor);
 void			ceil_and_floor_init(t_engine *engine);
-void			render_wall(t_engine *engine, int neighbor);
+void			render_wall(t_engine *engine, int neighbor, t_ixyz t);
 t_line			get_op1(t_temp *a);
 t_line			get_op2(t_temp *a);
 t_line			get_op3(t_temp *a);
@@ -240,13 +250,13 @@ void			run_queue(t_engine *engine);
 int				check_repeat(t_engine *engine, int sectorno, int neighbor);
 void			render_line(t_line p, SDL_Surface *screen, t_line borders);		//линия в пределах указанных границ
 void			render_vline(t_engine *engine, t_line p, t_line op, int texture_n);			//вертикальная линия сверху вниз
-void			render_hline(t_engine *engine, int y, int xbegin, int xend, int txno);
+void			render_hline(t_engine *engine, int y, int xbegin, int xend);
 void			move(t_engine *engine);
 void			fall(t_player *player, t_sector *sectors);
 Uint32			deep_shading(t_engine *engine, t_line wall, int x);			//модификатор освещения в зависимости от дальности
 Uint32			get_shadow(Uint32 z, Uint32 color);								//применить модификатор освещения
 void			real_time_edit(t_engine *engine);
-void			render_hplane(t_engine *engine, t_vplane *p);
+void			render_hplane(t_engine *engine, t_vplane *p, int txno);
 void			render_sky(t_engine *engine);
 
 #endif

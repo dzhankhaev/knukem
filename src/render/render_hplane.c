@@ -1,11 +1,15 @@
 #include "engine.h"
 
-static void		loop(t_engine *engine, int *y_top, int *y_bot, int *x_table, t_vplane *p)
+static void		loop(t_engine *engine, int *x_table, t_vplane *p)
 {
 	int			y1;
 	int			y2;
 	int			x;
+	int			*y_top;
+	int			*y_bot;
 
+	y_top = &engine->rend_plane.y_top;
+	y_bot = &engine->rend_plane.y_bot;
 	x = p->minx;
 	while (x <= p->maxx)
 	{
@@ -21,33 +25,32 @@ static void		loop(t_engine *engine, int *y_top, int *y_bot, int *x_table, t_vpla
 		while (y2 > *y_bot)		//если нижняя линия опускается
 			x_table[++(*y_bot)] = x;
 		while (*y_top < y1)		//если верхняя линия опускается
-			render_hline(engine, *y_top, x_table[(*y_top)++], x, 3);
+			render_hline(engine, *y_top, x_table[(*y_top)++], x);
 		while (*y_bot > y2)		//если нижняя линия поднимается
-			render_hline(engine, *y_bot, x_table[(*y_bot)--], x, 3);
+			render_hline(engine, *y_bot, x_table[(*y_bot)--], x);
 		x++;
 	}
 }
 
 
-void			render_hplane(t_engine *engine, t_vplane *p)
+void			render_hplane(t_engine *engine, t_vplane *p, int txno)
 {
 	int			y;
 	int			x_table[H];
-	int			y_top;
-	int			y_bot;
 
-	y_top = p->topy[p->minx];
-	y_bot = p->boty[p->minx];
+	engine->rend_plane.y_top = p->topy[p->minx];
+	engine->rend_plane.y_bot = p->boty[p->minx];
 	engine->rend_plane.z = p->z;
-	y = y_top;
-	while (y <= y_bot)
+	engine->rend_plane.tx = engine->img[txno].tx;
+	y = engine->rend_plane.y_top;
+	while (y <= engine->rend_plane.y_bot)
 		x_table[y++] = p->minx;
-	loop(engine, &y_top, &y_bot, x_table, p);
+	loop(engine, x_table, p);
 	//заливаем промежуток между top и bottom
-	y = y_top;
-	while (y <= y_bot)
+	y = engine->rend_plane.y_top;
+	while (y <= engine->rend_plane.y_bot)
 	{
-		render_hline(engine, y, x_table[y], p->maxx, 3);
+		render_hline(engine, y, x_table[y], p->maxx);
 		y++;
 	}
 }

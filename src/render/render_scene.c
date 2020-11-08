@@ -20,7 +20,7 @@ static void		rendering_init(t_engine *engine, int sectorno, int neighbor)
 	}
 }
 
-static void		loop(t_engine *engine, int neighbor)
+static void		loop(t_engine *engine, int neighbor, t_ixyz t)
 {
 	t_temp	*a;
 
@@ -39,7 +39,7 @@ static void		loop(t_engine *engine, int neighbor)
 				  + engine->u1 * ((a->x - a->w.x0) * a->l.x0))
 				 / ((a->w.x1 - a->x) * a->l.x1 + (a->x - a->w.x0) * a->l.x0);
 		ceil_and_floor_init(engine);		//y[0] и y[1] мы получаем тут путем линейной интерполяции
-		render_wall(engine, neighbor);
+		render_wall(engine, neighbor, t);
 		a->x += 1;
 	}
 }
@@ -47,7 +47,7 @@ static void		loop(t_engine *engine, int neighbor)
 void			render_scene(t_engine *engine, int sectorno, int neighbor)
 {
 	rendering_init(engine, sectorno, neighbor);
-	loop(engine, neighbor);
-	render_hplane(engine, &engine->vpfloor);
-	render_hplane(engine, &engine->vpceil);
+	loop(engine, neighbor, (t_ixyz){0, 1, 2});
+	render_hplane(engine, &engine->vpfloor, 3);
+	render_hplane(engine, &engine->vpceil, 4);
 }

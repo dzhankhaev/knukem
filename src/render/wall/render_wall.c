@@ -1,7 +1,7 @@
 #include "engine.h"
 #include "utilits.h"
 
-void		render_wall(t_engine *engine, int neighbor)
+void		render_wall(t_engine *engine, int neighbor, t_ixyz t)
 {
 	t_temp	*a;
 
@@ -17,10 +17,10 @@ void		render_wall(t_engine *engine, int neighbor)
 						 engine->tline[a->x], engine->bline[a->x]);		//линия пола соседа
 		//imin(y[2], y[1]) если потолок соседа ниже пола, то рисуем до пола, иначе до потолка
 		render_vline(engine, (t_line){a->x, a->x, a->y[0],
-			imin(a->y[2], a->y[1]), a->wall[2].color}, get_op1(a), 2); //	верхняя линия раздела
+			imin(a->y[2], a->y[1]), a->wall[2].color}, get_op1(a), t.z); //	верхняя линия раздела
 		//imax(y[3], y[0]) если пол соседа выше потолка, то рисуем до потолка, иначе до пола
 		render_vline(engine, (t_line){a->x, a->x, imax(a->y[3],
-				a->y[0]), a->y[1], a->wall[2].color}, get_op2(a), 1);	//	нижняя линия раздела
+				a->y[0]), a->y[1], a->wall[2].color}, get_op2(a), t.y);	//	нижняя линия раздела
 		engine->tline[a->x] = iclamp(imax(a->y[0],
 				a->y[2]), engine->tline[a->x], H - 1);
 		engine->bline[a->x] = iclamp(imin(a->y[1],
@@ -29,7 +29,7 @@ void		render_wall(t_engine *engine, int neighbor)
 	else
 	{
 		render_vline(engine, (t_line){a->x, a->x, a->y[0], a->y[1],
-									  engine->wall.color}, get_op3(a), 0);
+									  engine->wall.color}, get_op3(a), t.x);
 	}
 }
 
