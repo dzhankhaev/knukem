@@ -17,7 +17,7 @@ static void	reset(t_engine *engine)
 		engine->yfbot[i++] = H - 1;
 	}
 	engine->edit.mod_s = -1;	//запрет на модификацию (прежде нужно найти цель)
-
+	engine->edit.mod_w = -1;	//запрет на модификацию (прежде нужно найти цель)
 }
 
 static void	draw(t_engine *engine)

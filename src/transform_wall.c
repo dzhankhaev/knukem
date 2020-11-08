@@ -36,6 +36,22 @@ void		tex_init(t_engine *engine)	//	сопоставим координаты т
 	}
 }
 
+static void choose_edit(t_engine *engine, int i)
+{
+	if (engine->edit.mod_s == -1 &&
+		determine_intersection(engine->wall, (t_fline){0, 50, 0, 0}))
+	{
+		engine->edit.mod_s =
+				engine->sectors[engine->present->sectorno].neighbors[i];	//этот сектор можно модифицировать
+		if (engine->edit.mod_w == -1)
+			engine->edit.mod_w = i;
+	}
+//	if (engine->edit.mod_w == -1 &&
+//		determine_intersection(engine->wall, (t_fline){0, 50, 0, 0}))
+//		engine->edit.mod_w = i;
+
+}
+
 int			transform_wall(t_engine *engine, int i)
 {
 	engine->wall = rotate_wall(engine->sectors[engine->present->sectorno],
@@ -57,9 +73,6 @@ int			transform_wall(t_engine *engine, int i)
 		engine->wall.color = 0;
 		return (0); //то что не было отрезано и находится частично за спиной, а так же то что целиком лежит вне видимости тоже не рендерим.
 	}
-	if (engine->edit.mod_s == -1 &&
-		determine_intersection(engine->wall, (t_fline){0, 50, 0, 0}))
-		engine->edit.mod_s =
-				engine->sectors[engine->present->sectorno].neighbors[i];	//этот сектор можно модифицировать
+	choose_edit(engine, i);
 	return (1);
 }
