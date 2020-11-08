@@ -575,6 +575,33 @@ src/render/minimap.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/minimap.c.s
 .PHONY : src/render/minimap.c.s
 
+src/render/render_ceil.o: src/render/render_ceil.c.o
+
+.PHONY : src/render/render_ceil.o
+
+# target to build an object file
+src/render/render_ceil.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_ceil.c.o
+.PHONY : src/render/render_ceil.c.o
+
+src/render/render_ceil.i: src/render/render_ceil.c.i
+
+.PHONY : src/render/render_ceil.i
+
+# target to preprocess a source file
+src/render/render_ceil.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_ceil.c.i
+.PHONY : src/render/render_ceil.c.i
+
+src/render/render_ceil.s: src/render/render_ceil.c.s
+
+.PHONY : src/render/render_ceil.s
+
+# target to generate assembly for a file
+src/render/render_ceil.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_ceil.c.s
+.PHONY : src/render/render_ceil.c.s
+
 src/render/render_floor.o: src/render/render_floor.c.o
 
 .PHONY : src/render/render_floor.o
@@ -601,6 +628,33 @@ src/render/render_floor.s: src/render/render_floor.c.s
 src/render/render_floor.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_floor.c.s
 .PHONY : src/render/render_floor.c.s
+
+src/render/render_sky.o: src/render/render_sky.c.o
+
+.PHONY : src/render/render_sky.o
+
+# target to build an object file
+src/render/render_sky.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_sky.c.o
+.PHONY : src/render/render_sky.c.o
+
+src/render/render_sky.i: src/render/render_sky.c.i
+
+.PHONY : src/render/render_sky.i
+
+# target to preprocess a source file
+src/render/render_sky.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_sky.c.i
+.PHONY : src/render/render_sky.c.i
+
+src/render/render_sky.s: src/render/render_sky.c.s
+
+.PHONY : src/render/render_sky.s
+
+# target to generate assembly for a file
+src/render/render_sky.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_sky.c.s
+.PHONY : src/render/render_sky.c.s
 
 src/render/wall/edge_tx_init.o: src/render/wall/edge_tx_init.c.o
 
@@ -1064,9 +1118,15 @@ help:
 	@echo "... src/render/minimap.o"
 	@echo "... src/render/minimap.i"
 	@echo "... src/render/minimap.s"
+	@echo "... src/render/render_ceil.o"
+	@echo "... src/render/render_ceil.i"
+	@echo "... src/render/render_ceil.s"
 	@echo "... src/render/render_floor.o"
 	@echo "... src/render/render_floor.i"
 	@echo "... src/render/render_floor.s"
+	@echo "... src/render/render_sky.o"
+	@echo "... src/render/render_sky.i"
+	@echo "... src/render/render_sky.s"
 	@echo "... src/render/wall/edge_tx_init.o"
 	@echo "... src/render/wall/edge_tx_init.i"
 	@echo "... src/render/wall/edge_tx_init.s"

@@ -13,7 +13,10 @@ static void		loop(t_engine *engine, int *y_top, int *y_bot, int *x_table)
 		y1 = engine->vpceil.topy[x];
 		y2 = engine->vpceil.boty[x];
 		if (y2 < y1)
+		{
+			x++;
 			continue ;	//	при возможных пропусках точек на границах (а они есть), алгоритм развалится
+		}
 		while (y1 < *y_top)		//если верхняя линия поднимается
 			x_table[--(*y_top)] = x;
 		while (y2 > *y_bot)		//если нижняя линия опускается
