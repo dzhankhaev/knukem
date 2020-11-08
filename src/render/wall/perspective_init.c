@@ -12,7 +12,7 @@ void		init_ceil_floor(t_engine *engine, t_sector sector, t_line *wall)
 									engine->player.vangle, FLOOR_COLOR);
 }
 
-void		init_edge(t_engine *engine, t_sector sector, t_line *wall)
+void		init_wall(t_engine *engine, t_sector sector, t_line *wall)
 {
 	float	z;
 

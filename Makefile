@@ -40,13 +40,13 @@ SRC := main.c\
     utilits/exit_options.c\
     utilits/load_img.c\
 	render/minimap.c\
-	render/render_floor.c\
-	render/render_ceil.c\
+	render/render_hplane.c\
 	render/render_sky.c\
-	render/wall/render_wall.c\
+	render/render_scene.c\
+	render/ceil_and_floor_init.c\
 	render/wall/perspective_init.c\
-	render/wall/render_surfaces.c\
-	render/wall/edge_tx_init.c\
+	render/wall/render_wall.c\
+	render/wall/wall_tx_init.c\
 	render/line/render_line.c\
 	render/line/render_vline.c\
 	render/line/render_hline.c\

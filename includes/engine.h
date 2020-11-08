@@ -176,13 +176,14 @@ typedef struct	s_temp2
 	float		psin;
 }				t_temp2;
 
-typedef struct	s_vplanes
+typedef struct	s_vplane
 {
 	int minx;//минимальная координата X области
 	int maxx;//максимальная координата X области
 	int topy[W];//верхняя координата
 	int boty[W];//нижняя координата
-}				t_vplanes;
+	float	z;
+}				t_vplane;
 
 typedef struct	s_engine
 {
@@ -207,8 +208,8 @@ typedef struct	s_engine
 	int			ycbot[W];			//	экранные y потолка
 	int			yftop[W];			//	экранные y пола
 	int			yfbot[W];			//	экранные y пола
-	t_vplanes	vpfloor;			//	таблица для заполнения пола
-	t_vplanes	vpceil;				//	таблица для заполнения потолка
+	t_vplane	vpfloor;			//	таблица для заполнения пола
+	t_vplane	vpceil;				//	таблица для заполнения потолка
 	int			u0;					//	начало и конец текстуры с учетом чати стены, которая не попала в кадр
 	int			u1;					//
 	t_temp		rend_wall;			//используется в rendel_Wall тобы обойти норму
@@ -223,14 +224,14 @@ void			load_data(t_engine *engine);
 void			unload_data(t_engine *engine);
 void			game_loop(t_engine *engine);
 int 			transform_wall(t_engine *engine, int i);
-void			render_wall(t_engine *engine, int sectorno, int neighbor);
-void			ceil_and_floor(t_engine *engine);
-void			render_edge(t_engine *engine, int neighbor);
+void			render_scene(t_engine *engine, int sectorno, int neighbor);
+void			ceil_and_floor_init(t_engine *engine);
+void			render_wall(t_engine *engine, int neighbor);
 t_line			get_op1(t_temp *a);
 t_line			get_op2(t_temp *a);
 t_line			get_op3(t_temp *a);
 void			init_ceil_floor(t_engine *engine, t_sector sector, t_line *wall);
-void			init_edge(t_engine *engine, t_sector sector, t_line *wall);
+void			init_wall(t_engine *engine, t_sector sector, t_line *wall);
 t_fline			cut_wall(t_fline wall, t_xy i1, t_xy i2);						//разрезает стену для попадания в fov
 void			minimap(t_engine *engine, t_xy v0, t_xy v1, Uint32 color);			//рисуется отдельно для каждой стены
 void			minimap_cut(t_engine *engine, t_xy v0, t_xy v1, Uint32 color);		//показывает только то, что в поле зрения
@@ -245,8 +246,7 @@ void			fall(t_player *player, t_sector *sectors);
 Uint32			deep_shading(t_engine *engine, t_line wall, int x);			//модификатор освещения в зависимости от дальности
 Uint32			get_shadow(Uint32 z, Uint32 color);								//применить модификатор освещения
 void			real_time_edit(t_engine *engine);
-void			render_floor(t_engine *engine);
-void			render_ceil(t_engine *engine);
+void			render_hplane(t_engine *engine, t_vplane *p);
 void			render_sky(t_engine *engine);
 
 #endif
