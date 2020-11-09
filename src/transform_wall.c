@@ -38,7 +38,7 @@ void		tex_init(t_engine *engine)	//	сопоставим координаты т
 
 static void choose_edit(t_engine *engine, int i)
 {
-	if (engine->edit.mod_s == -1 &&
+	if (engine->edit.mod_s == 0x01ab01 &&
 		determine_intersection(engine->wall, (t_fline){0, 50, 0, 0}))
 	{
 		engine->edit.mod_s =
@@ -46,9 +46,6 @@ static void choose_edit(t_engine *engine, int i)
 		if (engine->edit.mod_w == -1)
 			engine->edit.mod_w = i;
 	}
-//	if (engine->edit.mod_w == -1 &&
-//		determine_intersection(engine->wall, (t_fline){0, 50, 0, 0}))
-//		engine->edit.mod_w = i;
 
 }
 

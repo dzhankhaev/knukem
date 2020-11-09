@@ -28,15 +28,15 @@ SDL_image.h
 SDL_mixer.h
 -
 
-../includes/utilits.h
+../includes/events.h
 engine.h
 ../includes/engine.h
 
-/home/chel/Desktop/knukem/src/render/render_scene.c
-utilits.h
-/home/chel/Desktop/knukem/src/render/utilits.h
+/home/chel/Desktop/knukem/src/key_events/event_edit.c
 engine.h
-/home/chel/Desktop/knukem/src/render/engine.h
+/home/chel/Desktop/knukem/src/key_events/engine.h
+events.h
+/home/chel/Desktop/knukem/src/key_events/events.h
 
 /usr/include/SDL2/SDL.h
 SDL_main.h

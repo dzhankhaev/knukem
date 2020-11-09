@@ -16,8 +16,9 @@ static void	reset(t_engine *engine)
 		engine->yftop[i] = 0;
 		engine->yfbot[i++] = H - 1;
 	}
-	engine->edit.mod_s = -1;	//запрет на модификацию (прежде нужно найти цель)
+	engine->edit.mod_s = 0x01ab01;	//запрет на модификацию (прежде нужно найти цель)
 	engine->edit.mod_w = -1;	//запрет на модификацию (прежде нужно найти цель)
+	engine->edit.txno = -1;
 }
 
 static void	draw(t_engine *engine)
@@ -29,7 +30,6 @@ static void	draw(t_engine *engine)
 	*engine->queue = (t_queue){engine->player.sector, 0, W - 1, -1};
 	engine->future = engine->queue + 1;
 	engine->present = engine->queue;
-	reset(engine);
 	while (engine->present != engine->future)
 	{
 		run_queue(engine);
@@ -43,9 +43,10 @@ void		game_loop(t_engine *engine)
 	int		time;
 
 	time = 0;
+	SDL_SetRelativeMouseMode(SDL_TRUE); //скрывает курсор, он движется относительно окна
 	while (!engine->close_request)
 	{
-//		SDL_SetRelativeMouseMode(SDL_TRUE); //скрывает курсор, он движется относительно окна
+		reset(engine);
 		keys_manager(engine);
 		move(engine);
 		SDL_LockSurface(engine->screen);

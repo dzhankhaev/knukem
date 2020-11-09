@@ -13,6 +13,7 @@ static void 	keyboard_event(t_engine *engine, t_player *player, t_edit *edit)
 		}
 		if (player->event.type == SDL_KEYDOWN)	//однократные
 		{
+			event_edit2(player, edit);
 			if (player->event.key.keysym.sym == SDLK_m)		//	режим миникарты
 				engine->minimap.mod = engine->minimap.mod ? 0 : 1;
 			else if (player->event.key.keysym.sym == SDLK_l)	//	затенение
