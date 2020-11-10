@@ -46,14 +46,31 @@ static void		loop(t_engine *engine, int neighbor, t_ixyz t)
 
 void			render_scene(t_engine *engine, int sectorno, int neighbor)
 {
+	t_ixyz	txset;
+
 	rendering_init(engine, sectorno, neighbor);
+	txset = (t_ixyz){0, 1, 2};
 	if (engine->edit.mod_w != -1 && engine->edit.txno != -1)
 	{
-		loop(engine, neighbor, (t_ixyz){engine->edit.txno, 1, 2});
+		if (engine->edit.mod_tx == 0)
+			txset = (t_ixyz){engine->edit.txno, 1, 2};
+		else if (engine->edit.mod_tx == 3)
+			txset = (t_ixyz){0, engine->edit.txno, 2};
+		else if (engine->edit.mod_tx == 4)
+			txset = (t_ixyz){0, 1, engine->edit.txno};
 	}
-	else
-		loop(engine, neighbor, (t_ixyz){0, 1, 2});
-	engine->edit.mod_w = -1;
-	render_hplane(engine, &engine->vpfloor, 3);
-	render_hplane(engine, &engine->vpceil, 4);
+	loop(engine, neighbor, txset);
+	engine->edit.mod_w = -1;	//после того как модифицировали стену, нужно сбрасывать, иначе применится ко всем стенам
+	txset = (t_ixyz){3, 4, 0};
+	/*
+	if (engine->edit.txno != -1 && sectorno == engine->edit.mod_s)
+	{
+		if (engine->edit.mod_tx == 1)
+			txset = (t_ixyz){engine->edit.txno, 4, 0};
+		else if (engine->edit.mod_tx == 2)
+		 	txset = (t_ixyz){3, engine->edit.txno, 0};
+	}
+	*/
+	render_hplane(engine, &engine->vpfloor, txset.x);
+	render_hplane(engine, &engine->vpceil, txset.y);
 }

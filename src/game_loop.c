@@ -52,6 +52,7 @@ void		game_loop(t_engine *engine)
 		SDL_LockSurface(engine->screen);
 		draw(engine);
 		SDL_UnlockSurface(engine->screen);
+		real_time_edit(engine);
 		if (SDL_GetTicks() - time < 32)
 			SDL_Delay(32 - SDL_GetTicks() + time);
 		time = SDL_GetTicks();

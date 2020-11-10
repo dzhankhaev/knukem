@@ -71,7 +71,6 @@ void			keys_manager(t_engine *engine)
 
 	player = &engine->player;
 	keyboard_event(engine, player, &engine->edit);
-	real_time_edit(engine);
 	SDL_GetRelativeMouseState(&x, &y);	//	позиция относительно предыдущей позиции
 	player->vangle = clamp(player->vangle + y * CAMERA_DY, -VLIMIT, VLIMIT);	//вертикальный поворот
 	player->angle = angle_fix(player->angle + x * CAMERA_DX); //	горизонтальный поворот

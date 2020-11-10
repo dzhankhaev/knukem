@@ -30,6 +30,7 @@ void general_init(t_engine *engine)
 	engine->player.vangle = 0.f;
 	engine->player.speed = MOVE_SPEED;
 	engine->player.deep_sh = 0;
+	engine->edit.mod_tx = 0;
 	init_minimap(engine);
 }
 
