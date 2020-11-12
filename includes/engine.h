@@ -219,7 +219,7 @@ typedef struct	s_engine
 
 void			init_engine(t_engine *engine, t_all *all);
 void			general_init(t_engine *engine);
-void			load_data(t_engine *engine);
+void			load_data(t_engine *engine, t_all *all);
 void			unload_data(t_engine *engine);
 void			game_loop(t_engine *engine, t_all *all);
 int 			transform_wall(t_engine *engine, int i);

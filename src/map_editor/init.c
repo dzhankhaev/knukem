@@ -47,7 +47,8 @@ void    init_all(t_all *all)
 	// all->sdl = NULL;
 	// if (!(all->sdl = (t_sdl*)malloc(sizeof(t_sdl))))
 		// error_and_close(__FILE__, __FUNCTION__);
-    init_sdl(all->sdl, all);
+    // init_sdl(all->sdl, all);
+	load_fonts(all->sdl, all);
 	all->mouse.z = 0; // переменная нажатия ЛКМ
 	all->area = (SDL_Rect){WIDTH/4, 0, WIDTH - WIDTH/4, HEIGHT}; // Область карты
 	all->step = all->area.h / 23;
@@ -56,6 +57,7 @@ void    init_all(t_all *all)
 	all->temp = (t_sect*)malloc(sizeof(t_sect));
 	// all->swap = NULL;
 	// all->sectors = (t_sect*)malloc(sizeof(t_sect));
+	all->threed = 0;
 	all->temp->npoints = 0;
 	all->temp->vertex = NULL;
 	all->player.picked = 0;

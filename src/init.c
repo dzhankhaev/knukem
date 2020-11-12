@@ -69,7 +69,7 @@ static void sdl_img(t_engine *engine)
 void		init_engine(t_engine *engine, t_all *all)
 {
 	bzero(engine, sizeof(*engine));
-	load_data(engine);
+	load_data(engine, all);
 	sdl(engine);
 	all->sdl = (t_sdl *)malloc(sizeof(t_sdl) * 1);
 	all->sdl->window = engine->window;

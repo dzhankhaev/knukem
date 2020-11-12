@@ -36,7 +36,7 @@ void    interact(t_all *all)
 	Uint32			cur_time;
 	Uint32			last_time;
 
-	while ((last_time = SDL_GetTicks()))
+	while ((last_time = SDL_GetTicks()) && all->threed == 0)
 	{
 		while (SDL_PollEvent(&event)) // отслеживаем события
 		{
@@ -69,6 +69,7 @@ int main_editor(t_engine *engine, char *name, t_all *all)
 //		printf("Enter correct map name or new map name!\n");
 //		exit(0);
 //	}
+	all->num_sectors = engine->num_sectors;
     init_all(all); // инициализация всех модулей
 //	if (load_map(name, all) != 0)
 //		error_and_close(__FILE__, __FUNCTION__);

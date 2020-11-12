@@ -7,13 +7,14 @@ void	key_press(t_all *all)
 	keystate = SDL_GetKeyboardState(NULL);
 	if (keystate[SDL_SCANCODE_ESCAPE])
 	{
-		//SDL_DestroyTexture(all->texture);
-    	SDL_DestroyWindow(all->sdl->window);
-	    SDL_Quit();
-		free(all->sectors);
-		free(all->sdl);
-		free(all);
-		exit(0);
+		all->threed = 1;
+		// //SDL_DestroyTexture(all->texture);
+    	// SDL_DestroyWindow(all->sdl->window);
+	    // SDL_Quit();
+		// free(all->sectors);
+		// free(all->sdl);
+		// free(all);
+		// exit(0);
 	}
 	else if (keystate[SDL_SCANCODE_TAB])
 		write_map("new", all);

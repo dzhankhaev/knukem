@@ -1,6 +1,6 @@
 #include "engine.h"
 
-void	load_data(t_engine *engine)
+void	load_data(t_engine *engine, t_all *all)
 {
 	engine->sectors = NULL;
 	FILE *fp = fopen("map-clear.txt", "rt");
@@ -9,6 +9,7 @@ void	load_data(t_engine *engine)
 		perror("map-clear.txt");
 		exit(1);
 	}
+	all->mapsize = (t_xyz){0, 0, 0};
 	char Buf[256], word[256], *ptr;
 	struct s_xy *vert = NULL, v;
 	int n, m, NumVertices = 0;
@@ -23,6 +24,11 @@ void	load_data(t_engine *engine)
                 //NumVertices общее количество вершин
                 //vert массив всех вершин где к примеру строка vertex	0	0 6 28 хранится как 0 0, 0 6, 0 28
                 //никаких разделителей между строк нет
+				all->mapsize.x = v.x > all->mapsize.x ? v.x : all->mapsize.x;
+				all->mapsize.y = v.y > all->mapsize.y ? v.y : all->mapsize.y;
+				all->max_coord = (t_xy){all->mapsize.x, all->mapsize.y};
+				all->min_coord.x = v.x < all->min_coord.x ? v.x : all->min_coord.x;
+				all->min_coord.y = v.y < all->min_coord.y ? v.y : all->min_coord.y;
 			}
 			break;
 		case 's': // sector
@@ -31,6 +37,7 @@ void	load_data(t_engine *engine)
 			int *num = NULL;
 			//считывает пол и потолок
 			sscanf(ptr += n, "%f%f%n", &sect->floor, &sect->ceil, &n);
+			all->mapsize.z = sect->ceil > all->mapsize.z ? sect->ceil : all->mapsize.z;
 			for (m = 0; sscanf(ptr += n, "%32s%n", word, &n) == 1 && word[0] != '#';)
 			{
 				num = realloc(num, ++m * sizeof(*num));
@@ -68,6 +75,7 @@ void	load_data(t_engine *engine)
 		}
 	fclose(fp);
 	free(vert);
+	all->draw_floors = (t_xy){0, (all->mapsize.z)};
 }
 
 void unload_data(t_engine *engine)

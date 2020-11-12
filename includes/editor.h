@@ -143,7 +143,8 @@ typedef struct      s_all
 	t_xy			min_coord;
 	t_xy			max_coord;
     SDL_Rect        area;//область редактирования
-    SDL_Surface     *texture;//текстура-подложка 
+    SDL_Surface     *texture;//текстура-подложка
+	int				threed;
 
     t_button        buttons[BUTTONS];//кнопки
 //    t_edit			edit;//
