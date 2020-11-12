@@ -127,7 +127,7 @@ typedef struct      s_all
     // t_sect          *swap;//указатель на выбранный сектор
     t_sect          *sectors;//массив с данными о секторах
 	t_sect			*temp;
-    unsigned int    num_sectors;//количество секторов
+    int				num_sectors;//количество секторов
 	int 			step;//шаг (масштаб)
 	int 			iso;
 	SDL_Color		color;

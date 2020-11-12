@@ -60,7 +60,6 @@ SRC := main.c\
 	map_editor/init.c\
 	map_editor/map_events.c\
 	map_editor/neighbors.c\
-	map_editor/reader.c\
 	map_editor/texture.c\
 	map_editor/write.c\
 	map_editor/pixels.c\

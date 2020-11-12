@@ -12,7 +12,7 @@ void    new_sector(t_all *all, int x, int y)
 	all->temp->vertex[all->temp->npoints - 1] = (t_xy){x, y};
 	if (all->temp->vertex[0].x == x && all->temp->vertex[0].y == y && all->temp->npoints != 1)
 	{
-		all->sectors = ft_realloc(all->sectors, ++all->num_sectors * sizeof(t_sect));
+		all->sectors = ft_realloc(all->sectors, ++(all->num_sectors) * sizeof(t_sect));
 		all->sectors[all->num_sectors - 1].vertex = malloc(sizeof(t_xy) * all->temp->npoints);
 		all->sectors[all->num_sectors - 1].npoints = all->temp->npoints;
 		all->sectors[all->num_sectors - 1].floor = all->temp->floor;

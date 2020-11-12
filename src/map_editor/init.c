@@ -65,5 +65,5 @@ void    init_all(t_all *all)
 	all->max_coord = (t_xy){0, 0};
 	all->iso = 0;
 	all->set_floors = (t_xy){0, 0};
-	all->draw_floors = (t_xy){0, 0};
+	// all->draw_floors = (t_xy){0, 0};
 }

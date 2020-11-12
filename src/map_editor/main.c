@@ -69,8 +69,8 @@ int main_editor(t_engine *engine, char *name, t_all *all)
 //		printf("Enter correct map name or new map name!\n");
 //		exit(0);
 //	}
-	all->num_sectors = engine->num_sectors;
     init_all(all); // инициализация всех модулей
+	printf("level z = %d\n", (int)all->draw_floors.y);
 //	if (load_map(name, all) != 0)
 //		error_and_close(__FILE__, __FUNCTION__);
 	if (load_texture(all) != 0)

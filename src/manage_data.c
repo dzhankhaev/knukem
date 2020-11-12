@@ -37,7 +37,7 @@ void	load_data(t_engine *engine, t_all *all)
 			int *num = NULL;
 			//считывает пол и потолок
 			sscanf(ptr += n, "%f%f%n", &sect->floor, &sect->ceil, &n);
-			all->mapsize.z = sect->ceil > all->mapsize.z ? sect->ceil : all->mapsize.z;
+			all->mapsize.z = sect->floor > all->mapsize.z ? sect->floor : all->mapsize.z;
 			for (m = 0; sscanf(ptr += n, "%32s%n", word, &n) == 1 && word[0] != '#';)
 			{
 				num = realloc(num, ++m * sizeof(*num));
