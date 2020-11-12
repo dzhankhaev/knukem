@@ -8,7 +8,6 @@ void	key_press(t_all *all)
 	if (keystate[SDL_SCANCODE_ESCAPE])
 	{
 		//SDL_DestroyTexture(all->texture);
-    	SDL_DestroyRenderer(all->sdl->renderer);
     	SDL_DestroyWindow(all->sdl->window);
 	    SDL_Quit();
 		free(all->sectors);

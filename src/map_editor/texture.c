@@ -16,11 +16,10 @@ SDL_Surface	*get_text_surface(t_all *all, char *name, SDL_Rect target, SDL_Color
 {
     SDL_Surface *text;
 	int 		shift;
-	int 		x;
     
 	shift = 10 * ft_strlen(name);
     //text = SDL_CreateRGBSurface(1, target.w, target.h, 32 , 255, 255, 0, 0);
-    if(!(text=TTF_RenderText_Blended(all->font, name, color)))
+    if(!(text = TTF_RenderText_Blended(all->font, name, color)))
         printf("text printing error!\n");
 	return(text);
 }
@@ -66,13 +65,12 @@ int             load_labels(t_all *all, t_labels *labels)
     labels[4].dst = (SDL_Rect){WIDTH/16, 575, WIDTH/8, 50};
     labels[4].surf = get_text_surface(all, "CEIL HEIGHT", labels[4].dst, BLACK);
     return(1);
+
 }
 
 
 int             load_texture(t_all *all)
 {
-    if(!(all->texture = get_texture("plain.bmp", all->sdl)))
-        error_and_close(__FILE__, __FUNCTION__);
     if(!(all->player.picture = get_texture("player.bmp", all->sdl)))
         error_and_close(__FILE__, __FUNCTION__);
     if(!(load_buttons(all, all->buttons) == 1))

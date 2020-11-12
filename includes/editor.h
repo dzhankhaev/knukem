@@ -35,7 +35,6 @@
 typedef struct	    s_sdl
 {
 	SDL_Window	    *window;
-	SDL_Renderer	*renderer;
 	SDL_Surface		*screen;
 }				    t_sdl;
 
@@ -151,25 +150,26 @@ typedef struct      s_all
     t_sdl           *sdl;//
 }                   t_all;
 
-t_all               *init_all(t_all *all); // инициализируем модули
+void	            init_all(t_all *all); // инициализируем модули
 void                error_and_close(const char *file, const char *function); // аварийное завершение программы
 void                on_event(t_all *all, SDL_Event *event); //обработка событий
 void				map_click(t_xyz *mouse, t_all *all);
 int					load_map(char *name, t_all *all); // загрузка карты
 int                 load_texture(t_all *all);// звгрузка текстур
 int					load_buttons(t_all *all, t_button *btn);
-void                draw_all(t_all *all, SDL_Renderer *rnd, t_button *btn);//отрисовка
+void                draw_all(t_all *all, t_sdl *sdl, t_button *btn);//отрисовка
 int					write_map(char *name, t_all *all);
-void				draw_player(t_all *all, SDL_Renderer *rnd, t_player *player, t_xy *c);
+void				draw_player(t_all *all, t_sdl *sdl, t_player *player, t_xy *c);
 void				draw_grid(t_all *all, SDL_Rect *area, int step);
-void    			draw_texture(SDL_Renderer *rnd, SDL_Rect area, SDL_Surface *txt);
+void    			draw_texture(t_sdl *sdl, SDL_Rect area, SDL_Surface *txt);
 void    			draw_fill_rect(t_all *all, SDL_Rect area, SDL_Color color);
 void				draw_line(t_all *all, t_xyz *start, t_xyz *fin, SDL_Color color);
-void				draw_circle(SDL_Renderer *rnd, t_xy coord, int r, SDL_Color color);
+void				draw_circle(t_sdl *sdl, t_xy coord, int r, SDL_Color color);
 void				draw_labels(t_all *all, t_labels *labels, int i);
-void				draw_digits(SDL_Renderer *rnd, t_all *all, int x, int y);
+void				draw_digits(t_sdl *sdl, t_all *all, int x, int y);
 void				get_neighbours(t_sect *sector, t_all 	*all, int n);
 SDL_Surface			*get_text_surface(t_all *all, char *name, SDL_Rect target, SDL_Color color);
+void       			put_pxl(t_sdl *sdl, SDL_Color col, int x, int y);
 
 
 # endif

@@ -63,6 +63,8 @@ SRC := main.c\
 	map_editor/reader.c\
 	map_editor/texture.c\
 	map_editor/write.c\
+	map_editor/pixels.c\
+
 
 
 OBJ := $(SRC:.c=.o)
