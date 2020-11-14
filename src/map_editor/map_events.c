@@ -49,7 +49,7 @@ void	select_sector(t_all *all, int x, int y)
 	int		sect;
 
 	where = (t_xyz){x, y, all->draw_floors.x};
-	if(sect = which_sector(all, all->sectors, where) != -1)
+	if((sect = which_sector(all, all->sectors, where)) != -1)
 		all->swap = &all->sectors[sect];
 	else
 		all->swap = NULL;

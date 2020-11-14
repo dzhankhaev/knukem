@@ -31,6 +31,7 @@
 # define BLUE (SDL_Color){0, 0, 255, 255}
 # define GREEN (SDL_Color){0, 255, 0, 255}
 # define LAZUR (SDL_Color){54, 209, 183, 255}
+# define YELLOW (SDL_Color){255, 255, 33, 255}
 
 typedef struct	    s_sdl
 {
@@ -124,7 +125,7 @@ typedef	struct s_labels
 typedef struct      s_all
 {
     t_player        player;// переменная игрока.
-    // t_sect          *swap;//указатель на выбранный сектор
+    t_sect          *swap;//указатель на выбранный сектор
     t_sect          *sectors;//массив с данными о секторах
 	t_sect			*temp;
     int				num_sectors;//количество секторов
@@ -169,6 +170,7 @@ void				draw_circle(t_sdl *sdl, t_xy coord, int r, SDL_Color color);
 void				draw_labels(t_all *all, t_labels *labels, int i);
 void				draw_digits(t_sdl *sdl, t_all *all, int x, int y);
 void				get_neighbours(t_sect *sector, t_all 	*all, int n);
+int					which_sector(t_all *all, t_sect *sectors, t_xyz where);
 SDL_Surface			*get_text_surface(t_all *all, char *name, SDL_Rect target, SDL_Color color);
 void       			put_pxl(t_sdl *sdl, SDL_Color col, int x, int y);
 

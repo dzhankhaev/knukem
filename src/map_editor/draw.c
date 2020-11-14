@@ -29,6 +29,36 @@ void	draw_wall(t_all *all, t_sect *sect, int j, t_xyz *vertex)
 		draw_line(all, vertex, &f, all->color);
 }
 
+void	draw_sector(t_sect *sect, t_all *all, SDL_Color color)
+{
+	int		i;
+	t_xyz	s;
+	t_xyz	f;
+
+	i = 0;
+	while(i < sect->npoints)
+	{
+		s = (t_xyz){(sect->vertex[i].x * all->step) + all->area.w/2 - (round(all->mapsize.x/2) * all->step) + all->area.x,
+				(sect->vertex[i].y * all->step) + all->area.h/2 - (round(all->mapsize.y/2) * all->step) + all->area.y, 0};
+					// (temp->floor - all->mapsize.z/4) * all->step/2};
+		f = (t_xyz){(sect->vertex[i + 1].x * all->step) + all->area.w/2 - (round(all->mapsize.x/2) * all->step)+ all->area.x,
+				(sect->vertex[i + 1].y * all->step) + all->area.h/2 - (round(all->mapsize.y/2) * all->step)+ all->area.y, 0};
+					// (temp->floor - all->mapsize.z/4) * all->step/2};
+		if (all->iso)
+		{
+			isometric(all, sect, &s, (t_xyz){10, 1, 1});
+			isometric(all, sect, &f, (t_xyz){10, 1, 1});
+		}
+		color = (sect->neighbors[i] == -1 && i < sect->npoints) ? RED : BLUE;
+		if (sect->floor >= all->draw_floors.x && sect->floor <= all->draw_floors.y)
+		{
+			draw_line(all, &s, &f, sect == all->swap ? YELLOW : color);
+			draw_circle(all->sdl, (t_xy){s.x, s.y}, 2, GREEN);
+		}
+		i++;
+	}
+}
+
 void	draw_map(t_sdl *sdl, t_sect *sect, t_all *all)
 {
 	int		i, j;
@@ -41,27 +71,9 @@ void	draw_map(t_sdl *sdl, t_sect *sect, t_all *all)
 	{
 		j = 0;
 		temp = &sect[i];
-		while (j < temp->npoints)
-		{
-			s = (t_xyz){(temp->vertex[j].x * all->step) + all->area.w/2 - (round(all->mapsize.x/2) * all->step) + all->area.x,
-				(temp->vertex[j].y * all->step) + all->area.h/2 - (round(all->mapsize.y/2) * all->step) + all->area.y, 0};
-					// (temp->floor - all->mapsize.z/4) * all->step/2};
-			f = (t_xyz){(temp->vertex[j + 1].x * all->step) + all->area.w/2 - (round(all->mapsize.x/2) * all->step)+ all->area.x,
-				(temp->vertex[j + 1].y * all->step) + all->area.h/2 - (round(all->mapsize.y/2) * all->step)+ all->area.y, 0};
-					// (temp->floor - all->mapsize.z/4) * all->step/2};
-			if (all->iso)
-			{
-				isometric(all, temp, &s, (t_xyz){10, 1, 1});
-				isometric(all, temp, &f, (t_xyz){10, 1, 1});
-			}
-			all->color = (temp->neighbors[j] == -1 && j < temp->npoints) ? RED : BLUE;
-			if (temp->floor >= all->draw_floors.x && temp->floor <= all->draw_floors.y)
-			{
-				draw_line(all, &s, &f, &all->sectors[i] == all->swap ? YELLOW : all->color);
-				draw_circle(sdl, (t_xy){s.x, s.y}, 2, GREEN);
-			}
-			j++;
-		}
+		draw_sector(temp, all, all->color);
+		if (all->swap)
+			draw_sector(all->swap, all, YELLOW);
 		i++;
 	}
 }
@@ -112,8 +124,9 @@ void	draw_area(t_sdl *sdl, t_all *all)
 	if (!all->player.picked)
 		draw_circle(all->sdl, (t_xy){all->point.x * all->step + c.x + all->area.x, 
 			all->point.y * all->step + c.y + all->area.y}, 2, WHITE);
-	if (all->temp->npoints != 0)
-	 	draw_temp(all, sdl, all->temp);
+	if (all->temp->npoints > 0)
+		// draw_sector(all->temp, all, all->color);
+	 	draw_temp(all, sdl, all->temp); /// uncomment to defeat segfault
 	draw_player(all, sdl, &all->player, &c);
 }
 
