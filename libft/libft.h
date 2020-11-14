@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgruyere <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 15:56:14 by dgruyere          #+#    #+#             */
-/*   Updated: 2020/07/19 15:35:04 by dgruyere         ###   ########.fr       */
+/*   Updated: 2020/11/12 14:37:51 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,8 @@ int					ft_max(int d1, int d2);
 int					ft_min(int d1, int d2);
 void				ft_swap(int *a, int *b);
 char				*ft_strrev(char *str);
+void				ft_free_split(char **split);
+int					ft_arrlen(void **arr);
 int					get_next_line(const int fd, char **line);
 
 #endif

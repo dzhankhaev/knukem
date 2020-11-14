@@ -23,7 +23,50 @@ typedef struct		s_files
 	int		start_byte;
 }					t_files;
 
-void		pack()
+
+void		check_folder(char *file_name)
+{
+	char			**arr;
+	int				len;
+	int				i;
+	struct stat		sb;
+	char			*sub_line;
+	char			*line;
+	int				fd = S_IRWXU | S_IRWXG | S_IRWXO;
+	int chmodd, mkdirr;
+
+	(void)sb;
+	// sub_line = ft_strtrim(file_name);
+	sub_line = NULL;
+	line = NULL;
+	arr = ft_strsplit(file_name, '/');
+	len = ft_arrlen((void**)arr);
+	i = 0;
+	if (len > 1)
+	{
+		// ft_strdel(&line);
+		line = ft_strdup(arr[i++]);
+		if ((fd = open(line, O_RDONLY)) < 0)
+			if ((chmodd = chmod(line, 0777)) < 0)
+				mkdirr = mkdir(line, 0777);
+	}
+	while (i < len - 1)
+	{
+		ft_strdel(&sub_line);
+		sub_line = ft_strjoin(line, "/");
+		ft_strdel(&line);
+		line = ft_strjoin(sub_line, arr[i]);
+		if ((fd = open(line, O_RDONLY)) < 0)
+			if ((chmodd = chmod(line, 0777)) < 0)
+				mkdirr = mkdir(line, 0777);
+		i++;
+	}
+	sub_line = ft_strjoin(line, "/");
+	ft_strdel(&sub_line);
+	sub_line = ft_strjoin(line,arr[i]);
+}
+
+void		pack(char *filename_out)
 {
 	struct stat		sb;
 	char			file_name[21];
@@ -62,7 +105,8 @@ void		pack()
 			free(line);
 		}
 		close(fd);
-		fd = open("archive",O_RDWR|O_TRUNC|O_CREAT,999);
+		
+		fd = open(filename_out,O_RDWR|O_TRUNC|O_CREAT,999);
 		lseek(fd,7,0);
 		write(fd, &size, 1);
 		i = -1;
@@ -86,9 +130,18 @@ void		pack()
 
 void		unpack();
 
-int main(int argc, char const **argv)
+int main(int argc, char **argv)
 {
-	pack();
+	if (argc == 2)
+	{
+		check_folder(argv[1]);
+		// pack(argv[1]);
+	}
+	else
+	{
+		ft_putstr("Not filename for out pack\n");
+	}
+	
 
 	return 0;
 }

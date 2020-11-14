@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_arrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/04 20:21:33 by ecelsa            #+#    #+#             */
-/*   Updated: 2020/11/04 20:29:47 by ecelsa           ###   ########.fr       */
+/*   Created: 2020/11/12 14:37:14 by ecelsa            #+#    #+#             */
+/*   Updated: 2020/11/12 14:37:35 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		bla(int i)
+#include "libft.h"
+
+int			ft_arrlen(void **arr)
 {
+	int i;
+
+	i = 0;
+	while (arr[i] != NULL)
+		i++;
 	return (i);
-}
-
-void	test(void)
-{
-	static int		i = 0;
-
-	i++;
-}
-
-int		main(int argc, char const *argv[])
-{
-	test();
-	test();
-	test();
-	return (0);
 }
