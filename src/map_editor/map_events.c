@@ -43,10 +43,18 @@ void    new_sector(t_all *all, int x, int y)
 	}
 }
 
-// void    set_player(t_all *all, int x, int y)
-// {
+void	select_sector(t_all *all, int x, int y)
+{
+	t_xyz	where;
+	int		sect;
+
+	where = (t_xyz){x, y, all->draw_floors.x};
+	if(sect = which_sector(all, all->sectors, where) != -1)
+		all->swap = &all->sectors[sect];
+	else
+		all->swap = NULL;
 	
-// }
+}
 
 void	map_click(t_xyz *mouse, t_all *all)
 {
@@ -66,9 +74,12 @@ void	map_click(t_xyz *mouse, t_all *all)
 	}
     else if(all->buttons[1].state == 1)
     {
-		all->player.where = (t_xyz){x, y, 0};
+		all->player.where = (t_xyz){x, y, all->draw_floors.x + EYE_HEIGHT};
+    	all->player.sector = which_sector(all, all->sectors, all->player.where);
 		all->player.picked = 0;
 		all->buttons[1].state = 0;
 		all->buttons[1].color = WHITE;
 	}
+	else
+		select_sector(all, x, y);
 }

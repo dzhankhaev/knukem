@@ -10,6 +10,8 @@ void	load_data(t_engine *engine, t_all *all)
 		exit(1);
 	}
 	all->mapsize = (t_xyz){0, 0, 0};
+	all->min_coord = (t_xy){0, 0};
+	all->max_coord = (t_xy){0, 0};
 	char Buf[256], word[256], *ptr;
 	struct s_xy *vert = NULL, v;
 	int n, m, NumVertices = 0;

@@ -80,5 +80,7 @@ int main_editor(t_engine *engine, char *name, t_all *all)
 	interact(all);// основная функция взаимодействия
 //	write_map(av[1], all);
 	engine->sectors = all->sectors;
+	engine->player.where = all->player.where;
+	engine->player.sector = all->player.sector;
 	return (0);
 }

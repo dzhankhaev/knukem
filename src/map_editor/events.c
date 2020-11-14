@@ -125,6 +125,7 @@ void	on_mouse(t_all *all, SDL_MouseButtonEvent *event)
 		{
 			all->mouse = (t_xyz){event->x - temp->x, event->y - temp->y};//пишем координаты мыши на карте
 			map_click(&all->mouse, all);
+			printf("x = %d y = %d\n", (int)all->point.x, (int)all->point.y);
 		}
 	}
 	else if (event->x < WIDTH / 4 && event->y < HEIGHT / 4)

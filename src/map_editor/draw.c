@@ -57,7 +57,7 @@ void	draw_map(t_sdl *sdl, t_sect *sect, t_all *all)
 			all->color = (temp->neighbors[j] == -1 && j < temp->npoints) ? RED : BLUE;
 			if (temp->floor >= all->draw_floors.x && temp->floor <= all->draw_floors.y)
 			{
-				draw_line(all, &s, &f, all->color);
+				draw_line(all, &s, &f, &all->sectors[i] == all->swap ? YELLOW : all->color);
 				draw_circle(sdl, (t_xy){s.x, s.y}, 2, GREEN);
 			}
 			j++;

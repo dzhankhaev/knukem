@@ -55,14 +55,14 @@ void    init_all(t_all *all)
 	all->point = (t_xyint){0,0};
 	all->temp = NULL;
 	all->temp = (t_sect*)malloc(sizeof(t_sect));
-	// all->swap = NULL;
+	all->swap = NULL;
 	// all->sectors = (t_sect*)malloc(sizeof(t_sect));
 	all->threed = 0;
 	all->temp->npoints = 0;
 	all->temp->vertex = NULL;
 	all->player.picked = 0;
-	all->min_coord = (t_xy){0, 0};
-	all->max_coord = (t_xy){0, 0};
+	// all->min_coord = (t_xy){0, 0};
+	// all->max_coord = (t_xy){0, 0};
 	all->iso = 0;
 	all->set_floors = (t_xy){0, 0};
 	// all->draw_floors = (t_xy){0, 0};
