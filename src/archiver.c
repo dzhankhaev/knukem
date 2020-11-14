@@ -5,6 +5,7 @@
 #include <string.h>
 #include <fcntl.h>
 #include "libft.h"
+#include <errno.h>
 /**
 **	список файлов
 **	сколько их?
@@ -33,7 +34,7 @@ void		check_folder(char *file_name)
 	char			*sub_line;
 	char			*line;
 	int				fd = S_IRWXU | S_IRWXG | S_IRWXO;
-	int chmodd, mkdirr;
+	int chmodd, mkdirr, ulink;
 
 	(void)sb;
 	// sub_line = ft_strtrim(file_name);
@@ -47,8 +48,12 @@ void		check_folder(char *file_name)
 		// ft_strdel(&line);
 		line = ft_strdup(arr[i++]);
 		if ((fd = open(line, O_RDONLY)) < 0)
+		{
 			if ((chmodd = chmod(line, 0777)) < 0)
 				mkdirr = mkdir(line, 0777);
+		}
+		else
+			close(fd);
 	}
 	while (i < len - 1)
 	{
@@ -57,10 +62,20 @@ void		check_folder(char *file_name)
 		ft_strdel(&line);
 		line = ft_strjoin(sub_line, arr[i]);
 		if ((fd = open(line, O_RDONLY)) < 0)
+		{
 			if ((chmodd = chmod(line, 0777)) < 0)
 				mkdirr = mkdir(line, 0777);
+		}
+		else
+			close(fd);
+		
 		i++;
 	}
+	ft_strdel(&sub_line);
+	sub_line = ft_strjoin("/Users/ecelsa/knukem/", arr[0]);
+	ulink = unlink(arr[0]);
+	perror(sub_line);
+	printf("%s\n",sub_line);
 	sub_line = ft_strjoin(line, "/");
 	ft_strdel(&sub_line);
 	sub_line = ft_strjoin(line,arr[i]);
@@ -132,9 +147,26 @@ void		unpack();
 
 int main(int argc, char **argv)
 {
+	int fd;
+	pid_t pid;
+	char *bla[] = {"testfile" , NULL}, *env[] = {NULL};
+	// int ret;
+
+	pid = fork();
+	write(1, "\n!\n",3);
+	if (pid == 0)
+	{
+		execve("dddd/rmsh", bla, env);
+		exit(0);
+	}
 	if (argc == 2)
 	{
-		check_folder(argv[1]);
+		fd = open(argv[1], O_RDONLY);
+		if ((pid = fork()) == 0)
+			exit(0);
+		write(1, "|||||||\n", 8);
+		// printf("!!!!!!\n");
+		// check_folder(argv[1]);
 		// pack(argv[1]);
 	}
 	else
