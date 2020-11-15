@@ -67,6 +67,7 @@ typedef struct      s_sect
 	float		floor;
 	float		ceil;
 	t_xy		*vertex;		//	Координаты всех вершин данного сектора, причем первая координаты дублируется в конце
+	int			*txlist;		//	Номера текстур стен
 	int		 *neighbors;		//	Номера всех соседей данного сектора
 	unsigned	npoints; //	Количество соседей
 			
@@ -81,23 +82,7 @@ typedef struct      s_button
     int             state;
 	char			*title;
 }                   t_button;
-/*
-typedef struct      s_edit
-{
-    int             function;
-	t_xyz			coord;
-	t_sect			new_sector;
-}                   t_edit;
 
-typedef	struct	s_player
-{
-	t_xyz		where;			//	Current position
-	t_xyz		velocity;
-	SDL_Surface	*picture;
-	int			picked;
-	int			sect;
-}				t_player;
-*/
 typedef	struct	s_player
 {
 	t_xyz		where;			//	текущая позиция

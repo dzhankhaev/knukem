@@ -43,7 +43,7 @@ void 		run_queue(t_engine *engine)
 		color = engine->wall.color;
 		if (transform_wall(engine, i))
 			render_scene(engine, sectorno,    //текущий сектор
-						 engine->sectors[sectorno].neighbors[i]);		//его сосед, границу с которым мы обрабатываем.
+						 engine->sectors[sectorno].neighbors[i], i);		//его сосед, границу с которым мы обрабатываем.
 		if (engine->minimap.mod)
 			minimap(engine, engine->sectors[sectorno].vertex[i],
 					engine->sectors[sectorno].vertex[i + 1], color);

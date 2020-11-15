@@ -91,48 +91,7 @@ typedef struct	s_ixyz
 	int 		y;
 	int 		z;
 }				t_ixyz;
-/*
-typedef struct	s_xy
-{
-	float		x;
-	float		y;
-}				t_xy;
 
-typedef struct	s_xyz
-{
-	float		x;
-	float		y;
-	float		z;
-}				t_xyz;
-
-typedef struct	s_sector
-{
-	float		floor;
-	float		ceil;
-	t_xy		*vertex;		//	Координаты всех вершин данного сектора, причем первая координата дублируется в конце
-	int 		*neighbors;		//	Номера всех соседей данного сектора, им соответствуют вершины i, i+1
-	int 		npoints;		//	Количество соседей
-}				t_sect;
-
-typedef	struct	s_player
-{
-	t_xyz		where;			//	текущая позиция
-	t_xyz		velocity;		//	вектор скорости движения
-	float		angle;			//	угол поворота
-	float		anglesin;		//	синус угла поворота
-	float		anglecos;		//	косинус угла поворота
-	float		vangle;			//	угол вертикального поворота
-	int 		sector;			//	текущий сектор
-	int			wsad[4];		//	ключи передвижения. 1 - движение, 0 - его отсутстие
-	int			falling;		//	1 - игрок падает, 0 - не падает. Игрок может падать вверх. Если 1, будет применено ускорение
-	int			flying;			//	флаг = 1 только если игрок летит вверх или вниз. ФЛАГ НЕ ОПРЕДЕЛЯЕТ НАХОДИТСЯ ИГРОК В РЕЖИМЕ ПОЛЕТА ИЛИ НЕТ
-	int			ground;			//	грок стоит на земле
-	float		eyeheight;		//	текущая высота камеры
-	float		speed;			//	текущая максимальная скорость
-	int			deep_sh;		//	затенение
-	SDL_Event	event;
-}				t_player;
-*/
 typedef struct	s_minimap
 {
 	t_xy		point;				//центр миникарты
@@ -238,7 +197,7 @@ void			load_data(t_engine *engine, t_all *all);
 void			unload_data(t_engine *engine);
 void			game_loop(t_engine *engine, t_all *all);
 int 			transform_wall(t_engine *engine, int i);
-void			render_scene(t_engine *engine, int sectorno, int neighbor);
+void			render_scene(t_engine *engine, int sectorno, int neighbor, int i);
 void			ceil_and_floor_init(t_engine *engine);
 void			render_wall(t_engine *engine, int neighbor, t_ixyz t);
 t_line			get_op1(t_temp *a);

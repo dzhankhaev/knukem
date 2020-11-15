@@ -30,7 +30,6 @@ static void	draw(t_engine *engine)
 	*engine->queue = (t_queue){engine->player.sector, 0, W - 1, -1};
 	engine->future = engine->queue + 1;
 	engine->present = engine->queue;
-	reset(engine);
 	while (engine->present != engine->future)
 	{
 		run_queue(engine);
@@ -44,7 +43,6 @@ void		game_loop(t_engine *engine, t_all *all)
 	int		time;
 
 	time = 0;
-	engine->edit.mod = 1;
 	while (!engine->close_request)
 	{
 		if (engine->edit.mod)
@@ -53,6 +51,7 @@ void		game_loop(t_engine *engine, t_all *all)
 			engine->edit.mod = main_editor(engine, "map-clear", all);
 			SDL_SetRelativeMouseMode(SDL_TRUE); //скрывает курсор, он движется относительно окна
 		}
+		reset(engine);
 		keys_manager(engine);
 		move(engine);
 		SDL_LockSurface(engine->screen);
