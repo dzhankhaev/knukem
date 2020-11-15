@@ -24,35 +24,20 @@ void    new_sector(t_all *all, int x, int y)
 		}
 		all->sectors[all->num_sectors - 1].npoints--;
 		get_neighbours(&all->sectors[all->num_sectors -1], all, all->num_sectors);
-		// all->sectors[all->num_sectors - 1].vertex[0] = (t_xy){all->temp->vertex[0].x, all->temp->vertex[0].y};
-		// printf("%p\n%p\n", all->temp->vertex, all->sectors[all->num_sectors-1].vertex);
 		ft_memdel((void*)&all->temp->vertex);
 		all->temp->npoints = 0;
-		
-	
-/**********************test**************/
-		// i = 0;
-		// while( i < all->sectors[all->num_sectors - 1].npoints)
-		// {
-		// 	printf("vertex %d = %d, %d, points = %d\n", i, (int)all->sectors[all->num_sectors - 1].vertex[i].x, 
-		// 		(int)all->sectors[all->num_sectors - 1].vertex[i].y, 
-		// 		(int)all->sectors[all->num_sectors - 1].npoints);
-		// 	i++;
-		// }
-		// exit(0);
 	}
 }
 
 void	select_sector(t_all *all, int x, int y)
 {
 	t_xyz	where;
-	int		sect;
 
 	where = (t_xyz){x, y, all->draw_floors.x};
-	if((sect = which_sector(all, all->sectors, where)) != -1)
-		all->swap = &all->sectors[sect];
-	else
-		all->swap = NULL;
+	all->swap_num = which_sector(all, all->sectors, where);
+		// all->swap = &all->sectors[sect];
+	// else
+		// all->swap = NULL;
 	
 }
 
@@ -62,8 +47,10 @@ void	map_click(t_xyz *mouse, t_all *all)
 	int y;
 	int i;
 
-	x = all->point.x - (all->area.w/(2 * all->step) - (all->mapsize.x/2));
-	y = all->point.y - (all->area.h/(2 * all->step) - (all->mapsize.y/2));
+	x = all->point.x - all->d.x - (all->area.w/(2 * all->step) - (all->mapsize.x/2));
+	y = all->point.y - all->d.y - (all->area.h/(2 * all->step) - (all->mapsize.y/2));
+	printf("x = %d y = %d\n", x, y);
+
 	i = 0;
 	if(all->buttons[0].state == 1)
 	{

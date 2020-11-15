@@ -1,10 +1,12 @@
 #ifndef EDITOR_H
 # define EDITOR_H
 
-
+# include "../SDL/SDL.h"
+# include "../SDL/SDL_ttf.h"
 //# include "../SDL/SDL.h"
 //# include "../SDL/SDL_ttf.h"
-# include <SDL2_ttf/SDL_ttf.h>
+// # include <SDL2_ttf/SDL_ttf.h>
+
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -13,8 +15,8 @@
 # define MAP_WIDTH 11
 # define MAP_HEIGHT 11
 # define MAP_ELEMENTS 4
-# define WIDTH 1920
-# define HEIGHT 1080
+# define WIDTH 1200
+# define HEIGHT 700
 # define FPS 200
 # define PICT_HEIGHT 50
 # define PICT_WIDTH 90
@@ -24,7 +26,7 @@
 # define OBJ_SIDE 57
 # define EYE_HEIGHT 6
 
-# define GREY (SDL_Color){150, 150, 150, 255}
+# define GREY (SDL_Color){70, 70, 70, 255}
 # define BLACK (SDL_Color){0, 0, 0, 255}
 # define WHITE (SDL_Color){255, 255, 255, 255}
 # define RED (SDL_Color){255, 0, 0, 255}
@@ -126,6 +128,9 @@ typedef struct      s_all
 {
     t_player        player;// переменная игрока.
     t_sect          *swap;//указатель на выбранный сектор
+	int				swap_num;
+	t_xy			delta;
+	t_xy			d;
     t_sect          *sectors;//массив с данными о секторах
 	t_sect			*temp;
     int				num_sectors;//количество секторов
@@ -165,12 +170,13 @@ void				draw_player(t_all *all, t_sdl *sdl, t_player *player, t_xy *c);
 void				draw_grid(t_all *all, SDL_Rect *area, int step);
 void    			draw_texture(t_sdl *sdl, SDL_Rect area, SDL_Surface *txt);
 void    			draw_fill_rect(t_all *all, SDL_Rect area, SDL_Color color);
-void				draw_line(t_all *all, t_xyz *start, t_xyz *fin, SDL_Color color);
+void				draw_line(t_all *all, t_xy *start, t_xy *fin, SDL_Color color);
 void				draw_circle(t_sdl *sdl, t_xy coord, int r, SDL_Color color);
 void				draw_labels(t_all *all, t_labels *labels, int i);
 void				draw_digits(t_sdl *sdl, t_all *all, int x, int y);
 void				get_neighbours(t_sect *sector, t_all 	*all, int n);
 int					which_sector(t_all *all, t_sect *sectors, t_xyz where);
+void				remove_sector(t_all *all, t_sect *sectors);
 SDL_Surface			*get_text_surface(t_all *all, char *name, SDL_Rect target, SDL_Color color);
 void       			put_pxl(t_sdl *sdl, SDL_Color col, int x, int y);
 

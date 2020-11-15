@@ -1,59 +1,48 @@
 #include "editor.h"
 
-void	isometric(t_all *all, t_sect *sect, t_xyz *start, t_xyz rot)
+void	isometric(t_all *all, t_xy *s, t_xyz rot, float add)
 {
 	t_xyz temp;
+	t_xyz start;
 
+	start = (t_xyz){s->x, s->y, add};
 	rot = (t_xyz){(M_PI / 25 * rot.x), (M_PI / 25 * rot.y), (M_PI / 135 * rot.z) * -1};
-	temp.y = all->area.h/2 + start->y * cos(rot.x) + start->z * sin(rot.x);
-	temp.z = -(start->y * sin(rot.x)) + start->z * cos(rot.x);
-	start->y = temp.y;
-	start->z = temp.z;
-	temp.x = all->area.w/2 + start->x * cos(rot.y) + start->z * sin(rot.y);
-	temp.z = -(start->x * sin(rot.y)) + start->z * cos(rot.y);
-	start->x = temp.x;
-	start->z = temp.z;
-	start->x -= all->area.w/2;
-	start->y -= all->area.h/4; 
+	temp.y = all->area.h/2 + start.y * cos(rot.x) + start.z * sin(rot.x);
+	temp.z = -(start.y * sin(rot.x)) + start.z * cos(rot.x);
+	s->y = temp.y;
+	start.z = temp.z;
+	temp.x = all->area.w/2 + start.x * cos(rot.y) + start.z * sin(rot.y);
+	temp.z = -(start.x * sin(rot.y)) + start.z * cos(rot.y);
+	s->x = temp.x;
+	start.z = temp.z;
+	s->x -= all->area.w/2;
+	s->y -= all->area.h/4; 
 
 }
 
-void	draw_wall(t_all *all, t_sect *sect, int j, t_xyz *vertex)
-{
-	t_xyz f;
-
-	f = (t_xyz){sect->vertex[j].x * all->step + (all->step * 5),
-				sect->vertex[j].y * all->step + (all->step * 6), sect->ceil * all->step/2};
-	//isometric(all, sect, &f, all->rot);
-	//if (sect->floor == 0)
-		draw_line(all, vertex, &f, all->color);
-}
-
-void	draw_sector(t_sect *sect, t_all *all, SDL_Color color)
+void	draw_sector(t_sect *sect, t_all *all, SDL_Color color, t_xy delta)
 {
 	int		i;
-	t_xyz	s;
-	t_xyz	f;
+	t_xy	s;
+	t_xy	f;
 
 	i = 0;
 	while(i < sect->npoints)
 	{
-		s = (t_xyz){(sect->vertex[i].x * all->step) + all->area.w/2 - (round(all->mapsize.x/2) * all->step) + all->area.x,
-				(sect->vertex[i].y * all->step) + all->area.h/2 - (round(all->mapsize.y/2) * all->step) + all->area.y, 0};
-					// (temp->floor - all->mapsize.z/4) * all->step/2};
-		f = (t_xyz){(sect->vertex[i + 1].x * all->step) + all->area.w/2 - (round(all->mapsize.x/2) * all->step)+ all->area.x,
-				(sect->vertex[i + 1].y * all->step) + all->area.h/2 - (round(all->mapsize.y/2) * all->step)+ all->area.y, 0};
-					// (temp->floor - all->mapsize.z/4) * all->step/2};
+		s = (t_xy){(sect->vertex[i].x * all->step) + delta.x,
+				(sect->vertex[i].y * all->step) + delta.y};
+		f = (t_xy){(sect->vertex[i + 1].x * all->step) + delta.x,
+				(sect->vertex[i + 1].y * all->step) + delta.y};
 		if (all->iso)
 		{
-			isometric(all, sect, &s, (t_xyz){10, 1, 1});
-			isometric(all, sect, &f, (t_xyz){10, 1, 1});
+			isometric(all, &s, (t_xyz){10, 1, 0}, sect[i].floor - all->mapsize.z/4 * all->step/2);
+			isometric(all, &f, (t_xyz){10, 1, 0}, sect[i].floor - all->mapsize.z/4 * all->step/2);
 		}
 		color = (sect->neighbors[i] == -1 && i < sect->npoints) ? RED : BLUE;
 		if (sect->floor >= all->draw_floors.x && sect->floor <= all->draw_floors.y)
 		{
-			draw_line(all, &s, &f, sect == all->swap ? YELLOW : color);
-			draw_circle(all->sdl, (t_xy){s.x, s.y}, 2, GREEN);
+			draw_line(all, &s, &f, &all->sectors[all->swap_num] == sect ? YELLOW : color);
+			draw_circle(all->sdl, s, 2, GREEN);
 		}
 		i++;
 	}
@@ -71,42 +60,37 @@ void	draw_map(t_sdl *sdl, t_sect *sect, t_all *all)
 	{
 		j = 0;
 		temp = &sect[i];
-		draw_sector(temp, all, all->color);
-		if (all->swap)
-			draw_sector(all->swap, all, YELLOW);
+		draw_sector(temp, all, all->color, all->delta);
 		i++;
 	}
+	if (all->swap_num != -1)
+		draw_sector(&sect[all->swap_num], all, YELLOW, all->delta);
 }
 
 
 
-void	draw_temp(t_all *all, t_sdl *sdl, t_sect *temp)
+void	draw_temp(t_all *all, t_sdl *sdl, t_sect *temp, t_xy delta)
 {
-	t_xyz	s;
-	t_xyz	f;
+	t_xy	s;
+	t_xy	f;
 	int j = 0;
-	int x = all->point.x - (all->area.w/(2 * all->step) - (all->mapsize.x/2));
-	int y = all->point.y - (all->area.h/(2 * all->step) - (all->mapsize.y/2));
+	int x = all->point.x - all->d.x - (all->area.w/(2 * all->step) - (all->mapsize.x/2));
+	int y = all->point.y - all->d.y -(all->area.h/(2 * all->step) - (all->mapsize.y/2));
 
 	while (j < temp->npoints)
 	{
 		if(j == temp->npoints - 1)
 		{
-			s = (t_xyz){(temp->vertex[j].x * all->step) + all->area.w/2 - (all->mapsize.x/2 * all->step) + all->area.x,
-			(temp->vertex[j].y * all->step) + all->area.h/2 - (all->mapsize.y/2 * all->step) + all->area.y, 0};
-				// (temp->floor - all->mapsize.z/4) * all->step/2};
-			f = (t_xyz){(x * all->step) + all->area.w/2 - (all->mapsize.x/2 * all->step) + all->area.x,
-			(y * all->step) + all->area.h/2 - (all->mapsize.y/2 * all->step) + all->area.y, 0};
-				// (temp->floor - all->mapsize.z/4) * all->step/2};
+			s = (t_xy){(temp->vertex[j].x * all->step) + delta.x, 
+			(temp->vertex[j].y * all->step) + delta.y};
+			f = (t_xy){(x * all->step) + delta.x, (y * all->step) + delta.y};
 		}
 		else
-		{		// printf(" %d,%d", (int)temp->vertex[j].x, (int)temp->vertex[j].y);
-			s = (t_xyz){(temp->vertex[j].x * all->step) + all->area.w/2 - (all->mapsize.x/2 * all->step) + all->area.x,
-				(temp->vertex[j].y * all->step) + all->area.h/2 - (all->mapsize.y/2 * all->step) + all->area.y,
-					(temp->floor - all->mapsize.z/4) * all->step/2};
-			f = (t_xyz){(temp->vertex[j + 1].x * all->step) + all->area.w/2 - (all->mapsize.x/2 * all->step) + all->area.x,
-				(temp->vertex[j + 1].y * all->step) + all->area.h/2 - (all->mapsize.y/2 * all->step) + all->area.y,
-					(temp->floor - all->mapsize.z/4) * all->step/2};
+		{
+			s = (t_xy){(temp->vertex[j].x * all->step) + delta.x,
+				(temp->vertex[j].y * all->step) + delta.y};
+			f = (t_xy){(temp->vertex[j + 1].x * all->step) + delta.x,
+				(temp->vertex[j + 1].y * all->step) + delta.y};
 		}
 		draw_line(all, &s, &f, WHITE);
 		j++;
@@ -126,7 +110,7 @@ void	draw_area(t_sdl *sdl, t_all *all)
 			all->point.y * all->step + c.y + all->area.y}, 2, WHITE);
 	if (all->temp->npoints > 0)
 		// draw_sector(all->temp, all, all->color);
-	 	draw_temp(all, sdl, all->temp); /// uncomment to defeat segfault
+	 	draw_temp(all, sdl, all->temp, all->delta); /// uncomment to defeat segfault
 	draw_player(all, sdl, &all->player, &c);
 }
 
@@ -156,6 +140,11 @@ void	draw_all(t_all *all, t_sdl *sdl, t_button *btn)
 {
     int			i;
 	Uint32 state;
+
+	all->delta.x = all->area.x + all->area.w/2 - 
+		(round(all->mapsize.x/2) * all->step) + all->d.x * all->step;
+	all->delta.y = all->area.y + all->area.h/2 - 
+		(round(all->mapsize.y/2) * all->step) + all->d.y * all->step;
 	draw_area(sdl, all);
 	draw_fill_rect(all, (SDL_Rect){4, 4, WIDTH / 4 - 8, HEIGHT - 8}, LAZUR);
 	i = btn[0].state == 1 ? 3 : 0;

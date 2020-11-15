@@ -6,28 +6,21 @@ void	key_press(t_all *all)
 
 	keystate = SDL_GetKeyboardState(NULL);
 	if (keystate[SDL_SCANCODE_ESCAPE])
-	{
 		all->threed = 1;
-		// //SDL_DestroyTexture(all->texture);
-    	// SDL_DestroyWindow(all->sdl->window);
-	    // SDL_Quit();
-		// free(all->sectors);
-		// free(all->sdl);
-		// free(all);
-		// exit(0);
-	}
+	else if (keystate[SDL_SCANCODE_DELETE])
+		remove_sector(all, all->sectors);
 	else if (keystate[SDL_SCANCODE_TAB])
 		write_map("new", all);
 	else if (keystate[SDL_SCANCODE_RIGHT])
-		all->step += 1;
+		all->d.x += 1;
 	else if (keystate[SDL_SCANCODE_LEFT])
-		all->step -= (all->step > 1) ? 1 : 0;
+		all->d.x -= 1;//(all->step > 1) ? 1 : 0;
 	else if (keystate[SDL_SCANCODE_I])
 		all->iso = (all->iso == 0) ? 1 : 0;
 	else if (keystate[SDL_SCANCODE_UP])
-		all->set_floors.x += 1;
+		all->d.y -= 1;
 	else if (keystate[SDL_SCANCODE_DOWN])
-		all->set_floors.y += 1;
+		all->d.y += 1;
 }
 
 void		level_buttons(t_all *all, t_button *buttons, SDL_MouseButtonEvent *event)
@@ -77,17 +70,6 @@ void	button_click(t_all *all, t_button *buttons, SDL_MouseButtonEvent *event, in
 	all->player.picked = buttons[1].state == 1 ? 1 : 0;
 }
 
-// t_xyz	coordinator(t_all *all, int x, int y, t_xyz rot)
-// {
-// 	t_xyz temp;
-// 	int z;
-
-// 	temp.x = x / all->step - (all->area.w/all->step/2 - all->mapsize.x/2);
-// 	temp.y = y / all->step - (all->area.h/all->step/2 - all->mapsize.y/2);
-// 	temp.z = z / all->step + all->mapsize.z;
-// 	return(temp);
-// }
-
 void	closest_point(t_all *all, t_xyint point, t_xyz mouse)
 {
 	t_xy	   c;
@@ -125,7 +107,6 @@ void	on_mouse(t_all *all, SDL_MouseButtonEvent *event)
 		{
 			all->mouse = (t_xyz){event->x - temp->x, event->y - temp->y};//пишем координаты мыши на карте
 			map_click(&all->mouse, all);
-			printf("x = %d y = %d\n", (int)all->point.x, (int)all->point.y);
 		}
 	}
 	else if (event->x < WIDTH / 4 && event->y < HEIGHT / 4)
@@ -148,8 +129,6 @@ void	on_event(t_all *all, SDL_Event *event)
 /* дописать 
 1 - удаление сектора
 2 - сдвиг координат
-3 - бэкграунд через имадж
 4 - вывод в файл
 5 - чтение файла
-6 - подключение движка
 7 - выбор текстуры */

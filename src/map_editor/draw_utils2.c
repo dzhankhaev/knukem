@@ -39,8 +39,8 @@ void	draw_player(t_all *all, t_sdl *sdl, t_player *player, t_xy *c)
 
 	if (all->player.picked == 0)
 	//(temp->vertex[j].x * all->step) + all->area.w/2 - (all->mapsize.x/2 * all->step)
-		loc = (SDL_Rect){(player->where.x * all->step) + all->area.w/2 - (round(all->mapsize.x/2) * all->step) - all->step/2  + all->area.x,
-		 (player->where.y * all->step) + all->area.h/2 - (round(all->mapsize.y/2) * all->step) - all->step/2 + all->area.y,
+		loc = (SDL_Rect){(player->where.x * all->step) + all->delta.x - all->step/2,
+		 (player->where.y * all->step) + all->delta.y - all->step/2,
 	 		 all->step, all->step};
 	else if (all->player.picked == 1)
 		loc = (SDL_Rect){all->point.x * all->step + c->x - all->step/2 + all->area.x,
@@ -53,16 +53,15 @@ void	draw_grid(t_all *all, SDL_Rect *area, int step)
 	t_xy	c;
 
 	c = (t_xy){area->x + (area->w / 2) % step, area->y + (area->h / 2) % step};
-	all->color = (SDL_Color){100, 100, 100, 70};
 	while (c.x <= area->x + area->w)
 	{
-		draw_line(all, &(t_xyz){c.x, 0, 0}, &(t_xyz){c.x, area->h}, all->color);
+		draw_line(all, &(t_xy){c.x, 0}, &(t_xy){c.x, area->h}, GREY);
 		c.x += step;
 	}
 	c.x = area->x;
 	while (c.y <= area->y + area->h)
 	{
-		draw_line(all, &(t_xyz){c.x, c.y, 0}, &(t_xyz){area->x + area->w, c.y}, all->color);
+		draw_line(all, &c, &(t_xy){area->x + area->w, c.y}, GREY);
 		c.y += step;
 	}
 }

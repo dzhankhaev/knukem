@@ -40,6 +40,19 @@ static void			init_sdl(t_sdl *sdl, t_all *all)
 	load_fonts(sdl, all);
 }
 
+int		scaling(SDL_Rect area, t_xyz mapsize)
+{
+	int scale;
+
+	scale = 0;
+	if (mapsize.x < 10 || mapsize.x < 10)
+		return (32);
+	scale = (int)((area.h * area.w)/(mapsize.x * mapsize.y));
+	while (mapsize.x * scale >= area.w || mapsize.y * scale >= area.h)
+		scale--;
+	return scale;
+}
+
 void    init_all(t_all *all)
 {
     // if (!(all = (t_all*)malloc(sizeof(t_all))))
@@ -51,11 +64,13 @@ void    init_all(t_all *all)
 	load_fonts(all->sdl, all);
 	all->mouse.z = 0; // переменная нажатия ЛКМ
 	all->area = (SDL_Rect){WIDTH/4, 0, WIDTH - WIDTH/4, HEIGHT}; // Область карты
-	all->step = all->area.h / 23;
+	all->step = scaling(all->area, all->mapsize);
+	printf("area S = %d\n",all->step);
 	all->point = (t_xyint){0,0};
 	all->temp = NULL;
 	all->temp = (t_sect*)malloc(sizeof(t_sect));
-	all->swap = NULL;
+	all->swap_num = -1;
+	all->d = (t_xy){0, 0}; 
 	// all->sectors = (t_sect*)malloc(sizeof(t_sect));
 	all->threed = 0;
 	all->temp->npoints = 0;

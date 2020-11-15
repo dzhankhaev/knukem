@@ -1,6 +1,6 @@
 #include "editor.h"
 
-void	draw_line(t_all *all, t_xyz *start, t_xyz *fin, SDL_Color color)
+void	draw_line(t_all *all, t_xy *start, t_xy *fin, SDL_Color color)
 {
 	float		dx;
 	float		dy;
