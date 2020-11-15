@@ -2,8 +2,10 @@ cmake_minimum_required(VERSION 3.10.2)
 project(doom-nukem C)
 set(CMAKE_C_STANDARD 99)
 
-find_package(SDL2 REQUIRED)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR})
+
+find_package(SDL2 REQUIRED)
+find_package(SDL2_ttf REQUIRED)
 find_package(SDL2_image REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS} ${SDL2_IMAGE_INCLUDE_DIRS})
 
@@ -17,7 +19,8 @@ add_executable(d-k3d
         src/map_editor/main.c
         src/map_editor/map_events.c
         src/map_editor/neighbors.c
-        src/map_editor/reader.c
+        src/map_editor/pixels.c
+        src/map_editor/sectors.c
         src/map_editor/texture.c
         src/map_editor/write.c
         src/init.c
@@ -46,6 +49,9 @@ add_executable(d-k3d
 
 include_directories(d-k3d
         includes/
+        libft/
         )
 
-target_link_libraries(d-k3d ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES} -lm)
+set(LIBFT ${CMAKE_SOURCE_DIR}/libft/libft.a)
+
+target_link_libraries(d-k3d ${LIBFT} ${SDL2_LIBRARIES} ${SDL2_TTF_LIBRARIES} ${SDL2_IMAGE_LIBRARIES} -lm)

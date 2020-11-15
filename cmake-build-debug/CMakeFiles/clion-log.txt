@@ -1,4 +1,5 @@
 /snap/clion/129/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/chel/Desktop/knukem
+-- Found SDL2_ttf: /usr/lib/x86_64-linux-gnu/libSDL2_ttf.so (found version "2.0.14") 
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/chel/Desktop/knukem/cmake-build-debug

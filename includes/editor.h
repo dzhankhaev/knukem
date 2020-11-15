@@ -1,8 +1,10 @@
 #ifndef EDITOR_H
 # define EDITOR_H
 
-# include "../SDL/SDL.h"
-# include "../SDL/SDL_ttf.h"
+//# include "../SDL/SDL.h"
+//# include "../SDL/SDL_ttf.h"
+# include <SDL2/SDL.h>
+# include <SDL_ttf.h>
 //# include "../SDL/SDL.h"
 //# include "../SDL/SDL_ttf.h"
 // # include <SDL2_ttf/SDL_ttf.h>
@@ -15,8 +17,8 @@
 # define MAP_WIDTH 11
 # define MAP_HEIGHT 11
 # define MAP_ELEMENTS 4
-# define WIDTH 1200
-# define HEIGHT 700
+# define WIDTH 1920
+# define HEIGHT 1080
 # define FPS 200
 # define PICT_HEIGHT 50
 # define PICT_WIDTH 90

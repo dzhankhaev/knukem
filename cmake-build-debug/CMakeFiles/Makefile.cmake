@@ -9,6 +9,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "../CMakeLists.txt"
   "../FindSDL2_image.cmake"
+  "../FindSDL2_ttf.cmake"
   "CMakeFiles/3.17.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.17.3/CMakeSystem.cmake"
   "/snap/clion/129/bin/cmake/linux/share/cmake-3.17/Modules/CMakeCInformation.cmake"

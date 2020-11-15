@@ -413,6 +413,357 @@ src/manage_data.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/manage_data.c.s
 .PHONY : src/manage_data.c.s
 
+src/map_editor/draw.o: src/map_editor/draw.c.o
+
+.PHONY : src/map_editor/draw.o
+
+# target to build an object file
+src/map_editor/draw.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/draw.c.o
+.PHONY : src/map_editor/draw.c.o
+
+src/map_editor/draw.i: src/map_editor/draw.c.i
+
+.PHONY : src/map_editor/draw.i
+
+# target to preprocess a source file
+src/map_editor/draw.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/draw.c.i
+.PHONY : src/map_editor/draw.c.i
+
+src/map_editor/draw.s: src/map_editor/draw.c.s
+
+.PHONY : src/map_editor/draw.s
+
+# target to generate assembly for a file
+src/map_editor/draw.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/draw.c.s
+.PHONY : src/map_editor/draw.c.s
+
+src/map_editor/draw_utils.o: src/map_editor/draw_utils.c.o
+
+.PHONY : src/map_editor/draw_utils.o
+
+# target to build an object file
+src/map_editor/draw_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/draw_utils.c.o
+.PHONY : src/map_editor/draw_utils.c.o
+
+src/map_editor/draw_utils.i: src/map_editor/draw_utils.c.i
+
+.PHONY : src/map_editor/draw_utils.i
+
+# target to preprocess a source file
+src/map_editor/draw_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/draw_utils.c.i
+.PHONY : src/map_editor/draw_utils.c.i
+
+src/map_editor/draw_utils.s: src/map_editor/draw_utils.c.s
+
+.PHONY : src/map_editor/draw_utils.s
+
+# target to generate assembly for a file
+src/map_editor/draw_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/draw_utils.c.s
+.PHONY : src/map_editor/draw_utils.c.s
+
+src/map_editor/draw_utils2.o: src/map_editor/draw_utils2.c.o
+
+.PHONY : src/map_editor/draw_utils2.o
+
+# target to build an object file
+src/map_editor/draw_utils2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/draw_utils2.c.o
+.PHONY : src/map_editor/draw_utils2.c.o
+
+src/map_editor/draw_utils2.i: src/map_editor/draw_utils2.c.i
+
+.PHONY : src/map_editor/draw_utils2.i
+
+# target to preprocess a source file
+src/map_editor/draw_utils2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/draw_utils2.c.i
+.PHONY : src/map_editor/draw_utils2.c.i
+
+src/map_editor/draw_utils2.s: src/map_editor/draw_utils2.c.s
+
+.PHONY : src/map_editor/draw_utils2.s
+
+# target to generate assembly for a file
+src/map_editor/draw_utils2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/draw_utils2.c.s
+.PHONY : src/map_editor/draw_utils2.c.s
+
+src/map_editor/errors.o: src/map_editor/errors.c.o
+
+.PHONY : src/map_editor/errors.o
+
+# target to build an object file
+src/map_editor/errors.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/errors.c.o
+.PHONY : src/map_editor/errors.c.o
+
+src/map_editor/errors.i: src/map_editor/errors.c.i
+
+.PHONY : src/map_editor/errors.i
+
+# target to preprocess a source file
+src/map_editor/errors.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/errors.c.i
+.PHONY : src/map_editor/errors.c.i
+
+src/map_editor/errors.s: src/map_editor/errors.c.s
+
+.PHONY : src/map_editor/errors.s
+
+# target to generate assembly for a file
+src/map_editor/errors.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/errors.c.s
+.PHONY : src/map_editor/errors.c.s
+
+src/map_editor/events.o: src/map_editor/events.c.o
+
+.PHONY : src/map_editor/events.o
+
+# target to build an object file
+src/map_editor/events.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/events.c.o
+.PHONY : src/map_editor/events.c.o
+
+src/map_editor/events.i: src/map_editor/events.c.i
+
+.PHONY : src/map_editor/events.i
+
+# target to preprocess a source file
+src/map_editor/events.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/events.c.i
+.PHONY : src/map_editor/events.c.i
+
+src/map_editor/events.s: src/map_editor/events.c.s
+
+.PHONY : src/map_editor/events.s
+
+# target to generate assembly for a file
+src/map_editor/events.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/events.c.s
+.PHONY : src/map_editor/events.c.s
+
+src/map_editor/init.o: src/map_editor/init.c.o
+
+.PHONY : src/map_editor/init.o
+
+# target to build an object file
+src/map_editor/init.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/init.c.o
+.PHONY : src/map_editor/init.c.o
+
+src/map_editor/init.i: src/map_editor/init.c.i
+
+.PHONY : src/map_editor/init.i
+
+# target to preprocess a source file
+src/map_editor/init.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/init.c.i
+.PHONY : src/map_editor/init.c.i
+
+src/map_editor/init.s: src/map_editor/init.c.s
+
+.PHONY : src/map_editor/init.s
+
+# target to generate assembly for a file
+src/map_editor/init.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/init.c.s
+.PHONY : src/map_editor/init.c.s
+
+src/map_editor/main.o: src/map_editor/main.c.o
+
+.PHONY : src/map_editor/main.o
+
+# target to build an object file
+src/map_editor/main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/main.c.o
+.PHONY : src/map_editor/main.c.o
+
+src/map_editor/main.i: src/map_editor/main.c.i
+
+.PHONY : src/map_editor/main.i
+
+# target to preprocess a source file
+src/map_editor/main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/main.c.i
+.PHONY : src/map_editor/main.c.i
+
+src/map_editor/main.s: src/map_editor/main.c.s
+
+.PHONY : src/map_editor/main.s
+
+# target to generate assembly for a file
+src/map_editor/main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/main.c.s
+.PHONY : src/map_editor/main.c.s
+
+src/map_editor/map_events.o: src/map_editor/map_events.c.o
+
+.PHONY : src/map_editor/map_events.o
+
+# target to build an object file
+src/map_editor/map_events.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/map_events.c.o
+.PHONY : src/map_editor/map_events.c.o
+
+src/map_editor/map_events.i: src/map_editor/map_events.c.i
+
+.PHONY : src/map_editor/map_events.i
+
+# target to preprocess a source file
+src/map_editor/map_events.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/map_events.c.i
+.PHONY : src/map_editor/map_events.c.i
+
+src/map_editor/map_events.s: src/map_editor/map_events.c.s
+
+.PHONY : src/map_editor/map_events.s
+
+# target to generate assembly for a file
+src/map_editor/map_events.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/map_events.c.s
+.PHONY : src/map_editor/map_events.c.s
+
+src/map_editor/neighbors.o: src/map_editor/neighbors.c.o
+
+.PHONY : src/map_editor/neighbors.o
+
+# target to build an object file
+src/map_editor/neighbors.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/neighbors.c.o
+.PHONY : src/map_editor/neighbors.c.o
+
+src/map_editor/neighbors.i: src/map_editor/neighbors.c.i
+
+.PHONY : src/map_editor/neighbors.i
+
+# target to preprocess a source file
+src/map_editor/neighbors.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/neighbors.c.i
+.PHONY : src/map_editor/neighbors.c.i
+
+src/map_editor/neighbors.s: src/map_editor/neighbors.c.s
+
+.PHONY : src/map_editor/neighbors.s
+
+# target to generate assembly for a file
+src/map_editor/neighbors.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/neighbors.c.s
+.PHONY : src/map_editor/neighbors.c.s
+
+src/map_editor/pixels.o: src/map_editor/pixels.c.o
+
+.PHONY : src/map_editor/pixels.o
+
+# target to build an object file
+src/map_editor/pixels.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/pixels.c.o
+.PHONY : src/map_editor/pixels.c.o
+
+src/map_editor/pixels.i: src/map_editor/pixels.c.i
+
+.PHONY : src/map_editor/pixels.i
+
+# target to preprocess a source file
+src/map_editor/pixels.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/pixels.c.i
+.PHONY : src/map_editor/pixels.c.i
+
+src/map_editor/pixels.s: src/map_editor/pixels.c.s
+
+.PHONY : src/map_editor/pixels.s
+
+# target to generate assembly for a file
+src/map_editor/pixels.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/pixels.c.s
+.PHONY : src/map_editor/pixels.c.s
+
+src/map_editor/sectors.o: src/map_editor/sectors.c.o
+
+.PHONY : src/map_editor/sectors.o
+
+# target to build an object file
+src/map_editor/sectors.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/sectors.c.o
+.PHONY : src/map_editor/sectors.c.o
+
+src/map_editor/sectors.i: src/map_editor/sectors.c.i
+
+.PHONY : src/map_editor/sectors.i
+
+# target to preprocess a source file
+src/map_editor/sectors.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/sectors.c.i
+.PHONY : src/map_editor/sectors.c.i
+
+src/map_editor/sectors.s: src/map_editor/sectors.c.s
+
+.PHONY : src/map_editor/sectors.s
+
+# target to generate assembly for a file
+src/map_editor/sectors.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/sectors.c.s
+.PHONY : src/map_editor/sectors.c.s
+
+src/map_editor/texture.o: src/map_editor/texture.c.o
+
+.PHONY : src/map_editor/texture.o
+
+# target to build an object file
+src/map_editor/texture.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/texture.c.o
+.PHONY : src/map_editor/texture.c.o
+
+src/map_editor/texture.i: src/map_editor/texture.c.i
+
+.PHONY : src/map_editor/texture.i
+
+# target to preprocess a source file
+src/map_editor/texture.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/texture.c.i
+.PHONY : src/map_editor/texture.c.i
+
+src/map_editor/texture.s: src/map_editor/texture.c.s
+
+.PHONY : src/map_editor/texture.s
+
+# target to generate assembly for a file
+src/map_editor/texture.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/texture.c.s
+.PHONY : src/map_editor/texture.c.s
+
+src/map_editor/write.o: src/map_editor/write.c.o
+
+.PHONY : src/map_editor/write.o
+
+# target to build an object file
+src/map_editor/write.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/write.c.o
+.PHONY : src/map_editor/write.c.o
+
+src/map_editor/write.i: src/map_editor/write.c.i
+
+.PHONY : src/map_editor/write.i
+
+# target to preprocess a source file
+src/map_editor/write.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/write.c.i
+.PHONY : src/map_editor/write.c.i
+
+src/map_editor/write.s: src/map_editor/write.c.s
+
+.PHONY : src/map_editor/write.s
+
+# target to generate assembly for a file
+src/map_editor/write.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/write.c.s
+.PHONY : src/map_editor/write.c.s
+
 src/movement/fall.o: src/movement/fall.c.o
 
 .PHONY : src/movement/fall.o
@@ -575,6 +926,33 @@ src/render/minimap.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/minimap.c.s
 .PHONY : src/render/minimap.c.s
 
+src/render/render_ceil.o: src/render/render_ceil.c.o
+
+.PHONY : src/render/render_ceil.o
+
+# target to build an object file
+src/render/render_ceil.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_ceil.c.o
+.PHONY : src/render/render_ceil.c.o
+
+src/render/render_ceil.i: src/render/render_ceil.c.i
+
+.PHONY : src/render/render_ceil.i
+
+# target to preprocess a source file
+src/render/render_ceil.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_ceil.c.i
+.PHONY : src/render/render_ceil.c.i
+
+src/render/render_ceil.s: src/render/render_ceil.c.s
+
+.PHONY : src/render/render_ceil.s
+
+# target to generate assembly for a file
+src/render/render_ceil.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_ceil.c.s
+.PHONY : src/render/render_ceil.c.s
+
 src/render/render_floor.o: src/render/render_floor.c.o
 
 .PHONY : src/render/render_floor.o
@@ -601,6 +979,33 @@ src/render/render_floor.s: src/render/render_floor.c.s
 src/render/render_floor.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_floor.c.s
 .PHONY : src/render/render_floor.c.s
+
+src/render/render_sky.o: src/render/render_sky.c.o
+
+.PHONY : src/render/render_sky.o
+
+# target to build an object file
+src/render/render_sky.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_sky.c.o
+.PHONY : src/render/render_sky.c.o
+
+src/render/render_sky.i: src/render/render_sky.c.i
+
+.PHONY : src/render/render_sky.i
+
+# target to preprocess a source file
+src/render/render_sky.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_sky.c.i
+.PHONY : src/render/render_sky.c.i
+
+src/render/render_sky.s: src/render/render_sky.c.s
+
+.PHONY : src/render/render_sky.s
+
+# target to generate assembly for a file
+src/render/render_sky.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_sky.c.s
+.PHONY : src/render/render_sky.c.s
 
 src/render/wall/edge_tx_init.o: src/render/wall/edge_tx_init.c.o
 
@@ -1046,6 +1451,45 @@ help:
 	@echo "... src/manage_data.o"
 	@echo "... src/manage_data.i"
 	@echo "... src/manage_data.s"
+	@echo "... src/map_editor/draw.o"
+	@echo "... src/map_editor/draw.i"
+	@echo "... src/map_editor/draw.s"
+	@echo "... src/map_editor/draw_utils.o"
+	@echo "... src/map_editor/draw_utils.i"
+	@echo "... src/map_editor/draw_utils.s"
+	@echo "... src/map_editor/draw_utils2.o"
+	@echo "... src/map_editor/draw_utils2.i"
+	@echo "... src/map_editor/draw_utils2.s"
+	@echo "... src/map_editor/errors.o"
+	@echo "... src/map_editor/errors.i"
+	@echo "... src/map_editor/errors.s"
+	@echo "... src/map_editor/events.o"
+	@echo "... src/map_editor/events.i"
+	@echo "... src/map_editor/events.s"
+	@echo "... src/map_editor/init.o"
+	@echo "... src/map_editor/init.i"
+	@echo "... src/map_editor/init.s"
+	@echo "... src/map_editor/main.o"
+	@echo "... src/map_editor/main.i"
+	@echo "... src/map_editor/main.s"
+	@echo "... src/map_editor/map_events.o"
+	@echo "... src/map_editor/map_events.i"
+	@echo "... src/map_editor/map_events.s"
+	@echo "... src/map_editor/neighbors.o"
+	@echo "... src/map_editor/neighbors.i"
+	@echo "... src/map_editor/neighbors.s"
+	@echo "... src/map_editor/pixels.o"
+	@echo "... src/map_editor/pixels.i"
+	@echo "... src/map_editor/pixels.s"
+	@echo "... src/map_editor/sectors.o"
+	@echo "... src/map_editor/sectors.i"
+	@echo "... src/map_editor/sectors.s"
+	@echo "... src/map_editor/texture.o"
+	@echo "... src/map_editor/texture.i"
+	@echo "... src/map_editor/texture.s"
+	@echo "... src/map_editor/write.o"
+	@echo "... src/map_editor/write.i"
+	@echo "... src/map_editor/write.s"
 	@echo "... src/movement/fall.o"
 	@echo "... src/movement/fall.i"
 	@echo "... src/movement/fall.s"
@@ -1064,9 +1508,15 @@ help:
 	@echo "... src/render/minimap.o"
 	@echo "... src/render/minimap.i"
 	@echo "... src/render/minimap.s"
+	@echo "... src/render/render_ceil.o"
+	@echo "... src/render/render_ceil.i"
+	@echo "... src/render/render_ceil.s"
 	@echo "... src/render/render_floor.o"
 	@echo "... src/render/render_floor.i"
 	@echo "... src/render/render_floor.s"
+	@echo "... src/render/render_sky.o"
+	@echo "... src/render/render_sky.i"
+	@echo "... src/render/render_sky.s"
 	@echo "... src/render/wall/edge_tx_init.o"
 	@echo "... src/render/wall/edge_tx_init.i"
 	@echo "... src/render/wall/edge_tx_init.s"
