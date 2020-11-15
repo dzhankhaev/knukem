@@ -86,15 +86,15 @@ void		pack(char *dir_src, char *filename_out)
 	t_files			*top;
 
 	size = 0;
-	memcpy(file_name, dir_src, 14);
+	memcpy(file_name, ".tmp/", 14);
 	line = ft_strjoin(dir_src, (dir_src[ft_strlen(dir_src) - 1] == '/') ? "files" : "/files");
 	if ((fd = open(line, O_RDONLY)))
 	{
 		ft_strdel(&line);
 		while ((get_next_line(fd, &line)))
 		{
-			ft_strdel(&line);
 			size++;
+			ft_strdel(&line);
 		}
 			printf("%i\n",size);
 		top = (t_files*)malloc(sizeof(t_files) * size);
@@ -103,7 +103,7 @@ void		pack(char *dir_src, char *filename_out)
 		while ((get_next_line(fd, &line)))
 		{
 			i++;
-			memcpy(file_name + 7, line, 14);
+			memcpy(file_name + 5, line, 14);
 			if (stat(file_name, &sb) != -1)
 			{
 				if (!(sb.st_mode & S_IFDIR))
@@ -119,8 +119,8 @@ void		pack(char *dir_src, char *filename_out)
 			ft_strdel(&line);
 		}
 		close(fd);
-		line = ft_strjoin(dir_src, filename_out);
-		fd = open(line,O_RDWR|O_TRUNC|O_CREAT,999);
+		// line = ft_strjoin(dir_src, filename_out);
+		fd = open(filename_out,O_RDWR|O_TRUNC|O_CREAT,999);
 		ft_strdel(&line);
 		lseek(fd,7,0);
 		write(fd, &size, 1);
