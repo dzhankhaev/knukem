@@ -1,12 +1,12 @@
 #include "engine.h"
 
-// static int	get_color(t_engine *engine, unsigned s, int color)
-// {
-// 	if (fabsf(engine->sectors[s].floor
-// 	- engine->sectors[engine->player.sector].floor) < FLOOR_DIFF)
-// 		return (color);
-// 	return (0);
-// }
+static int	get_color(t_engine *engine, unsigned s, int color)
+{
+	if (fabsf(engine->sectors[s].floor
+			  - engine->sectors[engine->player.sector].floor) < FLOOR_DIFF)
+		return (color);
+	return (0);
+}
 
 int				check_repeat(t_engine *engine, int sectorno, int neighbor)
 {
@@ -34,7 +34,7 @@ void 		run_queue(t_engine *engine)
 
 	i = 0;
 	sectorno = engine->present->sectorno;
-	while (i < (int)engine->sectors[sectorno].npoints)
+	while (i < engine->sectors[sectorno].npoints)
 	{
 		if (engine->sectors[sectorno].neighbors[i] <= -1)
 			engine->wall.color = WALL_COLOR;
@@ -42,14 +42,14 @@ void 		run_queue(t_engine *engine)
 			engine->wall.color = EDGE_COLOR;
 		color = engine->wall.color;
 		if (transform_wall(engine, i))
-			render_wall(engine, sectorno,	//текущий сектор
-			   engine->sectors[sectorno].neighbors[i]);		//его сосед, границу с которым мы обрабатываем.
+			render_scene(engine, sectorno,    //текущий сектор
+						 engine->sectors[sectorno].neighbors[i]);		//его сосед, границу с которым мы обрабатываем.
 		if (engine->minimap.mod)
 			minimap(engine, engine->sectors[sectorno].vertex[i],
-	engine->sectors[sectorno].vertex[i + 1], color);
+					engine->sectors[sectorno].vertex[i + 1], color);
 		else
 			minimap_cut(engine, (t_xy){engine->wall.x0, engine->wall.y0},
-	(t_xy){engine->wall.x1, engine->wall.y1}, engine->wall.color);
+						(t_xy){engine->wall.x1, engine->wall.y1}, engine->wall.color);
 		i++;
 	}
 }

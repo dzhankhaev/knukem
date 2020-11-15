@@ -84,6 +84,13 @@ typedef struct	s_fline		//	стена для вычислений
 	float		y1;
 	Uint32		color;
 }				t_fline;
+
+typedef struct	s_ixyz
+{
+	int 		x;
+	int 		y;
+	int 		z;
+}				t_ixyz;
 /*
 typedef struct	s_xy
 {
@@ -138,9 +145,12 @@ typedef struct	s_minimap
 
 typedef struct	s_edit
 {
-	int			hchange[4];			//	модификаторы
-	int 		mod_s;				//	 этот сектор будет модифицирован
-	int			mod;				//	режим модификатора !не используется!
+	int			hchange[4];			//	модификаторы высоты пола и потолка
+	int 		mod_s;				//	этот сектор будет модифицирован											}
+	int			mod_w;				//	эта стена будет модифицирована											 }текстуры
+	int			mod_tx;				//	1 - пол, 2 - потолок, 3 - нижняя линия раздела, 4 - верхняя, 0 - стена	}
+	int			txno;				//	эту текстуру назначим
+	int			mod;				//
 }				t_edit;
 
 typedef struct	s_img
@@ -166,24 +176,28 @@ typedef struct	s_temp
 
 typedef struct	s_temp2
 {
+	int			y_top;
+	int			y_bot;
 	float		z;			//высота
 	int			txx;		//текстура по х
 	int 		txy;		//текстура по у
-	float		mapx;		//координаты пикселя на карта
+	float		mapx;		//координаты пикселя на карте
 	float		mapy;		//
 	float		cosx;		//с учетом mapx (mapx вычисляется один раз на столбец)
 	float		sinx;
 	float		pcos;		//для игрока
 	float		psin;
+	SDL_Surface	*tx;
 }				t_temp2;
 
-typedef struct	s_vplanes
+typedef struct	s_vplane
 {
-	int minx;//минимальная координата X области
-	int maxx;//максимальная координата X области
-	int topy[W];//верхняя координата
-	int boty[W];//нижняя координата
-}				t_vplanes;
+	int			minx;//минимальная координата X области
+	int			maxx;//максимальная координата X области
+	int			topy[W];//верхняя координата
+	int			boty[W];//нижняя координата
+	float		z;
+}				t_vplane;
 
 typedef struct	s_engine
 {
@@ -208,8 +222,8 @@ typedef struct	s_engine
 	int			ycbot[W];			//	экранные y потолка
 	int			yftop[W];			//	экранные y пола
 	int			yfbot[W];			//	экранные y пола
-	t_vplanes	vpfloor;			//	таблица для заполнения пола
-	t_vplanes	vpceil;				//	таблица для заполнения потолка
+	t_vplane	vpfloor;			//	таблица для заполнения пола
+	t_vplane	vpceil;				//	таблица для заполнения потолка
 	int			u0;					//	начало и конец текстуры с учетом чати стены, которая не попала в кадр
 	int			u1;					//
 	t_temp		rend_wall;			//используется в rendel_Wall тобы обойти норму
@@ -224,14 +238,14 @@ void			load_data(t_engine *engine, t_all *all);
 void			unload_data(t_engine *engine);
 void			game_loop(t_engine *engine, t_all *all);
 int 			transform_wall(t_engine *engine, int i);
-void			render_wall(t_engine *engine, int sectorno, int neighbor);
-void			ceil_and_floor(t_engine *engine);
-void			render_edge(t_engine *engine, int neighbor);
+void			render_scene(t_engine *engine, int sectorno, int neighbor);
+void			ceil_and_floor_init(t_engine *engine);
+void			render_wall(t_engine *engine, int neighbor, t_ixyz t);
 t_line			get_op1(t_temp *a);
 t_line			get_op2(t_temp *a);
 t_line			get_op3(t_temp *a);
 void			init_ceil_floor(t_engine *engine, t_sect sector, t_line *wall);
-void			init_edge(t_engine *engine, t_sect sector, t_line *wall);
+void			init_wall(t_engine *engine, t_sect sector, t_line *wall);
 t_fline			cut_wall(t_fline wall, t_xy i1, t_xy i2);						//разрезает стену для попадания в fov
 void			minimap(t_engine *engine, t_xy v0, t_xy v1, Uint32 color);			//рисуется отдельно для каждой стены
 void			minimap_cut(t_engine *engine, t_xy v0, t_xy v1, Uint32 color);		//показывает только то, что в поле зрения
@@ -240,14 +254,13 @@ void			run_queue(t_engine *engine);
 int				check_repeat(t_engine *engine, int sectorno, int neighbor);
 void			render_line(t_line p, SDL_Surface *screen, t_line borders);		//линия в пределах указанных границ
 void			render_vline(t_engine *engine, t_line p, t_line op, int texture_n);			//вертикальная линия сверху вниз
-void			render_hline(t_engine *engine, int y, int xbegin, int xend, int txno);
+void			render_hline(t_engine *engine, int y, int xbegin, int xend);
 void			move(t_engine *engine);
 void			fall(t_player *player, t_sect *sectors);
 Uint32			deep_shading(t_engine *engine, t_line wall, int x);			//модификатор освещения в зависимости от дальности
 Uint32			get_shadow(Uint32 z, Uint32 color);								//применить модификатор освещения
 void			real_time_edit(t_engine *engine);
-void			render_floor(t_engine *engine);
-void			render_ceil(t_engine *engine);
+void			render_hplane(t_engine *engine, t_vplane *p, int txno);
 void			render_sky(t_engine *engine);
 int 			main_editor(t_engine *engine, char *name, t_all *all);
 

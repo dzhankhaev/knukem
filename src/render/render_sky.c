@@ -1,6 +1,6 @@
 #include "engine.h"
 #include "utilits.h"
-
+/*
 static void		loop(t_engine *engine, int *y_top, int *y_bot, int *x_table)
 {
 	int y1;
@@ -49,3 +49,4 @@ void			render_sky(t_engine *engine)
 		y++;
 	}
 }
+ */

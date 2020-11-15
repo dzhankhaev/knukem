@@ -818,6 +818,33 @@ src/movement/move.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/movement/move.c.s
 .PHONY : src/movement/move.c.s
 
+src/render/ceil_and_floor_init.o: src/render/ceil_and_floor_init.c.o
+
+.PHONY : src/render/ceil_and_floor_init.o
+
+# target to build an object file
+src/render/ceil_and_floor_init.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.o
+.PHONY : src/render/ceil_and_floor_init.c.o
+
+src/render/ceil_and_floor_init.i: src/render/ceil_and_floor_init.c.i
+
+.PHONY : src/render/ceil_and_floor_init.i
+
+# target to preprocess a source file
+src/render/ceil_and_floor_init.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.i
+.PHONY : src/render/ceil_and_floor_init.c.i
+
+src/render/ceil_and_floor_init.s: src/render/ceil_and_floor_init.c.s
+
+.PHONY : src/render/ceil_and_floor_init.s
+
+# target to generate assembly for a file
+src/render/ceil_and_floor_init.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.s
+.PHONY : src/render/ceil_and_floor_init.c.s
+
 src/render/line/render_hline.o: src/render/line/render_hline.c.o
 
 .PHONY : src/render/line/render_hline.o
@@ -926,59 +953,59 @@ src/render/minimap.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/minimap.c.s
 .PHONY : src/render/minimap.c.s
 
-src/render/render_ceil.o: src/render/render_ceil.c.o
+src/render/render_hplane.o: src/render/render_hplane.c.o
 
-.PHONY : src/render/render_ceil.o
-
-# target to build an object file
-src/render/render_ceil.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_ceil.c.o
-.PHONY : src/render/render_ceil.c.o
-
-src/render/render_ceil.i: src/render/render_ceil.c.i
-
-.PHONY : src/render/render_ceil.i
-
-# target to preprocess a source file
-src/render/render_ceil.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_ceil.c.i
-.PHONY : src/render/render_ceil.c.i
-
-src/render/render_ceil.s: src/render/render_ceil.c.s
-
-.PHONY : src/render/render_ceil.s
-
-# target to generate assembly for a file
-src/render/render_ceil.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_ceil.c.s
-.PHONY : src/render/render_ceil.c.s
-
-src/render/render_floor.o: src/render/render_floor.c.o
-
-.PHONY : src/render/render_floor.o
+.PHONY : src/render/render_hplane.o
 
 # target to build an object file
-src/render/render_floor.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_floor.c.o
-.PHONY : src/render/render_floor.c.o
+src/render/render_hplane.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_hplane.c.o
+.PHONY : src/render/render_hplane.c.o
 
-src/render/render_floor.i: src/render/render_floor.c.i
+src/render/render_hplane.i: src/render/render_hplane.c.i
 
-.PHONY : src/render/render_floor.i
+.PHONY : src/render/render_hplane.i
 
 # target to preprocess a source file
-src/render/render_floor.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_floor.c.i
-.PHONY : src/render/render_floor.c.i
+src/render/render_hplane.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_hplane.c.i
+.PHONY : src/render/render_hplane.c.i
 
-src/render/render_floor.s: src/render/render_floor.c.s
+src/render/render_hplane.s: src/render/render_hplane.c.s
 
-.PHONY : src/render/render_floor.s
+.PHONY : src/render/render_hplane.s
 
 # target to generate assembly for a file
-src/render/render_floor.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_floor.c.s
-.PHONY : src/render/render_floor.c.s
+src/render/render_hplane.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_hplane.c.s
+.PHONY : src/render/render_hplane.c.s
+
+src/render/render_scene.o: src/render/render_scene.c.o
+
+.PHONY : src/render/render_scene.o
+
+# target to build an object file
+src/render/render_scene.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_scene.c.o
+.PHONY : src/render/render_scene.c.o
+
+src/render/render_scene.i: src/render/render_scene.c.i
+
+.PHONY : src/render/render_scene.i
+
+# target to preprocess a source file
+src/render/render_scene.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_scene.c.i
+.PHONY : src/render/render_scene.c.i
+
+src/render/render_scene.s: src/render/render_scene.c.s
+
+.PHONY : src/render/render_scene.s
+
+# target to generate assembly for a file
+src/render/render_scene.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_scene.c.s
+.PHONY : src/render/render_scene.c.s
 
 src/render/render_sky.o: src/render/render_sky.c.o
 
@@ -1007,33 +1034,6 @@ src/render/render_sky.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_sky.c.s
 .PHONY : src/render/render_sky.c.s
 
-src/render/wall/edge_tx_init.o: src/render/wall/edge_tx_init.c.o
-
-.PHONY : src/render/wall/edge_tx_init.o
-
-# target to build an object file
-src/render/wall/edge_tx_init.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/edge_tx_init.c.o
-.PHONY : src/render/wall/edge_tx_init.c.o
-
-src/render/wall/edge_tx_init.i: src/render/wall/edge_tx_init.c.i
-
-.PHONY : src/render/wall/edge_tx_init.i
-
-# target to preprocess a source file
-src/render/wall/edge_tx_init.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/edge_tx_init.c.i
-.PHONY : src/render/wall/edge_tx_init.c.i
-
-src/render/wall/edge_tx_init.s: src/render/wall/edge_tx_init.c.s
-
-.PHONY : src/render/wall/edge_tx_init.s
-
-# target to generate assembly for a file
-src/render/wall/edge_tx_init.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/edge_tx_init.c.s
-.PHONY : src/render/wall/edge_tx_init.c.s
-
 src/render/wall/perspective_init.o: src/render/wall/perspective_init.c.o
 
 .PHONY : src/render/wall/perspective_init.o
@@ -1061,33 +1061,6 @@ src/render/wall/perspective_init.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.s
 .PHONY : src/render/wall/perspective_init.c.s
 
-src/render/wall/render_surfaces.o: src/render/wall/render_surfaces.c.o
-
-.PHONY : src/render/wall/render_surfaces.o
-
-# target to build an object file
-src/render/wall/render_surfaces.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/render_surfaces.c.o
-.PHONY : src/render/wall/render_surfaces.c.o
-
-src/render/wall/render_surfaces.i: src/render/wall/render_surfaces.c.i
-
-.PHONY : src/render/wall/render_surfaces.i
-
-# target to preprocess a source file
-src/render/wall/render_surfaces.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/render_surfaces.c.i
-.PHONY : src/render/wall/render_surfaces.c.i
-
-src/render/wall/render_surfaces.s: src/render/wall/render_surfaces.c.s
-
-.PHONY : src/render/wall/render_surfaces.s
-
-# target to generate assembly for a file
-src/render/wall/render_surfaces.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/render_surfaces.c.s
-.PHONY : src/render/wall/render_surfaces.c.s
-
 src/render/wall/render_wall.o: src/render/wall/render_wall.c.o
 
 .PHONY : src/render/wall/render_wall.o
@@ -1114,6 +1087,33 @@ src/render/wall/render_wall.s: src/render/wall/render_wall.c.s
 src/render/wall/render_wall.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.s
 .PHONY : src/render/wall/render_wall.c.s
+
+src/render/wall/wall_tx_init.o: src/render/wall/wall_tx_init.c.o
+
+.PHONY : src/render/wall/wall_tx_init.o
+
+# target to build an object file
+src/render/wall/wall_tx_init.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.o
+.PHONY : src/render/wall/wall_tx_init.c.o
+
+src/render/wall/wall_tx_init.i: src/render/wall/wall_tx_init.c.i
+
+.PHONY : src/render/wall/wall_tx_init.i
+
+# target to preprocess a source file
+src/render/wall/wall_tx_init.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.i
+.PHONY : src/render/wall/wall_tx_init.c.i
+
+src/render/wall/wall_tx_init.s: src/render/wall/wall_tx_init.c.s
+
+.PHONY : src/render/wall/wall_tx_init.s
+
+# target to generate assembly for a file
+src/render/wall/wall_tx_init.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.s
+.PHONY : src/render/wall/wall_tx_init.c.s
 
 src/run_queue.o: src/run_queue.c.o
 
@@ -1496,6 +1496,9 @@ help:
 	@echo "... src/movement/move.o"
 	@echo "... src/movement/move.i"
 	@echo "... src/movement/move.s"
+	@echo "... src/render/ceil_and_floor_init.o"
+	@echo "... src/render/ceil_and_floor_init.i"
+	@echo "... src/render/ceil_and_floor_init.s"
 	@echo "... src/render/line/render_hline.o"
 	@echo "... src/render/line/render_hline.i"
 	@echo "... src/render/line/render_hline.s"
@@ -1508,27 +1511,24 @@ help:
 	@echo "... src/render/minimap.o"
 	@echo "... src/render/minimap.i"
 	@echo "... src/render/minimap.s"
-	@echo "... src/render/render_ceil.o"
-	@echo "... src/render/render_ceil.i"
-	@echo "... src/render/render_ceil.s"
-	@echo "... src/render/render_floor.o"
-	@echo "... src/render/render_floor.i"
-	@echo "... src/render/render_floor.s"
+	@echo "... src/render/render_hplane.o"
+	@echo "... src/render/render_hplane.i"
+	@echo "... src/render/render_hplane.s"
+	@echo "... src/render/render_scene.o"
+	@echo "... src/render/render_scene.i"
+	@echo "... src/render/render_scene.s"
 	@echo "... src/render/render_sky.o"
 	@echo "... src/render/render_sky.i"
 	@echo "... src/render/render_sky.s"
-	@echo "... src/render/wall/edge_tx_init.o"
-	@echo "... src/render/wall/edge_tx_init.i"
-	@echo "... src/render/wall/edge_tx_init.s"
 	@echo "... src/render/wall/perspective_init.o"
 	@echo "... src/render/wall/perspective_init.i"
 	@echo "... src/render/wall/perspective_init.s"
-	@echo "... src/render/wall/render_surfaces.o"
-	@echo "... src/render/wall/render_surfaces.i"
-	@echo "... src/render/wall/render_surfaces.s"
 	@echo "... src/render/wall/render_wall.o"
 	@echo "... src/render/wall/render_wall.i"
 	@echo "... src/render/wall/render_wall.s"
+	@echo "... src/render/wall/wall_tx_init.o"
+	@echo "... src/render/wall/wall_tx_init.i"
+	@echo "... src/render/wall/wall_tx_init.s"
 	@echo "... src/run_queue.o"
 	@echo "... src/run_queue.i"
 	@echo "... src/run_queue.s"

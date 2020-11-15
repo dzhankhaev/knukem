@@ -7,8 +7,11 @@ void	real_time_edit(t_engine *engine)
 
 	hchange = engine->edit.hchange;
 	s = engine->edit.mod_s;
-	engine->sectors[s].floor -= hchange[0] * 1;
-	engine->sectors[s].floor += hchange[1] * 1;
-	engine->sectors[s].ceil -= hchange[2] * 1;
-	engine->sectors[s].ceil += hchange[3] * 1;
+	if (s != 0x01ab01)
+	{
+		engine->sectors[s].floor -= hchange[0] * 1;
+		engine->sectors[s].floor += hchange[1] * 1;
+		engine->sectors[s].ceil -= hchange[2] * 1;
+		engine->sectors[s].ceil += hchange[3] * 1;
+	}
 }

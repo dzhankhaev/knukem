@@ -16,8 +16,9 @@ static void	reset(t_engine *engine)
 		engine->yftop[i] = 0;
 		engine->yfbot[i++] = H - 1;
 	}
-	engine->edit.mod_s = -1;	//запрет на модификацию (прежде нужно найти цель)
-
+	engine->edit.mod_s = 0x01ab01;	//запрет на модификацию (прежде нужно найти цель)
+	engine->edit.mod_w = -1;	//запрет на модификацию (прежде нужно найти цель)
+	engine->edit.txno = -1;
 }
 
 static void	draw(t_engine *engine)
@@ -57,6 +58,7 @@ void		game_loop(t_engine *engine, t_all *all)
 		SDL_LockSurface(engine->screen);
 		draw(engine);
 		SDL_UnlockSurface(engine->screen);
+		real_time_edit(engine);
 		if (SDL_GetTicks() - time < 32)
 			SDL_Delay(32 - SDL_GetTicks() + time);
 		time = SDL_GetTicks();
