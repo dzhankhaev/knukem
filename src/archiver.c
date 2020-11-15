@@ -17,6 +17,18 @@
 **
 **/
 
+/*загрузка игры из карты*/
+// проверить сушествует ли каталог? создать
+// распаковать в каталог все файлы
+// выполнить загрузку всех файлов текстур все что надо
+// затереть созданый каталог и внутринности
+
+/*создание карты*/
+// распаковать дефолтный архив в дирректорию либо прочитать дирректорию, найти там фаил с перечнем файлов
+// сгенерировать карту и перенаправить в фаил
+// упаковать все в один фаил с определенным названием
+// подчистить за собой
+
 typedef struct		s_files
 {
 	char	file_name[24];
@@ -25,63 +37,45 @@ typedef struct		s_files
 }					t_files;
 
 
-void		check_folder(char *file_name)
+void		check_folder(char *dir_name)
 {
 	char			**arr;
 	int				len;
 	int				i;
-	struct stat		sb;
 	char			*sub_line;
 	char			*line;
-	int				fd = S_IRWXU | S_IRWXG | S_IRWXO;
-	int chmodd, mkdirr, ulink;
+	int				fd;
 
-	(void)sb;
-	// sub_line = ft_strtrim(file_name);
 	sub_line = NULL;
 	line = NULL;
-	arr = ft_strsplit(file_name, '/');
-	len = ft_arrlen((void**)arr);
+	sub_line = ft_strtrim(dir_name);
+	len = (sub_line[ft_strlen(sub_line) - 1] == '/') ? 0 : -1;
+	ft_strdel(&sub_line);
+	arr = ft_strsplit(dir_name, '/');
+	len += ft_arrlen((void**)arr);
 	i = 0;
-	if (len > 1)
+	sub_line = ft_strdup(arr[i]);
+	while (i < len && len > 0)
 	{
-		// ft_strdel(&line);
-		line = ft_strdup(arr[i++]);
-		if ((fd = open(line, O_RDONLY)) < 0)
-		{
-			if ((chmodd = chmod(line, 0777)) < 0)
-				mkdirr = mkdir(line, 0777);
-		}
-		else
-			close(fd);
-	}
-	while (i < len - 1)
-	{
+		ft_strdel(&line);
+		line = ft_strjoin(sub_line, (i == 0) ? "" : arr[i]);
 		ft_strdel(&sub_line);
 		sub_line = ft_strjoin(line, "/");
-		ft_strdel(&line);
-		line = ft_strjoin(sub_line, arr[i]);
 		if ((fd = open(line, O_RDONLY)) < 0)
 		{
-			if ((chmodd = chmod(line, 0777)) < 0)
-				mkdirr = mkdir(line, 0777);
+			if (chmod(line, 0777) < 0)
+				mkdir(line, 0777);
 		}
 		else
 			close(fd);
-		
 		i++;
 	}
 	ft_strdel(&sub_line);
-	sub_line = ft_strjoin("/Users/ecelsa/knukem/", arr[0]);
-	ulink = unlink(arr[0]);
-	perror(sub_line);
-	printf("%s\n",sub_line);
-	sub_line = ft_strjoin(line, "/");
-	ft_strdel(&sub_line);
-	sub_line = ft_strjoin(line,arr[i]);
+	ft_strdel(&line);
+	ft_free_split(arr);
 }
 
-void		pack(char *filename_out)
+void		pack(char *dir_src, char *filename_out)
 {
 	struct stat		sb;
 	char			file_name[21];
@@ -92,11 +86,16 @@ void		pack(char *filename_out)
 	t_files			*top;
 
 	size = 0;
-	memcpy(file_name, "textur/", 14);
-	if ((fd = open("textur/files", O_RDONLY)))
+	memcpy(file_name, dir_src, 14);
+	line = ft_strjoin(dir_src, (dir_src[ft_strlen(dir_src) - 1] == '/') ? "files" : "/files");
+	if ((fd = open(line, O_RDONLY)))
 	{
+		ft_strdel(&line);
 		while ((get_next_line(fd, &line)))
+		{
+			ft_strdel(&line);
 			size++;
+		}
 			printf("%i\n",size);
 		top = (t_files*)malloc(sizeof(t_files) * size);
 		lseek(fd, 0, 0);
@@ -117,11 +116,12 @@ void		pack(char *filename_out)
 						top[i].start_byte = top[i - 1].start_byte + top[i - 1].size_block + 1;
 				}
 			}
-			free(line);
+			ft_strdel(&line);
 		}
 		close(fd);
-		
-		fd = open(filename_out,O_RDWR|O_TRUNC|O_CREAT,999);
+		line = ft_strjoin(dir_src, filename_out);
+		fd = open(line,O_RDWR|O_TRUNC|O_CREAT,999);
+		ft_strdel(&line);
 		lseek(fd,7,0);
 		write(fd, &size, 1);
 		i = -1;
@@ -139,6 +139,7 @@ void		pack(char *filename_out)
 			close(fdo);
 			printf("file name '%s' size-%i start-%i\n",top[i].file_name,top[i].size_block,top[i].start_byte);
 		}
+		free(top);
 		close(fd);
 	}
 }
@@ -149,31 +150,26 @@ int main(int argc, char **argv)
 {
 	int fd;
 	pid_t pid;
-	char *bla[] = {"testfile" , NULL}, *env[] = {NULL};
+	char *bla[] = {"" ,"!!!" , "arg2" , NULL};
 	// int ret;
 
 	pid = fork();
-	write(1, "\n!\n",3);
 	if (pid == 0)
 	{
-		execve("dddd/rmsh", bla, env);
-		exit(0);
+		execve("run.sh", bla, NULL);
+		exit (0);
 	}
 	if (argc == 2)
 	{
 		fd = open(argv[1], O_RDONLY);
-		if ((pid = fork()) == 0)
-			exit(0);
-		write(1, "|||||||\n", 8);
-		// printf("!!!!!!\n");
-		// check_folder(argv[1]);
+		check_folder(argv[1]);
+		pack(argv[1], "out_file");
+		close(fd);
 		// pack(argv[1]);
 	}
 	else
 	{
 		ft_putstr("Not filename for out pack\n");
 	}
-	
-
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 15:56:14 by dgruyere          #+#    #+#             */
-/*   Updated: 2020/11/12 14:37:51 by ecelsa           ###   ########.fr       */
+/*   Updated: 2020/11/15 05:36:05 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@
 # include <stdlib.h>
 # include <string.h>
 
-# define BUFF_SIZE 10
+# define BUFF_SIZE 1000
+# define ARR_SIZE 255
 
 typedef struct		s_list
 {

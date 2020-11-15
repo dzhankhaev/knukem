@@ -6,7 +6,7 @@
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/05 11:25:54 by dgruyere          #+#    #+#             */
-/*   Updated: 2020/09/21 21:16:04 by ecelsa           ###   ########.fr       */
+/*   Updated: 2020/11/15 05:35:08 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		ft_new_line(char **s, char **line, int fd, int ret)
 
 int		get_next_line(const int fd, char **line)
 {
-	static char	*s[255];
+	static char	*s[ARR_SIZE];
 	char		buf[BUFF_SIZE + 1];
 	char		*tmp;
 	int			ret;
