@@ -1,11 +1,11 @@
 #ifndef EDITOR_H
 # define EDITOR_H
 
-# include "../SDL/SDL.h"
-# include "../SDL/SDL_ttf.h"
-# include "../SDL2_image-2.0.5/SDL_image.h"
-// # include <SDL2/SDL.h>
-// # include <SDL_ttf.h>
+//# include "../SDL/SDL.h"
+//# include "../SDL/SDL_ttf.h"
+//# include "../SDL2_image-2.0.5/SDL_image.h"
+ # include <SDL2/SDL.h>
+ # include <SDL_ttf.h>
 // # include <SDL2_ttf/SDL_ttf.h>
 
 # include <stdio.h>
@@ -66,7 +66,6 @@ typedef struct      s_sect
 	float		floor;
 	float		ceil;
 	t_xy		*vertex;		//	Координаты всех вершин данного сектора, причем первая координаты дублируется в конце
-	int			*txlist;		//	Номера текстур стен
 	int		 *neighbors;		//	Номера всех соседей данного сектора
 	unsigned	npoints; //	Количество соседей
 			

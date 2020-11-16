@@ -33,8 +33,6 @@ unistd.h
 -
 string.h
 -
-SDL2/SDL.h
--
 SDL_image.h
 -
 SDL_ttf.h
@@ -43,10 +41,6 @@ SDL_image.h
 -
 SDL_mixer.h
 -
-
-../includes/utilits.h
-engine.h
-../includes/engine.h
 
 ../libft/libft.h
 unistd.h
@@ -60,17 +54,9 @@ stdlib.h
 math.h
 -
 
-/home/chel/Desktop/knukem/src/render/line/render_vline.c
+/home/chel/Desktop/knukem/src/manage_data.c
 engine.h
-/home/chel/Desktop/knukem/src/render/line/engine.h
-utilits.h
-/home/chel/Desktop/knukem/src/render/line/utilits.h
-
-/home/chel/Desktop/knukem/src/render/render_scene.c
-utilits.h
-/home/chel/Desktop/knukem/src/render/utilits.h
-engine.h
-/home/chel/Desktop/knukem/src/render/engine.h
+/home/chel/Desktop/knukem/src/engine.h
 
 /usr/include/SDL2/SDL.h
 SDL_main.h
