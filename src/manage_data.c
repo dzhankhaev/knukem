@@ -51,14 +51,10 @@ void	load_data(t_engine *engine, t_all *all)
 
 			sect->npoints = m /= 2; //количество соседей и вершин этого сектора (всегда одинаково)
 			sect->neighbors = malloc((m) * sizeof(*sect->neighbors));
-			sect->txlist = malloc((m) * sizeof(*sect->txlist));
 			sect->vertex = malloc((m + 1) * sizeof(*sect->vertex));
 			//цикл запишет правую половину num массива, то есть соседей
 			for (n = 0; n < m; ++n)
-			{
 				sect->neighbors[n] = num[m + n];
-				sect->txlist[n] = abs(num[m + n]);
-			}
 			for (n = 0; n < m; ++n)
 			    //в num[n] перечислены номера вершин сектора
 			    //в vert[num[n]] получаем координаты вершины по её номеру
@@ -89,10 +85,7 @@ void unload_data(t_engine *engine)
 	for (unsigned a = 0; a < engine->num_sectors; ++a)
 		free(engine->sectors[a].vertex);
 	for (unsigned a = 0; a < engine->num_sectors; ++a)
-	{
 		free(engine->sectors[a].neighbors);
-		free(engine->sectors[a].txlist);
-	}
 	free(engine->sectors);
 	engine->sectors = NULL;
 	engine->num_sectors = 0;

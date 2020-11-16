@@ -11,7 +11,7 @@ static void		rendering_init(t_engine *engine, int sectorno, int neighbor)
 	//стены строго вертикально, потому у 0 и 1 иксы одинаковы
 	a->x0 = imax(imin(a->wall[0].x0, a->wall[0].x1), engine->present->x0);			//заполняем в промежутке текущей стены
 	a->x1 = imin(imax(a->wall[1].x0, a->wall[1].x1), engine->present->x1);			//иксы у пола и потолка всегда равны
-	if (neighbor != -1)
+	if (neighbor >= 0)
 	{
 		if ((a->x1 > a->x0) && engine->future + 1 != engine->queue + engine->max_queue &&
 			check_repeat(engine, sectorno, neighbor))
@@ -49,16 +49,13 @@ void			render_scene(t_engine *engine, int sectorno, int neighbor, int i)
 	t_ixyz	txset;
 
 	rendering_init(engine, sectorno, neighbor);
-	// txset = (t_ixyz){engine->sectors[sectorno].txlist[i], 1, 2};
-	txset = (t_ixyz){0, 1, 2};
+	txset = (t_ixyz){abs(engine->sectors[sectorno].neighbors[i]), 1, 2};
 	if (engine->edit.mod_w != -1 && engine->edit.txno != -1)
 	{
+		if (engine->sectors[sectorno].neighbors[i] <= -1)
+			engine->sectors[sectorno].neighbors[i] = engine->edit.txno * -1;
 		if (engine->edit.mod_tx == 0)
-		{
-			engine->sectors[sectorno].txlist[i] = engine->edit.txno;
-			// txset = (t_ixyz){engine->sectors[sectorno].txlist[i], 1, 2};
-			txset = (t_ixyz){engine->edit.txno, 1, 2};
-		}
+			txset = (t_ixyz){abs(engine->sectors[sectorno].neighbors[i]), 1, 2};
 		else if (engine->edit.mod_tx == 3)
 			txset = (t_ixyz){0, engine->edit.txno, 2};
 		else if (engine->edit.mod_tx == 4)

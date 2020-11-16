@@ -9,7 +9,7 @@ int check_match(t_sect  *sect, t_xyz coord, t_xy *temp, int sect_num)
         sect->neighbors[n - 1] = sect_num;
     else if (coord.x == temp[n + 1].x && coord.y == temp[n + 1].y)
         sect->neighbors[n] = sect_num;
-    else if (coord.x == temp[sect->npoints - 1].x 
+    else if (coord.x == temp[sect->npoints - 1].x
         && coord.y == temp[sect->npoints - 1].y)
         sect->neighbors[sect->npoints - 1] = sect_num;
     else

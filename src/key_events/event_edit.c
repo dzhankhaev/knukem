@@ -3,9 +3,7 @@
 
 void	event_edit2(t_player *player, t_edit *edit)
 {
-	if (player->event.key.keysym.sym == SDLK_0)
-		edit->txno = 0;
-	else if (player->event.key.keysym.sym == SDLK_1)
+	if (player->event.key.keysym.sym == SDLK_1)
 		edit->txno = 1;
 	else if (player->event.key.keysym.sym == SDLK_2)
 		edit->txno = 2;
