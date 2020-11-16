@@ -17,7 +17,15 @@ int check_match(t_sect  *sect, t_xyz coord, t_xy *temp, int sect_num)
     return (1);
 }
 
-int		is_neighbor(t_all *all, t_xy coord, t_xy coord2, int floor)
+int		height_intersection(int x, int y, t_xy h)
+{
+	if (((x >= (int)h.x && x < (int)h.y) && (y > (int)h.x && y <= (int)h.y)) || 
+		(((int)h.x >= x && (int)h.x < y) & ((int)h.y > x && (int)h.y <= y)))
+		return(1);
+	return 0;
+}
+
+int		is_neighbor(t_all *all, t_xy coord, t_xy coord2, t_xy height)
 {
 	int i;
 	int j;
@@ -28,7 +36,7 @@ int		is_neighbor(t_all *all, t_xy coord, t_xy coord2, int floor)
 	{
 		j = 0;
 		temp = all->sectors[i].vertex;
-        if(floor >= all->sectors[i].floor && floor <= all->sectors[i].ceil)
+        if (height_intersection(all->sectors[i].floor, all->sectors[i].ceil, height))
             while (j < all->sectors[i].npoints)
             {
                 if(coord.x == temp[j].x && coord.y == temp[j].y)
@@ -48,7 +56,7 @@ int		is_neighbor(t_all *all, t_xy coord, t_xy coord2, int floor)
 void	get_neighbours(t_sect *sector, t_all 	*all, int n)
 {
 	int i;
-    int h;
+    t_xy h;
  
 	if (n == 1)
 	{
@@ -59,7 +67,7 @@ void	get_neighbours(t_sect *sector, t_all 	*all, int n)
 	}
 	else
 	{
-        h = sector->floor;
+        h = (t_xy){sector->floor, sector->ceil};
 		n = sector->npoints;
 		sector->neighbors = (int*)malloc(sizeof(int) * n);
         i = 0;

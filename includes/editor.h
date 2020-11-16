@@ -13,9 +13,6 @@
 # include <unistd.h>
 # include "../libft/libft.h"
 
-# define MAP_WIDTH 11
-# define MAP_HEIGHT 11
-# define MAP_ELEMENTS 4
 # define W 1200
 # define H 700
 # define FPS 200
@@ -114,23 +111,24 @@ typedef struct      s_all
 {
     t_player        player;// переменная игрока.
     t_sect          *swap;//указатель на выбранный сектор
+	int				on; // индикатор запуска редактора
 	int				swap_num;
-	t_xy			delta;
-	t_xy			d;
+	t_xy			delta; // дельта области редактирования
+	t_xy			d; // дельта сдвига карты
     t_sect          *sectors;//массив с данными о секторах
 	t_sect			*temp;
     int				num_sectors;//количество секторов
 	int 			step;//шаг (масштаб)
-	int 			iso;
+	int 			iso; //изометрия вкл/выкл
 	SDL_Color		color;
 	TTF_Font		*font;
-	t_labels		labels[5];
+	t_labels		labels[5];// надписи
 	// float			angle;//угол поворота
 	// t_xyz			rot;//
-	t_xy			draw_floors;
-	t_xy			set_floors;
+	t_xy			draw_floors;//уровни отрисовки этажей
+	t_xy			set_floors;//установка высоты нового сектора
 	t_xyint			point;//координаты ближайшей точки курсора
-    t_xyz			mouse;//координаты мыши на area
+    t_xyz			mouse;//координаты мыши
 	t_xyz			mapsize;//размер карты в исходной СИ
 	t_xy			min_coord;
 	t_xy			max_coord;
@@ -152,14 +150,15 @@ int                 load_texture(t_all *all);// звгрузка текстур
 int					load_buttons(t_all *all, t_button *btn);
 void                draw_all(t_all *all, t_sdl *sdl, t_button *btn);//отрисовка
 int					write_map(char *name, t_all *all);
+void				draw_temp(t_all *all, t_sdl *sdl, t_sect *temp, t_xy delta);//несохраненный сектор
+void				draw_map(t_sdl *sdl, t_sect *sect, t_all *all);
 void				draw_player(t_all *all, t_sdl *sdl, t_player *player, t_xy *c);
 void				draw_grid(t_all *all, SDL_Rect *area, int step);
 void    			draw_texture(t_sdl *sdl, SDL_Rect area, SDL_Surface *txt);
 void    			draw_fill_rect(t_all *all, SDL_Rect area, SDL_Color color);
 void				draw_line(t_all *all, t_xy *start, t_xy *fin, SDL_Color color);
 void				draw_circle(t_sdl *sdl, t_xy coord, int r, SDL_Color color);
-void				draw_labels(t_all *all, t_labels *labels, int i);
-void				draw_digits(t_sdl *sdl, t_all *all, int x, int y);
+void				draw_ui(t_all *all, t_sdl *sdl, t_button *btn);
 void				get_neighbours(t_sect *sector, t_all 	*all, int n);
 int					which_sector(t_all *all, t_sect *sectors, t_xyz where);
 void				remove_sector(t_all *all, t_sect *sectors);
