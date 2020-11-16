@@ -15,6 +15,10 @@ int main()
 	load_img(&engine, "floor1.png", 3);
 	load_img(&engine, "ceil1.png", 4);
 	load_img(&engine, "sky1.png", 5);
+	load_img(&engine, "wall4.png", 6);
+	load_img(&engine, "wall5.png", 7);
+	load_img(&engine, "wall6.png", 8);
+	load_img(&engine, "wall7.png", 9);
 	game_loop(&engine, &all);
 	clean(&engine);
 	return (0);

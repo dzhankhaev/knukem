@@ -60,6 +60,12 @@ stdlib.h
 math.h
 -
 
+/home/chel/Desktop/knukem/src/render/line/render_vline.c
+engine.h
+/home/chel/Desktop/knukem/src/render/line/engine.h
+utilits.h
+/home/chel/Desktop/knukem/src/render/line/utilits.h
+
 /home/chel/Desktop/knukem/src/render/render_scene.c
 utilits.h
 /home/chel/Desktop/knukem/src/render/utilits.h

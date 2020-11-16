@@ -14,11 +14,13 @@ void		render_vline(t_engine *engine, t_line p, t_line op, int texture_n)
 	p.y0 = iclamp(p.y0, 0, H - 1);
 	p.y1 = iclamp(p.y1, 0, H - 1);
 	t = op.y1 - op.y0 == 0 ? 1 : (op.y1 - op.y0);
+	a->txx %= engine->img[texture_n].tx->w;
 	while (p.y0 < p.y1)
 	{
 		txy = (p.y0 - op.y0) * engine->img[texture_n].tx->h / t;
 		temp[(p.y0 * W) + p.x0] = get_shadow(a->z,
-				get_pixel_color(engine->img[texture_n].tx, a->txx, txy));
+				get_pixel_color(engine->img[texture_n].tx, a->txx,
+					txy % engine->img[texture_n].tx->h));
 		p.y0++;
 	}
 }

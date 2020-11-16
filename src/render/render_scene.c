@@ -65,15 +65,6 @@ void			render_scene(t_engine *engine, int sectorno, int neighbor, int i)
 	loop(engine, neighbor, txset);
 	engine->edit.mod_w = -1;	//после того как модифицировали стену, нужно сбрасывать, иначе применится ко всем стенам
 	txset = (t_ixyz){3, 4, 0};
-	/*
-	if (engine->edit.txno != -1 && sectorno == engine->edit.mod_s)
-	{
-		if (engine->edit.mod_tx == 1)
-			txset = (t_ixyz){engine->edit.txno, 4, 0};
-		else if (engine->edit.mod_tx == 2)
-		 	txset = (t_ixyz){3, engine->edit.txno, 0};
-	}
-	*/
 	render_hplane(engine, &engine->vpfloor, txset.x);
 	render_hplane(engine, &engine->vpceil, txset.y);
 }

@@ -52,7 +52,7 @@ void	move_player(float dx, float dy, t_engine *engine)
 					}
 				}
 			}
-			else if (sect->neighbors[s] == -1)
+			else if (sect->neighbors[s] <= -1)
 				slide(vert[s], vert[s + 1], &dx, &dy);
 			break ;
 		}
