@@ -49,13 +49,15 @@ void			render_scene(t_engine *engine, int sectorno, int neighbor, int i)
 	t_ixyz	txset;
 
 	rendering_init(engine, sectorno, neighbor);
-	txset = (t_ixyz){engine->sectors[sectorno].txlist[i], 1, 2};
+	// txset = (t_ixyz){engine->sectors[sectorno].txlist[i], 1, 2};
+	txset = (t_ixyz){0, 1, 2};
 	if (engine->edit.mod_w != -1 && engine->edit.txno != -1)
 	{
 		if (engine->edit.mod_tx == 0)
 		{
 			engine->sectors[sectorno].txlist[i] = engine->edit.txno;
-			txset = (t_ixyz){engine->sectors[sectorno].txlist[i], 1, 2};
+			// txset = (t_ixyz){engine->sectors[sectorno].txlist[i], 1, 2};
+			txset = (t_ixyz){engine->edit.txno, 1, 2};
 		}
 		else if (engine->edit.mod_tx == 3)
 			txset = (t_ixyz){0, engine->edit.txno, 2};

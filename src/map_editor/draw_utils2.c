@@ -23,8 +23,8 @@ void	draw_digits(t_sdl *sdl, t_all *all, int x, int y)
 		x = (int)all->set_floors.x;
 		y = (int)all->set_floors.y;
 	}
-	area[0] = (SDL_Rect){WIDTH/16, 250, WIDTH/8, 150};
-	area[1] = (SDL_Rect){WIDTH/16, 450, WIDTH/8, 150};
+	area[0] = (SDL_Rect){W/16, 250, W/8, 150};
+	area[1] = (SDL_Rect){W/16, 450, W/8, 150};
 	tmp = get_text_surface(all, ft_itoa(x), area[0], BLUE);
 	draw_texture(sdl, area[0], tmp);
 	SDL_FreeSurface(tmp);

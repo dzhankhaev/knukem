@@ -38,7 +38,7 @@ void	draw_sector(t_sect *sect, t_all *all, SDL_Color color, t_xy delta)
 			isometric(all, &s, (t_xyz){10, 1, 0}, sect[i].floor - all->mapsize.z/4 * all->step/2);
 			isometric(all, &f, (t_xyz){10, 1, 0}, sect[i].floor - all->mapsize.z/4 * all->step/2);
 		}
-		color = (sect->neighbors[i] == -1 && i < sect->npoints) ? RED : BLUE;
+		color = (sect->neighbors[i] < 0 && i < sect->npoints) ? RED : BLUE;
 		if (sect->floor >= all->draw_floors.x && sect->floor <= all->draw_floors.y)
 		{
 			draw_line(all, &s, &f, &all->sectors[all->swap_num] == sect ? YELLOW : color);
@@ -146,7 +146,7 @@ void	draw_all(t_all *all, t_sdl *sdl, t_button *btn)
 	all->delta.y = all->area.y + all->area.h/2 - 
 		(round(all->mapsize.y/2) * all->step) + all->d.y * all->step;
 	draw_area(sdl, all);
-	draw_fill_rect(all, (SDL_Rect){4, 4, WIDTH / 4 - 8, HEIGHT - 8}, LAZUR);
+	draw_fill_rect(all, (SDL_Rect){4, 4, W / 4 - 8, H - 8}, LAZUR);
 	i = btn[0].state == 1 ? 3 : 0;
 	draw_labels(all, all->labels, i);
 	draw_digits(sdl, all, all->draw_floors.x, all->draw_floors.y);

@@ -25,8 +25,8 @@ static void			init_sdl(t_sdl *sdl, t_all *all)
 	if (SDL_Init(SDL_INIT_VIDEO) != 0)
 		error_and_close(__FILE__, __FUNCTION__);
 	if (!(sdl->window = SDL_CreateWindow("Map Editor",
-			SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WIDTH,
-			HEIGHT, SDL_WINDOW_SHOWN)))
+			SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, W,
+			H, SDL_WINDOW_SHOWN)))
 	{
 		SDL_Quit();
 		error_and_close(__FILE__, __FUNCTION__);
@@ -63,7 +63,7 @@ void    init_all(t_all *all)
     // init_sdl(all->sdl, all);
 	load_fonts(all->sdl, all);
 	all->mouse.z = 0; // переменная нажатия ЛКМ
-	all->area = (SDL_Rect){WIDTH/4, 0, WIDTH - WIDTH/4, HEIGHT}; // Область карты
+	all->area = (SDL_Rect){W/4, 0, W - W/4, H}; // Область карты
 	all->step = scaling(all->area, all->mapsize);
 	printf("area S = %d\n",all->step);
 	all->point = (t_xyint){0,0};

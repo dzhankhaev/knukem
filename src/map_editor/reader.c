@@ -33,8 +33,8 @@ int	load_map(char *name, t_all *all)
 			}
 			break;
 		case 's': // sector
-			all->sectors = realloc(all->sectors, ++(*all->num_sectors) * sizeof(*all->sectors));
-			t_sect *sect = &all->sectors[*all->num_sectors - 1];
+			all->sectors = realloc(all->sectors, ++(all->num_sectors) * sizeof(*all->sectors));
+			t_sect *sect = &all->sectors[all->num_sectors - 1];
 			int *num = NULL;
 			//считывает пол и потолок
 			sscanf(ptr += n, "%f%f%n", &sect->floor, &sect->ceil, &n);

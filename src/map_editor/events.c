@@ -109,7 +109,7 @@ void	on_mouse(t_all *all, SDL_MouseButtonEvent *event)
 			map_click(&all->mouse, all);
 		}
 	}
-	else if (event->x < WIDTH / 4 && event->y < HEIGHT / 4)
+	else if (event->x < W / 4 && event->y < H / 4)
 		button_click(all, all->buttons, event, 0); // обработка кликов на панели управления
 	else
 		level_buttons(all, all->buttons, event);

@@ -41,13 +41,13 @@ SRC := main.c\
     utilits/exit_options.c\
     utilits/load_img.c\
 	render/minimap.c\
-	render/render_floor.c\
-	render/render_ceil.c\
+	render/render_hplane.c\
+	render/render_scene.c\
 	render/render_sky.c\
+	render/ceil_and_floor_init.c\
 	render/wall/render_wall.c\
 	render/wall/perspective_init.c\
-	render/wall/render_surfaces.c\
-	render/wall/edge_tx_init.c\
+	render/wall/wall_tx_init.c\
 	render/line/render_line.c\
 	render/line/render_vline.c\
 	render/line/render_hline.c\
@@ -63,6 +63,7 @@ SRC := main.c\
 	map_editor/texture.c\
 	map_editor/write.c\
 	map_editor/pixels.c\
+	map_editor/sectors.c\
 
 
 
@@ -81,7 +82,8 @@ FLAG :=  -g #-Wall -Werror -Wextra
 PWD := $(shell pwd)
 FRAMEWORKSDIR := $(PWD)/frameworks
 INC := -I includes
-SDL := -F $(FRAMEWORKSDIR) -framework SDL2 -framework SDL2_ttf -framework SDL2_image -framework SDL2_mixer -Wl -rpath $(FRAMEWORKSDIR)
+SDL := -I SDL2/SDL.h -lSDL2 -lSDL2_ttf -lSDL2_image
+#SDL := -F $(FRAMEWORKSDIR) -framework SDL2 -framework SDL2_ttf -framework SDL2_image -framework SDL2_mixer -Wl -rpath $(FRAMEWORKSDIR)
 
 TOTAL_FILES := $(shell echo $(SRC) | wc -w | sed -e 's/ //g')
 CURRENT_FILES = $(shell find $(PWD)/obj/ -type f 2> /dev/null | wc -l | sed -e 's/ //g')
@@ -89,7 +91,7 @@ CURRENT_FILES = $(shell find $(PWD)/obj/ -type f 2> /dev/null | wc -l | sed -e '
 FT		= ./libft/
 FT_LIB	= $(addprefix $(FT),libft.a)
 FT_INC	= -I ./libft
-FT_LNK	= -L ./libft -l ft -l pthread
+FT_LNK	= -L ./libft -l ft -lm -l pthread
 
 all : $(FT_LIB) $(NAME)
 
@@ -97,7 +99,7 @@ $(FT_LIB):
 	@make -C $(FT)
 
 $(NAME) : $(OBJP)
-			@gcc -g $(SDL) $(FLAG) $(OBJP) $(FT_LNK) $(INC) $(LIB) -o $(NAME)
+			@gcc -g $(FLAG) $(OBJP) $(FT_LNK) $(INC) $(SDL)  $(LIB) -o $(NAME)
 			@echo "$(CLEAR_LINE)$(BLUE_FONT)[$(NAME)] $(YELLOW_FONT)Finished compilation. Output file : $(VIOLET_FONT)$(PWD)/$(NAME)$(RESET_FORM)"
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADERSP)
