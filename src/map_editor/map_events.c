@@ -23,6 +23,7 @@ void    new_sector(t_all *all, int x, int y)
 			i++;
 		}
 		all->sectors[all->num_sectors - 1].npoints--;
+		check_sector_order(&all->sectors[all->num_sectors - 1]);
 		get_neighbours(&all->sectors[all->num_sectors -1], all, all->num_sectors - 1);
 		ft_memdel((void*)&all->temp->vertex);
 		all->temp->npoints = 0;
@@ -57,8 +58,9 @@ void	map_click(t_xyz *mouse, t_all *all)
 	}
     else if(all->buttons[1].state == 1)
     {
-		all->player.where = (t_xyz){x, y, all->draw_floors.x + EYE_HEIGHT};
+		all->player.where = (t_xyz){x, y, all->draw_floors.x};
     	all->player.sector = which_sector(all, all->sectors, all->player.where);
+		all->player.where.z += EYE_HEIGHT; 
 		all->player.picked = 0;
 		all->buttons[1].state = 0;
 		all->buttons[1].color = WHITE;

@@ -159,6 +159,7 @@ void				draw_line(t_all *all, t_xy *start, t_xy *fin, SDL_Color color);
 void				draw_circle(t_sdl *sdl, t_xy coord, int r, SDL_Color color);
 void				draw_ui(t_all *all, t_sdl *sdl, t_button *btn);
 void				get_neighbours(t_sect *sector, t_all 	*all, int n);
+int					check_sector_order(t_sect *sect);
 int					which_sector(t_all *all, t_sect *sectors, t_xyz where);
 void				remove_sector(t_all *all, t_sect *sectors);
 SDL_Surface			*get_text_surface(t_all *all, char *name, SDL_Rect target, SDL_Color color);

@@ -45,7 +45,7 @@ int		scaling(SDL_Rect area, t_xyz mapsize)
 	int scale;
 
 	scale = 0;
-	if (mapsize.x < 10 || mapsize.x < 10)
+	if (mapsize.x < 15 || mapsize.x < 15)
 		return (32);
 	scale = (int)((area.h * area.w)/(mapsize.x * mapsize.y));
 	while (mapsize.x * scale >= area.w || mapsize.y * scale >= area.h)
@@ -60,20 +60,15 @@ void    init_all(t_all *all)
 	all->mouse.z = 0; // переменная нажатия ЛКМ
 	all->area = (SDL_Rect){W/4, 0, W - W/4, H}; // Область карты
 	all->step = scaling(all->area, all->mapsize);
-	printf("area S = %d\n",all->step);
 	all->point = (t_xyint){0,0};
 	all->temp = NULL;
 	all->temp = (t_sect*)malloc(sizeof(t_sect));
 	all->swap_num = -1;
 	all->d = (t_xy){0, 0}; 
-	// all->sectors = (t_sect*)malloc(sizeof(t_sect));
 	all->threed = 0;
 	all->temp->npoints = 0;
 	all->temp->vertex = NULL;
 	all->player.picked = 0;
-	// all->min_coord = (t_xy){0, 0};
-	// all->max_coord = (t_xy){0, 0};
 	all->iso = 0;
 	all->set_floors = (t_xy){0, 0};
-	// all->draw_floors = (t_xy){0, 0};
 }
