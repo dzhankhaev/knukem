@@ -52,9 +52,10 @@ SRC := main.c\
 	render/line/render_vline.c\
 	render/line/render_hline.c\
 	map_editor/main.c\
-	map_editor/draw.c\
+	map_editor/draw_ui.c\
+	map_editor/draw_map.c\
+	map_editor/draw_all.c\
 	map_editor/draw_utils.c\
-	map_editor/draw_utils2.c\
 	map_editor/errors.c\
 	map_editor/events.c\
 	map_editor/init.c\

@@ -47,7 +47,7 @@ void    interact(t_all *all)
 		}
 		apply_changes(all, all->buttons);
 		if(event.type == SDL_KEYDOWN || event.type == SDL_KEYUP || event.type == SDL_MOUSEMOTION
-			|| event.type == SDL_MOUSEBUTTONUP || event.type == SDL_MOUSEBUTTONDOWN)
+			|| event.type == SDL_MOUSEBUTTONUP || event.type == SDL_MOUSEBUTTONDOWN || all->on)
 		{
 			SDL_LockSurface(all->sdl->screen);
 			ft_bzero((void*)all->sdl->screen->pixels, (size_t)(4 * W * H));
@@ -57,28 +57,17 @@ void    interact(t_all *all)
 			SDL_UpdateWindowSurface(all->sdl->window);
 			SDL_FreeSurface(all->sdl->screen);
 		}
+		all->on = 0;
 	}
 }
 
 int main_editor(t_engine *engine, char *name, t_all *all)
 {
-//    t_all           *all;
-	
-//	if(ac > 2)
-//	{
-//		printf("Enter correct map name or new map name!\n");
-//		exit(0);
-//	}
     init_all(all); // инициализация всех модулей
 	printf("level z = %d\n", (int)all->draw_floors.y);
-//	if (load_map(name, all) != 0)
-//		error_and_close(__FILE__, __FUNCTION__);
 	if (load_texture(all) != 0)
 		error_and_close(__FILE__, __FUNCTION__); //загрузка текстур
-	//draw_texture(all->sdl->renderer, (SDL_Rect){0,0, WIDTH, HEIGHT}, all->texture);
-	
 	interact(all);// основная функция взаимодействия
-//	write_map(av[1], all);
 	engine->sectors = all->sectors;
 	engine->player.where = all->player.where;
 	engine->player.sector = all->player.sector;

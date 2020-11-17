@@ -55,12 +55,7 @@ int		scaling(SDL_Rect area, t_xyz mapsize)
 
 void    init_all(t_all *all)
 {
-    // if (!(all = (t_all*)malloc(sizeof(t_all))))
-		// error_and_close(__FILE__, __FUNCTION__);
-	// all->sdl = NULL;
-	// if (!(all->sdl = (t_sdl*)malloc(sizeof(t_sdl))))
-		// error_and_close(__FILE__, __FUNCTION__);
-    // init_sdl(all->sdl, all);
+	all->on = 1;
 	load_fonts(all->sdl, all);
 	all->mouse.z = 0; // переменная нажатия ЛКМ
 	all->area = (SDL_Rect){W/4, 0, W - W/4, H}; // Область карты

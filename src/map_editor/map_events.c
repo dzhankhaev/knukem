@@ -35,7 +35,7 @@ void	select_sector(t_all *all, int x, int y)
 
 	where = (t_xyz){x, y, all->draw_floors.x};
 	all->swap_num = which_sector(all, all->sectors, where);
-		// all->swap = &all->sectors[sect];
+	printf("%f\n",all->draw_floors.x);
 	// else
 		// all->swap = NULL;
 	
@@ -45,13 +45,9 @@ void	map_click(t_xyz *mouse, t_all *all)
 {
 	int x;
 	int y;
-	int i;
 
-	x = all->point.x - all->d.x - (all->area.w/(2 * all->step) - (all->mapsize.x/2));
-	y = all->point.y - all->d.y - (all->area.h/(2 * all->step) - (all->mapsize.y/2));
-	printf("x = %d y = %d\n", x, y);
-
-	i = 0;
+	x = all->point.x - all->d.x - ((all->area.w/(2 * all->step)) - round(all->mapsize.x/2));
+	y = all->point.y - all->d.y - ((all->area.h/(2 * all->step)) - round(all->mapsize.y/2));
 	if(all->buttons[0].state == 1)
 	{
 		all->temp->floor = all->set_floors.x;

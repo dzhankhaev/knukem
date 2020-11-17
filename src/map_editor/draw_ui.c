@@ -38,7 +38,6 @@ void	draw_player(t_all *all, t_sdl *sdl, t_player *player, t_xy *c)
 	SDL_Rect loc;
 
 	if (all->player.picked == 0)
-	//(temp->vertex[j].x * all->step) + all->area.w/2 - (all->mapsize.x/2 * all->step)
 		loc = (SDL_Rect){(player->where.x * all->step) + all->delta.x - all->step/2,
 		 (player->where.y * all->step) + all->delta.y - all->step/2,
 	 		 all->step, all->step};
@@ -48,20 +47,32 @@ void	draw_player(t_all *all, t_sdl *sdl, t_player *player, t_xy *c)
 	draw_texture(sdl, loc, player->picture);
 }
 
-void	draw_grid(t_all *all, SDL_Rect *area, int step)
+void	draw_buttons(t_all *all, t_sdl *sdl, t_button *btn)
 {
-	t_xy	c;
+	int i;
 
-	c = (t_xy){area->x + (area->w / 2) % step, area->y + (area->h / 2) % step};
-	while (c.x <= area->x + area->w)
-	{
-		draw_line(all, &(t_xy){c.x, 0}, &(t_xy){c.x, area->h}, GREY);
-		c.x += step;
-	}
-	c.x = area->x;
-	while (c.y <= area->y + area->h)
-	{
-		draw_line(all, &c, &(t_xy){area->x + area->w, c.y}, GREY);
-		c.y += step;
-	}
+	i = 0;
+	while (i < BUTTONS)
+	{ 
+		btn[i].color = btn[i].state == 1 ? RED : btn[i].color;
+		
+		btn[i].texture = get_text_surface(all, btn[i].title, btn[i].dstrect, btn[i].color);
+		draw_texture(sdl, btn[i].dstrect, btn[i].texture);
+		if (i >= 2)
+		{
+			btn[i].state = 0;
+			btn[i].color = WHITE;
+		}
+		SDL_FreeSurface(btn[i].texture);
+		i++;
+    }
+	
+}
+
+void	draw_ui(t_all *all, t_sdl *sdl, t_button *btn)
+{
+	draw_fill_rect(all, (SDL_Rect){4, 4, W / 4 - 8, H - 8}, LAZUR);
+	draw_labels(all, all->labels, btn[0].state == 1 ? 3 : 0);
+	draw_digits(sdl, all, all->draw_floors.x, all->draw_floors.y);
+	draw_buttons(all, sdl, btn);
 }

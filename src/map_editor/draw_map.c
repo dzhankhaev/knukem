@@ -68,14 +68,13 @@ void	draw_map(t_sdl *sdl, t_sect *sect, t_all *all)
 }
 
 
-
 void	draw_temp(t_all *all, t_sdl *sdl, t_sect *temp, t_xy delta)
 {
 	t_xy	s;
 	t_xy	f;
 	int j = 0;
-	int x = all->point.x - all->d.x - (all->area.w/(2 * all->step) - (all->mapsize.x/2));
-	int y = all->point.y - all->d.y -(all->area.h/(2 * all->step) - (all->mapsize.y/2));
+	int x = all->point.x - all->d.x - (all->area.w/(2 * all->step) - round(all->mapsize.x/2));
+	int y = all->point.y - all->d.y -(all->area.h/(2 * all->step) - round(all->mapsize.y/2));
 
 	while (j < temp->npoints)
 	{
@@ -93,62 +92,25 @@ void	draw_temp(t_all *all, t_sdl *sdl, t_sect *temp, t_xy delta)
 				(temp->vertex[j + 1].y * all->step) + delta.y};
 		}
 		draw_line(all, &s, &f, WHITE);
+		draw_circle(all->sdl, s, 2, WHITE);
 		j++;
 	}
 }
 
-void	draw_area(t_sdl *sdl, t_all *all)
+void	draw_grid(t_all *all, SDL_Rect *area, int step)
 {
-	t_xy	   c;
+	t_xy	c;
 
-	c = (t_xy){(all->area.w / 2) % all->step, (all->area.h / 2) % all->step};
-	draw_fill_rect(all, all->area, BLACK);
-	draw_grid(all, &all->area, all->step);
-	draw_map(sdl, all->sectors, all);
-	if (!all->player.picked)
-		draw_circle(all->sdl, (t_xy){all->point.x * all->step + c.x + all->area.x, 
-			all->point.y * all->step + c.y + all->area.y}, 2, WHITE);
-	if (all->temp->npoints > 0)
-		// draw_sector(all->temp, all, all->color);
-	 	draw_temp(all, sdl, all->temp, all->delta); /// uncomment to defeat segfault
-	draw_player(all, sdl, &all->player, &c);
-}
-
-void	draw_buttons(t_all *all, t_sdl *sdl, t_button *btn)
-{
-	int i;
-
-	i = 0;
-	while (i < BUTTONS)
-	{ 
-		btn[i].color = btn[i].state == 1 ? RED : btn[i].color;
-		
-		btn[i].texture = get_text_surface(all, btn[i].title, btn[i].dstrect, btn[i].color);
-		draw_texture(sdl, btn[i].dstrect, btn[i].texture);
-		if (i >= 2)
-		{
-			btn[i].state = 0;
-			btn[i].color = WHITE;
-		}
-		SDL_FreeSurface(btn[i].texture);
-		i++;
-    }
-	
-}
-
-void	draw_all(t_all *all, t_sdl *sdl, t_button *btn)
-{
-    int			i;
-	Uint32 state;
-
-	all->delta.x = all->area.x + all->area.w/2 - 
-		(round(all->mapsize.x/2) * all->step) + all->d.x * all->step;
-	all->delta.y = all->area.y + all->area.h/2 - 
-		(round(all->mapsize.y/2) * all->step) + all->d.y * all->step;
-	draw_area(sdl, all);
-	draw_fill_rect(all, (SDL_Rect){4, 4, W / 4 - 8, H - 8}, LAZUR);
-	i = btn[0].state == 1 ? 3 : 0;
-	draw_labels(all, all->labels, i);
-	draw_digits(sdl, all, all->draw_floors.x, all->draw_floors.y);
-	draw_buttons(all, sdl, btn);
+	c = (t_xy){area->x + (area->w / 2) % step, area->y + (area->h / 2) % step};
+	while (c.x <= area->x + area->w)
+	{
+		draw_line(all, &(t_xy){c.x, 0}, &(t_xy){c.x, area->h}, GREY);
+		c.x += step;
+	}
+	c.x = area->x;
+	while (c.y <= area->y + area->h)
+	{
+		draw_line(all, &c, &(t_xy){area->x + area->w, c.y}, GREY);
+		c.y += step;
+	}
 }

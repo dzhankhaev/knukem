@@ -21,6 +21,7 @@ SDL_Surface	*get_text_surface(t_all *all, char *name, SDL_Rect target, SDL_Color
     //text = SDL_CreateRGBSurface(1, target.w, target.h, 32 , 255, 255, 0, 0);
     if(!(text = TTF_RenderText_Blended(all->font, name, color)))
         printf("text printing error!\n");
+    // free(&name);
 	return(text);
 }
 
