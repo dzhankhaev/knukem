@@ -94,7 +94,7 @@ void    del_neighbour(int *arr, int len, int num)
         {
             arr[i] = -1;
             printf("sector clear\n");
-			break ;
+			// break ;
         }
         i++;
     }
@@ -121,6 +121,7 @@ void    drop_neighbors(t_sect *sectors, int *neighbors, int num, int del)
 void    remove_sector(t_all *all, t_sect *sectors)
 {
     t_sect *del;
+    int *temp;/// записать соседейй сюда, удалить сектор, пройтись по этим секторам для поиска соседей. 
 
     del = &all->sectors[all->swap_num];
     if(all->swap_num != -1)
@@ -130,8 +131,20 @@ void    remove_sector(t_all *all, t_sect *sectors)
         free(all->sectors[all->swap_num].vertex);
         free(all->sectors[all->swap_num].neighbors);
 		if (all->num_sectors > 1 && all->swap_num != all->num_sectors - 1)
-        	all->sectors[all->swap_num] = all->sectors[all->num_sectors - 1];
+        {
+            all->sectors[all->swap_num] = all->sectors[all->num_sectors - 1];
+            //free(all->sectors[all->swap_num].neighbors);
+            //get_neighbours(&all->sectors[all->swap_num], all, all->num_sectors);
+        }
         all->num_sectors -= 1;
+        int i = 0;
+
+        // while(i < all->num_sectors)
+        // {
+        //     free(all->sectors[i].neighbors);
+            get_neighbours(&all->sectors[all->swap_num], all, all->swap_num);
+        //     i++;
+        // }
         all->swap_num = -1;
     }
 }

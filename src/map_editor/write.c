@@ -131,7 +131,7 @@ int which_sector(t_all *all, t_sect *sectors, t_xyz where)
     while(i < all->num_sectors)
     {
         j = 0;
-        while(j < all->sectors[i].npoints && all->draw_floors.x == all->sectors[i].floor)
+        while(j < all->sectors[i].npoints && where.z == all->sectors[i].floor)
         {
             p = point_side1(where.x, where.y, sectors[i].vertex[j], sectors[i].vertex[j + 1]);
             if (p < all->player.picked ? 1 : 0)

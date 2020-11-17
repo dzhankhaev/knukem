@@ -19,13 +19,13 @@ int check_match(t_sect  *sect, t_xyz coord, t_xy *temp, int sect_num)
 
 int		height_intersection(int x, int y, t_xy h)
 {
-	if (((x >= (int)h.x && x < (int)h.y) && (y > (int)h.x && y <= (int)h.y)) || 
-		(((int)h.x >= x && (int)h.x < y) & ((int)h.y > x && (int)h.y <= y)))
+	if ((x >= (int)h.x && x <= (int)h.y) || (y > (int)h.x && y <= (int)h.y) || 
+		((int)h.x >= x && (int)h.x <= y) || ((int)h.y >= y && (int)h.y <= y))
 		return(1);
 	return 0;
 }
 
-int		is_neighbor(t_all *all, t_xy coord, t_xy coord2, t_xy height)
+int		is_neighbor(t_all *all, t_xy coord, t_xy coord2, t_xy height, int self)
 {
 	int i;
 	int j;
@@ -36,29 +36,30 @@ int		is_neighbor(t_all *all, t_xy coord, t_xy coord2, t_xy height)
 	{
 		j = 0;
 		temp = all->sectors[i].vertex;
-        if (height_intersection(all->sectors[i].floor, all->sectors[i].ceil, height))
+        if (height_intersection(all->sectors[i].floor, all->sectors[i].ceil, height) && i != self)
             while (j < all->sectors[i].npoints)
             {
                 if(coord.x == temp[j].x && coord.y == temp[j].y)
                 {
 
                     if (check_match(&all->sectors[i], (t_xyz){coord2.x, coord2.y,  j},
-                        temp, all->num_sectors - 1))
+                        temp, self))
                         return(i);
                 }
                 j++;
             }
-            i++;
+        i++;
 	}
 	return (-1);
 }
 
-void	get_neighbours(t_sect *sector, t_all 	*all, int n)
+void	get_neighbours(t_sect *sector, t_all 	*all, int self)
 {
 	int i;
     t_xy h;
+	int n;
  
-	if (n == 1)
+	if (all->num_sectors == 1)
 	{
 		n = sector->npoints;
 		sector->neighbors = (int*)malloc(sizeof(int) * n);
@@ -73,9 +74,9 @@ void	get_neighbours(t_sect *sector, t_all 	*all, int n)
         i = 0;
 		while(i < sector->npoints - 1)
 		{
-			sector->neighbors[i] = is_neighbor(all, sector->vertex[i], sector->vertex[i + 1], h);
+			sector->neighbors[i] = is_neighbor(all, sector->vertex[i], sector->vertex[i + 1], h, self);
 			i++;
 		}
-		sector->neighbors[i] = is_neighbor(all, sector->vertex[i], sector->vertex[0], h);
+		sector->neighbors[i] = is_neighbor(all, sector->vertex[i], sector->vertex[0], h, self);
 	}
 }

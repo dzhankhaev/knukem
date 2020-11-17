@@ -23,7 +23,7 @@ void    new_sector(t_all *all, int x, int y)
 			i++;
 		}
 		all->sectors[all->num_sectors - 1].npoints--;
-		get_neighbours(&all->sectors[all->num_sectors -1], all, all->num_sectors);
+		get_neighbours(&all->sectors[all->num_sectors -1], all, all->num_sectors - 1);
 		ft_memdel((void*)&all->temp->vertex);
 		all->temp->npoints = 0;
 	}
