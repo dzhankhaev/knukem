@@ -6,7 +6,7 @@
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 22:47:49 by ecelsa            #+#    #+#             */
-/*   Updated: 2020/11/05 20:16:47 by ecelsa           ###   ########.fr       */
+/*   Updated: 2020/11/17 12:32:48 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -196,7 +196,7 @@ int				main(int argc, char const **argv)
 	t_engine	engine;
 	t_inp_hud	input_hud;
 
-	input_hud = (t_inp_hud){.weapons = 0b01101, .health = 125, .face = 1, .flag = 0, .fire = 0};
+	input_hud = (t_inp_hud){.weapons = 0b11101, .health = 125, .face = 1, .flag = 0, .fire = 0};
 	engine = (t_engine){.w = 800, .h = 500};
 	if (init_engine(&engine) != 0)
 		return (1);
