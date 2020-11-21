@@ -32,7 +32,7 @@
 
 typedef struct		s_files
 {
-	char			file_name[];
+	char			file_name[22];
 	int 			size_block;
 	int				start_byte;
 	struct s_files	*next;
@@ -45,8 +45,8 @@ int		new_t_files(char *file_name, int size_block, t_files **top)
 	if (*top == NULL)
 	{
  		*top = (t_files*)malloc(sizeof(t_files));
-		**top = (t_files){.start_byte = 0, .file_name = ft_strdup(file_name),
-										.size_block = size_block, .next = NULL};
+		**top = (t_files){.start_byte = 8, .size_block = size_block, .next = NULL};
+		ft_strncpy((*top)->file_name, file_name, sizeof((*top)->file_name));
 	}
 	else
 	{
@@ -55,8 +55,8 @@ int		new_t_files(char *file_name, int size_block, t_files **top)
 			tmp = tmp->next;
 		tmp->next = (t_files*)malloc(sizeof(t_files));
 		*tmp->next = (t_files){.start_byte = tmp->start_byte +
-			tmp->size_block + 1, .file_name = ft_strdup(file_name),
-										.size_block = size_block, .next = NULL};
+			tmp->size_block + 1, .size_block = size_block, .next = NULL};
+		ft_strncpy(tmp->file_name, file_name, sizeof(tmp->file_name));
 	}
 	return (1);
 }
@@ -70,8 +70,9 @@ int		free_t_files(t_files **t_files_list)
 	while (tmp != NULL)
 	{
 		sub = tmp->next;
-		free(tmp->file_name);
-		*tmp = (t_files){.size_block = 0, .start_byte = 0, .file_name = NULL};
+		// free(tmp->file_name);
+		*tmp = (t_files){.size_block = 0, .start_byte = 0};
+		ft_bzero(&tmp->file_name, sizeof(tmp->file_name));
 		free(tmp);
 		tmp = NULL;
 		tmp = sub;
@@ -269,10 +270,10 @@ int main(int argc, char **argv)
 	new_t_files("PISGB0.png", 3292, &top);
 	new_t_files("PISGC0.png", 3098, &top);
 	tmp = top;
-
 	fd = open("out_file.map", O_RDWR|O_TRUNC|O_CREAT,999);
 	len = ft_file_lines("textur/files");
 	write(fd, &(len), 4);
+	lseek(fd, 8, 0);
 	//fill head
 	{
 		while (tmp)
@@ -284,13 +285,15 @@ int main(int argc, char **argv)
 	tmp = top;
 	while (tmp)
 	{
-		fd_sub = open(tmp->file_name, O_RDONLY);
-		lseek(fd, tmp->start_byte, 0);
-		line = (char*)malloc(tmp->size_block + 1);
-		read(fd_sub, line, tmp->size_block);
-		ft_putstr_fd(line, fd);
-		ft_strdel(&line);
-		close(fd_sub);
+		if ((fd_sub = open(tmp->file_name, O_RDONLY)))
+		{
+			lseek(fd, tmp->start_byte, 0);
+			line = (char*)malloc(tmp->size_block + 1);
+			read(fd_sub, line, tmp->size_block);
+			ft_putstr_fd(line, fd);
+			ft_strdel(&line);
+			close(fd_sub);
+		}
 		tmp = tmp->next;
 	}
 	close(fd);
