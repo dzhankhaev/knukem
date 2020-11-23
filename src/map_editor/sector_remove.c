@@ -1,51 +1,5 @@
 #include "editor.h"
 
-int		revert_sector(t_sect *sect)
-{
-	t_xy *temp;
-	int i;
-
-	i = 0;
-	if(!(temp = (t_xy*)malloc(sizeof(t_xy) * sect->npoints)))
-		exit(0);
-	while(i < sect->npoints)
-	{
-		temp[i] = sect->vertex[sect->npoints - i];
-		i++;
-	}
-	temp[i] = temp[0];
-	free(sect->vertex);
-	sect->vertex = temp;
-	return 0;
-}
-
-int		get_clockwise_order_sector(t_sect *sect)
-{
-	int			res;
-	int			i;
-	int			num;
-	t_xy	vertex1;
-	t_xy	vertex2;
-
-	res = 0;
-	i = 0;
-	while (i < sect->npoints)
-	{
-		vertex1 = sect->vertex[i];
-		vertex2 = sect->vertex[i + 1];
-		res += (vertex2.x - vertex1.x) * (vertex2.y + vertex1.y);
-		i++;
-	}
-	return (res > 0 ? 0 : 1);
-}
-
-int		check_sector_order(t_sect *sect)
-{
-	if(!(get_clockwise_order_sector(sect)))
-		revert_sector(sect);
-	return (0);
-}
-
 void    del_neighbour(int *arr, int len, int num)
 {
     int i;

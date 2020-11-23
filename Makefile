@@ -57,16 +57,16 @@ SRC := main.c\
 	map_editor/draw_all.c\
 	map_editor/draw_utils.c\
 	map_editor/errors.c\
-	map_editor/events.c\
+	map_editor/events_all.c\
+	map_editor/events_map.c\
 	map_editor/init.c\
-	map_editor/map_events.c\
-	map_editor/neighbors.c\
 	map_editor/texture.c\
 	map_editor/write.c\
 	map_editor/pixels.c\
-	map_editor/sectors.c\
-
-
+	map_editor/sector_check.c\
+	map_editor/sector_remove.c\
+	map_editor/sector_neighbors.c\
+	map_editor/sector_add.c\
 
 OBJ := $(SRC:.c=.o)
 
