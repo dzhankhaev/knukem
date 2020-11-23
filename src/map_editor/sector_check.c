@@ -1,5 +1,28 @@
 #include "editor.h"
 
+t_xy	*remove_vertex(t_xy *vert, int num, int npoints)
+{
+	int i;
+	int j;
+	t_xy *tmp;
+	
+	i = 0;
+	j = 0;
+	tmp = (t_xy*)malloc(sizeof(t_xy) * (npoints));
+	while(j < npoints)
+	{
+		if (j == num)
+			j++;
+		tmp[i] = (t_xy){vert[j].x, vert[j].y};
+		i++;
+		j++;
+	}
+	tmp[npoints - 1] = tmp[0];
+	free(vert);
+	vert = tmp;
+	return (vert);
+}
+
 int		check_sector_shape(t_sect *sect)
 {
 	t_xy *temp;
@@ -12,12 +35,25 @@ int		check_sector_shape(t_sect *sect)
 	{
 		side = point_side1(temp[i + 1].x, temp[i + 1].y, temp[i], temp[i + 2]);
 		if (side > 0)
-			return 0;
+		{
+			sect->vertex = remove_vertex(temp, i + 1, sect->npoints);
+			sect->npoints -= 1;
+			check_sector_shape(sect);
+			break ;
+		}
 		i++;
+		if (i == sect->npoints - 1)
+		{
+			side = point_side1(temp[0].x, temp[0].y, temp[i], temp[1]);
+			if (side > 0)
+			{
+				sect->vertex = remove_vertex(temp, 0, sect->npoints);
+				sect->npoints -= 1;
+				check_sector_shape(sect);
+			}
+		}
 	}
-	side = point_side1(temp[0].x, temp[0].y, temp[i], temp[1]);
-	if (side > 0)
-			return 0;
+	printf("ok\n");
 	return 1;
 }
 
@@ -64,6 +100,5 @@ int		check_sector(t_sect *sect)
 {
 	if(!(check_sector_order(sect)))
 		revert_sector(sect);
-	check_sector_shape(sect);
-	return (0);
+	return(check_sector_shape(sect));
 }
