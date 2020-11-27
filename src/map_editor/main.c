@@ -71,5 +71,6 @@ int main_editor(t_engine *engine, char *name, t_all *all)
 	engine->sectors = all->sectors;
 	engine->player.where = all->player.where;
 	engine->player.sector = all->player.sector;
+	engine->num_sectors = all->num_sectors;
 	return (0);
 }
