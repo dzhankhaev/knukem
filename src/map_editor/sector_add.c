@@ -13,8 +13,6 @@ int		is_intersectred(t_xy v11, t_xy v12, t_xy v21, t_xy v22)
 	c1.y = c1.y >= 0 ? 1 : -1;
 	c2.x = c2.x >= 0 ? 1 : -1;
 	c2.y = c2.y >= 0 ? 1 : -1;
-	// printf("v11 = %f\nv12 = %f\nv21 = %f\nv22 = %f\n\n", c1.x, c1.y, c2.x, c2.y);
-
 	if (c1.x + c1.y + c2.x + c2.y == 0)
 		return 1;
 	return 0;
@@ -33,7 +31,7 @@ int		check_intersections(t_sect *sect)
 		while(j < sect->npoints)
 		{
 			if (is_intersectred(v[i], v[i + 1], v[j], v[j + 1]))
-				printf("%d vert intersected with %d!\n", i, j);
+				return 1;
 			j++;
 		}
 		i++;
@@ -44,8 +42,12 @@ int		check_intersections(t_sect *sect)
 void    validate_sector(t_sect *sect, t_all *all)
 {
     check_sector(sect);
-	check_intersections(sect);
 	get_neighbours(sect, all, all->num_sectors - 1);
+	if (check_intersections(sect))
+	{
+		all->swap_num = all->num_sectors - 1; 
+		remove_sector(all, sect);
+	}
 	ft_memdel((void*)&all->temp->vertex);
 }
 

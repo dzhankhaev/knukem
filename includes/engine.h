@@ -6,21 +6,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <string.h>
-// # include <SDL2/SDL.h>
-// # include <SDL_image.h>
-//# include <SDL2_image/SDL_image.h>
-//# include <SDL2_ttf/SDL_ttf.h>
-//# include <SDL2_mixer/SDL_mixer.h>
-/*
- * ЗАКОММЕНТИРУЙ, ЕСЛИ НЕ КОМПИЛИТСЯ! Временное решение
- */
-/*# include <SDL.h>
-# include <SDL_ttf.h>
-# include <SDL_image.h>
-# include <SDL_mixer.h>*/
 
-// # define W 1200
-// # define H 700
 # define MAX_QUEUE 64				//	максимальная длина очереди секторов
 //вычисленные заранее координаты конечной точки лучей видимости для фов 90. Подробнее в transform_wall.c
 # define RAY_POINT_X 35.f			//	50.f * cosf(HFOV/2)

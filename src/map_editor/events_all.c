@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   events_all.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sisidra <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/27 13:32:36 by sisidra           #+#    #+#             */
+/*   Updated: 2020/11/27 13:32:39 by sisidra          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "editor.h"
 
 void	key_press(t_all *all)
@@ -70,7 +82,7 @@ void	button_click(t_all *all, t_button *buttons, SDL_MouseButtonEvent *event, in
 	all->player.picked = buttons[1].state == 1 ? 1 : 0;
 }
 
-void	closest_point(t_all *all, t_xyint point, t_xyz mouse)
+void	closest_point(t_all *all, t_xyint point)
 {
 	t_xy	   c;
 
@@ -91,18 +103,13 @@ void	closest_point(t_all *all, t_xyint point, t_xyz mouse)
 void	on_mouse(t_all *all, SDL_MouseButtonEvent *event)
 {
 	SDL_Rect	*temp;
-	int			x;
-	int			y;
 
-	x = all->mouse.x;
-	y = all->mouse.y;
 	temp = &all->area;
-
 	if (event->x >= temp->x && event->x <= (temp->x + temp->w) &&
 			event->y >= temp->y && event->y <= (temp->y + temp->h))
 	{
 		SDL_GetMouseState(&all->point.x, &all->point.y);
-		closest_point(all, all->point, all->mouse);
+		closest_point(all, all->point);
 		if (all->mouse.z == 1)
 		{
 			all->mouse = (t_xyz){event->x - temp->x, event->y - temp->y};//пишем координаты мыши на карте
