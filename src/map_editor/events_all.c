@@ -163,7 +163,7 @@ void	on_mouse(t_all *all, SDL_MouseButtonEvent *event)
 		sprite_click(all, all->sprites.buttons, event, 0);
 	else
 		level_buttons(all, all->buttons, event);
-	printf("picked = %d\n", all->sprites.picked);
+	// printf("picked = %d\n", all->sprites.picked);
 }
 
 void	on_event(t_all *all, SDL_Event *event)

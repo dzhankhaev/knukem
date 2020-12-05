@@ -55,7 +55,8 @@ SRC := main.c\
 	map_editor/draw_ui.c\
 	map_editor/draw_map.c\
 	map_editor/draw_all.c\
-	map_editor/draw_utils.c\
+	map_editor/draw_sprites.c\
+	map_editor/drawing_utils.c\
 	map_editor/errors.c\
 	map_editor/events_all.c\
 	map_editor/events_map.c\
@@ -83,8 +84,8 @@ FLAG :=  -g #-Wall -Werror -Wextra
 PWD := $(shell pwd)
 FRAMEWORKSDIR := $(PWD)/frameworks
 INC := -I includes
-SDL := -I SDL2/SDL.h -lSDL2 -lSDL2_ttf -lSDL2_image
-#SDL := -F $(FRAMEWORKSDIR) -framework SDL2 -framework SDL2_ttf -framework SDL2_image -framework SDL2_mixer -Wl -rpath $(FRAMEWORKSDIR)
+# SDL := -I SDL2/SDL.h -lSDL2 -lSDL2_ttf -lSDL2_image
+SDL := -F $(FRAMEWORKSDIR) -framework SDL2 -framework SDL2_ttf -framework SDL2_image -framework SDL2_mixer -Wl -rpath $(FRAMEWORKSDIR)
 
 TOTAL_FILES := $(shell echo $(SRC) | wc -w | sed -e 's/ //g')
 CURRENT_FILES = $(shell find $(PWD)/obj/ -type f 2> /dev/null | wc -l | sed -e 's/ //g')

@@ -39,6 +39,7 @@ int             extra_buttons(t_all *all, t_button *buttons)
     buttons[9].dstrect = (SDL_Rect){(W / 4 - 4) - 75, H * 0.58, 50, 50};
     buttons[9].title = ft_strdup(" + ");
     buttons[9].color = WHITE;
+    return 0;
 }
 
 int             load_buttons(t_all *all, t_button *buttons)

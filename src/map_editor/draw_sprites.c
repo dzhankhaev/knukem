@@ -42,11 +42,19 @@ void    draw_sprites(t_all *all, t_sprites *sprites)
     draw_sprite(all, sprites->buttons[4].texture, &sprites->where_player, 1);
 }
 
-void    add_sprite(t_all *all, int x, int y, int num)
+void    add_sprite(t_all *all, int x, int y, int type)
 {
     t_xyz   *coords;
 
-    coords = all->sprites.buttons[num].sprite_coords;
-    if(num == PLAYER)
+    coords = all->sprites.buttons[type].sprite_coords;
+    if(type == PLAYER)
+    {
         coords[0] = (t_xyz){x, y, all->draw_floors.x};
+        all->player.sector = which_sector(all, all->sectors, coords[0]);
+    }
+    else
+    {
+        // coords = ft_realloc(coords, sizeof(t_xyz) * all->sprites.)
+    }
+    
 }

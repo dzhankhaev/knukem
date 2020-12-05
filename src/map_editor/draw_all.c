@@ -69,4 +69,5 @@ void	draw_all(t_all *all, t_sdl *sdl, t_button *btn)
 	draw_ui(all, sdl, btn);
 	if (all->swap_num != -1)
 		draw_sector_info(all->sectors[all->swap_num], sdl, all->swap_num, all);
+	draw_sprites(all, &all->sprites);
 }

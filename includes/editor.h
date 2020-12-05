@@ -1,21 +1,21 @@
 #ifndef EDITOR_H
 # define EDITOR_H
 
-# include "../SDL/SDL.h"
-# include "../SDL/SDL_ttf.h"
-# include "../SDL2_image-2.0.5/SDL_image.h"
+// # include "../SDL/SDL.h"
+// # include "../SDL/SDL_ttf.h"
+// # include "../SDL2_image-2.0.5/SDL_image.h"
 
-// # include <SDL2/SDL.h>
-// # include <SDL2_ttf/SDL_ttf.h>
-// # include <SDL2_image/SDL_image.h>
+# include <SDL2/SDL.h>
+# include <SDL2_ttf/SDL_ttf.h>
+# include <SDL2_image/SDL_image.h>
 
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include "../libft/libft.h"
 
-# define W 1200
-# define H 700
+# define W 1920
+# define H 1080
 # define FPS 200
 # define PICT_HEIGHT 50
 # define PICT_WIDTH 90
@@ -169,6 +169,7 @@ typedef struct      s_all
 
 void	            init_all(t_all *all); // инициализируем модули
 void				init_sprites(t_sprites *sprites);
+void				add_sprite(t_all *all, int x, int y, int type);
 void                error_and_close(const char *file, const char *function); // аварийное завершение программы
 void                on_event(t_all *all, SDL_Event *event); //обработка событий
 void				map_click(t_xyz *mouse, t_all *all);
@@ -187,6 +188,7 @@ void				draw_rect(t_all *all, SDL_Rect area, SDL_Color color, int border);
 void				draw_line(t_all *all, t_xy *start, t_xy *fin, SDL_Color color);
 void				draw_circle(t_sdl *sdl, t_xy coord, int r, SDL_Color color);
 void				draw_ui(t_all *all, t_sdl *sdl, t_button *btn);
+void				draw_sprites(t_all *all, t_sprites *sprites);
 void    			new_sector(t_all *all, int x, int y);
 void				get_neighbours(t_sect *sector, t_all 	*all, int n);
 float				point_side1(float px, float py, t_xy vert, t_xy vert1);

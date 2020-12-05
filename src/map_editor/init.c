@@ -64,7 +64,6 @@ void	init_sprites(t_sprites *sprites)
 	{
 		if(!(sprites->buttons[i].sprite_coords = (t_xyz*)malloc(sizeof(t_xyz))))
 			error_and_close(__FILE__, __FUNCTION__);
-		sprites->buttons[i].sprite_coords = NULL;
 		i++;
 	}
 	sprites->player->state = 0;

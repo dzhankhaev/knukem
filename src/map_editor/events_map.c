@@ -40,7 +40,7 @@ void	map_click(t_xyz *mouse, t_all *all)
 	}
     else if(all->sprites.picked != -1)
     {
-		// add_sprite(all->sprites.buttons[all->sprites.picked], x, y);
+		add_sprite(all, x, y, all->sprites.picked);
 
 		// all->player.where = (t_xyz){x, y, all->draw_floors.x};
     	// all->player.sector = which_sector(all, all->sectors, all->player.where);
