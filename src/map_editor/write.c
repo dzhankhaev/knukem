@@ -147,6 +147,27 @@ int which_sector(t_all *all, t_sect *sectors, t_xyz where)
     return (-1);
 }
 
+void    write_sprites(t_sprites *sprites)
+{
+    int i, j;
+    char *array[5] = {"gun", "enemy", "aid", "bazooka", "player"};
+    t_xyz *temp;
+
+    i = 0;
+    while(i < 5)
+    {
+        
+        j = 0;
+        while(j < sprites->buttons[i].num)
+        {
+            temp = sprites->buttons[i].sprite_coords;
+            printf("%s %d %d %d\n", array[i], (int)temp[j].x, (int)temp[j].y, (int)temp[j].z);
+            j++;
+        }
+        i++;
+    }
+}
+
 
 int write_map(char *name, t_all *all)
 {
@@ -203,6 +224,8 @@ int write_map(char *name, t_all *all)
     printf("player  %d %d %d %d\n", (int)all->player.where.x, 
         (int)all->player.where.y, (int)all->player.where.z, all->player.sector);
     ft_memdel((void*)vert);
+
+    write_sprites(&all->sprites);
 
     
     ///********test*********////

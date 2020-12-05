@@ -49,17 +49,18 @@ void    draw_sprites(t_all *all, t_sprites *sprites)
 void    add_sprite(t_all *all, int x, int y, int type)
 {
     t_xyz   *coords;
+    int sect;
 
     coords = all->sprites.buttons[type].sprite_coords;
-    if(type == PLAYER && which_sector(all, all->sectors, (t_xyz){x, y, all->draw_floors.x}) != -1)
+    if(type == PLAYER && (sect = which_sector(all, all->sectors, (t_xyz){x, y, all->draw_floors.x})) != -1)
     {
-        coords[0] = (t_xyz){x, y, all->draw_floors.x};
-        all->player.sector = which_sector(all, all->sectors, coords[0]);
+        coords[0] = (t_xyz){x, y, sect};
+        all->player.sector = sect;
     }
-    else if(which_sector(all, all->sectors, (t_xyz){x, y, all->draw_floors.x}) != -1)
+    else if((sect = which_sector(all, all->sectors, (t_xyz){x, y, all->draw_floors.x})) != -1)
     {
         coords = ft_realloc(coords, sizeof(t_xyz) * (++all->sprites.buttons[type].num));
-        coords[all->sprites.buttons[type].num - 1] = (t_xyz){x, y, all->draw_floors.x};
+        coords[all->sprites.buttons[type].num - 1] = (t_xyz){x, y, sect};
         all->sprites.buttons[type].sprite_coords = coords;
     }
     else
