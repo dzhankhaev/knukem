@@ -55,28 +55,6 @@ int		scaling(SDL_Rect area, t_xyz mapsize)
 	return scale;
 }
 
-void	init_sprites(t_sprites *sprites)
-{
-	int i;
-
-	i = 0;
-	while(i < 5)
-	{
-		if(!(sprites->buttons[i].sprite_coords = (t_xyz*)malloc(sizeof(t_xyz))))
-			error_and_close(__FILE__, __FUNCTION__);
-		i++;
-	}
-	sprites->player->state = 0;
-    sprites->bazooka->state = 0;
-    sprites->gun->state = 0;
-    sprites->enemy->state = 0;
-    sprites->aid->state = 0;
-    sprites->num_aids = 0;
-    sprites->num_baz = 0;
-    sprites->num_enemies = 0;
-    sprites->num_guns = 0;
-}
-
 void    init_all(t_all *all)
 {
 	all->on = 1;

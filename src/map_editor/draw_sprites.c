@@ -16,13 +16,17 @@ void	draw_sprite_picked(t_all *all, t_sdl *sdl, t_sprites *sprites, t_xy *c)
     }
 }
 
-void    draw_sprite(t_all *all, SDL_Surface *texture, t_xyz *coords, int num)
+void    draw_sprite(t_all *all, t_button *sprite)
 {
-    SDL_Rect loc;
-    int i;
+    SDL_Rect    loc;
+    t_xyz       *coords;
+    SDL_Surface *texture;
+    int         i;
 
+    coords = sprite->sprite_coords;
+    texture = sprite->texture;
     i = 0;
-    while(i < num)
+    while(i < sprite->num)
     {
         loc = (SDL_Rect){(coords[i].x * all->step) + all->delta.x - all->step/2,
             (coords[i].y * all->step) + all->delta.y - all->step/2,
@@ -35,11 +39,11 @@ void    draw_sprite(t_all *all, SDL_Surface *texture, t_xyz *coords, int num)
 
 void    draw_sprites(t_all *all, t_sprites *sprites)
 {
-    draw_sprite(all, sprites->buttons[0].texture, sprites->aids, sprites->num_aids);
-    draw_sprite(all, sprites->buttons[1].texture, sprites->guns, sprites->num_aids);
-    draw_sprite(all, sprites->buttons[2].texture, sprites->enemies, sprites->num_aids);
-    draw_sprite(all, sprites->buttons[3].texture, sprites->bazookas, sprites->num_aids);
-    draw_sprite(all, sprites->buttons[4].texture, &sprites->where_player, 1);
+    draw_sprite(all, &sprites->buttons[GUN]);
+    draw_sprite(all, &sprites->buttons[ENEMY]);
+    draw_sprite(all, &sprites->buttons[AID]);
+    draw_sprite(all, &sprites->buttons[BAZOOKA]);
+    draw_sprite(all, &sprites->buttons[PLAYER]);
 }
 
 void    add_sprite(t_all *all, int x, int y, int type)
@@ -54,7 +58,8 @@ void    add_sprite(t_all *all, int x, int y, int type)
     }
     else
     {
-        // coords = ft_realloc(coords, sizeof(t_xyz) * all->sprites.)
+        coords = ft_realloc(coords, sizeof(t_xyz) * (++all->sprites.buttons[type].num));
+        coords[all->sprites.buttons[type].num - 1] = (t_xyz){x, y, all->draw_floors.x};
     }
     
 }

@@ -85,6 +85,7 @@ typedef struct      s_button
     int             state;
 	char			*title;
 	t_xyz			*sprite_coords;
+	int				num;
 }                   t_button;
 
 typedef	struct	s_player
@@ -118,19 +119,10 @@ typedef	struct	s_sprites
 {
 	t_button		buttons[5];
 	t_xyz			*enemies;
-	int				num_enemies;
-	t_button		*enemy;
 	t_xyz			*aids;
-	int				num_aids;
-	t_button		*aid;
 	t_xyz			*guns;
-	int				num_guns;
-	t_button		*gun;
 	t_xyz			*bazookas;
-	int				num_baz;
-	t_button		*bazooka;
 	t_xyz			where_player;
-	t_button		*player;
 	int				picked;
 }				t_sprites;
 
@@ -168,7 +160,6 @@ typedef struct      s_all
 }                   t_all;
 
 void	            init_all(t_all *all); // инициализируем модули
-void				init_sprites(t_sprites *sprites);
 void				add_sprite(t_all *all, int x, int y, int type);
 void                error_and_close(const char *file, const char *function); // аварийное завершение программы
 void                on_event(t_all *all, SDL_Event *event); //обработка событий

@@ -88,42 +88,39 @@ int             load_labels(t_all *all, t_labels *labels)
 
 int             load_sprites_pics(t_all *all, t_sprites *sprite)
 {
-    if(!(sprite->player->texture = get_texture("player.bmp", all->sdl)))
+    if(!(sprite->buttons[PLAYER].texture = get_texture("player.bmp", all->sdl)))
         error_and_close(__FILE__, __FUNCTION__);
-    if(!(sprite->gun->texture = get_texture("gun.bmp", all->sdl)))
+    if(!(sprite->buttons[GUN].texture = get_texture("gun.bmp", all->sdl)))
         error_and_close(__FILE__, __FUNCTION__);
-    if(!(sprite->enemy->texture = get_texture("monster.bmp", all->sdl)))
+    if(!(sprite->buttons[ENEMY].texture = get_texture("monster.bmp", all->sdl)))
         error_and_close(__FILE__, __FUNCTION__);
-    if(!(sprite->aid->texture = get_texture("aid.bmp", all->sdl)))
+    if(!(sprite->buttons[AID].texture = get_texture("aid.bmp", all->sdl)))
         error_and_close(__FILE__, __FUNCTION__);
-    if(!(sprite->bazooka->texture = get_texture("bazooka.bmp", all->sdl)))
+    if(!(sprite->buttons[BAZOOKA].texture = get_texture("bazooka.bmp", all->sdl)))
         error_and_close(__FILE__, __FUNCTION__);
-    sprite->gun->dstrect = (SDL_Rect){W / 28, H * 0.2, 50, 50};
-    sprite->enemy->dstrect = (SDL_Rect){W / 10, H * 0.2, 50, 50};
-    sprite->aid->dstrect = (SDL_Rect){W / 6, H * 0.2, 50, 50};
-    sprite->bazooka->dstrect = (SDL_Rect){W / 28, H * 0.3, 50, 50};
-    sprite->player->dstrect = (SDL_Rect){W / 10, H * 0.3, 50, 50};
-    init_sprites(sprite);
+    sprite->buttons[GUN].dstrect = (SDL_Rect){W / 28, H * 0.2, 50, 50};
+    sprite->buttons[ENEMY].dstrect = (SDL_Rect){W / 10, H * 0.2, 50, 50};
+    sprite->buttons[AID].dstrect = (SDL_Rect){W / 6, H * 0.2, 50, 50};
+    sprite->buttons[BAZOOKA].dstrect = (SDL_Rect){W / 28, H * 0.3, 50, 50};
+    sprite->buttons[PLAYER].dstrect = (SDL_Rect){W / 10, H * 0.3, 50, 50};
     return(1);
 }
 
-void	alloc_sprites(t_sprites *sprites)
+void	alloc_sprites(t_all *all, t_sprites *sprites)
 {
 	int i;
-
-	sprites->gun = (t_button*)malloc(sizeof(t_button));
-	sprites->aid = (t_button*)malloc(sizeof(t_button));
-	sprites->enemy = (t_button*)malloc(sizeof(t_button));
-	sprites->bazooka = (t_button*)malloc(sizeof(t_button));
-	sprites->player = (t_button*)malloc(sizeof(t_button));
 
 	i = 0;
 	while(i < 5)
 	{
-		if(&sprites->buttons[i] == NULL)
+        if(!(sprites->buttons[i].sprite_coords = (t_xyz*)malloc(sizeof(t_xyz))))
 			error_and_close(__FILE__, __FUNCTION__);
+		sprites->buttons[i].state = 0;
+        sprites->buttons[i].num = 0;
 		i++;
 	}
+    sprites->buttons[PLAYER].num = 1;
+    sprites->buttons[PLAYER].sprite_coords = &all->player.where;
 }
 
 int             load_texture(t_all *all)
@@ -131,7 +128,7 @@ int             load_texture(t_all *all)
     t_sprites *sprites;
 
     sprites = &all->sprites;
-	alloc_sprites(&all->sprites);
+	alloc_sprites(all, &all->sprites);
     if(!(load_sprites_pics(all, &all->sprites) == 1))
         error_and_close(__FILE__, __FUNCTION__);
     if(!(load_buttons(all, all->buttons) == 1))
@@ -140,11 +137,6 @@ int             load_texture(t_all *all)
         error_and_close(__FILE__, __FUNCTION__);
     if(!(all->player.picture = get_texture("player.bmp", all->sdl)))
         error_and_close(__FILE__, __FUNCTION__);
-    sprites->buttons[0] = *sprites->gun;
-	sprites->buttons[1] = *sprites->enemy;
-	sprites->buttons[2] = *sprites->aid;
-	sprites->buttons[3] = *sprites->bazooka;
-	sprites->buttons[4] = *sprites->player;
 
     return (0);
 }
