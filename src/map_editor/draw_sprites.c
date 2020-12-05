@@ -31,7 +31,7 @@ void    draw_sprite(t_all *all, t_button *sprite)
         loc = (SDL_Rect){(coords[i].x * all->step) + all->delta.x - all->step/2,
             (coords[i].y * all->step) + all->delta.y - all->step/2,
                 all->step, all->step};
-        if(all->sectors[(int)coords[i].z].floor >= all->draw_floors.x)
+        if(all->sectors[(int)coords[i].z].floor >= all->draw_floors.x  && loc.x > all->area.x)
             draw_texture(all->sdl, loc, texture);
         i++;
     }
@@ -51,15 +51,21 @@ void    add_sprite(t_all *all, int x, int y, int type)
     t_xyz   *coords;
 
     coords = all->sprites.buttons[type].sprite_coords;
-    if(type == PLAYER)
+    if(type == PLAYER && which_sector(all, all->sectors, (t_xyz){x, y, all->draw_floors.x}) != -1)
     {
         coords[0] = (t_xyz){x, y, all->draw_floors.x};
         all->player.sector = which_sector(all, all->sectors, coords[0]);
     }
-    else
+    else if(which_sector(all, all->sectors, (t_xyz){x, y, all->draw_floors.x}) != -1)
     {
         coords = ft_realloc(coords, sizeof(t_xyz) * (++all->sprites.buttons[type].num));
         coords[all->sprites.buttons[type].num - 1] = (t_xyz){x, y, all->draw_floors.x};
+        all->sprites.buttons[type].sprite_coords = coords;
     }
+    else
+    {
+        printf("öut of sector\n");
+    }
+    
     
 }
