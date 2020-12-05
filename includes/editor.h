@@ -1,26 +1,26 @@
 #ifndef EDITOR_H
 # define EDITOR_H
 
-// # include "../SDL/SDL.h"
-// # include "../SDL/SDL_ttf.h"
-// # include "../SDL2_image-2.0.5/SDL_image.h"
+# include "../SDL/SDL.h"
+# include "../SDL/SDL_ttf.h"
+# include "../SDL2_image-2.0.5/SDL_image.h"
 
-# include <SDL2/SDL.h>
-# include <SDL2_ttf/SDL_ttf.h>
-# include <SDL2_image/SDL_image.h>
+// # include <SDL2/SDL.h>
+// # include <SDL2_ttf/SDL_ttf.h>
+// # include <SDL2_image/SDL_image.h>
 
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include "../libft/libft.h"
 
-# define W 1920
-# define H 1080
+# define W 1200
+# define H 700
 # define FPS 200
 # define PICT_HEIGHT 50
 # define PICT_WIDTH 90
 // # define OBJECTS (MAP_HEIGHT * MAP_WIDTH)
-# define BUTTONS 6
+# define BUTTONS 10
 # define FUNC_BUT 2
 # define OBJ_SIDE 57
 # define EYE_HEIGHT 6
@@ -33,6 +33,13 @@
 # define GREEN (SDL_Color){0, 255, 0, 255}
 # define LAZUR (SDL_Color){54, 209, 183, 255}
 # define YELLOW (SDL_Color){255, 255, 33, 255}
+
+# define NEW_SECT 0
+# define GUN 0
+# define ENEMY 1
+# define AID 2
+# define BAZOOKA 3
+# define PLAYER 4
 
 typedef struct	    s_sdl
 {
@@ -77,6 +84,7 @@ typedef struct      s_button
 	SDL_Color		color;
     int             state;
 	char			*title;
+	t_xyz			*sprite_coords;
 }                   t_button;
 
 typedef	struct	s_player
@@ -106,6 +114,26 @@ typedef	struct s_labels
 	SDL_Rect		dst;
 }				t_labels;
 
+typedef	struct	s_sprites
+{
+	t_button		buttons[5];
+	t_xyz			*enemies;
+	int				num_enemies;
+	t_button		*enemy;
+	t_xyz			*aids;
+	int				num_aids;
+	t_button		*aid;
+	t_xyz			*guns;
+	int				num_guns;
+	t_button		*gun;
+	t_xyz			*bazookas;
+	int				num_baz;
+	t_button		*bazooka;
+	t_xyz			where_player;
+	t_button		*player;
+	int				picked;
+}				t_sprites;
+
 
 typedef struct      s_all
 {
@@ -122,9 +150,9 @@ typedef struct      s_all
 	int 			iso; //изометрия вкл/выкл
 	SDL_Color		color;
 	TTF_Font		*font;
-	t_labels		labels[5];// надписи
-	// float			angle;//угол поворота
-	// t_xyz			rot;//
+	TTF_Font		*s_font;
+	t_labels		labels[5];
+	t_sprites		sprites;
 	t_xy			draw_floors;//уровни отрисовки этажей
 	t_xy			set_floors;//установка высоты нового сектора
 	t_xyint			point;//координаты ближайшей точки курсора
@@ -135,13 +163,12 @@ typedef struct      s_all
     SDL_Rect        area;//область редактирования
     SDL_Surface     *texture;//текстура-подложка
 	int				threed;
-
     t_button        buttons[BUTTONS];//кнопки
-//    t_edit			edit;//
     t_sdl           *sdl;//
 }                   t_all;
 
 void	            init_all(t_all *all); // инициализируем модули
+void				init_sprites(t_sprites *sprites);
 void                error_and_close(const char *file, const char *function); // аварийное завершение программы
 void                on_event(t_all *all, SDL_Event *event); //обработка событий
 void				map_click(t_xyz *mouse, t_all *all);
@@ -152,10 +179,11 @@ void                draw_all(t_all *all, t_sdl *sdl, t_button *btn);//отрис
 int					write_map(char *name, t_all *all);
 void				draw_temp(t_all *all, t_sdl *sdl, t_sect *temp, t_xy delta);//несохраненный сектор
 void				draw_map(t_sdl *sdl, t_sect *sect, t_all *all);
-void				draw_player(t_all *all, t_sdl *sdl, t_player *player, t_xy *c);
+void				draw_sprite_picked(t_all *all, t_sdl *sdl, t_sprites *sprites, t_xy *c);
 void				draw_grid(t_all *all, SDL_Rect *area, int step);
 void    			draw_texture(t_sdl *sdl, SDL_Rect area, SDL_Surface *txt);
 void    			draw_fill_rect(t_all *all, SDL_Rect area, SDL_Color color);
+void				draw_rect(t_all *all, SDL_Rect area, SDL_Color color, int border);
 void				draw_line(t_all *all, t_xy *start, t_xy *fin, SDL_Color color);
 void				draw_circle(t_sdl *sdl, t_xy coord, int r, SDL_Color color);
 void				draw_ui(t_all *all, t_sdl *sdl, t_button *btn);
@@ -165,8 +193,7 @@ float				point_side1(float px, float py, t_xy vert, t_xy vert1);
 int					check_sector(t_sect *sect);
 int					which_sector(t_all *all, t_sect *sectors, t_xyz where);
 void				remove_sector(t_all *all, t_sect *sectors);
-SDL_Surface			*get_text_surface(t_all *all, char *name, SDL_Rect target, SDL_Color color);
+SDL_Surface			*get_text_surface(t_all *all, char *name, TTF_Font *font, SDL_Color color);
 void       			put_pxl(t_sdl *sdl, SDL_Color col, int x, int y);
-
 
 # endif

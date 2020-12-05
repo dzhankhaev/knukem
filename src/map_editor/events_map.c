@@ -38,14 +38,16 @@ void	map_click(t_xyz *mouse, t_all *all)
 		all->temp->neighbors = NULL;
         new_sector(all, x, y);
 	}
-    else if(all->buttons[1].state == 1)
+    else if(all->sprites.picked != -1)
     {
-		all->player.where = (t_xyz){x, y, all->draw_floors.x};
-    	all->player.sector = which_sector(all, all->sectors, all->player.where);
-		all->player.where.z += EYE_HEIGHT; 
-		all->player.picked = 0;
-		all->buttons[1].state = 0;
-		all->buttons[1].color = WHITE;
+		// add_sprite(all->sprites.buttons[all->sprites.picked], x, y);
+
+		// all->player.where = (t_xyz){x, y, all->draw_floors.x};
+    	// all->player.sector = which_sector(all, all->sectors, all->player.where);
+		// all->player.where.z += EYE_HEIGHT; 
+		// all->player.picked = 0;
+		// all->buttons[1].state = 0;
+		// all->buttons[1].color = WHITE;
 	}
 	else
 		select_sector(all, x, y);

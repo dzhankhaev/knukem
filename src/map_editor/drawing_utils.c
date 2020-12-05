@@ -58,6 +58,31 @@ void	draw_circle(t_sdl *sdl, t_xy coord, int r, SDL_Color col)
 	}
 }
 
+void	draw_rect(t_all *all, SDL_Rect area, SDL_Color color, int border)
+{
+	int x;
+	int y;
+
+	area = (SDL_Rect){area.x - border, area.y - border, area.w + border * 2, \
+		area.h + border * 2};
+	x = area.x;
+	y = area.y;
+	while(x <= area.x + area.w)
+	{
+		draw_line(all, &(t_xy){x, y}, &(t_xy){x, area.y + area.h}, color);
+		x++;
+		if(x - area.x == border)
+			x = area.x + area.w - border+1;
+	}
+	while(y <= area.y + area.h)
+	{
+		draw_line(all, &(t_xy){x, y}, &(t_xy){area.x, y}, color);
+		y++;
+		if(y - area.y == border)
+			y = area.y + area.h - border + 1;
+	}
+}
+
 void    draw_fill_rect(t_all *all, SDL_Rect area, SDL_Color color)
 {
     int x;

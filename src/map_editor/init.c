@@ -11,7 +11,9 @@ void	load_fonts(t_sdl *sdl, t_all *all)
 
 	all->font = NULL;
 	all->font = TTF_OpenFont("fonts/CRA75.ttf", 36);
-	if(!all->font) 
+	all->s_font = NULL;
+	all->s_font = TTF_OpenFont("fonts/cabin.ttf", 15);
+	if(!all->font || !all->s_font) 
 	{
     	SDL_DestroyWindow(sdl->window);
 		SDL_Quit();
@@ -53,6 +55,29 @@ int		scaling(SDL_Rect area, t_xyz mapsize)
 	return scale;
 }
 
+void	init_sprites(t_sprites *sprites)
+{
+	int i;
+
+	i = 0;
+	while(i < 5)
+	{
+		if(!(sprites->buttons[i].sprite_coords = (t_xyz*)malloc(sizeof(t_xyz))))
+			error_and_close(__FILE__, __FUNCTION__);
+		sprites->buttons[i].sprite_coords = NULL;
+		i++;
+	}
+	sprites->player->state = 0;
+    sprites->bazooka->state = 0;
+    sprites->gun->state = 0;
+    sprites->enemy->state = 0;
+    sprites->aid->state = 0;
+    sprites->num_aids = 0;
+    sprites->num_baz = 0;
+    sprites->num_enemies = 0;
+    sprites->num_guns = 0;
+}
+
 void    init_all(t_all *all)
 {
 	all->on = 1;
@@ -71,4 +96,5 @@ void    init_all(t_all *all)
 	all->player.picked = 0;
 	all->iso = 0;
 	all->set_floors = (t_xy){0, 0};
+	all->sprites.picked = -1;
 }

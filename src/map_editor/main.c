@@ -5,28 +5,30 @@ void	apply_changes(t_all *all, t_button *btn)
 {
 	int		i;
 	t_xy	*temp;
-
-	temp = btn[0].state == 0 ? &all->draw_floors : &all->set_floors;
+	
 	i = 2;
 	while (i < BUTTONS)
 	{
 		if (btn[i].state == 1)
+		{
+			temp = i < 6 ? &all->draw_floors : &all->set_floors;
 			break;
+		}
 		i++;
 	}
-	if (i - 2 == 0)
+	if (i - 2 == 0 || i - 6 == 0)
 		temp->x -= 1;
-	else if (i - 2 == 1)
+	else if (i - 2 == 1 || i - 6 == 1)
 	{
 		temp->y += temp->x == temp->y ? 1 : 0;
 		temp->x += 1;
 	}
-	else if (i - 2 == 2)
+	else if (i - 2 == 2 || i - 6 == 2)
 	{
 		temp->x -= temp->y == temp->x ? 1 : 0;
 		temp->y -= 1;
 	}
-	else if (i - 2 == 3)
+	else if (i - 2 == 3 || i - 6 == 3)
 		temp->y += 1;
 }
 

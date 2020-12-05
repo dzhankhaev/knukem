@@ -40,9 +40,11 @@ void		level_buttons(t_all *all, t_button *buttons, SDL_MouseButtonEvent *event)
 	int i;
 	int	dx;
 	int	dy;
+	int	count;
 
 	i = 2;
-	while(i < BUTTONS)
+	count = all->buttons[NEW_SECT].state == 1 ? BUTTONS : BUTTONS - 4;
+	while(i < count)
 	{
 		dx = event->x - buttons[i].dstrect.x;
 		dy = event->y - buttons[i].dstrect.y;
@@ -58,7 +60,7 @@ void	button_click(t_all *all, t_button *buttons, SDL_MouseButtonEvent *event, in
 	int	dx;
 	int	dy;
 
-	while(i < BUTTONS - 4)
+	while(i < BUTTONS - 8)
 	{
 		dx = event->x - buttons[i].dstrect.x;
 		dy = event->y - buttons[i].dstrect.y;
@@ -79,7 +81,7 @@ void	button_click(t_all *all, t_button *buttons, SDL_MouseButtonEvent *event, in
 		}
 		i++;
 	}
-	all->player.picked = buttons[1].state == 1 ? 1 : 0;
+	// all->player.picked = buttons[1].state == 1 ? 1 : 0;
 }
 
 void	closest_point(t_all *all, t_xyint point)
@@ -87,7 +89,7 @@ void	closest_point(t_all *all, t_xyint point)
 	t_xy	   c;
 
 	c = (t_xy){(all->area.w / 2) % all->step, (all->area.h / 2) % all->step};
-	if(all->player.picked)
+	if(all->sprites.picked != -1)
 	{
 		all->point.x = ((float)point.x - all->area.x - c.x) / all->step;
 		all->point.y = ((float)point.y - all->area.y - c.y) / all->step;
@@ -98,6 +100,41 @@ void	closest_point(t_all *all, t_xyint point)
 		all->point.y = round(((float)point.y - all->area.y - c.y) / all->step);
 	}
 	
+}
+
+void	sprite_click(t_all *all, t_button *buttons, SDL_MouseButtonEvent *event, int i)
+{
+	int	dx;
+	int	dy;
+
+	if(all->mouse.z == 1)
+		all->sprites.picked = -1;
+	while(i < 5)
+	{
+		dx = event->x - buttons[i].dstrect.x;
+		dy = event->y - buttons[i].dstrect.y;
+		if(all->mouse.z == 1)
+		{
+			if(dx > 0 && dy > 0 && dx < buttons[i].dstrect.w && dy < buttons[i].dstrect.h)
+			{
+				buttons[i].state = buttons[i].state == 1 ? 0 : 1;
+				all->sprites.picked = buttons[i].state == 1 ? i : all->sprites.picked;
+				// printf("picked = %d\n", all->sprites.picked);
+
+			}
+			else
+				buttons[i].state = 0;
+		}
+		// else if(all->mouse.z == 0)
+		// {
+		// 	if(dx > 0 && dy > 0 && dx < buttons[i].dstrect.w && dy < buttons[i].dstrect.h &&
+		// 	buttons[i].state != 1)
+		// 		buttons[i].color = GREY;
+		// 	else
+		// 		buttons[i].color = WHITE;
+		// }
+		i++;
+	}
 }
 
 void	on_mouse(t_all *all, SDL_MouseButtonEvent *event)
@@ -116,10 +153,17 @@ void	on_mouse(t_all *all, SDL_MouseButtonEvent *event)
 			map_click(&all->mouse, all);
 		}
 	}
-	else if (event->x < W / 4 && event->y < H / 4)
+	else if (event->x < W * 0.25 && event->y < H * 0.2)
+	{
 		button_click(all, all->buttons, event, 0); // обработка кликов на панели управления
+		all->sprites.picked = -1;
+	}
+	else if (event->x < W * 0.25 && event->y < H * 0.5 && event->y > \
+			H * 0.2 && !all->buttons[NEW_SECT].state)
+		sprite_click(all, all->sprites.buttons, event, 0);
 	else
 		level_buttons(all, all->buttons, event);
+	printf("picked = %d\n", all->sprites.picked);
 }
 
 void	on_event(t_all *all, SDL_Event *event)
