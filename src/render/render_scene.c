@@ -49,7 +49,7 @@ void			render_scene(t_engine *engine, int sectorno, int neighbor, int i)
 	t_ixyz	txset;
 
 	rendering_init(engine, sectorno, neighbor);
-	txset = (t_ixyz){abs(engine->sectors[sectorno].neighbors[i]), 1, 2};
+	txset = (t_ixyz){abs(engine->sectors[sectorno].neighbors[i]), 1, 2}; //TODO WTF
 	if (engine->edit.mod_w != -1 && engine->edit.txno != -1)
 	{
 		if (engine->sectors[sectorno].neighbors[i] <= -1)

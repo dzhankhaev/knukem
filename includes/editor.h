@@ -5,9 +5,14 @@
 // # include "../SDL/SDL_ttf.h"
 // # include "../SDL2_image-2.0.5/SDL_image.h"
 
-# include <SDL2/SDL.h>
+/*# include <SDL2/SDL.h>
 # include <SDL2_ttf/SDL_ttf.h>
-# include <SDL2_image/SDL_image.h>
+# include <SDL2_image/SDL_image.h>*/
+
+# include <SDL.h>
+# include <SDL_ttf.h>
+# include <SDL_image.h>
+# include <SDL_mixer.h>
 
 # include <stdio.h>
 # include <stdlib.h>
@@ -117,12 +122,12 @@ typedef	struct s_labels
 
 typedef	struct	s_sprites
 {
-	t_button		buttons[5];
-	t_xyz			*enemies;
+	t_button					buttons[5];
+	/*t_xyz			*enemies;
 	t_xyz			*aids;
 	t_xyz			*guns;
 	t_xyz			*bazookas;
-	t_xyz			where_player;
+	t_xyz			where_player;*/
 	int				picked;
 }				t_sprites;
 
@@ -188,5 +193,7 @@ int					which_sector(t_all *all, t_sect *sectors, t_xyz where);
 void				remove_sector(t_all *all, t_sect *sectors);
 SDL_Surface			*get_text_surface(t_all *all, char *name, TTF_Font *font, SDL_Color color);
 void       			put_pxl(t_sdl *sdl, SDL_Color col, int x, int y);
+
+SDL_Surface     	*get_texture(char *file, t_sdl *sdl);
 
 # endif

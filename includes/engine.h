@@ -7,6 +7,11 @@
 # include <unistd.h>
 # include <string.h>
 
+# include <SDL.h>
+# include <SDL_ttf.h>
+# include <SDL_image.h>
+# include <SDL_mixer.h>
+
 # define MAX_QUEUE 64				//	максимальная длина очереди секторов
 //вычисленные заранее координаты конечной точки лучей видимости для фов 90. Подробнее в transform_wall.c
 # define RAY_POINT_X 35.f			//	50.f * cosf(HFOV/2)
@@ -144,6 +149,48 @@ typedef struct	s_vplane
 	float		z;
 }				t_vplane;
 
+//структура для каждого врага
+typedef struct	s_interactive_sprites
+{
+	int			visible; //TODO
+	t_xyz		where; //текущая позиция
+	t_xyz		translated_where;
+	t_xyz		rotated_where;
+	int			sector; //текущий сектор
+	//float 		angle;
+	//int 		height;
+	SDL_Surface	*texture;
+	SDL_Rect	dstrect;
+	//int 		*sprite[3];
+}				t_interactive_sprites;
+
+typedef struct	s_sprites1
+{
+	t_interactive_sprites 		*enemy_sprite;
+	t_interactive_sprites 		*supply_sprite;
+	t_interactive_sprites 		*weapon_sprite;
+}				t_sprites1;
+
+/*typedef struct		s_sprite_drawer
+{
+	double			xalpha;
+	double			yalpha;
+	void			*param;
+*//*	t_explosion		*explosion;
+	t_projectile	*projectile;
+	t_enemy			*enemy;
+	t_object		*object;
+	t_texture		*texture;
+	t_sprite		*sprite;
+	t_sector		*sector;*//*
+	int				x;
+	int				y;
+	int				xend;
+	int				yend;
+	int				textx;
+	int				texty;
+}					t_sprite_drawer;*/
+
 typedef struct	s_engine
 {
 	SDL_Window	*window;
@@ -174,8 +221,9 @@ typedef struct	s_engine
 	t_temp		rend_wall;			//используется в rendel_Wall тобы обойти норму
 	t_temp2		rend_plane;			//используется при рендеринге пола и потолка
 	t_img		img[10];
+	t_sprites1	sprites1;
+	t_xy 		screen_pos;
 }				t_engine;
-
 
 void			init_engine(t_engine *engine, t_all *all);
 void			general_init(t_engine *engine);
@@ -208,5 +256,7 @@ void			real_time_edit(t_engine *engine);
 void			render_hplane(t_engine *engine, t_vplane *p, int txno);
 void			render_sky(t_engine *engine);
 int 			main_editor(t_engine *engine, char *name, t_all *all);
+void			get_rotated_sprite_pos(t_engine *engine);
+void			project_enemy(t_engine *engine);
 
 #endif

@@ -68,10 +68,23 @@ static void sdl_img(t_engine *engine)
 	}
 }
 
+void 		load_sprites(t_engine *engine, t_all *all) //TODO (coordinates hardcoded)
+{
+	engine->sprites1.weapon_sprite = (t_interactive_sprites*)malloc(sizeof(t_interactive_sprites));
+	engine->sprites1.weapon_sprite->sector = 0;
+	engine->sprites1.weapon_sprite->where.x = 3;
+	engine->sprites1.weapon_sprite->where.y = 7;
+	engine->sprites1.weapon_sprite->visible = 1;
+	if(!(engine->sprites1.weapon_sprite->texture = get_texture("shotgun.bmp", all->sdl)))
+		error_and_close(__FILE__, __FUNCTION__);
+	engine->sprites1.weapon_sprite->dstrect = (SDL_Rect){W / 10, H * 0.2, 200, 200};
+}
+
 void		init_engine(t_engine *engine, t_all *all)
 {
 	bzero(engine, sizeof(*engine));
 	load_data(engine, all);
+	load_sprites(engine, all);
 	sdl(engine);
 	all->num_sectors = engine->num_sectors;
 	all->sdl = (t_sdl *)malloc(sizeof(t_sdl) * 1);

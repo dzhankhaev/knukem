@@ -55,6 +55,7 @@ void		game_loop(t_engine *engine, t_all *all)
 		keys_manager(engine);
 		move(engine);
 		SDL_LockSurface(engine->screen);
+		//draw_texture(all->sdl, engine->sprites1.weapon_sprite->dstrect, engine->sprites1.weapon_sprite->texture);
 		draw(engine);
 		SDL_UnlockSurface(engine->screen);
 		real_time_edit(engine);
