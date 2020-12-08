@@ -1,21 +1,21 @@
 #ifndef EDITOR_H
 # define EDITOR_H
 
-// # include "../SDL/SDL.h"
-// # include "../SDL/SDL_ttf.h"
-// # include "../SDL2_image-2.0.5/SDL_image.h"
+# include "../SDL/SDL.h"
+# include "../SDL/SDL_ttf.h"
+# include "../SDL2_image-2.0.5/SDL_image.h"
 
-# include <SDL2/SDL.h>
-# include <SDL2_ttf/SDL_ttf.h>
-# include <SDL2_image/SDL_image.h>
+// # include <SDL2/SDL.h>
+// # include <SDL2_ttf/SDL_ttf.h>
+// # include <SDL2_image/SDL_image.h>
 
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include "../libft/libft.h"
 
-# define W 1920
-# define H 1080
+# define W 1200
+# define H 700
 # define FPS 200
 # define PICT_HEIGHT 50
 # define PICT_WIDTH 90
@@ -118,12 +118,13 @@ typedef	struct s_labels
 typedef	struct	s_sprites
 {
 	t_button		buttons[5];
-	t_xyz			*enemies;
-	t_xyz			*aids;
-	t_xyz			*guns;
-	t_xyz			*bazookas;
+	// t_xyz			*enemies;
+	// t_xyz			*aids;
+	// t_xyz			*guns;
+	// t_xyz			*bazookas;
 	t_xyz			where_player;
 	int				picked;
+	t_xy			swap;
 }				t_sprites;
 
 
@@ -185,6 +186,7 @@ void				get_neighbours(t_sect *sector, t_all 	*all, int n);
 float				point_side1(float px, float py, t_xy vert, t_xy vert1);
 int					check_sector(t_sect *sect);
 int					which_sector(t_all *all, t_sect *sectors, t_xyz where);
+t_xy				which_sprite(t_all *all, t_sprites *sprites, t_xyz where);
 void				remove_sector(t_all *all, t_sect *sectors);
 SDL_Surface			*get_text_surface(t_all *all, char *name, TTF_Font *font, SDL_Color color);
 void       			put_pxl(t_sdl *sdl, SDL_Color col, int x, int y);

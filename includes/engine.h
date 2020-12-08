@@ -209,4 +209,6 @@ void			render_hplane(t_engine *engine, t_vplane *p, int txno);
 void			render_sky(t_engine *engine);
 int 			main_editor(t_engine *engine, char *name, t_all *all);
 
+void			render_sprite(t_engine *engine);////testtt
+
 #endif

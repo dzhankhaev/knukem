@@ -72,6 +72,6 @@ void    init_all(t_all *all)
 	all->temp->vertex = NULL;
 	all->player.picked = 0;
 	all->iso = 0;
-	all->set_floors = (t_xy){0, 0};
+	all->set_floors = (t_xy){0, 10};
 	all->sprites.picked = -1;
 }

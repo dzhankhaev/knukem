@@ -17,5 +17,6 @@ int main()
 	load_img(&engine, "sky1.png", 5);
 	game_loop(&engine, &all);
 	clean(&engine);
+
 	return (0);
 }

@@ -10,6 +10,9 @@ static t_xyz	vrotate(t_xyz p, float vangle) //используется для о
 //для обратного преобразования
 //X = z / (((float)(wall.y0 << 1) / H - 1) - vangle);
 //Y = X * (((float)wall.x0 - (W / 2.f)) / (W / 2.f));
+
+
+// преобразование координат точки.
 t_line			perspective_transform(t_fline w, float z, float vangle,
 							   int color)
 {

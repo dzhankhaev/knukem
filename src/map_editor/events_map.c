@@ -12,6 +12,15 @@
 
 #include "editor.h"
 
+void	select_sprite(t_all *all, int x, int y)
+{	
+	t_xyz	where;
+
+	where = (t_xyz){x, y, all->draw_floors.x};
+	where = (t_xyz){x, y, which_sector(all, all->sectors, where)};
+	all->sprites.swap = which_sprite(all, &all->sprites, where);
+}
+
 void	select_sector(t_all *all, int x, int y)
 {
 	t_xyz	where;
@@ -49,6 +58,8 @@ void	map_click(t_xyz *mouse, t_all *all)
 		// all->buttons[1].state = 0;
 		// all->buttons[1].color = WHITE;
 	}
+	else if(all->buttons[1].state)
+		select_sprite(all, x, y);
 	else
 		select_sector(all, x, y);
 }

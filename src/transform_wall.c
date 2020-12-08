@@ -51,6 +51,7 @@ static void choose_edit(t_engine *engine, int i)
 
 int			transform_wall(t_engine *engine, int i)
 {
+	// перемещает координату в СИ игрового минра.
 	engine->wall = rotate_wall(engine->sectors[engine->present->sectorno],
 							   engine->player, i, engine->wall.color);
 	//после поворота координата X является глубиной

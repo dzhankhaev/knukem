@@ -121,32 +121,6 @@ float			point_side1(float px, float py, t_xy vert, t_xy vert1)
 								 px - vert.x, py - vert.y));
 }
 
-int which_sector(t_all *all, t_sect *sectors, t_xyz where)
-{
-    int i;
-    int p;
-
-    int j;
-    i = 0;
-    p = 0;
-    while(i < all->num_sectors)
-    {
-        j = 0;
-        if(where.z == all->sectors[i].floor)
-            while(j < all->sectors[i].npoints)
-            {
-                p = point_side1(where.x, where.y, sectors[i].vertex[j], sectors[i].vertex[j + 1]);
-                if (p < 0)
-                    break;
-                j++;
-            }
-        if(p > 0)
-            return(i);
-        i++;
-    }
-    return (-1);
-}
-
 void    write_sprites(t_sprites *sprites)
 {
     int i, j;
