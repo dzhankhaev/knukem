@@ -36,6 +36,7 @@
 # define CAMERA_DY -0.007f			//	чувствительность по оси Y
 # define CAMERA_DX 0.01f			//	чувствительность по оси X
 # define VLIMIT 2.5f				//	Граница вертикального поворота
+# define WEAPON_SPRITE_NUM 1		//	Количество спрайтов оружия
 
 typedef struct	q_queue
 {
@@ -144,6 +145,27 @@ typedef struct	s_vplane
 	float		z;
 }				t_vplane;
 
+//структура для каждого врага
+typedef struct	s_weapon_sprites
+{
+	int			visible; //TODO
+	t_xyz		where; //текущая позиция
+	t_xyz		translated_where;
+	t_xyz		rotated_where;
+	t_xyz		fin_transformed_where;
+	int			sector; //текущий сектор
+	//float 		angle;
+	//int 		height;
+	SDL_Surface	*texture; //массив текстур для этого спрайта
+	SDL_Rect	dstrect;
+	//int 		*sprite[3];
+}				t_weapon_sprites;
+
+typedef struct	s_sprites1
+{
+	t_weapon_sprites 		*weapon_sprite;
+}				t_sprites1;
+
 typedef struct	s_engine
 {
 	SDL_Window	*window;
@@ -174,6 +196,7 @@ typedef struct	s_engine
 	t_temp		rend_wall;			//используется в rendel_Wall тобы обойти норму
 	t_temp2		rend_plane;			//используется при рендеринге пола и потолка
 	t_img		img[10];
+	t_sprites1	*sprites1;
 }				t_engine;
 
 
@@ -210,5 +233,7 @@ void			render_sky(t_engine *engine);
 int 			main_editor(t_engine *engine, char *name, t_all *all);
 
 void			render_sprite(t_engine *engine);////testtt
+float 			squareRoot(int number);
+int				square(int x);
 
 #endif

@@ -2,6 +2,20 @@
 #include "editor.h"
 #include "utilits.h"
 
+void 		load_sprites(t_engine *engine) //TODO (coordinates hardcoded)
+{
+	engine->sprites1 = (t_sprites1*)malloc(sizeof(t_sprites1));
+	engine->sprites1->weapon_sprite = (t_weapon_sprites*)malloc(sizeof(t_weapon_sprites) * WEAPON_SPRITE_NUM);
+	engine->sprites1->weapon_sprite->sector = 0;
+	engine->sprites1->weapon_sprite->where.x = 3;
+	engine->sprites1->weapon_sprite->where.y = 7;
+	engine->sprites1->weapon_sprite->where.z = 0;
+	engine->sprites1->weapon_sprite->visible = 1;
+	if(!(engine->sprites1->weapon_sprite->texture = get_texture2("shotgun.bmp")))
+		error_and_close(__FILE__, __FUNCTION__);
+	//engine->sprites1.weapon_sprite->dstrect = (SDL_Rect){W / 10, H * 0.2, 200, 200};
+}
+
 static void	init_minimap(t_engine *engine)
 {
 	engine->minimap.point = (t_xy){W - W / 8, H - H / 6};
@@ -80,4 +94,5 @@ void		init_engine(t_engine *engine, t_all *all)
 	all->sectors = engine->sectors;
 	all->player = engine->player;
 	sdl_img(engine);
+	load_sprites(engine);
 }

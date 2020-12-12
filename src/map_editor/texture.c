@@ -12,6 +12,20 @@ SDL_Surface     *get_texture(char *file, t_sdl *sdl)
     free(dir);
     return(surface);
 }
+
+SDL_Surface     *get_texture2(char *file)
+{
+	SDL_Surface		*surface;
+	char            *dir;
+
+	dir = (char*)malloc(sizeof(char) * (ft_strlen(file) + 10));
+	dir = ft_strjoin("textures/", file);
+	if(!(surface = SDL_LoadBMP(dir)))
+		error_and_close(__FILE__, __FUNCTION__);
+	free(dir);
+	return(surface);
+}
+
 SDL_Surface	*get_text_surface(t_all *all, char *name, TTF_Font *font, SDL_Color color)
 {
     SDL_Surface *text;

@@ -5,182 +5,485 @@
 		<Option title="d-k3d"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\SDL2\;"/>
+		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/chel/Desktop/knukem/cmake-build-debug"/>
+				<Option working_dir="/Users/dgruyere/projects/knukem_all/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dgruyere/projects/knukem_all/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dgruyere/projects/knukem_all/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dgruyere/projects/knukem_all/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dgruyere/projects/knukem_all/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/chel/Desktop/knukem/cmake-build-debug"/>
+				<Option working_dir="/Users/dgruyere/projects/knukem_all/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dgruyere/projects/knukem_all/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dgruyere/projects/knukem_all/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dgruyere/projects/knukem_all/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dgruyere/projects/knukem_all/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/chel/Desktop/knukem/cmake-build-debug"/>
+				<Option working_dir="/Users/dgruyere/projects/knukem_all/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dgruyere/projects/knukem_all/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dgruyere/projects/knukem_all/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dgruyere/projects/knukem_all/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dgruyere/projects/knukem_all/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="d-k3d">
-				<Option output="/home/chel/Desktop/knukem/cmake-build-debug/d-k3d" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/chel/Desktop/knukem/cmake-build-debug"/>
+				<Option output="/Users/dgruyere/projects/knukem_all/cmake-build-debug/d-k3d" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/dgruyere/projects/knukem_all/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/local/include/SDL2"/>
-					<Add directory="/usr/include/SDL2"/>
-					<Add directory="/home/chel/Desktop/knukem/d-k3d"/>
-					<Add directory="/home/chel/Desktop/knukem/includes"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/Users/dgruyere/projects/knukem_all/d-k3d"/>
+					<Add directory="/Users/dgruyere/projects/knukem_all/SDL/sdl2/2.0.12_1/include/SDL2"/>
+					<Add directory="/Users/dgruyere/projects/knukem_all/SDL/sdl2_image/2.0.5/include/SDL2"/>
+					<Add directory="/Users/dgruyere/projects/knukem_all/SDL/sdl2_mixer/2.0.4/include/SDL2"/>
+					<Add directory="/Users/dgruyere/projects/knukem_all/SDL/sdl2_ttf/2.0.15/include/SDL2"/>
+					<Add directory="/Users/dgruyere/projects/knukem_all/includes"/>
+					<Add directory="/Users/dgruyere/projects/knukem_all/libft"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 d-k3d"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dgruyere/projects/knukem_all/cmake-build-debug/Makefile&quot;  VERBOSE=1 d-k3d"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dgruyere/projects/knukem_all/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dgruyere/projects/knukem_all/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dgruyere/projects/knukem_all/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="d-k3d/fast">
-				<Option output="/home/chel/Desktop/knukem/cmake-build-debug/d-k3d" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/chel/Desktop/knukem/cmake-build-debug"/>
+				<Option output="/Users/dgruyere/projects/knukem_all/cmake-build-debug/d-k3d" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/dgruyere/projects/knukem_all/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/local/include/SDL2"/>
-					<Add directory="/usr/include/SDL2"/>
-					<Add directory="/home/chel/Desktop/knukem/d-k3d"/>
-					<Add directory="/home/chel/Desktop/knukem/includes"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/Users/dgruyere/projects/knukem_all/d-k3d"/>
+					<Add directory="/Users/dgruyere/projects/knukem_all/SDL/sdl2/2.0.12_1/include/SDL2"/>
+					<Add directory="/Users/dgruyere/projects/knukem_all/SDL/sdl2_image/2.0.5/include/SDL2"/>
+					<Add directory="/Users/dgruyere/projects/knukem_all/SDL/sdl2_mixer/2.0.4/include/SDL2"/>
+					<Add directory="/Users/dgruyere/projects/knukem_all/SDL/sdl2_ttf/2.0.15/include/SDL2"/>
+					<Add directory="/Users/dgruyere/projects/knukem_all/includes"/>
+					<Add directory="/Users/dgruyere/projects/knukem_all/libft"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 d-k3d/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dgruyere/projects/knukem_all/cmake-build-debug/Makefile&quot;  VERBOSE=1 d-k3d/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dgruyere/projects/knukem_all/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dgruyere/projects/knukem_all/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dgruyere/projects/knukem_all/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/chel/Desktop/knukem/includes/engine.h">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/c_add.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/includes/events.h">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/c_arg.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/includes/utilits.h">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/c_mod.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/cut_wall.c">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/c_pow.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/editor/real_time_edit.c">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/c_set.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/game_loop.c">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/c_sqr.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/init_engine.c">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/c_sub.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/key_events/event_edit.c">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_atoi.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/key_events/event_movement.c">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_bzero.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/key_events/keys_manager.c">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_isalnum.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/lighting.c">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_isalpha.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/main.c">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_isascii.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/manage_data.c">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_isdigit.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/movement/fall.c">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_isprint.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/movement/move.c">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_itoa.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/render/line/render_line.c">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_lstadd.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/render/line/render_vline.c">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_lstdel.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/render/minimap.c">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_lstdelone.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/render/render_wall.c">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_lstiter.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/run_queue.c">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_lstmap.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/transform_wall.c">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_lstnew.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math_utilits/determine_intersection.c">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_memalloc.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math_utilits/intersection_point.c">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_memccpy.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math_utilits/mathf.c">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_memchr.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math_utilits/perspective_transform.c">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_memcmp.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math_utilits/rotates.c">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_memcpy.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/utilits/swap.c">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_memdel.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/utilits/utilits.c">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_memmove.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/CMakeLists.txt">
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_memset.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_putchar.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_putchar_fd.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_putendl.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_putendl_fd.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_putnbr.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_putnbr_fd.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_putstr.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_putstr_fd.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_realloc.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_strcat.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_strchr.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_strclr.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_strcmp.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_strcpy.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_strdel.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_strdup.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_strequ.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_striter.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_striteri.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_strjoin.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_strlcat.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_strlen.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_strmap.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_strmapi.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_strncat.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_strncmp.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_strncpy.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_strnequ.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_strnew.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_strnstr.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_strrchr.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_strsplit.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_strstr.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_strsub.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_strtrim.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_swap.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_tolower.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/ft_toupper.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/libft/get_next_line.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/cut_wall.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/editor/real_time_edit.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/game_loop.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/init.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/key_events">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/key_events/event_edit.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/key_events/event_movement.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/key_events/keys_manager.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/lighting.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/main.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/manage_data.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/map_editor/draw_all.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/map_editor/draw_map.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/map_editor/draw_sprites.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/map_editor/draw_ui.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/map_editor/drawing_utils.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/map_editor/errors.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/map_editor/events_all.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/map_editor/events_map.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/map_editor/init.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/map_editor/main.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/map_editor/math.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/map_editor/obj_detection.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/map_editor/pixels.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/map_editor/reader.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/map_editor/sector_add.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/map_editor/sector_check.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/map_editor/sector_neighbors.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/map_editor/sector_remove.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/map_editor/texture.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/map_editor/write.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/movement">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/movement/fall.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/movement/move.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/render">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/render/ceil_and_floor_init.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/render/line">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/render/line/render_hline.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/render/line/render_line.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/render/line/render_vline.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/render/minimap.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/render/render_hplane.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/render/render_scene.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/render/render_sky.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/render/sprite_render.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/render/wall">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/render/wall/perspective_init.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/render/wall/render_wall.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/render/wall/wall_tx_init.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/run_queue.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/transform_wall.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/utilits">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/utilits/exit_options.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/utilits/load_img.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/utilits/math">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/utilits/math/determine_intersection.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/utilits/math/intersection_point.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/utilits/math/mathf.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/utilits/math/perspective_transform.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/utilits/math/rotates.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/utilits/swap.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/utilits/utilits.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
-		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/FindSDL2_image.cmake">
-			<Option virtualFolder="CMake Files\"/>
-		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/../../../../usr/local/lib/cmake/SDL2/sdl2-config-version.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\SDL2\"/>
-		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/../../../../usr/local/lib/cmake/SDL2/sdl2-config.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\SDL2\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

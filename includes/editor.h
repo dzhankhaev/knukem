@@ -1,9 +1,13 @@
 #ifndef EDITOR_H
 # define EDITOR_H
 
-# include "../SDL/SDL.h"
+/*# include "../SDL/SDL.h"
 # include "../SDL/SDL_ttf.h"
-# include "../SDL2_image-2.0.5/SDL_image.h"
+# include "../SDL2_image-2.0.5/SDL_image.h"*/
+
+# include "SDL.h"
+# include "SDL_ttf.h"
+# include "SDL_image.h"
 
 // # include <SDL2/SDL.h>
 // # include <SDL2_ttf/SDL_ttf.h>
@@ -160,6 +164,8 @@ typedef struct      s_all
     t_sdl           *sdl;//
 }                   t_all;
 
+
+
 void	            init_all(t_all *all); // инициализируем модули
 void				add_sprite(t_all *all, int x, int y, int type);
 void                error_and_close(const char *file, const char *function); // аварийное завершение программы
@@ -190,5 +196,6 @@ t_xy				which_sprite(t_all *all, t_sprites *sprites, t_xyz where);
 void				remove_sector(t_all *all, t_sect *sectors);
 SDL_Surface			*get_text_surface(t_all *all, char *name, TTF_Font *font, SDL_Color color);
 void       			put_pxl(t_sdl *sdl, SDL_Color col, int x, int y);
+SDL_Surface     	*get_texture2(char *file);
 
 # endif

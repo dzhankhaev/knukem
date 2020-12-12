@@ -1,67 +1,57 @@
 #include "engine.h"
 #include "utilits.h"
+#include "editor.h"
 
-static t_xy	normi_sprite(t_xy where, t_player player)
+void	normi_sprite(t_sprites1 sprite, t_player player)
 {
-	t_xy		sprite;
-
-	sprite.x = where.x - player.where.x;
-	sprite.y = where.y - player.where.y;
-	return (sprite);
+	sprite.weapon_sprite->translated_where.x = sprite.weapon_sprite->where.x - player.where.x;
+	sprite.weapon_sprite->translated_where.y = sprite.weapon_sprite->where.y - player.where.y;
 }
 
-t_xy			rotate_sprite(t_xyz sprite, t_player player, SDL_Color color)
+void	rotate_sprite(t_sprites1 sprite, t_player player)
 {
-	t_xy	w;
-	t_xy	wall;
-
-	wall = normi_sprite((t_xy){sprite.x, sprite.y}, player);
-	w = wall;
-	wall.x = w.x * player.anglecos + w.y * player.anglesin;
-	wall.y = -w.x * player.anglesin + w.y * player.anglecos;
-	return (wall);
+	sprite.weapon_sprite->rotated_where.x = sprite.weapon_sprite->translated_where.x * player.anglecos +
+			sprite.weapon_sprite->translated_where.y * player.anglesin;
+	sprite.weapon_sprite->rotated_where.y = -sprite.weapon_sprite->translated_where.x * player.anglesin +
+			sprite.weapon_sprite->translated_where.y * player.anglecos;
 }
 
-static t_xyz	vrotate2(t_xyz p, float vangle) //используется для обработки вертикального угла взгляда
+void	vrotate2(t_xyz p, float vangle) //используется для обработки вертикального угла взгляда
 {
 	p.z = p.z + p.x * vangle;
-	return (p);
 }
 
-t_xy			perspective_transform2(t_xy w, float z, float vangle,
-							   int color)
+void	perspective_transform2(t_sprites1 sprite, t_player player)
 {
-	t_xy	wall;
-	t_xyz	p0;
-	t_xyz	p1;
-
-	p0 = vrotate2((t_xyz){w.x, w.y, z}, vangle);
-	wall.x = (int)((W >> 1) + p0.y / p0.x * (W >> 1));
-	wall.y = (int)((H >> 1) + p0.z / p0.x * (H >> 1));
-
-	return (wall);
+	vrotate2(sprite.weapon_sprite->rotated_where, player.vangle);
+	sprite.weapon_sprite->fin_transformed_where.x = (int)((W >> 1) + sprite.weapon_sprite->rotated_where.y
+			/ sprite.weapon_sprite->rotated_where.x * (W >> 1));
+	sprite.weapon_sprite->fin_transformed_where.y = (int)((H >> 1) + sprite.weapon_sprite->rotated_where.z
+			/ sprite.weapon_sprite->rotated_where.x * (H >> 1));
 }
 
-
-
-void render_sprite(t_engine *engine)
+double	scale_sprite(t_engine *engine, t_sprites1 *sprite)
 {
-    t_xyz sprite;
-    t_xy res;
-    t_xy res2;
-    t_line ret;
-    t_all temp;
+	//int scale = 1/16;
+	return squareRoot((square(engine->player.where.x) - square(sprite->weapon_sprite->where.x)) +
+				(square(engine->player.where.y) - square(sprite->weapon_sprite->where.y)));
+}
 
-    sprite = (t_xyz){3, 7, 0};
-    t_xy line;
+void	render_sprite(t_engine *engine)
+{
+	t_all temp;
+	double scale;
 
-    temp.sdl = &(t_sdl){engine->window, engine->screen}; 
-
-    line = rotate_sprite(sprite, engine->player, GREEN);
-    res = perspective_transform2(line, 0, engine->player.vangle, 0x000000);
-    res2 = perspective_transform2(line, 10, engine->player.vangle, 0x000000);
-    ret = (t_line){res.x, res2.x, res.y, res2.y, 0x000000};
-    // draw_line(&temp, &res, &res2, BLACK);
-	printf("%f\n", engine->player.vangle);
-	draw_fill_rect(&temp, (SDL_Rect){res.x, res.y, 10, 300}, GREEN);
+    temp.sdl = &(t_sdl){engine->window, engine->screen};
+	normi_sprite(*engine->sprites1, engine->player);
+    rotate_sprite(*engine->sprites1, engine->player);
+    perspective_transform2(*engine->sprites1, engine->player);
+	scale = scale_sprite(engine, engine->sprites1);
+	printf("\rscale = %f, player.x = %f, player.y = %f, trans.x = %f. trans.y = %f", scale, engine->player.where.x, engine->player.where.y,
+	engine->sprites1->weapon_sprite->fin_transformed_where.x, engine->sprites1->weapon_sprite->fin_transformed_where.y);
+	engine->sprites1->weapon_sprite->dstrect = (SDL_Rect){engine->sprites1->weapon_sprite->fin_transformed_where.x,
+													   	engine->sprites1->weapon_sprite->fin_transformed_where.y,
+													   W/scale, H/scale};
+	//draw_fill_rect(&temp, engine->sprites1->weapon_sprite->dstrect, GREEN);
+	draw_texture(temp.sdl, engine->sprites1->weapon_sprite->dstrect, engine->sprites1->weapon_sprite->texture);
 }
