@@ -16,15 +16,15 @@ void	rotate_sprite(t_sprites1 sprite, t_player player)
 			sprite.weapon_sprite->translated_where.y * player.anglecos;
 }
 
-void	vrotate2(t_sprites1 *sprite, float vangle) //используется для обработки вертикального угла взгляда
+void	vrotate2(t_sprites1 *sprite, t_player player) //используется для обработки вертикального угла взгляда
 {
-	sprite->weapon_sprite->rotated_where.z = -sprite->weapon_sprite->where.z + EYE_HEIGHT +
-			sprite->weapon_sprite->rotated_where.x * vangle;
+	sprite->weapon_sprite->rotated_where.z = -sprite->weapon_sprite->where.z + player.where.z +
+			sprite->weapon_sprite->rotated_where.x * player.vangle;
 }
 
 void	perspective_transform2(t_sprites1 sprite, t_player player)
 {
-	vrotate2(&sprite, player.vangle);
+	vrotate2(&sprite, player);
 	sprite.weapon_sprite->fin_transformed_where.x = (int)((W >> 1) + sprite.weapon_sprite->rotated_where.y
 			/ sprite.weapon_sprite->rotated_where.x * (W >> 1));
 	sprite.weapon_sprite->fin_transformed_where.y = (int)((H >> 1) + sprite.weapon_sprite->rotated_where.z
@@ -57,10 +57,11 @@ void	render_sprite(t_engine *engine)
     perspective_transform2(*engine->sprites1, engine->player);
 	scale = scale_sprite(engine->sprites1);
 
-	printf("\rscale = %f, player.x = %f, player.y = %f, player.vangle = %f, player.sector = %i, trans.x = %f. trans.y = %f",
+	printf("\rscale = %f, player.x = %f, player.y = %f, player.z = %f, player.vangle = %f, player.sector = %i, trans.x = %f. trans.y = %f",
 		scale,
 		engine->player.where.x,
 		engine->player.where.y,
+		engine->player.where.z,
 		engine->player.vangle,
 		engine->player.sector,
 		engine->sprites1->weapon_sprite->fin_transformed_where.x,
