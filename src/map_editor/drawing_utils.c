@@ -130,7 +130,7 @@ void    draw_texture(t_sdl *sdl, SDL_Rect area, SDL_Surface *txt)
         while(x < area.w)
         {
             col = get_pixel_color1(txt,kx*x, ky*y);
-			if(col >> 24 != 0 && col ^ 0xFF00FFFF)
+			if(col >> 24 != 0)
 				put_pxl(sdl, (SDL_Color){col >> 16, col >> 8, col, 255}, area.x + x, area.y + y);
 			x++;
         }
