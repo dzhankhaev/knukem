@@ -233,7 +233,7 @@ void			render_sky(t_engine *engine);
 int 			main_editor(t_engine *engine, char *name, t_all *all);
 
 void			render_sprite(t_engine *engine);////testtt
-float 			squareRoot(int number);
-int				square(int x);
+double			squareRoot(double number);
+double			square(double x);
 
 #endif

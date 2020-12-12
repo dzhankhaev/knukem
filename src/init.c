@@ -7,9 +7,9 @@ void 		load_sprites(t_engine *engine) //TODO (coordinates hardcoded)
 	engine->sprites1 = (t_sprites1*)malloc(sizeof(t_sprites1));
 	engine->sprites1->weapon_sprite = (t_weapon_sprites*)malloc(sizeof(t_weapon_sprites) * WEAPON_SPRITE_NUM);
 	engine->sprites1->weapon_sprite->sector = 0;
-	engine->sprites1->weapon_sprite->where.x = 3;
-	engine->sprites1->weapon_sprite->where.y = 7;
-	engine->sprites1->weapon_sprite->where.z = 0;
+	engine->sprites1->weapon_sprite->where.x = 10;
+	engine->sprites1->weapon_sprite->where.y = 10;
+	engine->sprites1->weapon_sprite->where.z = 5;
 	engine->sprites1->weapon_sprite->visible = 1;
 	if(!(engine->sprites1->weapon_sprite->texture = get_texture2("shotgun.bmp")))
 		error_and_close(__FILE__, __FUNCTION__);

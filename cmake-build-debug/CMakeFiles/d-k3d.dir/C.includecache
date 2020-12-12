@@ -690,7 +690,11 @@ stdlib.h
 math.h
 -
 
-/Users/dgruyere/projects/knukem_all/src/utilits/math/mathf.c
+/Users/dgruyere/projects/knukem_all/src/render/sprite_render.c
+engine.h
+/Users/dgruyere/projects/knukem_all/src/render/engine.h
 utilits.h
-/Users/dgruyere/projects/knukem_all/src/utilits/math/utilits.h
+/Users/dgruyere/projects/knukem_all/src/render/utilits.h
+editor.h
+/Users/dgruyere/projects/knukem_all/src/render/editor.h
 

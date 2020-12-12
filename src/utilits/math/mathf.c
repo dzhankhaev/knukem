@@ -22,12 +22,12 @@ int				y_for_x(t_line wall, int x)
 	return (y);
 }
 
-int				square(int x)
+double				square(double x)
 {
 	return x*x;
 }
 
-float squareRoot(int number)
+double squareRoot(double number)
 {
 	if (number < 0)
 		number *= (-1);
