@@ -113,6 +113,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/dgruyere/projects/knukem_all/src/render/render_scene.c" "/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/render_scene.c.o"
   "/Users/dgruyere/projects/knukem_all/src/render/render_sky.c" "/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/render_sky.c.o"
   "/Users/dgruyere/projects/knukem_all/src/render/sprite_render.c" "/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/sprite_render.c.o"
+  "/Users/dgruyere/projects/knukem_all/src/render/transform_sprite.c" "/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.o"
   "/Users/dgruyere/projects/knukem_all/src/render/wall/perspective_init.c" "/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.o"
   "/Users/dgruyere/projects/knukem_all/src/render/wall/render_wall.c" "/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.o"
   "/Users/dgruyere/projects/knukem_all/src/render/wall/wall_tx_init.c" "/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.o"

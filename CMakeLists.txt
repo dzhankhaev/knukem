@@ -48,6 +48,7 @@ add_executable(d-k3d
 		src/render/render_scene.c
 		src/render/render_sky.c
 		src/render/sprite_render.c
+		src/render/transform_sprite.c
 		src/utilits
 		src/utilits/math
 		src/utilits/math/determine_intersection.c

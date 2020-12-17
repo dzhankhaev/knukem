@@ -3086,6 +3086,33 @@ src/render/sprite_render.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/sprite_render.c.s
 .PHONY : src/render/sprite_render.c.s
 
+src/render/transform_sprite.o: src/render/transform_sprite.c.o
+
+.PHONY : src/render/transform_sprite.o
+
+# target to build an object file
+src/render/transform_sprite.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.o
+.PHONY : src/render/transform_sprite.c.o
+
+src/render/transform_sprite.i: src/render/transform_sprite.c.i
+
+.PHONY : src/render/transform_sprite.i
+
+# target to preprocess a source file
+src/render/transform_sprite.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.i
+.PHONY : src/render/transform_sprite.c.i
+
+src/render/transform_sprite.s: src/render/transform_sprite.c.s
+
+.PHONY : src/render/transform_sprite.s
+
+# target to generate assembly for a file
+src/render/transform_sprite.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.s
+.PHONY : src/render/transform_sprite.c.s
+
 src/render/wall/perspective_init.o: src/render/wall/perspective_init.c.o
 
 .PHONY : src/render/wall/perspective_init.o
@@ -3800,6 +3827,9 @@ help:
 	@echo "... src/render/sprite_render.o"
 	@echo "... src/render/sprite_render.i"
 	@echo "... src/render/sprite_render.s"
+	@echo "... src/render/transform_sprite.o"
+	@echo "... src/render/transform_sprite.i"
+	@echo "... src/render/transform_sprite.s"
 	@echo "... src/render/wall/perspective_init.o"
 	@echo "... src/render/wall/perspective_init.i"
 	@echo "... src/render/wall/perspective_init.s"

@@ -431,6 +431,9 @@
 		<Unit filename="/Users/dgruyere/projects/knukem_all/src/render/sprite_render.c">
 			<Option target="d-k3d"/>
 		</Unit>
+		<Unit filename="/Users/dgruyere/projects/knukem_all/src/render/transform_sprite.c">
+			<Option target="d-k3d"/>
+		</Unit>
 		<Unit filename="/Users/dgruyere/projects/knukem_all/src/render/wall">
 			<Option target="d-k3d"/>
 		</Unit>

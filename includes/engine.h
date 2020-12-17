@@ -158,6 +158,10 @@ typedef struct	s_weapon_sprites
 	//int 		height;
 	SDL_Surface	*texture; //массив текстур для этого спрайта
 	SDL_Rect	dstrect;
+	double 		dist;
+	t_fline		cut_sprite;
+	double		width;
+	double		height;
 	//int 		*sprite[3];
 }				t_weapon_sprites;
 
@@ -231,9 +235,10 @@ void			real_time_edit(t_engine *engine);
 void			render_hplane(t_engine *engine, t_vplane *p, int txno);
 void			render_sky(t_engine *engine);
 int 			main_editor(t_engine *engine, char *name, t_all *all);
-
 void			render_sprite(t_engine *engine);////testtt
-double			squareRoot(double number);
-double			square(double x);
+int 			transform_sprite(t_engine *engine);
+void			normi_sprite(t_sprites1 sprite, t_player player);
+void			rotate_sprite(t_sprites1 sprite, t_player player);
+void			perspective_transform2(t_sprites1 sprite, t_player player);
 
 #endif

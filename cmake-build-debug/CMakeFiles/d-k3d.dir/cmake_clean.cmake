@@ -108,6 +108,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/d-k3d.dir/src/render/render_scene.c.o"
   "CMakeFiles/d-k3d.dir/src/render/render_sky.c.o"
   "CMakeFiles/d-k3d.dir/src/render/sprite_render.c.o"
+  "CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.o"
   "CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.o"
   "CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.o"
   "CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.o"

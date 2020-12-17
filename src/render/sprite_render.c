@@ -31,28 +31,15 @@ void	perspective_transform2(t_sprites1 sprite, t_player player)
 			/ sprite.weapon_sprite->rotated_where.x * (H >> 1));
 }
 
-double	scale_sprite(t_sprites1 *sprite)
-{
-	float x;
-	float y;
-
-	x = sprite->weapon_sprite->translated_where.x < 0 ? -sprite->weapon_sprite->translated_where.x :
-			sprite->weapon_sprite->translated_where.x;
-	y = sprite->weapon_sprite->translated_where.y < 0 ? -sprite->weapon_sprite->translated_where.y :
-			sprite->weapon_sprite->translated_where.y;
-	return (x + y);
-	/*double scale = squareRoot((square(engine->player.where.x) - square(sprite->weapon_sprite->where.x)) +
-					(square(engine->player.where.y) - square(sprite->weapon_sprite->where.y)));
-	return scale < 0? -scale : scale;*/
-}
-
 void	render_sprite(t_engine *engine)
 {
 	t_all temp;
 	double scale;
+	t_sprites1 *sprite;
 
+	sprite = engine->sprites1;
     temp.sdl = &(t_sdl){engine->window, engine->screen};
-	normi_sprite(*engine->sprites1, engine->player);
+	/*normi_sprite(*engine->sprites1, engine->player);
     rotate_sprite(*engine->sprites1, engine->player);
     perspective_transform2(*engine->sprites1, engine->player);
 	scale = scale_sprite(engine->sprites1);
@@ -65,15 +52,15 @@ void	render_sprite(t_engine *engine)
 		engine->player.vangle,
 		engine->player.sector,
 		engine->sprites1->weapon_sprite->fin_transformed_where.x,
-		engine->sprites1->weapon_sprite->fin_transformed_where.y);
+		engine->sprites1->weapon_sprite->fin_transformed_where.y);*/
 
-	engine->sprites1->weapon_sprite->dstrect = (SDL_Rect){engine->sprites1->weapon_sprite->fin_transformed_where.x,
-													   	engine->sprites1->weapon_sprite->fin_transformed_where.y,
-													   W/scale, H/scale};
+	engine->sprites1->weapon_sprite->dstrect = (SDL_Rect){sprite->weapon_sprite->fin_transformed_where.x,
+													   	sprite->weapon_sprite->fin_transformed_where.y,
+													   sprite->weapon_sprite->width, sprite->weapon_sprite->height};
 	//draw_fill_rect(&temp, engine->sprites1->weapon_sprite->dstrect, GREEN);
-	if (engine->sprites1->weapon_sprite->fin_transformed_where.x <= 0
-		|| engine->sprites1->weapon_sprite->fin_transformed_where.x * -K >
-		engine->sprites1->weapon_sprite->fin_transformed_where.y)
-		return ;
+	/*if (engine->sprites1->weapon_sprite->rotated_where.x <= 0
+		|| engine->sprites1->weapon_sprite->rotated_where.x * -K >
+		engine->sprites1->weapon_sprite->rotated_where.y)
+		return ;*/
 	draw_texture(temp.sdl, engine->sprites1->weapon_sprite->dstrect, engine->sprites1->weapon_sprite->texture);
 }
