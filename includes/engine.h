@@ -159,7 +159,10 @@ typedef struct	s_weapon_sprites
 	SDL_Surface	*texture; //массив текстур для этого спрайта
 	SDL_Rect	dstrect;
 	double 		dist;
-	t_fline		cut_sprite;
+	t_fline		cut_sprite_where;
+	t_fline		cut_translated_where;
+	t_fline		cut_rotated_where;
+	t_fline		cut_fin_transformed_where;
 	double		width;
 	double		height;
 	//int 		*sprite[3];

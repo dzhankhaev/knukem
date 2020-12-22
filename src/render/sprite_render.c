@@ -6,14 +6,26 @@ void	normi_sprite(t_sprites1 sprite, t_player player)
 {
 	sprite.weapon_sprite->translated_where.x = sprite.weapon_sprite->where.x - player.where.x;
 	sprite.weapon_sprite->translated_where.y = sprite.weapon_sprite->where.y - player.where.y;
+	sprite.weapon_sprite->cut_translated_where.x0 = sprite.weapon_sprite->cut_sprite_where.x0 - player.where.x;
+	sprite.weapon_sprite->cut_translated_where.y0 = sprite.weapon_sprite->cut_sprite_where.y0 - player.where.y;
+	sprite.weapon_sprite->cut_translated_where.x1 = sprite.weapon_sprite->cut_sprite_where.x1 - player.where.x;
+	sprite.weapon_sprite->cut_translated_where.y1 = sprite.weapon_sprite->cut_sprite_where.y1 - player.where.y;
 }
 
 void	rotate_sprite(t_sprites1 sprite, t_player player)
 {
 	sprite.weapon_sprite->rotated_where.x = sprite.weapon_sprite->translated_where.x * player.anglecos +
-			sprite.weapon_sprite->translated_where.y * player.anglesin;
+											sprite.weapon_sprite->translated_where.y * player.anglesin;
 	sprite.weapon_sprite->rotated_where.y = -sprite.weapon_sprite->translated_where.x * player.anglesin +
-			sprite.weapon_sprite->translated_where.y * player.anglecos;
+											 sprite.weapon_sprite->translated_where.y * player.anglecos;
+	sprite.weapon_sprite->cut_rotated_where.x0 = sprite.weapon_sprite->cut_translated_where.x0 * player.anglecos +
+												 sprite.weapon_sprite->cut_translated_where.y0 * player.anglesin;
+	sprite.weapon_sprite->cut_rotated_where.y0 = -sprite.weapon_sprite->cut_translated_where.x0 * player.anglesin +
+												 sprite.weapon_sprite->cut_translated_where.y0 * player.anglecos;
+	sprite.weapon_sprite->cut_rotated_where.x1 = sprite.weapon_sprite->cut_translated_where.x1 * player.anglecos +
+												 sprite.weapon_sprite->cut_translated_where.y1 * player.anglesin;
+	sprite.weapon_sprite->cut_rotated_where.y1 = -sprite.weapon_sprite->cut_translated_where.x1 * player.anglesin +
+												 sprite.weapon_sprite->cut_translated_where.y1 * player.anglecos;
 }
 
 void	vrotate2(t_sprites1 *sprite, t_player player) //используется для обработки вертикального угла взгляда
@@ -29,6 +41,14 @@ void	perspective_transform2(t_sprites1 sprite, t_player player)
 			/ sprite.weapon_sprite->rotated_where.x * (W >> 1));
 	sprite.weapon_sprite->fin_transformed_where.y = (int)((H >> 1) + sprite.weapon_sprite->rotated_where.z
 			/ sprite.weapon_sprite->rotated_where.x * (H >> 1));
+	sprite.weapon_sprite->cut_fin_transformed_where.x0 = (int)((W >> 1) + sprite.weapon_sprite->cut_rotated_where.y0
+																	 / sprite.weapon_sprite->cut_rotated_where.x0 * (W >> 1));
+	sprite.weapon_sprite->cut_fin_transformed_where.y0 = (int)((H >> 1) + sprite.weapon_sprite->rotated_where.z					//Координата z (cut) совпадает с z спрайта
+																	 / sprite.weapon_sprite->cut_rotated_where.x0 * (H >> 1));
+	sprite.weapon_sprite->cut_fin_transformed_where.x1 = (int)((W >> 1) + sprite.weapon_sprite->cut_rotated_where.y1
+																	 / sprite.weapon_sprite->cut_rotated_where.x1 * (W >> 1));
+	sprite.weapon_sprite->cut_fin_transformed_where.y1 = (int)((H >> 1) + sprite.weapon_sprite->rotated_where.z
+																	 / sprite.weapon_sprite->cut_rotated_where.x1 * (H >> 1));
 }
 
 void	render_sprite(t_engine *engine)

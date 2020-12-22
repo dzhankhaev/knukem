@@ -64,7 +64,7 @@ void 	calculate_dist(t_sprites1 *sprites1)
 	sprites1->weapon_sprite->height = H/sprites1->weapon_sprite->dist;
 	sprites1->weapon_sprite->width = W/sprites1->weapon_sprite->dist;
 }
-
+//Считаем координаты краёв спрайта
 void 	calculate_sprite_endings(t_sprites1 *sprites1, t_player player)
 {
 	double x0;
@@ -72,30 +72,39 @@ void 	calculate_sprite_endings(t_sprites1 *sprites1, t_player player)
 	double x1;
 	double y1;
 
-	x0 = player.where.x;
+	x0 = player.where.x; //мировые координаты игрока
 	y0 = player.where.y;
-	x1 = sprites1->weapon_sprite->fin_transformed_where.x;
-	y1 = sprites1->weapon_sprite->fin_transformed_where.y;
-	sprites1->weapon_sprite->cut_sprite = (t_fline){y0 - y1, y1 - y0, x1 - x0, x0 - x1, 0};
+	x1 = sprites1->weapon_sprite->where.x; //мировые кооординаты спрайта
+	y1 = sprites1->weapon_sprite->where.y;
+	sprites1->weapon_sprite->cut_sprite_where = (t_fline){y0 - y1, y1 - y0, x1 - x0, x0 - x1, 0};
 }
 
 int		transform_sprite(t_engine *engine)
 {
 	t_fline cut_sprite;
 
+	calculate_sprite_endings(engine->sprites1, engine->player);
 	normi_sprite(*engine->sprites1, engine->player);
 	rotate_sprite(*engine->sprites1, engine->player);
 	perspective_transform2(*engine->sprites1, engine->player);
 	calculate_dist(engine->sprites1);
-	calculate_sprite_endings(engine->sprites1, engine->player);
+	t_sdl sdl_temp = (t_sdl){engine->window, engine->screen};
+	draw_circle(&sdl_temp,
+			 	(t_xy){engine->sprites1->weapon_sprite->cut_rotated_where.x0,
+					engine->sprites1->weapon_sprite->cut_rotated_where.y0},
+					100, RED);
+	draw_circle(&sdl_temp,
+				(t_xy){engine->sprites1->weapon_sprite->cut_rotated_where.x1,
+					   engine->sprites1->weapon_sprite->cut_rotated_where.y1},
+				100, RED);
 	/*if (engine->wall.x0 <= 0 && engine->wall.x1 <= 0)
 	{
 		engine->wall.color = 0;
 		return (0); //стены за спиной не рендерятся
 	}*/
 	//engine->ow = engine->wall;
-	engine->sprites1->weapon_sprite->cut_sprite = fov_sprite_cut(engine->sprites1->weapon_sprite->cut_sprite);	//обрезаем частично попавшие в поле зрения стены
-	cut_sprite = engine->sprites1->weapon_sprite->cut_sprite;
+	engine->sprites1->weapon_sprite->cut_rotated_where = fov_sprite_cut(engine->sprites1->weapon_sprite->cut_rotated_where);	//обрезаем частично попавшие в поле зрения стены
+	cut_sprite = engine->sprites1->weapon_sprite->cut_rotated_where;
 	//tex_init(engine);
 	printf("\rx0 = %f, y0 = %f, x1 = %f, y1 = %f", cut_sprite.x0, cut_sprite.y0, cut_sprite.x1, cut_sprite.y1);
 	if (cut_sprite.x0 <= 0 || cut_sprite.x1 <= 0
