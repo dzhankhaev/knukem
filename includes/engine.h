@@ -162,6 +162,7 @@ typedef struct	s_weapon_sprites
 	t_fline		cut_sprite_where;
 	t_fline		cut_translated_where;
 	t_fline		cut_rotated_where;
+	t_fline		fov_cut_rotated_where;
 	t_fline		cut_fin_transformed_where;
 	double		width;
 	double		height;

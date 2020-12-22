@@ -1,5 +1,4 @@
 #include "engine.h"
-#include "utilits.h"
 #include "editor.h"
 
 void	normi_sprite(t_sprites1 sprite, t_player player)
@@ -59,12 +58,8 @@ void	render_sprite(t_engine *engine)
 
 	sprite = engine->sprites1;
     temp.sdl = &(t_sdl){engine->window, engine->screen};
-	/*normi_sprite(*engine->sprites1, engine->player);
-    rotate_sprite(*engine->sprites1, engine->player);
-    perspective_transform2(*engine->sprites1, engine->player);
-	scale = scale_sprite(engine->sprites1);
-
-	printf("\rscale = %f, player.x = %f, player.y = %f, player.z = %f, player.vangle = %f, player.sector = %i, trans.x = %f. trans.y = %f",
+	/*
+	 	printf("\rscale = %f, player.x = %f, player.y = %f, player.z = %f, player.vangle = %f, player.sector = %i, trans.x = %f. trans.y = %f",
 		scale,
 		engine->player.where.x,
 		engine->player.where.y,

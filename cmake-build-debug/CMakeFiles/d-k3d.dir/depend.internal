@@ -2370,7 +2370,6 @@ CMakeFiles/d-k3d.dir/src/render/sprite_render.c.o
  ../SDL/sdl2_ttf/2.0.15/include/SDL2/SDL_ttf.h
  ../includes/editor.h
  ../includes/engine.h
- ../includes/utilits.h
  ../libft/libft.h
  /Users/dgruyere/projects/knukem_all/src/render/sprite_render.c
 CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.o

@@ -674,10 +674,6 @@ unistd.h
 string.h
 -
 
-../includes/utilits.h
-engine.h
-../includes/engine.h
-
 ../libft/libft.h
 unistd.h
 -
@@ -690,9 +686,9 @@ stdlib.h
 math.h
 -
 
-/Users/dgruyere/projects/knukem_all/src/render/transform_sprite.c
+/Users/dgruyere/projects/knukem_all/src/render/sprite_render.c
 engine.h
 /Users/dgruyere/projects/knukem_all/src/render/engine.h
-utilits.h
-/Users/dgruyere/projects/knukem_all/src/render/utilits.h
+editor.h
+/Users/dgruyere/projects/knukem_all/src/render/editor.h
 

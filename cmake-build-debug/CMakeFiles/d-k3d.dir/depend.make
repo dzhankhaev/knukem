@@ -2369,7 +2369,6 @@ CMakeFiles/d-k3d.dir/src/render/sprite_render.c.o: ../SDL/sdl2_image/2.0.5/inclu
 CMakeFiles/d-k3d.dir/src/render/sprite_render.c.o: ../SDL/sdl2_ttf/2.0.15/include/SDL2/SDL_ttf.h
 CMakeFiles/d-k3d.dir/src/render/sprite_render.c.o: ../includes/editor.h
 CMakeFiles/d-k3d.dir/src/render/sprite_render.c.o: ../includes/engine.h
-CMakeFiles/d-k3d.dir/src/render/sprite_render.c.o: ../includes/utilits.h
 CMakeFiles/d-k3d.dir/src/render/sprite_render.c.o: ../libft/libft.h
 CMakeFiles/d-k3d.dir/src/render/sprite_render.c.o: ../src/render/sprite_render.c
 
