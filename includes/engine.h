@@ -249,12 +249,15 @@ Uint32			deep_shading(t_engine *engine, t_line wall, int x);			//модифик�
 Uint32			get_shadow(Uint32 z, Uint32 color);								//применить модификатор освещения
 void			real_time_edit(t_engine *engine);
 void			render_hplane(t_engine *engine, t_vplane *p, int txno);
-void			render_sky(t_engine *engine);
 int 			main_editor(t_engine *engine, char *name, t_all *all);
 void			render_sprite(t_engine *engine);////testtt
 int 			transform_sprite(t_engine *engine);
 void			normi_sprite(t_sprites1 sprite, t_player player);
 void			rotate_sprite(t_sprites1 sprite, t_player player);
 void			perspective_transform2(t_sprites1 sprite, t_player player);
+void			render_graf(t_engine *engine, int sectorno, int i);
+void			graf_mod(t_engine *engine, int sectorno, int i);
+t_ixyz			tx_wall_mod(t_engine *engine, int sectorno, int i);
+t_ixyz			tx_plane_mod(t_engine *engine, int sectorno, int i);
 
 #endif
