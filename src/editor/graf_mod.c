@@ -66,4 +66,18 @@ void			graf_mod(t_engine *engine, int sectorno, int i)
 			create_coord(engine, sectorno);
 		}
 	}
+	if (engine->edit.graf == 3)
+	{
+		free(engine->graf[sectorno].coord);
+		free(engine->graf[sectorno].z);
+		free(engine->graf[sectorno].wall);
+		free(engine->graf[sectorno].txno);
+		engine->graf[sectorno].coord = 0;
+		engine->graf[sectorno].z = 0;
+		engine->graf[sectorno].wall = 0;
+		engine->graf[sectorno].txno = 0;
+		engine->graf[sectorno].sectorno = -1;
+		engine->graf[sectorno].g_num = 0;
+		engine->edit.graf = 0;
+	}
 }

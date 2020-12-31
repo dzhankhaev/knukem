@@ -17,6 +17,8 @@ void	event_edit2(t_player *player, t_edit *edit)
 		edit->mod = 1;
 	else if (player->event.key.keysym.sym == SDLK_g)
 		edit->graf++;
+	else if (player->event.key.keysym.sym == SDLK_DELETE)
+		edit->graf = 3;
 }
 
 void	event_edit(t_player *player, t_edit *edit)
