@@ -82,11 +82,24 @@ void	load_data(t_engine *engine, t_all *all)
 
 void unload_data(t_engine *engine)
 {
-	for (unsigned a = 0; a < engine->num_sectors; ++a)
-		free(engine->sectors[a].vertex);
-	for (unsigned a = 0; a < engine->num_sectors; ++a)
-		free(engine->sectors[a].neighbors);
+	int	i;
+
+	i = 0;
+	while (i < engine->num_sectors)
+	{
+		free(engine->sectors[i].vertex);
+		free(engine->sectors[i].neighbors);
+		if (engine->graf[i].sectorno != -1)
+		{
+			free(engine->graf[i].wall);
+			free(engine->graf[i].z);
+			free(engine->graf[i].coord);
+			free(engine->graf[i].txno);
+		}
+		i++;
+	}
 	free(engine->sectors);
+	free(engine->graf);
 	engine->sectors = NULL;
 	engine->num_sectors = 0;
 }

@@ -18,7 +18,7 @@ void 		load_sprites(t_engine *engine) //TODO (coordinates hardcoded)
 
 static void	init_minimap(t_engine *engine)
 {
-	engine->minimap.point = (t_xy){W - W / 8, H - H / 6};
+	engine->minimap.point = (t_xy){W - W / 8, H / 6};
 	engine->minimap.scale =  W / 200;
 	engine->minimap.player_horizontal.color = 0x4444FF;
 	engine->minimap.player_horizontal.x0 = engine->minimap.point.x - 5;
@@ -30,13 +30,15 @@ static void	init_minimap(t_engine *engine)
 	engine->minimap.player_vertical.y0 = engine->minimap.point.y - 11;
 	engine->minimap.player_vertical.x1 = engine->minimap.point.x;
 	engine->minimap.player_vertical.y1 = engine->minimap.point.y + 3;
-	engine->minimap.borders = (t_line){W - W / 4, W,H - H / 3, H,
+	engine->minimap.borders = (t_line){W - W / 4, W,0, H / 3,
 									   0x555555};
 	engine->minimap.mod = 0;
 }
 
 void general_init(t_engine *engine)
 {
+	int	i;
+
 	engine->borders = (t_line){0, W, 0, H, 0x555555};
 	engine->player.falling = 0;
 	engine->player.flying = 0;
@@ -47,6 +49,18 @@ void general_init(t_engine *engine)
 	engine->player.deep_sh = 0;
 	engine->edit.mod_tx = 0;
 	engine->edit.mod = 1;
+	i = 0;
+	engine->graf = (t_graf *)malloc(sizeof(t_graf) * (engine->num_sectors + 1));
+	while (i < engine->num_sectors)
+	{
+		engine->graf[i].sectorno = -1;
+		engine->graf[i].g_num = 0;
+		engine->graf[i].wall = 0;
+		engine->graf[i].coord = 0;
+		engine->graf[i].z = 0;
+		engine->graf[i].txno = 0;
+		i++;
+	}
 	init_minimap(engine);
 }
 
@@ -84,7 +98,7 @@ static void sdl_img(t_engine *engine)
 
 void		init_engine(t_engine *engine, t_all *all)
 {
-	bzero(engine, sizeof(*engine));
+	ft_bzero(engine, sizeof(*engine));
 	load_data(engine, all);
 	sdl(engine);
 	all->num_sectors = engine->num_sectors;

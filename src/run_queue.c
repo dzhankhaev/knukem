@@ -1,14 +1,6 @@
 #include "engine.h"
 #include "utilits.h"
 
-static int	get_color(t_engine *engine, unsigned s, int color)
-{
-	if (fabsf(engine->sectors[s].floor
-			  - engine->sectors[engine->player.sector].floor) < FLOOR_DIFF)
-		return (color);
-	return (0);
-}
-
 int				check_repeat(t_engine *engine, int sectorno, int neighbor)
 {
 	t_queue *temp;
@@ -55,7 +47,6 @@ void 		run_queue(t_engine *engine)
 		else
 			engine->wall.color = 0;
 		color = engine->wall.color;
-
 		engine->wall = (t_fline){engine->sectors[engine->present->sectorno].vertex[i].x,
 								 engine->sectors[engine->present->sectorno].vertex[i + 1].x,
 								 engine->sectors[engine->present->sectorno].vertex[i].y,
