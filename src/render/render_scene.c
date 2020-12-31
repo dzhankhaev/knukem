@@ -92,7 +92,8 @@ void			graf_memalloc(t_engine *engine, int sectorno, int neighbor, int i)
 			(t_fline){engine->sectors[sectorno].vertex[i].x,
 					  engine->sectors[sectorno].vertex[i + 1].x,
 					  engine->sectors[sectorno].vertex[i].y,
-					  engine->sectors[sectorno].vertex[i + 1].y};
+					  engine->sectors[sectorno].vertex[i + 1].y,
+					  1};
 }
 
 void			create_coord(t_engine *engine, int sectorno)
@@ -147,41 +148,44 @@ void			render_scene(t_engine *engine, int sectorno, int neighbor, int i)
 	render_hplane(engine, &engine->vpceil, txset.y);
 	graf_mod(engine, sectorno, neighbor, i);
 
-	if (engine->graf[sectorno].sectorno != -1)
+	t_graf graf;
+	t_fline w;
+
+	graf = engine->graf[sectorno];
+	if (graf.sectorno != -1)
 	{
 		int t = 0;
-		while (t < engine->graf[sectorno].g_num)
+		while (t < graf.g_num)
 		{
-			if (engine->graf[sectorno].wall[t] == neighbor)
+			if (graf.wall[t] == neighbor)
 			{
-				t_fline	g;
-				t_fline	w;
-				g.x0 = engine->graf[sectorno].coord[t].x0 - engine->player.where.x;
-				g.y0 = engine->graf[sectorno].coord[t].y0 - engine->player.where.y;
-				g.x1 = engine->graf[sectorno].coord[t].x1 - engine->player.where.x;
-				g.y1 = engine->graf[sectorno].coord[t].y1 - engine->player.where.y;
-
-				w = g;
-				g.x0 = w.x0 * engine->player.anglecos + w.y0 * engine->player.anglesin;
-				g.x1 = w.x1 * engine->player.anglecos + w.y1 * engine->player.anglesin;
-				g.y0 = -w.x0 * engine->player.anglesin + w.y0 * engine->player.anglecos;
-				g.y1 = -w.x1 * engine->player.anglesin + w.y1 * engine->player.anglecos;
-
-				t_xyz p0 = (t_xyz){engine->graf[sectorno].coord[t].x0,
-								  engine->graf[sectorno].coord[t].y0,
-								  engine->graf[sectorno].z[t]};
-				t_xyz p1 = (t_xyz){engine->graf[sectorno].coord[t].x1,
-								   engine->graf[sectorno].coord[t].y1,
-								   engine->graf[sectorno].z[t]};
-				p0.z = p0.z + p0.x * engine->player.vangle;
-				p1.z = p1.z + p1.x * engine->player.vangle;
-				t_line ig;
-				ig.x0 = (int)((W >> 1) + p0.y / p0.x * (W >> 1));
-				ig.x1 = (int)((W >> 1) + p1.y / p1.x * (W >> 1));
-				ig.y0 = (int)((H >> 1) + p0.z / p0.x * (H >> 1));
-				ig.y1 = (int)((H >> 1) + p1.z / p1.x * (H >> 1));
-				ig.color = 0x00ff00;
-
+				w = graf.coord[t];
+				if (transform_wall(engine, &w))
+				{
+					float z = engine->player.where.z;
+					t_line w0, w1;
+					int x0, x1;
+					w0 = perspective_transform(w,z - graf.z[t] + 1,
+													engine->player.vangle, CEIL_COLOR);
+					w1 = perspective_transform(w,z - graf.z[t] - 1,
+													engine->player.vangle, FLOOR_COLOR);
+					x0 = imax(imin(w0.x0, w0.x1), engine->present->x0);
+					x1 = imin(imax(w1.x0, w1.x1), engine->present->x1);
+					if (w0.x0 > w0.x1)
+					{
+						w0 = swap_coords(w0);
+						w1 = swap_coords(w1);
+					}
+					while (x0 < x1)
+					{
+						int y0 = y_for_x(w0, x0);
+						int y1 = y_for_x(w1, x0);
+						y0 = iclamp(y0, engine->tline[x0], engine->bline[x0]);		//линия потолка тек
+						y1 = iclamp(y1, engine->tline[x0], engine->bline[x0]);		//линия пола тек
+						render_line((t_line){x0, x0, y0, y1, 0x00ff00}, engine->screen, engine->borders);
+						x0++;
+					}
+				}
 			}
 			t++;
 		}
