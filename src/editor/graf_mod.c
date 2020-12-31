@@ -12,10 +12,7 @@ void			graf_memalloc(t_engine *engine, int sectorno, int i)
 	graf->z = (float *)realloc(graf->z, sizeof(float) * graf->g_num);
 	graf->coord = (t_fline *)realloc(graf->coord, sizeof(t_fline)
 												  * graf->g_num);
-	graf->txno = (int *)realloc(graf->txno, sizeof(int) * graf->g_num);
 	//заносим необходимые данные
-	graf->sectorno = sectorno;
-	graf->txno[graf->g_num - 1] = engine->edit.txno == -1 ? 1 : engine->edit.txno;
 	graf->wall[graf->g_num - 1] = i;
 	graf->z[graf->g_num - 1] = engine->player.where.z;
 	graf->coord[graf->g_num - 1] =
@@ -23,7 +20,7 @@ void			graf_memalloc(t_engine *engine, int sectorno, int i)
 					  engine->sectors[sectorno].vertex[i + 1].x,
 					  engine->sectors[sectorno].vertex[i].y,
 					  engine->sectors[sectorno].vertex[i + 1].y,
-					  graf->txno[graf->g_num - 1]};
+					  engine->edit.txno == -1 ? 1 : engine->edit.txno};
 }
 
 void			create_coord(t_engine *engine, int sectorno)
@@ -71,12 +68,9 @@ void			graf_mod(t_engine *engine, int sectorno, int i)
 		free(engine->graf[sectorno].coord);
 		free(engine->graf[sectorno].z);
 		free(engine->graf[sectorno].wall);
-		free(engine->graf[sectorno].txno);
 		engine->graf[sectorno].coord = 0;
 		engine->graf[sectorno].z = 0;
 		engine->graf[sectorno].wall = 0;
-		engine->graf[sectorno].txno = 0;
-		engine->graf[sectorno].sectorno = -1;
 		engine->graf[sectorno].g_num = 0;
 		engine->edit.graf = 0;
 	}

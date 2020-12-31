@@ -43,12 +43,10 @@ void general_init2(t_engine *engine)
 	engine->graf = (t_graf *)malloc(sizeof(t_graf) * (engine->num_sectors + 1));
 	while (i < engine->num_sectors)
 	{
-		engine->graf[i].sectorno = -1;
 		engine->graf[i].g_num = 0;
 		engine->graf[i].wall = 0;
 		engine->graf[i].coord = 0;
 		engine->graf[i].z = 0;
-		engine->graf[i].txno = 0;
 		i++;
 	}
 }

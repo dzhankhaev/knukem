@@ -89,12 +89,11 @@ void unload_data(t_engine *engine)
 	{
 		free(engine->sectors[i].vertex);
 		free(engine->sectors[i].neighbors);
-		if (engine->graf[i].sectorno != -1)
+		if (engine->graf[i].g_num > 0)
 		{
 			free(engine->graf[i].wall);
 			free(engine->graf[i].z);
 			free(engine->graf[i].coord);
-			free(engine->graf[i].txno);
 		}
 		i++;
 	}
