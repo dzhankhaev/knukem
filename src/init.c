@@ -35,6 +35,24 @@ static void	init_minimap(t_engine *engine)
 	engine->minimap.mod = 0;
 }
 
+void general_init2(t_engine *engine)
+{
+	int	i;
+
+	i = 0;
+	engine->graf = (t_graf *)malloc(sizeof(t_graf) * (engine->num_sectors + 1));
+	while (i < engine->num_sectors)
+	{
+		engine->graf[i].sectorno = -1;
+		engine->graf[i].g_num = 0;
+		engine->graf[i].wall = 0;
+		engine->graf[i].coord = 0;
+		engine->graf[i].z = 0;
+		engine->graf[i].txno = 0;
+		i++;
+	}
+}
+
 void general_init(t_engine *engine)
 {
 	int	i;
@@ -49,18 +67,8 @@ void general_init(t_engine *engine)
 	engine->player.deep_sh = 0;
 	engine->edit.mod_tx = 0;
 	engine->edit.mod = 1;
-	i = 0;
-	engine->graf = (t_graf *)malloc(sizeof(t_graf) * (engine->num_sectors + 1));
-	while (i < engine->num_sectors)
-	{
-		engine->graf[i].sectorno = -1;
-		engine->graf[i].g_num = 0;
-		engine->graf[i].wall = 0;
-		engine->graf[i].coord = 0;
-		engine->graf[i].z = 0;
-		engine->graf[i].txno = 0;
-		i++;
-	}
+	engine->edit.graf = 0;
+	general_init2(engine);
 	init_minimap(engine);
 }
 

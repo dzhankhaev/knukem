@@ -36,7 +36,9 @@ static t_fline	cut2(t_fline wall, t_xy i2)
 t_fline 		cut_wall(t_fline wall, t_xy i1, t_xy i2)
 {
 	float	t;
+	int		color;
 
+	color = wall.color;
 	if (wall.y0 > wall.y1)
 	{
 		t = wall.x0;
@@ -50,5 +52,6 @@ t_fline 		cut_wall(t_fline wall, t_xy i1, t_xy i2)
 		wall = cut1(wall, i1);
 	if (i2.x != -1)
 		wall = cut2(wall, i2);
+	wall.color = color;
 	return (wall);
 }
