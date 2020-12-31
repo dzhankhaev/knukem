@@ -26,12 +26,6 @@ int main()
 	load_img(&engine, "ceil1.png", 4);
 	load_img(&engine, "sky1.png", 5);
 	game_loop(&engine, &all);
-	for(int i = 0;i<engine.num_sectors;i++)
-	{
-//		for(int j = 0;j < engine.graf[i].g_num;j++)
-			printf("sectorno %d g_num %d\n",engine.graf[i].sectorno, engine.graf[i].g_num);
-
-	}
 	clean(&engine);
 
 	return (0);

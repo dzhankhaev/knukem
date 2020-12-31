@@ -47,6 +47,8 @@ static void		loop(t_engine *engine, int neighbor, t_ixyz t)
 t_ixyz			tx_wall_mod(t_engine *engine, int sectorno, int i)
 {
 	t_ixyz	txset;
+	int		q;
+	int		k;
 
 	txset = (t_ixyz){abs(engine->sectors[sectorno].neighbors[i]), 1, 2};
 	if (engine->edit.mod_w != -1 && engine->edit.txno != -1)
@@ -71,7 +73,7 @@ t_ixyz			tx_plane_mod(t_engine *engine, int sectorno, int i)
 	return (txset);
 }
 
-void			graf_memalloc(t_engine *engine, int sectorno, int neighbor, int i)
+void			graf_memalloc(t_engine *engine, int sectorno, int i)
 {
 	t_graf *graf;
 
@@ -86,7 +88,7 @@ void			graf_memalloc(t_engine *engine, int sectorno, int neighbor, int i)
 	//заносим необходимые данные
 	graf->sectorno = sectorno;
 	graf->txno[graf->g_num - 1] = 1;
-	graf->wall[graf->g_num - 1] = neighbor;
+	graf->wall[graf->g_num - 1] = i;
 	graf->z[graf->g_num - 1] = engine->player.where.z;
 	graf->coord[graf->g_num - 1] =
 			(t_fline){engine->sectors[sectorno].vertex[i].x,
@@ -124,15 +126,92 @@ void			create_coord(t_engine *engine, int sectorno)
 	graf->coord[graf->g_num - 1] = (t_fline){a.x, b.x, a.y, b.y};
 }
 
-void			graf_mod(t_engine *engine, int sectorno, int neighbor, int i)
+void			graf_mod(t_engine *engine, int sectorno, int i)
 {
 	if (engine->edit.mod_w != -1 && engine->edit.graf != -1)
 	{
 		if (engine->sectors[sectorno].neighbors[i] <= -1)
 		{
-			graf_memalloc(engine, sectorno, neighbor, i);
+			graf_memalloc(engine, sectorno, i);
 			create_coord(engine, sectorno);
 		}
+	}
+}
+
+void			loop_graf(t_engine *engine, t_line w0, t_line w1, int x)
+{
+	int		y0;
+	int		y1;
+	int		oy0;
+	int		oy1;
+	t_temp	*a;
+
+	a = &engine->rend_wall;
+	a->x = x;
+	a->txx = (engine->u0 * ((a->w.x1 - a->x) * a->l.x1)
+			  + engine->u1 * ((a->x - a->w.x0) * a->l.x0))
+			 / ((a->w.x1 - a->x) * a->l.x1 + (a->x - a->w.x0) * a->l.x0);
+	y1 = y_for_x(w0, x);
+	y0 = y_for_x(w1, x);
+	oy0 = y0;
+	oy1 = y1;
+	y0 = iclamp(y0, engine->tline[x], engine->bline[x]);
+	y1 = iclamp(y1, engine->tline[x], engine->bline[x]);
+	y0 = iclamp(y0, engine->vpceil.boty[x], engine->vpfloor.topy[x]);
+	y1 = iclamp(y1, engine->vpceil.boty[x], engine->vpfloor.topy[x]);
+	if (y1 - y0 >= 3)
+		render_vline(engine, (t_line){a->x, a->x, y0, y1,
+									  engine->wall.color},
+					 (t_line){0, 0, oy0, oy1, 0}, w0.color);
+}
+
+void 			render_graf2(t_engine *engine, t_graf graf, t_fline *w, int t)
+{
+	float	z;
+	t_line	w0;
+	t_line	w1;
+	int		x0;
+	int		x1;
+
+	z = engine->player.where.z;
+	w0 = perspective_transform(*w,z - graf.z[t] + 1,
+							   engine->player.vangle, w->color);
+	w1 = perspective_transform(*w,z - graf.z[t] - 1,
+							   engine->player.vangle, FLOOR_COLOR);
+	x0 = imax(imin(w0.x0, w0.x1), engine->present->x0);
+	x1 = imin(imax(w1.x0, w1.x1), engine->present->x1);
+	engine->rend_wall.w = w0;
+	if (w0.x0 > w0.x1)
+	{
+		w0 = swap_coords(w0);
+		w1 = swap_coords(w1);
+	}
+	engine->rend_wall.x0 = x0;
+	engine->rend_wall.l = *w;
+	while (x0 < x1)
+	{
+		loop_graf(engine, w0, w1, x0);
+		x0++;
+	}
+}
+
+void			render_graf(t_engine *engine, int sectorno, int i)
+{
+	t_graf	graf;
+	t_fline	w;
+	int		t;
+
+	graf = engine->graf[sectorno];
+	t = 0;
+	while (t < graf.g_num)
+	{
+		if (graf.wall[t] == i)
+		{
+			w = graf.coord[t];
+			if (transform_wall(engine, &w))
+				render_graf2(engine, graf, &w, t);
+		}
+		t++;
 	}
 }
 
@@ -146,51 +225,9 @@ void			render_scene(t_engine *engine, int sectorno, int neighbor, int i)
 	txset = tx_plane_mod(engine, sectorno, i);
 	render_hplane(engine, &engine->vpfloor, txset.x);
 	render_hplane(engine, &engine->vpceil, txset.y);
-	graf_mod(engine, sectorno, neighbor, i);
-
-	t_graf graf;
-	t_fline w;
-
-	graf = engine->graf[sectorno];
-	if (graf.sectorno != -1)
-	{
-		int t = 0;
-		while (t < graf.g_num)
-		{
-			if (graf.wall[t] == neighbor)
-			{
-				w = graf.coord[t];
-				if (transform_wall(engine, &w))
-				{
-					float z = engine->player.where.z;
-					t_line w0, w1;
-					int x0, x1;
-					w0 = perspective_transform(w,z - graf.z[t] + 1,
-													engine->player.vangle, CEIL_COLOR);
-					w1 = perspective_transform(w,z - graf.z[t] - 1,
-													engine->player.vangle, FLOOR_COLOR);
-					x0 = imax(imin(w0.x0, w0.x1), engine->present->x0);
-					x1 = imin(imax(w1.x0, w1.x1), engine->present->x1);
-					if (w0.x0 > w0.x1)
-					{
-						w0 = swap_coords(w0);
-						w1 = swap_coords(w1);
-					}
-					while (x0 < x1)
-					{
-						int y0 = y_for_x(w0, x0);
-						int y1 = y_for_x(w1, x0);
-						y0 = iclamp(y0, engine->tline[x0], engine->bline[x0]);		//линия потолка тек
-						y1 = iclamp(y1, engine->tline[x0], engine->bline[x0]);		//линия пола тек
-						render_line((t_line){x0, x0, y0, y1, 0x00ff00}, engine->screen, engine->borders);
-						x0++;
-					}
-				}
-			}
-			t++;
-		}
-
-	}
-
+	graf_mod(engine, sectorno, i);
+	render_graf(engine, sectorno, i);
 	engine->edit.mod_w = -1;	//после того как модифицировали стену, нужно сбрасывать, иначе применится ко всем стенам
+	render_line((t_line){0, W - 1, 0, 0, 0}, engine->screen, engine->borders);
+	render_line((t_line){0, W - 1, H - 1, H - 1, 0}, engine->screen, engine->borders);
 }
