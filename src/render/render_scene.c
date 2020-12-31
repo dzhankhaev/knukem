@@ -95,7 +95,7 @@ void			graf_memalloc(t_engine *engine, int sectorno, int neighbor, int i)
 					  engine->sectors[sectorno].vertex[i + 1].y};
 }
 
-void			create_coord(t_engine *engine, int sectorno, int i)
+void			create_coord(t_engine *engine, int sectorno)
 {
 	t_graf	*graf;
 	float	angle;
@@ -130,7 +130,7 @@ void			graf_mod(t_engine *engine, int sectorno, int neighbor, int i)
 		if (engine->sectors[sectorno].neighbors[i] <= -1)
 		{
 			graf_memalloc(engine, sectorno, neighbor, i);
-			create_coord(engine, sectorno, i);
+			create_coord(engine, sectorno);
 		}
 	}
 }
@@ -149,7 +149,43 @@ void			render_scene(t_engine *engine, int sectorno, int neighbor, int i)
 
 	if (engine->graf[sectorno].sectorno != -1)
 	{
-		printf("%d\n", engine->graf[sectorno].g_num);
+		int t = 0;
+		while (t < engine->graf[sectorno].g_num)
+		{
+			if (engine->graf[sectorno].wall[t] == neighbor)
+			{
+				t_fline	g;
+				t_fline	w;
+				g.x0 = engine->graf[sectorno].coord[t].x0 - engine->player.where.x;
+				g.y0 = engine->graf[sectorno].coord[t].y0 - engine->player.where.y;
+				g.x1 = engine->graf[sectorno].coord[t].x1 - engine->player.where.x;
+				g.y1 = engine->graf[sectorno].coord[t].y1 - engine->player.where.y;
+
+				w = g;
+				g.x0 = w.x0 * engine->player.anglecos + w.y0 * engine->player.anglesin;
+				g.x1 = w.x1 * engine->player.anglecos + w.y1 * engine->player.anglesin;
+				g.y0 = -w.x0 * engine->player.anglesin + w.y0 * engine->player.anglecos;
+				g.y1 = -w.x1 * engine->player.anglesin + w.y1 * engine->player.anglecos;
+
+				t_xyz p0 = (t_xyz){engine->graf[sectorno].coord[t].x0,
+								  engine->graf[sectorno].coord[t].y0,
+								  engine->graf[sectorno].z[t]};
+				t_xyz p1 = (t_xyz){engine->graf[sectorno].coord[t].x1,
+								   engine->graf[sectorno].coord[t].y1,
+								   engine->graf[sectorno].z[t]};
+				p0.z = p0.z + p0.x * engine->player.vangle;
+				p1.z = p1.z + p1.x * engine->player.vangle;
+				t_line ig;
+				ig.x0 = (int)((W >> 1) + p0.y / p0.x * (W >> 1));
+				ig.x1 = (int)((W >> 1) + p1.y / p1.x * (W >> 1));
+				ig.y0 = (int)((H >> 1) + p0.z / p0.x * (H >> 1));
+				ig.y1 = (int)((H >> 1) + p1.z / p1.x * (H >> 1));
+				ig.color = 0x00ff00;
+
+			}
+			t++;
+		}
+
 	}
 
 	engine->edit.mod_w = -1;	//после того как модифицировали стену, нужно сбрасывать, иначе применится ко всем стенам

@@ -225,7 +225,7 @@ void			general_init(t_engine *engine);
 void			load_data(t_engine *engine, t_all *all);
 void			unload_data(t_engine *engine);
 void			game_loop(t_engine *engine, t_all *all);
-int 			transform_wall(t_engine *engine, int i);
+int				transform_wall(t_engine *engine, t_fline *wall);
 void			render_scene(t_engine *engine, int sectorno, int neighbor, int i);
 void			ceil_and_floor_init(t_engine *engine);
 void			render_wall(t_engine *engine, int neighbor, t_ixyz t);
