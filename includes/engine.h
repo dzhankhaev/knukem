@@ -96,6 +96,7 @@ typedef struct	s_edit
 	int			mod_w;				//	эта стена будет модифицирована											 }текстуры
 	int			mod_tx;				//	1 - пол, 2 - потолок, 3 - нижняя линия раздела, 4 - верхняя, 0 - стена	}
 	int			txno;				//	эту текстуру назначим
+	int			graf;
 	int			mod;				//
 }				t_edit;
 
@@ -103,8 +104,18 @@ typedef struct	s_img
 {
 	SDL_Surface	*tx;
 	char		name[15];
-	int			n;
 }				t_img;
+
+typedef struct	s_graf
+{
+	int			sectorno;
+	int			g_num;
+	float		*z;
+	t_fline		*coord;
+	int			*wall;
+	int			*txno;
+
+}				t_graf;
 
 typedef struct	s_temp
 {
@@ -204,6 +215,7 @@ typedef struct	s_engine
 	t_temp		rend_wall;			//используется в rendel_Wall тобы обойти норму
 	t_temp2		rend_plane;			//используется при рендеринге пола и потолка
 	t_img		img[10];
+	t_graf		*graf;
 	t_sprites1	*sprites1;
 }				t_engine;
 

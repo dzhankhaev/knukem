@@ -44,11 +44,10 @@ static void		loop(t_engine *engine, int neighbor, t_ixyz t)
 	}
 }
 
-void			render_scene(t_engine *engine, int sectorno, int neighbor, int i)
+t_ixyz			tx_wall_mod(t_engine *engine, int sectorno, int i)
 {
 	t_ixyz	txset;
 
-	rendering_init(engine, sectorno, neighbor);
 	txset = (t_ixyz){abs(engine->sectors[sectorno].neighbors[i]), 1, 2};
 	if (engine->edit.mod_w != -1 && engine->edit.txno != -1)
 	{
@@ -61,9 +60,97 @@ void			render_scene(t_engine *engine, int sectorno, int neighbor, int i)
 		else if (engine->edit.mod_tx == 4)
 			txset = (t_ixyz){0, 1, engine->edit.txno};
 	}
-	loop(engine, neighbor, txset);
-	engine->edit.mod_w = -1;	//после того как модифицировали стену, нужно сбрасывать, иначе применится ко всем стенам
+	return (txset);
+}
+
+t_ixyz			tx_plane_mod(t_engine *engine, int sectorno, int i)
+{
+	t_ixyz txset;
+
 	txset = (t_ixyz){3, 4, 0};
+	return (txset);
+}
+
+void			graf_memalloc(t_engine *engine, int sectorno, int neighbor, int i)
+{
+	t_graf *graf;
+
+	graf = &engine->graf[sectorno];
+	graf->g_num++;
+	//выделяем память
+	graf->wall = (int *)realloc(graf->wall, sizeof(int) * graf->g_num);
+	graf->z = (float *)realloc(graf->z, sizeof(float) * graf->g_num);
+	graf->coord = (t_fline *)realloc(graf->coord, sizeof(t_fline)
+	* graf->g_num);
+	graf->txno = (int *)realloc(graf->txno, sizeof(int) * graf->g_num);
+	//заносим необходимые данные
+	graf->sectorno = sectorno;
+	graf->txno[graf->g_num - 1] = 1;
+	graf->wall[graf->g_num - 1] = neighbor;
+	graf->z[graf->g_num - 1] = engine->player.where.z;
+	graf->coord[graf->g_num - 1] =
+			(t_fline){engine->sectors[sectorno].vertex[i].x,
+					  engine->sectors[sectorno].vertex[i + 1].x,
+					  engine->sectors[sectorno].vertex[i].y,
+					  engine->sectors[sectorno].vertex[i + 1].y};
+}
+
+void			create_coord(t_engine *engine, int sectorno, int i)
+{
+	t_graf	*graf;
+	float	angle;
+	t_xy	a;
+	t_xy	b;
+
+	graf = &engine->graf[sectorno];
+	//проекция
+	a = point_proection(graf->coord[graf->g_num - 1],
+						(t_xyz){engine->player.where.x,
+								engine->player.where.y, 0});
+	angle = get_vec_angle(graf->coord[graf->g_num - 1].x1
+			- graf->coord[graf->g_num - 1].x0,
+			graf->coord[graf->g_num - 1].y1
+			- graf->coord[graf->g_num - 1].y0,1,0);
+	//прокладывание отрезка вдоль стены
+	a.x -= engine->player.where.x;
+	a.y -= engine->player.where.y;
+	b.x = a.x + 1 * cosf(angle);
+	b.y = a.y + 1 * sinf(angle);
+	a.x += engine->player.where.x;
+	a.y += engine->player.where.y;
+	b.x += engine->player.where.x;
+	b.y += engine->player.where.y;
+	graf->coord[graf->g_num - 1] = (t_fline){a.x, b.x, a.y, b.y};
+}
+
+void			graf_mod(t_engine *engine, int sectorno, int neighbor, int i)
+{
+	if (engine->edit.mod_w != -1 && engine->edit.graf != -1)
+	{
+		if (engine->sectors[sectorno].neighbors[i] <= -1)
+		{
+			graf_memalloc(engine, sectorno, neighbor, i);
+			create_coord(engine, sectorno, i);
+		}
+	}
+}
+
+void			render_scene(t_engine *engine, int sectorno, int neighbor, int i)
+{
+	t_ixyz txset;
+
+	rendering_init(engine, sectorno, neighbor);
+	txset = tx_wall_mod(engine, sectorno, i);
+	loop(engine, neighbor, txset);
+	txset = tx_plane_mod(engine, sectorno, i);
 	render_hplane(engine, &engine->vpfloor, txset.x);
 	render_hplane(engine, &engine->vpceil, txset.y);
+	graf_mod(engine, sectorno, neighbor, i);
+
+	if (engine->graf[sectorno].sectorno != -1)
+	{
+		printf("%d\n", engine->graf[sectorno].g_num);
+	}
+
+	engine->edit.mod_w = -1;	//после того как модифицировали стену, нужно сбрасывать, иначе применится ко всем стенам
 }

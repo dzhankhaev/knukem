@@ -19,6 +19,7 @@ static void	reset(t_engine *engine)
 	engine->edit.mod_s = 0x01ab01;	//запрет на модификацию (прежде нужно найти цель)
 	engine->edit.mod_w = -1;	//запрет на модификацию (прежде нужно найти цель)
 	engine->edit.txno = -1;
+	engine->edit.graf = -1;
 }
 
 static void	draw(t_engine *engine)
@@ -43,13 +44,14 @@ void		game_loop(t_engine *engine, t_all *all)
 	int		time;
 
 	time = 0;
+
 	while (!engine->close_request)
 	{
 		if (engine->edit.mod)
 		{
 			SDL_SetRelativeMouseMode(SDL_FALSE);
 			engine->edit.mod = main_editor(engine, "map-clear", all);
-			SDL_SetRelativeMouseMode(SDL_TRUE); //скрывает курсор, он движется относительно окна
+//			SDL_SetRelativeMouseMode(SDL_TRUE); //скрывает курсор, он движется относительно окна
 		}
 		reset(engine);
 		keys_manager(engine);

@@ -25,12 +25,30 @@ static void	get_fname(char *name, char *fname)
 	}
 }
 
+void		get_filename(char *name, char *sn)
+{
+	int	i;
+
+	i = 0;
+	while (i < 15 && name[i] != '\0')
+	{
+		sn[i] = name[i];
+		i++;
+	}
+
+	while (i <= 15)
+	{
+		sn[i] = '\0';
+		i++;
+	}
+}
+
 void 		load_img(t_engine *engine, char *name, int n)
 {
 	SDL_Surface *img;
 	char		fname[24];
 
-	get_filename(engine, name, n);
+	get_filename(name, engine->img[n].name);
 	get_fname(engine->img[n].name, fname);
 	if (!(img = IMG_Load(fname)))
 	{
@@ -46,19 +64,3 @@ void 		load_img(t_engine *engine, char *name, int n)
 }
 //https://habr.com/ru/post/456656/
 
-void		get_filename(t_engine *engine, char *name, int n)
-{
-	int	i;
-
-	i = 0;
-	while (i < 15 && name[i] != '\0')
-	{
-		engine->img[n].name[i] = name[i];
-		i++;
-	}
-	while (i <= 15)
-	{
-		engine->img[n].name[i] = '\0';
-		i++;
-	}
-}

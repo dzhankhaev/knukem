@@ -15,6 +15,8 @@ void	event_edit2(t_player *player, t_edit *edit)
 		edit->mod_tx = edit->mod_tx == 4 ? 0 : edit->mod_tx + 1;
 	else if (player->event.key.keysym.sym == SDLK_e)
 		edit->mod = 1;
+	else if (player->event.key.keysym.sym == SDLK_g)
+		edit->graf = 1;
 }
 
 void	event_edit(t_player *player, t_edit *edit)
@@ -27,5 +29,4 @@ void	event_edit(t_player *player, t_edit *edit)
 		edit->hchange[2] = player->event.type == SDL_KEYDOWN;
 	else if (player->event.key.keysym.sym == SDLK_k)
 		edit->hchange[3] = player->event.type == SDL_KEYDOWN;
-
 }
