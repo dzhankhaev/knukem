@@ -18,6 +18,7 @@ static void	reset(t_engine *engine)
 	}
 	engine->edit.mod_s = 0x01ab01;	//запрет на модификацию (прежде нужно найти цель)
 	engine->edit.mod_w = -1;	//запрет на модификацию (прежде нужно найти цель)
+	engine->edit.door = 0;		//
 	if (engine->edit.graf != 1)	//в режиме граффити текстуры помещений менять нельзя
 		engine->edit.txno = -1;
 }

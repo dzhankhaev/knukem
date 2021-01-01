@@ -5,6 +5,7 @@ t_ixyz			tx_wall_mod(t_engine *engine, int sectorno, int i)
 	t_ixyz	txset;
 
 	txset = (t_ixyz){abs(engine->sectors[sectorno].neighbors[i]), 1, 2};
+	//если стена модифицируема и была выбрана текстура и не включен режим граффити
 	if (engine->edit.mod_w != -1 && engine->edit.txno != -1 &&
 	!engine->edit.graf)
 	{
