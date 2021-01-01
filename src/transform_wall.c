@@ -29,7 +29,6 @@ void		tex_init(t_engine *engine, t_fline w, t_fline ow)
 		engine->u1 = (w.x1 - ow.x0) * engine->img[w.color].tx->w
 					 / (ow.x1 - ow.x0);
 	}
-
 }
 
 int			transform_wall(t_engine *engine, t_fline *wall)

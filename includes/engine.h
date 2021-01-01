@@ -44,6 +44,7 @@ typedef struct	q_queue
 	int			x0;			//	границы отображения этого сектора
 	int			x1;			//	равны границам портала, из которого попали в этот сектор
 	int			psec;		//	номер сектора, из которого пришли
+	int			door;
 }				t_queue;
 
 typedef struct	s_delta		//	для алгоритма брезенхема
@@ -97,6 +98,7 @@ typedef struct	s_edit
 	int			mod_tx;				//	1 - пол, 2 - потолок, 3 - нижняя линия раздела, 4 - верхняя, 0 - стена	}
 	int			txno;				//	эту текстуру назначим
 	int			graf;
+	int			door;
 	int			mod;				//
 }				t_edit;
 
@@ -108,13 +110,10 @@ typedef struct	s_img
 
 typedef struct	s_graf
 {
-	int			sectorno;
 	int			g_num;
 	float		*z;
 	t_fline		*coord;
 	int			*wall;
-	int			*txno;
-
 }				t_graf;
 
 typedef struct	s_temp
@@ -204,13 +203,11 @@ typedef struct	s_engine
 	t_fline		ow;					//	текущая стена без отрезания частей, не попавших в кадр
 	int			tline[W];			//	верхняя линия раздела
 	int			bline[W];			//	нижняя линия раздела
-	int			yctop[W];			//	экранные y потолка
-	int			ycbot[W];			//	экранные y потолка
-	int			yftop[W];			//	экранные y пола
-	int			yfbot[W];			//	экранные y пола
+	int			tdoor[W];			//	экранные y двери в этих границах рендерится дверь
+	int			bdoor[W];			//	экранные y двери
 	t_vplane	vpfloor;			//	таблица для заполнения пола
 	t_vplane	vpceil;				//	таблица для заполнения потолка
-	int			u0;					//	начало и конец текстуры с учетом чати стены, которая не попала в кадр
+	int			u0;					//	начало и конец текстуры с учетом части стены, которая не попала в кадр
 	int			u1;					//
 	t_temp		rend_wall;			//используется в rendel_Wall тобы обойти норму
 	t_temp2		rend_plane;			//используется при рендеринге пола и потолка
@@ -228,7 +225,7 @@ void			game_loop(t_engine *engine, t_all *all);
 int				transform_wall(t_engine *engine, t_fline *wall);
 void			render_scene(t_engine *engine, int sectorno, int neighbor, int i);
 void			ceil_and_floor_init(t_engine *engine);
-void			render_wall(t_engine *engine, int neighbor, t_ixyz t);
+void			render_wall(t_engine *engine, int neighbor, t_ixyz t, int i);
 t_line			get_op1(t_temp *a);
 t_line			get_op2(t_temp *a);
 t_line			get_op3(t_temp *a);

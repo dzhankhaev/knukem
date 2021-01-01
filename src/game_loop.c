@@ -11,10 +11,9 @@ static void	reset(t_engine *engine)
 	{
 		engine->tline[i] = 0;
 		engine->bline[i] = H - 1;
-		engine->yctop[i] = 0;
-		engine->ycbot[i] = H - 1;
-		engine->yftop[i] = 0;
-		engine->yfbot[i++] = H - 1;
+		engine->tdoor[i] = 0;
+		engine->bdoor[i] = H - 1;
+		i++;
 	}
 	engine->edit.mod_s = 0x01ab01;	//запрет на модификацию (прежде нужно найти цель)
 	engine->edit.mod_w = -1;	//запрет на модификацию (прежде нужно найти цель)
@@ -29,7 +28,7 @@ static void	draw(t_engine *engine)
 	//все переменные ниже нужно сбрасывать каждый новый кадр
 	engine->max_queue = MAX_QUEUE;
 	engine->queue = queue;
-	*engine->queue = (t_queue){engine->player.sector, 0, W - 1, -1};
+	*engine->queue = (t_queue){engine->player.sector, 0, W - 1, -1, 0};
 	engine->future = engine->queue + 1;
 	engine->present = engine->queue;
 	while (engine->present != engine->future)

@@ -16,25 +16,18 @@ static void		rendering_init(t_engine *engine, int sectorno, int neighbor, int i)
 		if ((a->x1 > a->x0) && engine->future + 1 != engine->queue + engine->max_queue &&
 			check_repeat(engine, sectorno, neighbor))
 		{
-			if (engine->sectors[sectorno].doors[i] == 0)
-				*(engine->future++) = (t_queue){neighbor, a->x0, a->x0+1,
-												sectorno};
-			else
+			if (engine->sectors[sectorno].doors[i] == -1)
 				*(engine->future++) = (t_queue){neighbor, a->x0, a->x1,
-												sectorno};
+												sectorno, engine->present->door};
+			else if (engine->sectors[sectorno].doors[i] == 0 && neighbor > -1)
+				*(engine->future++) = (t_queue){neighbor, a->x0, a->x1,
+												sectorno, 1};
 		}
 		init_wall(engine, engine->sectors[neighbor], a->wall);
 	}
 }
 
-
-t_line		get_op4(t_temp *a)
-{
-	return ((t_line){0, 0, imin(a->oy[2], a->oy[1]),
-					 imax(a->oy[3],a->oy[0]), 0});
-}
-
-static void		loop(t_engine *engine, int neighbor, t_ixyz t, int i)
+static void		loop(t_engine *engine, int neighbor, t_ixyz t, int i, int sectorno)
 {
 	t_temp	*a;
 
@@ -52,8 +45,14 @@ static void		loop(t_engine *engine, int neighbor, t_ixyz t, int i)
 		a->txx = (engine->u0 * ((a->w.x1 - a->x) * a->l.x1)
 				  + engine->u1 * ((a->x - a->w.x0) * a->l.x0))
 				 / ((a->w.x1 - a->x) * a->l.x1 + (a->x - a->w.x0) * a->l.x0);
+
 		ceil_and_floor_init(engine);		//y[0] и y[1] мы получаем тут путем линейной интерполяции
-		render_wall(engine, neighbor, t);
+		render_wall(engine, neighbor, t, i);
+		if (engine->sectors[sectorno].doors[i] == 0 && neighbor > -1)
+		{
+			engine->tdoor[a->x] = iclamp(a->y[2], engine->vpceil.boty[a->x], a->y[1]);
+			engine->bdoor[a->x] = iclamp(a->y[3],a->y[0] , engine->vpfloor.topy[a->x]);
+		}
 		a->x += 1;
 	}
 }
@@ -66,8 +65,8 @@ void			door_mod(t_engine *engine, int sectorno, int neighbor, int i)
 	//Для этого ищем соответствующую позицию у соседнего сектора
 	int	q;
 
-	if (engine->edit.mod_w == i && neighbor == engine->edit.mod_s
-	&& engine->edit.door)
+	if (engine->edit.mod_w == i && neighbor > -1
+	&& neighbor == engine->edit.mod_s && engine->edit.door)
 	{
 		q = 0;
 		engine->sectors[sectorno].doors[i] = 0;
@@ -90,7 +89,7 @@ void			render_scene(t_engine *engine, int sectorno, int neighbor, int i)
 	rendering_init(engine, sectorno, neighbor, i);
 	door_mod(engine, sectorno, neighbor, i);
 	txset = tx_wall_mod(engine, sectorno, i);
-	loop(engine, neighbor, txset, i);
+	loop(engine, neighbor, txset, i, sectorno);
 	txset = tx_plane_mod(engine, sectorno, i);
 	render_hplane(engine, &engine->vpfloor, txset.x);
 	render_hplane(engine, &engine->vpceil, txset.y);
@@ -99,6 +98,4 @@ void			render_scene(t_engine *engine, int sectorno, int neighbor, int i)
 	engine->edit.mod_w = -1;	//после того как модифицировали стену, нужно сбрасывать, иначе применится ко всем стенам
 	render_line((t_line){0, W - 1, 0, 0, 0}, engine->screen, engine->borders);
 	render_line((t_line){0, W - 1, H - 1, H - 1, 0}, engine->screen, engine->borders);
-
-//	if (engine->sectors[sectorno].doors[i] == 0 && engine->sectors[neighbor].doors[i] == 0)
 }
