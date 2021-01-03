@@ -6,5 +6,5 @@ C_FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacO
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/dgruyere/projects/knukem_all/d-k3d -I/Users/dgruyere/projects/knukem_all/SDL/sdl2/2.0.12_1/include/SDL2 -I/Users/dgruyere/projects/knukem_all/SDL/sdl2_image/2.0.5/include/SDL2 -I/Users/dgruyere/projects/knukem_all/SDL/sdl2_mixer/2.0.4/include/SDL2 -I/Users/dgruyere/projects/knukem_all/SDL/sdl2_ttf/2.0.15/include/SDL2 -I/Users/dgruyere/projects/knukem_all/includes -I/Users/dgruyere/projects/knukem_all/libft 
+C_INCLUDES = -I/Users/dgruyere/.brew/Cellar/sdl2/2.0.14_1/include/SDL2 -I/Users/dgruyere/.brew/Cellar/sdl2_ttf/2.0.15/include/SDL2 -I/Users/dgruyere/.brew/Cellar/sdl2_image/2.0.5/include/SDL2 -I/Users/dgruyere/.brew/Cellar/sdl2_mixer/2.0.4/include/SDL2 -I/Users/dgruyere/projects/knukem_fresh/includes -I/Users/dgruyere/projects/knukem_fresh/libft 
 

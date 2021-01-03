@@ -2,12 +2,32 @@ cmake_minimum_required(VERSION 3.16)
 project(d-k3d C)
 set(CMAKE_C_STANDARD 99)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR})
+Message("")
+Message( STATUS "CMAKE_BINARY_DIR: " ${CMAKE_BINARY_DIR} )
+Message( STATUS "CMAKE_SOURCE_DIR: " ${CMAKE_SOURCE_DIR} )
+Message( STATUS "CMAKE_COMMAND: " ${CMAKE_COMMAND} )
+Message( STATUS "CMAKE_VERSION: " ${CMAKE_VERSION} )
+Message( STATUS "CMAKE_C_COMPILER: " ${CMAKE_C_COMPILER} )
+Message( STATUS "CMAKE_PROJECT_NAME: " ${CMAKE_PROJECT_NAME} )
+Message( STATUS "CMAKE_FINDCMAKE: " ${CMAKE_SOURCE_DIR}/CMAKE )
+Message( STATUS "CMAKE_FINDCMAKE: " ${CMAKE_SOURCE_DIR}/CMAKE )
 
-find_package(SDL2 REQUIRED)
-find_package(SDL2_ttf REQUIRED)
-find_package(SDL2_image REQUIRED)
-include_directories(${SDL2_INCLUDE_DIRS} ${SDL2_IMAGE_INCLUDE_DIRS})
+# ------- Set Vars ------- #
+
+#[[set(CMAKE_C_STANDARD 11)]]
+#[[set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)]]
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/CMAKE")
+#[[set(SOURCE_FILES    src/main.c)]]
+
+Message("")
+Message( STATUS "SOURCE entry point : " ${SOURCE_FILES} )
+Message("")
+
+# ------- End Set Vars --- #
+
+# ------- Executable ----- #
+
+#[[ADD_EXECUTABLE(SDL2_Basic_Setup ${SOURCE_FILES})]]
 
 add_executable(d-k3d
 		#[[TODO]]
@@ -75,13 +95,133 @@ add_executable(d-k3d
 		src/manage_data.c
 		src/run_queue.c
 		src/transform_wall.c
-        src/render/render_graf.c src/editor/graf_mod.c src/editor/tx_mod.c)
+		src/render/render_graf.c src/editor/graf_mod.c src/editor/tx_mod.c
 
-include_directories(d-k3d
+		libft/c_add.c
+		libft/c_arg.c
+		libft/c_mod.c
+		libft/c_pow.c
+		libft/c_set.c
+		libft/c_sqr.c
+		libft/c_sub.c
+		libft/ft_atoi.c
+		libft/ft_bzero.c
+		#[[libft/ft_expand_str.c]]
+		libft/ft_isalnum.c
+		libft/ft_isalpha.c
+		libft/ft_isascii.c
+		libft/ft_isdigit.c
+		libft/ft_isprint.c
+		libft/ft_itoa.c
+		libft/ft_lstadd.c
+		libft/ft_lstdel.c
+		libft/ft_lstdelone.c
+		libft/ft_lstiter.c
+		libft/ft_lstmap.c
+		libft/ft_lstnew.c
+		libft/ft_memalloc.c
+		libft/ft_memccpy.c
+		libft/ft_memchr.c
+		libft/ft_memcmp.c
+		libft/ft_memcpy.c
+		libft/ft_memdel.c
+		libft/ft_memmove.c
+		libft/ft_memset.c
+		libft/ft_putchar.c
+		libft/ft_putchar_fd.c
+		libft/ft_putendl.c
+		libft/ft_putendl_fd.c
+		libft/ft_putnbr.c
+		libft/ft_putnbr_fd.c
+		libft/ft_putstr.c
+		libft/ft_putstr_fd.c
+		libft/ft_realloc.c
+		libft/ft_strcat.c
+		libft/ft_strchr.c
+		libft/ft_strclr.c
+		libft/ft_strcmp.c
+		libft/ft_strcpy.c
+		libft/ft_strdel.c
+		libft/ft_strdup.c
+		libft/ft_strequ.c
+		libft/ft_striter.c
+		libft/ft_striteri.c
+		libft/ft_strjoin.c
+		libft/ft_strlcat.c
+		libft/ft_strlen.c
+		libft/ft_strmap.c
+		libft/ft_strmapi.c
+		libft/ft_strncat.c
+		libft/ft_strncmp.c
+		libft/ft_strncpy.c
+		libft/ft_strnequ.c
+		libft/ft_strnew.c
+		libft/ft_strnstr.c
+		libft/ft_strrchr.c
+		libft/ft_strsplit.c
+		libft/ft_strstr.c
+		libft/ft_strsub.c
+		libft/ft_strtrim.c
+		libft/ft_swap.c
+		libft/ft_tolower.c
+		libft/ft_toupper.c
+		libft/get_next_line.c)
+
+# ------- End Executable - #
+
+# ------- Finds ---------- #
+
+FIND_PACKAGE(SDL2 REQUIRED)
+Message("")
+Message( STATUS "FINDING SDL2" )
+IF (${SDL2_FOUND})
+	Message( STATUS "SDL2_FOUND: " ${SDL2_FOUND})
+	Message( STATUS "SDL2_INCLUDE_DIR:" ${SDL2_INCLUDE_DIR})
+	Message( STATUS "SDL2_LIBRARY: " ${SDL2_LIBRARY})
+ELSE()
+	Message( STATUS "SDL2_FOUND: " ${SDL2_FOUND})
+	Message( FATAL_ERROR "SDL2 NOT FOUND" )
+ENDIF()
+
+FIND_PACKAGE(SDL2_IMAGE)
+Message("")
+Message( STATUS "FINDING SDL2_IMAGE" )
+Message( STATUS "SDL2_IMAGE_FOUND: " ${SDL2_IMAGE_FOUND})
+IF (${SDL2_IMAGE_FOUND})
+	Message( STATUS "SDL2_IMAGE_INCLUDE_DIR: " ${SDL2_IMAGE_INCLUDE_DIR})
+	Message( STATUS "SDL2_IMAGE_LIBRARY: " ${SDL2_IMAGE_LIBRARY})
+ELSE()
+	Message( FATAL_ERROR "SDL2_IMAGE NOT FOUND" )
+ENDIF()
+
+FIND_PACKAGE(SDL2TTF)
+Message("")
+Message( STATUS "FINDING SDL2TTF" )
+Message( STATUS "SDL2TTF_FOUND: " ${SDL2TTF_FOUND} )
+IF (${SDL2TTF_FOUND})
+	Message( STATUS "SDL2TTF_INCLUDE_DIR: " ${SDL2TTF_INCLUDE_DIR})
+	Message( STATUS "SDL2TTF_LIBRARY: " ${SDL2TTF_LIBRARY})
+ELSE()
+	Message( FATAL_ERROR "SDL2TTF NOT FOUND" )
+ENDIF()
+Message("")
+
+FIND_PACKAGE(SDL2Mixer)
+
+Message( STATUS "FINDING SDL2Mixer" )
+Message( STATUS "SDL2Mixer_FOUND: " ${SDL2Mixer_FOUND} )
+
+Message("")
+
+#[[file(COPY resources DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})]]
+
+# ------- End Finds ------ #
+
+# ------- Inc & Link ---- #
+
+INCLUDE_DIRECTORIES(${SDL2_INCLUDE_DIR} ${SDL2TTF_INCLUDE_DIR} ${SDL2_IMAGE_INCLUDE_DIR} ${SDL2Mixer_INCLUDE_DIR}
 		includes/
-		libft/
-		)
+		libft/)
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${SDL2_LIBRARY} ${SDL2TTF_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${SDL2Mixer_LIBRARY} )
 
-set(LIBFT ${CMAKE_SOURCE_DIR}/libft/libft.a)
-
-target_link_libraries(d-k3d ${LIBFT} ${SDL2_LIBRARIES} ${SDL2_TTF_LIBRARIES} ${SDL2_IMAGE_LIBRARIES} -lm)
+# ------- End ----------- #

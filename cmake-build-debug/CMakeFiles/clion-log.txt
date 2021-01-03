@@ -1,4 +1,35 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/dgruyere/projects/knukem_all
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/dgruyere/projects/knukem_fresh
+
+-- CMAKE_BINARY_DIR: /Users/dgruyere/projects/knukem_fresh/cmake-build-debug
+-- CMAKE_SOURCE_DIR: /Users/dgruyere/projects/knukem_fresh
+-- CMAKE_COMMAND: /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+-- CMAKE_VERSION: 3.17.3
+-- CMAKE_C_COMPILER: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
+-- CMAKE_PROJECT_NAME: d-k3d
+-- CMAKE_FINDCMAKE: /Users/dgruyere/projects/knukem_fresh/CMAKE
+-- CMAKE_FINDCMAKE: /Users/dgruyere/projects/knukem_fresh/CMAKE
+
+-- SOURCE entry point : 
+
+
+-- FINDING SDL2
+-- SDL2_FOUND: TRUE
+-- SDL2_INCLUDE_DIR:/Users/dgruyere/.brew/Cellar/sdl2/2.0.14_1/include/SDL2
+-- SDL2_LIBRARY: /Users/dgruyere/.brew/Cellar/sdl2/2.0.14_1/lib/libSDL2.dylib-framework Cocoa
+
+-- FINDING SDL2_IMAGE
+-- SDL2_IMAGE_FOUND: TRUE
+-- SDL2_IMAGE_INCLUDE_DIR: /Users/dgruyere/.brew/Cellar/sdl2_image/2.0.5/include/SDL2
+-- SDL2_IMAGE_LIBRARY: /Users/dgruyere/.brew/Cellar/sdl2_image/2.0.5/lib/libSDL2_image.dylib
+
+-- FINDING SDL2TTF
+-- SDL2TTF_FOUND: TRUE
+-- SDL2TTF_INCLUDE_DIR: /Users/dgruyere/.brew/Cellar/sdl2_ttf/2.0.15/include/SDL2
+-- SDL2TTF_LIBRARY: /Users/dgruyere/.brew/Cellar/sdl2_ttf/2.0.15/lib/libSDL2_ttf.dylib/Users/dgruyere/.brew/Cellar/sdl2_ttf/2.0.15/lib/libSDL2_ttf.dylib-framework Cocoa
+
+-- FINDING SDL2Mixer
+-- SDL2Mixer_FOUND: TRUE
+
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/dgruyere/projects/knukem_all/cmake-build-debug
+-- Build files have been written to: /Users/dgruyere/projects/knukem_fresh/cmake-build-debug

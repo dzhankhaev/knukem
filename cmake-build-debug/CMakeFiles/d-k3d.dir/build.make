@@ -63,10 +63,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/dgruyere/projects/knukem_all
+CMAKE_SOURCE_DIR = /Users/dgruyere/projects/knukem_fresh
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/dgruyere/projects/knukem_all/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/dgruyere/projects/knukem_fresh/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/d-k3d.dir/depend.make
@@ -79,1615 +79,1654 @@ include CMakeFiles/d-k3d.dir/flags.make
 
 CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.o: ../src/editor/real_time_edit.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.o   -c /Users/dgruyere/projects/knukem_all/src/editor/real_time_edit.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/editor/real_time_edit.c
 
 CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/editor/real_time_edit.c > CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/editor/real_time_edit.c > CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.i
 
 CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/editor/real_time_edit.c -o CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/editor/real_time_edit.c -o CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.s
 
 CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.o: ../src/key_events/event_edit.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.o   -c /Users/dgruyere/projects/knukem_all/src/key_events/event_edit.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/key_events/event_edit.c
 
 CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/key_events/event_edit.c > CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/key_events/event_edit.c > CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.i
 
 CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/key_events/event_edit.c -o CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/key_events/event_edit.c -o CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.s
 
 CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.o: ../src/key_events/event_movement.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.o   -c /Users/dgruyere/projects/knukem_all/src/key_events/event_movement.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/key_events/event_movement.c
 
 CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/key_events/event_movement.c > CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/key_events/event_movement.c > CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.i
 
 CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/key_events/event_movement.c -o CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/key_events/event_movement.c -o CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.s
 
 CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.o: ../src/key_events/keys_manager.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.o   -c /Users/dgruyere/projects/knukem_all/src/key_events/keys_manager.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/key_events/keys_manager.c
 
 CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/key_events/keys_manager.c > CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/key_events/keys_manager.c > CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.i
 
 CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/key_events/keys_manager.c -o CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/key_events/keys_manager.c -o CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.s
 
 CMakeFiles/d-k3d.dir/src/map_editor/draw_all.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/map_editor/draw_all.c.o: ../src/map_editor/draw_all.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/draw_all.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/draw_all.c.o   -c /Users/dgruyere/projects/knukem_all/src/map_editor/draw_all.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/draw_all.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/draw_all.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/map_editor/draw_all.c
 
 CMakeFiles/d-k3d.dir/src/map_editor/draw_all.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/map_editor/draw_all.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/map_editor/draw_all.c > CMakeFiles/d-k3d.dir/src/map_editor/draw_all.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/map_editor/draw_all.c > CMakeFiles/d-k3d.dir/src/map_editor/draw_all.c.i
 
 CMakeFiles/d-k3d.dir/src/map_editor/draw_all.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/map_editor/draw_all.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/map_editor/draw_all.c -o CMakeFiles/d-k3d.dir/src/map_editor/draw_all.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/map_editor/draw_all.c -o CMakeFiles/d-k3d.dir/src/map_editor/draw_all.c.s
 
 CMakeFiles/d-k3d.dir/src/map_editor/draw_map.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/map_editor/draw_map.c.o: ../src/map_editor/draw_map.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/draw_map.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/draw_map.c.o   -c /Users/dgruyere/projects/knukem_all/src/map_editor/draw_map.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/draw_map.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/draw_map.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/map_editor/draw_map.c
 
 CMakeFiles/d-k3d.dir/src/map_editor/draw_map.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/map_editor/draw_map.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/map_editor/draw_map.c > CMakeFiles/d-k3d.dir/src/map_editor/draw_map.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/map_editor/draw_map.c > CMakeFiles/d-k3d.dir/src/map_editor/draw_map.c.i
 
 CMakeFiles/d-k3d.dir/src/map_editor/draw_map.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/map_editor/draw_map.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/map_editor/draw_map.c -o CMakeFiles/d-k3d.dir/src/map_editor/draw_map.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/map_editor/draw_map.c -o CMakeFiles/d-k3d.dir/src/map_editor/draw_map.c.s
 
 CMakeFiles/d-k3d.dir/src/map_editor/draw_sprites.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/map_editor/draw_sprites.c.o: ../src/map_editor/draw_sprites.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/draw_sprites.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/draw_sprites.c.o   -c /Users/dgruyere/projects/knukem_all/src/map_editor/draw_sprites.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/draw_sprites.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/draw_sprites.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/map_editor/draw_sprites.c
 
 CMakeFiles/d-k3d.dir/src/map_editor/draw_sprites.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/map_editor/draw_sprites.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/map_editor/draw_sprites.c > CMakeFiles/d-k3d.dir/src/map_editor/draw_sprites.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/map_editor/draw_sprites.c > CMakeFiles/d-k3d.dir/src/map_editor/draw_sprites.c.i
 
 CMakeFiles/d-k3d.dir/src/map_editor/draw_sprites.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/map_editor/draw_sprites.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/map_editor/draw_sprites.c -o CMakeFiles/d-k3d.dir/src/map_editor/draw_sprites.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/map_editor/draw_sprites.c -o CMakeFiles/d-k3d.dir/src/map_editor/draw_sprites.c.s
 
 CMakeFiles/d-k3d.dir/src/map_editor/draw_ui.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/map_editor/draw_ui.c.o: ../src/map_editor/draw_ui.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/draw_ui.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/draw_ui.c.o   -c /Users/dgruyere/projects/knukem_all/src/map_editor/draw_ui.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/draw_ui.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/draw_ui.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/map_editor/draw_ui.c
 
 CMakeFiles/d-k3d.dir/src/map_editor/draw_ui.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/map_editor/draw_ui.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/map_editor/draw_ui.c > CMakeFiles/d-k3d.dir/src/map_editor/draw_ui.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/map_editor/draw_ui.c > CMakeFiles/d-k3d.dir/src/map_editor/draw_ui.c.i
 
 CMakeFiles/d-k3d.dir/src/map_editor/draw_ui.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/map_editor/draw_ui.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/map_editor/draw_ui.c -o CMakeFiles/d-k3d.dir/src/map_editor/draw_ui.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/map_editor/draw_ui.c -o CMakeFiles/d-k3d.dir/src/map_editor/draw_ui.c.s
 
 CMakeFiles/d-k3d.dir/src/map_editor/drawing_utils.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/map_editor/drawing_utils.c.o: ../src/map_editor/drawing_utils.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/drawing_utils.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/drawing_utils.c.o   -c /Users/dgruyere/projects/knukem_all/src/map_editor/drawing_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/drawing_utils.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/drawing_utils.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/map_editor/drawing_utils.c
 
 CMakeFiles/d-k3d.dir/src/map_editor/drawing_utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/map_editor/drawing_utils.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/map_editor/drawing_utils.c > CMakeFiles/d-k3d.dir/src/map_editor/drawing_utils.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/map_editor/drawing_utils.c > CMakeFiles/d-k3d.dir/src/map_editor/drawing_utils.c.i
 
 CMakeFiles/d-k3d.dir/src/map_editor/drawing_utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/map_editor/drawing_utils.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/map_editor/drawing_utils.c -o CMakeFiles/d-k3d.dir/src/map_editor/drawing_utils.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/map_editor/drawing_utils.c -o CMakeFiles/d-k3d.dir/src/map_editor/drawing_utils.c.s
 
 CMakeFiles/d-k3d.dir/src/map_editor/errors.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/map_editor/errors.c.o: ../src/map_editor/errors.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/errors.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/errors.c.o   -c /Users/dgruyere/projects/knukem_all/src/map_editor/errors.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/errors.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/errors.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/map_editor/errors.c
 
 CMakeFiles/d-k3d.dir/src/map_editor/errors.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/map_editor/errors.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/map_editor/errors.c > CMakeFiles/d-k3d.dir/src/map_editor/errors.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/map_editor/errors.c > CMakeFiles/d-k3d.dir/src/map_editor/errors.c.i
 
 CMakeFiles/d-k3d.dir/src/map_editor/errors.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/map_editor/errors.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/map_editor/errors.c -o CMakeFiles/d-k3d.dir/src/map_editor/errors.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/map_editor/errors.c -o CMakeFiles/d-k3d.dir/src/map_editor/errors.c.s
 
 CMakeFiles/d-k3d.dir/src/map_editor/events_all.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/map_editor/events_all.c.o: ../src/map_editor/events_all.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/events_all.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/events_all.c.o   -c /Users/dgruyere/projects/knukem_all/src/map_editor/events_all.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/events_all.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/events_all.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/map_editor/events_all.c
 
 CMakeFiles/d-k3d.dir/src/map_editor/events_all.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/map_editor/events_all.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/map_editor/events_all.c > CMakeFiles/d-k3d.dir/src/map_editor/events_all.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/map_editor/events_all.c > CMakeFiles/d-k3d.dir/src/map_editor/events_all.c.i
 
 CMakeFiles/d-k3d.dir/src/map_editor/events_all.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/map_editor/events_all.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/map_editor/events_all.c -o CMakeFiles/d-k3d.dir/src/map_editor/events_all.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/map_editor/events_all.c -o CMakeFiles/d-k3d.dir/src/map_editor/events_all.c.s
 
 CMakeFiles/d-k3d.dir/src/map_editor/events_map.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/map_editor/events_map.c.o: ../src/map_editor/events_map.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/events_map.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/events_map.c.o   -c /Users/dgruyere/projects/knukem_all/src/map_editor/events_map.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/events_map.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/events_map.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/map_editor/events_map.c
 
 CMakeFiles/d-k3d.dir/src/map_editor/events_map.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/map_editor/events_map.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/map_editor/events_map.c > CMakeFiles/d-k3d.dir/src/map_editor/events_map.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/map_editor/events_map.c > CMakeFiles/d-k3d.dir/src/map_editor/events_map.c.i
 
 CMakeFiles/d-k3d.dir/src/map_editor/events_map.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/map_editor/events_map.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/map_editor/events_map.c -o CMakeFiles/d-k3d.dir/src/map_editor/events_map.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/map_editor/events_map.c -o CMakeFiles/d-k3d.dir/src/map_editor/events_map.c.s
 
 CMakeFiles/d-k3d.dir/src/map_editor/init.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/map_editor/init.c.o: ../src/map_editor/init.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/init.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/init.c.o   -c /Users/dgruyere/projects/knukem_all/src/map_editor/init.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/init.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/init.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/map_editor/init.c
 
 CMakeFiles/d-k3d.dir/src/map_editor/init.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/map_editor/init.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/map_editor/init.c > CMakeFiles/d-k3d.dir/src/map_editor/init.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/map_editor/init.c > CMakeFiles/d-k3d.dir/src/map_editor/init.c.i
 
 CMakeFiles/d-k3d.dir/src/map_editor/init.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/map_editor/init.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/map_editor/init.c -o CMakeFiles/d-k3d.dir/src/map_editor/init.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/map_editor/init.c -o CMakeFiles/d-k3d.dir/src/map_editor/init.c.s
 
 CMakeFiles/d-k3d.dir/src/map_editor/main.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/map_editor/main.c.o: ../src/map_editor/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/main.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/main.c.o   -c /Users/dgruyere/projects/knukem_all/src/map_editor/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/main.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/main.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/map_editor/main.c
 
 CMakeFiles/d-k3d.dir/src/map_editor/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/map_editor/main.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/map_editor/main.c > CMakeFiles/d-k3d.dir/src/map_editor/main.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/map_editor/main.c > CMakeFiles/d-k3d.dir/src/map_editor/main.c.i
 
 CMakeFiles/d-k3d.dir/src/map_editor/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/map_editor/main.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/map_editor/main.c -o CMakeFiles/d-k3d.dir/src/map_editor/main.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/map_editor/main.c -o CMakeFiles/d-k3d.dir/src/map_editor/main.c.s
 
 CMakeFiles/d-k3d.dir/src/map_editor/math.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/map_editor/math.c.o: ../src/map_editor/math.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/math.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/math.c.o   -c /Users/dgruyere/projects/knukem_all/src/map_editor/math.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/math.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/math.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/map_editor/math.c
 
 CMakeFiles/d-k3d.dir/src/map_editor/math.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/map_editor/math.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/map_editor/math.c > CMakeFiles/d-k3d.dir/src/map_editor/math.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/map_editor/math.c > CMakeFiles/d-k3d.dir/src/map_editor/math.c.i
 
 CMakeFiles/d-k3d.dir/src/map_editor/math.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/map_editor/math.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/map_editor/math.c -o CMakeFiles/d-k3d.dir/src/map_editor/math.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/map_editor/math.c -o CMakeFiles/d-k3d.dir/src/map_editor/math.c.s
 
 CMakeFiles/d-k3d.dir/src/map_editor/obj_detection.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/map_editor/obj_detection.c.o: ../src/map_editor/obj_detection.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/obj_detection.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/obj_detection.c.o   -c /Users/dgruyere/projects/knukem_all/src/map_editor/obj_detection.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/obj_detection.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/obj_detection.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/map_editor/obj_detection.c
 
 CMakeFiles/d-k3d.dir/src/map_editor/obj_detection.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/map_editor/obj_detection.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/map_editor/obj_detection.c > CMakeFiles/d-k3d.dir/src/map_editor/obj_detection.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/map_editor/obj_detection.c > CMakeFiles/d-k3d.dir/src/map_editor/obj_detection.c.i
 
 CMakeFiles/d-k3d.dir/src/map_editor/obj_detection.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/map_editor/obj_detection.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/map_editor/obj_detection.c -o CMakeFiles/d-k3d.dir/src/map_editor/obj_detection.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/map_editor/obj_detection.c -o CMakeFiles/d-k3d.dir/src/map_editor/obj_detection.c.s
 
 CMakeFiles/d-k3d.dir/src/map_editor/pixels.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/map_editor/pixels.c.o: ../src/map_editor/pixels.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/pixels.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/pixels.c.o   -c /Users/dgruyere/projects/knukem_all/src/map_editor/pixels.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/pixels.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/pixels.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/map_editor/pixels.c
 
 CMakeFiles/d-k3d.dir/src/map_editor/pixels.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/map_editor/pixels.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/map_editor/pixels.c > CMakeFiles/d-k3d.dir/src/map_editor/pixels.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/map_editor/pixels.c > CMakeFiles/d-k3d.dir/src/map_editor/pixels.c.i
 
 CMakeFiles/d-k3d.dir/src/map_editor/pixels.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/map_editor/pixels.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/map_editor/pixels.c -o CMakeFiles/d-k3d.dir/src/map_editor/pixels.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/map_editor/pixels.c -o CMakeFiles/d-k3d.dir/src/map_editor/pixels.c.s
 
 CMakeFiles/d-k3d.dir/src/map_editor/reader.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/map_editor/reader.c.o: ../src/map_editor/reader.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/reader.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/reader.c.o   -c /Users/dgruyere/projects/knukem_all/src/map_editor/reader.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/reader.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/reader.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/map_editor/reader.c
 
 CMakeFiles/d-k3d.dir/src/map_editor/reader.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/map_editor/reader.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/map_editor/reader.c > CMakeFiles/d-k3d.dir/src/map_editor/reader.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/map_editor/reader.c > CMakeFiles/d-k3d.dir/src/map_editor/reader.c.i
 
 CMakeFiles/d-k3d.dir/src/map_editor/reader.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/map_editor/reader.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/map_editor/reader.c -o CMakeFiles/d-k3d.dir/src/map_editor/reader.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/map_editor/reader.c -o CMakeFiles/d-k3d.dir/src/map_editor/reader.c.s
 
 CMakeFiles/d-k3d.dir/src/map_editor/sector_add.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/map_editor/sector_add.c.o: ../src/map_editor/sector_add.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/sector_add.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/sector_add.c.o   -c /Users/dgruyere/projects/knukem_all/src/map_editor/sector_add.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/sector_add.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/sector_add.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/map_editor/sector_add.c
 
 CMakeFiles/d-k3d.dir/src/map_editor/sector_add.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/map_editor/sector_add.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/map_editor/sector_add.c > CMakeFiles/d-k3d.dir/src/map_editor/sector_add.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/map_editor/sector_add.c > CMakeFiles/d-k3d.dir/src/map_editor/sector_add.c.i
 
 CMakeFiles/d-k3d.dir/src/map_editor/sector_add.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/map_editor/sector_add.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/map_editor/sector_add.c -o CMakeFiles/d-k3d.dir/src/map_editor/sector_add.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/map_editor/sector_add.c -o CMakeFiles/d-k3d.dir/src/map_editor/sector_add.c.s
 
 CMakeFiles/d-k3d.dir/src/map_editor/sector_check.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/map_editor/sector_check.c.o: ../src/map_editor/sector_check.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/sector_check.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/sector_check.c.o   -c /Users/dgruyere/projects/knukem_all/src/map_editor/sector_check.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/sector_check.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/sector_check.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/map_editor/sector_check.c
 
 CMakeFiles/d-k3d.dir/src/map_editor/sector_check.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/map_editor/sector_check.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/map_editor/sector_check.c > CMakeFiles/d-k3d.dir/src/map_editor/sector_check.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/map_editor/sector_check.c > CMakeFiles/d-k3d.dir/src/map_editor/sector_check.c.i
 
 CMakeFiles/d-k3d.dir/src/map_editor/sector_check.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/map_editor/sector_check.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/map_editor/sector_check.c -o CMakeFiles/d-k3d.dir/src/map_editor/sector_check.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/map_editor/sector_check.c -o CMakeFiles/d-k3d.dir/src/map_editor/sector_check.c.s
 
 CMakeFiles/d-k3d.dir/src/map_editor/sector_neighbors.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/map_editor/sector_neighbors.c.o: ../src/map_editor/sector_neighbors.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/sector_neighbors.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/sector_neighbors.c.o   -c /Users/dgruyere/projects/knukem_all/src/map_editor/sector_neighbors.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/sector_neighbors.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/sector_neighbors.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/map_editor/sector_neighbors.c
 
 CMakeFiles/d-k3d.dir/src/map_editor/sector_neighbors.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/map_editor/sector_neighbors.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/map_editor/sector_neighbors.c > CMakeFiles/d-k3d.dir/src/map_editor/sector_neighbors.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/map_editor/sector_neighbors.c > CMakeFiles/d-k3d.dir/src/map_editor/sector_neighbors.c.i
 
 CMakeFiles/d-k3d.dir/src/map_editor/sector_neighbors.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/map_editor/sector_neighbors.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/map_editor/sector_neighbors.c -o CMakeFiles/d-k3d.dir/src/map_editor/sector_neighbors.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/map_editor/sector_neighbors.c -o CMakeFiles/d-k3d.dir/src/map_editor/sector_neighbors.c.s
 
 CMakeFiles/d-k3d.dir/src/map_editor/sector_remove.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/map_editor/sector_remove.c.o: ../src/map_editor/sector_remove.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/sector_remove.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/sector_remove.c.o   -c /Users/dgruyere/projects/knukem_all/src/map_editor/sector_remove.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/sector_remove.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/sector_remove.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/map_editor/sector_remove.c
 
 CMakeFiles/d-k3d.dir/src/map_editor/sector_remove.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/map_editor/sector_remove.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/map_editor/sector_remove.c > CMakeFiles/d-k3d.dir/src/map_editor/sector_remove.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/map_editor/sector_remove.c > CMakeFiles/d-k3d.dir/src/map_editor/sector_remove.c.i
 
 CMakeFiles/d-k3d.dir/src/map_editor/sector_remove.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/map_editor/sector_remove.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/map_editor/sector_remove.c -o CMakeFiles/d-k3d.dir/src/map_editor/sector_remove.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/map_editor/sector_remove.c -o CMakeFiles/d-k3d.dir/src/map_editor/sector_remove.c.s
 
 CMakeFiles/d-k3d.dir/src/map_editor/texture.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/map_editor/texture.c.o: ../src/map_editor/texture.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/texture.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/texture.c.o   -c /Users/dgruyere/projects/knukem_all/src/map_editor/texture.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/texture.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/texture.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/map_editor/texture.c
 
 CMakeFiles/d-k3d.dir/src/map_editor/texture.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/map_editor/texture.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/map_editor/texture.c > CMakeFiles/d-k3d.dir/src/map_editor/texture.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/map_editor/texture.c > CMakeFiles/d-k3d.dir/src/map_editor/texture.c.i
 
 CMakeFiles/d-k3d.dir/src/map_editor/texture.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/map_editor/texture.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/map_editor/texture.c -o CMakeFiles/d-k3d.dir/src/map_editor/texture.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/map_editor/texture.c -o CMakeFiles/d-k3d.dir/src/map_editor/texture.c.s
 
 CMakeFiles/d-k3d.dir/src/map_editor/write.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/map_editor/write.c.o: ../src/map_editor/write.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/write.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/write.c.o   -c /Users/dgruyere/projects/knukem_all/src/map_editor/write.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/d-k3d.dir/src/map_editor/write.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/map_editor/write.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/map_editor/write.c
 
 CMakeFiles/d-k3d.dir/src/map_editor/write.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/map_editor/write.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/map_editor/write.c > CMakeFiles/d-k3d.dir/src/map_editor/write.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/map_editor/write.c > CMakeFiles/d-k3d.dir/src/map_editor/write.c.i
 
 CMakeFiles/d-k3d.dir/src/map_editor/write.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/map_editor/write.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/map_editor/write.c -o CMakeFiles/d-k3d.dir/src/map_editor/write.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/map_editor/write.c -o CMakeFiles/d-k3d.dir/src/map_editor/write.c.s
 
 CMakeFiles/d-k3d.dir/src/movement/fall.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/movement/fall.c.o: ../src/movement/fall.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/d-k3d.dir/src/movement/fall.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/movement/fall.c.o   -c /Users/dgruyere/projects/knukem_all/src/movement/fall.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/d-k3d.dir/src/movement/fall.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/movement/fall.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/movement/fall.c
 
 CMakeFiles/d-k3d.dir/src/movement/fall.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/movement/fall.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/movement/fall.c > CMakeFiles/d-k3d.dir/src/movement/fall.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/movement/fall.c > CMakeFiles/d-k3d.dir/src/movement/fall.c.i
 
 CMakeFiles/d-k3d.dir/src/movement/fall.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/movement/fall.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/movement/fall.c -o CMakeFiles/d-k3d.dir/src/movement/fall.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/movement/fall.c -o CMakeFiles/d-k3d.dir/src/movement/fall.c.s
 
 CMakeFiles/d-k3d.dir/src/movement/move.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/movement/move.c.o: ../src/movement/move.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/d-k3d.dir/src/movement/move.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/movement/move.c.o   -c /Users/dgruyere/projects/knukem_all/src/movement/move.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/d-k3d.dir/src/movement/move.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/movement/move.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/movement/move.c
 
 CMakeFiles/d-k3d.dir/src/movement/move.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/movement/move.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/movement/move.c > CMakeFiles/d-k3d.dir/src/movement/move.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/movement/move.c > CMakeFiles/d-k3d.dir/src/movement/move.c.i
 
 CMakeFiles/d-k3d.dir/src/movement/move.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/movement/move.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/movement/move.c -o CMakeFiles/d-k3d.dir/src/movement/move.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/movement/move.c -o CMakeFiles/d-k3d.dir/src/movement/move.c.s
 
 CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.o: ../src/render/line/render_hline.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.o   -c /Users/dgruyere/projects/knukem_all/src/render/line/render_hline.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/render/line/render_hline.c
 
 CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/render/line/render_hline.c > CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/render/line/render_hline.c > CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.i
 
 CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/render/line/render_hline.c -o CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/render/line/render_hline.c -o CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.s
 
 CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o: ../src/render/line/render_line.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o   -c /Users/dgruyere/projects/knukem_all/src/render/line/render_line.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/render/line/render_line.c
 
 CMakeFiles/d-k3d.dir/src/render/line/render_line.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/line/render_line.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/render/line/render_line.c > CMakeFiles/d-k3d.dir/src/render/line/render_line.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/render/line/render_line.c > CMakeFiles/d-k3d.dir/src/render/line/render_line.c.i
 
 CMakeFiles/d-k3d.dir/src/render/line/render_line.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/line/render_line.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/render/line/render_line.c -o CMakeFiles/d-k3d.dir/src/render/line/render_line.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/render/line/render_line.c -o CMakeFiles/d-k3d.dir/src/render/line/render_line.c.s
 
 CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o: ../src/render/line/render_vline.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o   -c /Users/dgruyere/projects/knukem_all/src/render/line/render_vline.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/render/line/render_vline.c
 
 CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/render/line/render_vline.c > CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/render/line/render_vline.c > CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.i
 
 CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/render/line/render_vline.c -o CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/render/line/render_vline.c -o CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.s
 
 CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.o: ../src/render/wall/perspective_init.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.o   -c /Users/dgruyere/projects/knukem_all/src/render/wall/perspective_init.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/render/wall/perspective_init.c
 
 CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/render/wall/perspective_init.c > CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/render/wall/perspective_init.c > CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.i
 
 CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/render/wall/perspective_init.c -o CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/render/wall/perspective_init.c -o CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.s
 
 CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.o: ../src/render/wall/render_wall.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.o   -c /Users/dgruyere/projects/knukem_all/src/render/wall/render_wall.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/render/wall/render_wall.c
 
 CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/render/wall/render_wall.c > CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/render/wall/render_wall.c > CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.i
 
 CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/render/wall/render_wall.c -o CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/render/wall/render_wall.c -o CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.s
 
 CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.o: ../src/render/wall/wall_tx_init.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.o   -c /Users/dgruyere/projects/knukem_all/src/render/wall/wall_tx_init.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/render/wall/wall_tx_init.c
 
 CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/render/wall/wall_tx_init.c > CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/render/wall/wall_tx_init.c > CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.i
 
 CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/render/wall/wall_tx_init.c -o CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/render/wall/wall_tx_init.c -o CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.s
 
 CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.o: ../src/render/ceil_and_floor_init.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.o   -c /Users/dgruyere/projects/knukem_all/src/render/ceil_and_floor_init.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/render/ceil_and_floor_init.c
 
 CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/render/ceil_and_floor_init.c > CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/render/ceil_and_floor_init.c > CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.i
 
 CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/render/ceil_and_floor_init.c -o CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/render/ceil_and_floor_init.c -o CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.s
 
 CMakeFiles/d-k3d.dir/src/render/minimap.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/render/minimap.c.o: ../src/render/minimap.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/d-k3d.dir/src/render/minimap.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/minimap.c.o   -c /Users/dgruyere/projects/knukem_all/src/render/minimap.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/d-k3d.dir/src/render/minimap.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/minimap.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/render/minimap.c
 
 CMakeFiles/d-k3d.dir/src/render/minimap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/minimap.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/render/minimap.c > CMakeFiles/d-k3d.dir/src/render/minimap.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/render/minimap.c > CMakeFiles/d-k3d.dir/src/render/minimap.c.i
 
 CMakeFiles/d-k3d.dir/src/render/minimap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/minimap.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/render/minimap.c -o CMakeFiles/d-k3d.dir/src/render/minimap.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/render/minimap.c -o CMakeFiles/d-k3d.dir/src/render/minimap.c.s
 
 CMakeFiles/d-k3d.dir/src/render/render_hplane.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/render/render_hplane.c.o: ../src/render/render_hplane.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/d-k3d.dir/src/render/render_hplane.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/render_hplane.c.o   -c /Users/dgruyere/projects/knukem_all/src/render/render_hplane.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/d-k3d.dir/src/render/render_hplane.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/render_hplane.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/render/render_hplane.c
 
 CMakeFiles/d-k3d.dir/src/render/render_hplane.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/render_hplane.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/render/render_hplane.c > CMakeFiles/d-k3d.dir/src/render/render_hplane.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/render/render_hplane.c > CMakeFiles/d-k3d.dir/src/render/render_hplane.c.i
 
 CMakeFiles/d-k3d.dir/src/render/render_hplane.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/render_hplane.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/render/render_hplane.c -o CMakeFiles/d-k3d.dir/src/render/render_hplane.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/render/render_hplane.c -o CMakeFiles/d-k3d.dir/src/render/render_hplane.c.s
 
 CMakeFiles/d-k3d.dir/src/render/render_scene.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/render/render_scene.c.o: ../src/render/render_scene.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/d-k3d.dir/src/render/render_scene.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/render_scene.c.o   -c /Users/dgruyere/projects/knukem_all/src/render/render_scene.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/d-k3d.dir/src/render/render_scene.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/render_scene.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/render/render_scene.c
 
 CMakeFiles/d-k3d.dir/src/render/render_scene.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/render_scene.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/render/render_scene.c > CMakeFiles/d-k3d.dir/src/render/render_scene.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/render/render_scene.c > CMakeFiles/d-k3d.dir/src/render/render_scene.c.i
 
 CMakeFiles/d-k3d.dir/src/render/render_scene.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/render_scene.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/render/render_scene.c -o CMakeFiles/d-k3d.dir/src/render/render_scene.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/render/render_scene.c -o CMakeFiles/d-k3d.dir/src/render/render_scene.c.s
 
 CMakeFiles/d-k3d.dir/src/render/render_sky.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/render/render_sky.c.o: ../src/render/render_sky.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/d-k3d.dir/src/render/render_sky.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/render_sky.c.o   -c /Users/dgruyere/projects/knukem_all/src/render/render_sky.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/d-k3d.dir/src/render/render_sky.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/render_sky.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/render/render_sky.c
 
 CMakeFiles/d-k3d.dir/src/render/render_sky.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/render_sky.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/render/render_sky.c > CMakeFiles/d-k3d.dir/src/render/render_sky.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/render/render_sky.c > CMakeFiles/d-k3d.dir/src/render/render_sky.c.i
 
 CMakeFiles/d-k3d.dir/src/render/render_sky.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/render_sky.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/render/render_sky.c -o CMakeFiles/d-k3d.dir/src/render/render_sky.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/render/render_sky.c -o CMakeFiles/d-k3d.dir/src/render/render_sky.c.s
 
 CMakeFiles/d-k3d.dir/src/render/sprite_render.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/render/sprite_render.c.o: ../src/render/sprite_render.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/d-k3d.dir/src/render/sprite_render.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/sprite_render.c.o   -c /Users/dgruyere/projects/knukem_all/src/render/sprite_render.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/d-k3d.dir/src/render/sprite_render.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/sprite_render.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/render/sprite_render.c
 
 CMakeFiles/d-k3d.dir/src/render/sprite_render.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/sprite_render.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/render/sprite_render.c > CMakeFiles/d-k3d.dir/src/render/sprite_render.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/render/sprite_render.c > CMakeFiles/d-k3d.dir/src/render/sprite_render.c.i
 
 CMakeFiles/d-k3d.dir/src/render/sprite_render.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/sprite_render.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/render/sprite_render.c -o CMakeFiles/d-k3d.dir/src/render/sprite_render.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/render/sprite_render.c -o CMakeFiles/d-k3d.dir/src/render/sprite_render.c.s
 
 CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.o: ../src/render/transform_sprite.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.o   -c /Users/dgruyere/projects/knukem_all/src/render/transform_sprite.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/render/transform_sprite.c
 
 CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/render/transform_sprite.c > CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/render/transform_sprite.c > CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.i
 
 CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/render/transform_sprite.c -o CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/render/transform_sprite.c -o CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.s
 
 CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.o: ../src/utilits/math/determine_intersection.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.o   -c /Users/dgruyere/projects/knukem_all/src/utilits/math/determine_intersection.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/utilits/math/determine_intersection.c
 
 CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/utilits/math/determine_intersection.c > CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/utilits/math/determine_intersection.c > CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.i
 
 CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/utilits/math/determine_intersection.c -o CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/utilits/math/determine_intersection.c -o CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.s
 
 CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.o: ../src/utilits/math/intersection_point.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.o   -c /Users/dgruyere/projects/knukem_all/src/utilits/math/intersection_point.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/utilits/math/intersection_point.c
 
 CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/utilits/math/intersection_point.c > CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/utilits/math/intersection_point.c > CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.i
 
 CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/utilits/math/intersection_point.c -o CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/utilits/math/intersection_point.c -o CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.s
 
 CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.o: ../src/utilits/math/mathf.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.o   -c /Users/dgruyere/projects/knukem_all/src/utilits/math/mathf.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/utilits/math/mathf.c
 
 CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/utilits/math/mathf.c > CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/utilits/math/mathf.c > CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.i
 
 CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/utilits/math/mathf.c -o CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/utilits/math/mathf.c -o CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.s
 
 CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.o: ../src/utilits/math/perspective_transform.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.o   -c /Users/dgruyere/projects/knukem_all/src/utilits/math/perspective_transform.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/utilits/math/perspective_transform.c
 
 CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/utilits/math/perspective_transform.c > CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/utilits/math/perspective_transform.c > CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.i
 
 CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/utilits/math/perspective_transform.c -o CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/utilits/math/perspective_transform.c -o CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.s
 
 CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.o: ../src/utilits/math/rotates.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.o   -c /Users/dgruyere/projects/knukem_all/src/utilits/math/rotates.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/utilits/math/rotates.c
 
 CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/utilits/math/rotates.c > CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/utilits/math/rotates.c > CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.i
 
 CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/utilits/math/rotates.c -o CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/utilits/math/rotates.c -o CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.s
 
 CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.o: ../src/utilits/exit_options.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.o   -c /Users/dgruyere/projects/knukem_all/src/utilits/exit_options.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/utilits/exit_options.c
 
 CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/utilits/exit_options.c > CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/utilits/exit_options.c > CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.i
 
 CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/utilits/exit_options.c -o CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/utilits/exit_options.c -o CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.s
 
 CMakeFiles/d-k3d.dir/src/utilits/load_img.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/utilits/load_img.c.o: ../src/utilits/load_img.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/d-k3d.dir/src/utilits/load_img.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/load_img.c.o   -c /Users/dgruyere/projects/knukem_all/src/utilits/load_img.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/d-k3d.dir/src/utilits/load_img.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/load_img.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/utilits/load_img.c
 
 CMakeFiles/d-k3d.dir/src/utilits/load_img.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/utilits/load_img.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/utilits/load_img.c > CMakeFiles/d-k3d.dir/src/utilits/load_img.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/utilits/load_img.c > CMakeFiles/d-k3d.dir/src/utilits/load_img.c.i
 
 CMakeFiles/d-k3d.dir/src/utilits/load_img.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/utilits/load_img.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/utilits/load_img.c -o CMakeFiles/d-k3d.dir/src/utilits/load_img.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/utilits/load_img.c -o CMakeFiles/d-k3d.dir/src/utilits/load_img.c.s
 
 CMakeFiles/d-k3d.dir/src/utilits/swap.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/utilits/swap.c.o: ../src/utilits/swap.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/d-k3d.dir/src/utilits/swap.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/swap.c.o   -c /Users/dgruyere/projects/knukem_all/src/utilits/swap.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/d-k3d.dir/src/utilits/swap.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/swap.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/utilits/swap.c
 
 CMakeFiles/d-k3d.dir/src/utilits/swap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/utilits/swap.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/utilits/swap.c > CMakeFiles/d-k3d.dir/src/utilits/swap.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/utilits/swap.c > CMakeFiles/d-k3d.dir/src/utilits/swap.c.i
 
 CMakeFiles/d-k3d.dir/src/utilits/swap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/utilits/swap.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/utilits/swap.c -o CMakeFiles/d-k3d.dir/src/utilits/swap.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/utilits/swap.c -o CMakeFiles/d-k3d.dir/src/utilits/swap.c.s
 
 CMakeFiles/d-k3d.dir/src/utilits/utilits.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/utilits/utilits.c.o: ../src/utilits/utilits.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/d-k3d.dir/src/utilits/utilits.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/utilits.c.o   -c /Users/dgruyere/projects/knukem_all/src/utilits/utilits.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/d-k3d.dir/src/utilits/utilits.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/utilits.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/utilits/utilits.c
 
 CMakeFiles/d-k3d.dir/src/utilits/utilits.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/utilits/utilits.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/utilits/utilits.c > CMakeFiles/d-k3d.dir/src/utilits/utilits.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/utilits/utilits.c > CMakeFiles/d-k3d.dir/src/utilits/utilits.c.i
 
 CMakeFiles/d-k3d.dir/src/utilits/utilits.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/utilits/utilits.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/utilits/utilits.c -o CMakeFiles/d-k3d.dir/src/utilits/utilits.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/utilits/utilits.c -o CMakeFiles/d-k3d.dir/src/utilits/utilits.c.s
 
 CMakeFiles/d-k3d.dir/src/cut_wall.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/cut_wall.c.o: ../src/cut_wall.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/d-k3d.dir/src/cut_wall.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/cut_wall.c.o   -c /Users/dgruyere/projects/knukem_all/src/cut_wall.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/d-k3d.dir/src/cut_wall.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/cut_wall.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/cut_wall.c
 
 CMakeFiles/d-k3d.dir/src/cut_wall.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/cut_wall.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/cut_wall.c > CMakeFiles/d-k3d.dir/src/cut_wall.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/cut_wall.c > CMakeFiles/d-k3d.dir/src/cut_wall.c.i
 
 CMakeFiles/d-k3d.dir/src/cut_wall.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/cut_wall.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/cut_wall.c -o CMakeFiles/d-k3d.dir/src/cut_wall.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/cut_wall.c -o CMakeFiles/d-k3d.dir/src/cut_wall.c.s
 
 CMakeFiles/d-k3d.dir/src/game_loop.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/game_loop.c.o: ../src/game_loop.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/d-k3d.dir/src/game_loop.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/game_loop.c.o   -c /Users/dgruyere/projects/knukem_all/src/game_loop.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/d-k3d.dir/src/game_loop.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/game_loop.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/game_loop.c
 
 CMakeFiles/d-k3d.dir/src/game_loop.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/game_loop.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/game_loop.c > CMakeFiles/d-k3d.dir/src/game_loop.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/game_loop.c > CMakeFiles/d-k3d.dir/src/game_loop.c.i
 
 CMakeFiles/d-k3d.dir/src/game_loop.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/game_loop.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/game_loop.c -o CMakeFiles/d-k3d.dir/src/game_loop.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/game_loop.c -o CMakeFiles/d-k3d.dir/src/game_loop.c.s
 
 CMakeFiles/d-k3d.dir/src/init.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/init.c.o: ../src/init.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/d-k3d.dir/src/init.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/init.c.o   -c /Users/dgruyere/projects/knukem_all/src/init.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/d-k3d.dir/src/init.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/init.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/init.c
 
 CMakeFiles/d-k3d.dir/src/init.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/init.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/init.c > CMakeFiles/d-k3d.dir/src/init.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/init.c > CMakeFiles/d-k3d.dir/src/init.c.i
 
 CMakeFiles/d-k3d.dir/src/init.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/init.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/init.c -o CMakeFiles/d-k3d.dir/src/init.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/init.c -o CMakeFiles/d-k3d.dir/src/init.c.s
 
 CMakeFiles/d-k3d.dir/src/lighting.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/lighting.c.o: ../src/lighting.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object CMakeFiles/d-k3d.dir/src/lighting.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/lighting.c.o   -c /Users/dgruyere/projects/knukem_all/src/lighting.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object CMakeFiles/d-k3d.dir/src/lighting.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/lighting.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/lighting.c
 
 CMakeFiles/d-k3d.dir/src/lighting.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/lighting.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/lighting.c > CMakeFiles/d-k3d.dir/src/lighting.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/lighting.c > CMakeFiles/d-k3d.dir/src/lighting.c.i
 
 CMakeFiles/d-k3d.dir/src/lighting.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/lighting.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/lighting.c -o CMakeFiles/d-k3d.dir/src/lighting.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/lighting.c -o CMakeFiles/d-k3d.dir/src/lighting.c.s
 
 CMakeFiles/d-k3d.dir/src/main.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/main.c.o: ../src/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object CMakeFiles/d-k3d.dir/src/main.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/main.c.o   -c /Users/dgruyere/projects/knukem_all/src/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object CMakeFiles/d-k3d.dir/src/main.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/main.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/main.c
 
 CMakeFiles/d-k3d.dir/src/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/main.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/main.c > CMakeFiles/d-k3d.dir/src/main.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/main.c > CMakeFiles/d-k3d.dir/src/main.c.i
 
 CMakeFiles/d-k3d.dir/src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/main.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/main.c -o CMakeFiles/d-k3d.dir/src/main.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/main.c -o CMakeFiles/d-k3d.dir/src/main.c.s
 
 CMakeFiles/d-k3d.dir/src/manage_data.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/manage_data.c.o: ../src/manage_data.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object CMakeFiles/d-k3d.dir/src/manage_data.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/manage_data.c.o   -c /Users/dgruyere/projects/knukem_all/src/manage_data.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object CMakeFiles/d-k3d.dir/src/manage_data.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/manage_data.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/manage_data.c
 
 CMakeFiles/d-k3d.dir/src/manage_data.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/manage_data.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/manage_data.c > CMakeFiles/d-k3d.dir/src/manage_data.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/manage_data.c > CMakeFiles/d-k3d.dir/src/manage_data.c.i
 
 CMakeFiles/d-k3d.dir/src/manage_data.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/manage_data.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/manage_data.c -o CMakeFiles/d-k3d.dir/src/manage_data.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/manage_data.c -o CMakeFiles/d-k3d.dir/src/manage_data.c.s
 
 CMakeFiles/d-k3d.dir/src/run_queue.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/run_queue.c.o: ../src/run_queue.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/d-k3d.dir/src/run_queue.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/run_queue.c.o   -c /Users/dgruyere/projects/knukem_all/src/run_queue.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/d-k3d.dir/src/run_queue.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/run_queue.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/run_queue.c
 
 CMakeFiles/d-k3d.dir/src/run_queue.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/run_queue.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/run_queue.c > CMakeFiles/d-k3d.dir/src/run_queue.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/run_queue.c > CMakeFiles/d-k3d.dir/src/run_queue.c.i
 
 CMakeFiles/d-k3d.dir/src/run_queue.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/run_queue.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/run_queue.c -o CMakeFiles/d-k3d.dir/src/run_queue.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/run_queue.c -o CMakeFiles/d-k3d.dir/src/run_queue.c.s
 
 CMakeFiles/d-k3d.dir/src/transform_wall.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/transform_wall.c.o: ../src/transform_wall.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object CMakeFiles/d-k3d.dir/src/transform_wall.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/transform_wall.c.o   -c /Users/dgruyere/projects/knukem_all/src/transform_wall.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object CMakeFiles/d-k3d.dir/src/transform_wall.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/transform_wall.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/transform_wall.c
 
 CMakeFiles/d-k3d.dir/src/transform_wall.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/transform_wall.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/src/transform_wall.c > CMakeFiles/d-k3d.dir/src/transform_wall.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/transform_wall.c > CMakeFiles/d-k3d.dir/src/transform_wall.c.i
 
 CMakeFiles/d-k3d.dir/src/transform_wall.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/transform_wall.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/src/transform_wall.c -o CMakeFiles/d-k3d.dir/src/transform_wall.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/transform_wall.c -o CMakeFiles/d-k3d.dir/src/transform_wall.c.s
+
+CMakeFiles/d-k3d.dir/src/render/render_graf.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/render/render_graf.c.o: ../src/render/render_graf.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object CMakeFiles/d-k3d.dir/src/render/render_graf.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/render_graf.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/render/render_graf.c
+
+CMakeFiles/d-k3d.dir/src/render/render_graf.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/render_graf.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/render/render_graf.c > CMakeFiles/d-k3d.dir/src/render/render_graf.c.i
+
+CMakeFiles/d-k3d.dir/src/render/render_graf.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/render_graf.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/render/render_graf.c -o CMakeFiles/d-k3d.dir/src/render/render_graf.c.s
+
+CMakeFiles/d-k3d.dir/src/editor/graf_mod.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/editor/graf_mod.c.o: ../src/editor/graf_mod.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building C object CMakeFiles/d-k3d.dir/src/editor/graf_mod.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/editor/graf_mod.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/editor/graf_mod.c
+
+CMakeFiles/d-k3d.dir/src/editor/graf_mod.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/editor/graf_mod.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/editor/graf_mod.c > CMakeFiles/d-k3d.dir/src/editor/graf_mod.c.i
+
+CMakeFiles/d-k3d.dir/src/editor/graf_mod.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/editor/graf_mod.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/editor/graf_mod.c -o CMakeFiles/d-k3d.dir/src/editor/graf_mod.c.s
+
+CMakeFiles/d-k3d.dir/src/editor/tx_mod.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/editor/tx_mod.c.o: ../src/editor/tx_mod.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object CMakeFiles/d-k3d.dir/src/editor/tx_mod.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/editor/tx_mod.c.o   -c /Users/dgruyere/projects/knukem_fresh/src/editor/tx_mod.c
+
+CMakeFiles/d-k3d.dir/src/editor/tx_mod.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/editor/tx_mod.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/src/editor/tx_mod.c > CMakeFiles/d-k3d.dir/src/editor/tx_mod.c.i
+
+CMakeFiles/d-k3d.dir/src/editor/tx_mod.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/editor/tx_mod.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/src/editor/tx_mod.c -o CMakeFiles/d-k3d.dir/src/editor/tx_mod.c.s
 
 CMakeFiles/d-k3d.dir/libft/c_add.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/c_add.c.o: ../libft/c_add.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object CMakeFiles/d-k3d.dir/libft/c_add.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/c_add.c.o   -c /Users/dgruyere/projects/knukem_all/libft/c_add.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object CMakeFiles/d-k3d.dir/libft/c_add.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/c_add.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/c_add.c
 
 CMakeFiles/d-k3d.dir/libft/c_add.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/c_add.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/c_add.c > CMakeFiles/d-k3d.dir/libft/c_add.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/c_add.c > CMakeFiles/d-k3d.dir/libft/c_add.c.i
 
 CMakeFiles/d-k3d.dir/libft/c_add.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/c_add.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/c_add.c -o CMakeFiles/d-k3d.dir/libft/c_add.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/c_add.c -o CMakeFiles/d-k3d.dir/libft/c_add.c.s
 
 CMakeFiles/d-k3d.dir/libft/c_arg.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/c_arg.c.o: ../libft/c_arg.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building C object CMakeFiles/d-k3d.dir/libft/c_arg.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/c_arg.c.o   -c /Users/dgruyere/projects/knukem_all/libft/c_arg.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object CMakeFiles/d-k3d.dir/libft/c_arg.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/c_arg.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/c_arg.c
 
 CMakeFiles/d-k3d.dir/libft/c_arg.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/c_arg.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/c_arg.c > CMakeFiles/d-k3d.dir/libft/c_arg.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/c_arg.c > CMakeFiles/d-k3d.dir/libft/c_arg.c.i
 
 CMakeFiles/d-k3d.dir/libft/c_arg.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/c_arg.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/c_arg.c -o CMakeFiles/d-k3d.dir/libft/c_arg.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/c_arg.c -o CMakeFiles/d-k3d.dir/libft/c_arg.c.s
 
 CMakeFiles/d-k3d.dir/libft/c_mod.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/c_mod.c.o: ../libft/c_mod.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object CMakeFiles/d-k3d.dir/libft/c_mod.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/c_mod.c.o   -c /Users/dgruyere/projects/knukem_all/libft/c_mod.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object CMakeFiles/d-k3d.dir/libft/c_mod.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/c_mod.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/c_mod.c
 
 CMakeFiles/d-k3d.dir/libft/c_mod.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/c_mod.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/c_mod.c > CMakeFiles/d-k3d.dir/libft/c_mod.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/c_mod.c > CMakeFiles/d-k3d.dir/libft/c_mod.c.i
 
 CMakeFiles/d-k3d.dir/libft/c_mod.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/c_mod.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/c_mod.c -o CMakeFiles/d-k3d.dir/libft/c_mod.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/c_mod.c -o CMakeFiles/d-k3d.dir/libft/c_mod.c.s
 
 CMakeFiles/d-k3d.dir/libft/c_pow.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/c_pow.c.o: ../libft/c_pow.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object CMakeFiles/d-k3d.dir/libft/c_pow.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/c_pow.c.o   -c /Users/dgruyere/projects/knukem_all/libft/c_pow.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/d-k3d.dir/libft/c_pow.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/c_pow.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/c_pow.c
 
 CMakeFiles/d-k3d.dir/libft/c_pow.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/c_pow.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/c_pow.c > CMakeFiles/d-k3d.dir/libft/c_pow.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/c_pow.c > CMakeFiles/d-k3d.dir/libft/c_pow.c.i
 
 CMakeFiles/d-k3d.dir/libft/c_pow.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/c_pow.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/c_pow.c -o CMakeFiles/d-k3d.dir/libft/c_pow.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/c_pow.c -o CMakeFiles/d-k3d.dir/libft/c_pow.c.s
 
 CMakeFiles/d-k3d.dir/libft/c_set.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/c_set.c.o: ../libft/c_set.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object CMakeFiles/d-k3d.dir/libft/c_set.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/c_set.c.o   -c /Users/dgruyere/projects/knukem_all/libft/c_set.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/d-k3d.dir/libft/c_set.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/c_set.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/c_set.c
 
 CMakeFiles/d-k3d.dir/libft/c_set.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/c_set.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/c_set.c > CMakeFiles/d-k3d.dir/libft/c_set.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/c_set.c > CMakeFiles/d-k3d.dir/libft/c_set.c.i
 
 CMakeFiles/d-k3d.dir/libft/c_set.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/c_set.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/c_set.c -o CMakeFiles/d-k3d.dir/libft/c_set.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/c_set.c -o CMakeFiles/d-k3d.dir/libft/c_set.c.s
 
 CMakeFiles/d-k3d.dir/libft/c_sqr.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/c_sqr.c.o: ../libft/c_sqr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object CMakeFiles/d-k3d.dir/libft/c_sqr.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/c_sqr.c.o   -c /Users/dgruyere/projects/knukem_all/libft/c_sqr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object CMakeFiles/d-k3d.dir/libft/c_sqr.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/c_sqr.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/c_sqr.c
 
 CMakeFiles/d-k3d.dir/libft/c_sqr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/c_sqr.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/c_sqr.c > CMakeFiles/d-k3d.dir/libft/c_sqr.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/c_sqr.c > CMakeFiles/d-k3d.dir/libft/c_sqr.c.i
 
 CMakeFiles/d-k3d.dir/libft/c_sqr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/c_sqr.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/c_sqr.c -o CMakeFiles/d-k3d.dir/libft/c_sqr.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/c_sqr.c -o CMakeFiles/d-k3d.dir/libft/c_sqr.c.s
 
 CMakeFiles/d-k3d.dir/libft/c_sub.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/c_sub.c.o: ../libft/c_sub.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/d-k3d.dir/libft/c_sub.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/c_sub.c.o   -c /Users/dgruyere/projects/knukem_all/libft/c_sub.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/d-k3d.dir/libft/c_sub.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/c_sub.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/c_sub.c
 
 CMakeFiles/d-k3d.dir/libft/c_sub.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/c_sub.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/c_sub.c > CMakeFiles/d-k3d.dir/libft/c_sub.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/c_sub.c > CMakeFiles/d-k3d.dir/libft/c_sub.c.i
 
 CMakeFiles/d-k3d.dir/libft/c_sub.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/c_sub.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/c_sub.c -o CMakeFiles/d-k3d.dir/libft/c_sub.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/c_sub.c -o CMakeFiles/d-k3d.dir/libft/c_sub.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_atoi.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_atoi.c.o: ../libft/ft_atoi.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/d-k3d.dir/libft/ft_atoi.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_atoi.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_atoi.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/d-k3d.dir/libft/ft_atoi.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_atoi.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_atoi.c
 
 CMakeFiles/d-k3d.dir/libft/ft_atoi.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_atoi.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_atoi.c > CMakeFiles/d-k3d.dir/libft/ft_atoi.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_atoi.c > CMakeFiles/d-k3d.dir/libft/ft_atoi.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_atoi.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_atoi.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_atoi.c -o CMakeFiles/d-k3d.dir/libft/ft_atoi.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_atoi.c -o CMakeFiles/d-k3d.dir/libft/ft_atoi.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_bzero.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_bzero.c.o: ../libft/ft_bzero.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object CMakeFiles/d-k3d.dir/libft/ft_bzero.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_bzero.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_bzero.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/d-k3d.dir/libft/ft_bzero.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_bzero.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_bzero.c
 
 CMakeFiles/d-k3d.dir/libft/ft_bzero.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_bzero.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_bzero.c > CMakeFiles/d-k3d.dir/libft/ft_bzero.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_bzero.c > CMakeFiles/d-k3d.dir/libft/ft_bzero.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_bzero.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_bzero.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_bzero.c -o CMakeFiles/d-k3d.dir/libft/ft_bzero.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_bzero.c -o CMakeFiles/d-k3d.dir/libft/ft_bzero.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.o: ../libft/ft_isalnum.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_isalnum.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_isalnum.c
 
 CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_isalnum.c > CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_isalnum.c > CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_isalnum.c -o CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_isalnum.c -o CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.o: ../libft/ft_isalpha.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_isalpha.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_isalpha.c
 
 CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_isalpha.c > CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_isalpha.c > CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_isalpha.c -o CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_isalpha.c -o CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_isascii.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_isascii.c.o: ../libft/ft_isascii.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/d-k3d.dir/libft/ft_isascii.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_isascii.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_isascii.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/d-k3d.dir/libft/ft_isascii.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_isascii.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_isascii.c
 
 CMakeFiles/d-k3d.dir/libft/ft_isascii.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_isascii.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_isascii.c > CMakeFiles/d-k3d.dir/libft/ft_isascii.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_isascii.c > CMakeFiles/d-k3d.dir/libft/ft_isascii.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_isascii.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_isascii.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_isascii.c -o CMakeFiles/d-k3d.dir/libft/ft_isascii.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_isascii.c -o CMakeFiles/d-k3d.dir/libft/ft_isascii.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.o: ../libft/ft_isdigit.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_isdigit.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_isdigit.c
 
 CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_isdigit.c > CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_isdigit.c > CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_isdigit.c -o CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_isdigit.c -o CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_isprint.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_isprint.c.o: ../libft/ft_isprint.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/d-k3d.dir/libft/ft_isprint.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_isprint.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_isprint.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/d-k3d.dir/libft/ft_isprint.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_isprint.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_isprint.c
 
 CMakeFiles/d-k3d.dir/libft/ft_isprint.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_isprint.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_isprint.c > CMakeFiles/d-k3d.dir/libft/ft_isprint.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_isprint.c > CMakeFiles/d-k3d.dir/libft/ft_isprint.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_isprint.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_isprint.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_isprint.c -o CMakeFiles/d-k3d.dir/libft/ft_isprint.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_isprint.c -o CMakeFiles/d-k3d.dir/libft/ft_isprint.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_itoa.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_itoa.c.o: ../libft/ft_itoa.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/d-k3d.dir/libft/ft_itoa.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_itoa.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_itoa.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/d-k3d.dir/libft/ft_itoa.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_itoa.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_itoa.c
 
 CMakeFiles/d-k3d.dir/libft/ft_itoa.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_itoa.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_itoa.c > CMakeFiles/d-k3d.dir/libft/ft_itoa.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_itoa.c > CMakeFiles/d-k3d.dir/libft/ft_itoa.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_itoa.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_itoa.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_itoa.c -o CMakeFiles/d-k3d.dir/libft/ft_itoa.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_itoa.c -o CMakeFiles/d-k3d.dir/libft/ft_itoa.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.o: ../libft/ft_lstadd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_lstadd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_lstadd.c
 
 CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_lstadd.c > CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_lstadd.c > CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_lstadd.c -o CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_lstadd.c -o CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.o: ../libft/ft_lstdel.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_lstdel.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_lstdel.c
 
 CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_lstdel.c > CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_lstdel.c > CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_lstdel.c -o CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_lstdel.c -o CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.o: ../libft/ft_lstdelone.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_lstdelone.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_lstdelone.c
 
 CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_lstdelone.c > CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_lstdelone.c > CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_lstdelone.c -o CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_lstdelone.c -o CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.o: ../libft/ft_lstiter.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_lstiter.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_lstiter.c
 
 CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_lstiter.c > CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_lstiter.c > CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_lstiter.c -o CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_lstiter.c -o CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.o: ../libft/ft_lstmap.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_lstmap.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_lstmap.c
 
 CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_lstmap.c > CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_lstmap.c > CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_lstmap.c -o CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_lstmap.c -o CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.o: ../libft/ft_lstnew.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_lstnew.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_lstnew.c
 
 CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_lstnew.c > CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_lstnew.c > CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_lstnew.c -o CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_lstnew.c -o CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.o: ../libft/ft_memalloc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_memalloc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_memalloc.c
 
 CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_memalloc.c > CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_memalloc.c > CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_memalloc.c -o CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_memalloc.c -o CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.o: ../libft/ft_memccpy.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_memccpy.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_memccpy.c
 
 CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_memccpy.c > CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_memccpy.c > CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_memccpy.c -o CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_memccpy.c -o CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_memchr.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_memchr.c.o: ../libft/ft_memchr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/d-k3d.dir/libft/ft_memchr.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_memchr.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_memchr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/d-k3d.dir/libft/ft_memchr.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_memchr.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_memchr.c
 
 CMakeFiles/d-k3d.dir/libft/ft_memchr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_memchr.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_memchr.c > CMakeFiles/d-k3d.dir/libft/ft_memchr.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_memchr.c > CMakeFiles/d-k3d.dir/libft/ft_memchr.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_memchr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_memchr.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_memchr.c -o CMakeFiles/d-k3d.dir/libft/ft_memchr.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_memchr.c -o CMakeFiles/d-k3d.dir/libft/ft_memchr.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.o: ../libft/ft_memcmp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_memcmp.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_memcmp.c
 
 CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_memcmp.c > CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_memcmp.c > CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_memcmp.c -o CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_memcmp.c -o CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.o: ../libft/ft_memcpy.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_memcpy.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_memcpy.c
 
 CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_memcpy.c > CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_memcpy.c > CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_memcpy.c -o CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_memcpy.c -o CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_memdel.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_memdel.c.o: ../libft/ft_memdel.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/d-k3d.dir/libft/ft_memdel.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_memdel.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_memdel.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/d-k3d.dir/libft/ft_memdel.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_memdel.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_memdel.c
 
 CMakeFiles/d-k3d.dir/libft/ft_memdel.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_memdel.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_memdel.c > CMakeFiles/d-k3d.dir/libft/ft_memdel.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_memdel.c > CMakeFiles/d-k3d.dir/libft/ft_memdel.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_memdel.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_memdel.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_memdel.c -o CMakeFiles/d-k3d.dir/libft/ft_memdel.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_memdel.c -o CMakeFiles/d-k3d.dir/libft/ft_memdel.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_memmove.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_memmove.c.o: ../libft/ft_memmove.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/d-k3d.dir/libft/ft_memmove.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_memmove.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_memmove.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/d-k3d.dir/libft/ft_memmove.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_memmove.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_memmove.c
 
 CMakeFiles/d-k3d.dir/libft/ft_memmove.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_memmove.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_memmove.c > CMakeFiles/d-k3d.dir/libft/ft_memmove.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_memmove.c > CMakeFiles/d-k3d.dir/libft/ft_memmove.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_memmove.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_memmove.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_memmove.c -o CMakeFiles/d-k3d.dir/libft/ft_memmove.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_memmove.c -o CMakeFiles/d-k3d.dir/libft/ft_memmove.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_memset.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_memset.c.o: ../libft/ft_memset.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/d-k3d.dir/libft/ft_memset.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_memset.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_memset.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object CMakeFiles/d-k3d.dir/libft/ft_memset.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_memset.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_memset.c
 
 CMakeFiles/d-k3d.dir/libft/ft_memset.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_memset.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_memset.c > CMakeFiles/d-k3d.dir/libft/ft_memset.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_memset.c > CMakeFiles/d-k3d.dir/libft/ft_memset.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_memset.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_memset.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_memset.c -o CMakeFiles/d-k3d.dir/libft/ft_memset.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_memset.c -o CMakeFiles/d-k3d.dir/libft/ft_memset.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_putchar.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_putchar.c.o: ../libft/ft_putchar.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/d-k3d.dir/libft/ft_putchar.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_putchar.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_putchar.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building C object CMakeFiles/d-k3d.dir/libft/ft_putchar.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_putchar.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_putchar.c
 
 CMakeFiles/d-k3d.dir/libft/ft_putchar.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_putchar.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_putchar.c > CMakeFiles/d-k3d.dir/libft/ft_putchar.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_putchar.c > CMakeFiles/d-k3d.dir/libft/ft_putchar.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_putchar.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_putchar.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_putchar.c -o CMakeFiles/d-k3d.dir/libft/ft_putchar.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_putchar.c -o CMakeFiles/d-k3d.dir/libft/ft_putchar.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.o: ../libft/ft_putchar_fd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_putchar_fd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_putchar_fd.c
 
 CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_putchar_fd.c > CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_putchar_fd.c > CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_putchar_fd.c -o CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_putchar_fd.c -o CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_putendl.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_putendl.c.o: ../libft/ft_putendl.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object CMakeFiles/d-k3d.dir/libft/ft_putendl.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_putendl.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_putendl.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building C object CMakeFiles/d-k3d.dir/libft/ft_putendl.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_putendl.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_putendl.c
 
 CMakeFiles/d-k3d.dir/libft/ft_putendl.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_putendl.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_putendl.c > CMakeFiles/d-k3d.dir/libft/ft_putendl.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_putendl.c > CMakeFiles/d-k3d.dir/libft/ft_putendl.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_putendl.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_putendl.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_putendl.c -o CMakeFiles/d-k3d.dir/libft/ft_putendl.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_putendl.c -o CMakeFiles/d-k3d.dir/libft/ft_putendl.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.o: ../libft/ft_putendl_fd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building C object CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_putendl_fd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building C object CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_putendl_fd.c
 
 CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_putendl_fd.c > CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_putendl_fd.c > CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_putendl_fd.c -o CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_putendl_fd.c -o CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.o: ../libft/ft_putnbr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_putnbr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building C object CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_putnbr.c
 
 CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_putnbr.c > CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_putnbr.c > CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_putnbr.c -o CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_putnbr.c -o CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.o: ../libft/ft_putnbr_fd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building C object CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_putnbr_fd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building C object CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_putnbr_fd.c
 
 CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_putnbr_fd.c > CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_putnbr_fd.c > CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_putnbr_fd.c -o CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_putnbr_fd.c -o CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_putstr.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_putstr.c.o: ../libft/ft_putstr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building C object CMakeFiles/d-k3d.dir/libft/ft_putstr.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_putstr.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_putstr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building C object CMakeFiles/d-k3d.dir/libft/ft_putstr.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_putstr.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_putstr.c
 
 CMakeFiles/d-k3d.dir/libft/ft_putstr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_putstr.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_putstr.c > CMakeFiles/d-k3d.dir/libft/ft_putstr.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_putstr.c > CMakeFiles/d-k3d.dir/libft/ft_putstr.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_putstr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_putstr.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_putstr.c -o CMakeFiles/d-k3d.dir/libft/ft_putstr.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_putstr.c -o CMakeFiles/d-k3d.dir/libft/ft_putstr.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.o: ../libft/ft_putstr_fd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building C object CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_putstr_fd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building C object CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_putstr_fd.c
 
 CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_putstr_fd.c > CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_putstr_fd.c > CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_putstr_fd.c -o CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_putstr_fd.c -o CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_realloc.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_realloc.c.o: ../libft/ft_realloc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building C object CMakeFiles/d-k3d.dir/libft/ft_realloc.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_realloc.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_realloc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building C object CMakeFiles/d-k3d.dir/libft/ft_realloc.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_realloc.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_realloc.c
 
 CMakeFiles/d-k3d.dir/libft/ft_realloc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_realloc.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_realloc.c > CMakeFiles/d-k3d.dir/libft/ft_realloc.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_realloc.c > CMakeFiles/d-k3d.dir/libft/ft_realloc.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_realloc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_realloc.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_realloc.c -o CMakeFiles/d-k3d.dir/libft/ft_realloc.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_realloc.c -o CMakeFiles/d-k3d.dir/libft/ft_realloc.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_strcat.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_strcat.c.o: ../libft/ft_strcat.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strcat.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strcat.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_strcat.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strcat.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strcat.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_strcat.c
 
 CMakeFiles/d-k3d.dir/libft/ft_strcat.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strcat.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_strcat.c > CMakeFiles/d-k3d.dir/libft/ft_strcat.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_strcat.c > CMakeFiles/d-k3d.dir/libft/ft_strcat.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_strcat.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strcat.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_strcat.c -o CMakeFiles/d-k3d.dir/libft/ft_strcat.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_strcat.c -o CMakeFiles/d-k3d.dir/libft/ft_strcat.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_strchr.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_strchr.c.o: ../libft/ft_strchr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strchr.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strchr.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_strchr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strchr.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strchr.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_strchr.c
 
 CMakeFiles/d-k3d.dir/libft/ft_strchr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strchr.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_strchr.c > CMakeFiles/d-k3d.dir/libft/ft_strchr.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_strchr.c > CMakeFiles/d-k3d.dir/libft/ft_strchr.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_strchr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strchr.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_strchr.c -o CMakeFiles/d-k3d.dir/libft/ft_strchr.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_strchr.c -o CMakeFiles/d-k3d.dir/libft/ft_strchr.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_strclr.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_strclr.c.o: ../libft/ft_strclr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strclr.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strclr.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_strclr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strclr.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strclr.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_strclr.c
 
 CMakeFiles/d-k3d.dir/libft/ft_strclr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strclr.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_strclr.c > CMakeFiles/d-k3d.dir/libft/ft_strclr.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_strclr.c > CMakeFiles/d-k3d.dir/libft/ft_strclr.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_strclr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strclr.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_strclr.c -o CMakeFiles/d-k3d.dir/libft/ft_strclr.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_strclr.c -o CMakeFiles/d-k3d.dir/libft/ft_strclr.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.o: ../libft/ft_strcmp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_strcmp.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_strcmp.c
 
 CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_strcmp.c > CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_strcmp.c > CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_strcmp.c -o CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_strcmp.c -o CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.o: ../libft/ft_strcpy.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_strcpy.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_strcpy.c
 
 CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_strcpy.c > CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_strcpy.c > CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_strcpy.c -o CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_strcpy.c -o CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_strdel.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_strdel.c.o: ../libft/ft_strdel.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strdel.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strdel.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_strdel.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strdel.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strdel.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_strdel.c
 
 CMakeFiles/d-k3d.dir/libft/ft_strdel.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strdel.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_strdel.c > CMakeFiles/d-k3d.dir/libft/ft_strdel.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_strdel.c > CMakeFiles/d-k3d.dir/libft/ft_strdel.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_strdel.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strdel.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_strdel.c -o CMakeFiles/d-k3d.dir/libft/ft_strdel.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_strdel.c -o CMakeFiles/d-k3d.dir/libft/ft_strdel.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_strdup.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_strdup.c.o: ../libft/ft_strdup.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strdup.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strdup.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_strdup.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strdup.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strdup.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_strdup.c
 
 CMakeFiles/d-k3d.dir/libft/ft_strdup.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strdup.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_strdup.c > CMakeFiles/d-k3d.dir/libft/ft_strdup.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_strdup.c > CMakeFiles/d-k3d.dir/libft/ft_strdup.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_strdup.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strdup.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_strdup.c -o CMakeFiles/d-k3d.dir/libft/ft_strdup.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_strdup.c -o CMakeFiles/d-k3d.dir/libft/ft_strdup.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_strequ.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_strequ.c.o: ../libft/ft_strequ.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strequ.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strequ.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_strequ.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strequ.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strequ.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_strequ.c
 
 CMakeFiles/d-k3d.dir/libft/ft_strequ.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strequ.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_strequ.c > CMakeFiles/d-k3d.dir/libft/ft_strequ.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_strequ.c > CMakeFiles/d-k3d.dir/libft/ft_strequ.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_strequ.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strequ.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_strequ.c -o CMakeFiles/d-k3d.dir/libft/ft_strequ.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_strequ.c -o CMakeFiles/d-k3d.dir/libft/ft_strequ.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_striter.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_striter.c.o: ../libft/ft_striter.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/d-k3d.dir/libft/ft_striter.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_striter.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_striter.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building C object CMakeFiles/d-k3d.dir/libft/ft_striter.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_striter.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_striter.c
 
 CMakeFiles/d-k3d.dir/libft/ft_striter.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_striter.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_striter.c > CMakeFiles/d-k3d.dir/libft/ft_striter.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_striter.c > CMakeFiles/d-k3d.dir/libft/ft_striter.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_striter.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_striter.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_striter.c -o CMakeFiles/d-k3d.dir/libft/ft_striter.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_striter.c -o CMakeFiles/d-k3d.dir/libft/ft_striter.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_striteri.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_striteri.c.o: ../libft/ft_striteri.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/d-k3d.dir/libft/ft_striteri.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_striteri.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_striteri.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building C object CMakeFiles/d-k3d.dir/libft/ft_striteri.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_striteri.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_striteri.c
 
 CMakeFiles/d-k3d.dir/libft/ft_striteri.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_striteri.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_striteri.c > CMakeFiles/d-k3d.dir/libft/ft_striteri.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_striteri.c > CMakeFiles/d-k3d.dir/libft/ft_striteri.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_striteri.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_striteri.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_striteri.c -o CMakeFiles/d-k3d.dir/libft/ft_striteri.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_striteri.c -o CMakeFiles/d-k3d.dir/libft/ft_striteri.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.o: ../libft/ft_strjoin.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_strjoin.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_strjoin.c
 
 CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_strjoin.c > CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_strjoin.c > CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_strjoin.c -o CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_strjoin.c -o CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.o: ../libft/ft_strlcat.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_strlcat.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_strlcat.c
 
 CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_strlcat.c > CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_strlcat.c > CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_strlcat.c -o CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_strlcat.c -o CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_strlen.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_strlen.c.o: ../libft/ft_strlen.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strlen.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strlen.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_strlen.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strlen.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strlen.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_strlen.c
 
 CMakeFiles/d-k3d.dir/libft/ft_strlen.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strlen.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_strlen.c > CMakeFiles/d-k3d.dir/libft/ft_strlen.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_strlen.c > CMakeFiles/d-k3d.dir/libft/ft_strlen.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_strlen.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strlen.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_strlen.c -o CMakeFiles/d-k3d.dir/libft/ft_strlen.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_strlen.c -o CMakeFiles/d-k3d.dir/libft/ft_strlen.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_strmap.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_strmap.c.o: ../libft/ft_strmap.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strmap.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strmap.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_strmap.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strmap.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strmap.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_strmap.c
 
 CMakeFiles/d-k3d.dir/libft/ft_strmap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strmap.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_strmap.c > CMakeFiles/d-k3d.dir/libft/ft_strmap.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_strmap.c > CMakeFiles/d-k3d.dir/libft/ft_strmap.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_strmap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strmap.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_strmap.c -o CMakeFiles/d-k3d.dir/libft/ft_strmap.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_strmap.c -o CMakeFiles/d-k3d.dir/libft/ft_strmap.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.o: ../libft/ft_strmapi.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_strmapi.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_strmapi.c
 
 CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_strmapi.c > CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_strmapi.c > CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_strmapi.c -o CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_strmapi.c -o CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_strncat.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_strncat.c.o: ../libft/ft_strncat.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strncat.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strncat.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_strncat.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strncat.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strncat.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_strncat.c
 
 CMakeFiles/d-k3d.dir/libft/ft_strncat.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strncat.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_strncat.c > CMakeFiles/d-k3d.dir/libft/ft_strncat.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_strncat.c > CMakeFiles/d-k3d.dir/libft/ft_strncat.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_strncat.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strncat.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_strncat.c -o CMakeFiles/d-k3d.dir/libft/ft_strncat.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_strncat.c -o CMakeFiles/d-k3d.dir/libft/ft_strncat.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.o: ../libft/ft_strncmp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_strncmp.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_strncmp.c
 
 CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_strncmp.c > CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_strncmp.c > CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_strncmp.c -o CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_strncmp.c -o CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.o: ../libft/ft_strncpy.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_strncpy.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_115) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_strncpy.c
 
 CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_strncpy.c > CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_strncpy.c > CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_strncpy.c -o CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_strncpy.c -o CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.o: ../libft/ft_strnequ.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_strnequ.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_strnequ.c
 
 CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_strnequ.c > CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_strnequ.c > CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_strnequ.c -o CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_strnequ.c -o CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_strnew.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_strnew.c.o: ../libft/ft_strnew.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strnew.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strnew.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_strnew.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_117) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strnew.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strnew.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_strnew.c
 
 CMakeFiles/d-k3d.dir/libft/ft_strnew.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strnew.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_strnew.c > CMakeFiles/d-k3d.dir/libft/ft_strnew.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_strnew.c > CMakeFiles/d-k3d.dir/libft/ft_strnew.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_strnew.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strnew.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_strnew.c -o CMakeFiles/d-k3d.dir/libft/ft_strnew.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_strnew.c -o CMakeFiles/d-k3d.dir/libft/ft_strnew.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.o: ../libft/ft_strnstr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_115) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_strnstr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_118) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_strnstr.c
 
 CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_strnstr.c > CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_strnstr.c > CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_strnstr.c -o CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_strnstr.c -o CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.o: ../libft/ft_strrchr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_strrchr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_119) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_strrchr.c
 
 CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_strrchr.c > CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_strrchr.c > CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_strrchr.c -o CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_strrchr.c -o CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.o: ../libft/ft_strsplit.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_117) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_strsplit.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_120) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_strsplit.c
 
 CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_strsplit.c > CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_strsplit.c > CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_strsplit.c -o CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_strsplit.c -o CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_strstr.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_strstr.c.o: ../libft/ft_strstr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_118) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strstr.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strstr.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_strstr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_121) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strstr.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strstr.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_strstr.c
 
 CMakeFiles/d-k3d.dir/libft/ft_strstr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strstr.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_strstr.c > CMakeFiles/d-k3d.dir/libft/ft_strstr.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_strstr.c > CMakeFiles/d-k3d.dir/libft/ft_strstr.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_strstr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strstr.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_strstr.c -o CMakeFiles/d-k3d.dir/libft/ft_strstr.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_strstr.c -o CMakeFiles/d-k3d.dir/libft/ft_strstr.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_strsub.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_strsub.c.o: ../libft/ft_strsub.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_119) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strsub.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strsub.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_strsub.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_122) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strsub.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strsub.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_strsub.c
 
 CMakeFiles/d-k3d.dir/libft/ft_strsub.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strsub.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_strsub.c > CMakeFiles/d-k3d.dir/libft/ft_strsub.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_strsub.c > CMakeFiles/d-k3d.dir/libft/ft_strsub.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_strsub.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strsub.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_strsub.c -o CMakeFiles/d-k3d.dir/libft/ft_strsub.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_strsub.c -o CMakeFiles/d-k3d.dir/libft/ft_strsub.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.o: ../libft/ft_strtrim.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_120) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_strtrim.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_123) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_strtrim.c
 
 CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_strtrim.c > CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_strtrim.c > CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_strtrim.c -o CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_strtrim.c -o CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_swap.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_swap.c.o: ../libft/ft_swap.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_121) "Building C object CMakeFiles/d-k3d.dir/libft/ft_swap.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_swap.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_swap.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_124) "Building C object CMakeFiles/d-k3d.dir/libft/ft_swap.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_swap.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_swap.c
 
 CMakeFiles/d-k3d.dir/libft/ft_swap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_swap.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_swap.c > CMakeFiles/d-k3d.dir/libft/ft_swap.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_swap.c > CMakeFiles/d-k3d.dir/libft/ft_swap.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_swap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_swap.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_swap.c -o CMakeFiles/d-k3d.dir/libft/ft_swap.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_swap.c -o CMakeFiles/d-k3d.dir/libft/ft_swap.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_tolower.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_tolower.c.o: ../libft/ft_tolower.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_122) "Building C object CMakeFiles/d-k3d.dir/libft/ft_tolower.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_tolower.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_tolower.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_125) "Building C object CMakeFiles/d-k3d.dir/libft/ft_tolower.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_tolower.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_tolower.c
 
 CMakeFiles/d-k3d.dir/libft/ft_tolower.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_tolower.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_tolower.c > CMakeFiles/d-k3d.dir/libft/ft_tolower.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_tolower.c > CMakeFiles/d-k3d.dir/libft/ft_tolower.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_tolower.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_tolower.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_tolower.c -o CMakeFiles/d-k3d.dir/libft/ft_tolower.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_tolower.c -o CMakeFiles/d-k3d.dir/libft/ft_tolower.c.s
 
 CMakeFiles/d-k3d.dir/libft/ft_toupper.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/ft_toupper.c.o: ../libft/ft_toupper.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_123) "Building C object CMakeFiles/d-k3d.dir/libft/ft_toupper.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_toupper.c.o   -c /Users/dgruyere/projects/knukem_all/libft/ft_toupper.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_126) "Building C object CMakeFiles/d-k3d.dir/libft/ft_toupper.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_toupper.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/ft_toupper.c
 
 CMakeFiles/d-k3d.dir/libft/ft_toupper.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_toupper.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/ft_toupper.c > CMakeFiles/d-k3d.dir/libft/ft_toupper.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/ft_toupper.c > CMakeFiles/d-k3d.dir/libft/ft_toupper.c.i
 
 CMakeFiles/d-k3d.dir/libft/ft_toupper.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_toupper.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/ft_toupper.c -o CMakeFiles/d-k3d.dir/libft/ft_toupper.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/ft_toupper.c -o CMakeFiles/d-k3d.dir/libft/ft_toupper.c.s
 
 CMakeFiles/d-k3d.dir/libft/get_next_line.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/libft/get_next_line.c.o: ../libft/get_next_line.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_124) "Building C object CMakeFiles/d-k3d.dir/libft/get_next_line.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/get_next_line.c.o   -c /Users/dgruyere/projects/knukem_all/libft/get_next_line.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_127) "Building C object CMakeFiles/d-k3d.dir/libft/get_next_line.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/get_next_line.c.o   -c /Users/dgruyere/projects/knukem_fresh/libft/get_next_line.c
 
 CMakeFiles/d-k3d.dir/libft/get_next_line.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/get_next_line.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_all/libft/get_next_line.c > CMakeFiles/d-k3d.dir/libft/get_next_line.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dgruyere/projects/knukem_fresh/libft/get_next_line.c > CMakeFiles/d-k3d.dir/libft/get_next_line.c.i
 
 CMakeFiles/d-k3d.dir/libft/get_next_line.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/get_next_line.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_all/libft/get_next_line.c -o CMakeFiles/d-k3d.dir/libft/get_next_line.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dgruyere/projects/knukem_fresh/libft/get_next_line.c -o CMakeFiles/d-k3d.dir/libft/get_next_line.c.s
 
 # Object files for target d-k3d
 d__k3d_OBJECTS = \
@@ -1747,6 +1786,9 @@ d__k3d_OBJECTS = \
 "CMakeFiles/d-k3d.dir/src/manage_data.c.o" \
 "CMakeFiles/d-k3d.dir/src/run_queue.c.o" \
 "CMakeFiles/d-k3d.dir/src/transform_wall.c.o" \
+"CMakeFiles/d-k3d.dir/src/render/render_graf.c.o" \
+"CMakeFiles/d-k3d.dir/src/editor/graf_mod.c.o" \
+"CMakeFiles/d-k3d.dir/src/editor/tx_mod.c.o" \
 "CMakeFiles/d-k3d.dir/libft/c_add.c.o" \
 "CMakeFiles/d-k3d.dir/libft/c_arg.c.o" \
 "CMakeFiles/d-k3d.dir/libft/c_mod.c.o" \
@@ -1875,6 +1917,9 @@ d-k3d: CMakeFiles/d-k3d.dir/src/main.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/manage_data.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/run_queue.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/transform_wall.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/render/render_graf.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/editor/graf_mod.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/editor/tx_mod.c.o
 d-k3d: CMakeFiles/d-k3d.dir/libft/c_add.c.o
 d-k3d: CMakeFiles/d-k3d.dir/libft/c_arg.c.o
 d-k3d: CMakeFiles/d-k3d.dir/libft/c_mod.c.o
@@ -1944,16 +1989,13 @@ d-k3d: CMakeFiles/d-k3d.dir/libft/ft_tolower.c.o
 d-k3d: CMakeFiles/d-k3d.dir/libft/ft_toupper.c.o
 d-k3d: CMakeFiles/d-k3d.dir/libft/get_next_line.c.o
 d-k3d: CMakeFiles/d-k3d.dir/build.make
-d-k3d: ../SDL/sdl2/2.0.12_1/lib/libSDL2-2.0.0.dylib
-d-k3d: ../SDL/sdl2/2.0.12_1/lib/libSDL2.dylib
-d-k3d: ../SDL/sdl2_image/2.0.5/lib/libSDL2_image-2.0.0.dylib
-d-k3d: ../SDL/sdl2_image/2.0.5/lib/libSDL2_image.dylib
-d-k3d: ../SDL/sdl2_mixer/2.0.4/lib/libSDL2_mixer-2.0.0.dylib
-d-k3d: ../SDL/sdl2_mixer/2.0.4/lib/libSDL2_mixer.dylib
-d-k3d: ../SDL/sdl2_ttf/2.0.15/lib/libSDL2_ttf-2.0.0.dylib
-d-k3d: ../SDL/sdl2_ttf/2.0.15/lib/libSDL2_ttf.dylib
+d-k3d: /Users/dgruyere/.brew/Cellar/sdl2/2.0.14_1/lib/libSDL2.dylib
+d-k3d: /Users/dgruyere/.brew/Cellar/sdl2_ttf/2.0.15/lib/libSDL2_ttf.dylib
+d-k3d: /Users/dgruyere/.brew/Cellar/sdl2_ttf/2.0.15/lib/libSDL2_ttf.dylib
+d-k3d: /Users/dgruyere/.brew/Cellar/sdl2_image/2.0.5/lib/libSDL2_image.dylib
+d-k3d: /Users/dgruyere/.brew/Cellar/sdl2_mixer/2.0.4/lib/libSDL2_mixer.dylib
 d-k3d: CMakeFiles/d-k3d.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_125) "Linking C executable d-k3d"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_128) "Linking C executable d-k3d"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/d-k3d.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -1966,6 +2008,6 @@ CMakeFiles/d-k3d.dir/clean:
 .PHONY : CMakeFiles/d-k3d.dir/clean
 
 CMakeFiles/d-k3d.dir/depend:
-	cd /Users/dgruyere/projects/knukem_all/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/dgruyere/projects/knukem_all /Users/dgruyere/projects/knukem_all /Users/dgruyere/projects/knukem_all/cmake-build-debug /Users/dgruyere/projects/knukem_all/cmake-build-debug /Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles/d-k3d.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/dgruyere/projects/knukem_fresh/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/dgruyere/projects/knukem_fresh /Users/dgruyere/projects/knukem_fresh /Users/dgruyere/projects/knukem_fresh/cmake-build-debug /Users/dgruyere/projects/knukem_fresh/cmake-build-debug /Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles/d-k3d.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/d-k3d.dir/depend
 

@@ -47,7 +47,7 @@ static void		loop(t_engine *engine, int neighbor, t_ixyz t, int i, int sectorno)
 				 / ((a->w.x1 - a->x) * a->l.x1 + (a->x - a->w.x0) * a->l.x0);
 
 		ceil_and_floor_init(engine);		//y[0] и y[1] мы получаем тут путем линейной интерполяции
-		render_wall(engine, neighbor, t, i);
+		render_wall(engine, neighbor, t);
 		if (engine->sectors[sectorno].doors[i] == 0 && neighbor > -1)
 		{
 			engine->tdoor[a->x] = iclamp(a->y[2], engine->vpceil.boty[a->x], a->y[1]);

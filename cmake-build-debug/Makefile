@@ -68,10 +68,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/dgruyere/projects/knukem_all
+CMAKE_SOURCE_DIR = /Users/dgruyere/projects/knukem_fresh
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/dgruyere/projects/knukem_all/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/dgruyere/projects/knukem_fresh/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles /Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles /Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dgruyere/projects/knukem_all/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dgruyere/projects/knukem_fresh/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -2006,6 +2006,33 @@ src/cut_wall.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/cut_wall.c.s
 .PHONY : src/cut_wall.c.s
 
+src/editor/graf_mod.o: src/editor/graf_mod.c.o
+
+.PHONY : src/editor/graf_mod.o
+
+# target to build an object file
+src/editor/graf_mod.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/editor/graf_mod.c.o
+.PHONY : src/editor/graf_mod.c.o
+
+src/editor/graf_mod.i: src/editor/graf_mod.c.i
+
+.PHONY : src/editor/graf_mod.i
+
+# target to preprocess a source file
+src/editor/graf_mod.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/editor/graf_mod.c.i
+.PHONY : src/editor/graf_mod.c.i
+
+src/editor/graf_mod.s: src/editor/graf_mod.c.s
+
+.PHONY : src/editor/graf_mod.s
+
+# target to generate assembly for a file
+src/editor/graf_mod.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/editor/graf_mod.c.s
+.PHONY : src/editor/graf_mod.c.s
+
 src/editor/real_time_edit.o: src/editor/real_time_edit.c.o
 
 .PHONY : src/editor/real_time_edit.o
@@ -2032,6 +2059,33 @@ src/editor/real_time_edit.s: src/editor/real_time_edit.c.s
 src/editor/real_time_edit.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.s
 .PHONY : src/editor/real_time_edit.c.s
+
+src/editor/tx_mod.o: src/editor/tx_mod.c.o
+
+.PHONY : src/editor/tx_mod.o
+
+# target to build an object file
+src/editor/tx_mod.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/editor/tx_mod.c.o
+.PHONY : src/editor/tx_mod.c.o
+
+src/editor/tx_mod.i: src/editor/tx_mod.c.i
+
+.PHONY : src/editor/tx_mod.i
+
+# target to preprocess a source file
+src/editor/tx_mod.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/editor/tx_mod.c.i
+.PHONY : src/editor/tx_mod.c.i
+
+src/editor/tx_mod.s: src/editor/tx_mod.c.s
+
+.PHONY : src/editor/tx_mod.s
+
+# target to generate assembly for a file
+src/editor/tx_mod.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/editor/tx_mod.c.s
+.PHONY : src/editor/tx_mod.c.s
 
 src/game_loop.o: src/game_loop.c.o
 
@@ -2978,6 +3032,33 @@ src/render/minimap.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/minimap.c.s
 .PHONY : src/render/minimap.c.s
 
+src/render/render_graf.o: src/render/render_graf.c.o
+
+.PHONY : src/render/render_graf.o
+
+# target to build an object file
+src/render/render_graf.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_graf.c.o
+.PHONY : src/render/render_graf.c.o
+
+src/render/render_graf.i: src/render/render_graf.c.i
+
+.PHONY : src/render/render_graf.i
+
+# target to preprocess a source file
+src/render/render_graf.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_graf.c.i
+.PHONY : src/render/render_graf.c.i
+
+src/render/render_graf.s: src/render/render_graf.c.s
+
+.PHONY : src/render/render_graf.s
+
+# target to generate assembly for a file
+src/render/render_graf.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_graf.c.s
+.PHONY : src/render/render_graf.c.s
+
 src/render/render_hplane.o: src/render/render_hplane.c.o
 
 .PHONY : src/render/render_hplane.o
@@ -3707,9 +3788,15 @@ help:
 	@echo "... src/cut_wall.o"
 	@echo "... src/cut_wall.i"
 	@echo "... src/cut_wall.s"
+	@echo "... src/editor/graf_mod.o"
+	@echo "... src/editor/graf_mod.i"
+	@echo "... src/editor/graf_mod.s"
 	@echo "... src/editor/real_time_edit.o"
 	@echo "... src/editor/real_time_edit.i"
 	@echo "... src/editor/real_time_edit.s"
+	@echo "... src/editor/tx_mod.o"
+	@echo "... src/editor/tx_mod.i"
+	@echo "... src/editor/tx_mod.s"
 	@echo "... src/game_loop.o"
 	@echo "... src/game_loop.i"
 	@echo "... src/game_loop.s"
@@ -3815,6 +3902,9 @@ help:
 	@echo "... src/render/minimap.o"
 	@echo "... src/render/minimap.i"
 	@echo "... src/render/minimap.s"
+	@echo "... src/render/render_graf.o"
+	@echo "... src/render/render_graf.i"
+	@echo "... src/render/render_graf.s"
 	@echo "... src/render/render_hplane.o"
 	@echo "... src/render/render_hplane.i"
 	@echo "... src/render/render_hplane.s"
