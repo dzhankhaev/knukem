@@ -353,6 +353,31 @@ typedef struct		s_pack_head
 	int			start_byte;
 }					t_pack_head;
 
+u_char crc_xor(char *file, int check)
+{
+	char			ret;
+	int				fd;
+	int				i;
+	char			*buf;
+	struct stat		sb;
+
+	ret = 0xff;
+	i = -1;
+	stat(file, &sb);
+	fd = open(file, O_RDWR);
+	buf = (char*)malloc(sb.st_size);
+	read(fd, buf, sb.st_size);
+	sb.st_size -= (check == 1) ? 1 : 0;
+	while(++i < sb.st_size)
+		ret ^= buf[i];
+	if (check == 1)
+		ret = (buf[i] == ret) ? 1 : 0;
+	else
+		write(fd, &ret, 1);
+	ft_strdel(&buf);
+	close(fd);
+	return(ret);
+}
 
 int		fill_body(int fd_w)
 {
@@ -390,18 +415,23 @@ int		fill_heads(int out_fd, int start_byte, char *files, int size_head)
 {
 	int				fd;
 	char			*buf;
+	char			*file_name;
 	struct stat		sb;
 
+	file_name = (char*)malloc(size_head);
 	fd = open(files, O_RDONLY);
 	while (get_next_line(fd, &buf))
 	{
 		stat(buf, &sb);
-		write(out_fd, buf, size_head - 8);
+		ft_bzero(file_name, size_head - 8);
+		ft_strcpy(file_name, buf);
+		write(out_fd, file_name, size_head - 8);
 		write(out_fd, &sb.st_size, 4);
 		write(out_fd, &start_byte, 4);
 		start_byte += sb.st_size + 1;
 		ft_strdel(&buf);
 	}
+	ft_strdel(&file_name);
 	ft_strdel(&buf);	
 	return(1);
 }
@@ -418,7 +448,6 @@ int		pack_files(char *files, char *output_file)
 	max_len = 0;
 	if ((fd = open(files, O_RDONLY)) < 1)
 		return(0);
-	printf("ok\n");
 	while (get_next_line(fd, &buf))
 	{
 		max_len = (ft_strlen(buf) > max_len) ? ft_strlen(buf) : max_len;
@@ -428,7 +457,7 @@ int		pack_files(char *files, char *output_file)
 	close(fd);
 	if ((fd_w = open(output_file,O_RDWR|O_TRUNC|O_CREAT,999)) < 1)
 		return (0);
-	max_len+= sizeof(int) + sizeof(int);
+	max_len+= sizeof(int) + sizeof(int) + 1;
 	write(fd_w, "knukem\0\0", 8);
 	write(fd_w, &max_len, sizeof(max_len));
 	write(fd_w, &lens, sizeof(lens));
@@ -465,10 +494,16 @@ int unpack_files(char *file, char *dst_dir)
 	i = -1;
 	while (++i < pre.num_of_file)
 	{
+		// ft_bzero(head.file_name, pre.len_field - 8);
 		read(fd_in, head.file_name, pre.len_field - 8);
 		read(fd_in, &head.len, 8);
 		sub = ft_strjoin(dst_dir, head.file_name);
-		fd = open(sub,O_RDWR|O_TRUNC|O_CREAT,999);
+		// ft_putstr(sub);
+		// ft_putstr(" len - ");
+		// ft_putnbr(ft_strlen(sub));
+		// ft_putstr("\n");
+		if ((fd = open(sub,O_RDWR|O_TRUNC|O_CREAT,999)) < 1)
+			continue;
 		ft_strdel(&sub);
 		buf = (char*)malloc(head.len);
 		lseek(fd_in, head.start_byte, 0);
@@ -478,13 +513,17 @@ int unpack_files(char *file, char *dst_dir)
 		ft_strdel(&buf);
 		cur_pos += pre.len_field;
 		lseek(fd_in, cur_pos, 0);
+
 	}
 	return(1);
 }
 
 int main(int argc, char const *argv[])
 {
-	pack_files("textur/files", "map_1");
-	unpack_files("map_1", "");
+	// u_char ret;
+	// pack_files("textur/files", "map_1");
+	// ret = crc_xor("map_1", 0);
+	if ((crc_xor("map_1", 1)) == 1)
+		unpack_files("map_1", "");
 	return 0;
 }
