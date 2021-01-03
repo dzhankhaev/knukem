@@ -252,72 +252,206 @@ int			ft_file_lines(char *filename)
 
 void		unpack();
 
-int main(int argc, char **argv)
-{
-	// int fd;
-	// pid_t pid;
-	t_files		*top;
-	t_files		*tmp;
-	int			fd;
-	int			fd_sub;
-	int			len;
-	char		*line;
+// int main(int argc, char **argv)
+// {
+// 	// int fd;
+// 	// pid_t pid;
+// 	t_files		*top;
+// 	t_files		*tmp;
+// 	int			fd;
+// 	int			fd_sub;
+// 	int			len;
+// 	char		*line;
 
-	top = NULL;
-	free_t_files(&top);
-	new_t_files("PISFA0.png", 2033, &top);
-	new_t_files("PISGA0.png", 2631, &top);
-	new_t_files("PISGB0.png", 3292, &top);
-	new_t_files("PISGC0.png", 3098, &top);
-	tmp = top;
-	fd = open("out_file.map", O_RDWR|O_TRUNC|O_CREAT,999);
-	len = ft_file_lines("textur/files");
-	write(fd, &(len), 4);
-	lseek(fd, 8, 0);
-	//fill head
+// 	top = NULL;
+// 	free_t_files(&top);
+// 	new_t_files("PISFA0.png", 2033, &top);
+// 	new_t_files("PISGA0.png", 2631, &top);
+// 	new_t_files("PISGB0.png", 3292, &top);
+// 	new_t_files("PISGC0.png", 3098, &top);
+// 	tmp = top;
+// 	fd = open("out_file.map", O_RDWR|O_TRUNC|O_CREAT,999);
+// 	len = ft_file_lines("textur/files");
+// 	write(fd, &(len), 4);
+// 	lseek(fd, 8, 0);
+// 	//fill head
+// 	{
+// 		while (tmp)
+// 		{
+// 			write(fd, tmp, sizeof(t_files) + ft_strlen(tmp->file_name));
+// 			tmp = tmp->next;
+// 		}	
+// 	}
+// 	tmp = top;
+// 	while (tmp)
+// 	{
+// 		if ((fd_sub = open(tmp->file_name, O_RDONLY)))
+// 		{
+// 			lseek(fd, tmp->start_byte, 0);
+// 			line = (char*)malloc(tmp->size_block + 1);
+// 			read(fd_sub, line, tmp->size_block);
+// 			ft_putstr_fd(line, fd);
+// 			ft_strdel(&line);
+// 			close(fd_sub);
+// 		}
+// 		tmp = tmp->next;
+// 	}
+// 	close(fd);
+// 	free_t_files(&top);
+// 	// char *bla[] = {"" ,"!!!" , "arg2" , NULL};
+// 	// // int ret;
+
+// 	// pid = fork();
+// 	// if (pid == 0)
+// 	// {
+// 	// 	execve("run.sh", bla, NULL);
+// 	// 	exit (0);
+// 	// }
+// 	// if (argc == 2)
+// 	// {
+// 	// 	fd = open(argv[1], O_RDONLY);
+// 	// 	check_folder(argv[1]);
+// 	// 	pack(argv[1], "out_file");
+// 	// 	close(fd);
+// 	// 	// pack(argv[1]);
+// 	// }
+// 	// else
+// 	// {
+// 	// 	ft_putstr("Not filename for out pack\n");
+// 	// }
+// 	return 0;
+// }
+
+
+
+/*
+	1.получить фаил со списом файлов
+	1.1 открывается?
+	1.2 читается?
+	2.читаем по строчно именя(относительный или полный путь до файлов)
+	2.1 открывается? читается?	2.2 читаем в ** размер/ имя /	
+	2.3 пишем в шапку в слудуюшую область, имя / размер / начало блока
+
+	Опеределить максимальную длинну файла
+	[старт текст][размер шапки блока[длинна имени + \0 + 4байта размер файла]][колиество блоков][[имя файла][длинна блока][старт блока]]
+	[8 байт]
+*/
+
+typedef struct		s_pack_pre
+{
+	char	name[8];
+	int		len_field;
+	int		num_of_file;
+	char	start[8];
+	int		start_byte;
+}					t_pack_pre;
+
+typedef struct		s_pack_head
+{
+	char		*file_name;
+	int			len;
+	int			start_byte;
+}					t_pack_head;
+
+
+int		fill_body(int fd_w)
+{
+	t_pack_pre	pre;
+	int cur_pos;
+	int fd;
+	int i;
+	char *buf;
+	t_pack_head	head;
+
+	lseek(fd_w, 0, SEEK_SET);
+	read(fd_w, &pre, sizeof(t_pack_pre));
+	cur_pos = lseek(fd_w, ((lseek(fd_w, 0, SEEK_CUR) >> 3) + 1) << 3, 0);
+	head.file_name = (char*)malloc(sizeof(char) * (pre.len_field - 8));
+	i = -1;
+	while (++i < pre.num_of_file)
 	{
-		while (tmp)
-		{
-			write(fd, tmp, sizeof(t_files) + ft_strlen(tmp->file_name));
-			tmp = tmp->next;
-		}	
+		read(fd_w, head.file_name, pre.len_field - 8);
+		read(fd_w, &head.len, 8);
+		fd = open(head.file_name,O_RDONLY);
+		buf = (char*)malloc(head.len);
+		read(fd,buf,head.len);
+		close(fd);
+		lseek(fd_w, head.start_byte, 0);
+		write(fd_w, buf,head.len);
+		ft_strdel(&buf);
+		cur_pos += pre.len_field;
+		lseek(fd_w, cur_pos, 0);
 	}
-	tmp = top;
-	while (tmp)
+	return(1);
+}
+
+int		fill_heads(int out_fd, int start_byte, char *files, int size_head)
+{
+	int				fd;
+	// int				cur_fd;
+	// int				start_block;
+	char			*buf;
+	// char			*sub;
+	struct stat		sb;
+
+
+	// lseek(out_fd, 32, 0);
+	// sub = NULL;
+	fd = open(files, O_RDONLY);
+	while (get_next_line(fd, &buf))
 	{
-		if ((fd_sub = open(tmp->file_name, O_RDONLY)))
-		{
-			lseek(fd, tmp->start_byte, 0);
-			line = (char*)malloc(tmp->size_block + 1);
-			read(fd_sub, line, tmp->size_block);
-			ft_putstr_fd(line, fd);
-			ft_strdel(&line);
-			close(fd_sub);
-		}
-		tmp = tmp->next;
+		// ft_strdel(&sub);
+		// sub = ft_strjoin("textur/", buf);
+		stat(buf, &sb);
+		write(out_fd, buf, size_head - 8);
+		write(out_fd, &sb.st_size, 4);
+		write(out_fd, &start_byte, 4);
+		start_byte += sb.st_size + 1;
+		ft_strdel(&buf);
+	}
+	ft_strdel(&buf);
+	
+	return(1);
+}
+
+int		pack_files(char *files, char *output_file)
+{
+	int fd_w;
+	int fd;
+	char *buf;
+	int max_len;
+	int lens;
+
+	lens = 0;
+	max_len = 0;
+	if ((fd = open(files, O_RDONLY)) < 1)
+		return(0);
+	printf("ok\n");
+	while (get_next_line(fd, &buf))
+	{
+		max_len = (ft_strlen(buf) > max_len) ? ft_strlen(buf) : max_len;
+		lens++;
+		ft_strdel(&buf);
 	}
 	close(fd);
-	free_t_files(&top);
-	// char *bla[] = {"" ,"!!!" , "arg2" , NULL};
-	// // int ret;
+	if ((fd_w = open(output_file,O_RDWR|O_TRUNC|O_CREAT,999)) < 1)
+		return (0);
+	max_len+= sizeof(int) + sizeof(int);
+	write(fd_w, "knukem\0\0", 8);
+	write(fd_w, &max_len, sizeof(max_len));
+	write(fd_w, &lens, sizeof(lens));
+	write(fd_w, "start\0\0\0",8);
+	int start = max_len * lens + lseek(fd_w, 0, SEEK_CUR) + sizeof(start);
+	start = (((start >> 3) + 1) << 3) + 1;
+	write(fd_w, &start, sizeof(start));
+	lseek(fd_w, ((lseek(fd_w, 0, SEEK_CUR) >> 3) + 1) << 3, 0);
+	fill_heads(fd_w, start, files,max_len);
+	fill_body(fd_w);
+	return(1);
+}
 
-	// pid = fork();
-	// if (pid == 0)
-	// {
-	// 	execve("run.sh", bla, NULL);
-	// 	exit (0);
-	// }
-	// if (argc == 2)
-	// {
-	// 	fd = open(argv[1], O_RDONLY);
-	// 	check_folder(argv[1]);
-	// 	pack(argv[1], "out_file");
-	// 	close(fd);
-	// 	// pack(argv[1]);
-	// }
-	// else
-	// {
-	// 	ft_putstr("Not filename for out pack\n");
-	// }
+int main(int argc, char const *argv[])
+{
+	pack_files("textur/files", "out_pack");
 	return 0;
 }
