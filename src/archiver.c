@@ -176,11 +176,19 @@ int unpack_files(char *file, char *dst_dir)
 	t_pack_pre	pre;
 	int cur_pos;
 	int fd;
+	int fd_files;
 	int i;
 	char *buf;
 	char *sub;
+	char *cur_dst_dir;
 	t_pack_head	head;
 
+	cur_dst_dir = ft_strjoin(dst_dir, ((dst_dir[ft_strlen(dst_dir) - 1] == '/')
+									|| ft_strlen(dst_dir) == 0) ? "" : "/");
+	sub = ft_strjoin(cur_dst_dir, "files");
+	make_dir(sub);
+	fd_files = open(sub,O_RDWR|O_TRUNC|O_CREAT,999);
+	ft_strdel(&sub);
 	fd_in = open(file, O_RDONLY);
 	read(fd_in, &pre, sizeof(t_pack_pre));
 	cur_pos = lseek(fd_in, ((lseek(fd_in, 0, SEEK_CUR) >> 3) + 1) << 3, 0);
@@ -190,10 +198,9 @@ int unpack_files(char *file, char *dst_dir)
 	{
 		read(fd_in, head.file_name, pre.len_field - 8);
 		read(fd_in, &head.len, 8);
-		buf = ft_strjoin(dst_dir, ((dst_dir[ft_strlen(dst_dir) - 1] == '/') ||
-										ft_strlen(dst_dir) == 0) ? "" : "/");
-		sub = ft_strjoin(buf, head.file_name);
-		ft_strdel(&buf);
+		sub = ft_strjoin(cur_dst_dir, head.file_name);
+		ft_putstr_fd(sub, fd_files);
+		ft_putstr_fd("\n", fd_files);
 		make_dir(sub);
 		if ((fd = open(sub,O_RDWR|O_TRUNC|O_CREAT,999)) < 1)
 			continue;
@@ -207,17 +214,18 @@ int unpack_files(char *file, char *dst_dir)
 		cur_pos += pre.len_field;
 		lseek(fd_in, cur_pos, 0);
 	}
+	close(fd_files);
 	ft_strdel(&head.file_name);
 	return(1);
 }
 
 int main(int argc, char const *argv[])
 {
-	u_char ret;
-	// pack_files("files", "map_1");
-	// crc_xor("map_1", 0);
-	if ((crc_xor("map_1", 1)) == 1)
-		unpack_files("map_1", "");
-	// while(1);
+	// u_char ret;
+	// pack_files("cur/files", "map_cur");
+	// crc_xor("map_cur", 0);
+	if ((crc_xor("map_cur", 1)) == 1)
+		unpack_files("map_cur", "proba");
+	
 	return 0;
 }
