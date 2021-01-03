@@ -214,8 +214,8 @@ int unpack_files(char *file, char *dst_dir)
 int main(int argc, char const *argv[])
 {
 	u_char ret;
-	// pack_files("files", "map_3");
-	// crc_xor("map_3", 0);
+	// pack_files("files", "map_1");
+	// crc_xor("map_1", 0);
 	if ((crc_xor("map_1", 1)) == 1)
 		unpack_files("map_1", "");
 	// while(1);
