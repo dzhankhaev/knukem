@@ -60,9 +60,9 @@ void 	calculate_dist(t_sprites1 *sprites1)
 
 	x = fabs(sprites1->weapon_sprite->translated_where.x);
 	y = fabs(sprites1->weapon_sprite->translated_where.y);
-	sprites1->weapon_sprite->dist = sqrt(x * x + y * y);
-	sprites1->weapon_sprite->height = H/sprites1->weapon_sprite->dist;
-	sprites1->weapon_sprite->width = W/sprites1->weapon_sprite->dist;
+	sprites1->weapon_sprite->dist = sqrt(x * x + y * y) < 1 ? 1 : sqrt(x * x + y * y);
+	sprites1->weapon_sprite->height = H/sprites1->weapon_sprite->dist < 1 ? 1 : H/sprites1->weapon_sprite->dist;
+	sprites1->weapon_sprite->width = W/sprites1->weapon_sprite->dist < 1 ? 1 : W/sprites1->weapon_sprite->dist;
 }
 //Считаем координаты краёв спрайта
 void 	calculate_sprite_endings(t_sprites1 *sprites1, t_player player)
@@ -131,16 +131,16 @@ int		transform_sprite(t_engine *engine)
 				(t_xy){W/2,H/2},
 				2, BLACK);
 	draw_circle(&sdl_temp,
-				(t_xy){engine->sprites1->weapon_sprite->cut_rotated_where.x0 + W/2,
-					   engine->sprites1->weapon_sprite->cut_rotated_where.y0 + H/2},
+				(t_xy){engine->sprites1->weapon_sprite->cut_rotated_where.x0 * 3 + W/2,
+					   engine->sprites1->weapon_sprite->cut_rotated_where.y0 * 3 + H/2},
 				3, RED);
 	draw_circle(&sdl_temp,
 				(t_xy){engine->sprites1->weapon_sprite->cut_rotated_where.x1 * 3 + W/2,
-					   engine->sprites1->weapon_sprite->cut_rotated_where.y1 + H/2},
+					   engine->sprites1->weapon_sprite->cut_rotated_where.y1 * 3 + H/2},
 				3, RED);
 	draw_circle(&sdl_temp,
-				(t_xy){engine->sprites1->weapon_sprite->rotated_where.x + W/2,
-					   engine->sprites1->weapon_sprite->rotated_where.y + H/2},
+				(t_xy){engine->sprites1->weapon_sprite->rotated_where.x * 3 + W/2,
+					   engine->sprites1->weapon_sprite->rotated_where.y * 3 + H/2},
 				3, GREEN);
 	cut_sprite = engine->sprites1->weapon_sprite->fov_cut_rotated_where;
 	//printf("\rx0 = %f, y0 = %f, x1 = %f, y1 = %f", cut_sprite.x0, cut_sprite.y0, cut_sprite.x1, cut_sprite.y1);

@@ -52,16 +52,14 @@ void 		run_queue(t_engine *engine)
 								 engine->sectors[engine->present->sectorno].vertex[i].y,
 								 engine->sectors[engine->present->sectorno].vertex[i + 1].y,
 								 engine->wall.color};
-
+		if (transform_sprite(engine))
+			render_sprite(engine);
 		if (transform_wall(engine, &engine->wall))
 		{
 			choose_edit(engine, i);
 			render_scene(engine, sectorno,    //текущий сектор
 						 engine->sectors[sectorno].neighbors[i], i);		//его сосед, границу с которым мы обрабатываем.
 		}
-
-		if (transform_sprite(engine))
-				render_sprite(engine);
 		if (engine->minimap.mod)
 			minimap(engine, engine->sectors[sectorno].vertex[i],
 					engine->sectors[sectorno].vertex[i + 1], color);
