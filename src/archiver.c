@@ -382,26 +382,19 @@ int		fill_body(int fd_w)
 		cur_pos += pre.len_field;
 		lseek(fd_w, cur_pos, 0);
 	}
+	ft_strdel(&head.file_name);
 	return(1);
 }
 
 int		fill_heads(int out_fd, int start_byte, char *files, int size_head)
 {
 	int				fd;
-	// int				cur_fd;
-	// int				start_block;
 	char			*buf;
-	// char			*sub;
 	struct stat		sb;
 
-
-	// lseek(out_fd, 32, 0);
-	// sub = NULL;
 	fd = open(files, O_RDONLY);
 	while (get_next_line(fd, &buf))
 	{
-		// ft_strdel(&sub);
-		// sub = ft_strjoin("textur/", buf);
 		stat(buf, &sb);
 		write(out_fd, buf, size_head - 8);
 		write(out_fd, &sb.st_size, 4);
@@ -409,8 +402,7 @@ int		fill_heads(int out_fd, int start_byte, char *files, int size_head)
 		start_byte += sb.st_size + 1;
 		ft_strdel(&buf);
 	}
-	ft_strdel(&buf);
-	
+	ft_strdel(&buf);	
 	return(1);
 }
 
@@ -447,11 +439,52 @@ int		pack_files(char *files, char *output_file)
 	lseek(fd_w, ((lseek(fd_w, 0, SEEK_CUR) >> 3) + 1) << 3, 0);
 	fill_heads(fd_w, start, files,max_len);
 	fill_body(fd_w);
+	close(fd_w);
+	return(1);
+}
+
+int unpack_files(char *file, char *dst_dir)
+{
+	int fd_in;
+	t_pack_pre	pre;
+	int cur_pos;
+	int fd;
+	int i;
+	char *buf;
+	char *sub;
+	t_pack_head	head;
+
+	mkdir(dst_dir, 0777);
+	sub = ft_strjoin(dst_dir,"textur");
+	mkdir(sub, 0777);
+	ft_strdel(&sub);
+	fd_in = open(file, O_RDONLY);
+	read(fd_in, &pre, sizeof(t_pack_pre));
+	cur_pos = lseek(fd_in, ((lseek(fd_in, 0, SEEK_CUR) >> 3) + 1) << 3, 0);
+	head.file_name = (char*)malloc(sizeof(char) * (pre.len_field - 8));
+	i = -1;
+	while (++i < pre.num_of_file)
+	{
+		read(fd_in, head.file_name, pre.len_field - 8);
+		read(fd_in, &head.len, 8);
+		sub = ft_strjoin(dst_dir, head.file_name);
+		fd = open(sub,O_RDWR|O_TRUNC|O_CREAT,999);
+		ft_strdel(&sub);
+		buf = (char*)malloc(head.len);
+		lseek(fd_in, head.start_byte, 0);
+		read(fd_in, buf,head.len);
+		write(fd, buf,head.len);
+		close(fd);
+		ft_strdel(&buf);
+		cur_pos += pre.len_field;
+		lseek(fd_in, cur_pos, 0);
+	}
 	return(1);
 }
 
 int main(int argc, char const *argv[])
 {
-	pack_files("textur/files", "out_pack");
+	pack_files("textur/files", "map_1");
+	unpack_files("map_1", "");
 	return 0;
 }
