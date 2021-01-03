@@ -190,8 +190,8 @@ int unpack_files(char *file, char *dst_dir)
 	{
 		read(fd_in, head.file_name, pre.len_field - 8);
 		read(fd_in, &head.len, 8);
-		buf = ft_strjoin(dst_dir,
-						(dst_dir[ft_strlen(dst_dir) - 1] == '/') ? "" : "/");
+		buf = ft_strjoin(dst_dir, ((dst_dir[ft_strlen(dst_dir) - 1] == '/') ||
+										ft_strlen(dst_dir) == 0) ? "" : "/");
 		sub = ft_strjoin(buf, head.file_name);
 		ft_strdel(&buf);
 		make_dir(sub);
@@ -213,11 +213,11 @@ int unpack_files(char *file, char *dst_dir)
 
 int main(int argc, char const *argv[])
 {
-	// u_char ret;
-	// pack_files("textur/files", "map_1");
-	// ret = crc_xor("map_1", 0);
+	u_char ret;
+	// pack_files("files", "map_3");
+	// crc_xor("map_3", 0);
 	if ((crc_xor("map_1", 1)) == 1)
-		unpack_files("map_1", "tes");
-	while(1);
+		unpack_files("map_1", "");
+	// while(1);
 	return 0;
 }
