@@ -36,6 +36,13 @@ static void	draw(t_engine *engine)
 		run_queue(engine);
 		engine->present++;
 	}
+	engine->present--;
+	while (engine->present != engine->queue)
+	{
+		if (transform_sprite(engine))
+			render_sprite(engine);
+		engine->present--;
+	}
 	render_minimap_hud(engine->minimap, engine->screen);
 }
 
