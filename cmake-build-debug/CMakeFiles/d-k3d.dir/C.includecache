@@ -714,9 +714,9 @@ begin_code.h
 close_code.h
 /Users/dgruyere/.brew/Cellar/sdl2_ttf/2.0.15/include/SDL2/close_code.h
 
-/Users/dgruyere/projects/knukem_fresh/src/render/transform_sprite.c
+/Users/dgruyere/projects/knukem_fresh/src/run_queue.c
 engine.h
-/Users/dgruyere/projects/knukem_fresh/src/render/engine.h
+/Users/dgruyere/projects/knukem_fresh/src/engine.h
 utilits.h
-/Users/dgruyere/projects/knukem_fresh/src/render/utilits.h
+/Users/dgruyere/projects/knukem_fresh/src/utilits.h
 
