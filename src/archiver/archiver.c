@@ -6,7 +6,7 @@
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 22:05:43 by ecelsa            #+#    #+#             */
-/*   Updated: 2021/01/06 06:12:20 by ecelsa           ###   ########.fr       */
+/*   Updated: 2021/01/06 07:05:11 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <sys/errno.h>
 #include <string.h>
 
-u_char			crc_xor(char *file, int check)
+unsigned char	crc_xor(char *file, int check)
 {
 	char			ret;
 	int				fd;
@@ -45,7 +45,7 @@ void			exit_error(void)
 	ft_putendl(strerror(errno));
 	exit(errno);
 }
-
+/*
 int				main(int argc, char **argv)
 {
 	if (argc == 4)
@@ -57,3 +57,4 @@ int				main(int argc, char **argv)
 	}
 	return (0);
 }
+*/

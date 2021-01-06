@@ -15,6 +15,7 @@ HEADERS := engine.h\
 	utilits.h\
 	events.h\
 	editor.h\
+	archiver.h
 
 
 SRC := main.c\
@@ -74,6 +75,9 @@ SRC := main.c\
 	map_editor/sector_add.c\
 	map_editor/draw_sprites.c\
 	map_editor/obj_detection.c\
+	archiver/archiver.c\
+	archiver/pack.c\
+	archiver/unpack.c
 
 
 OBJ := $(SRC:.c=.o)
@@ -108,12 +112,12 @@ $(FT_LIB):
 	@make -C $(FT)
 
 $(NAME) : $(OBJP)
-			@gcc -g $(FLAG) $(OBJP) $(FT_LNK) $(INC) $(SDL)  $(LIB) -o $(NAME)
+			@gcc -g $(FLAG) $(OBJP) $(FT_INC) $(FT_LNK) $(INC) $(SDL)  $(LIB) -o $(NAME)
 			@echo "$(CLEAR_LINE)$(BLUE_FONT)[$(NAME)] $(YELLOW_FONT)Finished compilation. Output file : $(VIOLET_FONT)$(PWD)/$(NAME)$(RESET_FORM)"
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADERSP)
 			@mkdir -p $(ONLYDIR)
-			@gcc -c $(FLAG) -F $(FRAMEWORKSDIR) $(INC) $< -o $@
+			gcc -c $(FLAG) $(FT_INC) -F $(FRAMEWORKSDIR)  $(INC) $< -o $@
 			@echo "$(CLEAR_LINE)$(BLUE_FONT)[$(NAME)] $(YELLOW_FONT)Compiling file [$(VIOLET_FONT)$<$(COL_YELLOW)]. ($(CURRENT_FILES) / $(TOTAL_FILES))$(RESET_FORM)$(BEGIN_LINE)"
 
 
