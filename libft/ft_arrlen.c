@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_arrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgruyere <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 20:32:59 by dgruyere          #+#    #+#             */
-/*   Updated: 2020/07/18 02:43:58 by dgruyere         ###   ########.fr       */
+/*   Created: 2020/11/12 14:37:14 by ecelsa            #+#    #+#             */
+/*   Updated: 2020/11/12 14:37:35 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+int			ft_arrlen(void **arr)
 {
-	if (alst != NULL && del != NULL)
-	{
-		(*del)((*alst)->content, (*alst)->content_size);
-		ft_memdel((void **)alst);
-	}
+	int i;
+
+	i = 0;
+	while (arr[i] != NULL)
+		i++;
+	return (i);
 }

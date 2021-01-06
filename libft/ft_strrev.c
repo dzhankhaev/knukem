@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgruyere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 20:32:59 by dgruyere          #+#    #+#             */
-/*   Updated: 2020/07/18 02:43:58 by dgruyere         ###   ########.fr       */
+/*   Created: 2020/07/19 15:36:56 by dgruyere          #+#    #+#             */
+/*   Updated: 2020/07/19 15:37:30 by dgruyere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+char	*ft_strrev(char *str)
 {
-	if (alst != NULL && del != NULL)
+	int		len;
+	char	buf;
+	int		i;
+
+	i = 0;
+	len = ft_strlen(str);
+	while (len - 1 > i)
 	{
-		(*del)((*alst)->content, (*alst)->content_size);
-		ft_memdel((void **)alst);
+		buf = str[len - 1];
+		str[len - 1] = str[i];
+		str[i] = buf;
+		len--;
+		i++;
 	}
+	return (str);
 }

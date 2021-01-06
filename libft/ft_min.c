@@ -1,22 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_min.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgruyere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 20:32:59 by dgruyere          #+#    #+#             */
+/*   Created: 2019/09/21 18:22:01 by dgruyere          #+#    #+#             */
 /*   Updated: 2020/07/18 02:43:58 by dgruyere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+int	ft_min(int d1, int d2)
 {
-	if (alst != NULL && del != NULL)
-	{
-		(*del)((*alst)->content, (*alst)->content_size);
-		ft_memdel((void **)alst);
-	}
+	return (d1 < d2 ? d1 : d2);
 }

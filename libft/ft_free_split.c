@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_free_split.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgruyere <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 20:32:59 by dgruyere          #+#    #+#             */
-/*   Updated: 2020/07/18 02:43:58 by dgruyere         ###   ########.fr       */
+/*   Created: 2020/11/12 14:35:04 by ecelsa            #+#    #+#             */
+/*   Updated: 2020/11/12 14:37:38 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+void	ft_free_split(char **split)
 {
-	if (alst != NULL && del != NULL)
+	int	i;
+
+	i = 0;
+	if (split != NULL)
 	{
-		(*del)((*alst)->content, (*alst)->content_size);
-		ft_memdel((void **)alst);
+		while (split[i])
+		{
+			ft_strdel(&split[i]);
+			i++;
+		}
+		free(split);
+		split = NULL;
 	}
 }
