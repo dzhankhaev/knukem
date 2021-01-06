@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgruyere <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sisidra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 21:25:15 by dgruyere          #+#    #+#             */
-/*   Updated: 2020/07/18 02:43:58 by dgruyere         ###   ########.fr       */
+/*   Created: 2019/10/25 21:30:02 by sisidra           #+#    #+#             */
+/*   Updated: 2019/10/25 22:05:04 by sisidra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,26 @@
 
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	t_list	*result;
-	t_list	*tmpresult;
-	t_list	*tmplst;
+	t_list *iter;
+	t_list *res;
+	t_list *temp;
 
-	if (!lst || !f)
+	if (!(lst || f))
 		return (NULL);
-	tmplst = f(lst);
-	if ((result = ft_lstnew(tmplst->content, tmplst->content_size)))
+	temp = f(lst);
+	if ((res = ft_lstnew(temp->content, temp->content_size)))
 	{
-		tmpresult = result;
+		iter = res;
 		lst = lst->next;
-		while (lst != NULL)
+		while (lst)
 		{
-			tmplst = (*f)(lst);
-			if (!(tmpresult->next = ft_lstnew(tmplst->content,
-							tmplst->content_size)))
+			temp = (*f)(lst);
+			if (!(iter->next = ft_lstnew(temp->content,
+					temp->content_size)))
 				return (NULL);
-			tmpresult = tmpresult->next;
+			iter = iter->next;
 			lst = lst->next;
 		}
 	}
-	return (result);
+	return (res);
 }

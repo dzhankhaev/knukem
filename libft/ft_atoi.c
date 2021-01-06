@@ -3,36 +3,50 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgruyere <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sisidra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/07 13:25:00 by dgruyere          #+#    #+#             */
-/*   Updated: 2020/07/18 02:43:58 by dgruyere         ###   ########.fr       */
+/*   Created: 2019/09/16 14:33:40 by sisidra           #+#    #+#             */
+/*   Updated: 2019/09/30 14:09:26 by sisidra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_atoi(const char *str)
+static int	check_minus(char c)
 {
-	int						i;
-	unsigned long long int	nbr;
-	int						neg;
+	if (c == '-')
+		return (-1);
+	else if (c == '+')
+		return (1);
+	else
+		return (0);
+}
+
+int			ft_atoi(const char *str)
+{
+	int				i;
+	int				n;
+	long long int	res;
 
 	i = 0;
-	nbr = 0;
-	neg = 1;
-	while (str[i] == '\t' || str[i] == '\v' || str[i] == '\f' ||
-			str[i] == '\r' || str[i] == ' ' || str[i] == '\n')
+	n = 1;
+	res = 0;
+	while (str[i] == '\t' || str[i] == '\b' || str[i] == '\f' || str[i] == ' '
+			|| str[i] == '\n' || str[i] == '\r' || str[i] == '\v')
 		i++;
-	if (str[i] == '-')
-		neg = -1;
+	if (check_minus(str[i]))
+		n = check_minus(str[i]);
 	if (str[i] == '-' || str[i] == '+')
 		i++;
-	while (str[i] >= '0' && str[i] <= '9')
+	if (str == 0)
+		return (0);
+	while (str[i] != '\0')
 	{
-		nbr = nbr * 10 + (str[i++] - '0');
-		if (nbr != (nbr * 10 / 10))
-			return (neg == 1 ? -1 : 0);
+		if (str[i] <= '9' && str[i] >= '0')
+			res = (res * 10) + str[i] - 48;
+		else
+			return (res * n);
+		i++;
 	}
-	return (neg * nbr);
+	return (res * n);
 }

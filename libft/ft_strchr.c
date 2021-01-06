@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strchr2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgruyere <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sisidra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/11 12:33:37 by dgruyere          #+#    #+#             */
-/*   Updated: 2020/07/18 02:43:58 by dgruyere         ###   ########.fr       */
+/*   Created: 2019/09/27 20:41:05 by sisidra           #+#    #+#             */
+/*   Updated: 2019/09/28 16:03:18 by sisidra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int		i;
-	char	*res;
+	int	i;
 
+	if (c == '\0')
+		return ((char*)&s[ft_strlen((char*)s)]);
 	i = 0;
-	res = NULL;
-	while (s[i])
+	while (s[i] != '\0')
 	{
 		if (s[i] == c)
-		{
-			res = (char*)&s[i];
-			break ;
-		}
-		i++;
+			return ((char*)&s[i]);
+		++i;
 	}
-	if (c == 0)
-		res = (char*)&s[i];
-	return (res);
+	return (NULL);
 }

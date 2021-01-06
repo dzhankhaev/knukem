@@ -117,7 +117,7 @@ $(NAME) : $(OBJP)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADERSP)
 			@mkdir -p $(ONLYDIR)
-			gcc -c $(FLAG) $(FT_INC) -F $(FRAMEWORKSDIR)  $(INC) $< -o $@
+			@gcc -c $(FLAG) $(FT_INC) -F $(FRAMEWORKSDIR)  $(INC) $< -o $@
 			@echo "$(CLEAR_LINE)$(BLUE_FONT)[$(NAME)] $(YELLOW_FONT)Compiling file [$(VIOLET_FONT)$<$(COL_YELLOW)]. ($(CURRENT_FILES) / $(TOTAL_FILES))$(RESET_FORM)$(BEGIN_LINE)"
 
 
