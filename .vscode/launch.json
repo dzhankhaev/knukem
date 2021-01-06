@@ -39,7 +39,7 @@
           "type": "promptString",
           "id": "componentName",
           "description": "Name your component.",
-          "default": "       bla/      sgg  /   e"
+          "default": "files test_pack /Library/Caches/Doom"
         }
       ]
 

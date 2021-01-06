@@ -16,6 +16,7 @@
 		"chrono": "cpp",
 		"iostream": "cpp",
 		"algorithm": "cpp"
-	}
+	},
+	"editor.insertSpaces": false
 
 }

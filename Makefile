@@ -29,6 +29,8 @@ SRC := main.c\
 	keys_manager.c\
 	manage_data.c\
 	game_loop.c\
+	pack.c\
+	unpack.c
 
 SRCDASH := hud.c $(filter-out main.c, $(SRC))
 SRCARCH := archiver.c $(filter-out main.c, $(SRC))
