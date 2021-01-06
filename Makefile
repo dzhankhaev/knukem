@@ -29,6 +29,8 @@ SRC := main.c\
 	key_events/event_edit.c\
 	key_events/event_movement.c\
 	editor/real_time_edit.c\
+	editor/graf_mod.c\
+	editor/tx_mod.c\
 	movement/move.c\
 	movement/fall.c\
 	utilits/math/determine_intersection.c\
@@ -44,7 +46,9 @@ SRC := main.c\
 	render/render_hplane.c\
 	render/render_scene.c\
 	render/render_sky.c\
+	render/render_graf.c\
 	render/sprite_render.c\
+	render/transform_sprite.c\
 	render/ceil_and_floor_init.c\
 	render/wall/render_wall.c\
 	render/wall/perspective_init.c\
@@ -87,8 +91,8 @@ FLAG :=  -g #-Wall -Werror -Wextra
 PWD := $(shell pwd)
 FRAMEWORKSDIR := $(PWD)/frameworks
 INC := -I includes
-SDL := -I SDL2/SDL.h -lSDL2 -lSDL2_ttf -lSDL2_image
-#SDL := -F $(FRAMEWORKSDIR) -framework SDL2 -framework SDL2_ttf -framework SDL2_image -framework SDL2_mixer -Wl -rpath $(FRAMEWORKSDIR)
+# SDL := -I SDL2/SDL.h -lSDL2 -lSDL2_ttf -lSDL2_image
+SDL := -F $(FRAMEWORKSDIR) -framework SDL2 -framework SDL2_ttf -framework SDL2_image -framework SDL2_mixer -Wl -rpath $(FRAMEWORKSDIR)
 
 TOTAL_FILES := $(shell echo $(SRC) | wc -w | sed -e 's/ //g')
 CURRENT_FILES = $(shell find $(PWD)/obj/ -type f 2> /dev/null | wc -l | sed -e 's/ //g')
