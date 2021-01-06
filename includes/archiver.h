@@ -6,7 +6,7 @@
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
-/*   Updated: 2021/01/06 06:09:06 by ecelsa           ###   ########.fr       */
+/*   Updated: 2021/01/06 06:12:53 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,9 @@ typedef struct		s_pack_head
 	int			start_byte;
 }					t_pack_head;
 
-u_char			crc_xor(char *file, int check);
-void			exit_error(void);
-int				unpack_files(char *file, char *dst_dir);
-int				pack_files(char *files, char *output_file);
+u_char				crc_xor(char *file, int check);
+void				exit_error(void);
+int					unpack_files(char *file, char *dst_dir);
+int					pack_files(char *files, char *output_file);
+
 #endif

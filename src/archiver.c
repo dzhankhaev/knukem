@@ -6,7 +6,7 @@
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 22:05:43 by ecelsa            #+#    #+#             */
-/*   Updated: 2021/01/06 06:04:50 by ecelsa           ###   ########.fr       */
+/*   Updated: 2021/01/06 06:12:20 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void			exit_error(void)
 	exit(errno);
 }
 
-
 int				main(int argc, char **argv)
 {
 	if (argc == 4)
@@ -58,4 +57,3 @@ int				main(int argc, char **argv)
 	}
 	return (0);
 }
-
