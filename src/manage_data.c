@@ -1,24 +1,26 @@
 #include "engine.h"
 
-// void	sub_load_data(t_engine *engine, t_all *all)
-// {
-// 	int fd;
-// 	char *buf, word[256], *ptr;
-// 	struct s_xy *vert = NULL, v;
-// 	int n, m, NumVertices = 0;
-// 	int *num = NULL;
-// 	float angle;
+void	sub_load_data(t_engine *engine, t_all *all)
+{
+	int fd;
+	char *buf, word[256], *ptr;
+	struct s_xy *vert = NULL, v;
+	int n, m, NumVertices = 0;
+	int *num = NULL;
+	float angle;
+	char  **split;
 
-// 	engine->sectors = NULL;
-// 	fd = open("map-clear.txt", O_RDONLY);
-// 	all->mapsize = (t_xyz){0, 0, 0};
-// 	all->min_coord = (t_xy){0, 0};
-// 	all->max_coord = (t_xy){0, 0};
-// 	while (get_next_line(fd, &buf))
-// 	{
-
-// 	}
-// }
+	engine->sectors = NULL;
+	fd = open("map-clear.txt", O_RDONLY);
+	all->mapsize = (t_xyz){0, 0, 0};
+	all->min_coord = (t_xy){0, 0};
+	all->max_coord = (t_xy){0, 0};
+	while (get_next_line(fd, &buf))
+	{
+		split = ft_strsplit(buf, '\t');
+		ft_free_split(split);
+	}
+}
 
 void	load_data(t_engine *engine, t_all *all)
 {
