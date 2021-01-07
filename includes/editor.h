@@ -1,18 +1,20 @@
 #ifndef EDITOR_H
 # define EDITOR_H
 
-# include "../SDL/SDL.h"
-# include "../SDL/SDL_ttf.h"
-# include "../SDL2_image-2.0.5/SDL_image.h"
-
-// # include <SDL2/SDL.h>
-// # include <SDL2_ttf/SDL_ttf.h>
-// # include <SDL2_image/SDL_image.h>
+# ifdef __linux__
+#  include "SDL.h"
+#  include "SDL_ttf.h"
+#  include "SDL_image.h"
+# elif __APPLE__
+#  include <SDL2/SDL.h>
+#  include <SDL2_ttf/SDL_ttf.h>
+#  include <SDL2_image/SDL_image.h>
+# endif
 
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include "../libft/libft.h"
+# include "libft.h"
 
 # define W 1200
 # define H 700

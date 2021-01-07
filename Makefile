@@ -87,8 +87,8 @@ FLAG :=  -g #-Wall -Werror -Wextra
 PWD := $(shell pwd)
 FRAMEWORKSDIR := $(PWD)/frameworks
 INC := -I includes
-SDL := -I SDL2/SDL.h -lSDL2 -lSDL2_ttf -lSDL2_image
-#SDL := -F $(FRAMEWORKSDIR) -framework SDL2 -framework SDL2_ttf -framework SDL2_image -framework SDL2_mixer -Wl -rpath $(FRAMEWORKSDIR)
+# SDL := -I SDL2/SDL.h -lSDL2 -lSDL2_ttf -lSDL2_image
+SDL := -F $(FRAMEWORKSDIR) -framework SDL2 -framework SDL2_ttf -framework SDL2_image -framework SDL2_mixer -Wl -rpath $(FRAMEWORKSDIR)
 
 TOTAL_FILES := $(shell echo $(SRC) | wc -w | sed -e 's/ //g')
 CURRENT_FILES = $(shell find $(PWD)/obj/ -type f 2> /dev/null | wc -l | sed -e 's/ //g')
@@ -104,12 +104,12 @@ $(FT_LIB):
 	@make -C $(FT)
 
 $(NAME) : $(OBJP)
-			@gcc -g $(FLAG) $(OBJP) $(FT_LNK) $(INC) $(SDL)  $(LIB) -o $(NAME)
+			@gcc -g $(FLAG) $(OBJP) $(FT_LNK) $(FT_INC) $(INC) $(SDL)  $(LIB) -o $(NAME)
 			@echo "$(CLEAR_LINE)$(BLUE_FONT)[$(NAME)] $(YELLOW_FONT)Finished compilation. Output file : $(VIOLET_FONT)$(PWD)/$(NAME)$(RESET_FORM)"
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADERSP)
 			@mkdir -p $(ONLYDIR)
-			@gcc -c $(FLAG) -F $(FRAMEWORKSDIR) $(INC) $< -o $@
+			@gcc -c $(FLAG) -F $(FRAMEWORKSDIR) $(FT_INC) $(INC) $< -o $@
 			@echo "$(CLEAR_LINE)$(BLUE_FONT)[$(NAME)] $(YELLOW_FONT)Compiling file [$(VIOLET_FONT)$<$(COL_YELLOW)]. ($(CURRENT_FILES) / $(TOTAL_FILES))$(RESET_FORM)$(BEGIN_LINE)"
 
 
