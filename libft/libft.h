@@ -6,7 +6,7 @@
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/28 22:28:31 by sisidra           #+#    #+#             */
-/*   Updated: 2021/01/06 07:21:06 by ecelsa           ###   ########.fr       */
+/*   Updated: 2021/01/07 20:32:13 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ char				*ft_strtrim(char const *s);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 int					ft_atoi(const char *str);
+double				ft_atof(char *num);
 int					ft_isalpha(int c);
 int					ft_isalnum(int c);
 void				ft_bzero(void *str, size_t n);

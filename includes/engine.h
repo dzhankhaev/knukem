@@ -192,7 +192,7 @@ typedef struct	s_engine
 	t_edit		edit;
 	t_line		borders;			//	границы отображения (установлены во всё окно)
 	t_player	player;
-	t_sect	*sectors;			//	считанная карта
+	t_sect	*sectors;				//	считанная карта
 	int 		num_sectors;		//	количество секторов в карте
 	t_queue		*queue;				//	очередь секторов
 	t_queue		*future;			//	указатель заполнения

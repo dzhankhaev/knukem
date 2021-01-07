@@ -1,6 +1,6 @@
 #include "engine.h"
 
-void	sub_load_data(t_engine *engine, t_all *all)
+void	load_data(t_engine *engine, t_all *all)
 {
 	int fd;
 	char *buf, word[256], *ptr;
@@ -8,9 +8,12 @@ void	sub_load_data(t_engine *engine, t_all *all)
 	int n, m, NumVertices = 0;
 	int *num = NULL;
 	float angle;
-	char  **split;
-
+	char		**split;
+	char		**sub;
+	int			i;
+	t_sect		*sect;
 	engine->sectors = NULL;
+	engine->num_sectors = 0;
 	fd = open("map-clear.txt", O_RDONLY);
 	all->mapsize = (t_xyz){0, 0, 0};
 	all->min_coord = (t_xy){0, 0};
@@ -18,11 +21,86 @@ void	sub_load_data(t_engine *engine, t_all *all)
 	while (get_next_line(fd, &buf))
 	{
 		split = ft_strsplit(buf, '\t');
+		if (ft_strequ(split[0], "vertex"))
+		{
+			v.y = ft_atoi(split[1]);
+			sub = ft_strsplit(split[2], ' ');
+			i = -1;
+			while (++i < ft_arrlen((void**)sub))
+			{
+				NumVertices++;
+				v.x = ft_atoi(sub[i]);
+				vert = realloc(vert, sizeof(vert) * NumVertices);
+				vert[NumVertices - 1] = v;
+				all->mapsize.x = v.x > all->mapsize.x ? v.x : all->mapsize.x;
+				all->mapsize.y = v.y > all->mapsize.y ? v.y : all->mapsize.y;
+				all->max_coord = (t_xy){all->mapsize.x, all->mapsize.y};
+				all->min_coord.x = v.x < all->min_coord.x ? v.x : all->min_coord.x;
+				all->min_coord.y = v.y < all->min_coord.y ? v.y : all->min_coord.y;
+			}
+			ft_free_split(sub);
+		}
+		else if (ft_strequ(split[0], "sector"))
+		{
+			int arr_len;
+			engine->sectors = realloc(engine->sectors, ++engine->num_sectors * sizeof(*engine->sectors));
+			t_sect *sect = &engine->sectors[engine->num_sectors - 1];
+			sub = ft_strsplit(split[1],' ');
+			sect->floor = ft_atoi(sub[0]);
+			sect->ceil = ft_atoi(sub[1]);
+			all->mapsize.z = sect->floor > all->mapsize.z ? sect->floor : all->mapsize.z;
+			ft_free_split(sub);
+			sub = ft_strsplit(split[2], ' ');
+			arr_len = ft_arrlen((void**)sub);
+			sect->vertex = (t_xy*)malloc(sizeof(t_xy) * arr_len + 1);
+			i = -1;
+			while (++i < arr_len)
+			{
+				v.x = vert[ft_atoi(sub[i])].x;
+				v.y = vert[ft_atoi(sub[i])].y;
+				sect->vertex[i + 1] = v;
+				if (i == arr_len - 1)
+					sect->vertex[0] = v;
+			}
+			ft_free_split(sub);
+			sub = ft_strsplit(split[3], ' ');
+			sect->npoints = arr_len;
+			sect->neighbors = (int*)malloc(sizeof(int) * arr_len);
+			i = -1;
+			while (++i < arr_len)
+				sect->neighbors[i] = ft_atoi(sub[i]);
+			ft_free_split(sub);
+			if (ft_arrlen((void**)split) >= 5)
+				sect->doors = ft_atoi(split[4]);
+			else
+				sect->doors = -1;
+		}
+		else if (ft_strequ(split[0], "player"))
+		{
+			sub = ft_strsplit(split[1], ' ');
+			if (ft_arrlen((void**)sub) == 4)
+			{
+				engine->player.where = (t_xyz){ft_atof(sub[0]), 
+															ft_atof(sub[1]), 0};
+				engine->player.velocity = (t_xyz){0, 0, 0};
+				engine->player.angle = ft_atof(sub[2]);
+				engine->player.anglecos = 0;
+				engine->player.anglesin = 0;
+				engine->player.vangle = 0;
+				engine->player.sector = ft_atoi(sub[3]);
+				engine->player.where.z = 
+					engine->sectors[engine->player.sector].floor + EYE_HEIGHT;
+			}
+			ft_free_split(sub);
+		}
 		ft_free_split(split);
+		ft_strdel(&buf);
 	}
+	all->draw_floors = (t_xy){0, (all->mapsize.z)};
+	close(fd);
 }
 
-void	load_data(t_engine *engine, t_all *all)
+void	kkload_data(t_engine *engine, t_all *all)
 {
 	engine->sectors = NULL;
 	FILE *fp = fopen("map-clear.txt", "rt");
@@ -73,13 +151,13 @@ void	load_data(t_engine *engine, t_all *all)
 
 			sect->npoints = m /= 2; //количество соседей и вершин этого сектора (всегда одинаково)
 			sect->neighbors = malloc((m) * sizeof(*sect->neighbors));
-			sect->doors = malloc((m) * sizeof(*sect->doors));
+			// sect->doors = malloc((m) * sizeof(*sect->doors));
 			sect->vertex = malloc((m + 1) * sizeof(*sect->vertex));
 			//цикл запишет правую половину num массива, то есть соседей
 			for (n = 0; n < m; ++n)
 			{
 				sect->neighbors[n] = num[m + n];
-				sect->doors[n] = -1;
+				// sect->doors[n] = -1;
 			}
 			for (n = 0; n < m; ++n)
 			    //в num[n] перечислены номера вершин сектора
@@ -115,7 +193,7 @@ void unload_data(t_engine *engine)
 	{
 		free(engine->sectors[i].vertex);
 		free(engine->sectors[i].neighbors);
-		free(engine->sectors[i].doors);
+		// free(engine->sectors[i].doors);
 		if (engine->graf[i].g_num > 0)
 		{
 			free(engine->graf[i].wall);

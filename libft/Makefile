@@ -11,7 +11,8 @@ LIB = get_next_line c_mod c_arg c_add c_sub c_set c_sqr c_pow ft_swap\
 		ft_strstr ft_strncat ft_strcmp ft_strcpy ft_strlen ft_strequ\
 		ft_strmap ft_strmapi ft_strncpy ft_strnequ ft_strsplit ft_strsub\
 		ft_strtrim ft_putchar ft_putchar_fd ft_putnbr ft_putnbr_fd ft_putstr\
-		ft_putstr_fd ft_putendl ft_putendl_fd ft_realloc ft_free_split ft_arrlen
+		ft_putstr_fd ft_putendl ft_putendl_fd ft_realloc ft_free_split ft_arrlen\
+		ft_atof
 FILES = $(patsubst %, %.o, $(LIB))
 
 all: $(NAME)
