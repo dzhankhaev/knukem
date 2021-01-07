@@ -2,9 +2,9 @@
 # define EDITOR_H
 
 # ifdef __linux__
-#  include "SDL.h"
-#  include "SDL_ttf.h"
-#  include "SDL_image.h"
+#  include "../SDL/SDL.h"
+#  include "../SDL/SDL_ttf.h"
+#  include "../SDL2_image-2.0.5/SDL_image.h"
 # elif __APPLE__
 #  include <SDL2/SDL.h>
 #  include <SDL2_ttf/SDL_ttf.h>

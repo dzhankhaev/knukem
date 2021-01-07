@@ -52,7 +52,7 @@ void	draw_area(t_sdl *sdl, t_all *all)
 	if (all->buttons[NEW_SECT].state == 1)
 		draw_circle(sdl, (t_xy){all->point.x * all->step + c.x + all->area.x,
 			all->point.y * all->step + c.y + all->area.y}, 2, WHITE);
-	if (all->temp->npoints > 0)
+	if (all->temp->npoints > 0 && all->buttons[0].state == 1)
 		draw_temp(all, sdl, all->temp, all->delta);
 	draw_sprite_picked(all, sdl, &all->sprites, &c);
 }

@@ -1,12 +1,10 @@
 #include "editor.h"
 #include "engine.h"
 
-void	apply_changes(t_all *all, t_button *btn)
+void	apply_changes(t_all *all, t_button *btn, int i)
 {
-	int		i;
 	t_xy	*temp;
 	
-	i = 2;
 	while (i < BUTTONS)
 	{
 		if (btn[i].state == 1)
@@ -32,6 +30,33 @@ void	apply_changes(t_all *all, t_button *btn)
 		temp->y += 1;
 }
 
+void	sector_change(t_sect *sectors, t_button *buttons, int num)
+{
+	int i;
+
+	i = 6;
+	while(i < BUTTONS)
+	{
+		if(buttons[i].state)
+			break;
+		i++;
+	}
+	if (i - 6 == 0)
+		sectors[num].floor -= 1;
+	else if (i - 6 == 1)
+	{
+		sectors[num].ceil += sectors[num].floor == sectors[num].ceil ? 1 : 0;
+		sectors[num].floor += 1;
+	}
+	else if (i - 6 == 2)
+	{
+		sectors[num].floor -= sectors[num].floor == sectors[num].ceil ? 1 : 0;
+		sectors[num].ceil += 1;
+	}
+	else if (i - 6 == 3)
+		sectors[num].ceil += 1;
+}
+
 void    interact(t_all *all)
 {
 	SDL_Event		event;
@@ -47,7 +72,11 @@ void    interact(t_all *all)
 			if (cur_time - last_time > FPS)
 				break ;
 		}
-		apply_changes(all, all->buttons);
+		if(all->swap_num == -1)
+			apply_changes(all, all->buttons, 2);
+		else
+			sector_change(all->sectors, all->buttons, all->swap_num);
+		
 		if(event.type == SDL_KEYDOWN || event.type == SDL_KEYUP || event.type == SDL_MOUSEMOTION
 			|| event.type == SDL_MOUSEBUTTONUP || event.type == SDL_MOUSEBUTTONDOWN || all->on)
 		{
