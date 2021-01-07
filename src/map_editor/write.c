@@ -169,8 +169,9 @@ int write_map(char *name, t_all *all)
         j = 1;
         if (vert[i][0] != 0)
         {
-            ft_putstr_fd("vertex    ", fd);
+            ft_putstr_fd("vertex\t", fd);
             ft_putnbr_fd(i, fd);
+            ft_putstr_fd("\t", fd);
             while(j <= vert[i][0])
             {
                 ft_putchar_fd(' ', fd);
@@ -189,7 +190,7 @@ int write_map(char *name, t_all *all)
     {
         //while (j < all->sectors[i].npoints)
           //  printf("y = %d, x = %d ", i, (int)all->sectors[i].vertex[j++].x);
-        ft_putstr_fd("sector    ", fd);
+        ft_putstr_fd("sector\t", fd);
         ft_putnbr_fd((int)all->sectors[i].floor, fd);
         ft_putchar_fd(' ', fd);
         ft_putnbr_fd((int)all->sectors[i].ceil, fd);
@@ -199,7 +200,7 @@ int write_map(char *name, t_all *all)
         while(j < all->sectors[i].npoints)
         {
             ft_putnbr_fd(get_order_num(all->sectors[i].vertex[j], vert), fd);
-            ft_putchar_fd('\t', fd);
+            ft_putchar_fd(' ', fd);
             j++;
         }
         ft_putnbr_fd(get_order_num(all->sectors[i].vertex[0], vert), fd);
@@ -208,21 +209,21 @@ int write_map(char *name, t_all *all)
         while (j < all->sectors[i].npoints)
         {
             ft_putnbr_fd(all->sectors[i].neighbors[j], fd);
-            ft_putchar_fd('\t', fd);
+            ft_putchar_fd(' ', fd);
             j++;
         }
         i++;
         ft_putchar_fd('\n', fd);
     }
-    ft_putstr_fd("player    ", fd);
+    ft_putstr_fd("player\t", fd);
     ft_putnbr_fd((int)all->player.where.x, fd);
-    ft_putchar_fd('\t', fd);
+    ft_putchar_fd(' ', fd);
     ft_putnbr_fd((int)all->player.where.y, fd);
-    ft_putchar_fd('\t', fd);
+    ft_putchar_fd(' ', fd);
     ft_putnbr_fd((int)all->player.where.z, fd);
-    ft_putchar_fd('\t', fd);
+    ft_putchar_fd(' ', fd);
     ft_putnbr_fd(all->player.sector, fd);
-    ft_putchar_fd('\n', fd);
+    ft_putchar_fd(' ', fd);
 
     ft_memdel((void*)vert);
 
