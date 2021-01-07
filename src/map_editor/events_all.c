@@ -95,6 +95,7 @@ void	button_click(t_all *all, t_button *buttons, SDL_MouseButtonEvent *event, in
 				buttons[i].state = buttons[i].state == 1 ? 0 : 1;
 			else
 				buttons[i].state = 0;
+			all->swap_num = -1;
 		}
 		else if(all->mouse.z == 0)
 		{
