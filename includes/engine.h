@@ -200,7 +200,7 @@ typedef struct	s_engine
 	int 		max_queue;
 	int 		close_request;
 	t_fline		wall;				//	текущая стена со всеми преобразованиями
-	t_fline		ow;					//	текущая стена без отрезания частей, не попавших в кадр
+	t_fline		ow;					//	преобразованное граффити
 	int			tline[W];			//	верхняя линия раздела
 	int			bline[W];			//	нижняя линия раздела
 	int			danimbuf[30];		//	очередь анимаций дверей. Шаг = 2, первое значение сектор, второе вид анимации
@@ -250,7 +250,7 @@ int 			transform_sprite(t_engine *engine);
 void			normi_sprite(t_sprites1 sprite, t_player player);
 void			rotate_sprite(t_sprites1 sprite, t_player player);
 void			perspective_transform2(t_sprites1 sprite, t_player player);
-void			render_graf(t_engine *engine, int sectorno, int i);
+void			graf_proccesing(t_engine *engine, int sectorno, int i);
 void			graf_mod(t_engine *engine, int sectorno, int i);
 t_ixyz			tx_wall_mod(t_engine *engine, int sectorno, int i);
 t_ixyz			tx_plane_mod(t_engine *engine, int sectorno, int i);

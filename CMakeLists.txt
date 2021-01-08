@@ -75,7 +75,7 @@ add_executable(d-k3d
 		src/manage_data.c
 		src/run_queue.c
 		src/transform_wall.c
-		src/render/render_graf.c
+		src/render/graf_proccesing.c
 		src/editor/graf_mod.c
 		src/editor/tx_mod.c
 		src/editor/door_mod.c

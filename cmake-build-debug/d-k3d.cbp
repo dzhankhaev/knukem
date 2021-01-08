@@ -208,6 +208,9 @@
 		<Unit filename="/home/chel/Desktop/knukem/src/render/ceil_and_floor_init.c">
 			<Option target="d-k3d"/>
 		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/render/graf_proccesing.c">
+			<Option target="d-k3d"/>
+		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/src/render/line">
 			<Option target="d-k3d"/>
 		</Unit>
@@ -221,9 +224,6 @@
 			<Option target="d-k3d"/>
 		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/src/render/minimap.c">
-			<Option target="d-k3d"/>
-		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/render/render_graf.c">
 			<Option target="d-k3d"/>
 		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/src/render/render_hplane.c">

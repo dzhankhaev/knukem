@@ -1142,6 +1142,33 @@ src/render/ceil_and_floor_init.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.s
 .PHONY : src/render/ceil_and_floor_init.c.s
 
+src/render/graf_proccesing.o: src/render/graf_proccesing.c.o
+
+.PHONY : src/render/graf_proccesing.o
+
+# target to build an object file
+src/render/graf_proccesing.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/graf_proccesing.c.o
+.PHONY : src/render/graf_proccesing.c.o
+
+src/render/graf_proccesing.i: src/render/graf_proccesing.c.i
+
+.PHONY : src/render/graf_proccesing.i
+
+# target to preprocess a source file
+src/render/graf_proccesing.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/graf_proccesing.c.i
+.PHONY : src/render/graf_proccesing.c.i
+
+src/render/graf_proccesing.s: src/render/graf_proccesing.c.s
+
+.PHONY : src/render/graf_proccesing.s
+
+# target to generate assembly for a file
+src/render/graf_proccesing.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/graf_proccesing.c.s
+.PHONY : src/render/graf_proccesing.c.s
+
 src/render/line/render_hline.o: src/render/line/render_hline.c.o
 
 .PHONY : src/render/line/render_hline.o
@@ -1249,33 +1276,6 @@ src/render/minimap.s: src/render/minimap.c.s
 src/render/minimap.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/minimap.c.s
 .PHONY : src/render/minimap.c.s
-
-src/render/render_graf.o: src/render/render_graf.c.o
-
-.PHONY : src/render/render_graf.o
-
-# target to build an object file
-src/render/render_graf.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_graf.c.o
-.PHONY : src/render/render_graf.c.o
-
-src/render/render_graf.i: src/render/render_graf.c.i
-
-.PHONY : src/render/render_graf.i
-
-# target to preprocess a source file
-src/render/render_graf.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_graf.c.i
-.PHONY : src/render/render_graf.c.i
-
-src/render/render_graf.s: src/render/render_graf.c.s
-
-.PHONY : src/render/render_graf.s
-
-# target to generate assembly for a file
-src/render/render_graf.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_graf.c.s
-.PHONY : src/render/render_graf.c.s
 
 src/render/render_hplane.o: src/render/render_hplane.c.o
 
@@ -1910,6 +1910,9 @@ help:
 	@echo "... src/render/ceil_and_floor_init.o"
 	@echo "... src/render/ceil_and_floor_init.i"
 	@echo "... src/render/ceil_and_floor_init.s"
+	@echo "... src/render/graf_proccesing.o"
+	@echo "... src/render/graf_proccesing.i"
+	@echo "... src/render/graf_proccesing.s"
 	@echo "... src/render/line/render_hline.o"
 	@echo "... src/render/line/render_hline.i"
 	@echo "... src/render/line/render_hline.s"
@@ -1922,9 +1925,6 @@ help:
 	@echo "... src/render/minimap.o"
 	@echo "... src/render/minimap.i"
 	@echo "... src/render/minimap.s"
-	@echo "... src/render/render_graf.o"
-	@echo "... src/render/render_graf.i"
-	@echo "... src/render/render_graf.s"
 	@echo "... src/render/render_hplane.o"
 	@echo "... src/render/render_hplane.i"
 	@echo "... src/render/render_hplane.s"

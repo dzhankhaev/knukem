@@ -46,6 +46,14 @@ unistd.h
 string.h
 -
 
+../includes/events.h
+engine.h
+../includes/engine.h
+
+../includes/utilits.h
+engine.h
+../includes/engine.h
+
 ../libft/libft.h
 unistd.h
 -
@@ -58,9 +66,17 @@ stdlib.h
 math.h
 -
 
-/home/chel/Desktop/knukem/src/editor/door_mod.c
+/home/chel/Desktop/knukem/src/game_loop.c
 engine.h
-/home/chel/Desktop/knukem/src/editor/engine.h
+/home/chel/Desktop/knukem/src/engine.h
+events.h
+/home/chel/Desktop/knukem/src/events.h
+
+/home/chel/Desktop/knukem/src/render/graf_proccesing.c
+engine.h
+/home/chel/Desktop/knukem/src/render/engine.h
+utilits.h
+/home/chel/Desktop/knukem/src/render/utilits.h
 
 /usr/include/SDL2/SDL_image.h
 SDL.h

@@ -54,6 +54,5 @@ int			transform_wall(t_engine *engine, t_fline *wall)
 		wall->color = 0;
 		return (0); //то что не было отрезано и находится частично за спиной, а так же то что целиком лежит вне видимости тоже не рендерим.
 	}
-
 	return (1);
 }

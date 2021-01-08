@@ -805,18 +805,18 @@ CMakeFiles/d-k3d.dir/src/transform_wall.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/transform_wall.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/transform_wall.c -o CMakeFiles/d-k3d.dir/src/transform_wall.c.s
 
-CMakeFiles/d-k3d.dir/src/render/render_graf.c.o: CMakeFiles/d-k3d.dir/flags.make
-CMakeFiles/d-k3d.dir/src/render/render_graf.c.o: ../src/render/render_graf.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object CMakeFiles/d-k3d.dir/src/render/render_graf.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/render_graf.c.o   -c /home/chel/Desktop/knukem/src/render/render_graf.c
+CMakeFiles/d-k3d.dir/src/render/graf_proccesing.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/render/graf_proccesing.c.o: ../src/render/graf_proccesing.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object CMakeFiles/d-k3d.dir/src/render/graf_proccesing.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/graf_proccesing.c.o   -c /home/chel/Desktop/knukem/src/render/graf_proccesing.c
 
-CMakeFiles/d-k3d.dir/src/render/render_graf.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/render_graf.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/render/render_graf.c > CMakeFiles/d-k3d.dir/src/render/render_graf.c.i
+CMakeFiles/d-k3d.dir/src/render/graf_proccesing.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/graf_proccesing.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/render/graf_proccesing.c > CMakeFiles/d-k3d.dir/src/render/graf_proccesing.c.i
 
-CMakeFiles/d-k3d.dir/src/render/render_graf.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/render_graf.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/render/render_graf.c -o CMakeFiles/d-k3d.dir/src/render/render_graf.c.s
+CMakeFiles/d-k3d.dir/src/render/graf_proccesing.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/graf_proccesing.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/render/graf_proccesing.c -o CMakeFiles/d-k3d.dir/src/render/graf_proccesing.c.s
 
 CMakeFiles/d-k3d.dir/src/editor/graf_mod.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/editor/graf_mod.c.o: ../src/editor/graf_mod.c
@@ -928,7 +928,7 @@ d__k3d_OBJECTS = \
 "CMakeFiles/d-k3d.dir/src/manage_data.c.o" \
 "CMakeFiles/d-k3d.dir/src/run_queue.c.o" \
 "CMakeFiles/d-k3d.dir/src/transform_wall.c.o" \
-"CMakeFiles/d-k3d.dir/src/render/render_graf.c.o" \
+"CMakeFiles/d-k3d.dir/src/render/graf_proccesing.c.o" \
 "CMakeFiles/d-k3d.dir/src/editor/graf_mod.c.o" \
 "CMakeFiles/d-k3d.dir/src/editor/tx_mod.c.o" \
 "CMakeFiles/d-k3d.dir/src/editor/door_mod.c.o" \
@@ -993,7 +993,7 @@ d-k3d: CMakeFiles/d-k3d.dir/src/main.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/manage_data.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/run_queue.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/transform_wall.c.o
-d-k3d: CMakeFiles/d-k3d.dir/src/render/render_graf.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/render/graf_proccesing.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/editor/graf_mod.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/editor/tx_mod.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/editor/door_mod.c.o

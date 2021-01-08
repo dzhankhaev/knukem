@@ -37,7 +37,7 @@ movement/move.c\
 render/ceil_and_floor_init.c\
 render/line\
 render/minimap.c\
-render/render_graf.c\
+render/graf_proccesing.c\
 render/render_hplane.c\
 render/render_scene.c\
 render/render_sky.c\
