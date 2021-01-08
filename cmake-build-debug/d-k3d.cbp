@@ -5,7 +5,7 @@
 		<Option title="d-k3d"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SDL2\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\SDL2\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/chel/Desktop/knukem/cmake-build-debug"/>
@@ -44,6 +44,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/usr/local/include/SDL2"/>
 					<Add directory="/usr/include/SDL2"/>
 					<Add directory="/home/chel/Desktop/knukem/d-k3d"/>
 					<Add directory="/home/chel/Desktop/knukem/includes"/>
@@ -67,6 +68,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/usr/local/include/SDL2"/>
 					<Add directory="/usr/include/SDL2"/>
 					<Add directory="/home/chel/Desktop/knukem/d-k3d"/>
 					<Add directory="/home/chel/Desktop/knukem/includes"/>
@@ -84,16 +86,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/chel/Desktop/knukem/includes/arg_defines.h">
-			<Option target="d-k3d"/>
-		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/includes/engine.h">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/includes/math_utilits.h">
+		<Unit filename="/home/chel/Desktop/knukem/includes/events.h">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/fill_queue.c">
+		<Unit filename="/home/chel/Desktop/knukem/includes/utilits.h">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/cut_wall.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/editor/real_time_edit.c">
 			<Option target="d-k3d"/>
 		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/src/game_loop.c">
@@ -102,7 +107,16 @@
 		<Unit filename="/home/chel/Desktop/knukem/src/init_engine.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/keys_manager.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/key_events/event_edit.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/key_events/event_movement.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/key_events/keys_manager.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/lighting.c">
 			<Option target="d-k3d"/>
 		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/src/main.c">
@@ -111,32 +125,62 @@
 		<Unit filename="/home/chel/Desktop/knukem/src/manage_data.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/math_utilits/mathf.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/movement/fall.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/math_utilits/vector_operations.c">
-			<Option target="d-k3d"/>
-		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/move.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/movement/move.c">
 			<Option target="d-k3d"/>
 		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/src/render/line/render_line.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/render/line/render_line_with_angle.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/render/line/render_vline.c">
 			<Option target="d-k3d"/>
 		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/src/render/minimap.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/render/rotate.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/render/render_wall.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/run_queue.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/transform_wall.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math_utilits/determine_intersection.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math_utilits/intersection_point.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math_utilits/mathf.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math_utilits/perspective_transform.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math_utilits/rotates.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits/swap.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits/utilits.c">
 			<Option target="d-k3d"/>
 		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/../../../../usr/lib/x86_64-linux-gnu/cmake/SDL2/sdl2-config.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SDL2\"/>
+		<Unit filename="/home/chel/Desktop/knukem/FindSDL2_image.cmake">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/../../../../usr/local/lib/cmake/SDL2/sdl2-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\SDL2\"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/../../../../usr/local/lib/cmake/SDL2/sdl2-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\SDL2\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

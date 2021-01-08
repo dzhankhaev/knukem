@@ -1,50 +1,61 @@
 #include "engine.h"
+#include "events.h"
 
-void			draw(t_engine *engine)
+static void	reset(t_engine *engine)
 {
-	engine->max_queue = 32;
-	engine->future = engine->queue;
-	engine->present = engine->queue;
-	engine->present->sectorno = CUR_SECT;
-	while (engine->present + 1 != engine->queue + engine->max_queue)
+	int	i;
+
+	i = 0;
+	//линия раздела (для рендеринга)
+	while (i < W)
 	{
-		fill_queue(engine, engine->present->sectorno);
+		engine->tline[i] = 0;
+		engine->bline[i] = H - 1;
+		engine->yctop[i] = 0;
+		engine->ycbot[i] = H - 1;
+		engine->yftop[i] = 0;
+		engine->yfbot[i++] = H - 1;
+	}
+	engine->edit.mod_s = 0x01ab01;	//запрет на модификацию (прежде нужно найти цель)
+	engine->edit.mod_w = -1;	//запрет на модификацию (прежде нужно найти цель)
+	engine->edit.txno = -1;
+}
+
+static void	draw(t_engine *engine)
+{
+	t_queue	queue[MAX_QUEUE];
+	//все переменные ниже нужно сбрасывать каждый новый кадр
+	engine->max_queue = MAX_QUEUE;
+	engine->queue = queue;
+	*engine->queue = (t_queue){engine->player.sector, 0, W - 1, -1};
+	engine->future = engine->queue + 1;
+	engine->present = engine->queue;
+	while (engine->present != engine->future)
+	{
+		run_queue(engine);
 		engine->present++;
 	}
-
+	render_minimap_hud(engine->minimap, engine->screen);
 }
 
-void init_minimap(t_engine *engine)
+void		game_loop(t_engine *engine)
 {
-	engine->minimap.point = (t_xy){W - W / 8, H - H / 6};
-	engine->minimap.scale =  W / 100;
-	engine->minimap.player_horizontal.color = 0x4444FF;
-	engine->minimap.player_horizontal.x0 = engine->minimap.point.x - 5;
-	engine->minimap.player_horizontal.y0 = engine->minimap.point.y;
-	engine->minimap.player_horizontal.x1 = engine->minimap.point.x + 5;
-	engine->minimap.player_horizontal.y1 = engine->minimap.point.y;
-	engine->minimap.player_vertical.color = 0x4444FF;
-	engine->minimap.player_vertical.x0 = engine->minimap.point.x;
-	engine->minimap.player_vertical.y0 = engine->minimap.point.y - 11;
-	engine->minimap.player_vertical.x1 = engine->minimap.point.x;
-	engine->minimap.player_vertical.y1 = engine->minimap.point.y + 3;
-	engine->minimap.borders = (t_line){W - W / 4, W,
-									H - H / 3, H, 0x555555};
-}
+	int		time;
 
-void game_loop(t_engine *engine)
-{
-	engine->borders = (t_line){0, W, 0, H, 0};
-	init_minimap(engine);
+	time = 0;
+	SDL_SetRelativeMouseMode(SDL_TRUE); //скрывает курсор, он движется относительно окна
 	while (!engine->close_request)
 	{
-		SDL_LockSurface(engine->screen);
-		SDL_FillRect(engine->screen, NULL, 0x000000);
+		reset(engine);
+		keys_manager(engine);
 		move(engine);
+		SDL_LockSurface(engine->screen);
 		draw(engine);
 		SDL_UnlockSurface(engine->screen);
+		real_time_edit(engine);
+		if (SDL_GetTicks() - time < 32)
+			SDL_Delay(32 - SDL_GetTicks() + time);
+		time = SDL_GetTicks();
 		SDL_UpdateWindowSurface(engine->window);
-		keys_manager(engine);
-		SDL_Delay(10);
 	}
 }

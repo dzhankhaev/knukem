@@ -13,9 +13,13 @@ stdlib.h
 -
 stdio.h
 -
+unistd.h
+-
 string.h
 -
 SDL2/SDL.h
+-
+SDL_image.h
 -
 SDL_ttf.h
 -
@@ -24,7 +28,13 @@ SDL_image.h
 SDL_mixer.h
 -
 
-/home/chel/Desktop/knukem/src/render/minimap.c
+../includes/utilits.h
+engine.h
+../includes/engine.h
+
+/home/chel/Desktop/knukem/src/render/render_scene.c
+utilits.h
+/home/chel/Desktop/knukem/src/render/utilits.h
 engine.h
 /home/chel/Desktop/knukem/src/render/engine.h
 
@@ -587,6 +597,14 @@ SDL_error.h
 /usr/include/SDL2/SDL_error.h
 SDL_video.h
 /usr/include/SDL2/SDL_video.h
+begin_code.h
+/usr/include/SDL2/begin_code.h
+close_code.h
+/usr/include/SDL2/close_code.h
+
+/usr/include/SDL2/SDL_ttf.h
+SDL.h
+/usr/include/SDL2/SDL.h
 begin_code.h
 /usr/include/SDL2/begin_code.h
 close_code.h

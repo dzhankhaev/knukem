@@ -54,10 +54,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/124/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/129/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/124/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/129/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -77,31 +77,31 @@ include CMakeFiles/d-k3d.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/d-k3d.dir/flags.make
 
-CMakeFiles/d-k3d.dir/src/init_engine.c.o: CMakeFiles/d-k3d.dir/flags.make
-CMakeFiles/d-k3d.dir/src/init_engine.c.o: ../src/init_engine.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/d-k3d.dir/src/init_engine.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/init_engine.c.o   -c /home/chel/Desktop/knukem/src/init_engine.c
+CMakeFiles/d-k3d.dir/src/init.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/init.c.o: ../src/init.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/d-k3d.dir/src/init.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/init.c.o   -c /home/chel/Desktop/knukem/src/init.c
 
-CMakeFiles/d-k3d.dir/src/init_engine.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/init_engine.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/init_engine.c > CMakeFiles/d-k3d.dir/src/init_engine.c.i
+CMakeFiles/d-k3d.dir/src/init.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/init.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/init.c > CMakeFiles/d-k3d.dir/src/init.c.i
 
-CMakeFiles/d-k3d.dir/src/init_engine.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/init_engine.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/init_engine.c -o CMakeFiles/d-k3d.dir/src/init_engine.c.s
+CMakeFiles/d-k3d.dir/src/init.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/init.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/init.c -o CMakeFiles/d-k3d.dir/src/init.c.s
 
-CMakeFiles/d-k3d.dir/src/keys_manager.c.o: CMakeFiles/d-k3d.dir/flags.make
-CMakeFiles/d-k3d.dir/src/keys_manager.c.o: ../src/keys_manager.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/d-k3d.dir/src/keys_manager.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/keys_manager.c.o   -c /home/chel/Desktop/knukem/src/keys_manager.c
+CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.o: ../src/key_events/keys_manager.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.o   -c /home/chel/Desktop/knukem/src/key_events/keys_manager.c
 
-CMakeFiles/d-k3d.dir/src/keys_manager.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/keys_manager.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/keys_manager.c > CMakeFiles/d-k3d.dir/src/keys_manager.c.i
+CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/key_events/keys_manager.c > CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.i
 
-CMakeFiles/d-k3d.dir/src/keys_manager.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/keys_manager.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/keys_manager.c -o CMakeFiles/d-k3d.dir/src/keys_manager.c.s
+CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/key_events/keys_manager.c -o CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.s
 
 CMakeFiles/d-k3d.dir/src/manage_data.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/manage_data.c.o: ../src/manage_data.c
@@ -142,61 +142,74 @@ CMakeFiles/d-k3d.dir/src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/main.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/main.c -o CMakeFiles/d-k3d.dir/src/main.c.s
 
-CMakeFiles/d-k3d.dir/src/fill_queue.c.o: CMakeFiles/d-k3d.dir/flags.make
-CMakeFiles/d-k3d.dir/src/fill_queue.c.o: ../src/fill_queue.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/d-k3d.dir/src/fill_queue.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/fill_queue.c.o   -c /home/chel/Desktop/knukem/src/fill_queue.c
+CMakeFiles/d-k3d.dir/src/run_queue.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/run_queue.c.o: ../src/run_queue.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/d-k3d.dir/src/run_queue.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/run_queue.c.o   -c /home/chel/Desktop/knukem/src/run_queue.c
 
-CMakeFiles/d-k3d.dir/src/fill_queue.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/fill_queue.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/fill_queue.c > CMakeFiles/d-k3d.dir/src/fill_queue.c.i
+CMakeFiles/d-k3d.dir/src/run_queue.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/run_queue.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/run_queue.c > CMakeFiles/d-k3d.dir/src/run_queue.c.i
 
-CMakeFiles/d-k3d.dir/src/fill_queue.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/fill_queue.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/fill_queue.c -o CMakeFiles/d-k3d.dir/src/fill_queue.c.s
+CMakeFiles/d-k3d.dir/src/run_queue.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/run_queue.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/run_queue.c -o CMakeFiles/d-k3d.dir/src/run_queue.c.s
 
-CMakeFiles/d-k3d.dir/src/move.c.o: CMakeFiles/d-k3d.dir/flags.make
-CMakeFiles/d-k3d.dir/src/move.c.o: ../src/move.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/d-k3d.dir/src/move.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/move.c.o   -c /home/chel/Desktop/knukem/src/move.c
+CMakeFiles/d-k3d.dir/src/movement/move.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/movement/move.c.o: ../src/movement/move.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/d-k3d.dir/src/movement/move.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/movement/move.c.o   -c /home/chel/Desktop/knukem/src/movement/move.c
 
-CMakeFiles/d-k3d.dir/src/move.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/move.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/move.c > CMakeFiles/d-k3d.dir/src/move.c.i
+CMakeFiles/d-k3d.dir/src/movement/move.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/movement/move.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/movement/move.c > CMakeFiles/d-k3d.dir/src/movement/move.c.i
 
-CMakeFiles/d-k3d.dir/src/move.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/move.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/move.c -o CMakeFiles/d-k3d.dir/src/move.c.s
+CMakeFiles/d-k3d.dir/src/movement/move.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/movement/move.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/movement/move.c -o CMakeFiles/d-k3d.dir/src/movement/move.c.s
 
-CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.o: CMakeFiles/d-k3d.dir/flags.make
-CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.o: ../src/math_utilits/vector_operations.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.o   -c /home/chel/Desktop/knukem/src/math_utilits/vector_operations.c
+CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.o: ../src/utilits/math/determine_intersection.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.o   -c /home/chel/Desktop/knukem/src/utilits/math/determine_intersection.c
 
-CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/math_utilits/vector_operations.c > CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.i
+CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/utilits/math/determine_intersection.c > CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.i
 
-CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/math_utilits/vector_operations.c -o CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.s
+CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/utilits/math/determine_intersection.c -o CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.s
 
-CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.o: CMakeFiles/d-k3d.dir/flags.make
-CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.o: ../src/math_utilits/mathf.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.o   -c /home/chel/Desktop/knukem/src/math_utilits/mathf.c
+CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.o: ../src/utilits/math/intersection_point.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.o   -c /home/chel/Desktop/knukem/src/utilits/math/intersection_point.c
 
-CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/math_utilits/mathf.c > CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.i
+CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/utilits/math/intersection_point.c > CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.i
 
-CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/math_utilits/mathf.c -o CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.s
+CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/utilits/math/intersection_point.c -o CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.s
+
+CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.o: ../src/utilits/math/mathf.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.o   -c /home/chel/Desktop/knukem/src/utilits/math/mathf.c
+
+CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/utilits/math/mathf.c > CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.i
+
+CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/utilits/math/mathf.c -o CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.s
 
 CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o: ../src/render/line/render_line.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o   -c /home/chel/Desktop/knukem/src/render/line/render_line.c
 
 CMakeFiles/d-k3d.dir/src/render/line/render_line.c.i: cmake_force
@@ -209,7 +222,7 @@ CMakeFiles/d-k3d.dir/src/render/line/render_line.c.s: cmake_force
 
 CMakeFiles/d-k3d.dir/src/render/minimap.c.o: CMakeFiles/d-k3d.dir/flags.make
 CMakeFiles/d-k3d.dir/src/render/minimap.c.o: ../src/render/minimap.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/d-k3d.dir/src/render/minimap.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/d-k3d.dir/src/render/minimap.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/minimap.c.o   -c /home/chel/Desktop/knukem/src/render/minimap.c
 
 CMakeFiles/d-k3d.dir/src/render/minimap.c.i: cmake_force
@@ -220,67 +233,370 @@ CMakeFiles/d-k3d.dir/src/render/minimap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/minimap.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/render/minimap.c -o CMakeFiles/d-k3d.dir/src/render/minimap.c.s
 
-CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.o: CMakeFiles/d-k3d.dir/flags.make
-CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.o: ../src/render/line/render_line_with_angle.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.o   -c /home/chel/Desktop/knukem/src/render/line/render_line_with_angle.c
+CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.o: ../src/utilits/math/rotates.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.o   -c /home/chel/Desktop/knukem/src/utilits/math/rotates.c
 
-CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/render/line/render_line_with_angle.c > CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.i
+CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/utilits/math/rotates.c > CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.i
 
-CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/render/line/render_line_with_angle.c -o CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.s
+CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/utilits/math/rotates.c -o CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.s
 
-CMakeFiles/d-k3d.dir/src/render/rotate.c.o: CMakeFiles/d-k3d.dir/flags.make
-CMakeFiles/d-k3d.dir/src/render/rotate.c.o: ../src/render/rotate.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/d-k3d.dir/src/render/rotate.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/rotate.c.o   -c /home/chel/Desktop/knukem/src/render/rotate.c
+CMakeFiles/d-k3d.dir/src/transform_wall.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/transform_wall.c.o: ../src/transform_wall.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/d-k3d.dir/src/transform_wall.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/transform_wall.c.o   -c /home/chel/Desktop/knukem/src/transform_wall.c
 
-CMakeFiles/d-k3d.dir/src/render/rotate.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/rotate.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/render/rotate.c > CMakeFiles/d-k3d.dir/src/render/rotate.c.i
+CMakeFiles/d-k3d.dir/src/transform_wall.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/transform_wall.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/transform_wall.c > CMakeFiles/d-k3d.dir/src/transform_wall.c.i
 
-CMakeFiles/d-k3d.dir/src/render/rotate.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/rotate.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/render/rotate.c -o CMakeFiles/d-k3d.dir/src/render/rotate.c.s
+CMakeFiles/d-k3d.dir/src/transform_wall.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/transform_wall.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/transform_wall.c -o CMakeFiles/d-k3d.dir/src/transform_wall.c.s
+
+CMakeFiles/d-k3d.dir/src/cut_wall.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/cut_wall.c.o: ../src/cut_wall.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/d-k3d.dir/src/cut_wall.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/cut_wall.c.o   -c /home/chel/Desktop/knukem/src/cut_wall.c
+
+CMakeFiles/d-k3d.dir/src/cut_wall.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/cut_wall.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/cut_wall.c > CMakeFiles/d-k3d.dir/src/cut_wall.c.i
+
+CMakeFiles/d-k3d.dir/src/cut_wall.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/cut_wall.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/cut_wall.c -o CMakeFiles/d-k3d.dir/src/cut_wall.c.s
+
+CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o: ../src/render/line/render_vline.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o   -c /home/chel/Desktop/knukem/src/render/line/render_vline.c
+
+CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/render/line/render_vline.c > CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.i
+
+CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/render/line/render_vline.c -o CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.s
+
+CMakeFiles/d-k3d.dir/src/render/render_scene.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/render/render_scene.c.o: ../src/render/render_scene.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/d-k3d.dir/src/render/render_scene.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/render_scene.c.o   -c /home/chel/Desktop/knukem/src/render/render_scene.c
+
+CMakeFiles/d-k3d.dir/src/render/render_scene.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/render_scene.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/render/render_scene.c > CMakeFiles/d-k3d.dir/src/render/render_scene.c.i
+
+CMakeFiles/d-k3d.dir/src/render/render_scene.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/render_scene.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/render/render_scene.c -o CMakeFiles/d-k3d.dir/src/render/render_scene.c.s
+
+CMakeFiles/d-k3d.dir/src/render/render_sky.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/render/render_sky.c.o: ../src/render/render_sky.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/d-k3d.dir/src/render/render_sky.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/render_sky.c.o   -c /home/chel/Desktop/knukem/src/render/render_sky.c
+
+CMakeFiles/d-k3d.dir/src/render/render_sky.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/render_sky.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/render/render_sky.c > CMakeFiles/d-k3d.dir/src/render/render_sky.c.i
+
+CMakeFiles/d-k3d.dir/src/render/render_sky.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/render_sky.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/render/render_sky.c -o CMakeFiles/d-k3d.dir/src/render/render_sky.c.s
+
+CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.o: ../src/utilits/math/perspective_transform.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.o   -c /home/chel/Desktop/knukem/src/utilits/math/perspective_transform.c
+
+CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/utilits/math/perspective_transform.c > CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.i
+
+CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/utilits/math/perspective_transform.c -o CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.s
+
+CMakeFiles/d-k3d.dir/src/lighting.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/lighting.c.o: ../src/lighting.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/d-k3d.dir/src/lighting.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/lighting.c.o   -c /home/chel/Desktop/knukem/src/lighting.c
+
+CMakeFiles/d-k3d.dir/src/lighting.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/lighting.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/lighting.c > CMakeFiles/d-k3d.dir/src/lighting.c.i
+
+CMakeFiles/d-k3d.dir/src/lighting.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/lighting.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/lighting.c -o CMakeFiles/d-k3d.dir/src/lighting.c.s
+
+CMakeFiles/d-k3d.dir/src/movement/fall.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/movement/fall.c.o: ../src/movement/fall.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/d-k3d.dir/src/movement/fall.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/movement/fall.c.o   -c /home/chel/Desktop/knukem/src/movement/fall.c
+
+CMakeFiles/d-k3d.dir/src/movement/fall.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/movement/fall.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/movement/fall.c > CMakeFiles/d-k3d.dir/src/movement/fall.c.i
+
+CMakeFiles/d-k3d.dir/src/movement/fall.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/movement/fall.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/movement/fall.c -o CMakeFiles/d-k3d.dir/src/movement/fall.c.s
+
+CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.o: ../src/editor/real_time_edit.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.o   -c /home/chel/Desktop/knukem/src/editor/real_time_edit.c
+
+CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/editor/real_time_edit.c > CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.i
+
+CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/editor/real_time_edit.c -o CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.s
+
+CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.o: ../src/key_events/event_edit.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.o   -c /home/chel/Desktop/knukem/src/key_events/event_edit.c
+
+CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/key_events/event_edit.c > CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.i
+
+CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/key_events/event_edit.c -o CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.s
+
+CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.o: ../src/key_events/event_movement.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.o   -c /home/chel/Desktop/knukem/src/key_events/event_movement.c
+
+CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/key_events/event_movement.c > CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.i
+
+CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/key_events/event_movement.c -o CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.s
+
+CMakeFiles/d-k3d.dir/src/utilits/swap.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/utilits/swap.c.o: ../src/utilits/swap.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/d-k3d.dir/src/utilits/swap.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/swap.c.o   -c /home/chel/Desktop/knukem/src/utilits/swap.c
+
+CMakeFiles/d-k3d.dir/src/utilits/swap.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/utilits/swap.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/utilits/swap.c > CMakeFiles/d-k3d.dir/src/utilits/swap.c.i
+
+CMakeFiles/d-k3d.dir/src/utilits/swap.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/utilits/swap.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/utilits/swap.c -o CMakeFiles/d-k3d.dir/src/utilits/swap.c.s
+
+CMakeFiles/d-k3d.dir/src/utilits/utilits.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/utilits/utilits.c.o: ../src/utilits/utilits.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/d-k3d.dir/src/utilits/utilits.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/utilits.c.o   -c /home/chel/Desktop/knukem/src/utilits/utilits.c
+
+CMakeFiles/d-k3d.dir/src/utilits/utilits.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/utilits/utilits.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/utilits/utilits.c > CMakeFiles/d-k3d.dir/src/utilits/utilits.c.i
+
+CMakeFiles/d-k3d.dir/src/utilits/utilits.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/utilits/utilits.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/utilits/utilits.c -o CMakeFiles/d-k3d.dir/src/utilits/utilits.c.s
+
+CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.o: ../src/utilits/exit_options.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.o   -c /home/chel/Desktop/knukem/src/utilits/exit_options.c
+
+CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/utilits/exit_options.c > CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.i
+
+CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/utilits/exit_options.c -o CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.s
+
+CMakeFiles/d-k3d.dir/src/utilits/load_img.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/utilits/load_img.c.o: ../src/utilits/load_img.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/d-k3d.dir/src/utilits/load_img.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/utilits/load_img.c.o   -c /home/chel/Desktop/knukem/src/utilits/load_img.c
+
+CMakeFiles/d-k3d.dir/src/utilits/load_img.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/utilits/load_img.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/utilits/load_img.c > CMakeFiles/d-k3d.dir/src/utilits/load_img.c.i
+
+CMakeFiles/d-k3d.dir/src/utilits/load_img.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/utilits/load_img.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/utilits/load_img.c -o CMakeFiles/d-k3d.dir/src/utilits/load_img.c.s
+
+CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.o: ../src/render/wall/perspective_init.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.o   -c /home/chel/Desktop/knukem/src/render/wall/perspective_init.c
+
+CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/render/wall/perspective_init.c > CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.i
+
+CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/render/wall/perspective_init.c -o CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.s
+
+CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.o: ../src/render/wall/render_wall.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.o   -c /home/chel/Desktop/knukem/src/render/wall/render_wall.c
+
+CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/render/wall/render_wall.c > CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.i
+
+CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/render/wall/render_wall.c -o CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.s
+
+CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.o: ../src/render/wall/wall_tx_init.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.o   -c /home/chel/Desktop/knukem/src/render/wall/wall_tx_init.c
+
+CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/render/wall/wall_tx_init.c > CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.i
+
+CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/render/wall/wall_tx_init.c -o CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.s
+
+CMakeFiles/d-k3d.dir/src/render/render_hplane.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/render/render_hplane.c.o: ../src/render/render_hplane.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/d-k3d.dir/src/render/render_hplane.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/render_hplane.c.o   -c /home/chel/Desktop/knukem/src/render/render_hplane.c
+
+CMakeFiles/d-k3d.dir/src/render/render_hplane.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/render_hplane.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/render/render_hplane.c > CMakeFiles/d-k3d.dir/src/render/render_hplane.c.i
+
+CMakeFiles/d-k3d.dir/src/render/render_hplane.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/render_hplane.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/render/render_hplane.c -o CMakeFiles/d-k3d.dir/src/render/render_hplane.c.s
+
+CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.o: ../src/render/line/render_hline.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.o   -c /home/chel/Desktop/knukem/src/render/line/render_hline.c
+
+CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/render/line/render_hline.c > CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.i
+
+CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/render/line/render_hline.c -o CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.s
+
+CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.o: ../src/render/ceil_and_floor_init.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.o   -c /home/chel/Desktop/knukem/src/render/ceil_and_floor_init.c
+
+CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/src/render/ceil_and_floor_init.c > CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.i
+
+CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/render/ceil_and_floor_init.c -o CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.s
 
 # Object files for target d-k3d
 d__k3d_OBJECTS = \
-"CMakeFiles/d-k3d.dir/src/init_engine.c.o" \
-"CMakeFiles/d-k3d.dir/src/keys_manager.c.o" \
+"CMakeFiles/d-k3d.dir/src/init.c.o" \
+"CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.o" \
 "CMakeFiles/d-k3d.dir/src/manage_data.c.o" \
 "CMakeFiles/d-k3d.dir/src/game_loop.c.o" \
 "CMakeFiles/d-k3d.dir/src/main.c.o" \
-"CMakeFiles/d-k3d.dir/src/fill_queue.c.o" \
-"CMakeFiles/d-k3d.dir/src/move.c.o" \
-"CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.o" \
-"CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.o" \
+"CMakeFiles/d-k3d.dir/src/run_queue.c.o" \
+"CMakeFiles/d-k3d.dir/src/movement/move.c.o" \
+"CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.o" \
+"CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.o" \
+"CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.o" \
 "CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o" \
 "CMakeFiles/d-k3d.dir/src/render/minimap.c.o" \
-"CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.o" \
-"CMakeFiles/d-k3d.dir/src/render/rotate.c.o"
+"CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.o" \
+"CMakeFiles/d-k3d.dir/src/transform_wall.c.o" \
+"CMakeFiles/d-k3d.dir/src/cut_wall.c.o" \
+"CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o" \
+"CMakeFiles/d-k3d.dir/src/render/render_scene.c.o" \
+"CMakeFiles/d-k3d.dir/src/render/render_sky.c.o" \
+"CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.o" \
+"CMakeFiles/d-k3d.dir/src/lighting.c.o" \
+"CMakeFiles/d-k3d.dir/src/movement/fall.c.o" \
+"CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.o" \
+"CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.o" \
+"CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.o" \
+"CMakeFiles/d-k3d.dir/src/utilits/swap.c.o" \
+"CMakeFiles/d-k3d.dir/src/utilits/utilits.c.o" \
+"CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.o" \
+"CMakeFiles/d-k3d.dir/src/utilits/load_img.c.o" \
+"CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.o" \
+"CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.o" \
+"CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.o" \
+"CMakeFiles/d-k3d.dir/src/render/render_hplane.c.o" \
+"CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.o" \
+"CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.o"
 
 # External object files for target d-k3d
 d__k3d_EXTERNAL_OBJECTS =
 
-d-k3d: CMakeFiles/d-k3d.dir/src/init_engine.c.o
-d-k3d: CMakeFiles/d-k3d.dir/src/keys_manager.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/init.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/manage_data.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/game_loop.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/main.c.o
-d-k3d: CMakeFiles/d-k3d.dir/src/fill_queue.c.o
-d-k3d: CMakeFiles/d-k3d.dir/src/move.c.o
-d-k3d: CMakeFiles/d-k3d.dir/src/math_utilits/vector_operations.c.o
-d-k3d: CMakeFiles/d-k3d.dir/src/math_utilits/mathf.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/run_queue.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/movement/move.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/utilits/math/intersection_point.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/render/minimap.c.o
-d-k3d: CMakeFiles/d-k3d.dir/src/render/line/render_line_with_angle.c.o
-d-k3d: CMakeFiles/d-k3d.dir/src/render/rotate.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/utilits/math/rotates.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/transform_wall.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/cut_wall.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/render/render_scene.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/render/render_sky.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/utilits/math/perspective_transform.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/lighting.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/movement/fall.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/utilits/swap.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/utilits/utilits.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/utilits/load_img.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/render/render_hplane.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.o
+d-k3d: CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.o
 d-k3d: CMakeFiles/d-k3d.dir/build.make
+d-k3d: /usr/lib/x86_64-linux-gnu/libSDL2_image.so
 d-k3d: CMakeFiles/d-k3d.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking C executable d-k3d"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Linking C executable d-k3d"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/d-k3d.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

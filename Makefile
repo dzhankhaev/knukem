@@ -9,28 +9,53 @@ VIOLET_FONT	:= \033[1;35m
 CYAN_FONT	:= \033[1;36m
 WHITE_FONT	:= \033[1;37m
 
-NAME :=	d-k3d
+NAME :=	doom-nukem
 
 HEADERS := engine.h\
-	arg_defines.h\
-	math_utilits.h\
+	utilits.h\
+	events.h\
 
 
 SRC := main.c\
-	render/rotate.c\
-	render/minimap.c\
-	render/line/render_line.c\
-	render/line/render_line_with_angle.c\
-	math_utilits/vector_operations.c\
-	math_utilits/mathf.c\
-	fill_queue.c\
-	init_engine.c\
-	move.c\
-	keys_manager.c\
+	run_queue.c\
+	init.c\
+	lighting.c\
+	transform_wall.c\
+	cut_wall.c\
 	manage_data.c\
 	game_loop.c\
+<<<<<<< HEAD
 	pack.c\
 	unpack.c
+||||||| 7c04a9a
+=======
+	key_events/keys_manager.c\
+	key_events/event_edit.c\
+	key_events/event_movement.c\
+	editor/real_time_edit.c\
+	movement/move.c\
+	movement/fall.c\
+	utilits/math/determine_intersection.c\
+    utilits/math/mathf.c\
+    utilits/math/intersection_point.c\
+    utilits/math/rotates.c\
+    utilits/math/perspective_transform.c\
+    utilits/swap.c\
+    utilits/utilits.c\
+    utilits/exit_options.c\
+    utilits/load_img.c\
+	render/minimap.c\
+	render/render_hplane.c\
+	render/render_sky.c\
+	render/render_scene.c\
+	render/ceil_and_floor_init.c\
+	render/wall/perspective_init.c\
+	render/wall/render_wall.c\
+	render/wall/wall_tx_init.c\
+	render/line/render_line.c\
+	render/line/render_vline.c\
+	render/line/render_hline.c\
+>>>>>>> master
 
 SRCDASH := hud.c $(filter-out main.c, $(SRC))
 SRCARCH := archiver.c $(filter-out main.c, $(SRC))
