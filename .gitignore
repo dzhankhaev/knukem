@@ -1,5 +1,3 @@
-/cmake-build-debug/*
-/.DS_Store/*
-/.idea/*
-/obj/*
-/d-k3d
+cmake_build_debug
+.DS_Store
+*.o

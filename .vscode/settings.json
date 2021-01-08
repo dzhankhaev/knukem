@@ -1,0 +1,22 @@
+{
+	"editor.rulers": [80],
+	"files.associations": {
+		"__hash_table": "c",
+		"__split_buffer": "c",
+		"array": "c",
+		"bitset": "c",
+		"initializer_list": "c",
+		"iterator": "c",
+		"string": "c",
+		"string_view": "c",
+		"unordered_map": "c",
+		"utility": "c",
+		"vector": "c",
+		"ratio": "c",
+		"chrono": "cpp",
+		"iostream": "cpp",
+		"algorithm": "cpp"
+	},
+	"editor.insertSpaces": false
+
+}

@@ -5,19 +5,90 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <string.h>
+<<<<<<< HEAD
+# include <SDL.h>
+//# include <SDL2_ttf/SDL_ttf.h>
+// # include <SDL2_image/SDL_image.h>
+||||||| 7c04a9a
+# include <SDL2/SDL.h>
+//# include <SDL2_ttf/SDL_ttf.h>
+//# include <SDL2_image/SDL_image.h>
+=======
 # include <SDL2/SDL.h>
 # include <SDL_image.h>
 //# include <SDL2_image/SDL_image.h>
 //# include <SDL2_ttf/SDL_ttf.h>
+>>>>>>> master
 //# include <SDL2_mixer/SDL_mixer.h>
 /*
  * ЗАКОММЕНТИРУЙ, ЕСЛИ НЕ КОМПИЛИТСЯ! Временное решение
  */
-/*# include <SDL.h>
-# include <SDL_ttf.h>
+/*# include <SDL.h>*/
+# include <SDL_ttf.h> 
 # include <SDL_image.h>
-# include <SDL_mixer.h>*/
+// # include <SDL_mixer.h>
 
+<<<<<<< HEAD
+//# define W 1920
+//# define H 1080
+# define W 400
+# define H 600
+# define CUR_SECT engine->player.sector
+
+# define NEAR_Z 1e-4f				//TODO что это?
+# define FAR_Z 5					//TODO что это?
+# define NEAR_SIDE 1e-5f
+# define FAR_SIDE 20.f
+# define floor_diff 10
+# define EyeHeight 6				//camera height
+# define DuckHeight 2.5				//camera height when crouching
+# define HeadMargin 1				//how much room above before the head hits the ceiling
+# define KneeHeight 2				//how tall obj are those can be walked over without jumping
+# define hfov (0.73f * H)			//horizontal FOV
+# define vfov (.2f * H)				//vertical FOV
+# define PLAYER engine.player
+# define SECTORS engine.sectors
+# define Yaw(y, z) (y + z * engine->player.yaw)		// calculate yaw angle between y and z values (поворот игрока)
+
+typedef struct	q_queue_obj
+{
+	int			sectorno;	//номер сектора
+	int			size_x1;		//
+	int			size_x2;		//
+}				t_queue_obj;
+
+typedef struct	s_delta
+||||||| 7c04a9a
+//# define W 1920
+//# define H 1080
+# define W 1280
+# define H 720
+# define CUR_SECT engine->player.sector
+
+# define NEAR_Z 1e-4f				//TODO что это?
+# define FAR_Z 5					//TODO что это?
+# define NEAR_SIDE 1e-5f
+# define FAR_SIDE 20.f
+# define floor_diff 10
+# define EyeHeight 6				//camera height
+# define DuckHeight 2.5				//camera height when crouching
+# define HeadMargin 1				//how much room above before the head hits the ceiling
+# define KneeHeight 2				//how tall obj are those can be walked over without jumping
+# define hfov (0.73f * H)			//horizontal FOV
+# define vfov (.2f * H)				//vertical FOV
+# define PLAYER engine.player
+# define SECTORS engine.sectors
+# define Yaw(y, z) (y + z * engine->player.yaw)		// calculate yaw angle between y and z values (поворот игрока)
+
+typedef struct	q_queue_obj
+{
+	int			sectorno;	//номер сектора
+	int			size_x1;		//
+	int			size_x2;		//
+}				t_queue_obj;
+
+typedef struct	s_delta
+=======
 # define W 1920
 # define H 1080
 # define MAX_QUEUE 64				//	максимальная длина очереди секторов
@@ -59,6 +130,7 @@ typedef struct	q_queue
 }				t_queue;
 
 typedef struct	s_delta		//	для алгоритма брезенхема
+>>>>>>> master
 {
 	int			dx;
 	int			dy;
@@ -206,6 +278,27 @@ typedef struct	s_engine
 	t_edit		edit;
 	t_line		borders;			//	границы отображения (установлены во всё окно)
 	t_player	player;
+<<<<<<< HEAD
+	t_sector	*sectors;		//	считанная карта
+	unsigned	num_sectors;	//	количество секторов в карте
+	t_queue_obj		queue[32];
+	t_queue_obj		*future;
+	t_queue_obj		*present;
+	unsigned	max_queue;
+	unsigned	close_request;
+	int 		tmp;
+	int			w;				//размер окна
+	int			h;				//размер окна
+||||||| 7c04a9a
+	t_sector	*sectors;		//	считанная карта
+	unsigned	num_sectors;	//	количество секторов в карте
+	t_queue_obj		queue[32];
+	t_queue_obj		*future;
+	t_queue_obj		*present;
+	unsigned	max_queue;
+	unsigned	close_request;
+	int 		tmp;
+=======
 	t_sector	*sectors;			//	считанная карта
 	int 		num_sectors;		//	количество секторов в карте
 	t_queue		*queue;				//	очередь секторов
@@ -228,6 +321,7 @@ typedef struct	s_engine
 	t_temp		rend_wall;			//используется в rendel_Wall тобы обойти норму
 	t_temp2		rend_plane;			//используется при рендеринге пола и потолка
 	t_img		img[10];
+>>>>>>> master
 }				t_engine;
 
 
