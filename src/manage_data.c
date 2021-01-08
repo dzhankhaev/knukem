@@ -83,9 +83,9 @@ void	load_sector(t_engine *engine, t_all *all, char **split, t_xy *vert)
 		sect->neighbors[i] = ft_atoi(sub[i]);
 	ft_free_split(sub);
 	if (ft_arrlen((void**)split) >= 5)
-		sect->doors = ft_atoi(split[4]);
+		sect->door = ft_atoi(split[4]);
 	else
-		sect->doors = -1;
+		sect->door = -1;
 }
 
 void	load_player(t_engine *engine, char **split)
@@ -139,7 +139,7 @@ void	load_data(t_engine *engine, t_all *all)
 	close(fd);
 }
 
-void	unload_data(t_engine *engine)
+void unload_data(t_engine *engine)
 {
 	int	i;
 

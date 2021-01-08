@@ -49,6 +49,12 @@ void general_init2(t_engine *engine)
 		engine->graf[i].z = 0;
 		i++;
 	}
+	i = 0;
+	while (i < 30)
+	{
+		engine->danimbuf[i] = -1;
+		i++;
+	}
 }
 
 void general_init(t_engine *engine)

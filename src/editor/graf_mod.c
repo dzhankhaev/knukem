@@ -1,7 +1,7 @@
 #include "engine.h"
 #include "utilits.h"
 
-void			graf_memalloc(t_engine *engine, int sectorno, int i)
+static void	graf_memalloc(t_engine *engine, int sectorno, int i)
 {
 	t_graf *graf;
 
@@ -11,7 +11,7 @@ void			graf_memalloc(t_engine *engine, int sectorno, int i)
 	graf->wall = (int *)ft_realloc(graf->wall, sizeof(int) * graf->g_num);
 	graf->z = (float *)ft_realloc(graf->z, sizeof(float) * graf->g_num);
 	graf->coord = (t_fline *)ft_realloc(graf->coord, sizeof(t_fline)
-												  * graf->g_num);
+													 * graf->g_num);
 	//заносим необходимые данные
 	graf->wall[graf->g_num - 1] = i;
 	graf->z[graf->g_num - 1] = engine->player.where.z;
@@ -23,7 +23,7 @@ void			graf_memalloc(t_engine *engine, int sectorno, int i)
 					  engine->edit.txno == -1 ? 1 : engine->edit.txno};
 }
 
-void			create_coord(t_engine *engine, int sectorno)
+static void	create_coord(t_engine *engine, int sectorno)
 {
 	t_graf	*graf;
 	float	angle;
@@ -49,10 +49,10 @@ void			create_coord(t_engine *engine, int sectorno)
 	b.x += engine->player.where.x;
 	b.y += engine->player.where.y;
 	graf->coord[graf->g_num - 1] = (t_fline){a.x, b.x, a.y, b.y,
-									graf->coord[graf->g_num - 1].color};
+											 graf->coord[graf->g_num - 1].color};
 }
 
-void			graf_mod(t_engine *engine, int sectorno, int i)
+void		graf_mod(t_engine *engine, int sectorno, int i)
 {
 	//если стена модифицируема и включен режим редактора граффити
 	if (engine->edit.mod_w != -1 && engine->edit.graf == 2)

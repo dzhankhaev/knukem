@@ -15,24 +15,39 @@ static void		rendering_init(t_engine *engine, int sectorno, int neighbor, int i)
 	{
 		if ((a->x1 > a->x0) && engine->future + 1 != engine->queue + engine->max_queue &&
 			check_repeat(engine, sectorno, neighbor))
-		{
-			if (engine->sectors[sectorno].doors == -1)
-				*(engine->future++) = (t_queue){neighbor, a->x0, a->x1,
-												sectorno, engine->present->door};
-			else if (engine->sectors[sectorno].doors == 0 && neighbor > -1)
-				*(engine->future++) = (t_queue){neighbor, a->x0, a->x1,
-												sectorno, 1};
-		}
+			*(engine->future++) = (t_queue){neighbor, a->x0, a->x1, sectorno};
 		init_wall(engine, engine->sectors[neighbor], a->wall);
 	}
 }
 
-static void		loop(t_engine *engine, int neighbor, t_ixyz t, int i, int sectorno)
+static void		ifdoor(t_engine *engine, int sectorno, int neighbor, int i)
+{
+	t_temp	*a;
+
+	a = &engine->rend_wall;
+	if (neighbor > -1)
+	{
+		if (engine->sectors[neighbor].door > -1)
+			a->wall[5] = perspective_transform(engine->wall,
+											   engine->player.where.z - engine->sectors[neighbor].oldf +
+											   engine->sectors[neighbor].ceil - engine->sectors[neighbor].door,
+											   engine->player.vangle, FLOOR_COLOR);
+	}
+	if (engine->sectors[sectorno].door > -1)
+	{
+		a->wall[4] = perspective_transform(engine->wall,
+										   engine->player.where.z - engine->sectors[sectorno].oldf,
+										   engine->player.vangle, FLOOR_COLOR);
+	}
+}
+
+static void		loop(t_engine *engine, int neighbor, t_ixyz t, int i)
 {
 	t_temp	*a;
 
 	a = &engine->rend_wall;
 	//потребуется для вычисления света и текстур. Для других вычислений нужно упорядочить
+	ifdoor(engine, engine->present->sectorno, neighbor, i);
 	a->w = a->wall[0];
 	to_x_order(a->wall);
 	a->l = engine->wall;
@@ -45,40 +60,16 @@ static void		loop(t_engine *engine, int neighbor, t_ixyz t, int i, int sectorno)
 		a->txx = (engine->u0 * ((a->w.x1 - a->x) * a->l.x1)
 				  + engine->u1 * ((a->x - a->w.x0) * a->l.x0))
 				 / ((a->w.x1 - a->x) * a->l.x1 + (a->x - a->w.x0) * a->l.x0);
-
 		ceil_and_floor_init(engine);		//y[0] и y[1] мы получаем тут путем линейной интерполяции
+		if (engine->sectors[neighbor].floor >= engine->player.where.z)
+			engine->vpfloor.boty[a->x] -= 1;
+		if (neighbor > -1)
+			if (engine->sectors[neighbor].door > -1)
+				a->oy[1] = y_for_x(a->wall[5], a->x);
+		if (engine->sectors[engine->present->sectorno].door > -1)
+			a->oy[1] = y_for_x(a->wall[4], a->x);
 		render_wall(engine, neighbor, t);
-		if (engine->sectors[sectorno].doors == 0 && neighbor > -1)
-		{
-			engine->tdoor[a->x] = iclamp(a->y[2], engine->vpceil.boty[a->x], a->y[1]);
-			engine->bdoor[a->x] = iclamp(a->y[3],a->y[0] , engine->vpfloor.topy[a->x]);
-		}
 		a->x += 1;
-	}
-}
-
-void			door_mod(t_engine *engine, int sectorno, int neighbor, int i)
-{
-	//если стена модифицируема и является порталом установить её как дверь
-	//doors столько же сколько и neighbors.
-	//Нужно внести инфу в текущий сектор и в соседний
-	//Для этого ищем соответствующую позицию у соседнего сектора
-	int	q;
-
-	if (engine->edit.mod_w == i && neighbor > -1
-	&& neighbor == engine->edit.mod_s && engine->edit.door)
-	{
-		q = 0;
-		engine->sectors[sectorno].doors = 0;
-		while (q < engine->sectors[neighbor].npoints)
-		{
-			if (engine->sectors[neighbor].neighbors[q] == sectorno)
-			{
-				engine->sectors[neighbor].doors = 0;
-				break ;
-			}
-			q++;
-		}
 	}
 }
 
@@ -86,14 +77,15 @@ void			render_scene(t_engine *engine, int sectorno, int neighbor, int i)
 {
 	t_ixyz txset;
 
+	door_mod(engine, neighbor, i);
 	rendering_init(engine, sectorno, neighbor, i);
-	door_mod(engine, sectorno, neighbor, i);
 	txset = tx_wall_mod(engine, sectorno, i);
-	loop(engine, neighbor, txset, i, sectorno);
+	loop(engine, neighbor, txset, i);
 	txset = tx_plane_mod(engine, sectorno, i);
 	render_hplane(engine, &engine->vpfloor, txset.x);
 	render_hplane(engine, &engine->vpceil, txset.y);
 	render_graf(engine, sectorno, i);
+	start_danim(engine, neighbor, i);
 	graf_mod(engine, sectorno, i);
 	engine->edit.mod_w = -1;	//после того как модифицировали стену, нужно сбрасывать, иначе применится ко всем стенам
 	render_line((t_line){0, W - 1, 0, 0, 0}, engine->screen, engine->borders);

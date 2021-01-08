@@ -11,8 +11,6 @@ static void	reset(t_engine *engine)
 	{
 		engine->tline[i] = 0;
 		engine->bline[i] = H - 1;
-		engine->tdoor[i] = 0;
-		engine->bdoor[i] = H - 1;
 		i++;
 	}
 	engine->edit.mod_s = 0x01ab01;	//запрет на модификацию (прежде нужно найти цель)
@@ -51,7 +49,6 @@ void		game_loop(t_engine *engine, t_all *all)
 	int		time;
 
 	time = 0;
-
 	while (!engine->close_request)
 	{
 		if (engine->edit.mod)
@@ -65,6 +62,7 @@ void		game_loop(t_engine *engine, t_all *all)
 		move(engine);
 		SDL_LockSurface(engine->screen);
 		draw(engine);
+		door_anim(engine);
 		SDL_UnlockSurface(engine->screen);
 		real_time_edit(engine);
 		if (SDL_GetTicks() - time < 32)

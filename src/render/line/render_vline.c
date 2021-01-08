@@ -10,13 +10,13 @@ void		render_vline(t_engine *engine, t_line p, t_line op, int texture_n)
 	t_temp	*a;
 	int		txx;
 
-	if (p.x0 < 0 || p.x1 >= W)
+	if (p.x0 < 0 || p.x1 >= W || op.y1 - op.y0 == 0)
 		return ;
 	temp = (Uint32 *)engine->screen->pixels;
 	a = &engine->rend_wall;
 	p.y0 = iclamp(p.y0, 0, H - 1);
 	p.y1 = iclamp(p.y1, 0, H - 1);
-	t = op.y1 - op.y0 == 0 ? 1 : (op.y1 - op.y0);
+	t = op.y1 - op.y0;
 	txx = a->txx % engine->img[texture_n].tx->w;
 	while (p.y0 < p.y1)
 	{
