@@ -5,520 +5,525 @@
 		<Option title="d-k3d"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\SDL2\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SDL2\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/chel/Desktop/knukem/cmake-build-debug"/>
+				<Option working_dir="/home/rokosbasil/projects/knukem_merge2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/rokosbasil/projects/knukem_merge2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/rokosbasil/projects/knukem_merge2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/rokosbasil/projects/knukem_merge2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/rokosbasil/projects/knukem_merge2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/chel/Desktop/knukem/cmake-build-debug"/>
+				<Option working_dir="/home/rokosbasil/projects/knukem_merge2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/rokosbasil/projects/knukem_merge2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/rokosbasil/projects/knukem_merge2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/rokosbasil/projects/knukem_merge2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/rokosbasil/projects/knukem_merge2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/chel/Desktop/knukem/cmake-build-debug"/>
+				<Option working_dir="/home/rokosbasil/projects/knukem_merge2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/rokosbasil/projects/knukem_merge2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/rokosbasil/projects/knukem_merge2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/rokosbasil/projects/knukem_merge2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/rokosbasil/projects/knukem_merge2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="d-k3d">
-				<Option output="/home/chel/Desktop/knukem/cmake-build-debug/d-k3d" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/chel/Desktop/knukem/cmake-build-debug"/>
+				<Option output="/home/rokosbasil/projects/knukem_merge2/cmake-build-debug/d-k3d" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/rokosbasil/projects/knukem_merge2/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/local/include/SDL2"/>
 					<Add directory="/usr/include/SDL2"/>
-					<Add directory="/home/chel/Desktop/knukem/d-k3d"/>
-					<Add directory="/home/chel/Desktop/knukem/includes"/>
-					<Add directory="/home/chel/Desktop/knukem/libft"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/home/rokosbasil/projects/knukem_merge2/d-k3d"/>
+					<Add directory="/home/rokosbasil/projects/knukem_merge2/includes"/>
+					<Add directory="/home/rokosbasil/projects/knukem_merge2/libft"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 d-k3d"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/rokosbasil/projects/knukem_merge2/cmake-build-debug/Makefile&quot;  VERBOSE=1 d-k3d"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/rokosbasil/projects/knukem_merge2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/rokosbasil/projects/knukem_merge2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/rokosbasil/projects/knukem_merge2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="d-k3d/fast">
-				<Option output="/home/chel/Desktop/knukem/cmake-build-debug/d-k3d" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/chel/Desktop/knukem/cmake-build-debug"/>
+				<Option output="/home/rokosbasil/projects/knukem_merge2/cmake-build-debug/d-k3d" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/rokosbasil/projects/knukem_merge2/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/local/include/SDL2"/>
 					<Add directory="/usr/include/SDL2"/>
-					<Add directory="/home/chel/Desktop/knukem/d-k3d"/>
-					<Add directory="/home/chel/Desktop/knukem/includes"/>
-					<Add directory="/home/chel/Desktop/knukem/libft"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/home/rokosbasil/projects/knukem_merge2/d-k3d"/>
+					<Add directory="/home/rokosbasil/projects/knukem_merge2/includes"/>
+					<Add directory="/home/rokosbasil/projects/knukem_merge2/libft"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 d-k3d/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/rokosbasil/projects/knukem_merge2/cmake-build-debug/Makefile&quot;  VERBOSE=1 d-k3d/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/rokosbasil/projects/knukem_merge2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/rokosbasil/projects/knukem_merge2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/rokosbasil/projects/knukem_merge2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/chel/Desktop/knukem/libft/c_add.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/c_add.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/c_arg.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/c_arg.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/c_mod.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/c_mod.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/c_pow.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/c_pow.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/c_set.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/c_set.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/c_sqr.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/c_sqr.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/c_sub.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/c_sub.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_arrlen.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_arrlen.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_atof.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_atof.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_atoi.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_atoi.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_bzero.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_bzero.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_free_split.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_free_split.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_isalnum.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_isalnum.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_isalpha.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_isalpha.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_isascii.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_isascii.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_isdigit.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_isdigit.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_isprint.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_isprint.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_itoa.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_itoa.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_lstadd.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_lstadd.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_lstdel.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_lstdel.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_lstdelone.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_lstdelone.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_lstiter.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_lstiter.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_lstmap.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_lstmap.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_lstnew.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_lstnew.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_memalloc.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_memalloc.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_memccpy.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_memccpy.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_memchr.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_memchr.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_memcmp.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_memcmp.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_memcpy.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_memcpy.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_memdel.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_memdel.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_memmove.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_memmove.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_memset.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_memset.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_putchar.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_putchar.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_putchar_fd.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_putchar_fd.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_putendl.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_putendl.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_putendl_fd.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_putendl_fd.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_putnbr.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_putnbr.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_putnbr_fd.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_putnbr_fd.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_putstr.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_putstr.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_putstr_fd.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_putstr_fd.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_realloc.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_realloc.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strcat.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_strcat.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strchr.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_strchr.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strclr.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_strclr.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strcmp.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_strcmp.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strcpy.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_strcpy.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strdel.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_strdel.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strdup.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_strdup.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strequ.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_strequ.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_striter.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_striter.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_striteri.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_striteri.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strjoin.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_strjoin.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strlcat.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_strlcat.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strlen.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_strlen.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strmap.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_strmap.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strmapi.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_strmapi.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strncat.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_strncat.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strncmp.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_strncmp.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strncpy.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_strncpy.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strnequ.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_strnequ.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strnew.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_strnew.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strnstr.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_strnstr.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strrchr.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_strrchr.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strsplit.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_strsplit.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strstr.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_strstr.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strsub.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_strsub.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strtrim.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_strtrim.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_swap.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_swap.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_tolower.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_tolower.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/ft_toupper.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/ft_toupper.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/libft/get_next_line.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/get_next_line.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/cut_wall.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/archiver.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/door_animations.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/cut_wall.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/editor/door_mod.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/door_animations.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/editor/graf_mod.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/editor/door_mod.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/editor/real_time_edit.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/editor/graf_mod.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/editor/tx_mod.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/editor/real_time_edit.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/game_loop.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/editor/tx_mod.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/init.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/game_loop.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/key_events">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/init.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/key_events/event_edit.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/init_engine.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/key_events/event_movement.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/key_events">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/key_events/keys_manager.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/key_events/event_edit.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/lighting.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/key_events/event_movement.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/main.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/key_events/keys_manager.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/manage_data.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/lighting.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/draw_all.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/main.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/draw_map.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/manage_data.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/draw_sprites.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/map_editor/draw_all.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/draw_ui.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/map_editor/draw_map.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/drawing_utils.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/map_editor/draw_sprites.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/errors.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/map_editor/draw_ui.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/events_all.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/map_editor/drawing_utils.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/events_map.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/map_editor/errors.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/init.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/map_editor/events_all.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/main.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/map_editor/events_map.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/math.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/map_editor/init.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/obj_detection.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/map_editor/main.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/pixels.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/map_editor/math.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/reader.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/map_editor/obj_detection.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/sector_add.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/map_editor/pixels.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/sector_check.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/map_editor/reader.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/sector_neighbors.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/map_editor/sector_add.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/sector_remove.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/map_editor/sector_check.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/texture.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/map_editor/sector_neighbors.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/write.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/map_editor/sector_remove.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/movement">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/map_editor/texture.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/movement/fall.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/map_editor/write.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/movement/move.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/movement">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/render">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/movement/fall.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/render/ceil_and_floor_init.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/movement/move.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/render/graf_proccesing.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/pack.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/render/line">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/render">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/render/line/render_hline.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/render/ceil_and_floor_init.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/render/line/render_line.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/render/graf_proccesing.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/render/line/render_vline.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/render/line">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/render/minimap.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/render/line/render_hline.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/render/render_hplane.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/render/line/render_line.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/render/render_scene.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/render/line/render_vline.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/render/render_sky.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/render/minimap.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/render/sprite_render.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/render/render_hplane.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/render/transform_sprite.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/render/render_scene.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/render/wall">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/render/render_sky.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/render/wall/perspective_init.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/render/sprite_render.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/render/wall/render_wall.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/render/transform_sprite.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/render/wall/wall_tx_init.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/render/wall">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/run_queue.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/render/wall/perspective_init.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/transform_wall.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/render/wall/render_wall.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/utilits">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/render/wall/wall_tx_init.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/utilits/exit_options.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/run_queue.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/utilits/load_img.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/transform_wall.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/unpack.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math/determine_intersection.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/utilits">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math/intersection_point.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/utilits/exit_options.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math/mathf.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/utilits/load_img.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math/perspective_transform.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/utilits/math">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math/rotates.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/utilits/math/determine_intersection.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/utilits/swap.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/utilits/math/intersection_point.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/utilits/utilits.c">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/utilits/math/mathf.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/CMakeLists.txt">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/utilits/math/perspective_transform.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/utilits/math/rotates.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/utilits/swap.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/utilits/utilits.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/FindSDL2_image.cmake">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/FindSDL2_image.cmake">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/FindSDL2_ttf.cmake">
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/FindSDL2_ttf.cmake">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/../../../../usr/local/lib/cmake/SDL2/sdl2-config-version.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\SDL2\"/>
-		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/../../../../usr/local/lib/cmake/SDL2/sdl2-config.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\SDL2\"/>
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/../../../../usr/lib/x86_64-linux-gnu/cmake/SDL2/sdl2-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SDL2\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

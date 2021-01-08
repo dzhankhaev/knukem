@@ -48,12 +48,5 @@ void			render_sky(t_engine *engine)
 		render_hline(engine, y, x_table[y], engine->vpceil.maxx, 5);
 		y++;
 	}
-<<<<<<< HEAD
 }
  */
-||||||| 1784372
-}
-=======
-}
-*/
->>>>>>> master

@@ -26,6 +26,11 @@ SRC := main.c\
 	cut_wall.c\
 	manage_data.c\
 	game_loop.c\
+<<<<<<< HEAD
+	pack.c\
+	unpack.c
+||||||| 7c04a9a
+=======
 	key_events/keys_manager.c\
 	key_events/event_edit.c\
 	key_events/event_movement.c\
@@ -44,19 +49,42 @@ SRC := main.c\
     utilits/exit_options.c\
     utilits/load_img.c\
 	render/minimap.c\
+<<<<<<< HEAD
 	render/render_hplane.c\
 	render/render_scene.c\
+||||||| 1784372
+	render/render_floor.c\
+	render/render_ceil.c\
+=======
+	render/render_hplane.c\
+>>>>>>> master
 	render/render_sky.c\
+<<<<<<< HEAD
 	render/render_graf.c\
 	render/sprite_render.c\
 	render/transform_sprite.c\
 	render/ceil_and_floor_init.c\
 	render/wall/render_wall.c\
+||||||| 1784372
+	render/wall/render_wall.c\
+=======
+	render/render_scene.c\
+	render/ceil_and_floor_init.c\
+>>>>>>> master
 	render/wall/perspective_init.c\
+<<<<<<< HEAD
 	render/wall/wall_tx_init.c\
+||||||| 1784372
+	render/wall/render_surfaces.c\
+	render/wall/edge_tx_init.c\
+=======
+	render/wall/render_wall.c\
+	render/wall/wall_tx_init.c\
+>>>>>>> master
 	render/line/render_line.c\
 	render/line/render_vline.c\
 	render/line/render_hline.c\
+<<<<<<< HEAD
 	map_editor/main.c\
 	map_editor/draw_ui.c\
 	map_editor/draw_map.c\
@@ -78,7 +106,13 @@ SRC := main.c\
 	archiver/archiver.c\
 	archiver/pack.c\
 	archiver/unpack.c
+||||||| 1784372
+=======
+>>>>>>> master
+>>>>>>> master
 
+SRCDASH := hud.c $(filter-out main.c, $(SRC))
+SRCARCH := archiver.c $(filter-out main.c, $(SRC))
 
 OBJ := $(SRC:.c=.o)
 
@@ -88,14 +122,24 @@ OBJDIR := obj
 HEADERSP := $(addprefix includes/, $(HEADERS))
 SRCP :=		$(addprefix $(SRCDIR)/, $(SRC))
 OBJP :=		$(addprefix $(OBJDIR)/, $(SRC:.c=.o))
+SRCPD :=	$(addprefix $(SRCDIR)/, $(SRCDASH))
+OBJPD :=	$(addprefix $(OBJDIR)/, $(SRCDASH:.c=.o))
+SRCAR :=	$(addprefix $(SRCDIR)/, $(SRCARCH))
+OBJAR :=	$(addprefix $(OBJDIR)/, $(SRCARCH:.c=.o))
 ONLYDIR :=	$(foreach dir, $(OBJP), $(shell dirname $(dir)))
 
-FLAG :=  -g #-Wall -Werror -Wextra
+FLAG :=  -g -Wall #-Werror -Wextra
 
 PWD := $(shell pwd)
 FRAMEWORKSDIR := $(PWD)/frameworks
+<<<<<<< HEAD
 INC := -I includes
 # SDL := -I SDL2/SDL.h -lSDL2 -lSDL2_ttf -lSDL2_image
+||||||| 1784372
+INC := -I includes
+=======
+INC := -I includes -I ./libft -I./frameworks/SDL2.framework/Headers/ -I./frameworks/SDL2_image.framework/Headers/ -I./frameworks/SDL2_ttf.framework/Headers/
+>>>>>>> master
 SDL := -F $(FRAMEWORKSDIR) -framework SDL2 -framework SDL2_ttf -framework SDL2_image -framework SDL2_mixer -Wl -rpath $(FRAMEWORKSDIR)
 
 TOTAL_FILES := $(shell echo $(SRC) | wc -w | sed -e 's/ //g')
@@ -112,13 +156,33 @@ $(FT_LIB):
 	@make -C $(FT)
 
 $(NAME) : $(OBJP)
+<<<<<<< HEAD
 			@gcc -g $(FLAG) $(OBJP) $(FT_INC) $(FT_LNK) $(INC) $(SDL)  $(LIB) -o $(NAME)
+||||||| 1784372
+			@gcc $(SDL) $(FLAG) $(OBJP) $(INC) $(LIB) -o $(NAME)
+=======
+			@gcc $(SDL) $(FLAG) $(OBJP) $(INC) $(LIB)  -L./libft -lft  -o $(NAME)
+>>>>>>> master
 			@echo "$(CLEAR_LINE)$(BLUE_FONT)[$(NAME)] $(YELLOW_FONT)Finished compilation. Output file : $(VIOLET_FONT)$(PWD)/$(NAME)$(RESET_FORM)"
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADERSP)
 			@mkdir -p $(ONLYDIR)
+<<<<<<< HEAD
 			@gcc -c $(FLAG) $(FT_INC) -F $(FRAMEWORKSDIR)  $(INC) $< -o $@
+||||||| 1784372
+			@gcc -c $(FLAG) -F $(FRAMEWORKSDIR) $(INC) $< -o $@
+=======
+			@gcc -c $(FLAG)-F $(FRAMEWORKSDIR) $(INC) $< -o $@
+>>>>>>> master
 			@echo "$(CLEAR_LINE)$(BLUE_FONT)[$(NAME)] $(YELLOW_FONT)Compiling file [$(VIOLET_FONT)$<$(COL_YELLOW)]. ($(CURRENT_FILES) / $(TOTAL_FILES))$(RESET_FORM)$(BEGIN_LINE)"
+
+dash : $(OBJPD)
+			@gcc $(SDL) $(FLAG) $(OBJPD)  $(INC) $(LIB)  -L./libft -lft  -o $@
+			@echo "$(CLEAR_LINE)$(BLUE_FONT)[$(NAME)] $(YELLOW_FONT)Finished compilation. Output file : $(VIOLET_FONT)$(PWD)/$@$(RESET_FORM)"
+
+arch : $(OBJAR)
+			@gcc $(SDL) $(FLAG) $(OBJAR)  $(INC) $(LIB)  -L./libft -lft  -o $@
+			@echo "$(CLEAR_LINE)$(BLUE_FONT)[$(NAME)] $(YELLOW_FONT)Finished compilation. Output file : $(VIOLET_FONT)$(PWD)/$@$(RESET_FORM)"
 
 
 clean :

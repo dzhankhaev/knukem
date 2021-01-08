@@ -175,7 +175,7 @@
 // }
 
 
-void			fill_col(int *i, t_patch *patch, unsigned char *clp,
+/*void			fill_col(int *i, t_patch *patch, unsigned char *clp,
 											int *pixel, int x)
 {
 	int		index;
@@ -190,4 +190,4 @@ void			fill_col(int *i, t_patch *patch, unsigned char *clp,
 		pixel += patch->width;
 		(*i)++;
 	}
-}
+}*/

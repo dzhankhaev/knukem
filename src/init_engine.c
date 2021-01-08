@@ -1,3 +1,4 @@
+/*
 #include "engine.h"
 
 static int	ft_create_window(t_engine *engine)
@@ -50,3 +51,4 @@ void		clean_up(t_engine *engine)
 		SDL_DestroyWindow(engine->window);
 	SDL_Quit();
 }
+*/

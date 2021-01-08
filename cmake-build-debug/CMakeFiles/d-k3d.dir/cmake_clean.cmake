@@ -70,6 +70,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/d-k3d.dir/libft/ft_tolower.c.o"
   "CMakeFiles/d-k3d.dir/libft/ft_toupper.c.o"
   "CMakeFiles/d-k3d.dir/libft/get_next_line.c.o"
+  "CMakeFiles/d-k3d.dir/src/archiver.c.o"
   "CMakeFiles/d-k3d.dir/src/cut_wall.c.o"
   "CMakeFiles/d-k3d.dir/src/door_animations.c.o"
   "CMakeFiles/d-k3d.dir/src/editor/door_mod.c.o"
@@ -78,6 +79,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/d-k3d.dir/src/editor/tx_mod.c.o"
   "CMakeFiles/d-k3d.dir/src/game_loop.c.o"
   "CMakeFiles/d-k3d.dir/src/init.c.o"
+  "CMakeFiles/d-k3d.dir/src/init_engine.c.o"
   "CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.o"
   "CMakeFiles/d-k3d.dir/src/key_events/event_movement.c.o"
   "CMakeFiles/d-k3d.dir/src/key_events/keys_manager.c.o"
@@ -106,36 +108,24 @@ file(REMOVE_RECURSE
   "CMakeFiles/d-k3d.dir/src/map_editor/write.c.o"
   "CMakeFiles/d-k3d.dir/src/movement/fall.c.o"
   "CMakeFiles/d-k3d.dir/src/movement/move.c.o"
-<<<<<<< HEAD
+  "CMakeFiles/d-k3d.dir/src/pack.c.o"
   "CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.o"
   "CMakeFiles/d-k3d.dir/src/render/graf_proccesing.c.o"
-||||||| 1784372
-=======
-  "CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.o"
->>>>>>> master
   "CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.o"
   "CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o"
   "CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o"
   "CMakeFiles/d-k3d.dir/src/render/minimap.c.o"
-<<<<<<< HEAD
   "CMakeFiles/d-k3d.dir/src/render/render_hplane.c.o"
   "CMakeFiles/d-k3d.dir/src/render/render_scene.c.o"
   "CMakeFiles/d-k3d.dir/src/render/render_sky.c.o"
   "CMakeFiles/d-k3d.dir/src/render/sprite_render.c.o"
   "CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.o"
-||||||| 1784372
-  "CMakeFiles/d-k3d.dir/src/render/render_floor.c.o"
-  "CMakeFiles/d-k3d.dir/src/render/wall/edge_tx_init.c.o"
-=======
-  "CMakeFiles/d-k3d.dir/src/render/render_hplane.c.o"
-  "CMakeFiles/d-k3d.dir/src/render/render_scene.c.o"
-  "CMakeFiles/d-k3d.dir/src/render/render_sky.c.o"
->>>>>>> master
   "CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.o"
   "CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.o"
   "CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.o"
   "CMakeFiles/d-k3d.dir/src/run_queue.c.o"
   "CMakeFiles/d-k3d.dir/src/transform_wall.c.o"
+  "CMakeFiles/d-k3d.dir/src/unpack.c.o"
   "CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.o"
   "CMakeFiles/d-k3d.dir/src/utilits/load_img.c.o"
   "CMakeFiles/d-k3d.dir/src/utilits/math/determine_intersection.c.o"

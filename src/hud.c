@@ -191,7 +191,7 @@ void			put_hud(SDL_Surface *scr, t_inp_hud *inp)
 	}
 }
 
-int				main(int argc, char const **argv)
+/*int				main(int argc, char const **argv)
 {
 	t_engine	engine;
 	t_inp_hud	input_hud;
@@ -226,4 +226,4 @@ int				main(int argc, char const **argv)
 		SDL_UpdateWindowSurface(engine.window);
 	}
 	return (0);
-}
+}*/
