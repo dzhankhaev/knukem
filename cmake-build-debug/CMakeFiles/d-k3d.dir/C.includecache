@@ -58,9 +58,9 @@ stdlib.h
 math.h
 -
 
-/home/chel/Desktop/knu1/src/door_animations.c
+/home/chel/Desktop/knukem/src/editor/door_mod.c
 engine.h
-/home/chel/Desktop/knu1/src/engine.h
+/home/chel/Desktop/knukem/src/editor/engine.h
 
 /usr/include/SDL2/SDL_image.h
 SDL.h

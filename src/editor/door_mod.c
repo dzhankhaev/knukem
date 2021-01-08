@@ -9,7 +9,7 @@ static int	check_nei(t_engine *engine, int neighbor)
 	while (q < engine->sectors[neighbor].npoints)
 	{
 		s = engine->sectors[neighbor].neighbors[q];
-		if (s != -1)
+		if (s > -1)
 			if (engine->sectors[s].door != -1)
 				return (0);
 		q++;
