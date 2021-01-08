@@ -870,6 +870,929 @@ CMakeFiles/d-k3d.dir/src/door_animations.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/src/door_animations.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/src/door_animations.c -o CMakeFiles/d-k3d.dir/src/door_animations.c.s
 
+CMakeFiles/d-k3d.dir/libft/c_add.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/c_add.c.o: ../libft/c_add.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object CMakeFiles/d-k3d.dir/libft/c_add.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/c_add.c.o   -c /home/chel/Desktop/knukem/libft/c_add.c
+
+CMakeFiles/d-k3d.dir/libft/c_add.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/c_add.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/c_add.c > CMakeFiles/d-k3d.dir/libft/c_add.c.i
+
+CMakeFiles/d-k3d.dir/libft/c_add.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/c_add.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/c_add.c -o CMakeFiles/d-k3d.dir/libft/c_add.c.s
+
+CMakeFiles/d-k3d.dir/libft/c_arg.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/c_arg.c.o: ../libft/c_arg.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/d-k3d.dir/libft/c_arg.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/c_arg.c.o   -c /home/chel/Desktop/knukem/libft/c_arg.c
+
+CMakeFiles/d-k3d.dir/libft/c_arg.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/c_arg.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/c_arg.c > CMakeFiles/d-k3d.dir/libft/c_arg.c.i
+
+CMakeFiles/d-k3d.dir/libft/c_arg.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/c_arg.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/c_arg.c -o CMakeFiles/d-k3d.dir/libft/c_arg.c.s
+
+CMakeFiles/d-k3d.dir/libft/c_mod.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/c_mod.c.o: ../libft/c_mod.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/d-k3d.dir/libft/c_mod.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/c_mod.c.o   -c /home/chel/Desktop/knukem/libft/c_mod.c
+
+CMakeFiles/d-k3d.dir/libft/c_mod.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/c_mod.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/c_mod.c > CMakeFiles/d-k3d.dir/libft/c_mod.c.i
+
+CMakeFiles/d-k3d.dir/libft/c_mod.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/c_mod.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/c_mod.c -o CMakeFiles/d-k3d.dir/libft/c_mod.c.s
+
+CMakeFiles/d-k3d.dir/libft/c_pow.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/c_pow.c.o: ../libft/c_pow.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object CMakeFiles/d-k3d.dir/libft/c_pow.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/c_pow.c.o   -c /home/chel/Desktop/knukem/libft/c_pow.c
+
+CMakeFiles/d-k3d.dir/libft/c_pow.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/c_pow.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/c_pow.c > CMakeFiles/d-k3d.dir/libft/c_pow.c.i
+
+CMakeFiles/d-k3d.dir/libft/c_pow.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/c_pow.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/c_pow.c -o CMakeFiles/d-k3d.dir/libft/c_pow.c.s
+
+CMakeFiles/d-k3d.dir/libft/c_set.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/c_set.c.o: ../libft/c_set.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/d-k3d.dir/libft/c_set.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/c_set.c.o   -c /home/chel/Desktop/knukem/libft/c_set.c
+
+CMakeFiles/d-k3d.dir/libft/c_set.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/c_set.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/c_set.c > CMakeFiles/d-k3d.dir/libft/c_set.c.i
+
+CMakeFiles/d-k3d.dir/libft/c_set.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/c_set.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/c_set.c -o CMakeFiles/d-k3d.dir/libft/c_set.c.s
+
+CMakeFiles/d-k3d.dir/libft/c_sqr.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/c_sqr.c.o: ../libft/c_sqr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/d-k3d.dir/libft/c_sqr.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/c_sqr.c.o   -c /home/chel/Desktop/knukem/libft/c_sqr.c
+
+CMakeFiles/d-k3d.dir/libft/c_sqr.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/c_sqr.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/c_sqr.c > CMakeFiles/d-k3d.dir/libft/c_sqr.c.i
+
+CMakeFiles/d-k3d.dir/libft/c_sqr.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/c_sqr.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/c_sqr.c -o CMakeFiles/d-k3d.dir/libft/c_sqr.c.s
+
+CMakeFiles/d-k3d.dir/libft/c_sub.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/c_sub.c.o: ../libft/c_sub.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/d-k3d.dir/libft/c_sub.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/c_sub.c.o   -c /home/chel/Desktop/knukem/libft/c_sub.c
+
+CMakeFiles/d-k3d.dir/libft/c_sub.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/c_sub.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/c_sub.c > CMakeFiles/d-k3d.dir/libft/c_sub.c.i
+
+CMakeFiles/d-k3d.dir/libft/c_sub.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/c_sub.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/c_sub.c -o CMakeFiles/d-k3d.dir/libft/c_sub.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_arrlen.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_arrlen.c.o: ../libft/ft_arrlen.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/d-k3d.dir/libft/ft_arrlen.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_arrlen.c.o   -c /home/chel/Desktop/knukem/libft/ft_arrlen.c
+
+CMakeFiles/d-k3d.dir/libft/ft_arrlen.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_arrlen.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_arrlen.c > CMakeFiles/d-k3d.dir/libft/ft_arrlen.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_arrlen.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_arrlen.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_arrlen.c -o CMakeFiles/d-k3d.dir/libft/ft_arrlen.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_atof.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_atof.c.o: ../libft/ft_atof.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/d-k3d.dir/libft/ft_atof.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_atof.c.o   -c /home/chel/Desktop/knukem/libft/ft_atof.c
+
+CMakeFiles/d-k3d.dir/libft/ft_atof.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_atof.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_atof.c > CMakeFiles/d-k3d.dir/libft/ft_atof.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_atof.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_atof.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_atof.c -o CMakeFiles/d-k3d.dir/libft/ft_atof.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_atoi.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_atoi.c.o: ../libft/ft_atoi.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/d-k3d.dir/libft/ft_atoi.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_atoi.c.o   -c /home/chel/Desktop/knukem/libft/ft_atoi.c
+
+CMakeFiles/d-k3d.dir/libft/ft_atoi.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_atoi.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_atoi.c > CMakeFiles/d-k3d.dir/libft/ft_atoi.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_atoi.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_atoi.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_atoi.c -o CMakeFiles/d-k3d.dir/libft/ft_atoi.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_bzero.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_bzero.c.o: ../libft/ft_bzero.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/d-k3d.dir/libft/ft_bzero.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_bzero.c.o   -c /home/chel/Desktop/knukem/libft/ft_bzero.c
+
+CMakeFiles/d-k3d.dir/libft/ft_bzero.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_bzero.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_bzero.c > CMakeFiles/d-k3d.dir/libft/ft_bzero.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_bzero.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_bzero.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_bzero.c -o CMakeFiles/d-k3d.dir/libft/ft_bzero.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_free_split.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_free_split.c.o: ../libft/ft_free_split.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/d-k3d.dir/libft/ft_free_split.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_free_split.c.o   -c /home/chel/Desktop/knukem/libft/ft_free_split.c
+
+CMakeFiles/d-k3d.dir/libft/ft_free_split.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_free_split.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_free_split.c > CMakeFiles/d-k3d.dir/libft/ft_free_split.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_free_split.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_free_split.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_free_split.c -o CMakeFiles/d-k3d.dir/libft/ft_free_split.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.o: ../libft/ft_isalnum.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.o   -c /home/chel/Desktop/knukem/libft/ft_isalnum.c
+
+CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_isalnum.c > CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_isalnum.c -o CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.o: ../libft/ft_isalpha.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.o   -c /home/chel/Desktop/knukem/libft/ft_isalpha.c
+
+CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_isalpha.c > CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_isalpha.c -o CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_isascii.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_isascii.c.o: ../libft/ft_isascii.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/d-k3d.dir/libft/ft_isascii.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_isascii.c.o   -c /home/chel/Desktop/knukem/libft/ft_isascii.c
+
+CMakeFiles/d-k3d.dir/libft/ft_isascii.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_isascii.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_isascii.c > CMakeFiles/d-k3d.dir/libft/ft_isascii.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_isascii.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_isascii.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_isascii.c -o CMakeFiles/d-k3d.dir/libft/ft_isascii.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.o: ../libft/ft_isdigit.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.o   -c /home/chel/Desktop/knukem/libft/ft_isdigit.c
+
+CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_isdigit.c > CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_isdigit.c -o CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_isprint.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_isprint.c.o: ../libft/ft_isprint.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/d-k3d.dir/libft/ft_isprint.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_isprint.c.o   -c /home/chel/Desktop/knukem/libft/ft_isprint.c
+
+CMakeFiles/d-k3d.dir/libft/ft_isprint.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_isprint.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_isprint.c > CMakeFiles/d-k3d.dir/libft/ft_isprint.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_isprint.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_isprint.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_isprint.c -o CMakeFiles/d-k3d.dir/libft/ft_isprint.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_itoa.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_itoa.c.o: ../libft/ft_itoa.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/d-k3d.dir/libft/ft_itoa.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_itoa.c.o   -c /home/chel/Desktop/knukem/libft/ft_itoa.c
+
+CMakeFiles/d-k3d.dir/libft/ft_itoa.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_itoa.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_itoa.c > CMakeFiles/d-k3d.dir/libft/ft_itoa.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_itoa.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_itoa.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_itoa.c -o CMakeFiles/d-k3d.dir/libft/ft_itoa.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.o: ../libft/ft_lstadd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.o   -c /home/chel/Desktop/knukem/libft/ft_lstadd.c
+
+CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_lstadd.c > CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_lstadd.c -o CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.o: ../libft/ft_lstdel.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.o   -c /home/chel/Desktop/knukem/libft/ft_lstdel.c
+
+CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_lstdel.c > CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_lstdel.c -o CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.o: ../libft/ft_lstdelone.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.o   -c /home/chel/Desktop/knukem/libft/ft_lstdelone.c
+
+CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_lstdelone.c > CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_lstdelone.c -o CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.o: ../libft/ft_lstiter.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.o   -c /home/chel/Desktop/knukem/libft/ft_lstiter.c
+
+CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_lstiter.c > CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_lstiter.c -o CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.o: ../libft/ft_lstmap.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.o   -c /home/chel/Desktop/knukem/libft/ft_lstmap.c
+
+CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_lstmap.c > CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_lstmap.c -o CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.o: ../libft/ft_lstnew.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.o   -c /home/chel/Desktop/knukem/libft/ft_lstnew.c
+
+CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_lstnew.c > CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_lstnew.c -o CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.o: ../libft/ft_memalloc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.o   -c /home/chel/Desktop/knukem/libft/ft_memalloc.c
+
+CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_memalloc.c > CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_memalloc.c -o CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.o: ../libft/ft_memccpy.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.o   -c /home/chel/Desktop/knukem/libft/ft_memccpy.c
+
+CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_memccpy.c > CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_memccpy.c -o CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_memchr.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_memchr.c.o: ../libft/ft_memchr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object CMakeFiles/d-k3d.dir/libft/ft_memchr.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_memchr.c.o   -c /home/chel/Desktop/knukem/libft/ft_memchr.c
+
+CMakeFiles/d-k3d.dir/libft/ft_memchr.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_memchr.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_memchr.c > CMakeFiles/d-k3d.dir/libft/ft_memchr.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_memchr.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_memchr.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_memchr.c -o CMakeFiles/d-k3d.dir/libft/ft_memchr.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.o: ../libft/ft_memcmp.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building C object CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.o   -c /home/chel/Desktop/knukem/libft/ft_memcmp.c
+
+CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_memcmp.c > CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_memcmp.c -o CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.o: ../libft/ft_memcpy.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.o   -c /home/chel/Desktop/knukem/libft/ft_memcpy.c
+
+CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_memcpy.c > CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_memcpy.c -o CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_memdel.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_memdel.c.o: ../libft/ft_memdel.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building C object CMakeFiles/d-k3d.dir/libft/ft_memdel.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_memdel.c.o   -c /home/chel/Desktop/knukem/libft/ft_memdel.c
+
+CMakeFiles/d-k3d.dir/libft/ft_memdel.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_memdel.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_memdel.c > CMakeFiles/d-k3d.dir/libft/ft_memdel.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_memdel.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_memdel.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_memdel.c -o CMakeFiles/d-k3d.dir/libft/ft_memdel.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_memmove.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_memmove.c.o: ../libft/ft_memmove.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building C object CMakeFiles/d-k3d.dir/libft/ft_memmove.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_memmove.c.o   -c /home/chel/Desktop/knukem/libft/ft_memmove.c
+
+CMakeFiles/d-k3d.dir/libft/ft_memmove.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_memmove.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_memmove.c > CMakeFiles/d-k3d.dir/libft/ft_memmove.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_memmove.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_memmove.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_memmove.c -o CMakeFiles/d-k3d.dir/libft/ft_memmove.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_memset.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_memset.c.o: ../libft/ft_memset.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building C object CMakeFiles/d-k3d.dir/libft/ft_memset.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_memset.c.o   -c /home/chel/Desktop/knukem/libft/ft_memset.c
+
+CMakeFiles/d-k3d.dir/libft/ft_memset.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_memset.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_memset.c > CMakeFiles/d-k3d.dir/libft/ft_memset.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_memset.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_memset.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_memset.c -o CMakeFiles/d-k3d.dir/libft/ft_memset.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_putchar.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_putchar.c.o: ../libft/ft_putchar.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building C object CMakeFiles/d-k3d.dir/libft/ft_putchar.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_putchar.c.o   -c /home/chel/Desktop/knukem/libft/ft_putchar.c
+
+CMakeFiles/d-k3d.dir/libft/ft_putchar.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_putchar.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_putchar.c > CMakeFiles/d-k3d.dir/libft/ft_putchar.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_putchar.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_putchar.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_putchar.c -o CMakeFiles/d-k3d.dir/libft/ft_putchar.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.o: ../libft/ft_putchar_fd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building C object CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.o   -c /home/chel/Desktop/knukem/libft/ft_putchar_fd.c
+
+CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_putchar_fd.c > CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_putchar_fd.c -o CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_putendl.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_putendl.c.o: ../libft/ft_putendl.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building C object CMakeFiles/d-k3d.dir/libft/ft_putendl.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_putendl.c.o   -c /home/chel/Desktop/knukem/libft/ft_putendl.c
+
+CMakeFiles/d-k3d.dir/libft/ft_putendl.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_putendl.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_putendl.c > CMakeFiles/d-k3d.dir/libft/ft_putendl.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_putendl.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_putendl.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_putendl.c -o CMakeFiles/d-k3d.dir/libft/ft_putendl.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.o: ../libft/ft_putendl_fd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building C object CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.o   -c /home/chel/Desktop/knukem/libft/ft_putendl_fd.c
+
+CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_putendl_fd.c > CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_putendl_fd.c -o CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.o: ../libft/ft_putnbr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building C object CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.o   -c /home/chel/Desktop/knukem/libft/ft_putnbr.c
+
+CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_putnbr.c > CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_putnbr.c -o CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.o: ../libft/ft_putnbr_fd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building C object CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.o   -c /home/chel/Desktop/knukem/libft/ft_putnbr_fd.c
+
+CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_putnbr_fd.c > CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_putnbr_fd.c -o CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_putstr.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_putstr.c.o: ../libft/ft_putstr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building C object CMakeFiles/d-k3d.dir/libft/ft_putstr.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_putstr.c.o   -c /home/chel/Desktop/knukem/libft/ft_putstr.c
+
+CMakeFiles/d-k3d.dir/libft/ft_putstr.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_putstr.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_putstr.c > CMakeFiles/d-k3d.dir/libft/ft_putstr.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_putstr.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_putstr.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_putstr.c -o CMakeFiles/d-k3d.dir/libft/ft_putstr.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.o: ../libft/ft_putstr_fd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building C object CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.o   -c /home/chel/Desktop/knukem/libft/ft_putstr_fd.c
+
+CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_putstr_fd.c > CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_putstr_fd.c -o CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_realloc.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_realloc.c.o: ../libft/ft_realloc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building C object CMakeFiles/d-k3d.dir/libft/ft_realloc.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_realloc.c.o   -c /home/chel/Desktop/knukem/libft/ft_realloc.c
+
+CMakeFiles/d-k3d.dir/libft/ft_realloc.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_realloc.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_realloc.c > CMakeFiles/d-k3d.dir/libft/ft_realloc.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_realloc.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_realloc.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_realloc.c -o CMakeFiles/d-k3d.dir/libft/ft_realloc.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_strcat.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_strcat.c.o: ../libft/ft_strcat.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strcat.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strcat.c.o   -c /home/chel/Desktop/knukem/libft/ft_strcat.c
+
+CMakeFiles/d-k3d.dir/libft/ft_strcat.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strcat.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_strcat.c > CMakeFiles/d-k3d.dir/libft/ft_strcat.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_strcat.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strcat.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_strcat.c -o CMakeFiles/d-k3d.dir/libft/ft_strcat.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_strchr.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_strchr.c.o: ../libft/ft_strchr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strchr.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strchr.c.o   -c /home/chel/Desktop/knukem/libft/ft_strchr.c
+
+CMakeFiles/d-k3d.dir/libft/ft_strchr.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strchr.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_strchr.c > CMakeFiles/d-k3d.dir/libft/ft_strchr.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_strchr.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strchr.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_strchr.c -o CMakeFiles/d-k3d.dir/libft/ft_strchr.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_strclr.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_strclr.c.o: ../libft/ft_strclr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strclr.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strclr.c.o   -c /home/chel/Desktop/knukem/libft/ft_strclr.c
+
+CMakeFiles/d-k3d.dir/libft/ft_strclr.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strclr.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_strclr.c > CMakeFiles/d-k3d.dir/libft/ft_strclr.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_strclr.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strclr.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_strclr.c -o CMakeFiles/d-k3d.dir/libft/ft_strclr.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.o: ../libft/ft_strcmp.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.o   -c /home/chel/Desktop/knukem/libft/ft_strcmp.c
+
+CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_strcmp.c > CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_strcmp.c -o CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.o: ../libft/ft_strcpy.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.o   -c /home/chel/Desktop/knukem/libft/ft_strcpy.c
+
+CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_strcpy.c > CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_strcpy.c -o CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_strdel.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_strdel.c.o: ../libft/ft_strdel.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strdel.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strdel.c.o   -c /home/chel/Desktop/knukem/libft/ft_strdel.c
+
+CMakeFiles/d-k3d.dir/libft/ft_strdel.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strdel.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_strdel.c > CMakeFiles/d-k3d.dir/libft/ft_strdel.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_strdel.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strdel.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_strdel.c -o CMakeFiles/d-k3d.dir/libft/ft_strdel.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_strdup.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_strdup.c.o: ../libft/ft_strdup.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strdup.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strdup.c.o   -c /home/chel/Desktop/knukem/libft/ft_strdup.c
+
+CMakeFiles/d-k3d.dir/libft/ft_strdup.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strdup.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_strdup.c > CMakeFiles/d-k3d.dir/libft/ft_strdup.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_strdup.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strdup.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_strdup.c -o CMakeFiles/d-k3d.dir/libft/ft_strdup.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_strequ.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_strequ.c.o: ../libft/ft_strequ.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strequ.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strequ.c.o   -c /home/chel/Desktop/knukem/libft/ft_strequ.c
+
+CMakeFiles/d-k3d.dir/libft/ft_strequ.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strequ.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_strequ.c > CMakeFiles/d-k3d.dir/libft/ft_strequ.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_strequ.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strequ.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_strequ.c -o CMakeFiles/d-k3d.dir/libft/ft_strequ.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_striter.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_striter.c.o: ../libft/ft_striter.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Building C object CMakeFiles/d-k3d.dir/libft/ft_striter.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_striter.c.o   -c /home/chel/Desktop/knukem/libft/ft_striter.c
+
+CMakeFiles/d-k3d.dir/libft/ft_striter.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_striter.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_striter.c > CMakeFiles/d-k3d.dir/libft/ft_striter.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_striter.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_striter.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_striter.c -o CMakeFiles/d-k3d.dir/libft/ft_striter.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_striteri.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_striteri.c.o: ../libft/ft_striteri.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building C object CMakeFiles/d-k3d.dir/libft/ft_striteri.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_striteri.c.o   -c /home/chel/Desktop/knukem/libft/ft_striteri.c
+
+CMakeFiles/d-k3d.dir/libft/ft_striteri.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_striteri.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_striteri.c > CMakeFiles/d-k3d.dir/libft/ft_striteri.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_striteri.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_striteri.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_striteri.c -o CMakeFiles/d-k3d.dir/libft/ft_striteri.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.o: ../libft/ft_strjoin.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.o   -c /home/chel/Desktop/knukem/libft/ft_strjoin.c
+
+CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_strjoin.c > CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_strjoin.c -o CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.o: ../libft/ft_strlcat.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.o   -c /home/chel/Desktop/knukem/libft/ft_strlcat.c
+
+CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_strlcat.c > CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_strlcat.c -o CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_strlen.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_strlen.c.o: ../libft/ft_strlen.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_115) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strlen.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strlen.c.o   -c /home/chel/Desktop/knukem/libft/ft_strlen.c
+
+CMakeFiles/d-k3d.dir/libft/ft_strlen.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strlen.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_strlen.c > CMakeFiles/d-k3d.dir/libft/ft_strlen.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_strlen.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strlen.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_strlen.c -o CMakeFiles/d-k3d.dir/libft/ft_strlen.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_strmap.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_strmap.c.o: ../libft/ft_strmap.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strmap.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strmap.c.o   -c /home/chel/Desktop/knukem/libft/ft_strmap.c
+
+CMakeFiles/d-k3d.dir/libft/ft_strmap.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strmap.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_strmap.c > CMakeFiles/d-k3d.dir/libft/ft_strmap.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_strmap.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strmap.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_strmap.c -o CMakeFiles/d-k3d.dir/libft/ft_strmap.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.o: ../libft/ft_strmapi.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_117) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.o   -c /home/chel/Desktop/knukem/libft/ft_strmapi.c
+
+CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_strmapi.c > CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_strmapi.c -o CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_strncat.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_strncat.c.o: ../libft/ft_strncat.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_118) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strncat.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strncat.c.o   -c /home/chel/Desktop/knukem/libft/ft_strncat.c
+
+CMakeFiles/d-k3d.dir/libft/ft_strncat.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strncat.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_strncat.c > CMakeFiles/d-k3d.dir/libft/ft_strncat.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_strncat.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strncat.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_strncat.c -o CMakeFiles/d-k3d.dir/libft/ft_strncat.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.o: ../libft/ft_strncmp.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_119) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.o   -c /home/chel/Desktop/knukem/libft/ft_strncmp.c
+
+CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_strncmp.c > CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_strncmp.c -o CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.o: ../libft/ft_strncpy.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_120) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.o   -c /home/chel/Desktop/knukem/libft/ft_strncpy.c
+
+CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_strncpy.c > CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_strncpy.c -o CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.o: ../libft/ft_strnequ.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_121) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.o   -c /home/chel/Desktop/knukem/libft/ft_strnequ.c
+
+CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_strnequ.c > CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_strnequ.c -o CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_strnew.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_strnew.c.o: ../libft/ft_strnew.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_122) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strnew.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strnew.c.o   -c /home/chel/Desktop/knukem/libft/ft_strnew.c
+
+CMakeFiles/d-k3d.dir/libft/ft_strnew.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strnew.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_strnew.c > CMakeFiles/d-k3d.dir/libft/ft_strnew.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_strnew.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strnew.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_strnew.c -o CMakeFiles/d-k3d.dir/libft/ft_strnew.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.o: ../libft/ft_strnstr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_123) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.o   -c /home/chel/Desktop/knukem/libft/ft_strnstr.c
+
+CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_strnstr.c > CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_strnstr.c -o CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.o: ../libft/ft_strrchr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_124) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.o   -c /home/chel/Desktop/knukem/libft/ft_strrchr.c
+
+CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_strrchr.c > CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_strrchr.c -o CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.o: ../libft/ft_strsplit.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_125) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.o   -c /home/chel/Desktop/knukem/libft/ft_strsplit.c
+
+CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_strsplit.c > CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_strsplit.c -o CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_strstr.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_strstr.c.o: ../libft/ft_strstr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_126) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strstr.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strstr.c.o   -c /home/chel/Desktop/knukem/libft/ft_strstr.c
+
+CMakeFiles/d-k3d.dir/libft/ft_strstr.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strstr.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_strstr.c > CMakeFiles/d-k3d.dir/libft/ft_strstr.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_strstr.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strstr.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_strstr.c -o CMakeFiles/d-k3d.dir/libft/ft_strstr.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_strsub.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_strsub.c.o: ../libft/ft_strsub.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_127) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strsub.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strsub.c.o   -c /home/chel/Desktop/knukem/libft/ft_strsub.c
+
+CMakeFiles/d-k3d.dir/libft/ft_strsub.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strsub.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_strsub.c > CMakeFiles/d-k3d.dir/libft/ft_strsub.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_strsub.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strsub.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_strsub.c -o CMakeFiles/d-k3d.dir/libft/ft_strsub.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.o: ../libft/ft_strtrim.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_128) "Building C object CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.o   -c /home/chel/Desktop/knukem/libft/ft_strtrim.c
+
+CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_strtrim.c > CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_strtrim.c -o CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_swap.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_swap.c.o: ../libft/ft_swap.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_129) "Building C object CMakeFiles/d-k3d.dir/libft/ft_swap.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_swap.c.o   -c /home/chel/Desktop/knukem/libft/ft_swap.c
+
+CMakeFiles/d-k3d.dir/libft/ft_swap.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_swap.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_swap.c > CMakeFiles/d-k3d.dir/libft/ft_swap.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_swap.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_swap.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_swap.c -o CMakeFiles/d-k3d.dir/libft/ft_swap.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_tolower.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_tolower.c.o: ../libft/ft_tolower.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_130) "Building C object CMakeFiles/d-k3d.dir/libft/ft_tolower.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_tolower.c.o   -c /home/chel/Desktop/knukem/libft/ft_tolower.c
+
+CMakeFiles/d-k3d.dir/libft/ft_tolower.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_tolower.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_tolower.c > CMakeFiles/d-k3d.dir/libft/ft_tolower.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_tolower.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_tolower.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_tolower.c -o CMakeFiles/d-k3d.dir/libft/ft_tolower.c.s
+
+CMakeFiles/d-k3d.dir/libft/ft_toupper.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/ft_toupper.c.o: ../libft/ft_toupper.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_131) "Building C object CMakeFiles/d-k3d.dir/libft/ft_toupper.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/ft_toupper.c.o   -c /home/chel/Desktop/knukem/libft/ft_toupper.c
+
+CMakeFiles/d-k3d.dir/libft/ft_toupper.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/ft_toupper.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/ft_toupper.c > CMakeFiles/d-k3d.dir/libft/ft_toupper.c.i
+
+CMakeFiles/d-k3d.dir/libft/ft_toupper.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/ft_toupper.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/ft_toupper.c -o CMakeFiles/d-k3d.dir/libft/ft_toupper.c.s
+
+CMakeFiles/d-k3d.dir/libft/get_next_line.c.o: CMakeFiles/d-k3d.dir/flags.make
+CMakeFiles/d-k3d.dir/libft/get_next_line.c.o: ../libft/get_next_line.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_132) "Building C object CMakeFiles/d-k3d.dir/libft/get_next_line.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/d-k3d.dir/libft/get_next_line.c.o   -c /home/chel/Desktop/knukem/libft/get_next_line.c
+
+CMakeFiles/d-k3d.dir/libft/get_next_line.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/d-k3d.dir/libft/get_next_line.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chel/Desktop/knukem/libft/get_next_line.c > CMakeFiles/d-k3d.dir/libft/get_next_line.c.i
+
+CMakeFiles/d-k3d.dir/libft/get_next_line.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/d-k3d.dir/libft/get_next_line.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chel/Desktop/knukem/libft/get_next_line.c -o CMakeFiles/d-k3d.dir/libft/get_next_line.c.s
+
 # Object files for target d-k3d
 d__k3d_OBJECTS = \
 "CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.o" \
@@ -932,7 +1855,78 @@ d__k3d_OBJECTS = \
 "CMakeFiles/d-k3d.dir/src/editor/graf_mod.c.o" \
 "CMakeFiles/d-k3d.dir/src/editor/tx_mod.c.o" \
 "CMakeFiles/d-k3d.dir/src/editor/door_mod.c.o" \
-"CMakeFiles/d-k3d.dir/src/door_animations.c.o"
+"CMakeFiles/d-k3d.dir/src/door_animations.c.o" \
+"CMakeFiles/d-k3d.dir/libft/c_add.c.o" \
+"CMakeFiles/d-k3d.dir/libft/c_arg.c.o" \
+"CMakeFiles/d-k3d.dir/libft/c_mod.c.o" \
+"CMakeFiles/d-k3d.dir/libft/c_pow.c.o" \
+"CMakeFiles/d-k3d.dir/libft/c_set.c.o" \
+"CMakeFiles/d-k3d.dir/libft/c_sqr.c.o" \
+"CMakeFiles/d-k3d.dir/libft/c_sub.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_arrlen.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_atof.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_atoi.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_bzero.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_free_split.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_isascii.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_isprint.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_itoa.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_memchr.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_memdel.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_memmove.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_memset.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_putchar.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_putendl.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_putstr.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_realloc.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_strcat.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_strchr.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_strclr.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_strdel.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_strdup.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_strequ.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_striter.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_striteri.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_strlen.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_strmap.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_strncat.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_strnew.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_strstr.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_strsub.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_swap.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_tolower.c.o" \
+"CMakeFiles/d-k3d.dir/libft/ft_toupper.c.o" \
+"CMakeFiles/d-k3d.dir/libft/get_next_line.c.o"
 
 # External object files for target d-k3d
 d__k3d_EXTERNAL_OBJECTS =
@@ -998,12 +1992,83 @@ d-k3d: CMakeFiles/d-k3d.dir/src/editor/graf_mod.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/editor/tx_mod.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/editor/door_mod.c.o
 d-k3d: CMakeFiles/d-k3d.dir/src/door_animations.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/c_add.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/c_arg.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/c_mod.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/c_pow.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/c_set.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/c_sqr.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/c_sub.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_arrlen.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_atof.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_atoi.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_bzero.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_free_split.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_isascii.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_isprint.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_itoa.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_memchr.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_memdel.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_memmove.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_memset.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_putchar.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_putendl.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_putstr.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_realloc.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_strcat.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_strchr.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_strclr.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_strdel.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_strdup.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_strequ.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_striter.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_striteri.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_strlen.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_strmap.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_strncat.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_strnew.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_strstr.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_strsub.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_swap.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_tolower.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/ft_toupper.c.o
+d-k3d: CMakeFiles/d-k3d.dir/libft/get_next_line.c.o
 d-k3d: CMakeFiles/d-k3d.dir/build.make
 d-k3d: ../libft/libft.a
 d-k3d: /usr/lib/x86_64-linux-gnu/libSDL2_ttf.so
 d-k3d: /usr/lib/x86_64-linux-gnu/libSDL2_image.so
 d-k3d: CMakeFiles/d-k3d.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Linking C executable d-k3d"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_133) "Linking C executable d-k3d"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/d-k3d.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -1,13 +1,4 @@
 /snap/clion/138/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/chel/Desktop/knukem
--- The C compiler identification is GNU 7.5.0
--- Check for working C compiler: /usr/bin/cc
--- Check for working C compiler: /usr/bin/cc - works
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Detecting C compile features
--- Detecting C compile features - done
--- Found SDL2_ttf: /usr/lib/x86_64-linux-gnu/libSDL2_ttf.so (found version "2.0.14") 
--- Found SDL2_image: /usr/lib/x86_64-linux-gnu/libSDL2_image.so  
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/chel/Desktop/knukem/cmake-build-debug

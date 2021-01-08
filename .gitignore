@@ -4,3 +4,4 @@
 /obj/*
 /d-k3d
 *.o
+cmake-build-debug
