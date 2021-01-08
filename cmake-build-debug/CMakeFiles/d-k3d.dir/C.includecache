@@ -66,6 +66,7 @@ stdlib.h
 math.h
 -
 
+<<<<<<< HEAD
 /home/chel/Desktop/knukem/src/game_loop.c
 engine.h
 /home/chel/Desktop/knukem/src/engine.h
@@ -73,10 +74,29 @@ events.h
 /home/chel/Desktop/knukem/src/events.h
 
 /home/chel/Desktop/knukem/src/render/graf_proccesing.c
+||||||| 1784372
+../includes/utilits.h
 engine.h
-/home/chel/Desktop/knukem/src/render/engine.h
+../includes/engine.h
+
+/home/chel/Desktop/knukem/src/render/line/render_hline.c
+engine.h
+/home/chel/Desktop/knukem/src/render/line/engine.h
+utilits.h
+/home/chel/Desktop/knukem/src/render/line/utilits.h
+
+/home/chel/Desktop/knukem/src/render/render_floor.c
+=======
+../includes/utilits.h
+engine.h
+../includes/engine.h
+
+/home/chel/Desktop/knukem/src/render/render_scene.c
 utilits.h
 /home/chel/Desktop/knukem/src/render/utilits.h
+>>>>>>> master
+engine.h
+/home/chel/Desktop/knukem/src/render/engine.h
 
 /usr/include/SDL2/SDL_image.h
 SDL.h

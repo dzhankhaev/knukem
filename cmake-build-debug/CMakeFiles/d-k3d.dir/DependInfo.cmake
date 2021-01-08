@@ -111,17 +111,31 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/chel/Desktop/knukem/src/map_editor/write.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/map_editor/write.c.o"
   "/home/chel/Desktop/knukem/src/movement/fall.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/movement/fall.c.o"
   "/home/chel/Desktop/knukem/src/movement/move.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/movement/move.c.o"
+<<<<<<< HEAD
   "/home/chel/Desktop/knukem/src/render/ceil_and_floor_init.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.o"
   "/home/chel/Desktop/knukem/src/render/graf_proccesing.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/graf_proccesing.c.o"
+||||||| 1784372
+=======
+  "/home/chel/Desktop/knukem/src/render/ceil_and_floor_init.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.o"
+>>>>>>> master
   "/home/chel/Desktop/knukem/src/render/line/render_hline.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.o"
   "/home/chel/Desktop/knukem/src/render/line/render_line.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o"
   "/home/chel/Desktop/knukem/src/render/line/render_vline.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o"
   "/home/chel/Desktop/knukem/src/render/minimap.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/minimap.c.o"
+<<<<<<< HEAD
   "/home/chel/Desktop/knukem/src/render/render_hplane.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/render_hplane.c.o"
   "/home/chel/Desktop/knukem/src/render/render_scene.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/render_scene.c.o"
   "/home/chel/Desktop/knukem/src/render/render_sky.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/render_sky.c.o"
   "/home/chel/Desktop/knukem/src/render/sprite_render.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/sprite_render.c.o"
   "/home/chel/Desktop/knukem/src/render/transform_sprite.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.o"
+||||||| 1784372
+  "/home/chel/Desktop/knukem/src/render/render_floor.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/render_floor.c.o"
+  "/home/chel/Desktop/knukem/src/render/wall/edge_tx_init.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/wall/edge_tx_init.c.o"
+=======
+  "/home/chel/Desktop/knukem/src/render/render_hplane.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/render_hplane.c.o"
+  "/home/chel/Desktop/knukem/src/render/render_scene.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/render_scene.c.o"
+  "/home/chel/Desktop/knukem/src/render/render_sky.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/render_sky.c.o"
+>>>>>>> master
   "/home/chel/Desktop/knukem/src/render/wall/perspective_init.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.o"
   "/home/chel/Desktop/knukem/src/render/wall/render_wall.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.o"
   "/home/chel/Desktop/knukem/src/render/wall/wall_tx_init.c" "/home/chel/Desktop/knukem/cmake-build-debug/CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.o"

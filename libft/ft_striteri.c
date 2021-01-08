@@ -28,3 +28,31 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	else
 		return ;
 }
+||||||| 1784372
+=======
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dgruyere <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/18 15:10:35 by dgruyere          #+#    #+#             */
+/*   Updated: 2020/07/18 02:43:58 by dgruyere         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+{
+	unsigned int i;
+
+	i = 0;
+	if (!s || !f)
+		return ;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
+}
+>>>>>>> master

@@ -11,6 +11,39 @@
 /* ************************************************************************** */
 
 #include "engine.h"
+#include <fcntl.h>
+#include "libft.h"
+
+// void	load_data_(t_engine *engine)
+// {
+// 	char		*line;
+// 	struct s_xy	*vert;
+// 	struct s_xy	v;
+// 	int			n;
+// 	int			m;
+// 	int			NumVertices;
+// 	int			*num;
+// 	int			fd;
+// 	float		angle;
+
+// 	vert = NULL;
+// 	NumVertices = 0;
+// 	engine->sectors = NULL;
+
+// 	if (!(fd = open("map-clear.txt", O_RDONLY)))
+// 	{
+// 		perror("map-clear.txt");
+// 		exit(1);
+// 	}
+// 	while (get_next_line(fd, line))
+// 	{
+		
+// 	}
+// 	close(fd);
+
+
+// }
+
 
 void	load_vertex(int *vertices, t_all *all, t_xy **vertex, char **split)
 {
@@ -33,9 +66,75 @@ void	load_vertex(int *vertices, t_all *all, t_xy **vertex, char **split)
 		all->min_coord.x = v.x < all->min_coord.x ? v.x : all->min_coord.x;
 		all->min_coord.y = v.y < all->min_coord.y ? v.y : all->min_coord.y;
 	}
+<<<<<<< HEAD
 	ft_free_split(sub);
 }
+||||||| 1784372
+	char Buf[256], word[256], *ptr;
+	struct s_xy *vert = NULL, v;
+	int n, m, NumVertices = 0;
+	while (fgets(Buf, sizeof Buf, fp))
+		switch (sscanf(ptr = Buf, "%32s%n", word, &n) == 1 ? word[0] : '\0')
+		{
+		case 'v': // vertex
+			for (sscanf(ptr += n, "%f%n", &v.y, &n); sscanf(ptr += n, "%f%n", &v.x, &n) == 1;)
+			{
+				vert = realloc(vert, ++NumVertices * sizeof(*vert));
+				vert[NumVertices - 1] = v;
+                //NumVertices общее количество вершин
+                //vert массив всех вершин где к примеру строка vertex	0	0 6 28 хранится как 0 0, 0 6, 0 28
+                //никаких разделителей между строк нет
+			}
+			break;
+		case 's': // sector
+			engine->sectors = realloc(engine->sectors, ++engine->num_sectors * sizeof(*engine->sectors));
+			t_sector *sect = &engine->sectors[engine->num_sectors - 1];
+			int *num = NULL;
+			//считывает пол и потолок
+			sscanf(ptr += n, "%f%f%n", &sect->floor, &sect->ceil, &n);
+			for (m = 0; sscanf(ptr += n, "%32s%n", word, &n) == 1 && word[0] != '#';)
+			{
+				num = realloc(num, ++m * sizeof(*num));
+				num[m - 1] = atoi(word);
+                //m хранит количество вершин + количество соседних секторов, причем первое == второму
+                //num хранит все числа принадлижащие одному сектору, кроме пола и потолка
+                //никаких разделителей между строк нет
+			}
+=======
+	char Buf[256], word[256], *ptr;
+	struct s_xy *vert = NULL, v;
+	int n, m, NumVertices = 0;
+	while (fgets(Buf, sizeof Buf, fp))
+	{
+		switch (sscanf(ptr = Buf, "%32s%n", word, &n) == 1 ? word[0] : '\0')
+		{
+		case 'v': // vertex
+			for (sscanf(ptr += n, "%f%n", &v.y, &n); sscanf(ptr += n, "%f%n", &v.x, &n) == 1;)
+			{
+				vert = realloc(vert, ++NumVertices * sizeof(*vert));
+				vert[NumVertices - 1] = v;
+                //NumVertices общее количество вершин
+                //vert массив всех вершин где к примеру строка vertex	0	0 6 28 хранится как 0 0, 0 6, 0 28
+                //никаких разделителей между строк нет
+			}
+			break;  
+		case 's': // sector
+			engine->sectors = realloc(engine->sectors, ++engine->num_sectors * sizeof(*engine->sectors));
+			t_sector *sect = &engine->sectors[engine->num_sectors - 1];
+			int *num = NULL;
+			//считывает пол и потолок
+			sscanf(ptr += n, "%f%f%n", &sect->floor, &sect->ceil, &n);
+			for (m = 0; sscanf(ptr += n, "%32s%n", word, &n) == 1 && word[0] != '#';)
+			{
+				num = realloc(num, ++m * sizeof(*num));
+				num[m - 1] = atoi(word);
+                //m хранит количество вершин + количество соседних секторов, причем первое == второму
+                //num хранит все числа принадлижащие одному сектору, кроме пола и потолка
+                //никаких разделителей между строк нет
+			}
+>>>>>>> master
 
+<<<<<<< HEAD
 void	load_sector_sub(t_engine *engine, t_all *all, char **spl, int *arr_len)
 {
 	t_sect		*sect;
@@ -135,6 +234,64 @@ void	load_data(t_engine *engine, t_all *all)
 		ft_strdel(&buf);
 	}
 	all->draw_floors = (t_xy){0, (all->mapsize.z)};
+||||||| 1784372
+			sect->npoints = m /= 2; //количество соседей и вершин этого сектора (всегда одинаково)
+			sect->neighbors = malloc((m) * sizeof(*sect->neighbors));
+			sect->vertex = malloc((m + 1) * sizeof(*sect->vertex));
+			//цикл запишет правую половину num массива, то есть соседей
+			for (n = 0; n < m; ++n)
+				sect->neighbors[n] = num[m + n];
+			for (n = 0; n < m; ++n)
+			    //в num[n] перечислены номера вершин сектора
+			    //в vert[num[n]] получаем координаты вершины по её номеру
+                sect->vertex[n + 1] = vert[num[n]];
+			sect->vertex[0] = sect->vertex[m];
+			//в sect->vertex первая и последняя координаты одинаковы, то есть вершины закольцованы
+			free(num);
+			break;
+		case 'p':; // player
+			float angle;
+			sscanf(ptr += n, "%f %f %f %d", &v.x, &v.y, &angle, &n);
+			engine->player.where = (t_xyz){v.x, v.y, 0};
+			engine->player.velocity = (t_xyz){0, 0, 0};
+			engine->player.angle = angle;
+			engine->player.anglecos = 0;
+			engine->player.anglesin = 0;
+			engine->player.vangle = 0;
+			engine->player.sector = n;
+			engine->player.where.z = engine->sectors[engine->player.sector].floor + EYE_HEIGHT;
+		}
+	fclose(fp);
+=======
+			sect->npoints = m /= 2; //количество соседей и вершин этого сектора (всегда одинаково)
+			sect->neighbors = malloc((m) * sizeof(*sect->neighbors));
+			sect->vertex = malloc((m + 1) * sizeof(*sect->vertex));
+			//цикл запишет правую половину num массива, то есть соседей
+			for (n = 0; n < m; ++n)
+				sect->neighbors[n] = num[m + n];
+			for (n = 0; n < m; ++n)
+			    //в num[n] перечислены номера вершин сектора
+			    //в vert[num[n]] получаем координаты вершины по её номеру
+                sect->vertex[n + 1] = vert[num[n]];
+			sect->vertex[0] = sect->vertex[m];
+			//в sect->vertex первая и последняя координаты одинаковы, то есть вершины закольцованы
+			free(num);
+			break;
+		case 'p':; // player
+			float angle;
+			sscanf(ptr += n, "%f %f %f %d", &v.x, &v.y, &angle, &n);
+			engine->player.where = (t_xyz){v.x, v.y, 0};
+			engine->player.velocity = (t_xyz){0, 0, 0};
+			engine->player.angle = angle;
+			engine->player.anglecos = 0;
+			engine->player.anglesin = 0;
+			engine->player.vangle = 0;
+			engine->player.sector = n;
+			engine->player.where.z = engine->sectors[engine->player.sector].floor + EYE_HEIGHT;
+		}
+	}
+	fclose(fp);
+>>>>>>> master
 	free(vert);
 	close(fd);
 }

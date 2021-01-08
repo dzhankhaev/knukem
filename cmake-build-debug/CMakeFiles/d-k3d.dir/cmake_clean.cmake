@@ -106,17 +106,31 @@ file(REMOVE_RECURSE
   "CMakeFiles/d-k3d.dir/src/map_editor/write.c.o"
   "CMakeFiles/d-k3d.dir/src/movement/fall.c.o"
   "CMakeFiles/d-k3d.dir/src/movement/move.c.o"
+<<<<<<< HEAD
   "CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.o"
   "CMakeFiles/d-k3d.dir/src/render/graf_proccesing.c.o"
+||||||| 1784372
+=======
+  "CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.o"
+>>>>>>> master
   "CMakeFiles/d-k3d.dir/src/render/line/render_hline.c.o"
   "CMakeFiles/d-k3d.dir/src/render/line/render_line.c.o"
   "CMakeFiles/d-k3d.dir/src/render/line/render_vline.c.o"
   "CMakeFiles/d-k3d.dir/src/render/minimap.c.o"
+<<<<<<< HEAD
   "CMakeFiles/d-k3d.dir/src/render/render_hplane.c.o"
   "CMakeFiles/d-k3d.dir/src/render/render_scene.c.o"
   "CMakeFiles/d-k3d.dir/src/render/render_sky.c.o"
   "CMakeFiles/d-k3d.dir/src/render/sprite_render.c.o"
   "CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.o"
+||||||| 1784372
+  "CMakeFiles/d-k3d.dir/src/render/render_floor.c.o"
+  "CMakeFiles/d-k3d.dir/src/render/wall/edge_tx_init.c.o"
+=======
+  "CMakeFiles/d-k3d.dir/src/render/render_hplane.c.o"
+  "CMakeFiles/d-k3d.dir/src/render/render_scene.c.o"
+  "CMakeFiles/d-k3d.dir/src/render/render_sky.c.o"
+>>>>>>> master
   "CMakeFiles/d-k3d.dir/src/render/wall/perspective_init.c.o"
   "CMakeFiles/d-k3d.dir/src/render/wall/render_wall.c.o"
   "CMakeFiles/d-k3d.dir/src/render/wall/wall_tx_init.c.o"

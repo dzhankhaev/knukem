@@ -31,7 +31,26 @@ void		tex_init(t_engine *engine, t_fline w, t_fline ow)
 	}
 }
 
+<<<<<<< HEAD
 int			transform_wall(t_engine *engine, t_fline *wall)
+||||||| 1784372
+int			transform_wall(t_engine *engine, int i)
+=======
+static void choose_edit(t_engine *engine, int i)
+{
+	if (engine->edit.mod_s == 0x01ab01 &&
+		determine_intersection(engine->wall, (t_fline){0, 50, 0, 0}))
+	{
+		engine->edit.mod_s =
+				engine->sectors[engine->present->sectorno].neighbors[i];	//этот сектор можно модифицировать
+		if (engine->edit.mod_w == -1)
+			engine->edit.mod_w = i;
+	}
+
+}
+
+int			transform_wall(t_engine *engine, int i)
+>>>>>>> master
 {
 	t_fline	ow; //	текущая стена без отрезания частей, не попавших в кадр
 
@@ -54,5 +73,14 @@ int			transform_wall(t_engine *engine, t_fline *wall)
 		wall->color = 0;
 		return (0); //то что не было отрезано и находится частично за спиной, а так же то что целиком лежит вне видимости тоже не рендерим.
 	}
+<<<<<<< HEAD
+||||||| 1784372
+	if (engine->edit.mod_s == -1 &&
+		determine_intersection(engine->wall, (t_fline){0, 50, 0, 0}))
+		engine->edit.mod_s =
+				engine->sectors[engine->present->sectorno].neighbors[i];	//этот сектор можно модифицировать
+=======
+	choose_edit(engine, i);
+>>>>>>> master
 	return (1);
 }

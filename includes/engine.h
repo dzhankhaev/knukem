@@ -6,7 +6,111 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <string.h>
+<<<<<<< HEAD
 
+||||||| 1784372
+# include <SDL2/SDL.h>
+# include <SDL2_image/SDL_image.h>
+//# include <SDL2_ttf/SDL_ttf.h>
+//# include <SDL2_mixer/SDL_mixer.h>
+/*
+ * ЗАКОММЕНТИРУЙ, ЕСЛИ НЕ КОМПИЛИТСЯ! Временное решение
+ */
+/*# include <SDL.h>
+# include <SDL_ttf.h>
+# include <SDL_image.h>
+# include <SDL_mixer.h>*/
+
+# define W 1920
+# define H 1080
+=======
+<<<<<<< HEAD
+# include <SDL.h>
+//# include <SDL2_ttf/SDL_ttf.h>
+// # include <SDL2_image/SDL_image.h>
+||||||| 7c04a9a
+# include <SDL2/SDL.h>
+//# include <SDL2_ttf/SDL_ttf.h>
+//# include <SDL2_image/SDL_image.h>
+=======
+# include <SDL2/SDL.h>
+# include <SDL_image.h>
+//# include <SDL2_image/SDL_image.h>
+//# include <SDL2_ttf/SDL_ttf.h>
+>>>>>>> master
+//# include <SDL2_mixer/SDL_mixer.h>
+/*
+ * ЗАКОММЕНТИРУЙ, ЕСЛИ НЕ КОМПИЛИТСЯ! Временное решение
+ */
+/*# include <SDL.h>*/
+# include <SDL_ttf.h> 
+# include <SDL_image.h>
+// # include <SDL_mixer.h>
+
+<<<<<<< HEAD
+//# define W 1920
+//# define H 1080
+# define W 400
+# define H 600
+# define CUR_SECT engine->player.sector
+
+# define NEAR_Z 1e-4f				//TODO что это?
+# define FAR_Z 5					//TODO что это?
+# define NEAR_SIDE 1e-5f
+# define FAR_SIDE 20.f
+# define floor_diff 10
+# define EyeHeight 6				//camera height
+# define DuckHeight 2.5				//camera height when crouching
+# define HeadMargin 1				//how much room above before the head hits the ceiling
+# define KneeHeight 2				//how tall obj are those can be walked over without jumping
+# define hfov (0.73f * H)			//horizontal FOV
+# define vfov (.2f * H)				//vertical FOV
+# define PLAYER engine.player
+# define SECTORS engine.sectors
+# define Yaw(y, z) (y + z * engine->player.yaw)		// calculate yaw angle between y and z values (поворот игрока)
+
+typedef struct	q_queue_obj
+{
+	int			sectorno;	//номер сектора
+	int			size_x1;		//
+	int			size_x2;		//
+}				t_queue_obj;
+
+typedef struct	s_delta
+||||||| 7c04a9a
+//# define W 1920
+//# define H 1080
+# define W 1280
+# define H 720
+# define CUR_SECT engine->player.sector
+
+# define NEAR_Z 1e-4f				//TODO что это?
+# define FAR_Z 5					//TODO что это?
+# define NEAR_SIDE 1e-5f
+# define FAR_SIDE 20.f
+# define floor_diff 10
+# define EyeHeight 6				//camera height
+# define DuckHeight 2.5				//camera height when crouching
+# define HeadMargin 1				//how much room above before the head hits the ceiling
+# define KneeHeight 2				//how tall obj are those can be walked over without jumping
+# define hfov (0.73f * H)			//horizontal FOV
+# define vfov (.2f * H)				//vertical FOV
+# define PLAYER engine.player
+# define SECTORS engine.sectors
+# define Yaw(y, z) (y + z * engine->player.yaw)		// calculate yaw angle between y and z values (поворот игрока)
+
+typedef struct	q_queue_obj
+{
+	int			sectorno;	//номер сектора
+	int			size_x1;		//
+	int			size_x2;		//
+}				t_queue_obj;
+
+typedef struct	s_delta
+=======
+# define W 1920
+# define H 1080
+>>>>>>> master
 # define MAX_QUEUE 64				//	максимальная длина очереди секторов
 //вычисленные заранее координаты конечной точки лучей видимости для фов 90. Подробнее в transform_wall.c
 # define RAY_POINT_X 35.f			//	50.f * cosf(HFOV/2)
@@ -48,6 +152,7 @@ typedef struct	q_queue
 }				t_queue;
 
 typedef struct	s_delta		//	для алгоритма брезенхема
+>>>>>>> master
 {
 	int			dx;
 	int			dy;
@@ -73,7 +178,46 @@ typedef struct	s_fline		//	стена для вычислений
 	Uint32		color;
 }				t_fline;
 
+<<<<<<< HEAD
 typedef struct	s_ixyz
+||||||| 1784372
+typedef struct	s_xy
+{
+	float		x;
+	float		y;
+}				t_xy;
+
+typedef struct	s_xyz
+{
+	float		x;
+	float		y;
+	float		z;
+}				t_xyz;
+
+typedef struct	s_sector
+=======
+typedef struct	s_xy
+{
+	float		x;
+	float		y;
+}				t_xy;
+
+typedef struct	s_xyz
+{
+	float		x;
+	float		y;
+	float		z;
+}				t_xyz;
+
+typedef struct	s_ixyz
+{
+	int 		x;
+	int 		y;
+	int 		z;
+}				t_ixyz;
+
+typedef struct	s_sector
+>>>>>>> master
 {
 	int 		x;
 	int 		y;
@@ -92,6 +236,7 @@ typedef struct	s_minimap
 
 typedef struct	s_edit
 {
+<<<<<<< HEAD
 	int			hchange[4];			//	модификаторы высоты пола и потолка
 	int 		mod_s;				//	этот сектор будет модифицирован											}
 	int			mod_w;				//	эта стена будет модифицирована											 }текстуры
@@ -100,6 +245,18 @@ typedef struct	s_edit
 	int			graf;				//	0 ничего, 1 режим граффити, 2 поставить граффити, 3 удалить граффити
 	int			door;				//	0 ничего, 1 назначить/удалить дверь, 2 закрыть, 3 открыть
 	int			mod;				//
+||||||| 1784372
+	int			hchange[4];			//	модификаторы
+	int 		mod_s;				//	 этот сектор будет модифицирован
+	int			mod;				//	режим модификатора !не используется!
+=======
+	int			hchange[4];			//	модификаторы высоты пола и потолка
+	int 		mod_s;				//	этот сектор будет модифицирован											}
+	int			mod_w;				//	эта стена будет модифицирована											 }текстуры
+	int			mod_tx;				//	1 - пол, 2 - потолок, 3 - нижняя линия раздела, 4 - верхняя, 0 - стена	}
+	int			txno;				//	эту текстуру назначим
+	int			mod;				//	режим модификатора !не используется!
+>>>>>>> master
 }				t_edit;
 
 typedef struct	s_img
@@ -146,6 +303,7 @@ typedef struct	s_temp2
 	SDL_Surface	*tx;
 }				t_temp2;
 
+<<<<<<< HEAD
 typedef struct	s_vplane
 {
 	int			minx;//минимальная координата X области
@@ -180,9 +338,29 @@ typedef struct	s_weapon_sprites
 }				t_weapon_sprites;
 
 typedef struct	s_sprites1
+||||||| 1784372
+typedef struct	s_vplanes
+=======
+typedef struct	s_vplane
+>>>>>>> master
 {
+<<<<<<< HEAD
 	t_weapon_sprites 		*weapon_sprite;
 }				t_sprites1;
+||||||| 1784372
+	int minx;//минимальная координата X области
+	int maxx;//максимальная координата X области
+	int topy[W];//верхняя координата
+	int boty[W];//нижняя координата
+}				t_vplanes;
+=======
+	int 		minx;//минимальная координата X области
+	int 		maxx;//максимальная координата X области
+	int 		topy[W];//верхняя координата
+	int 		boty[W];//нижняя координата
+	float		z;
+}				t_vplane;
+>>>>>>> master
 
 typedef struct	s_engine
 {
@@ -192,7 +370,34 @@ typedef struct	s_engine
 	t_edit		edit;
 	t_line		borders;			//	границы отображения (установлены во всё окно)
 	t_player	player;
+<<<<<<< HEAD
 	t_sect		*sectors;				//	считанная карта
+||||||| 1784372
+	t_sector	*sectors;			//	считанная карта
+=======
+<<<<<<< HEAD
+	t_sector	*sectors;		//	считанная карта
+	unsigned	num_sectors;	//	количество секторов в карте
+	t_queue_obj		queue[32];
+	t_queue_obj		*future;
+	t_queue_obj		*present;
+	unsigned	max_queue;
+	unsigned	close_request;
+	int 		tmp;
+	int			w;				//размер окна
+	int			h;				//размер окна
+||||||| 7c04a9a
+	t_sector	*sectors;		//	считанная карта
+	unsigned	num_sectors;	//	количество секторов в карте
+	t_queue_obj		queue[32];
+	t_queue_obj		*future;
+	t_queue_obj		*present;
+	unsigned	max_queue;
+	unsigned	close_request;
+	int 		tmp;
+=======
+	t_sector	*sectors;			//	считанная карта
+>>>>>>> master
 	int 		num_sectors;		//	количество секторов в карте
 	t_queue		*queue;				//	очередь секторов
 	t_queue		*future;			//	указатель заполнения
@@ -203,32 +408,77 @@ typedef struct	s_engine
 	t_fline		ow;					//	преобразованное граффити
 	int			tline[W];			//	верхняя линия раздела
 	int			bline[W];			//	нижняя линия раздела
+<<<<<<< HEAD
 	int			danimbuf[30];		//	очередь анимаций дверей. Шаг = 2, первое значение сектор, второе вид анимации
 	t_vplane	vpfloor;			//	таблица для заполнения пола
 	t_vplane	vpceil;				//	таблица для заполнения потолка
 	int			u0;					//	начало и конец текстуры с учетом части стены, которая не попала в кадр
+||||||| 1784372
+	int			yctop[W];			//	экранные y потолка
+	int			ycbot[W];			//	экранные y потолка
+	int			yftop[W];			//	экранные y пола
+	int			yfbot[W];			//	экранные y пола
+	t_vplanes	vpfloor;			//	таблица для заполнения пола
+	t_vplanes	vpceil;				//	таблица для заполнения потолка
+	int			u0;					//	начало и конец текстуры с учетом чати стены, которая не попала в кадр
+=======
+	int			yctop[W];			//	экранные y потолка
+	int			ycbot[W];			//	экранные y потолка
+	int			yftop[W];			//	экранные y пола
+	int			yfbot[W];			//	экранные y пола
+	t_vplane	vpfloor;			//	таблица для заполнения пола
+	t_vplane	vpceil;				//	таблица для заполнения потолка
+	int			u0;					//	начало и конец текстуры с учетом чати стены, которая не попала в кадр
+>>>>>>> master
 	int			u1;					//
 	t_temp		rend_wall;			//используется в rendel_Wall тобы обойти норму
 	t_temp2		rend_plane;			//используется при рендеринге пола и потолка
 	t_img		img[10];
+<<<<<<< HEAD
 	t_graf		*graf;				//для каждого сектора создаётся раздел с граффити
 	t_sprites1	*sprites1;
+||||||| 1784372
+=======
+>>>>>>> master
+>>>>>>> master
 }				t_engine;
 
 void			init_engine(t_engine *engine, t_all *all);
 void			general_init(t_engine *engine);
 void			load_data(t_engine *engine, t_all *all);
 void			unload_data(t_engine *engine);
+<<<<<<< HEAD
 void			game_loop(t_engine *engine, t_all *all);
 int				transform_wall(t_engine *engine, t_fline *wall);
 void			render_scene(t_engine *engine, int sectorno, int neighbor, int i);
 void			ceil_and_floor_init(t_engine *engine);
 void			render_wall(t_engine *engine, int neighbor, t_ixyz t);
+||||||| 1784372
+void			game_loop(t_engine *engine);
+int 			transform_wall(t_engine *engine, int i);
+void			render_wall(t_engine *engine, int sectorno, int neighbor);
+void			ceil_and_floor(t_engine *engine);
+void			render_edge(t_engine *engine, int neighbor);
+=======
+void			game_loop(t_engine *engine);
+int 			transform_wall(t_engine *engine, int i);
+void			render_scene(t_engine *engine, int sectorno, int neighbor);
+void			ceil_and_floor_init(t_engine *engine);
+void			render_wall(t_engine *engine, int neighbor, t_ixyz t);
+>>>>>>> master
 t_line			get_op1(t_temp *a);
 t_line			get_op2(t_temp *a);
 t_line			get_op3(t_temp *a);
+<<<<<<< HEAD
 void			init_ceil_floor(t_engine *engine, t_sect sector, t_line *wall);
 void			init_wall(t_engine *engine, t_sect sector, t_line *wall);
+||||||| 1784372
+void			init_ceil_floor(t_engine *engine, t_sector sector, t_line *wall);
+void			init_edge(t_engine *engine, t_sector sector, t_line *wall);
+=======
+void			init_ceil_floor(t_engine *engine, t_sector sector, t_line *wall);
+void			init_wall(t_engine *engine, t_sector sector, t_line *wall);
+>>>>>>> master
 t_fline			cut_wall(t_fline wall, t_xy i1, t_xy i2);						//разрезает стену для попадания в fov
 void			minimap(t_engine *engine, t_xy v0, t_xy v1, Uint32 color);			//рисуется отдельно для каждой стены
 void			minimap_cut(t_engine *engine, t_xy v0, t_xy v1, Uint32 color);		//показывает только то, что в поле зрения
@@ -243,6 +493,7 @@ void			fall(t_player *player, t_sect *sectors);
 Uint32			deep_shading(t_engine *engine, t_line wall, int x);			//модификатор освещения в зависимости от дальности
 Uint32			get_shadow(Uint32 z, Uint32 color);								//применить модификатор освещения
 void			real_time_edit(t_engine *engine);
+<<<<<<< HEAD
 void			render_hplane(t_engine *engine, t_vplane *p, int txno);
 int 			main_editor(t_engine *engine, char *name, t_all *all);
 void			render_sprite(t_engine *engine);////testtt
@@ -257,5 +508,13 @@ t_ixyz			tx_plane_mod(t_engine *engine, int sectorno, int i);
 void			door_mod(t_engine *engine, int neighbor, int i);
 void 			door_anim(t_engine *engine);
 void			start_danim(t_engine *engine, int nei, int i);
+||||||| 1784372
+void			render_floor(t_engine *engine);
+void			render_ceil(t_engine *engine);
+void			render_sky(t_engine *engine);
+=======
+void			render_hplane(t_engine *engine, t_vplane *p, int txno);
+void			render_sky(t_engine *engine);
+>>>>>>> master
 
 #endif

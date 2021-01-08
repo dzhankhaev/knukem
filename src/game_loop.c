@@ -13,11 +13,20 @@ static void	reset(t_engine *engine)
 		engine->bline[i] = H - 1;
 		i++;
 	}
+<<<<<<< HEAD
 	engine->edit.mod_s = 0x01ab01;	//запрет на модификацию (прежде нужно найти цель)
 	engine->edit.mod_w = -1;	//запрет на модификацию (прежде нужно найти цель)
 	engine->edit.door = 0;		//
 	if (engine->edit.graf != 1)	//в режиме граффити текстуры помещений менять нельзя
 		engine->edit.txno = -1;
+||||||| 1784372
+	engine->edit.mod_s = -1;	//запрет на модификацию (прежде нужно найти цель)
+
+=======
+	engine->edit.mod_s = 0x01ab01;	//запрет на модификацию (прежде нужно найти цель)
+	engine->edit.mod_w = -1;	//запрет на модификацию (прежде нужно найти цель)
+	engine->edit.txno = -1;
+>>>>>>> master
 }
 
 static void	draw(t_engine *engine)
@@ -49,8 +58,10 @@ void		game_loop(t_engine *engine, t_all *all)
 	int		time;
 
 	time = 0;
+	SDL_SetRelativeMouseMode(SDL_TRUE); //скрывает курсор, он движется относительно окна
 	while (!engine->close_request)
 	{
+<<<<<<< HEAD
 		if (engine->edit.mod)
 		{
 			SDL_SetRelativeMouseMode(SDL_FALSE);
@@ -58,6 +69,11 @@ void		game_loop(t_engine *engine, t_all *all)
 //			SDL_SetRelativeMouseMode(SDL_TRUE); //скрывает курсор, он движется относительно окна
 		}
 		reset(engine);
+||||||| 1784372
+//		SDL_SetRelativeMouseMode(SDL_TRUE); //скрывает курсор, он движется относительно окна
+=======
+		reset(engine);
+>>>>>>> master
 		keys_manager(engine);
 		move(engine);
 		SDL_LockSurface(engine->screen);

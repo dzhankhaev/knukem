@@ -47,6 +47,7 @@ void 		run_queue(t_engine *engine)
 		else
 			engine->wall.color = 0;
 		color = engine->wall.color;
+<<<<<<< HEAD
 		engine->wall = (t_fline){engine->sectors[engine->present->sectorno].vertex[i].x,
 								 engine->sectors[engine->present->sectorno].vertex[i + 1].x,
 								 engine->sectors[engine->present->sectorno].vertex[i].y,
@@ -60,6 +61,15 @@ void 		run_queue(t_engine *engine)
 		}
 		/*if (transform_sprite(engine))
 			render_sprite(engine);*/
+||||||| 1784372
+		if (transform_wall(engine, i))
+			render_wall(engine, sectorno,	//текущий сектор
+			   engine->sectors[sectorno].neighbors[i]);		//его сосед, границу с которым мы обрабатываем.
+=======
+		if (transform_wall(engine, i))
+			render_scene(engine, sectorno,    //текущий сектор
+						 engine->sectors[sectorno].neighbors[i]);		//его сосед, границу с которым мы обрабатываем.
+>>>>>>> master
 		if (engine->minimap.mod)
 			minimap(engine, engine->sectors[sectorno].vertex[i],
 					engine->sectors[sectorno].vertex[i + 1], color);

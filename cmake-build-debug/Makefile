@@ -3032,6 +3032,7 @@ src/movement/move.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/movement/move.c.s
 .PHONY : src/movement/move.c.s
 
+<<<<<<< HEAD
 src/render/ceil_and_floor_init.o: src/render/ceil_and_floor_init.c.o
 
 .PHONY : src/render/ceil_and_floor_init.o
@@ -3086,6 +3087,36 @@ src/render/graf_proccesing.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/graf_proccesing.c.s
 .PHONY : src/render/graf_proccesing.c.s
 
+||||||| 1784372
+=======
+src/render/ceil_and_floor_init.o: src/render/ceil_and_floor_init.c.o
+
+.PHONY : src/render/ceil_and_floor_init.o
+
+# target to build an object file
+src/render/ceil_and_floor_init.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.o
+.PHONY : src/render/ceil_and_floor_init.c.o
+
+src/render/ceil_and_floor_init.i: src/render/ceil_and_floor_init.c.i
+
+.PHONY : src/render/ceil_and_floor_init.i
+
+# target to preprocess a source file
+src/render/ceil_and_floor_init.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.i
+.PHONY : src/render/ceil_and_floor_init.c.i
+
+src/render/ceil_and_floor_init.s: src/render/ceil_and_floor_init.c.s
+
+.PHONY : src/render/ceil_and_floor_init.s
+
+# target to generate assembly for a file
+src/render/ceil_and_floor_init.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.s
+.PHONY : src/render/ceil_and_floor_init.c.s
+
+>>>>>>> master
 src/render/line/render_hline.o: src/render/line/render_hline.c.o
 
 .PHONY : src/render/line/render_hline.o
@@ -3194,6 +3225,7 @@ src/render/minimap.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/minimap.c.s
 .PHONY : src/render/minimap.c.s
 
+<<<<<<< HEAD
 src/render/render_hplane.o: src/render/render_hplane.c.o
 
 .PHONY : src/render/render_hplane.o
@@ -3258,7 +3290,40 @@ src/render/render_sky.c.o:
 .PHONY : src/render/render_sky.c.o
 
 src/render/render_sky.i: src/render/render_sky.c.i
+||||||| 1784372
+src/render/render_floor.o: src/render/render_floor.c.o
+=======
+src/render/render_hplane.o: src/render/render_hplane.c.o
 
+.PHONY : src/render/render_hplane.o
+
+# target to build an object file
+src/render/render_hplane.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_hplane.c.o
+.PHONY : src/render/render_hplane.c.o
+
+src/render/render_hplane.i: src/render/render_hplane.c.i
+
+.PHONY : src/render/render_hplane.i
+
+# target to preprocess a source file
+src/render/render_hplane.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_hplane.c.i
+.PHONY : src/render/render_hplane.c.i
+
+src/render/render_hplane.s: src/render/render_hplane.c.s
+
+.PHONY : src/render/render_hplane.s
+
+# target to generate assembly for a file
+src/render/render_hplane.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_hplane.c.s
+.PHONY : src/render/render_hplane.c.s
+
+src/render/render_scene.o: src/render/render_scene.c.o
+>>>>>>> master
+
+<<<<<<< HEAD
 .PHONY : src/render/render_sky.i
 
 # target to preprocess a source file
@@ -3278,56 +3343,181 @@ src/render/render_sky.c.s:
 src/render/sprite_render.o: src/render/sprite_render.c.o
 
 .PHONY : src/render/sprite_render.o
+||||||| 1784372
+.PHONY : src/render/render_floor.o
+=======
+.PHONY : src/render/render_scene.o
+>>>>>>> master
 
 # target to build an object file
+<<<<<<< HEAD
 src/render/sprite_render.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/sprite_render.c.o
 .PHONY : src/render/sprite_render.c.o
+||||||| 1784372
+src/render/render_floor.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_floor.c.o
+.PHONY : src/render/render_floor.c.o
+=======
+src/render/render_scene.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_scene.c.o
+.PHONY : src/render/render_scene.c.o
+>>>>>>> master
 
+<<<<<<< HEAD
 src/render/sprite_render.i: src/render/sprite_render.c.i
+||||||| 1784372
+src/render/render_floor.i: src/render/render_floor.c.i
+=======
+src/render/render_scene.i: src/render/render_scene.c.i
+>>>>>>> master
 
+<<<<<<< HEAD
 .PHONY : src/render/sprite_render.i
+||||||| 1784372
+.PHONY : src/render/render_floor.i
+=======
+.PHONY : src/render/render_scene.i
+>>>>>>> master
 
 # target to preprocess a source file
+<<<<<<< HEAD
 src/render/sprite_render.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/sprite_render.c.i
 .PHONY : src/render/sprite_render.c.i
+||||||| 1784372
+src/render/render_floor.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_floor.c.i
+.PHONY : src/render/render_floor.c.i
+=======
+src/render/render_scene.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_scene.c.i
+.PHONY : src/render/render_scene.c.i
+>>>>>>> master
 
+<<<<<<< HEAD
 src/render/sprite_render.s: src/render/sprite_render.c.s
+||||||| 1784372
+src/render/render_floor.s: src/render/render_floor.c.s
+=======
+src/render/render_scene.s: src/render/render_scene.c.s
+>>>>>>> master
 
+<<<<<<< HEAD
 .PHONY : src/render/sprite_render.s
+||||||| 1784372
+.PHONY : src/render/render_floor.s
+=======
+.PHONY : src/render/render_scene.s
+>>>>>>> master
 
 # target to generate assembly for a file
+<<<<<<< HEAD
 src/render/sprite_render.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/sprite_render.c.s
 .PHONY : src/render/sprite_render.c.s
+||||||| 1784372
+src/render/render_floor.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_floor.c.s
+.PHONY : src/render/render_floor.c.s
+=======
+src/render/render_scene.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_scene.c.s
+.PHONY : src/render/render_scene.c.s
+>>>>>>> master
 
+<<<<<<< HEAD
 src/render/transform_sprite.o: src/render/transform_sprite.c.o
+||||||| 1784372
+src/render/wall/edge_tx_init.o: src/render/wall/edge_tx_init.c.o
+=======
+src/render/render_sky.o: src/render/render_sky.c.o
+>>>>>>> master
 
+<<<<<<< HEAD
 .PHONY : src/render/transform_sprite.o
+||||||| 1784372
+.PHONY : src/render/wall/edge_tx_init.o
+=======
+.PHONY : src/render/render_sky.o
+>>>>>>> master
 
 # target to build an object file
+<<<<<<< HEAD
 src/render/transform_sprite.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.o
 .PHONY : src/render/transform_sprite.c.o
+||||||| 1784372
+src/render/wall/edge_tx_init.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/edge_tx_init.c.o
+.PHONY : src/render/wall/edge_tx_init.c.o
+=======
+src/render/render_sky.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_sky.c.o
+.PHONY : src/render/render_sky.c.o
+>>>>>>> master
 
+<<<<<<< HEAD
 src/render/transform_sprite.i: src/render/transform_sprite.c.i
+||||||| 1784372
+src/render/wall/edge_tx_init.i: src/render/wall/edge_tx_init.c.i
+=======
+src/render/render_sky.i: src/render/render_sky.c.i
+>>>>>>> master
 
+<<<<<<< HEAD
 .PHONY : src/render/transform_sprite.i
+||||||| 1784372
+.PHONY : src/render/wall/edge_tx_init.i
+=======
+.PHONY : src/render/render_sky.i
+>>>>>>> master
 
 # target to preprocess a source file
+<<<<<<< HEAD
 src/render/transform_sprite.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.i
 .PHONY : src/render/transform_sprite.c.i
+||||||| 1784372
+src/render/wall/edge_tx_init.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/edge_tx_init.c.i
+.PHONY : src/render/wall/edge_tx_init.c.i
+=======
+src/render/render_sky.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_sky.c.i
+.PHONY : src/render/render_sky.c.i
+>>>>>>> master
 
+<<<<<<< HEAD
 src/render/transform_sprite.s: src/render/transform_sprite.c.s
+||||||| 1784372
+src/render/wall/edge_tx_init.s: src/render/wall/edge_tx_init.c.s
+=======
+src/render/render_sky.s: src/render/render_sky.c.s
+>>>>>>> master
 
+<<<<<<< HEAD
 .PHONY : src/render/transform_sprite.s
+||||||| 1784372
+.PHONY : src/render/wall/edge_tx_init.s
+=======
+.PHONY : src/render/render_sky.s
+>>>>>>> master
 
 # target to generate assembly for a file
+<<<<<<< HEAD
 src/render/transform_sprite.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.s
 .PHONY : src/render/transform_sprite.c.s
+||||||| 1784372
+src/render/wall/edge_tx_init.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/edge_tx_init.c.s
+.PHONY : src/render/wall/edge_tx_init.c.s
+=======
+src/render/render_sky.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_sky.c.s
+.PHONY : src/render/render_sky.c.s
+>>>>>>> master
 
 src/render/wall/perspective_init.o: src/render/wall/perspective_init.c.o
 
@@ -4037,12 +4227,19 @@ help:
 	@echo "... src/movement/move.o"
 	@echo "... src/movement/move.i"
 	@echo "... src/movement/move.s"
+<<<<<<< HEAD
 	@echo "... src/render/ceil_and_floor_init.o"
 	@echo "... src/render/ceil_and_floor_init.i"
 	@echo "... src/render/ceil_and_floor_init.s"
 	@echo "... src/render/graf_proccesing.o"
 	@echo "... src/render/graf_proccesing.i"
 	@echo "... src/render/graf_proccesing.s"
+||||||| 1784372
+=======
+	@echo "... src/render/ceil_and_floor_init.o"
+	@echo "... src/render/ceil_and_floor_init.i"
+	@echo "... src/render/ceil_and_floor_init.s"
+>>>>>>> master
 	@echo "... src/render/line/render_hline.o"
 	@echo "... src/render/line/render_hline.i"
 	@echo "... src/render/line/render_hline.s"
@@ -4055,6 +4252,7 @@ help:
 	@echo "... src/render/minimap.o"
 	@echo "... src/render/minimap.i"
 	@echo "... src/render/minimap.s"
+<<<<<<< HEAD
 	@echo "... src/render/render_hplane.o"
 	@echo "... src/render/render_hplane.i"
 	@echo "... src/render/render_hplane.s"
@@ -4070,6 +4268,24 @@ help:
 	@echo "... src/render/transform_sprite.o"
 	@echo "... src/render/transform_sprite.i"
 	@echo "... src/render/transform_sprite.s"
+||||||| 1784372
+	@echo "... src/render/render_floor.o"
+	@echo "... src/render/render_floor.i"
+	@echo "... src/render/render_floor.s"
+	@echo "... src/render/wall/edge_tx_init.o"
+	@echo "... src/render/wall/edge_tx_init.i"
+	@echo "... src/render/wall/edge_tx_init.s"
+=======
+	@echo "... src/render/render_hplane.o"
+	@echo "... src/render/render_hplane.i"
+	@echo "... src/render/render_hplane.s"
+	@echo "... src/render/render_scene.o"
+	@echo "... src/render/render_scene.i"
+	@echo "... src/render/render_scene.s"
+	@echo "... src/render/render_sky.o"
+	@echo "... src/render/render_sky.i"
+	@echo "... src/render/render_sky.s"
+>>>>>>> master
 	@echo "... src/render/wall/perspective_init.o"
 	@echo "... src/render/wall/perspective_init.i"
 	@echo "... src/render/wall/perspective_init.s"
