@@ -22,6 +22,10 @@ static void	reset(t_engine *engine)
 
 static void	draw(t_engine *engine)
 {
+    /*
+     * START
+     */
+    Uint32 start = SDL_GetTicks();
     t_queue	queue[MAX_QUEUE];
     //все переменные ниже нужно сбрасывать каждый новый кадр
     engine->max_queue = MAX_QUEUE;
@@ -34,11 +38,16 @@ static void	draw(t_engine *engine)
         run_queue(engine);
         engine->present++;
     }
+    //printf("%i\n", SDL_GetTicks() - start);
+    /*
+     * END
+     */
     //engine->present--;
     while (engine->present != engine->queue)
     {
-        if (transform_sprite(engine))
+        if (transform_sprite(engine)) {
             render_sprite(engine);
+        }
         engine->present--;
     }
     render_minimap_hud(engine->minimap, engine->screen);

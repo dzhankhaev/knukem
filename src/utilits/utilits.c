@@ -21,6 +21,20 @@ int iclamp(int a, int min, int max)
 	return imin(imax(a, min), max);
 }
 
+/*
+ * checks whether a point is inside cube
+ * point - point coordinates
+ * cubecenter - center coordinates
+ * borders - borders coordinates
+ * centeroffset - center offset (z axis)
+ */
+int ispointincube(t_xyz point, t_xyz cubecenter, t_xyz borders, float centerzoffset)
+{
+    return ((cubecenter.x + borders.x > point.x & point.x > cubecenter.x - borders.x)
+            && (cubecenter.y + borders.y > point.y & point.y > cubecenter.y - borders.y)
+            && (cubecenter.z + centerzoffset + borders.z > point.z & point.z > cubecenter.z + centerzoffset - borders.z));
+}
+
 Uint32		get_pixel_color(SDL_Surface *surface, int x, int y)
 {
 	Uint8	*p;

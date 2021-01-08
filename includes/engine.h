@@ -257,5 +257,6 @@ t_ixyz			tx_plane_mod(t_engine *engine, int sectorno, int i);
 void			door_mod(t_engine *engine, int neighbor, int i);
 void 			door_anim(t_engine *engine);
 void			start_danim(t_engine *engine, int nei, int i);
+int             ispointincube(t_xyz point, t_xyz cubecenter, t_xyz borders, float centerzoffset);
 
 #endif
