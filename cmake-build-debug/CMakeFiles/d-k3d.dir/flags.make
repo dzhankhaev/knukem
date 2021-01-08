@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu99
 
 C_DEFINES = 
 
-C_INCLUDES = -I/usr/local/include/SDL2 -I/usr/include/SDL2 -I/home/chel/Desktop/knukem/d-k3d -I/home/chel/Desktop/knukem/includes -I/home/chel/Desktop/knukem/libft 
+C_INCLUDES = -I/usr/include/SDL2 -I/home/rokosbasil/projects/knukem_merge2/d-k3d -I/home/rokosbasil/projects/knukem_merge2/includes -I/home/rokosbasil/projects/knukem_merge2/libft 
 
