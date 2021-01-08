@@ -45,7 +45,29 @@ void 		door_anim(t_engine *engine)
 	}
 }
 
-void		start_danim(t_engine *engine, int nei, int i)
+void 		put_anim(t_engine *engine, int sec)
+{
+	int	q;
+
+	q = 0;
+	while (q < 30)
+	{
+		if (engine->danimbuf[q] == -1)
+		{
+			engine->danimbuf[q] = sec;
+			if (engine->sectors[sec].floor < engine->sectors[sec].ceil)
+				engine->danimbuf[q + 1] = 0;
+			else if (engine->sectors[sec].floor > engine->sectors[sec].oldf)
+				engine->danimbuf[q + 1] = 1;
+			else
+				engine->danimbuf[q] = -1;
+			break ;
+		}
+		q += 2;
+	}
+}
+
+void		start_danim(t_engine *engine, int sec, int nei, int i)
 {
 	int	q;
 	//если игрок смотрит на дверь
@@ -57,21 +79,37 @@ void		start_danim(t_engine *engine, int nei, int i)
 		while (q < 30)
 			if (engine->danimbuf[(q += 2)] == nei)
 				return ;
-		q = 0;
-		while (q < 30)
+		put_anim(engine, nei);
+	}
+	int left;
+	int right;
+	//если игрок смотрит на граффити
+	if (engine->edit.door == 4)
+	{
+		engine->edit.door = 0;
+		if (i == 0)
+			left = engine->sectors[sec].neighbors[engine->sectors[sec].npoints - 1];
+		else
+			left = engine->sectors[sec].neighbors[i - 1];
+		right = engine->sectors[sec].neighbors[i + 1];
+
+		if (left > -1)
 		{
-			if (engine->danimbuf[q] == -1)
-			{
-				engine->danimbuf[q] = nei;
-				if (engine->sectors[nei].floor < engine->sectors[nei].ceil)
-					engine->danimbuf[q + 1] = 0;
-				else if (engine->sectors[nei].floor > engine->sectors[nei].oldf)
-					engine->danimbuf[q + 1] = 1;
-				else
-					engine->danimbuf[q] = -1;
-				break ;
-			}
-			q += 2;
+			q = -2;
+			while (q < 30)
+				if (engine->danimbuf[(q += 2)] == left)
+					return ;
+			put_anim(engine, left);
 		}
+
+		if (right > -1)
+		{
+			q = -2;
+			while (q < 30)
+				if (engine->danimbuf[(q += 2)] == right)
+					return ;
+			put_anim(engine, right);
+		}
+
 	}
 }

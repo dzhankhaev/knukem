@@ -250,12 +250,12 @@ int 			transform_sprite(t_engine *engine);
 void			normi_sprite(t_sprites1 sprite, t_player player);
 void			rotate_sprite(t_sprites1 sprite, t_player player);
 void			perspective_transform2(t_sprites1 sprite, t_player player);
-void			render_graf(t_engine *engine, int sectorno, int i);
+void			graf_proccesing(t_engine *engine, int sectorno, int i);
 void			graf_mod(t_engine *engine, int sectorno, int i);
 t_ixyz			tx_wall_mod(t_engine *engine, int sectorno, int i);
 t_ixyz			tx_plane_mod(t_engine *engine, int sectorno, int i);
 void			door_mod(t_engine *engine, int neighbor, int i);
 void 			door_anim(t_engine *engine);
-void			start_danim(t_engine *engine, int nei, int i);
+void			start_danim(t_engine *engine, int sec, int nei, int i);
 
 #endif

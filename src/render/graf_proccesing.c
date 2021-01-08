@@ -28,7 +28,7 @@ static void	loop_graf(t_engine *engine, t_line w0, t_line w1, int x)
                      (t_line){0, 0, oy0, oy1, 0}, w0.color);
 }
 
-static void	render_graf2(t_engine *engine, t_graf graf, t_fline *w, int t)
+static void	render_graf(t_engine *engine, t_graf graf, t_fline *w, int t)
 {
     float	z;
     t_line	w0;
@@ -58,22 +58,27 @@ static void	render_graf2(t_engine *engine, t_graf graf, t_fline *w, int t)
     }
 }
 
-void		render_graf(t_engine *engine, int sectorno, int i)
+void		graf_proccesing(t_engine *engine, int sectorno, int i)
 {
-    t_graf	graf;
-    t_fline	w;
-    int		t;
+	t_graf	graf;
+	t_fline	w;
+	int		t;
 
-    graf = engine->graf[sectorno];
-    t = 0;
-    while (t < graf.g_num)
-    {
-        if (graf.wall[t] == i)
-        {
-            w = graf.coord[t];
-            if (transform_wall(engine, &w))
-                render_graf2(engine, graf, &w, t);
-        }
-        t++;
-    }
+	graf = engine->graf[sectorno];
+	t = 0;
+	while (t < graf.g_num)
+	{
+		if (graf.wall[t] == i)
+		{
+			w = graf.coord[t];
+			if (transform_wall(engine, &w))
+			{
+				if (engine->edit.door == 2 &&
+					determine_intersection(w,(t_fline){0, 3, 0, 0}))
+					engine->edit.door = 4;
+				render_graf(engine, graf, &w, t);
+			}
+		}
+		t++;
+	}
 }

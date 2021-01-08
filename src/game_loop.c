@@ -22,26 +22,26 @@ static void	reset(t_engine *engine)
 
 static void	draw(t_engine *engine)
 {
-    t_queue	queue[MAX_QUEUE];
-    //все переменные ниже нужно сбрасывать каждый новый кадр
-    engine->max_queue = MAX_QUEUE;
-    engine->queue = queue;
-    *engine->queue = (t_queue){engine->player.sector, 0, W - 1, -1, 0};
-    engine->future = engine->queue + 1;
-    engine->present = engine->queue;
-    while (engine->present != engine->future)
-    {
-        run_queue(engine);
-        engine->present++;
-    }
-    //engine->present--;
+	t_queue	queue[MAX_QUEUE];
+	//все переменные ниже нужно сбрасывать каждый новый кадр
+	engine->max_queue = MAX_QUEUE;
+	engine->queue = queue;
+	*engine->queue = (t_queue){engine->player.sector, 0, W - 1, -1, 0};
+	engine->future = engine->queue + 1;
+	engine->present = engine->queue;
+	while (engine->present != engine->future)
+	{
+		run_queue(engine);
+		engine->present++;
+	}
+//	engine->present--;
     while (engine->present != engine->queue)
     {
         if (transform_sprite(engine))
             render_sprite(engine);
-        engine->present--;
+       engine->present--;
     }
-    render_minimap_hud(engine->minimap, engine->screen);
+	render_minimap_hud(engine->minimap, engine->screen);
 }
 
 void		game_loop(t_engine *engine, t_all *all)
