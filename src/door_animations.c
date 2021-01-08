@@ -13,14 +13,14 @@ void 		door_anim(t_engine *engine)
 		{
 			dsec = engine->danimbuf[i];
 			anim = engine->danimbuf[i + 1];
-			if (engine->sectors[dsec].doors != -1)
+			if (engine->sectors[dsec].door != -1)
 			{
 				if (anim == 0)
 				{
-					engine->sectors[dsec].doors += 1;
+					engine->sectors[dsec].door += 1;
 					if (engine->player.sector == dsec)
-						engine->sectors[dsec].doors -= 1;
-					engine->sectors[dsec].floor = engine->sectors[dsec].oldf + engine->sectors[dsec].doors;
+						engine->sectors[dsec].door -= 1;
+					engine->sectors[dsec].floor = engine->sectors[dsec].oldf + engine->sectors[dsec].door;
 					if (engine->sectors[dsec].floor >= engine->sectors[dsec].ceil)
 					{
 						engine->danimbuf[i] = -1;
@@ -29,10 +29,10 @@ void 		door_anim(t_engine *engine)
 				}
 				if (anim == 1)
 				{
-					engine->sectors[dsec].doors -= 1;
+					engine->sectors[dsec].door -= 1;
 					if (engine->player.sector == dsec)
-						engine->sectors[dsec].doors += 1;
-					engine->sectors[dsec].floor = engine->sectors[dsec].oldf + engine->sectors[dsec].doors;
+						engine->sectors[dsec].door += 1;
+					engine->sectors[dsec].floor = engine->sectors[dsec].oldf + engine->sectors[dsec].door;
 					if (engine->sectors[dsec].floor <= engine->sectors[dsec].oldf)
 					{
 						engine->danimbuf[i] = -1;
@@ -50,7 +50,7 @@ void		start_danim(t_engine *engine, int nei, int i)
 	int	q;
 	//если игрок смотрит на дверь
 	if (engine->edit.mod_w == i && nei > -1 && nei == engine->edit.mod_s &&
-		engine->edit.door == 2 && engine->sectors[nei].doors > -1)
+		engine->edit.door == 2 && engine->sectors[nei].door > -1)
 	{
 		q = -2;
 		//если данная дверь есть в очереди анимаций, не дублируем

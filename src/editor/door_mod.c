@@ -10,7 +10,7 @@ static int	check_nei(t_engine *engine, int neighbor)
 	{
 		s = engine->sectors[neighbor].neighbors[q];
 		if (s != -1)
-			if (engine->sectors[s].doors != -1)
+			if (engine->sectors[s].door != -1)
 				return (0);
 		q++;
 	}
@@ -33,11 +33,11 @@ void		door_mod(t_engine *engine, int neighbor, int i)
 		while (q < 30)
 			if (engine->danimbuf[(q += 2)] == neighbor)
 				return ;
-		if (engine->sectors[neighbor].doors == -1 && check_nei(engine, neighbor))
-			engine->sectors[neighbor].doors = 0;
+		if (engine->sectors[neighbor].door == -1 && check_nei(engine, neighbor))
+			engine->sectors[neighbor].door = 0;
 		else
 		{
-			engine->sectors[neighbor].doors = -1;
+			engine->sectors[neighbor].door = -1;
 			engine->sectors[neighbor].floor = engine->sectors[neighbor].oldf;
 		}
 	}
