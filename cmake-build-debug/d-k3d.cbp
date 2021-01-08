@@ -8,47 +8,47 @@
 		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\SDL2\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/chel/Desktop/knu1/cmake-build-debug"/>
+				<Option working_dir="/home/chel/Desktop/knukem/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knu1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knu1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knu1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knu1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/chel/Desktop/knu1/cmake-build-debug"/>
+				<Option working_dir="/home/chel/Desktop/knukem/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knu1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knu1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knu1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knu1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/chel/Desktop/knu1/cmake-build-debug"/>
+				<Option working_dir="/home/chel/Desktop/knukem/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knu1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knu1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knu1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knu1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="d-k3d">
-				<Option output="/home/chel/Desktop/knu1/cmake-build-debug/d-k3d" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/chel/Desktop/knu1/cmake-build-debug"/>
+				<Option output="/home/chel/Desktop/knukem/cmake-build-debug/d-k3d" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/chel/Desktop/knukem/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/usr/local/include/SDL2"/>
 					<Add directory="/usr/include/SDL2"/>
-					<Add directory="/home/chel/Desktop/knu1/d-k3d"/>
-					<Add directory="/home/chel/Desktop/knu1/includes"/>
-					<Add directory="/home/chel/Desktop/knu1/libft"/>
+					<Add directory="/home/chel/Desktop/knukem/d-k3d"/>
+					<Add directory="/home/chel/Desktop/knukem/includes"/>
+					<Add directory="/home/chel/Desktop/knukem/libft"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
@@ -56,24 +56,24 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knu1/cmake-build-debug/Makefile&quot;  VERBOSE=1 d-k3d"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knu1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knu1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knu1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 d-k3d"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="d-k3d/fast">
-				<Option output="/home/chel/Desktop/knu1/cmake-build-debug/d-k3d" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/chel/Desktop/knu1/cmake-build-debug"/>
+				<Option output="/home/chel/Desktop/knukem/cmake-build-debug/d-k3d" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/chel/Desktop/knukem/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/usr/local/include/SDL2"/>
 					<Add directory="/usr/include/SDL2"/>
-					<Add directory="/home/chel/Desktop/knu1/d-k3d"/>
-					<Add directory="/home/chel/Desktop/knu1/includes"/>
-					<Add directory="/home/chel/Desktop/knu1/libft"/>
+					<Add directory="/home/chel/Desktop/knukem/d-k3d"/>
+					<Add directory="/home/chel/Desktop/knukem/includes"/>
+					<Add directory="/home/chel/Desktop/knukem/libft"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
@@ -81,230 +81,230 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knu1/cmake-build-debug/Makefile&quot;  VERBOSE=1 d-k3d/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knu1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knu1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knu1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 d-k3d/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/chel/Desktop/knukem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/chel/Desktop/knu1/src/cut_wall.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/cut_wall.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/door_animations.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/door_animations.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/editor/door_mod.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/editor/door_mod.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/editor/graf_mod.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/editor/graf_mod.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/editor/real_time_edit.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/editor/real_time_edit.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/editor/tx_mod.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/editor/tx_mod.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/game_loop.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/game_loop.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/init.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/init.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/key_events">
+		<Unit filename="/home/chel/Desktop/knukem/src/key_events">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/key_events/event_edit.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/key_events/event_edit.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/key_events/event_movement.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/key_events/event_movement.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/key_events/keys_manager.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/key_events/keys_manager.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/lighting.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/lighting.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/main.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/main.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/manage_data.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/manage_data.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/map_editor/draw_all.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/draw_all.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/map_editor/draw_map.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/draw_map.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/map_editor/draw_sprites.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/draw_sprites.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/map_editor/draw_ui.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/draw_ui.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/map_editor/drawing_utils.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/drawing_utils.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/map_editor/errors.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/errors.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/map_editor/events_all.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/events_all.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/map_editor/events_map.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/events_map.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/map_editor/init.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/init.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/map_editor/main.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/main.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/map_editor/math.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/math.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/map_editor/obj_detection.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/obj_detection.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/map_editor/pixels.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/pixels.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/map_editor/reader.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/reader.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/map_editor/sector_add.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/sector_add.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/map_editor/sector_check.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/sector_check.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/map_editor/sector_neighbors.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/sector_neighbors.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/map_editor/sector_remove.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/sector_remove.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/map_editor/texture.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/texture.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/map_editor/write.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/write.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/movement">
+		<Unit filename="/home/chel/Desktop/knukem/src/movement">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/movement/fall.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/movement/fall.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/movement/move.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/movement/move.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/render">
+		<Unit filename="/home/chel/Desktop/knukem/src/render">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/render/ceil_and_floor_init.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/render/ceil_and_floor_init.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/render/line">
+		<Unit filename="/home/chel/Desktop/knukem/src/render/line">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/render/line/render_hline.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/render/line/render_hline.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/render/line/render_line.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/render/line/render_line.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/render/line/render_vline.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/render/line/render_vline.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/render/minimap.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/render/minimap.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/render/render_graf.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/render/render_graf.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/render/render_hplane.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/render/render_hplane.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/render/render_scene.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/render/render_scene.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/render/render_sky.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/render/render_sky.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/render/sprite_render.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/render/sprite_render.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/render/transform_sprite.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/render/transform_sprite.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/render/wall">
+		<Unit filename="/home/chel/Desktop/knukem/src/render/wall">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/render/wall/perspective_init.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/render/wall/perspective_init.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/render/wall/render_wall.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/render/wall/render_wall.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/render/wall/wall_tx_init.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/render/wall/wall_tx_init.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/run_queue.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/run_queue.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/transform_wall.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/transform_wall.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/utilits">
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/utilits/exit_options.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits/exit_options.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/utilits/load_img.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits/load_img.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/utilits/math">
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/utilits/math/determine_intersection.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math/determine_intersection.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/utilits/math/intersection_point.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math/intersection_point.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/utilits/math/mathf.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math/mathf.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/utilits/math/perspective_transform.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math/perspective_transform.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/utilits/math/rotates.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math/rotates.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/utilits/swap.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits/swap.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/src/utilits/utilits.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits/utilits.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/CMakeLists.txt">
+		<Unit filename="/home/chel/Desktop/knukem/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/FindSDL2_image.cmake">
+		<Unit filename="/home/chel/Desktop/knukem/FindSDL2_image.cmake">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/FindSDL2_ttf.cmake">
+		<Unit filename="/home/chel/Desktop/knukem/FindSDL2_ttf.cmake">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/../../../../usr/local/lib/cmake/SDL2/sdl2-config-version.cmake">
+		<Unit filename="/home/chel/Desktop/knukem/../../../../usr/local/lib/cmake/SDL2/sdl2-config-version.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\SDL2\"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knu1/../../../../usr/local/lib/cmake/SDL2/sdl2-config.cmake">
+		<Unit filename="/home/chel/Desktop/knukem/../../../../usr/local/lib/cmake/SDL2/sdl2-config.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\SDL2\"/>
 		</Unit>
 	</Project>

@@ -1,4 +1,4 @@
-# Install script for directory: /home/chel/Desktop/knu1
+# Install script for directory: /home/chel/Desktop/knukem
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/chel/Desktop/knu1/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/chel/Desktop/knukem/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
