@@ -7,6 +7,8 @@ void			render_hline(t_engine *engine, int y, int xbegin, int xend)
 	t_temp2 *a;
 	int x;
 
+	if (y < 0 || y >= H || xbegin < 0 || xbegin >= W || xend < 0 || xend >= W)
+		return ;
 	a = &engine->rend_plane;
 	x = xbegin;
 	temp = (Uint32 *)engine->screen->pixels;

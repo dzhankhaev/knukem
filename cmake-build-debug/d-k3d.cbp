@@ -48,6 +48,7 @@
 					<Add directory="/usr/include/SDL2"/>
 					<Add directory="/home/chel/Desktop/knukem/d-k3d"/>
 					<Add directory="/home/chel/Desktop/knukem/includes"/>
+					<Add directory="/home/chel/Desktop/knukem/libft"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
@@ -72,6 +73,7 @@
 					<Add directory="/usr/include/SDL2"/>
 					<Add directory="/home/chel/Desktop/knukem/d-k3d"/>
 					<Add directory="/home/chel/Desktop/knukem/includes"/>
+					<Add directory="/home/chel/Desktop/knukem/libft"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
@@ -86,25 +88,244 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/chel/Desktop/knukem/includes/engine.h">
+		<Unit filename="/home/chel/Desktop/knukem/libft/c_add.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/includes/events.h">
+		<Unit filename="/home/chel/Desktop/knukem/libft/c_arg.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/includes/utilits.h">
+		<Unit filename="/home/chel/Desktop/knukem/libft/c_mod.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/c_pow.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/c_set.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/c_sqr.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/c_sub.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_arrlen.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_atof.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_atoi.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_bzero.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_free_split.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_isalnum.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_isalpha.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_isascii.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_isdigit.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_isprint.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_itoa.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_lstadd.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_lstdel.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_lstdelone.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_lstiter.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_lstmap.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_lstnew.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_memalloc.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_memccpy.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_memchr.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_memcmp.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_memcpy.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_memdel.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_memmove.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_memset.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_putchar.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_putchar_fd.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_putendl.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_putendl_fd.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_putnbr.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_putnbr_fd.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_putstr.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_putstr_fd.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_realloc.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strcat.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strchr.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strclr.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strcmp.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strcpy.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strdel.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strdup.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strequ.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_striter.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_striteri.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strjoin.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strlcat.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strlen.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strmap.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strmapi.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strncat.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strncmp.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strncpy.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strnequ.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strnew.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strnstr.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strrchr.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strsplit.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strstr.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strsub.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_strtrim.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_swap.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_tolower.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/ft_toupper.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/libft/get_next_line.c">
 			<Option target="d-k3d"/>
 		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/src/cut_wall.c">
 			<Option target="d-k3d"/>
 		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/door_animations.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/editor/door_mod.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/editor/graf_mod.c">
+			<Option target="d-k3d"/>
+		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/src/editor/real_time_edit.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/editor/tx_mod.c">
 			<Option target="d-k3d"/>
 		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/src/game_loop.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/init_engine.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/init.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/key_events">
 			<Option target="d-k3d"/>
 		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/src/key_events/event_edit.c">
@@ -125,10 +346,88 @@
 		<Unit filename="/home/chel/Desktop/knukem/src/manage_data.c">
 			<Option target="d-k3d"/>
 		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/draw_all.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/draw_map.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/draw_sprites.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/draw_ui.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/drawing_utils.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/errors.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/events_all.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/events_map.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/init.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/main.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/math.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/obj_detection.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/pixels.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/reader.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/sector_add.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/sector_check.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/sector_neighbors.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/sector_remove.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/texture.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/map_editor/write.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/movement">
+			<Option target="d-k3d"/>
+		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/src/movement/fall.c">
 			<Option target="d-k3d"/>
 		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/src/movement/move.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/render">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/render/ceil_and_floor_init.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/render/graf_proccesing.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/render/line">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/render/line/render_hline.c">
 			<Option target="d-k3d"/>
 		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/src/render/line/render_line.c">
@@ -140,7 +439,31 @@
 		<Unit filename="/home/chel/Desktop/knukem/src/render/minimap.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/render/render_wall.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/render/render_hplane.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/render/render_scene.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/render/render_sky.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/render/sprite_render.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/render/transform_sprite.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/render/wall">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/render/wall/perspective_init.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/render/wall/render_wall.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/render/wall/wall_tx_init.c">
 			<Option target="d-k3d"/>
 		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/src/run_queue.c">
@@ -149,19 +472,31 @@
 		<Unit filename="/home/chel/Desktop/knukem/src/transform_wall.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math_utilits/determine_intersection.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math_utilits/intersection_point.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits/exit_options.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math_utilits/mathf.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits/load_img.c">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math_utilits/perspective_transform.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math">
 			<Option target="d-k3d"/>
 		</Unit>
-		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math_utilits/rotates.c">
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math/determine_intersection.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math/intersection_point.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math/mathf.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math/perspective_transform.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/src/utilits/math/rotates.c">
 			<Option target="d-k3d"/>
 		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/src/utilits/swap.c">
@@ -174,6 +509,9 @@
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/FindSDL2_image.cmake">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/chel/Desktop/knukem/FindSDL2_ttf.cmake">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 		<Unit filename="/home/chel/Desktop/knukem/../../../../usr/local/lib/cmake/SDL2/sdl2-config-version.cmake">

@@ -8,7 +8,7 @@ static void 	keyboard_event(t_engine *engine, t_player *player, t_edit *edit)
 	{
 		if (player->event.type == SDL_KEYDOWN || player->event.type == SDL_KEYUP) //плавные
 		{
-			event_movement(player);		//всё что связано с движением игрока
+			event_movement(engine);		//всё что связано с движением игрока
 			event_edit(player, edit);	//всё что связано с редактированием карты
 		}
 		if (player->event.type == SDL_KEYDOWN)	//однократные
@@ -80,7 +80,7 @@ void			keys_manager(t_engine *engine)
 	engine->rend_plane.psin = sinf(-engine->player.angle);	//
 	get_move_vector(player, move_vec);
 	acceleration = player->wsad[0] || player->wsad[1] || player->wsad[2]
-				|| player->wsad[3] ? ACCELERATION_PLUS : ACCELERATION_MINUS;
+				   || player->wsad[3] ? ACCELERATION_PLUS : ACCELERATION_MINUS;
 	player->velocity.x = player->velocity.x * acceleration
 						 + move_vec[0] * acceleration;
 	player->velocity.y = player->velocity.y * acceleration

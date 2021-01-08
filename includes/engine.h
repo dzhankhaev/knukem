@@ -1,10 +1,29 @@
 #ifndef ENGINE_H
 # define ENGINE_H
 # include <math.h>
+# include "editor.h"
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
 # include <string.h>
+<<<<<<< HEAD
+
+||||||| 1784372
+# include <SDL2/SDL.h>
+# include <SDL2_image/SDL_image.h>
+//# include <SDL2_ttf/SDL_ttf.h>
+//# include <SDL2_mixer/SDL_mixer.h>
+/*
+ * ЗАКОММЕНТИРУЙ, ЕСЛИ НЕ КОМПИЛИТСЯ! Временное решение
+ */
+/*# include <SDL.h>
+# include <SDL_ttf.h>
+# include <SDL_image.h>
+# include <SDL_mixer.h>*/
+
+# define W 1920
+# define H 1080
+=======
 <<<<<<< HEAD
 # include <SDL.h>
 //# include <SDL2_ttf/SDL_ttf.h>
@@ -91,6 +110,7 @@ typedef struct	s_delta
 =======
 # define W 1920
 # define H 1080
+>>>>>>> master
 # define MAX_QUEUE 64				//	максимальная длина очереди секторов
 //вычисленные заранее координаты конечной точки лучей видимости для фов 90. Подробнее в transform_wall.c
 # define RAY_POINT_X 35.f			//	50.f * cosf(HFOV/2)
@@ -120,6 +140,7 @@ typedef struct	s_delta
 # define CAMERA_DY -0.007f			//	чувствительность по оси Y
 # define CAMERA_DX 0.01f			//	чувствительность по оси X
 # define VLIMIT 2.5f				//	Граница вертикального поворота
+# define WEAPON_SPRITE_NUM 1		//	Количество спрайтов оружия
 
 typedef struct	q_queue
 {
@@ -127,6 +148,7 @@ typedef struct	q_queue
 	int			x0;			//	границы отображения этого сектора
 	int			x1;			//	равны границам портала, из которого попали в этот сектор
 	int			psec;		//	номер сектора, из которого пришли
+	int			door;
 }				t_queue;
 
 typedef struct	s_delta		//	для алгоритма брезенхема
@@ -156,6 +178,24 @@ typedef struct	s_fline		//	стена для вычислений
 	Uint32		color;
 }				t_fline;
 
+<<<<<<< HEAD
+typedef struct	s_ixyz
+||||||| 1784372
+typedef struct	s_xy
+{
+	float		x;
+	float		y;
+}				t_xy;
+
+typedef struct	s_xyz
+{
+	float		x;
+	float		y;
+	float		z;
+}				t_xyz;
+
+typedef struct	s_sector
+=======
 typedef struct	s_xy
 {
 	float		x;
@@ -177,32 +217,12 @@ typedef struct	s_ixyz
 }				t_ixyz;
 
 typedef struct	s_sector
+>>>>>>> master
 {
-	float		floor;
-	float		ceil;
-	t_xy		*vertex;		//	Координаты всех вершин данного сектора, причем первая координата дублируется в конце
-	int 		*neighbors;		//	Номера всех соседей данного сектора, им соответствуют вершины i, i+1
-	int 		npoints;		//	Количество соседей
-}				t_sector;
-
-typedef	struct	s_player
-{
-	t_xyz		where;			//	текущая позиция
-	t_xyz		velocity;		//	вектор скорости движения
-	float		angle;			//	угол поворота
-	float		anglesin;		//	синус угла поворота
-	float		anglecos;		//	косинус угла поворота
-	float		vangle;			//	угол вертикального поворота
-	int 		sector;			//	текущий сектор
-	int			wsad[4];		//	ключи передвижения. 1 - движение, 0 - его отсутстие
-	int			falling;		//	1 - игрок падает, 0 - не падает. Игрок может падать вверх. Если 1, будет применено ускорение
-	int			flying;			//	флаг = 1 только если игрок летит вверх или вниз. ФЛАГ НЕ ОПРЕДЕЛЯЕТ НАХОДИТСЯ ИГРОК В РЕЖИМЕ ПОЛЕТА ИЛИ НЕТ
-	int			ground;			//	грок стоит на земле
-	float		eyeheight;		//	текущая высота камеры
-	float		speed;			//	текущая максимальная скорость
-	int			deep_sh;		//	затенение
-	SDL_Event	event;
-}				t_player;
+	int 		x;
+	int 		y;
+	int 		z;
+}				t_ixyz;
 
 typedef struct	s_minimap
 {
@@ -216,20 +236,42 @@ typedef struct	s_minimap
 
 typedef struct	s_edit
 {
+<<<<<<< HEAD
+	int			hchange[4];			//	модификаторы высоты пола и потолка
+	int 		mod_s;				//	этот сектор будет модифицирован											}
+	int			mod_w;				//	эта стена будет модифицирована											 }текстуры
+	int			mod_tx;				//	1 - пол, 2 - потолок, 3 - нижняя линия раздела, 4 - верхняя, 0 - стена	}
+	int			txno;				//	эту текстуру назначим
+	int			graf;				//	0 ничего, 1 режим граффити, 2 поставить граффити, 3 удалить граффити
+	int			door;				//	0 ничего, 1 назначить/удалить дверь, 2 закрыть, 3 открыть
+	int			mod;				//
+||||||| 1784372
+	int			hchange[4];			//	модификаторы
+	int 		mod_s;				//	 этот сектор будет модифицирован
+	int			mod;				//	режим модификатора !не используется!
+=======
 	int			hchange[4];			//	модификаторы высоты пола и потолка
 	int 		mod_s;				//	этот сектор будет модифицирован											}
 	int			mod_w;				//	эта стена будет модифицирована											 }текстуры
 	int			mod_tx;				//	1 - пол, 2 - потолок, 3 - нижняя линия раздела, 4 - верхняя, 0 - стена	}
 	int			txno;				//	эту текстуру назначим
 	int			mod;				//	режим модификатора !не используется!
+>>>>>>> master
 }				t_edit;
 
 typedef struct	s_img
 {
 	SDL_Surface	*tx;
 	char		name[15];
-	int			n;
 }				t_img;
+
+typedef struct	s_graf
+{
+	int			g_num;		//	количество граффити в секторе
+	float		*z;			//	высота
+	t_fline		*coord;		//	вектор
+	int			*wall;		//	номер стены сектора
+}				t_graf;
 
 typedef struct	s_temp
 {
@@ -238,9 +280,9 @@ typedef struct	s_temp
 	int			x;			//	текущий х
 	int			x0;			//	начальный х
 	int			x1;			//	конечный х
-	int 		oy[4];		//	текущая точка в перспективе до обрезания по краям экрана (origin)
-	int			y[4];		//	текущая точка в перспективе. 0 потолок, 1 пол, 2 потолок соседа и верхняя линия раздела, 3 пол соседа и нижняя линия раздела
-	t_line		wall[4];	//	координаты стены в перспективе. 0 потолок, 1 пол, 2 потолок соседа и верхняя линия раздела, 3 пол соседа и нижняя линия раздела
+	int 		oy[6];		//	текущая точка в перспективе до обрезания по краям экрана (origin)
+	int			y[8];		//	текущая точка в перспективе. 0 потолок, 1 пол, 2 потолок соседа и верхняя линия раздела, 3 пол соседа и нижняя линия раздела
+	t_line		wall[8];	//	координаты стены в перспективе. 0 потолок, 1 пол, 2 потолок соседа и верхняя линия раздела, 3 пол соседа и нижняя линия раздела
 	t_line		w;			//	координаты стены до обрезания по лучам видимости
 	t_fline		l;			//	короткая запись engine->wall
 }				t_temp;
@@ -261,14 +303,64 @@ typedef struct	s_temp2
 	SDL_Surface	*tx;
 }				t_temp2;
 
+<<<<<<< HEAD
 typedef struct	s_vplane
 {
+	int			minx;//минимальная координата X области
+	int			maxx;//максимальная координата X области
+	int			topy[W];//верхняя координата
+	int			boty[W];//нижняя координата
+	float		z;
+}				t_vplane;
+
+//структура для каждого врага
+typedef struct	s_weapon_sprites
+{
+	int			visible; //TODO
+	t_xyz		where; //текущая позиция
+	t_xyz		translated_where;
+	t_xyz		rotated_where;
+	t_xyz		fin_transformed_where;
+	int			sector; //текущий сектор
+	//float 		angle;
+	//int 		height;
+	SDL_Surface	*texture; //массив текстур для этого спрайта
+	SDL_Rect	dstrect;
+	double 		dist;
+	t_fline		cut_sprite_where;
+	t_fline		cut_translated_where;
+	t_fline		cut_rotated_where;
+	t_fline		fov_cut_rotated_where;
+	t_fline		cut_fin_transformed_where;
+	double		width;
+	double		height;
+	//int 		*sprite[3];
+}				t_weapon_sprites;
+
+typedef struct	s_sprites1
+||||||| 1784372
+typedef struct	s_vplanes
+=======
+typedef struct	s_vplane
+>>>>>>> master
+{
+<<<<<<< HEAD
+	t_weapon_sprites 		*weapon_sprite;
+}				t_sprites1;
+||||||| 1784372
+	int minx;//минимальная координата X области
+	int maxx;//максимальная координата X области
+	int topy[W];//верхняя координата
+	int boty[W];//нижняя координата
+}				t_vplanes;
+=======
 	int 		minx;//минимальная координата X области
 	int 		maxx;//максимальная координата X области
 	int 		topy[W];//верхняя координата
 	int 		boty[W];//нижняя координата
 	float		z;
 }				t_vplane;
+>>>>>>> master
 
 typedef struct	s_engine
 {
@@ -278,6 +370,11 @@ typedef struct	s_engine
 	t_edit		edit;
 	t_line		borders;			//	границы отображения (установлены во всё окно)
 	t_player	player;
+<<<<<<< HEAD
+	t_sect		*sectors;				//	считанная карта
+||||||| 1784372
+	t_sector	*sectors;			//	считанная карта
+=======
 <<<<<<< HEAD
 	t_sector	*sectors;		//	считанная карта
 	unsigned	num_sectors;	//	количество секторов в карте
@@ -300,6 +397,7 @@ typedef struct	s_engine
 	int 		tmp;
 =======
 	t_sector	*sectors;			//	считанная карта
+>>>>>>> master
 	int 		num_sectors;		//	количество секторов в карте
 	t_queue		*queue;				//	очередь секторов
 	t_queue		*future;			//	указатель заполнения
@@ -307,9 +405,23 @@ typedef struct	s_engine
 	int 		max_queue;
 	int 		close_request;
 	t_fline		wall;				//	текущая стена со всеми преобразованиями
-	t_fline		ow;					//	текущая стена без отрезания частей, не попавших в кадр
+	t_fline		ow;					//	преобразованное граффити
 	int			tline[W];			//	верхняя линия раздела
 	int			bline[W];			//	нижняя линия раздела
+<<<<<<< HEAD
+	int			danimbuf[30];		//	очередь анимаций дверей. Шаг = 2, первое значение сектор, второе вид анимации
+	t_vplane	vpfloor;			//	таблица для заполнения пола
+	t_vplane	vpceil;				//	таблица для заполнения потолка
+	int			u0;					//	начало и конец текстуры с учетом части стены, которая не попала в кадр
+||||||| 1784372
+	int			yctop[W];			//	экранные y потолка
+	int			ycbot[W];			//	экранные y потолка
+	int			yftop[W];			//	экранные y пола
+	int			yfbot[W];			//	экранные y пола
+	t_vplanes	vpfloor;			//	таблица для заполнения пола
+	t_vplanes	vpceil;				//	таблица для заполнения потолка
+	int			u0;					//	начало и конец текстуры с учетом чати стены, которая не попала в кадр
+=======
 	int			yctop[W];			//	экранные y потолка
 	int			ycbot[W];			//	экранные y потолка
 	int			yftop[W];			//	экранные y пола
@@ -317,28 +429,56 @@ typedef struct	s_engine
 	t_vplane	vpfloor;			//	таблица для заполнения пола
 	t_vplane	vpceil;				//	таблица для заполнения потолка
 	int			u0;					//	начало и конец текстуры с учетом чати стены, которая не попала в кадр
+>>>>>>> master
 	int			u1;					//
 	t_temp		rend_wall;			//используется в rendel_Wall тобы обойти норму
 	t_temp2		rend_plane;			//используется при рендеринге пола и потолка
 	t_img		img[10];
+<<<<<<< HEAD
+	t_graf		*graf;				//для каждого сектора создаётся раздел с граффити
+	t_sprites1	*sprites1;
+||||||| 1784372
+=======
+>>>>>>> master
 >>>>>>> master
 }				t_engine;
 
-
-void			init_engine(t_engine *engine);
+void			init_engine(t_engine *engine, t_all *all);
 void			general_init(t_engine *engine);
-void			load_data(t_engine *engine);
+void			load_data(t_engine *engine, t_all *all);
 void			unload_data(t_engine *engine);
+<<<<<<< HEAD
+void			game_loop(t_engine *engine, t_all *all);
+int				transform_wall(t_engine *engine, t_fline *wall);
+void			render_scene(t_engine *engine, int sectorno, int neighbor, int i);
+void			ceil_and_floor_init(t_engine *engine);
+void			render_wall(t_engine *engine, int neighbor, t_ixyz t);
+||||||| 1784372
+void			game_loop(t_engine *engine);
+int 			transform_wall(t_engine *engine, int i);
+void			render_wall(t_engine *engine, int sectorno, int neighbor);
+void			ceil_and_floor(t_engine *engine);
+void			render_edge(t_engine *engine, int neighbor);
+=======
 void			game_loop(t_engine *engine);
 int 			transform_wall(t_engine *engine, int i);
 void			render_scene(t_engine *engine, int sectorno, int neighbor);
 void			ceil_and_floor_init(t_engine *engine);
 void			render_wall(t_engine *engine, int neighbor, t_ixyz t);
+>>>>>>> master
 t_line			get_op1(t_temp *a);
 t_line			get_op2(t_temp *a);
 t_line			get_op3(t_temp *a);
+<<<<<<< HEAD
+void			init_ceil_floor(t_engine *engine, t_sect sector, t_line *wall);
+void			init_wall(t_engine *engine, t_sect sector, t_line *wall);
+||||||| 1784372
+void			init_ceil_floor(t_engine *engine, t_sector sector, t_line *wall);
+void			init_edge(t_engine *engine, t_sector sector, t_line *wall);
+=======
 void			init_ceil_floor(t_engine *engine, t_sector sector, t_line *wall);
 void			init_wall(t_engine *engine, t_sector sector, t_line *wall);
+>>>>>>> master
 t_fline			cut_wall(t_fline wall, t_xy i1, t_xy i2);						//разрезает стену для попадания в fov
 void			minimap(t_engine *engine, t_xy v0, t_xy v1, Uint32 color);			//рисуется отдельно для каждой стены
 void			minimap_cut(t_engine *engine, t_xy v0, t_xy v1, Uint32 color);		//показывает только то, что в поле зрения
@@ -349,11 +489,32 @@ void			render_line(t_line p, SDL_Surface *screen, t_line borders);		//линия
 void			render_vline(t_engine *engine, t_line p, t_line op, int texture_n);			//вертикальная линия сверху вниз
 void			render_hline(t_engine *engine, int y, int xbegin, int xend);
 void			move(t_engine *engine);
-void			fall(t_player *player, t_sector *sectors);
+void			fall(t_player *player, t_sect *sectors);
 Uint32			deep_shading(t_engine *engine, t_line wall, int x);			//модификатор освещения в зависимости от дальности
 Uint32			get_shadow(Uint32 z, Uint32 color);								//применить модификатор освещения
 void			real_time_edit(t_engine *engine);
+<<<<<<< HEAD
+void			render_hplane(t_engine *engine, t_vplane *p, int txno);
+int 			main_editor(t_engine *engine, char *name, t_all *all);
+void			render_sprite(t_engine *engine);////testtt
+int 			transform_sprite(t_engine *engine);
+void			normi_sprite(t_sprites1 sprite, t_player player);
+void			rotate_sprite(t_sprites1 sprite, t_player player);
+void			perspective_transform2(t_sprites1 sprite, t_player player);
+void			graf_proccesing(t_engine *engine, int sectorno, int i);
+void			graf_mod(t_engine *engine, int sectorno, int i);
+t_ixyz			tx_wall_mod(t_engine *engine, int sectorno, int i);
+t_ixyz			tx_plane_mod(t_engine *engine, int sectorno, int i);
+void			door_mod(t_engine *engine, int neighbor, int i);
+void 			door_anim(t_engine *engine);
+void			start_danim(t_engine *engine, int nei, int i);
+||||||| 1784372
+void			render_floor(t_engine *engine);
+void			render_ceil(t_engine *engine);
+void			render_sky(t_engine *engine);
+=======
 void			render_hplane(t_engine *engine, t_vplane *p, int txno);
 void			render_sky(t_engine *engine);
+>>>>>>> master
 
 #endif

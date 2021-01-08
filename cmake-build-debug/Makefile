@@ -59,10 +59,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/129/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/138/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/129/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/138/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -79,7 +79,7 @@ CMAKE_BINARY_DIR = /home/chel/Desktop/knukem/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/129/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/138/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -90,7 +90,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/129/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/138/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -143,6 +143,1923 @@ d-k3d/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/build
 .PHONY : d-k3d/fast
 
+libft/c_add.o: libft/c_add.c.o
+
+.PHONY : libft/c_add.o
+
+# target to build an object file
+libft/c_add.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/c_add.c.o
+.PHONY : libft/c_add.c.o
+
+libft/c_add.i: libft/c_add.c.i
+
+.PHONY : libft/c_add.i
+
+# target to preprocess a source file
+libft/c_add.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/c_add.c.i
+.PHONY : libft/c_add.c.i
+
+libft/c_add.s: libft/c_add.c.s
+
+.PHONY : libft/c_add.s
+
+# target to generate assembly for a file
+libft/c_add.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/c_add.c.s
+.PHONY : libft/c_add.c.s
+
+libft/c_arg.o: libft/c_arg.c.o
+
+.PHONY : libft/c_arg.o
+
+# target to build an object file
+libft/c_arg.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/c_arg.c.o
+.PHONY : libft/c_arg.c.o
+
+libft/c_arg.i: libft/c_arg.c.i
+
+.PHONY : libft/c_arg.i
+
+# target to preprocess a source file
+libft/c_arg.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/c_arg.c.i
+.PHONY : libft/c_arg.c.i
+
+libft/c_arg.s: libft/c_arg.c.s
+
+.PHONY : libft/c_arg.s
+
+# target to generate assembly for a file
+libft/c_arg.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/c_arg.c.s
+.PHONY : libft/c_arg.c.s
+
+libft/c_mod.o: libft/c_mod.c.o
+
+.PHONY : libft/c_mod.o
+
+# target to build an object file
+libft/c_mod.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/c_mod.c.o
+.PHONY : libft/c_mod.c.o
+
+libft/c_mod.i: libft/c_mod.c.i
+
+.PHONY : libft/c_mod.i
+
+# target to preprocess a source file
+libft/c_mod.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/c_mod.c.i
+.PHONY : libft/c_mod.c.i
+
+libft/c_mod.s: libft/c_mod.c.s
+
+.PHONY : libft/c_mod.s
+
+# target to generate assembly for a file
+libft/c_mod.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/c_mod.c.s
+.PHONY : libft/c_mod.c.s
+
+libft/c_pow.o: libft/c_pow.c.o
+
+.PHONY : libft/c_pow.o
+
+# target to build an object file
+libft/c_pow.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/c_pow.c.o
+.PHONY : libft/c_pow.c.o
+
+libft/c_pow.i: libft/c_pow.c.i
+
+.PHONY : libft/c_pow.i
+
+# target to preprocess a source file
+libft/c_pow.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/c_pow.c.i
+.PHONY : libft/c_pow.c.i
+
+libft/c_pow.s: libft/c_pow.c.s
+
+.PHONY : libft/c_pow.s
+
+# target to generate assembly for a file
+libft/c_pow.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/c_pow.c.s
+.PHONY : libft/c_pow.c.s
+
+libft/c_set.o: libft/c_set.c.o
+
+.PHONY : libft/c_set.o
+
+# target to build an object file
+libft/c_set.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/c_set.c.o
+.PHONY : libft/c_set.c.o
+
+libft/c_set.i: libft/c_set.c.i
+
+.PHONY : libft/c_set.i
+
+# target to preprocess a source file
+libft/c_set.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/c_set.c.i
+.PHONY : libft/c_set.c.i
+
+libft/c_set.s: libft/c_set.c.s
+
+.PHONY : libft/c_set.s
+
+# target to generate assembly for a file
+libft/c_set.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/c_set.c.s
+.PHONY : libft/c_set.c.s
+
+libft/c_sqr.o: libft/c_sqr.c.o
+
+.PHONY : libft/c_sqr.o
+
+# target to build an object file
+libft/c_sqr.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/c_sqr.c.o
+.PHONY : libft/c_sqr.c.o
+
+libft/c_sqr.i: libft/c_sqr.c.i
+
+.PHONY : libft/c_sqr.i
+
+# target to preprocess a source file
+libft/c_sqr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/c_sqr.c.i
+.PHONY : libft/c_sqr.c.i
+
+libft/c_sqr.s: libft/c_sqr.c.s
+
+.PHONY : libft/c_sqr.s
+
+# target to generate assembly for a file
+libft/c_sqr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/c_sqr.c.s
+.PHONY : libft/c_sqr.c.s
+
+libft/c_sub.o: libft/c_sub.c.o
+
+.PHONY : libft/c_sub.o
+
+# target to build an object file
+libft/c_sub.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/c_sub.c.o
+.PHONY : libft/c_sub.c.o
+
+libft/c_sub.i: libft/c_sub.c.i
+
+.PHONY : libft/c_sub.i
+
+# target to preprocess a source file
+libft/c_sub.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/c_sub.c.i
+.PHONY : libft/c_sub.c.i
+
+libft/c_sub.s: libft/c_sub.c.s
+
+.PHONY : libft/c_sub.s
+
+# target to generate assembly for a file
+libft/c_sub.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/c_sub.c.s
+.PHONY : libft/c_sub.c.s
+
+libft/ft_arrlen.o: libft/ft_arrlen.c.o
+
+.PHONY : libft/ft_arrlen.o
+
+# target to build an object file
+libft/ft_arrlen.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_arrlen.c.o
+.PHONY : libft/ft_arrlen.c.o
+
+libft/ft_arrlen.i: libft/ft_arrlen.c.i
+
+.PHONY : libft/ft_arrlen.i
+
+# target to preprocess a source file
+libft/ft_arrlen.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_arrlen.c.i
+.PHONY : libft/ft_arrlen.c.i
+
+libft/ft_arrlen.s: libft/ft_arrlen.c.s
+
+.PHONY : libft/ft_arrlen.s
+
+# target to generate assembly for a file
+libft/ft_arrlen.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_arrlen.c.s
+.PHONY : libft/ft_arrlen.c.s
+
+libft/ft_atof.o: libft/ft_atof.c.o
+
+.PHONY : libft/ft_atof.o
+
+# target to build an object file
+libft/ft_atof.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_atof.c.o
+.PHONY : libft/ft_atof.c.o
+
+libft/ft_atof.i: libft/ft_atof.c.i
+
+.PHONY : libft/ft_atof.i
+
+# target to preprocess a source file
+libft/ft_atof.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_atof.c.i
+.PHONY : libft/ft_atof.c.i
+
+libft/ft_atof.s: libft/ft_atof.c.s
+
+.PHONY : libft/ft_atof.s
+
+# target to generate assembly for a file
+libft/ft_atof.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_atof.c.s
+.PHONY : libft/ft_atof.c.s
+
+libft/ft_atoi.o: libft/ft_atoi.c.o
+
+.PHONY : libft/ft_atoi.o
+
+# target to build an object file
+libft/ft_atoi.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_atoi.c.o
+.PHONY : libft/ft_atoi.c.o
+
+libft/ft_atoi.i: libft/ft_atoi.c.i
+
+.PHONY : libft/ft_atoi.i
+
+# target to preprocess a source file
+libft/ft_atoi.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_atoi.c.i
+.PHONY : libft/ft_atoi.c.i
+
+libft/ft_atoi.s: libft/ft_atoi.c.s
+
+.PHONY : libft/ft_atoi.s
+
+# target to generate assembly for a file
+libft/ft_atoi.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_atoi.c.s
+.PHONY : libft/ft_atoi.c.s
+
+libft/ft_bzero.o: libft/ft_bzero.c.o
+
+.PHONY : libft/ft_bzero.o
+
+# target to build an object file
+libft/ft_bzero.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_bzero.c.o
+.PHONY : libft/ft_bzero.c.o
+
+libft/ft_bzero.i: libft/ft_bzero.c.i
+
+.PHONY : libft/ft_bzero.i
+
+# target to preprocess a source file
+libft/ft_bzero.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_bzero.c.i
+.PHONY : libft/ft_bzero.c.i
+
+libft/ft_bzero.s: libft/ft_bzero.c.s
+
+.PHONY : libft/ft_bzero.s
+
+# target to generate assembly for a file
+libft/ft_bzero.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_bzero.c.s
+.PHONY : libft/ft_bzero.c.s
+
+libft/ft_free_split.o: libft/ft_free_split.c.o
+
+.PHONY : libft/ft_free_split.o
+
+# target to build an object file
+libft/ft_free_split.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_free_split.c.o
+.PHONY : libft/ft_free_split.c.o
+
+libft/ft_free_split.i: libft/ft_free_split.c.i
+
+.PHONY : libft/ft_free_split.i
+
+# target to preprocess a source file
+libft/ft_free_split.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_free_split.c.i
+.PHONY : libft/ft_free_split.c.i
+
+libft/ft_free_split.s: libft/ft_free_split.c.s
+
+.PHONY : libft/ft_free_split.s
+
+# target to generate assembly for a file
+libft/ft_free_split.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_free_split.c.s
+.PHONY : libft/ft_free_split.c.s
+
+libft/ft_isalnum.o: libft/ft_isalnum.c.o
+
+.PHONY : libft/ft_isalnum.o
+
+# target to build an object file
+libft/ft_isalnum.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.o
+.PHONY : libft/ft_isalnum.c.o
+
+libft/ft_isalnum.i: libft/ft_isalnum.c.i
+
+.PHONY : libft/ft_isalnum.i
+
+# target to preprocess a source file
+libft/ft_isalnum.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.i
+.PHONY : libft/ft_isalnum.c.i
+
+libft/ft_isalnum.s: libft/ft_isalnum.c.s
+
+.PHONY : libft/ft_isalnum.s
+
+# target to generate assembly for a file
+libft/ft_isalnum.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_isalnum.c.s
+.PHONY : libft/ft_isalnum.c.s
+
+libft/ft_isalpha.o: libft/ft_isalpha.c.o
+
+.PHONY : libft/ft_isalpha.o
+
+# target to build an object file
+libft/ft_isalpha.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.o
+.PHONY : libft/ft_isalpha.c.o
+
+libft/ft_isalpha.i: libft/ft_isalpha.c.i
+
+.PHONY : libft/ft_isalpha.i
+
+# target to preprocess a source file
+libft/ft_isalpha.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.i
+.PHONY : libft/ft_isalpha.c.i
+
+libft/ft_isalpha.s: libft/ft_isalpha.c.s
+
+.PHONY : libft/ft_isalpha.s
+
+# target to generate assembly for a file
+libft/ft_isalpha.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_isalpha.c.s
+.PHONY : libft/ft_isalpha.c.s
+
+libft/ft_isascii.o: libft/ft_isascii.c.o
+
+.PHONY : libft/ft_isascii.o
+
+# target to build an object file
+libft/ft_isascii.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_isascii.c.o
+.PHONY : libft/ft_isascii.c.o
+
+libft/ft_isascii.i: libft/ft_isascii.c.i
+
+.PHONY : libft/ft_isascii.i
+
+# target to preprocess a source file
+libft/ft_isascii.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_isascii.c.i
+.PHONY : libft/ft_isascii.c.i
+
+libft/ft_isascii.s: libft/ft_isascii.c.s
+
+.PHONY : libft/ft_isascii.s
+
+# target to generate assembly for a file
+libft/ft_isascii.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_isascii.c.s
+.PHONY : libft/ft_isascii.c.s
+
+libft/ft_isdigit.o: libft/ft_isdigit.c.o
+
+.PHONY : libft/ft_isdigit.o
+
+# target to build an object file
+libft/ft_isdigit.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.o
+.PHONY : libft/ft_isdigit.c.o
+
+libft/ft_isdigit.i: libft/ft_isdigit.c.i
+
+.PHONY : libft/ft_isdigit.i
+
+# target to preprocess a source file
+libft/ft_isdigit.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.i
+.PHONY : libft/ft_isdigit.c.i
+
+libft/ft_isdigit.s: libft/ft_isdigit.c.s
+
+.PHONY : libft/ft_isdigit.s
+
+# target to generate assembly for a file
+libft/ft_isdigit.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_isdigit.c.s
+.PHONY : libft/ft_isdigit.c.s
+
+libft/ft_isprint.o: libft/ft_isprint.c.o
+
+.PHONY : libft/ft_isprint.o
+
+# target to build an object file
+libft/ft_isprint.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_isprint.c.o
+.PHONY : libft/ft_isprint.c.o
+
+libft/ft_isprint.i: libft/ft_isprint.c.i
+
+.PHONY : libft/ft_isprint.i
+
+# target to preprocess a source file
+libft/ft_isprint.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_isprint.c.i
+.PHONY : libft/ft_isprint.c.i
+
+libft/ft_isprint.s: libft/ft_isprint.c.s
+
+.PHONY : libft/ft_isprint.s
+
+# target to generate assembly for a file
+libft/ft_isprint.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_isprint.c.s
+.PHONY : libft/ft_isprint.c.s
+
+libft/ft_itoa.o: libft/ft_itoa.c.o
+
+.PHONY : libft/ft_itoa.o
+
+# target to build an object file
+libft/ft_itoa.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_itoa.c.o
+.PHONY : libft/ft_itoa.c.o
+
+libft/ft_itoa.i: libft/ft_itoa.c.i
+
+.PHONY : libft/ft_itoa.i
+
+# target to preprocess a source file
+libft/ft_itoa.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_itoa.c.i
+.PHONY : libft/ft_itoa.c.i
+
+libft/ft_itoa.s: libft/ft_itoa.c.s
+
+.PHONY : libft/ft_itoa.s
+
+# target to generate assembly for a file
+libft/ft_itoa.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_itoa.c.s
+.PHONY : libft/ft_itoa.c.s
+
+libft/ft_lstadd.o: libft/ft_lstadd.c.o
+
+.PHONY : libft/ft_lstadd.o
+
+# target to build an object file
+libft/ft_lstadd.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.o
+.PHONY : libft/ft_lstadd.c.o
+
+libft/ft_lstadd.i: libft/ft_lstadd.c.i
+
+.PHONY : libft/ft_lstadd.i
+
+# target to preprocess a source file
+libft/ft_lstadd.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.i
+.PHONY : libft/ft_lstadd.c.i
+
+libft/ft_lstadd.s: libft/ft_lstadd.c.s
+
+.PHONY : libft/ft_lstadd.s
+
+# target to generate assembly for a file
+libft/ft_lstadd.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_lstadd.c.s
+.PHONY : libft/ft_lstadd.c.s
+
+libft/ft_lstdel.o: libft/ft_lstdel.c.o
+
+.PHONY : libft/ft_lstdel.o
+
+# target to build an object file
+libft/ft_lstdel.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.o
+.PHONY : libft/ft_lstdel.c.o
+
+libft/ft_lstdel.i: libft/ft_lstdel.c.i
+
+.PHONY : libft/ft_lstdel.i
+
+# target to preprocess a source file
+libft/ft_lstdel.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.i
+.PHONY : libft/ft_lstdel.c.i
+
+libft/ft_lstdel.s: libft/ft_lstdel.c.s
+
+.PHONY : libft/ft_lstdel.s
+
+# target to generate assembly for a file
+libft/ft_lstdel.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_lstdel.c.s
+.PHONY : libft/ft_lstdel.c.s
+
+libft/ft_lstdelone.o: libft/ft_lstdelone.c.o
+
+.PHONY : libft/ft_lstdelone.o
+
+# target to build an object file
+libft/ft_lstdelone.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.o
+.PHONY : libft/ft_lstdelone.c.o
+
+libft/ft_lstdelone.i: libft/ft_lstdelone.c.i
+
+.PHONY : libft/ft_lstdelone.i
+
+# target to preprocess a source file
+libft/ft_lstdelone.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.i
+.PHONY : libft/ft_lstdelone.c.i
+
+libft/ft_lstdelone.s: libft/ft_lstdelone.c.s
+
+.PHONY : libft/ft_lstdelone.s
+
+# target to generate assembly for a file
+libft/ft_lstdelone.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_lstdelone.c.s
+.PHONY : libft/ft_lstdelone.c.s
+
+libft/ft_lstiter.o: libft/ft_lstiter.c.o
+
+.PHONY : libft/ft_lstiter.o
+
+# target to build an object file
+libft/ft_lstiter.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.o
+.PHONY : libft/ft_lstiter.c.o
+
+libft/ft_lstiter.i: libft/ft_lstiter.c.i
+
+.PHONY : libft/ft_lstiter.i
+
+# target to preprocess a source file
+libft/ft_lstiter.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.i
+.PHONY : libft/ft_lstiter.c.i
+
+libft/ft_lstiter.s: libft/ft_lstiter.c.s
+
+.PHONY : libft/ft_lstiter.s
+
+# target to generate assembly for a file
+libft/ft_lstiter.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_lstiter.c.s
+.PHONY : libft/ft_lstiter.c.s
+
+libft/ft_lstmap.o: libft/ft_lstmap.c.o
+
+.PHONY : libft/ft_lstmap.o
+
+# target to build an object file
+libft/ft_lstmap.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.o
+.PHONY : libft/ft_lstmap.c.o
+
+libft/ft_lstmap.i: libft/ft_lstmap.c.i
+
+.PHONY : libft/ft_lstmap.i
+
+# target to preprocess a source file
+libft/ft_lstmap.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.i
+.PHONY : libft/ft_lstmap.c.i
+
+libft/ft_lstmap.s: libft/ft_lstmap.c.s
+
+.PHONY : libft/ft_lstmap.s
+
+# target to generate assembly for a file
+libft/ft_lstmap.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_lstmap.c.s
+.PHONY : libft/ft_lstmap.c.s
+
+libft/ft_lstnew.o: libft/ft_lstnew.c.o
+
+.PHONY : libft/ft_lstnew.o
+
+# target to build an object file
+libft/ft_lstnew.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.o
+.PHONY : libft/ft_lstnew.c.o
+
+libft/ft_lstnew.i: libft/ft_lstnew.c.i
+
+.PHONY : libft/ft_lstnew.i
+
+# target to preprocess a source file
+libft/ft_lstnew.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.i
+.PHONY : libft/ft_lstnew.c.i
+
+libft/ft_lstnew.s: libft/ft_lstnew.c.s
+
+.PHONY : libft/ft_lstnew.s
+
+# target to generate assembly for a file
+libft/ft_lstnew.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_lstnew.c.s
+.PHONY : libft/ft_lstnew.c.s
+
+libft/ft_memalloc.o: libft/ft_memalloc.c.o
+
+.PHONY : libft/ft_memalloc.o
+
+# target to build an object file
+libft/ft_memalloc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.o
+.PHONY : libft/ft_memalloc.c.o
+
+libft/ft_memalloc.i: libft/ft_memalloc.c.i
+
+.PHONY : libft/ft_memalloc.i
+
+# target to preprocess a source file
+libft/ft_memalloc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.i
+.PHONY : libft/ft_memalloc.c.i
+
+libft/ft_memalloc.s: libft/ft_memalloc.c.s
+
+.PHONY : libft/ft_memalloc.s
+
+# target to generate assembly for a file
+libft/ft_memalloc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_memalloc.c.s
+.PHONY : libft/ft_memalloc.c.s
+
+libft/ft_memccpy.o: libft/ft_memccpy.c.o
+
+.PHONY : libft/ft_memccpy.o
+
+# target to build an object file
+libft/ft_memccpy.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.o
+.PHONY : libft/ft_memccpy.c.o
+
+libft/ft_memccpy.i: libft/ft_memccpy.c.i
+
+.PHONY : libft/ft_memccpy.i
+
+# target to preprocess a source file
+libft/ft_memccpy.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.i
+.PHONY : libft/ft_memccpy.c.i
+
+libft/ft_memccpy.s: libft/ft_memccpy.c.s
+
+.PHONY : libft/ft_memccpy.s
+
+# target to generate assembly for a file
+libft/ft_memccpy.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_memccpy.c.s
+.PHONY : libft/ft_memccpy.c.s
+
+libft/ft_memchr.o: libft/ft_memchr.c.o
+
+.PHONY : libft/ft_memchr.o
+
+# target to build an object file
+libft/ft_memchr.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_memchr.c.o
+.PHONY : libft/ft_memchr.c.o
+
+libft/ft_memchr.i: libft/ft_memchr.c.i
+
+.PHONY : libft/ft_memchr.i
+
+# target to preprocess a source file
+libft/ft_memchr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_memchr.c.i
+.PHONY : libft/ft_memchr.c.i
+
+libft/ft_memchr.s: libft/ft_memchr.c.s
+
+.PHONY : libft/ft_memchr.s
+
+# target to generate assembly for a file
+libft/ft_memchr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_memchr.c.s
+.PHONY : libft/ft_memchr.c.s
+
+libft/ft_memcmp.o: libft/ft_memcmp.c.o
+
+.PHONY : libft/ft_memcmp.o
+
+# target to build an object file
+libft/ft_memcmp.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.o
+.PHONY : libft/ft_memcmp.c.o
+
+libft/ft_memcmp.i: libft/ft_memcmp.c.i
+
+.PHONY : libft/ft_memcmp.i
+
+# target to preprocess a source file
+libft/ft_memcmp.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.i
+.PHONY : libft/ft_memcmp.c.i
+
+libft/ft_memcmp.s: libft/ft_memcmp.c.s
+
+.PHONY : libft/ft_memcmp.s
+
+# target to generate assembly for a file
+libft/ft_memcmp.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_memcmp.c.s
+.PHONY : libft/ft_memcmp.c.s
+
+libft/ft_memcpy.o: libft/ft_memcpy.c.o
+
+.PHONY : libft/ft_memcpy.o
+
+# target to build an object file
+libft/ft_memcpy.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.o
+.PHONY : libft/ft_memcpy.c.o
+
+libft/ft_memcpy.i: libft/ft_memcpy.c.i
+
+.PHONY : libft/ft_memcpy.i
+
+# target to preprocess a source file
+libft/ft_memcpy.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.i
+.PHONY : libft/ft_memcpy.c.i
+
+libft/ft_memcpy.s: libft/ft_memcpy.c.s
+
+.PHONY : libft/ft_memcpy.s
+
+# target to generate assembly for a file
+libft/ft_memcpy.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_memcpy.c.s
+.PHONY : libft/ft_memcpy.c.s
+
+libft/ft_memdel.o: libft/ft_memdel.c.o
+
+.PHONY : libft/ft_memdel.o
+
+# target to build an object file
+libft/ft_memdel.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_memdel.c.o
+.PHONY : libft/ft_memdel.c.o
+
+libft/ft_memdel.i: libft/ft_memdel.c.i
+
+.PHONY : libft/ft_memdel.i
+
+# target to preprocess a source file
+libft/ft_memdel.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_memdel.c.i
+.PHONY : libft/ft_memdel.c.i
+
+libft/ft_memdel.s: libft/ft_memdel.c.s
+
+.PHONY : libft/ft_memdel.s
+
+# target to generate assembly for a file
+libft/ft_memdel.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_memdel.c.s
+.PHONY : libft/ft_memdel.c.s
+
+libft/ft_memmove.o: libft/ft_memmove.c.o
+
+.PHONY : libft/ft_memmove.o
+
+# target to build an object file
+libft/ft_memmove.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_memmove.c.o
+.PHONY : libft/ft_memmove.c.o
+
+libft/ft_memmove.i: libft/ft_memmove.c.i
+
+.PHONY : libft/ft_memmove.i
+
+# target to preprocess a source file
+libft/ft_memmove.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_memmove.c.i
+.PHONY : libft/ft_memmove.c.i
+
+libft/ft_memmove.s: libft/ft_memmove.c.s
+
+.PHONY : libft/ft_memmove.s
+
+# target to generate assembly for a file
+libft/ft_memmove.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_memmove.c.s
+.PHONY : libft/ft_memmove.c.s
+
+libft/ft_memset.o: libft/ft_memset.c.o
+
+.PHONY : libft/ft_memset.o
+
+# target to build an object file
+libft/ft_memset.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_memset.c.o
+.PHONY : libft/ft_memset.c.o
+
+libft/ft_memset.i: libft/ft_memset.c.i
+
+.PHONY : libft/ft_memset.i
+
+# target to preprocess a source file
+libft/ft_memset.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_memset.c.i
+.PHONY : libft/ft_memset.c.i
+
+libft/ft_memset.s: libft/ft_memset.c.s
+
+.PHONY : libft/ft_memset.s
+
+# target to generate assembly for a file
+libft/ft_memset.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_memset.c.s
+.PHONY : libft/ft_memset.c.s
+
+libft/ft_putchar.o: libft/ft_putchar.c.o
+
+.PHONY : libft/ft_putchar.o
+
+# target to build an object file
+libft/ft_putchar.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_putchar.c.o
+.PHONY : libft/ft_putchar.c.o
+
+libft/ft_putchar.i: libft/ft_putchar.c.i
+
+.PHONY : libft/ft_putchar.i
+
+# target to preprocess a source file
+libft/ft_putchar.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_putchar.c.i
+.PHONY : libft/ft_putchar.c.i
+
+libft/ft_putchar.s: libft/ft_putchar.c.s
+
+.PHONY : libft/ft_putchar.s
+
+# target to generate assembly for a file
+libft/ft_putchar.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_putchar.c.s
+.PHONY : libft/ft_putchar.c.s
+
+libft/ft_putchar_fd.o: libft/ft_putchar_fd.c.o
+
+.PHONY : libft/ft_putchar_fd.o
+
+# target to build an object file
+libft/ft_putchar_fd.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.o
+.PHONY : libft/ft_putchar_fd.c.o
+
+libft/ft_putchar_fd.i: libft/ft_putchar_fd.c.i
+
+.PHONY : libft/ft_putchar_fd.i
+
+# target to preprocess a source file
+libft/ft_putchar_fd.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.i
+.PHONY : libft/ft_putchar_fd.c.i
+
+libft/ft_putchar_fd.s: libft/ft_putchar_fd.c.s
+
+.PHONY : libft/ft_putchar_fd.s
+
+# target to generate assembly for a file
+libft/ft_putchar_fd.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_putchar_fd.c.s
+.PHONY : libft/ft_putchar_fd.c.s
+
+libft/ft_putendl.o: libft/ft_putendl.c.o
+
+.PHONY : libft/ft_putendl.o
+
+# target to build an object file
+libft/ft_putendl.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_putendl.c.o
+.PHONY : libft/ft_putendl.c.o
+
+libft/ft_putendl.i: libft/ft_putendl.c.i
+
+.PHONY : libft/ft_putendl.i
+
+# target to preprocess a source file
+libft/ft_putendl.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_putendl.c.i
+.PHONY : libft/ft_putendl.c.i
+
+libft/ft_putendl.s: libft/ft_putendl.c.s
+
+.PHONY : libft/ft_putendl.s
+
+# target to generate assembly for a file
+libft/ft_putendl.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_putendl.c.s
+.PHONY : libft/ft_putendl.c.s
+
+libft/ft_putendl_fd.o: libft/ft_putendl_fd.c.o
+
+.PHONY : libft/ft_putendl_fd.o
+
+# target to build an object file
+libft/ft_putendl_fd.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.o
+.PHONY : libft/ft_putendl_fd.c.o
+
+libft/ft_putendl_fd.i: libft/ft_putendl_fd.c.i
+
+.PHONY : libft/ft_putendl_fd.i
+
+# target to preprocess a source file
+libft/ft_putendl_fd.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.i
+.PHONY : libft/ft_putendl_fd.c.i
+
+libft/ft_putendl_fd.s: libft/ft_putendl_fd.c.s
+
+.PHONY : libft/ft_putendl_fd.s
+
+# target to generate assembly for a file
+libft/ft_putendl_fd.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_putendl_fd.c.s
+.PHONY : libft/ft_putendl_fd.c.s
+
+libft/ft_putnbr.o: libft/ft_putnbr.c.o
+
+.PHONY : libft/ft_putnbr.o
+
+# target to build an object file
+libft/ft_putnbr.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.o
+.PHONY : libft/ft_putnbr.c.o
+
+libft/ft_putnbr.i: libft/ft_putnbr.c.i
+
+.PHONY : libft/ft_putnbr.i
+
+# target to preprocess a source file
+libft/ft_putnbr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.i
+.PHONY : libft/ft_putnbr.c.i
+
+libft/ft_putnbr.s: libft/ft_putnbr.c.s
+
+.PHONY : libft/ft_putnbr.s
+
+# target to generate assembly for a file
+libft/ft_putnbr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_putnbr.c.s
+.PHONY : libft/ft_putnbr.c.s
+
+libft/ft_putnbr_fd.o: libft/ft_putnbr_fd.c.o
+
+.PHONY : libft/ft_putnbr_fd.o
+
+# target to build an object file
+libft/ft_putnbr_fd.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.o
+.PHONY : libft/ft_putnbr_fd.c.o
+
+libft/ft_putnbr_fd.i: libft/ft_putnbr_fd.c.i
+
+.PHONY : libft/ft_putnbr_fd.i
+
+# target to preprocess a source file
+libft/ft_putnbr_fd.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.i
+.PHONY : libft/ft_putnbr_fd.c.i
+
+libft/ft_putnbr_fd.s: libft/ft_putnbr_fd.c.s
+
+.PHONY : libft/ft_putnbr_fd.s
+
+# target to generate assembly for a file
+libft/ft_putnbr_fd.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_putnbr_fd.c.s
+.PHONY : libft/ft_putnbr_fd.c.s
+
+libft/ft_putstr.o: libft/ft_putstr.c.o
+
+.PHONY : libft/ft_putstr.o
+
+# target to build an object file
+libft/ft_putstr.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_putstr.c.o
+.PHONY : libft/ft_putstr.c.o
+
+libft/ft_putstr.i: libft/ft_putstr.c.i
+
+.PHONY : libft/ft_putstr.i
+
+# target to preprocess a source file
+libft/ft_putstr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_putstr.c.i
+.PHONY : libft/ft_putstr.c.i
+
+libft/ft_putstr.s: libft/ft_putstr.c.s
+
+.PHONY : libft/ft_putstr.s
+
+# target to generate assembly for a file
+libft/ft_putstr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_putstr.c.s
+.PHONY : libft/ft_putstr.c.s
+
+libft/ft_putstr_fd.o: libft/ft_putstr_fd.c.o
+
+.PHONY : libft/ft_putstr_fd.o
+
+# target to build an object file
+libft/ft_putstr_fd.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.o
+.PHONY : libft/ft_putstr_fd.c.o
+
+libft/ft_putstr_fd.i: libft/ft_putstr_fd.c.i
+
+.PHONY : libft/ft_putstr_fd.i
+
+# target to preprocess a source file
+libft/ft_putstr_fd.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.i
+.PHONY : libft/ft_putstr_fd.c.i
+
+libft/ft_putstr_fd.s: libft/ft_putstr_fd.c.s
+
+.PHONY : libft/ft_putstr_fd.s
+
+# target to generate assembly for a file
+libft/ft_putstr_fd.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_putstr_fd.c.s
+.PHONY : libft/ft_putstr_fd.c.s
+
+libft/ft_realloc.o: libft/ft_realloc.c.o
+
+.PHONY : libft/ft_realloc.o
+
+# target to build an object file
+libft/ft_realloc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_realloc.c.o
+.PHONY : libft/ft_realloc.c.o
+
+libft/ft_realloc.i: libft/ft_realloc.c.i
+
+.PHONY : libft/ft_realloc.i
+
+# target to preprocess a source file
+libft/ft_realloc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_realloc.c.i
+.PHONY : libft/ft_realloc.c.i
+
+libft/ft_realloc.s: libft/ft_realloc.c.s
+
+.PHONY : libft/ft_realloc.s
+
+# target to generate assembly for a file
+libft/ft_realloc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_realloc.c.s
+.PHONY : libft/ft_realloc.c.s
+
+libft/ft_strcat.o: libft/ft_strcat.c.o
+
+.PHONY : libft/ft_strcat.o
+
+# target to build an object file
+libft/ft_strcat.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strcat.c.o
+.PHONY : libft/ft_strcat.c.o
+
+libft/ft_strcat.i: libft/ft_strcat.c.i
+
+.PHONY : libft/ft_strcat.i
+
+# target to preprocess a source file
+libft/ft_strcat.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strcat.c.i
+.PHONY : libft/ft_strcat.c.i
+
+libft/ft_strcat.s: libft/ft_strcat.c.s
+
+.PHONY : libft/ft_strcat.s
+
+# target to generate assembly for a file
+libft/ft_strcat.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strcat.c.s
+.PHONY : libft/ft_strcat.c.s
+
+libft/ft_strchr.o: libft/ft_strchr.c.o
+
+.PHONY : libft/ft_strchr.o
+
+# target to build an object file
+libft/ft_strchr.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strchr.c.o
+.PHONY : libft/ft_strchr.c.o
+
+libft/ft_strchr.i: libft/ft_strchr.c.i
+
+.PHONY : libft/ft_strchr.i
+
+# target to preprocess a source file
+libft/ft_strchr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strchr.c.i
+.PHONY : libft/ft_strchr.c.i
+
+libft/ft_strchr.s: libft/ft_strchr.c.s
+
+.PHONY : libft/ft_strchr.s
+
+# target to generate assembly for a file
+libft/ft_strchr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strchr.c.s
+.PHONY : libft/ft_strchr.c.s
+
+libft/ft_strclr.o: libft/ft_strclr.c.o
+
+.PHONY : libft/ft_strclr.o
+
+# target to build an object file
+libft/ft_strclr.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strclr.c.o
+.PHONY : libft/ft_strclr.c.o
+
+libft/ft_strclr.i: libft/ft_strclr.c.i
+
+.PHONY : libft/ft_strclr.i
+
+# target to preprocess a source file
+libft/ft_strclr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strclr.c.i
+.PHONY : libft/ft_strclr.c.i
+
+libft/ft_strclr.s: libft/ft_strclr.c.s
+
+.PHONY : libft/ft_strclr.s
+
+# target to generate assembly for a file
+libft/ft_strclr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strclr.c.s
+.PHONY : libft/ft_strclr.c.s
+
+libft/ft_strcmp.o: libft/ft_strcmp.c.o
+
+.PHONY : libft/ft_strcmp.o
+
+# target to build an object file
+libft/ft_strcmp.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.o
+.PHONY : libft/ft_strcmp.c.o
+
+libft/ft_strcmp.i: libft/ft_strcmp.c.i
+
+.PHONY : libft/ft_strcmp.i
+
+# target to preprocess a source file
+libft/ft_strcmp.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.i
+.PHONY : libft/ft_strcmp.c.i
+
+libft/ft_strcmp.s: libft/ft_strcmp.c.s
+
+.PHONY : libft/ft_strcmp.s
+
+# target to generate assembly for a file
+libft/ft_strcmp.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strcmp.c.s
+.PHONY : libft/ft_strcmp.c.s
+
+libft/ft_strcpy.o: libft/ft_strcpy.c.o
+
+.PHONY : libft/ft_strcpy.o
+
+# target to build an object file
+libft/ft_strcpy.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.o
+.PHONY : libft/ft_strcpy.c.o
+
+libft/ft_strcpy.i: libft/ft_strcpy.c.i
+
+.PHONY : libft/ft_strcpy.i
+
+# target to preprocess a source file
+libft/ft_strcpy.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.i
+.PHONY : libft/ft_strcpy.c.i
+
+libft/ft_strcpy.s: libft/ft_strcpy.c.s
+
+.PHONY : libft/ft_strcpy.s
+
+# target to generate assembly for a file
+libft/ft_strcpy.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strcpy.c.s
+.PHONY : libft/ft_strcpy.c.s
+
+libft/ft_strdel.o: libft/ft_strdel.c.o
+
+.PHONY : libft/ft_strdel.o
+
+# target to build an object file
+libft/ft_strdel.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strdel.c.o
+.PHONY : libft/ft_strdel.c.o
+
+libft/ft_strdel.i: libft/ft_strdel.c.i
+
+.PHONY : libft/ft_strdel.i
+
+# target to preprocess a source file
+libft/ft_strdel.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strdel.c.i
+.PHONY : libft/ft_strdel.c.i
+
+libft/ft_strdel.s: libft/ft_strdel.c.s
+
+.PHONY : libft/ft_strdel.s
+
+# target to generate assembly for a file
+libft/ft_strdel.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strdel.c.s
+.PHONY : libft/ft_strdel.c.s
+
+libft/ft_strdup.o: libft/ft_strdup.c.o
+
+.PHONY : libft/ft_strdup.o
+
+# target to build an object file
+libft/ft_strdup.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strdup.c.o
+.PHONY : libft/ft_strdup.c.o
+
+libft/ft_strdup.i: libft/ft_strdup.c.i
+
+.PHONY : libft/ft_strdup.i
+
+# target to preprocess a source file
+libft/ft_strdup.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strdup.c.i
+.PHONY : libft/ft_strdup.c.i
+
+libft/ft_strdup.s: libft/ft_strdup.c.s
+
+.PHONY : libft/ft_strdup.s
+
+# target to generate assembly for a file
+libft/ft_strdup.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strdup.c.s
+.PHONY : libft/ft_strdup.c.s
+
+libft/ft_strequ.o: libft/ft_strequ.c.o
+
+.PHONY : libft/ft_strequ.o
+
+# target to build an object file
+libft/ft_strequ.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strequ.c.o
+.PHONY : libft/ft_strequ.c.o
+
+libft/ft_strequ.i: libft/ft_strequ.c.i
+
+.PHONY : libft/ft_strequ.i
+
+# target to preprocess a source file
+libft/ft_strequ.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strequ.c.i
+.PHONY : libft/ft_strequ.c.i
+
+libft/ft_strequ.s: libft/ft_strequ.c.s
+
+.PHONY : libft/ft_strequ.s
+
+# target to generate assembly for a file
+libft/ft_strequ.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strequ.c.s
+.PHONY : libft/ft_strequ.c.s
+
+libft/ft_striter.o: libft/ft_striter.c.o
+
+.PHONY : libft/ft_striter.o
+
+# target to build an object file
+libft/ft_striter.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_striter.c.o
+.PHONY : libft/ft_striter.c.o
+
+libft/ft_striter.i: libft/ft_striter.c.i
+
+.PHONY : libft/ft_striter.i
+
+# target to preprocess a source file
+libft/ft_striter.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_striter.c.i
+.PHONY : libft/ft_striter.c.i
+
+libft/ft_striter.s: libft/ft_striter.c.s
+
+.PHONY : libft/ft_striter.s
+
+# target to generate assembly for a file
+libft/ft_striter.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_striter.c.s
+.PHONY : libft/ft_striter.c.s
+
+libft/ft_striteri.o: libft/ft_striteri.c.o
+
+.PHONY : libft/ft_striteri.o
+
+# target to build an object file
+libft/ft_striteri.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_striteri.c.o
+.PHONY : libft/ft_striteri.c.o
+
+libft/ft_striteri.i: libft/ft_striteri.c.i
+
+.PHONY : libft/ft_striteri.i
+
+# target to preprocess a source file
+libft/ft_striteri.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_striteri.c.i
+.PHONY : libft/ft_striteri.c.i
+
+libft/ft_striteri.s: libft/ft_striteri.c.s
+
+.PHONY : libft/ft_striteri.s
+
+# target to generate assembly for a file
+libft/ft_striteri.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_striteri.c.s
+.PHONY : libft/ft_striteri.c.s
+
+libft/ft_strjoin.o: libft/ft_strjoin.c.o
+
+.PHONY : libft/ft_strjoin.o
+
+# target to build an object file
+libft/ft_strjoin.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.o
+.PHONY : libft/ft_strjoin.c.o
+
+libft/ft_strjoin.i: libft/ft_strjoin.c.i
+
+.PHONY : libft/ft_strjoin.i
+
+# target to preprocess a source file
+libft/ft_strjoin.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.i
+.PHONY : libft/ft_strjoin.c.i
+
+libft/ft_strjoin.s: libft/ft_strjoin.c.s
+
+.PHONY : libft/ft_strjoin.s
+
+# target to generate assembly for a file
+libft/ft_strjoin.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strjoin.c.s
+.PHONY : libft/ft_strjoin.c.s
+
+libft/ft_strlcat.o: libft/ft_strlcat.c.o
+
+.PHONY : libft/ft_strlcat.o
+
+# target to build an object file
+libft/ft_strlcat.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.o
+.PHONY : libft/ft_strlcat.c.o
+
+libft/ft_strlcat.i: libft/ft_strlcat.c.i
+
+.PHONY : libft/ft_strlcat.i
+
+# target to preprocess a source file
+libft/ft_strlcat.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.i
+.PHONY : libft/ft_strlcat.c.i
+
+libft/ft_strlcat.s: libft/ft_strlcat.c.s
+
+.PHONY : libft/ft_strlcat.s
+
+# target to generate assembly for a file
+libft/ft_strlcat.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strlcat.c.s
+.PHONY : libft/ft_strlcat.c.s
+
+libft/ft_strlen.o: libft/ft_strlen.c.o
+
+.PHONY : libft/ft_strlen.o
+
+# target to build an object file
+libft/ft_strlen.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strlen.c.o
+.PHONY : libft/ft_strlen.c.o
+
+libft/ft_strlen.i: libft/ft_strlen.c.i
+
+.PHONY : libft/ft_strlen.i
+
+# target to preprocess a source file
+libft/ft_strlen.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strlen.c.i
+.PHONY : libft/ft_strlen.c.i
+
+libft/ft_strlen.s: libft/ft_strlen.c.s
+
+.PHONY : libft/ft_strlen.s
+
+# target to generate assembly for a file
+libft/ft_strlen.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strlen.c.s
+.PHONY : libft/ft_strlen.c.s
+
+libft/ft_strmap.o: libft/ft_strmap.c.o
+
+.PHONY : libft/ft_strmap.o
+
+# target to build an object file
+libft/ft_strmap.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strmap.c.o
+.PHONY : libft/ft_strmap.c.o
+
+libft/ft_strmap.i: libft/ft_strmap.c.i
+
+.PHONY : libft/ft_strmap.i
+
+# target to preprocess a source file
+libft/ft_strmap.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strmap.c.i
+.PHONY : libft/ft_strmap.c.i
+
+libft/ft_strmap.s: libft/ft_strmap.c.s
+
+.PHONY : libft/ft_strmap.s
+
+# target to generate assembly for a file
+libft/ft_strmap.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strmap.c.s
+.PHONY : libft/ft_strmap.c.s
+
+libft/ft_strmapi.o: libft/ft_strmapi.c.o
+
+.PHONY : libft/ft_strmapi.o
+
+# target to build an object file
+libft/ft_strmapi.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.o
+.PHONY : libft/ft_strmapi.c.o
+
+libft/ft_strmapi.i: libft/ft_strmapi.c.i
+
+.PHONY : libft/ft_strmapi.i
+
+# target to preprocess a source file
+libft/ft_strmapi.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.i
+.PHONY : libft/ft_strmapi.c.i
+
+libft/ft_strmapi.s: libft/ft_strmapi.c.s
+
+.PHONY : libft/ft_strmapi.s
+
+# target to generate assembly for a file
+libft/ft_strmapi.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strmapi.c.s
+.PHONY : libft/ft_strmapi.c.s
+
+libft/ft_strncat.o: libft/ft_strncat.c.o
+
+.PHONY : libft/ft_strncat.o
+
+# target to build an object file
+libft/ft_strncat.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strncat.c.o
+.PHONY : libft/ft_strncat.c.o
+
+libft/ft_strncat.i: libft/ft_strncat.c.i
+
+.PHONY : libft/ft_strncat.i
+
+# target to preprocess a source file
+libft/ft_strncat.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strncat.c.i
+.PHONY : libft/ft_strncat.c.i
+
+libft/ft_strncat.s: libft/ft_strncat.c.s
+
+.PHONY : libft/ft_strncat.s
+
+# target to generate assembly for a file
+libft/ft_strncat.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strncat.c.s
+.PHONY : libft/ft_strncat.c.s
+
+libft/ft_strncmp.o: libft/ft_strncmp.c.o
+
+.PHONY : libft/ft_strncmp.o
+
+# target to build an object file
+libft/ft_strncmp.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.o
+.PHONY : libft/ft_strncmp.c.o
+
+libft/ft_strncmp.i: libft/ft_strncmp.c.i
+
+.PHONY : libft/ft_strncmp.i
+
+# target to preprocess a source file
+libft/ft_strncmp.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.i
+.PHONY : libft/ft_strncmp.c.i
+
+libft/ft_strncmp.s: libft/ft_strncmp.c.s
+
+.PHONY : libft/ft_strncmp.s
+
+# target to generate assembly for a file
+libft/ft_strncmp.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strncmp.c.s
+.PHONY : libft/ft_strncmp.c.s
+
+libft/ft_strncpy.o: libft/ft_strncpy.c.o
+
+.PHONY : libft/ft_strncpy.o
+
+# target to build an object file
+libft/ft_strncpy.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.o
+.PHONY : libft/ft_strncpy.c.o
+
+libft/ft_strncpy.i: libft/ft_strncpy.c.i
+
+.PHONY : libft/ft_strncpy.i
+
+# target to preprocess a source file
+libft/ft_strncpy.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.i
+.PHONY : libft/ft_strncpy.c.i
+
+libft/ft_strncpy.s: libft/ft_strncpy.c.s
+
+.PHONY : libft/ft_strncpy.s
+
+# target to generate assembly for a file
+libft/ft_strncpy.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strncpy.c.s
+.PHONY : libft/ft_strncpy.c.s
+
+libft/ft_strnequ.o: libft/ft_strnequ.c.o
+
+.PHONY : libft/ft_strnequ.o
+
+# target to build an object file
+libft/ft_strnequ.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.o
+.PHONY : libft/ft_strnequ.c.o
+
+libft/ft_strnequ.i: libft/ft_strnequ.c.i
+
+.PHONY : libft/ft_strnequ.i
+
+# target to preprocess a source file
+libft/ft_strnequ.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.i
+.PHONY : libft/ft_strnequ.c.i
+
+libft/ft_strnequ.s: libft/ft_strnequ.c.s
+
+.PHONY : libft/ft_strnequ.s
+
+# target to generate assembly for a file
+libft/ft_strnequ.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strnequ.c.s
+.PHONY : libft/ft_strnequ.c.s
+
+libft/ft_strnew.o: libft/ft_strnew.c.o
+
+.PHONY : libft/ft_strnew.o
+
+# target to build an object file
+libft/ft_strnew.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strnew.c.o
+.PHONY : libft/ft_strnew.c.o
+
+libft/ft_strnew.i: libft/ft_strnew.c.i
+
+.PHONY : libft/ft_strnew.i
+
+# target to preprocess a source file
+libft/ft_strnew.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strnew.c.i
+.PHONY : libft/ft_strnew.c.i
+
+libft/ft_strnew.s: libft/ft_strnew.c.s
+
+.PHONY : libft/ft_strnew.s
+
+# target to generate assembly for a file
+libft/ft_strnew.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strnew.c.s
+.PHONY : libft/ft_strnew.c.s
+
+libft/ft_strnstr.o: libft/ft_strnstr.c.o
+
+.PHONY : libft/ft_strnstr.o
+
+# target to build an object file
+libft/ft_strnstr.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.o
+.PHONY : libft/ft_strnstr.c.o
+
+libft/ft_strnstr.i: libft/ft_strnstr.c.i
+
+.PHONY : libft/ft_strnstr.i
+
+# target to preprocess a source file
+libft/ft_strnstr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.i
+.PHONY : libft/ft_strnstr.c.i
+
+libft/ft_strnstr.s: libft/ft_strnstr.c.s
+
+.PHONY : libft/ft_strnstr.s
+
+# target to generate assembly for a file
+libft/ft_strnstr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strnstr.c.s
+.PHONY : libft/ft_strnstr.c.s
+
+libft/ft_strrchr.o: libft/ft_strrchr.c.o
+
+.PHONY : libft/ft_strrchr.o
+
+# target to build an object file
+libft/ft_strrchr.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.o
+.PHONY : libft/ft_strrchr.c.o
+
+libft/ft_strrchr.i: libft/ft_strrchr.c.i
+
+.PHONY : libft/ft_strrchr.i
+
+# target to preprocess a source file
+libft/ft_strrchr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.i
+.PHONY : libft/ft_strrchr.c.i
+
+libft/ft_strrchr.s: libft/ft_strrchr.c.s
+
+.PHONY : libft/ft_strrchr.s
+
+# target to generate assembly for a file
+libft/ft_strrchr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strrchr.c.s
+.PHONY : libft/ft_strrchr.c.s
+
+libft/ft_strsplit.o: libft/ft_strsplit.c.o
+
+.PHONY : libft/ft_strsplit.o
+
+# target to build an object file
+libft/ft_strsplit.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.o
+.PHONY : libft/ft_strsplit.c.o
+
+libft/ft_strsplit.i: libft/ft_strsplit.c.i
+
+.PHONY : libft/ft_strsplit.i
+
+# target to preprocess a source file
+libft/ft_strsplit.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.i
+.PHONY : libft/ft_strsplit.c.i
+
+libft/ft_strsplit.s: libft/ft_strsplit.c.s
+
+.PHONY : libft/ft_strsplit.s
+
+# target to generate assembly for a file
+libft/ft_strsplit.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strsplit.c.s
+.PHONY : libft/ft_strsplit.c.s
+
+libft/ft_strstr.o: libft/ft_strstr.c.o
+
+.PHONY : libft/ft_strstr.o
+
+# target to build an object file
+libft/ft_strstr.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strstr.c.o
+.PHONY : libft/ft_strstr.c.o
+
+libft/ft_strstr.i: libft/ft_strstr.c.i
+
+.PHONY : libft/ft_strstr.i
+
+# target to preprocess a source file
+libft/ft_strstr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strstr.c.i
+.PHONY : libft/ft_strstr.c.i
+
+libft/ft_strstr.s: libft/ft_strstr.c.s
+
+.PHONY : libft/ft_strstr.s
+
+# target to generate assembly for a file
+libft/ft_strstr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strstr.c.s
+.PHONY : libft/ft_strstr.c.s
+
+libft/ft_strsub.o: libft/ft_strsub.c.o
+
+.PHONY : libft/ft_strsub.o
+
+# target to build an object file
+libft/ft_strsub.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strsub.c.o
+.PHONY : libft/ft_strsub.c.o
+
+libft/ft_strsub.i: libft/ft_strsub.c.i
+
+.PHONY : libft/ft_strsub.i
+
+# target to preprocess a source file
+libft/ft_strsub.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strsub.c.i
+.PHONY : libft/ft_strsub.c.i
+
+libft/ft_strsub.s: libft/ft_strsub.c.s
+
+.PHONY : libft/ft_strsub.s
+
+# target to generate assembly for a file
+libft/ft_strsub.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strsub.c.s
+.PHONY : libft/ft_strsub.c.s
+
+libft/ft_strtrim.o: libft/ft_strtrim.c.o
+
+.PHONY : libft/ft_strtrim.o
+
+# target to build an object file
+libft/ft_strtrim.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.o
+.PHONY : libft/ft_strtrim.c.o
+
+libft/ft_strtrim.i: libft/ft_strtrim.c.i
+
+.PHONY : libft/ft_strtrim.i
+
+# target to preprocess a source file
+libft/ft_strtrim.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.i
+.PHONY : libft/ft_strtrim.c.i
+
+libft/ft_strtrim.s: libft/ft_strtrim.c.s
+
+.PHONY : libft/ft_strtrim.s
+
+# target to generate assembly for a file
+libft/ft_strtrim.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_strtrim.c.s
+.PHONY : libft/ft_strtrim.c.s
+
+libft/ft_swap.o: libft/ft_swap.c.o
+
+.PHONY : libft/ft_swap.o
+
+# target to build an object file
+libft/ft_swap.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_swap.c.o
+.PHONY : libft/ft_swap.c.o
+
+libft/ft_swap.i: libft/ft_swap.c.i
+
+.PHONY : libft/ft_swap.i
+
+# target to preprocess a source file
+libft/ft_swap.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_swap.c.i
+.PHONY : libft/ft_swap.c.i
+
+libft/ft_swap.s: libft/ft_swap.c.s
+
+.PHONY : libft/ft_swap.s
+
+# target to generate assembly for a file
+libft/ft_swap.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_swap.c.s
+.PHONY : libft/ft_swap.c.s
+
+libft/ft_tolower.o: libft/ft_tolower.c.o
+
+.PHONY : libft/ft_tolower.o
+
+# target to build an object file
+libft/ft_tolower.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_tolower.c.o
+.PHONY : libft/ft_tolower.c.o
+
+libft/ft_tolower.i: libft/ft_tolower.c.i
+
+.PHONY : libft/ft_tolower.i
+
+# target to preprocess a source file
+libft/ft_tolower.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_tolower.c.i
+.PHONY : libft/ft_tolower.c.i
+
+libft/ft_tolower.s: libft/ft_tolower.c.s
+
+.PHONY : libft/ft_tolower.s
+
+# target to generate assembly for a file
+libft/ft_tolower.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_tolower.c.s
+.PHONY : libft/ft_tolower.c.s
+
+libft/ft_toupper.o: libft/ft_toupper.c.o
+
+.PHONY : libft/ft_toupper.o
+
+# target to build an object file
+libft/ft_toupper.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_toupper.c.o
+.PHONY : libft/ft_toupper.c.o
+
+libft/ft_toupper.i: libft/ft_toupper.c.i
+
+.PHONY : libft/ft_toupper.i
+
+# target to preprocess a source file
+libft/ft_toupper.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_toupper.c.i
+.PHONY : libft/ft_toupper.c.i
+
+libft/ft_toupper.s: libft/ft_toupper.c.s
+
+.PHONY : libft/ft_toupper.s
+
+# target to generate assembly for a file
+libft/ft_toupper.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/ft_toupper.c.s
+.PHONY : libft/ft_toupper.c.s
+
+libft/get_next_line.o: libft/get_next_line.c.o
+
+.PHONY : libft/get_next_line.o
+
+# target to build an object file
+libft/get_next_line.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/get_next_line.c.o
+.PHONY : libft/get_next_line.c.o
+
+libft/get_next_line.i: libft/get_next_line.c.i
+
+.PHONY : libft/get_next_line.i
+
+# target to preprocess a source file
+libft/get_next_line.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/get_next_line.c.i
+.PHONY : libft/get_next_line.c.i
+
+libft/get_next_line.s: libft/get_next_line.c.s
+
+.PHONY : libft/get_next_line.s
+
+# target to generate assembly for a file
+libft/get_next_line.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/get_next_line.c.s
+.PHONY : libft/get_next_line.c.s
+
 src/cut_wall.o: src/cut_wall.c.o
 
 .PHONY : src/cut_wall.o
@@ -170,6 +2087,87 @@ src/cut_wall.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/cut_wall.c.s
 .PHONY : src/cut_wall.c.s
 
+src/door_animations.o: src/door_animations.c.o
+
+.PHONY : src/door_animations.o
+
+# target to build an object file
+src/door_animations.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/door_animations.c.o
+.PHONY : src/door_animations.c.o
+
+src/door_animations.i: src/door_animations.c.i
+
+.PHONY : src/door_animations.i
+
+# target to preprocess a source file
+src/door_animations.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/door_animations.c.i
+.PHONY : src/door_animations.c.i
+
+src/door_animations.s: src/door_animations.c.s
+
+.PHONY : src/door_animations.s
+
+# target to generate assembly for a file
+src/door_animations.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/door_animations.c.s
+.PHONY : src/door_animations.c.s
+
+src/editor/door_mod.o: src/editor/door_mod.c.o
+
+.PHONY : src/editor/door_mod.o
+
+# target to build an object file
+src/editor/door_mod.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/editor/door_mod.c.o
+.PHONY : src/editor/door_mod.c.o
+
+src/editor/door_mod.i: src/editor/door_mod.c.i
+
+.PHONY : src/editor/door_mod.i
+
+# target to preprocess a source file
+src/editor/door_mod.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/editor/door_mod.c.i
+.PHONY : src/editor/door_mod.c.i
+
+src/editor/door_mod.s: src/editor/door_mod.c.s
+
+.PHONY : src/editor/door_mod.s
+
+# target to generate assembly for a file
+src/editor/door_mod.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/editor/door_mod.c.s
+.PHONY : src/editor/door_mod.c.s
+
+src/editor/graf_mod.o: src/editor/graf_mod.c.o
+
+.PHONY : src/editor/graf_mod.o
+
+# target to build an object file
+src/editor/graf_mod.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/editor/graf_mod.c.o
+.PHONY : src/editor/graf_mod.c.o
+
+src/editor/graf_mod.i: src/editor/graf_mod.c.i
+
+.PHONY : src/editor/graf_mod.i
+
+# target to preprocess a source file
+src/editor/graf_mod.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/editor/graf_mod.c.i
+.PHONY : src/editor/graf_mod.c.i
+
+src/editor/graf_mod.s: src/editor/graf_mod.c.s
+
+.PHONY : src/editor/graf_mod.s
+
+# target to generate assembly for a file
+src/editor/graf_mod.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/editor/graf_mod.c.s
+.PHONY : src/editor/graf_mod.c.s
+
 src/editor/real_time_edit.o: src/editor/real_time_edit.c.o
 
 .PHONY : src/editor/real_time_edit.o
@@ -196,6 +2194,33 @@ src/editor/real_time_edit.s: src/editor/real_time_edit.c.s
 src/editor/real_time_edit.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/editor/real_time_edit.c.s
 .PHONY : src/editor/real_time_edit.c.s
+
+src/editor/tx_mod.o: src/editor/tx_mod.c.o
+
+.PHONY : src/editor/tx_mod.o
+
+# target to build an object file
+src/editor/tx_mod.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/editor/tx_mod.c.o
+.PHONY : src/editor/tx_mod.c.o
+
+src/editor/tx_mod.i: src/editor/tx_mod.c.i
+
+.PHONY : src/editor/tx_mod.i
+
+# target to preprocess a source file
+src/editor/tx_mod.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/editor/tx_mod.c.i
+.PHONY : src/editor/tx_mod.c.i
+
+src/editor/tx_mod.s: src/editor/tx_mod.c.s
+
+.PHONY : src/editor/tx_mod.s
+
+# target to generate assembly for a file
+src/editor/tx_mod.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/editor/tx_mod.c.s
+.PHONY : src/editor/tx_mod.c.s
 
 src/game_loop.o: src/game_loop.c.o
 
@@ -413,6 +2438,546 @@ src/manage_data.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/manage_data.c.s
 .PHONY : src/manage_data.c.s
 
+src/map_editor/draw_all.o: src/map_editor/draw_all.c.o
+
+.PHONY : src/map_editor/draw_all.o
+
+# target to build an object file
+src/map_editor/draw_all.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/draw_all.c.o
+.PHONY : src/map_editor/draw_all.c.o
+
+src/map_editor/draw_all.i: src/map_editor/draw_all.c.i
+
+.PHONY : src/map_editor/draw_all.i
+
+# target to preprocess a source file
+src/map_editor/draw_all.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/draw_all.c.i
+.PHONY : src/map_editor/draw_all.c.i
+
+src/map_editor/draw_all.s: src/map_editor/draw_all.c.s
+
+.PHONY : src/map_editor/draw_all.s
+
+# target to generate assembly for a file
+src/map_editor/draw_all.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/draw_all.c.s
+.PHONY : src/map_editor/draw_all.c.s
+
+src/map_editor/draw_map.o: src/map_editor/draw_map.c.o
+
+.PHONY : src/map_editor/draw_map.o
+
+# target to build an object file
+src/map_editor/draw_map.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/draw_map.c.o
+.PHONY : src/map_editor/draw_map.c.o
+
+src/map_editor/draw_map.i: src/map_editor/draw_map.c.i
+
+.PHONY : src/map_editor/draw_map.i
+
+# target to preprocess a source file
+src/map_editor/draw_map.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/draw_map.c.i
+.PHONY : src/map_editor/draw_map.c.i
+
+src/map_editor/draw_map.s: src/map_editor/draw_map.c.s
+
+.PHONY : src/map_editor/draw_map.s
+
+# target to generate assembly for a file
+src/map_editor/draw_map.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/draw_map.c.s
+.PHONY : src/map_editor/draw_map.c.s
+
+src/map_editor/draw_sprites.o: src/map_editor/draw_sprites.c.o
+
+.PHONY : src/map_editor/draw_sprites.o
+
+# target to build an object file
+src/map_editor/draw_sprites.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/draw_sprites.c.o
+.PHONY : src/map_editor/draw_sprites.c.o
+
+src/map_editor/draw_sprites.i: src/map_editor/draw_sprites.c.i
+
+.PHONY : src/map_editor/draw_sprites.i
+
+# target to preprocess a source file
+src/map_editor/draw_sprites.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/draw_sprites.c.i
+.PHONY : src/map_editor/draw_sprites.c.i
+
+src/map_editor/draw_sprites.s: src/map_editor/draw_sprites.c.s
+
+.PHONY : src/map_editor/draw_sprites.s
+
+# target to generate assembly for a file
+src/map_editor/draw_sprites.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/draw_sprites.c.s
+.PHONY : src/map_editor/draw_sprites.c.s
+
+src/map_editor/draw_ui.o: src/map_editor/draw_ui.c.o
+
+.PHONY : src/map_editor/draw_ui.o
+
+# target to build an object file
+src/map_editor/draw_ui.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/draw_ui.c.o
+.PHONY : src/map_editor/draw_ui.c.o
+
+src/map_editor/draw_ui.i: src/map_editor/draw_ui.c.i
+
+.PHONY : src/map_editor/draw_ui.i
+
+# target to preprocess a source file
+src/map_editor/draw_ui.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/draw_ui.c.i
+.PHONY : src/map_editor/draw_ui.c.i
+
+src/map_editor/draw_ui.s: src/map_editor/draw_ui.c.s
+
+.PHONY : src/map_editor/draw_ui.s
+
+# target to generate assembly for a file
+src/map_editor/draw_ui.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/draw_ui.c.s
+.PHONY : src/map_editor/draw_ui.c.s
+
+src/map_editor/drawing_utils.o: src/map_editor/drawing_utils.c.o
+
+.PHONY : src/map_editor/drawing_utils.o
+
+# target to build an object file
+src/map_editor/drawing_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/drawing_utils.c.o
+.PHONY : src/map_editor/drawing_utils.c.o
+
+src/map_editor/drawing_utils.i: src/map_editor/drawing_utils.c.i
+
+.PHONY : src/map_editor/drawing_utils.i
+
+# target to preprocess a source file
+src/map_editor/drawing_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/drawing_utils.c.i
+.PHONY : src/map_editor/drawing_utils.c.i
+
+src/map_editor/drawing_utils.s: src/map_editor/drawing_utils.c.s
+
+.PHONY : src/map_editor/drawing_utils.s
+
+# target to generate assembly for a file
+src/map_editor/drawing_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/drawing_utils.c.s
+.PHONY : src/map_editor/drawing_utils.c.s
+
+src/map_editor/errors.o: src/map_editor/errors.c.o
+
+.PHONY : src/map_editor/errors.o
+
+# target to build an object file
+src/map_editor/errors.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/errors.c.o
+.PHONY : src/map_editor/errors.c.o
+
+src/map_editor/errors.i: src/map_editor/errors.c.i
+
+.PHONY : src/map_editor/errors.i
+
+# target to preprocess a source file
+src/map_editor/errors.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/errors.c.i
+.PHONY : src/map_editor/errors.c.i
+
+src/map_editor/errors.s: src/map_editor/errors.c.s
+
+.PHONY : src/map_editor/errors.s
+
+# target to generate assembly for a file
+src/map_editor/errors.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/errors.c.s
+.PHONY : src/map_editor/errors.c.s
+
+src/map_editor/events_all.o: src/map_editor/events_all.c.o
+
+.PHONY : src/map_editor/events_all.o
+
+# target to build an object file
+src/map_editor/events_all.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/events_all.c.o
+.PHONY : src/map_editor/events_all.c.o
+
+src/map_editor/events_all.i: src/map_editor/events_all.c.i
+
+.PHONY : src/map_editor/events_all.i
+
+# target to preprocess a source file
+src/map_editor/events_all.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/events_all.c.i
+.PHONY : src/map_editor/events_all.c.i
+
+src/map_editor/events_all.s: src/map_editor/events_all.c.s
+
+.PHONY : src/map_editor/events_all.s
+
+# target to generate assembly for a file
+src/map_editor/events_all.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/events_all.c.s
+.PHONY : src/map_editor/events_all.c.s
+
+src/map_editor/events_map.o: src/map_editor/events_map.c.o
+
+.PHONY : src/map_editor/events_map.o
+
+# target to build an object file
+src/map_editor/events_map.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/events_map.c.o
+.PHONY : src/map_editor/events_map.c.o
+
+src/map_editor/events_map.i: src/map_editor/events_map.c.i
+
+.PHONY : src/map_editor/events_map.i
+
+# target to preprocess a source file
+src/map_editor/events_map.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/events_map.c.i
+.PHONY : src/map_editor/events_map.c.i
+
+src/map_editor/events_map.s: src/map_editor/events_map.c.s
+
+.PHONY : src/map_editor/events_map.s
+
+# target to generate assembly for a file
+src/map_editor/events_map.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/events_map.c.s
+.PHONY : src/map_editor/events_map.c.s
+
+src/map_editor/init.o: src/map_editor/init.c.o
+
+.PHONY : src/map_editor/init.o
+
+# target to build an object file
+src/map_editor/init.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/init.c.o
+.PHONY : src/map_editor/init.c.o
+
+src/map_editor/init.i: src/map_editor/init.c.i
+
+.PHONY : src/map_editor/init.i
+
+# target to preprocess a source file
+src/map_editor/init.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/init.c.i
+.PHONY : src/map_editor/init.c.i
+
+src/map_editor/init.s: src/map_editor/init.c.s
+
+.PHONY : src/map_editor/init.s
+
+# target to generate assembly for a file
+src/map_editor/init.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/init.c.s
+.PHONY : src/map_editor/init.c.s
+
+src/map_editor/main.o: src/map_editor/main.c.o
+
+.PHONY : src/map_editor/main.o
+
+# target to build an object file
+src/map_editor/main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/main.c.o
+.PHONY : src/map_editor/main.c.o
+
+src/map_editor/main.i: src/map_editor/main.c.i
+
+.PHONY : src/map_editor/main.i
+
+# target to preprocess a source file
+src/map_editor/main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/main.c.i
+.PHONY : src/map_editor/main.c.i
+
+src/map_editor/main.s: src/map_editor/main.c.s
+
+.PHONY : src/map_editor/main.s
+
+# target to generate assembly for a file
+src/map_editor/main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/main.c.s
+.PHONY : src/map_editor/main.c.s
+
+src/map_editor/math.o: src/map_editor/math.c.o
+
+.PHONY : src/map_editor/math.o
+
+# target to build an object file
+src/map_editor/math.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/math.c.o
+.PHONY : src/map_editor/math.c.o
+
+src/map_editor/math.i: src/map_editor/math.c.i
+
+.PHONY : src/map_editor/math.i
+
+# target to preprocess a source file
+src/map_editor/math.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/math.c.i
+.PHONY : src/map_editor/math.c.i
+
+src/map_editor/math.s: src/map_editor/math.c.s
+
+.PHONY : src/map_editor/math.s
+
+# target to generate assembly for a file
+src/map_editor/math.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/math.c.s
+.PHONY : src/map_editor/math.c.s
+
+src/map_editor/obj_detection.o: src/map_editor/obj_detection.c.o
+
+.PHONY : src/map_editor/obj_detection.o
+
+# target to build an object file
+src/map_editor/obj_detection.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/obj_detection.c.o
+.PHONY : src/map_editor/obj_detection.c.o
+
+src/map_editor/obj_detection.i: src/map_editor/obj_detection.c.i
+
+.PHONY : src/map_editor/obj_detection.i
+
+# target to preprocess a source file
+src/map_editor/obj_detection.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/obj_detection.c.i
+.PHONY : src/map_editor/obj_detection.c.i
+
+src/map_editor/obj_detection.s: src/map_editor/obj_detection.c.s
+
+.PHONY : src/map_editor/obj_detection.s
+
+# target to generate assembly for a file
+src/map_editor/obj_detection.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/obj_detection.c.s
+.PHONY : src/map_editor/obj_detection.c.s
+
+src/map_editor/pixels.o: src/map_editor/pixels.c.o
+
+.PHONY : src/map_editor/pixels.o
+
+# target to build an object file
+src/map_editor/pixels.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/pixels.c.o
+.PHONY : src/map_editor/pixels.c.o
+
+src/map_editor/pixels.i: src/map_editor/pixels.c.i
+
+.PHONY : src/map_editor/pixels.i
+
+# target to preprocess a source file
+src/map_editor/pixels.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/pixels.c.i
+.PHONY : src/map_editor/pixels.c.i
+
+src/map_editor/pixels.s: src/map_editor/pixels.c.s
+
+.PHONY : src/map_editor/pixels.s
+
+# target to generate assembly for a file
+src/map_editor/pixels.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/pixels.c.s
+.PHONY : src/map_editor/pixels.c.s
+
+src/map_editor/reader.o: src/map_editor/reader.c.o
+
+.PHONY : src/map_editor/reader.o
+
+# target to build an object file
+src/map_editor/reader.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/reader.c.o
+.PHONY : src/map_editor/reader.c.o
+
+src/map_editor/reader.i: src/map_editor/reader.c.i
+
+.PHONY : src/map_editor/reader.i
+
+# target to preprocess a source file
+src/map_editor/reader.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/reader.c.i
+.PHONY : src/map_editor/reader.c.i
+
+src/map_editor/reader.s: src/map_editor/reader.c.s
+
+.PHONY : src/map_editor/reader.s
+
+# target to generate assembly for a file
+src/map_editor/reader.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/reader.c.s
+.PHONY : src/map_editor/reader.c.s
+
+src/map_editor/sector_add.o: src/map_editor/sector_add.c.o
+
+.PHONY : src/map_editor/sector_add.o
+
+# target to build an object file
+src/map_editor/sector_add.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/sector_add.c.o
+.PHONY : src/map_editor/sector_add.c.o
+
+src/map_editor/sector_add.i: src/map_editor/sector_add.c.i
+
+.PHONY : src/map_editor/sector_add.i
+
+# target to preprocess a source file
+src/map_editor/sector_add.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/sector_add.c.i
+.PHONY : src/map_editor/sector_add.c.i
+
+src/map_editor/sector_add.s: src/map_editor/sector_add.c.s
+
+.PHONY : src/map_editor/sector_add.s
+
+# target to generate assembly for a file
+src/map_editor/sector_add.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/sector_add.c.s
+.PHONY : src/map_editor/sector_add.c.s
+
+src/map_editor/sector_check.o: src/map_editor/sector_check.c.o
+
+.PHONY : src/map_editor/sector_check.o
+
+# target to build an object file
+src/map_editor/sector_check.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/sector_check.c.o
+.PHONY : src/map_editor/sector_check.c.o
+
+src/map_editor/sector_check.i: src/map_editor/sector_check.c.i
+
+.PHONY : src/map_editor/sector_check.i
+
+# target to preprocess a source file
+src/map_editor/sector_check.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/sector_check.c.i
+.PHONY : src/map_editor/sector_check.c.i
+
+src/map_editor/sector_check.s: src/map_editor/sector_check.c.s
+
+.PHONY : src/map_editor/sector_check.s
+
+# target to generate assembly for a file
+src/map_editor/sector_check.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/sector_check.c.s
+.PHONY : src/map_editor/sector_check.c.s
+
+src/map_editor/sector_neighbors.o: src/map_editor/sector_neighbors.c.o
+
+.PHONY : src/map_editor/sector_neighbors.o
+
+# target to build an object file
+src/map_editor/sector_neighbors.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/sector_neighbors.c.o
+.PHONY : src/map_editor/sector_neighbors.c.o
+
+src/map_editor/sector_neighbors.i: src/map_editor/sector_neighbors.c.i
+
+.PHONY : src/map_editor/sector_neighbors.i
+
+# target to preprocess a source file
+src/map_editor/sector_neighbors.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/sector_neighbors.c.i
+.PHONY : src/map_editor/sector_neighbors.c.i
+
+src/map_editor/sector_neighbors.s: src/map_editor/sector_neighbors.c.s
+
+.PHONY : src/map_editor/sector_neighbors.s
+
+# target to generate assembly for a file
+src/map_editor/sector_neighbors.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/sector_neighbors.c.s
+.PHONY : src/map_editor/sector_neighbors.c.s
+
+src/map_editor/sector_remove.o: src/map_editor/sector_remove.c.o
+
+.PHONY : src/map_editor/sector_remove.o
+
+# target to build an object file
+src/map_editor/sector_remove.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/sector_remove.c.o
+.PHONY : src/map_editor/sector_remove.c.o
+
+src/map_editor/sector_remove.i: src/map_editor/sector_remove.c.i
+
+.PHONY : src/map_editor/sector_remove.i
+
+# target to preprocess a source file
+src/map_editor/sector_remove.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/sector_remove.c.i
+.PHONY : src/map_editor/sector_remove.c.i
+
+src/map_editor/sector_remove.s: src/map_editor/sector_remove.c.s
+
+.PHONY : src/map_editor/sector_remove.s
+
+# target to generate assembly for a file
+src/map_editor/sector_remove.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/sector_remove.c.s
+.PHONY : src/map_editor/sector_remove.c.s
+
+src/map_editor/texture.o: src/map_editor/texture.c.o
+
+.PHONY : src/map_editor/texture.o
+
+# target to build an object file
+src/map_editor/texture.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/texture.c.o
+.PHONY : src/map_editor/texture.c.o
+
+src/map_editor/texture.i: src/map_editor/texture.c.i
+
+.PHONY : src/map_editor/texture.i
+
+# target to preprocess a source file
+src/map_editor/texture.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/texture.c.i
+.PHONY : src/map_editor/texture.c.i
+
+src/map_editor/texture.s: src/map_editor/texture.c.s
+
+.PHONY : src/map_editor/texture.s
+
+# target to generate assembly for a file
+src/map_editor/texture.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/texture.c.s
+.PHONY : src/map_editor/texture.c.s
+
+src/map_editor/write.o: src/map_editor/write.c.o
+
+.PHONY : src/map_editor/write.o
+
+# target to build an object file
+src/map_editor/write.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/write.c.o
+.PHONY : src/map_editor/write.c.o
+
+src/map_editor/write.i: src/map_editor/write.c.i
+
+.PHONY : src/map_editor/write.i
+
+# target to preprocess a source file
+src/map_editor/write.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/write.c.i
+.PHONY : src/map_editor/write.c.i
+
+src/map_editor/write.s: src/map_editor/write.c.s
+
+.PHONY : src/map_editor/write.s
+
+# target to generate assembly for a file
+src/map_editor/write.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/write.c.s
+.PHONY : src/map_editor/write.c.s
+
 src/movement/fall.o: src/movement/fall.c.o
 
 .PHONY : src/movement/fall.o
@@ -467,6 +3032,7 @@ src/movement/move.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/movement/move.c.s
 .PHONY : src/movement/move.c.s
 
+<<<<<<< HEAD
 src/render/ceil_and_floor_init.o: src/render/ceil_and_floor_init.c.o
 
 .PHONY : src/render/ceil_and_floor_init.o
@@ -494,6 +3060,63 @@ src/render/ceil_and_floor_init.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.s
 .PHONY : src/render/ceil_and_floor_init.c.s
 
+src/render/graf_proccesing.o: src/render/graf_proccesing.c.o
+
+.PHONY : src/render/graf_proccesing.o
+
+# target to build an object file
+src/render/graf_proccesing.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/graf_proccesing.c.o
+.PHONY : src/render/graf_proccesing.c.o
+
+src/render/graf_proccesing.i: src/render/graf_proccesing.c.i
+
+.PHONY : src/render/graf_proccesing.i
+
+# target to preprocess a source file
+src/render/graf_proccesing.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/graf_proccesing.c.i
+.PHONY : src/render/graf_proccesing.c.i
+
+src/render/graf_proccesing.s: src/render/graf_proccesing.c.s
+
+.PHONY : src/render/graf_proccesing.s
+
+# target to generate assembly for a file
+src/render/graf_proccesing.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/graf_proccesing.c.s
+.PHONY : src/render/graf_proccesing.c.s
+
+||||||| 1784372
+=======
+src/render/ceil_and_floor_init.o: src/render/ceil_and_floor_init.c.o
+
+.PHONY : src/render/ceil_and_floor_init.o
+
+# target to build an object file
+src/render/ceil_and_floor_init.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.o
+.PHONY : src/render/ceil_and_floor_init.c.o
+
+src/render/ceil_and_floor_init.i: src/render/ceil_and_floor_init.c.i
+
+.PHONY : src/render/ceil_and_floor_init.i
+
+# target to preprocess a source file
+src/render/ceil_and_floor_init.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.i
+.PHONY : src/render/ceil_and_floor_init.c.i
+
+src/render/ceil_and_floor_init.s: src/render/ceil_and_floor_init.c.s
+
+.PHONY : src/render/ceil_and_floor_init.s
+
+# target to generate assembly for a file
+src/render/ceil_and_floor_init.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.s
+.PHONY : src/render/ceil_and_floor_init.c.s
+
+>>>>>>> master
 src/render/line/render_hline.o: src/render/line/render_hline.c.o
 
 .PHONY : src/render/line/render_hline.o
@@ -602,6 +3225,7 @@ src/render/minimap.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/minimap.c.s
 .PHONY : src/render/minimap.c.s
 
+<<<<<<< HEAD
 src/render/render_hplane.o: src/render/render_hplane.c.o
 
 .PHONY : src/render/render_hplane.o
@@ -666,7 +3290,40 @@ src/render/render_sky.c.o:
 .PHONY : src/render/render_sky.c.o
 
 src/render/render_sky.i: src/render/render_sky.c.i
+||||||| 1784372
+src/render/render_floor.o: src/render/render_floor.c.o
+=======
+src/render/render_hplane.o: src/render/render_hplane.c.o
 
+.PHONY : src/render/render_hplane.o
+
+# target to build an object file
+src/render/render_hplane.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_hplane.c.o
+.PHONY : src/render/render_hplane.c.o
+
+src/render/render_hplane.i: src/render/render_hplane.c.i
+
+.PHONY : src/render/render_hplane.i
+
+# target to preprocess a source file
+src/render/render_hplane.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_hplane.c.i
+.PHONY : src/render/render_hplane.c.i
+
+src/render/render_hplane.s: src/render/render_hplane.c.s
+
+.PHONY : src/render/render_hplane.s
+
+# target to generate assembly for a file
+src/render/render_hplane.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_hplane.c.s
+.PHONY : src/render/render_hplane.c.s
+
+src/render/render_scene.o: src/render/render_scene.c.o
+>>>>>>> master
+
+<<<<<<< HEAD
 .PHONY : src/render/render_sky.i
 
 # target to preprocess a source file
@@ -682,6 +3339,185 @@ src/render/render_sky.s: src/render/render_sky.c.s
 src/render/render_sky.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_sky.c.s
 .PHONY : src/render/render_sky.c.s
+
+src/render/sprite_render.o: src/render/sprite_render.c.o
+
+.PHONY : src/render/sprite_render.o
+||||||| 1784372
+.PHONY : src/render/render_floor.o
+=======
+.PHONY : src/render/render_scene.o
+>>>>>>> master
+
+# target to build an object file
+<<<<<<< HEAD
+src/render/sprite_render.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/sprite_render.c.o
+.PHONY : src/render/sprite_render.c.o
+||||||| 1784372
+src/render/render_floor.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_floor.c.o
+.PHONY : src/render/render_floor.c.o
+=======
+src/render/render_scene.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_scene.c.o
+.PHONY : src/render/render_scene.c.o
+>>>>>>> master
+
+<<<<<<< HEAD
+src/render/sprite_render.i: src/render/sprite_render.c.i
+||||||| 1784372
+src/render/render_floor.i: src/render/render_floor.c.i
+=======
+src/render/render_scene.i: src/render/render_scene.c.i
+>>>>>>> master
+
+<<<<<<< HEAD
+.PHONY : src/render/sprite_render.i
+||||||| 1784372
+.PHONY : src/render/render_floor.i
+=======
+.PHONY : src/render/render_scene.i
+>>>>>>> master
+
+# target to preprocess a source file
+<<<<<<< HEAD
+src/render/sprite_render.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/sprite_render.c.i
+.PHONY : src/render/sprite_render.c.i
+||||||| 1784372
+src/render/render_floor.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_floor.c.i
+.PHONY : src/render/render_floor.c.i
+=======
+src/render/render_scene.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_scene.c.i
+.PHONY : src/render/render_scene.c.i
+>>>>>>> master
+
+<<<<<<< HEAD
+src/render/sprite_render.s: src/render/sprite_render.c.s
+||||||| 1784372
+src/render/render_floor.s: src/render/render_floor.c.s
+=======
+src/render/render_scene.s: src/render/render_scene.c.s
+>>>>>>> master
+
+<<<<<<< HEAD
+.PHONY : src/render/sprite_render.s
+||||||| 1784372
+.PHONY : src/render/render_floor.s
+=======
+.PHONY : src/render/render_scene.s
+>>>>>>> master
+
+# target to generate assembly for a file
+<<<<<<< HEAD
+src/render/sprite_render.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/sprite_render.c.s
+.PHONY : src/render/sprite_render.c.s
+||||||| 1784372
+src/render/render_floor.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_floor.c.s
+.PHONY : src/render/render_floor.c.s
+=======
+src/render/render_scene.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_scene.c.s
+.PHONY : src/render/render_scene.c.s
+>>>>>>> master
+
+<<<<<<< HEAD
+src/render/transform_sprite.o: src/render/transform_sprite.c.o
+||||||| 1784372
+src/render/wall/edge_tx_init.o: src/render/wall/edge_tx_init.c.o
+=======
+src/render/render_sky.o: src/render/render_sky.c.o
+>>>>>>> master
+
+<<<<<<< HEAD
+.PHONY : src/render/transform_sprite.o
+||||||| 1784372
+.PHONY : src/render/wall/edge_tx_init.o
+=======
+.PHONY : src/render/render_sky.o
+>>>>>>> master
+
+# target to build an object file
+<<<<<<< HEAD
+src/render/transform_sprite.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.o
+.PHONY : src/render/transform_sprite.c.o
+||||||| 1784372
+src/render/wall/edge_tx_init.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/edge_tx_init.c.o
+.PHONY : src/render/wall/edge_tx_init.c.o
+=======
+src/render/render_sky.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_sky.c.o
+.PHONY : src/render/render_sky.c.o
+>>>>>>> master
+
+<<<<<<< HEAD
+src/render/transform_sprite.i: src/render/transform_sprite.c.i
+||||||| 1784372
+src/render/wall/edge_tx_init.i: src/render/wall/edge_tx_init.c.i
+=======
+src/render/render_sky.i: src/render/render_sky.c.i
+>>>>>>> master
+
+<<<<<<< HEAD
+.PHONY : src/render/transform_sprite.i
+||||||| 1784372
+.PHONY : src/render/wall/edge_tx_init.i
+=======
+.PHONY : src/render/render_sky.i
+>>>>>>> master
+
+# target to preprocess a source file
+<<<<<<< HEAD
+src/render/transform_sprite.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.i
+.PHONY : src/render/transform_sprite.c.i
+||||||| 1784372
+src/render/wall/edge_tx_init.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/edge_tx_init.c.i
+.PHONY : src/render/wall/edge_tx_init.c.i
+=======
+src/render/render_sky.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_sky.c.i
+.PHONY : src/render/render_sky.c.i
+>>>>>>> master
+
+<<<<<<< HEAD
+src/render/transform_sprite.s: src/render/transform_sprite.c.s
+||||||| 1784372
+src/render/wall/edge_tx_init.s: src/render/wall/edge_tx_init.c.s
+=======
+src/render/render_sky.s: src/render/render_sky.c.s
+>>>>>>> master
+
+<<<<<<< HEAD
+.PHONY : src/render/transform_sprite.s
+||||||| 1784372
+.PHONY : src/render/wall/edge_tx_init.s
+=======
+.PHONY : src/render/render_sky.s
+>>>>>>> master
+
+# target to generate assembly for a file
+<<<<<<< HEAD
+src/render/transform_sprite.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/transform_sprite.c.s
+.PHONY : src/render/transform_sprite.c.s
+||||||| 1784372
+src/render/wall/edge_tx_init.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/wall/edge_tx_init.c.s
+.PHONY : src/render/wall/edge_tx_init.c.s
+=======
+src/render/render_sky.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_sky.c.s
+.PHONY : src/render/render_sky.c.s
+>>>>>>> master
 
 src/render/wall/perspective_init.o: src/render/wall/perspective_init.c.o
 
@@ -1070,12 +3906,237 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... d-k3d"
+	@echo "... libft/c_add.o"
+	@echo "... libft/c_add.i"
+	@echo "... libft/c_add.s"
+	@echo "... libft/c_arg.o"
+	@echo "... libft/c_arg.i"
+	@echo "... libft/c_arg.s"
+	@echo "... libft/c_mod.o"
+	@echo "... libft/c_mod.i"
+	@echo "... libft/c_mod.s"
+	@echo "... libft/c_pow.o"
+	@echo "... libft/c_pow.i"
+	@echo "... libft/c_pow.s"
+	@echo "... libft/c_set.o"
+	@echo "... libft/c_set.i"
+	@echo "... libft/c_set.s"
+	@echo "... libft/c_sqr.o"
+	@echo "... libft/c_sqr.i"
+	@echo "... libft/c_sqr.s"
+	@echo "... libft/c_sub.o"
+	@echo "... libft/c_sub.i"
+	@echo "... libft/c_sub.s"
+	@echo "... libft/ft_arrlen.o"
+	@echo "... libft/ft_arrlen.i"
+	@echo "... libft/ft_arrlen.s"
+	@echo "... libft/ft_atof.o"
+	@echo "... libft/ft_atof.i"
+	@echo "... libft/ft_atof.s"
+	@echo "... libft/ft_atoi.o"
+	@echo "... libft/ft_atoi.i"
+	@echo "... libft/ft_atoi.s"
+	@echo "... libft/ft_bzero.o"
+	@echo "... libft/ft_bzero.i"
+	@echo "... libft/ft_bzero.s"
+	@echo "... libft/ft_free_split.o"
+	@echo "... libft/ft_free_split.i"
+	@echo "... libft/ft_free_split.s"
+	@echo "... libft/ft_isalnum.o"
+	@echo "... libft/ft_isalnum.i"
+	@echo "... libft/ft_isalnum.s"
+	@echo "... libft/ft_isalpha.o"
+	@echo "... libft/ft_isalpha.i"
+	@echo "... libft/ft_isalpha.s"
+	@echo "... libft/ft_isascii.o"
+	@echo "... libft/ft_isascii.i"
+	@echo "... libft/ft_isascii.s"
+	@echo "... libft/ft_isdigit.o"
+	@echo "... libft/ft_isdigit.i"
+	@echo "... libft/ft_isdigit.s"
+	@echo "... libft/ft_isprint.o"
+	@echo "... libft/ft_isprint.i"
+	@echo "... libft/ft_isprint.s"
+	@echo "... libft/ft_itoa.o"
+	@echo "... libft/ft_itoa.i"
+	@echo "... libft/ft_itoa.s"
+	@echo "... libft/ft_lstadd.o"
+	@echo "... libft/ft_lstadd.i"
+	@echo "... libft/ft_lstadd.s"
+	@echo "... libft/ft_lstdel.o"
+	@echo "... libft/ft_lstdel.i"
+	@echo "... libft/ft_lstdel.s"
+	@echo "... libft/ft_lstdelone.o"
+	@echo "... libft/ft_lstdelone.i"
+	@echo "... libft/ft_lstdelone.s"
+	@echo "... libft/ft_lstiter.o"
+	@echo "... libft/ft_lstiter.i"
+	@echo "... libft/ft_lstiter.s"
+	@echo "... libft/ft_lstmap.o"
+	@echo "... libft/ft_lstmap.i"
+	@echo "... libft/ft_lstmap.s"
+	@echo "... libft/ft_lstnew.o"
+	@echo "... libft/ft_lstnew.i"
+	@echo "... libft/ft_lstnew.s"
+	@echo "... libft/ft_memalloc.o"
+	@echo "... libft/ft_memalloc.i"
+	@echo "... libft/ft_memalloc.s"
+	@echo "... libft/ft_memccpy.o"
+	@echo "... libft/ft_memccpy.i"
+	@echo "... libft/ft_memccpy.s"
+	@echo "... libft/ft_memchr.o"
+	@echo "... libft/ft_memchr.i"
+	@echo "... libft/ft_memchr.s"
+	@echo "... libft/ft_memcmp.o"
+	@echo "... libft/ft_memcmp.i"
+	@echo "... libft/ft_memcmp.s"
+	@echo "... libft/ft_memcpy.o"
+	@echo "... libft/ft_memcpy.i"
+	@echo "... libft/ft_memcpy.s"
+	@echo "... libft/ft_memdel.o"
+	@echo "... libft/ft_memdel.i"
+	@echo "... libft/ft_memdel.s"
+	@echo "... libft/ft_memmove.o"
+	@echo "... libft/ft_memmove.i"
+	@echo "... libft/ft_memmove.s"
+	@echo "... libft/ft_memset.o"
+	@echo "... libft/ft_memset.i"
+	@echo "... libft/ft_memset.s"
+	@echo "... libft/ft_putchar.o"
+	@echo "... libft/ft_putchar.i"
+	@echo "... libft/ft_putchar.s"
+	@echo "... libft/ft_putchar_fd.o"
+	@echo "... libft/ft_putchar_fd.i"
+	@echo "... libft/ft_putchar_fd.s"
+	@echo "... libft/ft_putendl.o"
+	@echo "... libft/ft_putendl.i"
+	@echo "... libft/ft_putendl.s"
+	@echo "... libft/ft_putendl_fd.o"
+	@echo "... libft/ft_putendl_fd.i"
+	@echo "... libft/ft_putendl_fd.s"
+	@echo "... libft/ft_putnbr.o"
+	@echo "... libft/ft_putnbr.i"
+	@echo "... libft/ft_putnbr.s"
+	@echo "... libft/ft_putnbr_fd.o"
+	@echo "... libft/ft_putnbr_fd.i"
+	@echo "... libft/ft_putnbr_fd.s"
+	@echo "... libft/ft_putstr.o"
+	@echo "... libft/ft_putstr.i"
+	@echo "... libft/ft_putstr.s"
+	@echo "... libft/ft_putstr_fd.o"
+	@echo "... libft/ft_putstr_fd.i"
+	@echo "... libft/ft_putstr_fd.s"
+	@echo "... libft/ft_realloc.o"
+	@echo "... libft/ft_realloc.i"
+	@echo "... libft/ft_realloc.s"
+	@echo "... libft/ft_strcat.o"
+	@echo "... libft/ft_strcat.i"
+	@echo "... libft/ft_strcat.s"
+	@echo "... libft/ft_strchr.o"
+	@echo "... libft/ft_strchr.i"
+	@echo "... libft/ft_strchr.s"
+	@echo "... libft/ft_strclr.o"
+	@echo "... libft/ft_strclr.i"
+	@echo "... libft/ft_strclr.s"
+	@echo "... libft/ft_strcmp.o"
+	@echo "... libft/ft_strcmp.i"
+	@echo "... libft/ft_strcmp.s"
+	@echo "... libft/ft_strcpy.o"
+	@echo "... libft/ft_strcpy.i"
+	@echo "... libft/ft_strcpy.s"
+	@echo "... libft/ft_strdel.o"
+	@echo "... libft/ft_strdel.i"
+	@echo "... libft/ft_strdel.s"
+	@echo "... libft/ft_strdup.o"
+	@echo "... libft/ft_strdup.i"
+	@echo "... libft/ft_strdup.s"
+	@echo "... libft/ft_strequ.o"
+	@echo "... libft/ft_strequ.i"
+	@echo "... libft/ft_strequ.s"
+	@echo "... libft/ft_striter.o"
+	@echo "... libft/ft_striter.i"
+	@echo "... libft/ft_striter.s"
+	@echo "... libft/ft_striteri.o"
+	@echo "... libft/ft_striteri.i"
+	@echo "... libft/ft_striteri.s"
+	@echo "... libft/ft_strjoin.o"
+	@echo "... libft/ft_strjoin.i"
+	@echo "... libft/ft_strjoin.s"
+	@echo "... libft/ft_strlcat.o"
+	@echo "... libft/ft_strlcat.i"
+	@echo "... libft/ft_strlcat.s"
+	@echo "... libft/ft_strlen.o"
+	@echo "... libft/ft_strlen.i"
+	@echo "... libft/ft_strlen.s"
+	@echo "... libft/ft_strmap.o"
+	@echo "... libft/ft_strmap.i"
+	@echo "... libft/ft_strmap.s"
+	@echo "... libft/ft_strmapi.o"
+	@echo "... libft/ft_strmapi.i"
+	@echo "... libft/ft_strmapi.s"
+	@echo "... libft/ft_strncat.o"
+	@echo "... libft/ft_strncat.i"
+	@echo "... libft/ft_strncat.s"
+	@echo "... libft/ft_strncmp.o"
+	@echo "... libft/ft_strncmp.i"
+	@echo "... libft/ft_strncmp.s"
+	@echo "... libft/ft_strncpy.o"
+	@echo "... libft/ft_strncpy.i"
+	@echo "... libft/ft_strncpy.s"
+	@echo "... libft/ft_strnequ.o"
+	@echo "... libft/ft_strnequ.i"
+	@echo "... libft/ft_strnequ.s"
+	@echo "... libft/ft_strnew.o"
+	@echo "... libft/ft_strnew.i"
+	@echo "... libft/ft_strnew.s"
+	@echo "... libft/ft_strnstr.o"
+	@echo "... libft/ft_strnstr.i"
+	@echo "... libft/ft_strnstr.s"
+	@echo "... libft/ft_strrchr.o"
+	@echo "... libft/ft_strrchr.i"
+	@echo "... libft/ft_strrchr.s"
+	@echo "... libft/ft_strsplit.o"
+	@echo "... libft/ft_strsplit.i"
+	@echo "... libft/ft_strsplit.s"
+	@echo "... libft/ft_strstr.o"
+	@echo "... libft/ft_strstr.i"
+	@echo "... libft/ft_strstr.s"
+	@echo "... libft/ft_strsub.o"
+	@echo "... libft/ft_strsub.i"
+	@echo "... libft/ft_strsub.s"
+	@echo "... libft/ft_strtrim.o"
+	@echo "... libft/ft_strtrim.i"
+	@echo "... libft/ft_strtrim.s"
+	@echo "... libft/ft_swap.o"
+	@echo "... libft/ft_swap.i"
+	@echo "... libft/ft_swap.s"
+	@echo "... libft/ft_tolower.o"
+	@echo "... libft/ft_tolower.i"
+	@echo "... libft/ft_tolower.s"
+	@echo "... libft/ft_toupper.o"
+	@echo "... libft/ft_toupper.i"
+	@echo "... libft/ft_toupper.s"
+	@echo "... libft/get_next_line.o"
+	@echo "... libft/get_next_line.i"
+	@echo "... libft/get_next_line.s"
 	@echo "... src/cut_wall.o"
 	@echo "... src/cut_wall.i"
 	@echo "... src/cut_wall.s"
+	@echo "... src/door_animations.o"
+	@echo "... src/door_animations.i"
+	@echo "... src/door_animations.s"
+	@echo "... src/editor/door_mod.o"
+	@echo "... src/editor/door_mod.i"
+	@echo "... src/editor/door_mod.s"
+	@echo "... src/editor/graf_mod.o"
+	@echo "... src/editor/graf_mod.i"
+	@echo "... src/editor/graf_mod.s"
 	@echo "... src/editor/real_time_edit.o"
 	@echo "... src/editor/real_time_edit.i"
 	@echo "... src/editor/real_time_edit.s"
+	@echo "... src/editor/tx_mod.o"
+	@echo "... src/editor/tx_mod.i"
+	@echo "... src/editor/tx_mod.s"
 	@echo "... src/game_loop.o"
 	@echo "... src/game_loop.i"
 	@echo "... src/game_loop.s"
@@ -1100,15 +4161,85 @@ help:
 	@echo "... src/manage_data.o"
 	@echo "... src/manage_data.i"
 	@echo "... src/manage_data.s"
+	@echo "... src/map_editor/draw_all.o"
+	@echo "... src/map_editor/draw_all.i"
+	@echo "... src/map_editor/draw_all.s"
+	@echo "... src/map_editor/draw_map.o"
+	@echo "... src/map_editor/draw_map.i"
+	@echo "... src/map_editor/draw_map.s"
+	@echo "... src/map_editor/draw_sprites.o"
+	@echo "... src/map_editor/draw_sprites.i"
+	@echo "... src/map_editor/draw_sprites.s"
+	@echo "... src/map_editor/draw_ui.o"
+	@echo "... src/map_editor/draw_ui.i"
+	@echo "... src/map_editor/draw_ui.s"
+	@echo "... src/map_editor/drawing_utils.o"
+	@echo "... src/map_editor/drawing_utils.i"
+	@echo "... src/map_editor/drawing_utils.s"
+	@echo "... src/map_editor/errors.o"
+	@echo "... src/map_editor/errors.i"
+	@echo "... src/map_editor/errors.s"
+	@echo "... src/map_editor/events_all.o"
+	@echo "... src/map_editor/events_all.i"
+	@echo "... src/map_editor/events_all.s"
+	@echo "... src/map_editor/events_map.o"
+	@echo "... src/map_editor/events_map.i"
+	@echo "... src/map_editor/events_map.s"
+	@echo "... src/map_editor/init.o"
+	@echo "... src/map_editor/init.i"
+	@echo "... src/map_editor/init.s"
+	@echo "... src/map_editor/main.o"
+	@echo "... src/map_editor/main.i"
+	@echo "... src/map_editor/main.s"
+	@echo "... src/map_editor/math.o"
+	@echo "... src/map_editor/math.i"
+	@echo "... src/map_editor/math.s"
+	@echo "... src/map_editor/obj_detection.o"
+	@echo "... src/map_editor/obj_detection.i"
+	@echo "... src/map_editor/obj_detection.s"
+	@echo "... src/map_editor/pixels.o"
+	@echo "... src/map_editor/pixels.i"
+	@echo "... src/map_editor/pixels.s"
+	@echo "... src/map_editor/reader.o"
+	@echo "... src/map_editor/reader.i"
+	@echo "... src/map_editor/reader.s"
+	@echo "... src/map_editor/sector_add.o"
+	@echo "... src/map_editor/sector_add.i"
+	@echo "... src/map_editor/sector_add.s"
+	@echo "... src/map_editor/sector_check.o"
+	@echo "... src/map_editor/sector_check.i"
+	@echo "... src/map_editor/sector_check.s"
+	@echo "... src/map_editor/sector_neighbors.o"
+	@echo "... src/map_editor/sector_neighbors.i"
+	@echo "... src/map_editor/sector_neighbors.s"
+	@echo "... src/map_editor/sector_remove.o"
+	@echo "... src/map_editor/sector_remove.i"
+	@echo "... src/map_editor/sector_remove.s"
+	@echo "... src/map_editor/texture.o"
+	@echo "... src/map_editor/texture.i"
+	@echo "... src/map_editor/texture.s"
+	@echo "... src/map_editor/write.o"
+	@echo "... src/map_editor/write.i"
+	@echo "... src/map_editor/write.s"
 	@echo "... src/movement/fall.o"
 	@echo "... src/movement/fall.i"
 	@echo "... src/movement/fall.s"
 	@echo "... src/movement/move.o"
 	@echo "... src/movement/move.i"
 	@echo "... src/movement/move.s"
+<<<<<<< HEAD
 	@echo "... src/render/ceil_and_floor_init.o"
 	@echo "... src/render/ceil_and_floor_init.i"
 	@echo "... src/render/ceil_and_floor_init.s"
+	@echo "... src/render/graf_proccesing.o"
+	@echo "... src/render/graf_proccesing.i"
+	@echo "... src/render/graf_proccesing.s"
+||||||| 1784372
+=======
+	@echo "... src/render/ceil_and_floor_init.o"
+	@echo "... src/render/ceil_and_floor_init.i"
+	@echo "... src/render/ceil_and_floor_init.s"
+>>>>>>> master
 	@echo "... src/render/line/render_hline.o"
 	@echo "... src/render/line/render_hline.i"
 	@echo "... src/render/line/render_hline.s"
@@ -1121,6 +4252,7 @@ help:
 	@echo "... src/render/minimap.o"
 	@echo "... src/render/minimap.i"
 	@echo "... src/render/minimap.s"
+<<<<<<< HEAD
 	@echo "... src/render/render_hplane.o"
 	@echo "... src/render/render_hplane.i"
 	@echo "... src/render/render_hplane.s"
@@ -1130,6 +4262,30 @@ help:
 	@echo "... src/render/render_sky.o"
 	@echo "... src/render/render_sky.i"
 	@echo "... src/render/render_sky.s"
+	@echo "... src/render/sprite_render.o"
+	@echo "... src/render/sprite_render.i"
+	@echo "... src/render/sprite_render.s"
+	@echo "... src/render/transform_sprite.o"
+	@echo "... src/render/transform_sprite.i"
+	@echo "... src/render/transform_sprite.s"
+||||||| 1784372
+	@echo "... src/render/render_floor.o"
+	@echo "... src/render/render_floor.i"
+	@echo "... src/render/render_floor.s"
+	@echo "... src/render/wall/edge_tx_init.o"
+	@echo "... src/render/wall/edge_tx_init.i"
+	@echo "... src/render/wall/edge_tx_init.s"
+=======
+	@echo "... src/render/render_hplane.o"
+	@echo "... src/render/render_hplane.i"
+	@echo "... src/render/render_hplane.s"
+	@echo "... src/render/render_scene.o"
+	@echo "... src/render/render_scene.i"
+	@echo "... src/render/render_scene.s"
+	@echo "... src/render/render_sky.o"
+	@echo "... src/render/render_sky.i"
+	@echo "... src/render/render_sky.s"
+>>>>>>> master
 	@echo "... src/render/wall/perspective_init.o"
 	@echo "... src/render/wall/perspective_init.i"
 	@echo "... src/render/wall/perspective_init.s"

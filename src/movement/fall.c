@@ -1,6 +1,6 @@
 #include "engine.h"
 
-void	fall(t_player *player, t_sector *sectors)
+void	fall(t_player *player, t_sect *sectors)
 {
 	if (player->falling || player->flying)
 	{

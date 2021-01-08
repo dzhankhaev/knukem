@@ -1,9 +1,24 @@
 #include "engine.h"
+#include "editor.h"
 #include "utilits.h"
+
+void 		load_sprites(t_engine *engine) //TODO (coordinates hardcoded)
+{
+	engine->sprites1 = (t_sprites1*)malloc(sizeof(t_sprites1));
+	engine->sprites1->weapon_sprite = (t_weapon_sprites*)malloc(sizeof(t_weapon_sprites) * WEAPON_SPRITE_NUM);
+	engine->sprites1->weapon_sprite->sector = 0;
+	engine->sprites1->weapon_sprite->where.x = 10;
+	engine->sprites1->weapon_sprite->where.y = 10;
+	engine->sprites1->weapon_sprite->where.z = 5;
+	engine->sprites1->weapon_sprite->visible = 1;
+	if(!(engine->sprites1->weapon_sprite->texture = get_texture2("shotgun.bmp")))
+		error_and_close(__FILE__, __FUNCTION__);
+	//engine->sprites1.weapon_sprite->dstrect = (SDL_Rect){W / 10, H * 0.2, 200, 200};
+}
 
 static void	init_minimap(t_engine *engine)
 {
-	engine->minimap.point = (t_xy){W - W / 8, H - H / 6};
+	engine->minimap.point = (t_xy){W - W / 8, H / 6};
 	engine->minimap.scale =  W / 200;
 	engine->minimap.player_horizontal.color = 0x4444FF;
 	engine->minimap.player_horizontal.x0 = engine->minimap.point.x - 5;
@@ -15,13 +30,37 @@ static void	init_minimap(t_engine *engine)
 	engine->minimap.player_vertical.y0 = engine->minimap.point.y - 11;
 	engine->minimap.player_vertical.x1 = engine->minimap.point.x;
 	engine->minimap.player_vertical.y1 = engine->minimap.point.y + 3;
-	engine->minimap.borders = (t_line){W - W / 4, W,H - H / 3, H,
+	engine->minimap.borders = (t_line){W - W / 4, W,0, H / 3,
 									   0x555555};
 	engine->minimap.mod = 0;
 }
 
+void general_init2(t_engine *engine)
+{
+	int	i;
+
+	i = 0;
+	engine->graf = (t_graf *)malloc(sizeof(t_graf) * (engine->num_sectors + 1));
+	while (i < engine->num_sectors)
+	{
+		engine->graf[i].g_num = 0;
+		engine->graf[i].wall = 0;
+		engine->graf[i].coord = 0;
+		engine->graf[i].z = 0;
+		i++;
+	}
+	i = 0;
+	while (i < 30)
+	{
+		engine->danimbuf[i] = -1;
+		i++;
+	}
+}
+
 void general_init(t_engine *engine)
 {
+	int	i;
+
 	engine->borders = (t_line){0, W, 0, H, 0x555555};
 	engine->player.falling = 0;
 	engine->player.flying = 0;
@@ -30,7 +69,15 @@ void general_init(t_engine *engine)
 	engine->player.vangle = 0.f;
 	engine->player.speed = MOVE_SPEED;
 	engine->player.deep_sh = 0;
+<<<<<<< HEAD
 	engine->edit.mod_tx = 0;
+	engine->edit.mod = 1;
+	engine->edit.graf = 0;
+	general_init2(engine);
+||||||| 1784372
+=======
+	engine->edit.mod_tx = 0;
+>>>>>>> master
 	init_minimap(engine);
 }
 
@@ -66,10 +113,17 @@ static void sdl_img(t_engine *engine)
 	}
 }
 
-void		init_engine(t_engine *engine)
+void		init_engine(t_engine *engine, t_all *all)
 {
-	bzero(engine, sizeof(*engine));
-	load_data(engine);
+	ft_bzero(engine, sizeof(*engine));
+	load_data(engine, all);
 	sdl(engine);
+	all->num_sectors = engine->num_sectors;
+	all->sdl = (t_sdl *)malloc(sizeof(t_sdl) * 1);
+	all->sdl->window = engine->window;
+	all->sdl->screen = engine->screen;
+	all->sectors = engine->sectors;
+	all->player = engine->player;
 	sdl_img(engine);
+	load_sprites(engine);
 }

@@ -14,12 +14,13 @@ t_line			swap_coords(t_line p);
 void			to_x_order(t_line *wall);
 t_xy			intersection_point(t_fline wall, t_fline twall);
 int				determine_intersection(t_fline wall, t_fline twall);
-t_fline			rotate_wall(t_sector sector, t_player player, int i, int color);
+t_fline			rotate_wall(t_fline wall, t_player player);
 t_line			perspective_transform(t_fline w, float z, float yaw, int color);
 void			exc(const char *file, const char *function);
 void			clean(t_engine *engine);
 void 			load_img(t_engine *engine, char *name, int n);
-void			get_filename(t_engine *engine, char *name, int n);
+t_xy			point_proection(t_fline wall, t_xyz p);
+float			get_vec_angle(float x1, float y1, float x2, float y2);
 Uint32			get_pixel_color(SDL_Surface *surface, int x, int y);
 
 #endif
