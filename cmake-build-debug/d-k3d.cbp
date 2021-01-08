@@ -297,6 +297,9 @@
 		<Unit filename="/home/rokosbasil/projects/knukem_merge2/libft/get_next_line.c">
 			<Option target="d-k3d"/>
 		</Unit>
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/archiver.c">
+			<Option target="d-k3d"/>
+		</Unit>
 		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/cut_wall.c">
 			<Option target="d-k3d"/>
 		</Unit>
@@ -319,6 +322,9 @@
 			<Option target="d-k3d"/>
 		</Unit>
 		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/init.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/init_engine.c">
 			<Option target="d-k3d"/>
 		</Unit>
 		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/key_events">
@@ -411,6 +417,9 @@
 		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/movement/move.c">
 			<Option target="d-k3d"/>
 		</Unit>
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/pack.c">
+			<Option target="d-k3d"/>
+		</Unit>
 		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/render">
 			<Option target="d-k3d"/>
 		</Unit>
@@ -466,6 +475,9 @@
 			<Option target="d-k3d"/>
 		</Unit>
 		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/transform_wall.c">
+			<Option target="d-k3d"/>
+		</Unit>
+		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/unpack.c">
 			<Option target="d-k3d"/>
 		</Unit>
 		<Unit filename="/home/rokosbasil/projects/knukem_merge2/src/utilits">

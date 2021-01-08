@@ -214,6 +214,10 @@ CMakeFiles/d-k3d.dir/libft/ft_toupper.c.o: ../libft/libft.h
 CMakeFiles/d-k3d.dir/libft/get_next_line.c.o: ../libft/get_next_line.c
 CMakeFiles/d-k3d.dir/libft/get_next_line.c.o: ../libft/libft.h
 
+CMakeFiles/d-k3d.dir/src/archiver.c.o: ../includes/archiver.h
+CMakeFiles/d-k3d.dir/src/archiver.c.o: ../libft/libft.h
+CMakeFiles/d-k3d.dir/src/archiver.c.o: ../src/archiver.c
+
 CMakeFiles/d-k3d.dir/src/cut_wall.c.o: ../includes/editor.h
 CMakeFiles/d-k3d.dir/src/cut_wall.c.o: ../includes/engine.h
 CMakeFiles/d-k3d.dir/src/cut_wall.c.o: ../libft/libft.h
@@ -632,6 +636,58 @@ CMakeFiles/d-k3d.dir/src/init.c.o: /usr/include/SDL2/SDL_version.h
 CMakeFiles/d-k3d.dir/src/init.c.o: /usr/include/SDL2/SDL_video.h
 CMakeFiles/d-k3d.dir/src/init.c.o: /usr/include/SDL2/begin_code.h
 CMakeFiles/d-k3d.dir/src/init.c.o: /usr/include/SDL2/close_code.h
+
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: ../includes/editor.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: ../includes/engine.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: ../libft/libft.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: ../src/init_engine.c
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_assert.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_atomic.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_audio.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_blendmode.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_clipboard.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_config.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_cpuinfo.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_endian.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_error.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_events.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_filesystem.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_gamecontroller.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_gesture.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_haptic.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_hints.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_image.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_joystick.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_keyboard.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_keycode.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_loadso.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_log.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_main.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_messagebox.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_mouse.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_mutex.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_pixels.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_platform.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_power.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_quit.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_rect.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_render.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_rwops.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_scancode.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_sensor.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_shape.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_stdinc.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_surface.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_system.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_thread.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_timer.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_touch.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_ttf.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_version.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/SDL_video.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/begin_code.h
+CMakeFiles/d-k3d.dir/src/init_engine.c.o: /usr/include/SDL2/close_code.h
 
 CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.o: ../includes/editor.h
 CMakeFiles/d-k3d.dir/src/key_events/event_edit.c.o: ../includes/engine.h
@@ -2077,6 +2133,10 @@ CMakeFiles/d-k3d.dir/src/movement/move.c.o: /usr/include/SDL2/SDL_video.h
 CMakeFiles/d-k3d.dir/src/movement/move.c.o: /usr/include/SDL2/begin_code.h
 CMakeFiles/d-k3d.dir/src/movement/move.c.o: /usr/include/SDL2/close_code.h
 
+CMakeFiles/d-k3d.dir/src/pack.c.o: ../includes/archiver.h
+CMakeFiles/d-k3d.dir/src/pack.c.o: ../libft/libft.h
+CMakeFiles/d-k3d.dir/src/pack.c.o: ../src/pack.c
+
 CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.o: ../includes/editor.h
 CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.o: ../includes/engine.h
 CMakeFiles/d-k3d.dir/src/render/ceil_and_floor_init.c.o: ../includes/utilits.h
@@ -2920,6 +2980,10 @@ CMakeFiles/d-k3d.dir/src/transform_wall.c.o: /usr/include/SDL2/SDL_version.h
 CMakeFiles/d-k3d.dir/src/transform_wall.c.o: /usr/include/SDL2/SDL_video.h
 CMakeFiles/d-k3d.dir/src/transform_wall.c.o: /usr/include/SDL2/begin_code.h
 CMakeFiles/d-k3d.dir/src/transform_wall.c.o: /usr/include/SDL2/close_code.h
+
+CMakeFiles/d-k3d.dir/src/unpack.c.o: ../includes/archiver.h
+CMakeFiles/d-k3d.dir/src/unpack.c.o: ../libft/libft.h
+CMakeFiles/d-k3d.dir/src/unpack.c.o: ../src/unpack.c
 
 CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.o: ../includes/editor.h
 CMakeFiles/d-k3d.dir/src/utilits/exit_options.c.o: ../includes/engine.h

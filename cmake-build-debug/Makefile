@@ -2060,6 +2060,33 @@ libft/get_next_line.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/get_next_line.c.s
 .PHONY : libft/get_next_line.c.s
 
+src/archiver.o: src/archiver.c.o
+
+.PHONY : src/archiver.o
+
+# target to build an object file
+src/archiver.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/archiver.c.o
+.PHONY : src/archiver.c.o
+
+src/archiver.i: src/archiver.c.i
+
+.PHONY : src/archiver.i
+
+# target to preprocess a source file
+src/archiver.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/archiver.c.i
+.PHONY : src/archiver.c.i
+
+src/archiver.s: src/archiver.c.s
+
+.PHONY : src/archiver.s
+
+# target to generate assembly for a file
+src/archiver.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/archiver.c.s
+.PHONY : src/archiver.c.s
+
 src/cut_wall.o: src/cut_wall.c.o
 
 .PHONY : src/cut_wall.o
@@ -2275,6 +2302,33 @@ src/init.s: src/init.c.s
 src/init.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/init.c.s
 .PHONY : src/init.c.s
+
+src/init_engine.o: src/init_engine.c.o
+
+.PHONY : src/init_engine.o
+
+# target to build an object file
+src/init_engine.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/init_engine.c.o
+.PHONY : src/init_engine.c.o
+
+src/init_engine.i: src/init_engine.c.i
+
+.PHONY : src/init_engine.i
+
+# target to preprocess a source file
+src/init_engine.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/init_engine.c.i
+.PHONY : src/init_engine.c.i
+
+src/init_engine.s: src/init_engine.c.s
+
+.PHONY : src/init_engine.s
+
+# target to generate assembly for a file
+src/init_engine.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/init_engine.c.s
+.PHONY : src/init_engine.c.s
 
 src/key_events/event_edit.o: src/key_events/event_edit.c.o
 
@@ -3032,6 +3086,33 @@ src/movement/move.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/movement/move.c.s
 .PHONY : src/movement/move.c.s
 
+src/pack.o: src/pack.c.o
+
+.PHONY : src/pack.o
+
+# target to build an object file
+src/pack.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/pack.c.o
+.PHONY : src/pack.c.o
+
+src/pack.i: src/pack.c.i
+
+.PHONY : src/pack.i
+
+# target to preprocess a source file
+src/pack.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/pack.c.i
+.PHONY : src/pack.c.i
+
+src/pack.s: src/pack.c.s
+
+.PHONY : src/pack.s
+
+# target to generate assembly for a file
+src/pack.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/pack.c.s
+.PHONY : src/pack.c.s
+
 src/render/ceil_and_floor_init.o: src/render/ceil_and_floor_init.c.o
 
 .PHONY : src/render/ceil_and_floor_init.o
@@ -3463,6 +3544,33 @@ src/transform_wall.s: src/transform_wall.c.s
 src/transform_wall.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/transform_wall.c.s
 .PHONY : src/transform_wall.c.s
+
+src/unpack.o: src/unpack.c.o
+
+.PHONY : src/unpack.o
+
+# target to build an object file
+src/unpack.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/unpack.c.o
+.PHONY : src/unpack.c.o
+
+src/unpack.i: src/unpack.c.i
+
+.PHONY : src/unpack.i
+
+# target to preprocess a source file
+src/unpack.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/unpack.c.i
+.PHONY : src/unpack.c.i
+
+src/unpack.s: src/unpack.c.s
+
+.PHONY : src/unpack.s
+
+# target to generate assembly for a file
+src/unpack.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/unpack.c.s
+.PHONY : src/unpack.c.s
 
 src/utilits/exit_options.o: src/utilits/exit_options.c.o
 
@@ -3929,6 +4037,9 @@ help:
 	@echo "... libft/get_next_line.o"
 	@echo "... libft/get_next_line.i"
 	@echo "... libft/get_next_line.s"
+	@echo "... src/archiver.o"
+	@echo "... src/archiver.i"
+	@echo "... src/archiver.s"
 	@echo "... src/cut_wall.o"
 	@echo "... src/cut_wall.i"
 	@echo "... src/cut_wall.s"
@@ -3953,6 +4064,9 @@ help:
 	@echo "... src/init.o"
 	@echo "... src/init.i"
 	@echo "... src/init.s"
+	@echo "... src/init_engine.o"
+	@echo "... src/init_engine.i"
+	@echo "... src/init_engine.s"
 	@echo "... src/key_events/event_edit.o"
 	@echo "... src/key_events/event_edit.i"
 	@echo "... src/key_events/event_edit.s"
@@ -4037,6 +4151,9 @@ help:
 	@echo "... src/movement/move.o"
 	@echo "... src/movement/move.i"
 	@echo "... src/movement/move.s"
+	@echo "... src/pack.o"
+	@echo "... src/pack.i"
+	@echo "... src/pack.s"
 	@echo "... src/render/ceil_and_floor_init.o"
 	@echo "... src/render/ceil_and_floor_init.i"
 	@echo "... src/render/ceil_and_floor_init.s"
@@ -4085,6 +4202,9 @@ help:
 	@echo "... src/transform_wall.o"
 	@echo "... src/transform_wall.i"
 	@echo "... src/transform_wall.s"
+	@echo "... src/unpack.o"
+	@echo "... src/unpack.i"
+	@echo "... src/unpack.s"
 	@echo "... src/utilits/exit_options.o"
 	@echo "... src/utilits/exit_options.i"
 	@echo "... src/utilits/exit_options.s"

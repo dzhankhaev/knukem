@@ -46,7 +46,7 @@ void			exit_error(void)
 	exit(errno);
 }
 
-int				main(int argc, char **argv)
+/*int				main(int argc, char **argv)
 {
 	if (argc == 4)
 	{
@@ -56,4 +56,4 @@ int				main(int argc, char **argv)
 			unpack_files(argv[2], argv[3]);
 	}
 	return (0);
-}
+}*/

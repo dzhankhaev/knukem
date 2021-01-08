@@ -12,7 +12,14 @@ include_directories(${SDL2_INCLUDE_DIRS} ${SDL2_IMAGE_INCLUDE_DIRS})
 add_executable(d-k3d
 		#[[TODO]]
 
+		src/editor/door_mod.c
+		src/editor/graf_mod.c
 		src/editor/real_time_edit.c
+		src/editor/tx_mod.c
+		src/editor/door_mod.c
+		src/editor/graf_mod.c
+		src/editor/real_time_edit.c
+		src/editor/tx_mod.c
 		src/key_events
 		src/key_events/event_edit.c
 		src/key_events/event_movement.c
@@ -50,6 +57,7 @@ add_executable(d-k3d
 		src/render/wall/render_wall.c
 		src/render/wall/wall_tx_init.c
 		src/render/ceil_and_floor_init.c
+		src/render/graf_proccesing.c
 		src/render/minimap.c
 		src/render/render_hplane.c
 		src/render/render_scene.c
@@ -67,19 +75,23 @@ add_executable(d-k3d
 		src/utilits/load_img.c
 		src/utilits/swap.c
 		src/utilits/utilits.c
+		src/archiver.c
 		src/cut_wall.c
+		#[[src/dash_board.c
+		src/dash_board_fill_hud.c
+		src/dash_board_sub.c]]
+		src/door_animations.c
 		src/game_loop.c
+		#[[src/hud.c]]
 		src/init.c
+		src/init_engine.c
 		src/lighting.c
 		src/main.c
 		src/manage_data.c
+		src/pack.c
 		src/run_queue.c
 		src/transform_wall.c
-		src/render/graf_proccesing.c
-		src/editor/graf_mod.c
-		src/editor/tx_mod.c
-		src/editor/door_mod.c
-		src/door_animations.c
+		src/unpack.c
 
 		libft/c_add.c
 		libft/c_arg.c

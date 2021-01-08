@@ -267,7 +267,7 @@ int		put_hud(SDL_Surface *scr, int health, int weapons)
 	return(1);
 }
 
-int				main(int argc, char **argv)
+/*int				main(int argc, char **argv)
 {
 	t_engine	engine;
 	t_hud		hud;
@@ -296,4 +296,4 @@ int				main(int argc, char **argv)
 			// SDL_UpdateWindowSurface(engine.window);
 	}
 	return (0);
-}
+}*/
