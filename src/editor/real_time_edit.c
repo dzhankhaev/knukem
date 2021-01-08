@@ -24,12 +24,4 @@ void	real_time_edit(t_engine *engine)
 			engine->sectors[s].ceil -= hchange[3] * 1;
 		engine->sectors[s].oldf = engine->sectors[s].floor;
 	}
-
-	if (s != 0x01ab01)
-	{
-		engine->sectors[s].floor -= hchange[0] * 1;
-		engine->sectors[s].floor += hchange[1] * 1;
-		engine->sectors[s].ceil -= hchange[2] * 1;
-		engine->sectors[s].ceil += hchange[3] * 1;
-	}
 }
