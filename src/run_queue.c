@@ -41,7 +41,6 @@ static void choose_edit(t_engine *engine, int i)
 		if (engine->edit.mod_w == -1)
 			engine->edit.mod_w = i;
 	}
-
 }
 
 void 		run_queue(t_engine *engine)

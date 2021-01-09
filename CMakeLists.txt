@@ -79,7 +79,7 @@ add_executable(d-k3d
 		#[[src/dash_board.c
 		src/dash_board_fill_hud.c
 		src/dash_board_sub.c]]
-		src/door_animations.c
+		src/animations/start_door_anim.c
 		src/game_loop.c
 		#[[src/hud.c]]
 		src/init.c
@@ -162,7 +162,7 @@ add_executable(d-k3d
 		libft/ft_swap.c
 		libft/ft_tolower.c
 		libft/ft_toupper.c
-		libft/get_next_line.c src/utilits/anim_delete.c src/utilits/math/mathf2.c)
+		libft/get_next_line.c src/utilits/anim_delete.c src/utilits/math/mathf2.c src/animations/do_door_anim.c)
 
 include_directories(d-k3d
 		includes/

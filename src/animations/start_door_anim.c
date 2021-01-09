@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   door_animations.c                                  :+:      :+:    :+:   */
+/*   start_door_anim.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,54 +11,8 @@
 /* ************************************************************************** */
 
 #include "engine.h"
-#include "utilits.h"
 
-void		anim0(t_engine *engine, int anim, int dsec, int i)
-{
-	if (anim == 0)
-	{
-		engine->sectors[dsec].door += 1;
-		if (engine->player.sector == dsec)
-			engine->sectors[dsec].door -= 1;
-		engine->sectors[dsec].floor = engine->sectors[dsec].oldf
-				+ engine->sectors[dsec].door;
-		if (engine->sectors[dsec].floor >= engine->sectors[dsec].ceil)
-			anim_delete(engine, i);
-	}
-	if (anim == 1)
-	{
-		engine->sectors[dsec].door -= 1;
-		if (engine->player.sector == dsec)
-			engine->sectors[dsec].door += 1;
-		engine->sectors[dsec].floor = engine->sectors[dsec].oldf
-				+ engine->sectors[dsec].door;
-		if (engine->sectors[dsec].floor <= engine->sectors[dsec].oldf)
-			anim_delete(engine, i);
-
-	}
-}
-
-void 		door_anim(t_engine *engine)
-{
-	int i;
-	int dsec;
-	int anim;
-
-	i = 0;
-	while (i < 30)
-	{
-		if (engine->danimbuf[i] != -1)
-		{
-			dsec = engine->danimbuf[i];
-			anim = engine->danimbuf[i + 1];
-			if (engine->sectors[dsec].door != -1)
-				anim0(engine, anim, dsec, i);
-		}
-		i += 2;
-	}
-}
-
-void 		put_anim(t_engine *engine, int door)
+static void	put_anim(t_engine *engine, int door)
 {
 	int	q;
 
@@ -84,12 +38,50 @@ void 		put_anim(t_engine *engine, int door)
 	}
 }
 
-int 		gr(t_engine *engine, int dsec)
+//есть ли граффити на прилегающей стене
+static int	match2(t_engine *engine, int sec, int wall)
+{
+	int	t;
+
+	t = 0;
+	while (t < engine->graf[sec].g_num)
+	{
+		if (engine->graf[sec].wall[t] == wall)
+			return (1);
+		t++;
+	}
+	return (0);
+}
+
+static int	match(t_engine *engine, int sec, int dsec, int k)
+{
+	int wall;
+	//для двери находим соответствующую грань соседа
+	if (engine->sectors[sec].neighbors[k] == dsec)
+	{
+		//стена слева
+		if (k == 0)
+			wall = engine->sectors[sec].npoints - 1;
+		else
+			wall = k - 1;
+		if (match2(engine, sec, wall))
+			return (1);
+		//стена справа
+		if (k == engine->sectors[sec].npoints - 1)
+			wall = 0;
+		else
+			wall = k + 1;
+		if (match2(engine, sec, wall))
+			return (1);
+	}
+	return (0);
+}
+
+static int	check_graf_control(t_engine *engine, int dsec)
 {
 	int	q;
 	int	k;
 	int	sec;
-	int nsec;
 
 	q = 0;
 	//проходим по стенам двери
@@ -103,59 +95,23 @@ int 		gr(t_engine *engine, int dsec)
 			//проходим по стенам соседа
 			while (k < engine->sectors[sec].npoints)
 			{
-				nsec = engine->sectors[sec].neighbors[k];
-				//для двери находим соответствующую грань соседа
-				if (nsec == dsec)
-				{
-					int	t;
-					int wall;
-					//стена слева
-					if (k == 0)
-						wall = engine->sectors[sec].npoints - 1;
-					else
-						wall = k - 1;
-					t = 0;
-					//есть ли граффити на прилегающей стене
-					while (t < engine->graf[sec].g_num)
-					{
-						if (engine->graf[sec].wall[t] == wall)
-						{
-							return (0);
-						}
-						t++;
-					}
-
-					//стена справа
-					if (k == engine->sectors[sec].npoints - 1)
-						wall = 0;
-					else
-						wall = k + 1;
-					t = 0;
-					//есть ли граффити на прилегающей стене
-					while (t < engine->graf[sec].g_num)
-					{
-						if (engine->graf[sec].wall[t] == wall)
-						{
-							return (0);
-						}
-						t++;
-					}
-				}
+				if (match(engine, sec, dsec, k))
+					return (0);
 				k++;
 			}
 		}
-
 		q++;
 	}
 	return (1);
 }
 
-void		start_danim(t_engine *engine, int sec, int nei, int i)
+void		start_door_anim(t_engine *engine, int sec, int nei, int i)
 {
 	int door;
 	//если игрок смотрит на дверь
 	if (engine->edit.mod_w == i && nei > -1 && nei == engine->edit.mod_s &&
-		engine->edit.door == 2 && engine->sectors[nei].door > -1 && gr(engine, nei))
+			engine->edit.door == 2 && engine->sectors[nei].door > -1
+			&& check_graf_control(engine, nei))
 		put_anim(engine, nei);
 	//если игрок смотрит на граффити
 	if (engine->edit.door == 4)

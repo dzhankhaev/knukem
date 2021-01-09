@@ -97,7 +97,7 @@ void			render_scene(t_engine *engine, int sectorno, int neighbor, int i)
 	render_hplane(engine, &engine->vpfloor, txset.x);
 	render_hplane(engine, &engine->vpceil, txset.y);
 	graf_proccesing(engine, sectorno, i);
-	start_danim(engine, sectorno, neighbor, i);
+	start_door_anim(engine, sectorno, neighbor, i);
 	graf_mod(engine, sectorno, i);
 	engine->edit.mod_w = -1;	//после того как модифицировали стену, нужно сбрасывать, иначе применится ко всем стенам
 	render_line((t_line){0, W - 1, 0, 0, 0}, engine->screen, engine->borders);

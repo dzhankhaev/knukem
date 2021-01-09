@@ -86,6 +86,7 @@ static void	move_player(float *dx, float *dy, t_engine *engine)
 	int		s;
 	int		old;
 
+	old = engine->player.sector;
 	s = 0;
 	while (s < engine->sectors[engine->player.sector].npoints)
 	{
@@ -108,3 +109,5 @@ void		move(t_engine *engine)
 	fall(&engine->player, engine->sectors);
 	move_player(&engine->player.velocity.x, &engine->player.velocity.y, engine);
 }
+
+

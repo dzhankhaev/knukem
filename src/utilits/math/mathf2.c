@@ -16,9 +16,11 @@ void	vec_proect(t_xy vert1, t_xy vert2, float *dx, float *dy)
 {
 	float	xd;
 	float	yd;
+	float	proection;
 
-	xd = fabsf(vert2.x - vert1.x);
-	yd = fabsf(vert2.y - vert1.y);
-	*dx = xd * (*dx * xd + yd * *dy) / (xd * xd + yd * yd);
-	*dy = yd * (*dx * xd + yd * *dy) / (xd * xd + yd * yd);
+	xd = vert2.x - vert1.x;
+	yd = vert2.y - vert1.y;
+	proection = (*dx * xd + yd * *dy) / (xd * xd + yd * yd);
+	*dx = xd * proection;
+	*dy = yd * proection;
 }

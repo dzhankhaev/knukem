@@ -71,8 +71,6 @@ void			general_init2(t_engine *engine)
 
 void			general_init(t_engine *engine)
 {
-	int	i;
-
 	engine->borders = (t_line){0, W, 0, H, 0x555555};
 	engine->player.falling = 0;
 	engine->player.flying = 0;

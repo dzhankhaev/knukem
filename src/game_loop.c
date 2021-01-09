@@ -48,7 +48,7 @@ static void	draw(t_engine *engine)
 		engine->present++;
 	}
 //	engine->present--;
-	while (engine->present != engine->queue)
+	while (1 && engine->present != engine->queue)
 	{
 		if (transform_sprite(engine))
 			render_sprite(engine);
