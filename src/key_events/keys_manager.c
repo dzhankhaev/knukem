@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   keys_manager.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
+/*   Updated: 2021/01/06 07:04:10 by ecelsa           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "engine.h"
 #include "utilits.h"
 #include "events.h"
 
-static void 	keyboard_event(t_engine *engine, t_player *player, t_edit *edit)
+static void		keyboard_event(t_engine *engine, t_player *player, t_edit *edit)
 {
 	while (SDL_PollEvent(&player->event))
 	{
@@ -51,6 +63,7 @@ static void		get_move_vector(t_player *player, float *move_vec)
 		move_vec[1] += player->anglecos * player->speed;
 	}
 }
+
 //не выходим за пределы круга [~0;~359]
 static float	angle_fix(float angle)
 {
@@ -80,9 +93,9 @@ void			keys_manager(t_engine *engine)
 	engine->rend_plane.psin = sinf(-engine->player.angle);	//
 	get_move_vector(player, move_vec);
 	acceleration = player->wsad[0] || player->wsad[1] || player->wsad[2]
-				   || player->wsad[3] ? ACCELERATION_PLUS : ACCELERATION_MINUS;
+					|| player->wsad[3] ? ACCELERATION_PLUS : ACCELERATION_MINUS;
 	player->velocity.x = player->velocity.x * acceleration
-						 + move_vec[0] * acceleration;
+					+ move_vec[0] * acceleration;
 	player->velocity.y = player->velocity.y * acceleration
-						 + move_vec[1] * acceleration;
+					+ move_vec[1] * acceleration;
 }

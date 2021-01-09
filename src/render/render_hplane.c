@@ -1,25 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   render_hplane.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
+/*   Updated: 2021/01/06 07:04:10 by ecelsa           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "engine.h"
 
-static void		loop(t_engine *engine, int *x_table, t_vplane *p)
+static void		loop(t_engine *engine, int *x_table, t_vplane *p, int x)
 {
 	int			y1;
 	int			y2;
-	int			x;
 	int			*y_top;
 	int			*y_bot;
 
 	y_top = &engine->rend_plane.y_top;
 	y_bot = &engine->rend_plane.y_bot;
-	x = p->minx;
-	while (x <= p->maxx)
+	x--;
+	while (++x <= p->maxx)
 	{
 		y1 = p->topy[x];
 		y2 = p->boty[x];
 		if (y2 < y1)
-		{
-			x++;
 			continue ;	//	при возможных пропусках точек на границах (а они есть), алгоритм развалится
-		}
 		while (y1 < *y_top)		//если верхняя линия поднимается
 			x_table[--(*y_top)] = x;
 		while (y2 > *y_bot)		//если нижняя линия опускается
@@ -28,10 +36,8 @@ static void		loop(t_engine *engine, int *x_table, t_vplane *p)
 			render_hline(engine, *y_top, x_table[(*y_top)++], x);
 		while (*y_bot > y2)		//если нижняя линия поднимается
 			render_hline(engine, *y_bot, x_table[(*y_bot)--], x);
-		x++;
 	}
 }
-
 
 void			render_hplane(t_engine *engine, t_vplane *p, int txno)
 {
@@ -45,7 +51,7 @@ void			render_hplane(t_engine *engine, t_vplane *p, int txno)
 	y = engine->rend_plane.y_top;
 	while (y <= engine->rend_plane.y_bot)
 		x_table[y++] = p->minx;
-	loop(engine, x_table, p);
+	loop(engine, x_table, p, p->minx);
 	//заливаем промежуток между top и bottom
 	y = engine->rend_plane.y_top;
 	while (y <= engine->rend_plane.y_bot)

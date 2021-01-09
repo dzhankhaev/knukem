@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit_options.c                                     :+:      :+:    :+:   */
+/*   mathf2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,29 +12,13 @@
 
 #include "utilits.h"
 
-void		exc(const char *file, const char *function)
+void	vec_proect(t_xy vert1, t_xy vert2, float *dx, float *dy)
 {
-	int		i;
+	float	xd;
+	float	yd;
 
-	i = 0;
-	write(1, "ERROR: In file ", 15);
-	while (file[i] != '\0')
-		write(1, &file[i++], 1);
-	write(1, " function ", 10);
-	i = 0;
-	while (function[i] != '\0')
-		write(1, &function[i++], 1);
-	write(1, " is not success finishing!\n", 27);
-	exit(0);
-}
-
-void		clean(t_engine *engine)
-{
-	unload_data(engine);
-	IMG_Quit();
-	if (engine->screen)
-		SDL_FreeSurface(engine->screen);
-	if (engine->window)
-		SDL_DestroyWindow(engine->window);
-	SDL_Quit();
+	xd = fabsf(vert2.x - vert1.x);
+	yd = fabsf(vert2.y - vert1.y);
+	*dx = xd * (*dx * xd + yd * *dy) / (xd * xd + yd * yd);
+	*dy = yd * (*dx * xd + yd * *dy) / (xd * xd + yd * yd);
 }

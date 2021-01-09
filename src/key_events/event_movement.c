@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   event_movement.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
+/*   Updated: 2021/01/06 07:04:10 by ecelsa           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "engine.h"
 #include "events.h"
 
@@ -51,7 +63,7 @@ static void	flying(t_player *player)
 	}
 }
 
-void		additional(t_player *player)
+static void	additional(t_player *player)
 {
 	if (player->event.key.keysym.sym == SDLK_LCTRL)	//присед
 	{
@@ -72,8 +84,8 @@ void		additional(t_player *player)
 						(player->event.type == SDL_KEYDOWN) * DFALL_SPEED;
 	}
 	else if (player->event.key.keysym.sym == SDLK_LSHIFT
-			 && (player->speed == MOVE_SPEED
-				 || player->speed == MOVE_SPEED + DSPRINT_SPEED)) //	только когда игрок стоит или бежит
+			&& (player->speed == MOVE_SPEED
+			|| player->speed == MOVE_SPEED + DSPRINT_SPEED)) //	только когда игрок стоит или бежит
 	{
 		player->speed = MOVE_SPEED +
 						(player->event.type == SDL_KEYDOWN) * DSPRINT_SPEED;
@@ -85,5 +97,4 @@ void		event_movement(t_engine *engine)
 	general_moves(&engine->player);
 	flying(&engine->player);
 	additional(&engine->player);
-
 }

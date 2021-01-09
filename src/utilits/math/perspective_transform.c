@@ -1,20 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   perspective_transform.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
+/*   Updated: 2021/01/06 07:04:10 by ecelsa           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "utilits.h"
 
-static t_xyz	vrotate(t_xyz p, float vangle) //используется для обработки вертикального угла взгляда
+//используется для обработки вертикального угла взгляда
+static t_xyz	vrotate(t_xyz p, float vangle)
 {
 	p.z = p.z + p.x * vangle;
 	return (p);
 }
+
 //Х - глубина, Y - положение (слева, справа)
 //В экранных X - столбцы, Y - строки
 //для обратного преобразования
 //X = z / (((float)(wall.y0 << 1) / H - 1) - vangle);
 //Y = X * (((float)wall.x0 - (W / 2.f)) / (W / 2.f));
-
-
-// преобразование координат точки.
 t_line			perspective_transform(t_fline w, float z, float vangle,
-							   int color)
+										int color)
 {
 	t_line	wall;
 	t_xyz	p0;
@@ -27,6 +38,5 @@ t_line			perspective_transform(t_fline w, float z, float vangle,
 	wall.x1 = (int)((W >> 1) + p1.y / p1.x * (W >> 1));
 	wall.y0 = (int)((H >> 1) + p0.z / p0.x * (H >> 1));
 	wall.y1 = (int)((H >> 1) + p1.z / p1.x * (H >> 1));
-
 	return (wall);
 }

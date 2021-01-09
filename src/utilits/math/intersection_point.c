@@ -1,67 +1,79 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   intersection_point.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
+/*   Updated: 2021/01/06 07:04:10 by ecelsa           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "engine.h"
 #include "utilits.h"
 
 //найдём Xa, Ya - точки пересечения двух прямых
-static t_xy	vertical1(t_fline wall, t_fline twall)
+static t_xy		vertical1(t_fline wall, t_fline twall)
 {
-	float Xa;
-	float A2;
+	float xa;
+	float a2;
 	float b2;
-	float Ya;
+	float ya;
 
-	Xa = wall.x0;
-	A2 = (twall.y0 - twall.y1) / (twall.x0 - twall.x1);
-	b2 = twall.y0 - A2 * twall.x0;
-	Ya = A2 * Xa + b2;
-	if (twall.x0 <= Xa && twall.x1 >= Xa && fminf(wall.y0, wall.y1) <= Ya &&
-		fmaxf(wall.y0, wall.y1) >= Ya)
+	xa = wall.x0;
+	a2 = (twall.y0 - twall.y1) / (twall.x0 - twall.x1);
+	b2 = twall.y0 - a2 * twall.x0;
+	ya = a2 * xa + b2;
+	if (twall.x0 <= xa && twall.x1 >= xa && fminf(wall.y0, wall.y1) <= ya &&
+		fmaxf(wall.y0, wall.y1) >= ya)
 	{
-		return (t_xy){Xa, Ya};
+		return (t_xy){xa, ya};
 	}
 	return (t_xy){-1.f, -1.f};
 }
 //найдём Xa, Ya - точки пересечения двух прямых
-static t_xy	vertical2(t_fline wall, t_fline twall)
+static t_xy		vertical2(t_fline wall, t_fline twall)
 {
-	float Xa;
-	float A1;
+	float xa;
+	float a1;
 	float b1;
-	float Ya;
+	float ya;
 
-	Xa = twall.x0;
-	A1 = (wall.y0 - wall.y1) / (wall.x0 - wall.x1);
-	b1 = wall.y0 - A1 * wall.x0;
-	Ya = A1 * Xa + b1;
-	if (wall.x0 <= Xa && wall.x1 >= Xa && fminf(twall.y0, twall.y1) <= Ya &&
-		fmaxf(twall.y0, twall.y1) >= Ya)
+	xa = twall.x0;
+	a1 = (wall.y0 - wall.y1) / (wall.x0 - wall.x1);
+	b1 = wall.y0 - a1 * wall.x0;
+	ya = a1 * xa + b1;
+	if (wall.x0 <= xa && wall.x1 >= xa && fminf(twall.y0, twall.y1) <= ya &&
+		fmaxf(twall.y0, twall.y1) >= ya)
 	{
-		return (t_xy){Xa, Ya};
+		return (t_xy){xa, ya};
 	}
 	return (t_xy){-1.f, -1.f};
 }
 
-static t_xy	general(t_fline wall, t_fline twall)
+static t_xy		general(t_fline wall, t_fline twall)
 {
-	float A1;
-	float A2;
+	float a1;
+	float a2;
 	float b1;
 	float b2;
-	float Xa;
+	float xa;
 
-	A1 = (wall.y0 - wall.y1) / (wall.x0 - wall.x1);
-	A2 = (twall.y0 - twall.y1) / (twall.x0 - twall.x1);
-	b1 = wall.y0 - A1 * wall.x0;
-	b2 = twall.y0 - A2 * twall.x0;
-	if (A1 == A2)
+	a1 = (wall.y0 - wall.y1) / (wall.x0 - wall.x1);
+	a2 = (twall.y0 - twall.y1) / (twall.x0 - twall.x1);
+	b1 = wall.y0 - a1 * wall.x0;
+	b2 = twall.y0 - a2 * twall.x0;
+	if (a1 == a2)
 		return (t_xy){-1.f, -1.f}; //отрезки параллельны
-	Xa = (b2 - b1) / (A1 - A2);
-	if ((Xa < fmaxf(wall.x0, twall.x0)) || (Xa > fminf(wall.x1, twall.x1)))
+	xa = (b2 - b1) / (a1 - a2);
+	if ((xa < fmaxf(wall.x0, twall.x0)) || (xa > fminf(wall.x1, twall.x1)))
 		return (t_xy){-1.f, -1.f}; //точка Xa находится вне пересечения проекций отрезков на ось X
 	else
-		return (t_xy){Xa, A2 * Xa + b2};
+		return (t_xy){xa, a2 * xa + b2};
 }
 
-static t_fline swap(t_fline wall)
+static t_fline	swap(t_fline wall)
 {
 	float	t;
 
@@ -77,7 +89,7 @@ static t_fline swap(t_fline wall)
 	return (wall);
 }
 
-t_xy		intersection_point(t_fline wall, t_fline twall)
+t_xy			intersection_point(t_fline wall, t_fline twall)
 {
 	wall = swap(wall);
 	twall = swap(twall);
@@ -87,7 +99,7 @@ t_xy		intersection_point(t_fline wall, t_fline twall)
 	//если первый отрезок вертикальный
 	if (wall.x0 == wall.x1)
 		return (vertical1(wall, twall));
-	// если второй отрезок вертикальный
+		// если второй отрезок вертикальный
 	else if (twall.x0 == twall.x1)
 		return (vertical2(wall, twall));
 	else //оба отрезка невертикальные

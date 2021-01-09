@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render_a_line.c                                    :+:      :+:    :+:   */
+/*   render_line.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abeulah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -15,6 +15,7 @@
 static void		swap_point(int *a, int *b)
 {
 	int t;
+
 	t = *a;
 	*a = *b;
 	*b = t;
@@ -46,7 +47,6 @@ static int		normi_line(t_line *p)
 		swap_point(&p->x0, &p->x1);
 		swap_point(&p->y0, &p->y1);
 	}
-
 	return (steep);
 }
 
@@ -61,7 +61,7 @@ static t_delta	get_delta(t_line p)
 	return (d);
 }
 
-void 			render_line(t_line p, SDL_Surface *screen, t_line borders)
+void			render_line(t_line p, SDL_Surface *screen, t_line borders)
 {
 	int		steep;
 	t_delta	d;

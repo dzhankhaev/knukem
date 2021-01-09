@@ -1,79 +1,109 @@
-#include <engine.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   move.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
+/*   Updated: 2021/01/06 07:04:10 by ecelsa           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "engine.h"
 #include "utilits.h"
 
-void	slide(t_xy vert1, t_xy vert2, float *dx, float *dy)
+static int	check_inter(t_engine *engine, int s, float *dx, float *dy)
 {
-	float	xd;
-	float	yd;
+	float	px;
+	float	py;
+	t_xy	*vert;
 
-
-	xd = fabsf(vert2.x - vert1.x);
-	yd = fabsf(vert2.y - vert1.y);
-	*dx = xd * (*dx * xd + yd * *dy) / (xd * xd + yd * yd);
-	*dy = yd * (*dx * xd + yd * *dy) / (xd * xd + yd * yd);
-}
-
-void	move_player(float *dx, float *dy, t_engine *engine)
-{
-	float					px;
-	float					py;
-	unsigned				s;
-	const t_xy				*vert;
-	const t_sect			*sect;
-	unsigned				old;
-
-	old = engine->player.sector;
-	s = 0;
 	px = engine->player.where.x;
 	py = engine->player.where.y;
-	sect = &engine->sectors[engine->player.sector];
-	vert = sect->vertex;
+	vert = engine->sectors[engine->player.sector].vertex;
+	if (determine_intersection((t_fline){px, px + *dx, py, py + *dy},
+			(t_fline){vert[s].x, vert[s + 1].x, vert[s].y, vert[s + 1].y}) &&
+		point_side(px + *dx, py + *dy, vert[s], vert[s + 1]) < 0)
+		return (1);
+	return (0);
+}
+
+static int	check_inter2(t_engine *engine, float *dx, float *dy, int old)
+{
+	t_sect		*sect;
+	t_player	*player;
+	int			s;
+
+	player = &engine->player;
+	sect = &engine->sectors[player->sector];
+	s = 0;
 	while (s < sect->npoints)
 	{
-		// Проверяет произошло ли пересечение стороны сектора
-		if (determine_intersection((t_fline){px, px + *dx, py, py + *dy},
-								   (t_fline){vert[s].x, vert[s + 1].x, vert[s].y, vert[s + 1].y}) &&
-			point_side(px + *dx, py + *dy, vert[s], vert[s + 1]) < 0)
+		if (point_side(player->where.x + *dx, player->where.y + *dy,
+	sect->vertex[s], sect->vertex[s + 1]) < 0 && engine->player.sector == old)
 		{
-			if (sect->neighbors[s] >= 0)
+			*dx = 0;
+			*dy = 0;
+			return (1);
+		}
+		s++;
+	}
+	return (0);
+}
+
+static void	step(t_engine *engine, int s, float *dx, float *dy)
+{
+	t_sect		*sect;
+	t_player	*player;
+
+	player = &engine->player;
+	sect = &engine->sectors[player->sector];
+	if (sect->neighbors[s] >= 0)
+	{
+		//	Ударяемся ли головой? || Можем ли перешагнуть?
+		if (player->where.z + HEAD_HEIGHT >
+	engine->sectors[sect->neighbors[s]].ceil || player->where.z -
+	player->eyeheight + KNEE_HEIGHT < engine->sectors[sect->neighbors[s]].floor)
+			vec_proect(sect->vertex[s], sect->vertex[s + 1], dx, dy);
+		else
+		{
+			player->sector = sect->neighbors[s];
+			if (player->ground)
 			{
-				//	Ударяемся ли головой? || Можем ли перешагнуть?
-				if (engine->player.where.z + HEAD_HEIGHT > engine->sectors[sect->neighbors[s]].ceil
-					|| engine->player.where.z - engine->player.eyeheight + KNEE_HEIGHT < engine->sectors[sect->neighbors[s]].floor)
-					slide(vert[s], vert[s + 1], dx, dy);
-				else
-				{
-					engine->player.sector = sect->neighbors[s];
-					if (engine->player.ground)
-					{
-						engine->player.falling = 1;
-						engine->player.ground = 0;
-						engine->player.velocity.z -= VSPEED;
-					}
-				}
+				player->falling = 1;
+				player->ground = 0;
+				player->velocity.z -= VSPEED;
 			}
-			else if (sect->neighbors[s] <= -1)
-				slide(vert[s], vert[s + 1], dx, dy);
+		}
+	}
+	else if (sect->neighbors[s] <= -1)
+		vec_proect(sect->vertex[s], sect->vertex[s + 1], dx, dy);
+}
+
+static void	move_player(float *dx, float *dy, t_engine *engine)
+{
+	int		s;
+	int		old;
+
+	s = 0;
+	while (s < engine->sectors[engine->player.sector].npoints)
+	{
+		// Проверяет произошло ли пересечение стороны сектора
+		if (check_inter(engine, s, dx, dy))
+		{
+			step(engine, s, dx, dy);
 			break ;
 		}
 		s++;
 	}
-	s = 0;
-	while (s < sect->npoints)
-	{
-		if (point_side(px + *dx, py + *dy, vert[s], vert[s + 1]) < 0 && engine->player.sector == old)
-		{
-			*dx = 0;
-			*dy = 0;
-			return;
-		}
-		s++;
-	}
+	if (check_inter2(engine, dx, dy, old))
+		return ;
 	engine->player.where.x += *dx;
 	engine->player.where.y += *dy;
 }
 
-void	move(t_engine *engine)
+void		move(t_engine *engine)
 {
 	fall(&engine->player, engine->sectors);
 	move_player(&engine->player.velocity.x, &engine->player.velocity.y, engine);

@@ -1,13 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   real_time_edit.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
+/*   Updated: 2021/01/06 07:04:10 by ecelsa           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "engine.h"
 
-void	real_time_edit(t_engine *engine)
+void			real_time_edit(t_engine *engine)
 {
 	int			*hchange;
 	int			s;
 
 	hchange = engine->edit.hchange;
 	s = engine->edit.mod_s;
-
 	if (s != 0x01ab01 && engine->sectors[s].door == -1)
 	{
 		engine->sectors[s].floor -= hchange[0] * 1;

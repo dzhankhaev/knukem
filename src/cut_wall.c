@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cut_wall.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
+/*   Updated: 2021/01/06 07:04:10 by ecelsa           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "engine.h"
 
 static t_fline	cut1(t_fline wall, t_xy i1)
@@ -31,9 +43,10 @@ static t_fline	cut2(t_fline wall, t_xy i2)
 	}
 	return (wall);
 }
+
 //обрежет стену, которая частично попала в поле зрения
 //по левому лучу видимости и по правому
-t_fline 		cut_wall(t_fline wall, t_xy i1, t_xy i2)
+t_fline			cut_wall(t_fline wall, t_xy i1, t_xy i2)
 {
 	float	t;
 	int		color;

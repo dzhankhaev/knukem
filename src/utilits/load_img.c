@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   load_img.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
+/*   Updated: 2021/01/06 07:04:10 by ecelsa           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "engine.h"
 #include "utilits.h"
 
@@ -35,7 +47,6 @@ void		get_filename(char *name, char *sn)
 		sn[i] = name[i];
 		i++;
 	}
-
 	while (i <= 15)
 	{
 		sn[i] = '\0';
@@ -43,7 +54,8 @@ void		get_filename(char *name, char *sn)
 	}
 }
 
-void 		load_img(t_engine *engine, char *name, int n)
+//https://habr.com/ru/post/456656/
+void		load_img(t_engine *engine, char *name, int n)
 {
 	SDL_Surface *img;
 	char		fname[24];
@@ -62,5 +74,3 @@ void 		load_img(t_engine *engine, char *name, int n)
 	}
 	engine->img[n].tx = img;
 }
-//https://habr.com/ru/post/456656/
-

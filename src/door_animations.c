@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   door_animations.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
+/*   Updated: 2021/01/06 07:04:10 by ecelsa           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "engine.h"
 #include "utilits.h"
 
@@ -155,14 +167,14 @@ void		start_danim(t_engine *engine, int sec, int nei, int i)
 										 								- 1];
 		else
 			door = engine->sectors[sec].neighbors[i - 1];
-		if (door > -1)
+		if (door > -1 && engine->sectors[door].door > -1)
 			put_anim(engine, door);
 		//стена справа
 		if (i == engine->sectors[sec].npoints - 1)
 			door = engine->sectors[sec].neighbors[0];
 		else
 			door = engine->sectors[sec].neighbors[i + 1];
-		if (door > -1)
+		if (door > -1 && engine->sectors[door].door > -1)
 			put_anim(engine, door);
 	}
 }

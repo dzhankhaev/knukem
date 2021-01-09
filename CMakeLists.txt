@@ -61,7 +61,6 @@ add_executable(d-k3d
 		src/render/minimap.c
 		src/render/render_hplane.c
 		src/render/render_scene.c
-		src/render/render_sky.c
 		src/render/sprite_render.c
 		src/render/transform_sprite.c
 		src/utilits
@@ -163,7 +162,7 @@ add_executable(d-k3d
 		libft/ft_swap.c
 		libft/ft_tolower.c
 		libft/ft_toupper.c
-		libft/get_next_line.c src/utilits/anim_delete.c)
+		libft/get_next_line.c src/utilits/anim_delete.c src/utilits/math/mathf2.c)
 
 include_directories(d-k3d
 		includes/

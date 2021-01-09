@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   render_vline.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
+/*   Updated: 2021/01/06 07:04:10 by ecelsa           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "engine.h"
 #include "utilits.h"
 
-//p - столбец, op - столбец до обрезания по краям экрана
 void		render_vline(t_engine *engine, t_line p, t_line op, int texture_n)
 {
 	Uint32	*temp;
@@ -21,9 +32,9 @@ void		render_vline(t_engine *engine, t_line p, t_line op, int texture_n)
 	while (p.y0 < p.y1)
 	{
 		txy = ((p.y0 - op.y0) * engine->img[texture_n].tx->h / t)
-			  % engine->img[texture_n].tx->h;
+			% engine->img[texture_n].tx->h;
 		temp[(p.y0 * W) + p.x0] = get_shadow(a->z,
-											 get_pixel_color(engine->img[texture_n].tx, txx, txy));
+			get_pixel_color(engine->img[texture_n].tx, txx, txy));
 		p.y0++;
 	}
 }

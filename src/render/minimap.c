@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   minimap.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
+/*   Updated: 2021/01/06 07:04:10 by ecelsa           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "engine.h"
 
-static t_line rotate90_minimap(t_line wall)
+static t_line	rotate90_minimap(t_line wall)
 {
 	t_line	w;
 
@@ -12,7 +24,7 @@ static t_line rotate90_minimap(t_line wall)
 	return (wall);
 }
 
-static t_line rotate_minimap(t_line wall, t_player player)
+static t_line	rotate_minimap(t_line wall, t_player player)
 {
 	t_line	w;
 
@@ -24,7 +36,7 @@ static t_line rotate_minimap(t_line wall, t_player player)
 	return (wall);
 }
 
-void	render_minimap_hud(t_minimap minimap, SDL_Surface *screen)
+void			render_minimap_hud(t_minimap minimap, SDL_Surface *screen)
 {
 	t_line w;
 	t_line borders;
@@ -36,27 +48,25 @@ void	render_minimap_hud(t_minimap minimap, SDL_Surface *screen)
 	w = (t_line){borders.x0, borders.x0, borders.y0, borders.y1, borders.color};
 	render_line(w, screen, borders);
 	w = (t_line){borders.x0, borders.x1, borders.y1 - 1, borders.y1 - 1,
-			  borders.color};
+				borders.color};
 	render_line(w, screen, borders);
 	w = (t_line){borders.x1 - 1, borders.x1 - 1, borders.y0, borders.y1,
-			  borders.color};
+				borders.color};
 	render_line(w, screen, borders);
-	//это стрелка игрока
 	render_line(minimap.player_horizontal, screen, borders);
 	render_line(minimap.player_vertical, screen, borders);
-	//это лучи обзора
 	render_line((t_line){minimap.point.x,
-		RAY_POINT_Y * minimap.scale + minimap.point.x, minimap.point.y,
-		-RAY_POINT_X * minimap.scale + minimap.point.y, 0x0000FF},
-		screen, minimap.borders);
+			RAY_POINT_Y * minimap.scale + minimap.point.x, minimap.point.y,
+			-RAY_POINT_X * minimap.scale + minimap.point.y, 0x0000FF},
+				screen, minimap.borders);
 	render_line((t_line){minimap.point.x,
-		-RAY_POINT_Y * minimap.scale + minimap.point.x, minimap.point.y,
-		-RAY_POINT_X * minimap.scale + minimap.point.y, 0x0000FF},
-		screen, minimap.borders);
+			-RAY_POINT_Y * minimap.scale + minimap.point.x, minimap.point.y,
+			-RAY_POINT_X * minimap.scale + minimap.point.y, 0x0000FF},
+				screen, minimap.borders);
 }
 
 // Это обычная миникарта
- void		minimap(t_engine *engine, t_xy v0, t_xy v1, Uint32 color)
+void			minimap(t_engine *engine, t_xy v0, t_xy v1, Uint32 color)
 {
 	t_line			wall;
 	t_player		player;
@@ -82,7 +92,7 @@ void	render_minimap_hud(t_minimap minimap, SDL_Surface *screen)
 }
 
 //это миникарта для просмотра отсеченных стен
-void		minimap_cut(t_engine *engine, t_xy v0, t_xy v1, Uint32 color)
+void			minimap_cut(t_engine *engine, t_xy v0, t_xy v1, Uint32 color)
 {
 	t_line			wall;
 	t_minimap		minimap;
