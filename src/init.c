@@ -40,7 +40,7 @@ void general_init2(t_engine *engine)
     int	i;
 
     i = 0;
-    engine->graf = (t_graf *)malloc(sizeof(t_graf) * (engine->num_sectors + 1));
+    engine->graf = (t_graf *)malloc(sizeof(t_graf) * (engine->num_sectors));
     while (i < engine->num_sectors)
     {
         engine->graf[i].g_num = 0;
