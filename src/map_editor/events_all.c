@@ -12,13 +12,37 @@
 
 #include "editor.h"
 
+void	mode_switch(t_all *all)
+{
+	SDL_Surface *temp;
+
+	if (all->player.where.z != -1)
+	{
+		all->threed = 1;
+		temp = get_text_surface(all, "Entering 3D!", all->font, RED);
+		draw_texture(all->sdl, (SDL_Rect){W/2 - 175, H/2 - 25, 300, 50}, temp);
+		SDL_UpdateWindowSurface(all->sdl->window);
+		SDL_Delay(1000);
+		SDL_FreeSurface(temp);
+	}
+	else
+	{
+		temp = get_text_surface(all, "Set player!", all->font, RED);
+		draw_texture(all->sdl, (SDL_Rect){W/2 - 175, H/2 - 25, 300, 50}, temp);
+		SDL_UpdateWindowSurface(all->sdl->window);
+		SDL_Delay(1000);
+		SDL_FreeSurface(temp);
+	}
+
+}
+
 void	key_press(t_all *all)
 {
 	const Uint8	*keystate;
 
 	keystate = SDL_GetKeyboardState(NULL);
 	if (keystate[SDL_SCANCODE_ESCAPE])
-		all->threed = 1;
+		mode_switch(all);
 	else if (keystate[SDL_SCANCODE_DELETE])
 		remove_sector(all, all->sectors);
 	else if (keystate[SDL_SCANCODE_TAB])
@@ -42,8 +66,11 @@ void		level_buttons(t_all *all, t_button *buttons, SDL_MouseButtonEvent *event)
 	int	dy;
 	int	count;
 
+	printf("x = %d y = %d\n", event->x, event->y);
+
 	i = 2;
-	count = all->buttons[NEW_SECT].state == 1 ? BUTTONS : BUTTONS - 4;
+	count = (all->buttons[NEW_SECT].state == 1 || \
+		all->swap_num >= 0) ? BUTTONS : BUTTONS - 4;
 	while(i < count)
 	{
 		dx = event->x - buttons[i].dstrect.x;
@@ -70,6 +97,7 @@ void	button_click(t_all *all, t_button *buttons, SDL_MouseButtonEvent *event, in
 				buttons[i].state = buttons[i].state == 1 ? 0 : 1;
 			else
 				buttons[i].state = 0;
+			all->swap_num = -1;
 		}
 		else if(all->mouse.z == 0)
 		{
@@ -160,9 +188,9 @@ void	on_mouse(t_all *all, SDL_MouseButtonEvent *event)
 	}
 	else if (event->x < W * 0.25 && event->y < H * 0.5 && event->y > \
 			H * 0.2 && !all->buttons[NEW_SECT].state)
-		sprite_click(all, all->sprites.buttons, event, 0);
+		sprite_click(all, all->sprites.buttons, event, 0);//проверка выбора спрайта
 	else
-		level_buttons(all, all->buttons, event);
+		level_buttons(all, all->buttons, event);//проверка нажатий кнопок + и -
 	// printf("picked = %d\n", all->sprites.picked);
 }
 

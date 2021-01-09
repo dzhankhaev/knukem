@@ -121,21 +121,28 @@ float			point_side1(float px, float py, t_xy vert, t_xy vert1)
 								 px - vert.x, py - vert.y));
 }
 
-void    write_sprites(t_sprites *sprites)
+void    write_sprites(t_sprites *sprites, int fd)
 {
     int i, j;
     char *array[5] = {"gun", "enemy", "aid", "bazooka", "player"};
     t_xyz *temp;
 
     i = 0;
-    while(i < 5)
+    while(i < 4)
     {
         
         j = 0;
         while(j < sprites->buttons[i].num)
         {
             temp = sprites->buttons[i].sprite_coords;
-            printf("%s %d %d %d\n", array[i], (int)temp[j].x, (int)temp[j].y, (int)temp[j].z);
+            ft_putstr_fd(array[i], fd);
+            ft_putchar_fd('\t', fd);
+            ft_putnbr_fd((int)temp[j].x, fd);
+            ft_putchar_fd('\t', fd);
+            ft_putnbr_fd((int)temp[j].y, fd);
+            ft_putchar_fd('\t', fd);
+            ft_putnbr_fd((int)temp[j].z, fd);
+            ft_putchar_fd('\n', fd);
             j++;
         }
         i++;
@@ -145,12 +152,15 @@ void    write_sprites(t_sprites *sprites)
 
 int write_map(char *name, t_all *all)
 {
+    // для корректной работы, fd должен быть открыт как-то так open("new_map.txt", O_WRONLY | O_CREAT, S_IWUSR | S_IRUSR);
     int     **vert;//массив вершин, где номер строки - координата y, первое значение в строке - 
     //количество вершин, далее - координаты x вершин.
     if (all->min_coord.x < 0 || all->min_coord.y < 0)
         normalize(all->sectors, all->num_sectors, all);
     vert = get_vertexes(all);
-    int i, j;
+    int i, j, fd;
+
+    fd = open("new_map.txt", O_WRONLY | O_CREAT, S_IWUSR | S_IRUSR);
 
     i = 0;
     j = 0;
@@ -159,13 +169,16 @@ int write_map(char *name, t_all *all)
         j = 1;
         if (vert[i][0] != 0)
         {
-            printf("vertex\t%d\t", i);
+            ft_putstr_fd("vertex\t", fd);
+            ft_putnbr_fd(i, fd);
+            ft_putstr_fd("\t", fd);
             while(j <= vert[i][0])
             {
-                printf(" %d", vert[i][j]);
+                ft_putchar_fd(' ', fd);
+                ft_putnbr_fd(vert[i][j], fd);
                 j++;
             }
-            printf("\n");
+            ft_putchar_fd('\n', fd);
         }
         i++;
     }
@@ -177,29 +190,44 @@ int write_map(char *name, t_all *all)
     {
         //while (j < all->sectors[i].npoints)
           //  printf("y = %d, x = %d ", i, (int)all->sectors[i].vertex[j++].x);
-        printf("sector\t%d %d\t", (int)all->sectors[i].floor, (int)all->sectors[i].ceil);
+        ft_putstr_fd("sector\t", fd);
+        ft_putnbr_fd((int)all->sectors[i].floor, fd);
+        ft_putchar_fd(' ', fd);
+        ft_putnbr_fd((int)all->sectors[i].ceil, fd);
+        ft_putchar_fd('\t', fd);
+        
         j = 1;
         while(j < all->sectors[i].npoints)
         {
-            printf(" %d", get_order_num(all->sectors[i].vertex[j], vert));
+            ft_putnbr_fd(get_order_num(all->sectors[i].vertex[j], vert), fd);
+            ft_putchar_fd(' ', fd);
             j++;
         }
-        printf(" %d", get_order_num(all->sectors[i].vertex[0], vert));
-        printf("\t");
+        ft_putnbr_fd(get_order_num(all->sectors[i].vertex[0], vert), fd);
+        ft_putchar_fd('\t', fd);
         j = 0;
         while (j < all->sectors[i].npoints)
         {
-            printf(" %d", all->sectors[i].neighbors[j]);
+            ft_putnbr_fd(all->sectors[i].neighbors[j], fd);
+            ft_putchar_fd(' ', fd);
             j++;
         }
         i++;
-        printf("\n");
+        ft_putchar_fd('\n', fd);
     }
-    printf("player\t%d %d %d %d\n", (int)all->player.where.x,
-        (int)all->player.where.y, (int)all->player.angle, all->player.sector);
+    ft_putstr_fd("player\t", fd);
+    ft_putnbr_fd((int)all->player.where.x, fd);
+    ft_putchar_fd(' ', fd);
+    ft_putnbr_fd((int)all->player.where.y, fd);
+    ft_putchar_fd(' ', fd);
+    ft_putnbr_fd((int)all->player.where.z, fd);
+    ft_putchar_fd(' ', fd);
+    ft_putnbr_fd(all->player.sector, fd);
+    ft_putchar_fd(' ', fd);
+
     ft_memdel((void*)vert);
 
-    write_sprites(&all->sprites);
+    write_sprites(&all->sprites, fd);
 
     
     ///********test*********////

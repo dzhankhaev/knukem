@@ -1,5 +1,3 @@
-#include "editor.h"
-
 void	isometric(t_all *all, t_xy *s, t_xyz rot, float add)
 {
 	t_xyz temp;

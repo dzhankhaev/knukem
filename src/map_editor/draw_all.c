@@ -21,21 +21,9 @@ void	draw_sector_info(t_sect sect, t_sdl *sdl, int n, t_all *all)
 
 	tmp = NULL;
 	str = NULL;
-	area = (SDL_Rect){W - 105, 25, 100, 25};
+	area = (SDL_Rect){W - 105, 5, 100, 25};
 	num = ft_itoa(n);
 	tmp = get_text_surface(all, ft_strjoin("s e c t o r ", num), all->s_font, YELLOW);
-	draw_texture(sdl, area, tmp);
-	SDL_FreeSurface(tmp);
-	free(num);
-	area = (SDL_Rect){W - 105, 55, 100, 25};
-	num = ft_itoa(sect.floor);
-	tmp = get_text_surface(all, ft_strjoin("f l o o r  ", num), all->s_font, YELLOW);
-	draw_texture(sdl, area, tmp);
-	SDL_FreeSurface(tmp);
-	free(num);
-	area = (SDL_Rect){W - 105, 85, 100, 25};
-	num = ft_itoa(sect.ceil);
-	tmp = get_text_surface(all, ft_strjoin("c e i l   ", num), all->s_font, YELLOW);
 	draw_texture(sdl, area, tmp);
 	SDL_FreeSurface(tmp);
 	free(num);
@@ -52,7 +40,7 @@ void	draw_area(t_sdl *sdl, t_all *all)
 	if (all->buttons[NEW_SECT].state == 1)
 		draw_circle(sdl, (t_xy){all->point.x * all->step + c.x + all->area.x,
 			all->point.y * all->step + c.y + all->area.y}, 2, WHITE);
-	if (all->temp->npoints > 0)
+	if (all->temp->npoints > 0 && all->buttons[0].state == 1)
 		draw_temp(all, sdl, all->temp, all->delta);
 	draw_sprite_picked(all, sdl, &all->sprites, &c);
 }

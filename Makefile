@@ -1,3 +1,5 @@
+UNAME_S := $(shell uname -s)
+
 CLEAR_LINE	:= \033[2K
 BEGIN_LINE	:= \033[A
 RESET_FORM	:= \033[0m
@@ -26,9 +28,12 @@ SRC := main.c\
 	cut_wall.c\
 	manage_data.c\
 	game_loop.c\
+	animations/do_door_anim.c\
+	animations/start_door_anim.c\
 	key_events/keys_manager.c\
 	key_events/event_edit.c\
 	key_events/event_movement.c\
+	editor/door_mod.c\
 	editor/real_time_edit.c\
 	editor/graf_mod.c\
 	editor/tx_mod.c\
@@ -36,6 +41,7 @@ SRC := main.c\
 	movement/fall.c\
 	utilits/math/determine_intersection.c\
     utilits/math/mathf.c\
+    utilits/math/mathf2.c\
     utilits/math/intersection_point.c\
     utilits/math/rotates.c\
     utilits/math/perspective_transform.c\
@@ -43,14 +49,14 @@ SRC := main.c\
     utilits/utilits.c\
     utilits/exit_options.c\
     utilits/load_img.c\
+    utilits/anim_delete.c\
 	render/minimap.c\
 	render/render_hplane.c\
 	render/render_scene.c\
-	render/render_sky.c\
-	render/render_graf.c\
 	render/sprite_render.c\
 	render/transform_sprite.c\
 	render/ceil_and_floor_init.c\
+	render/graf_proccesing.c\
 	render/wall/render_wall.c\
 	render/wall/perspective_init.c\
 	render/wall/wall_tx_init.c\
@@ -95,8 +101,13 @@ FLAG :=  -g #-Wall -Werror -Wextra
 PWD := $(shell pwd)
 FRAMEWORKSDIR := $(PWD)/frameworks
 INC := -I includes
-# SDL := -I SDL2/SDL.h -lSDL2 -lSDL2_ttf -lSDL2_image
-SDL := -F $(FRAMEWORKSDIR) -framework SDL2 -framework SDL2_ttf -framework SDL2_image -framework SDL2_mixer -Wl -rpath $(FRAMEWORKSDIR)
+
+ifeq ($(UNAME_S),Linux)
+    SDL := -I SDL2/SDL.h -lSDL2 -lSDL2_ttf -lSDL2_image
+endif
+ifeq ($(UNAME_S),Darwin)
+    SDL := -F $(FRAMEWORKSDIR) -framework SDL2 -framework SDL2_ttf -framework SDL2_image -framework SDL2_mixer -Wl -rpath $(FRAMEWORKSDIR)
+endif
 
 TOTAL_FILES := $(shell echo $(SRC) | wc -w | sed -e 's/ //g')
 CURRENT_FILES = $(shell find $(PWD)/obj/ -type f 2> /dev/null | wc -l | sed -e 's/ //g')
