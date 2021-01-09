@@ -1,5 +1,17 @@
-#ifndef PARSE_WAD
-# define PARSE_WAD
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   archiver.h                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
+/*   Updated: 2021/01/06 07:04:10 by ecelsa           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef PARSE_WAD_H
+# define PARSE_WAD_H
 
 # include "engine.h"
 # include <fcntl.h>
@@ -11,7 +23,6 @@
 # define GMASK	0xff00
 # define BMASK	0xff
 # define AMASK	0xff000000
-
 
 # define PATHCES_COL 14
 
@@ -113,7 +124,7 @@
 # define STFTL10 2
 # define STFTR10 3
 
-# define STFTL20 4 
+# define STFTL20 4
 # define STFTR20 5
 
 # define STFTL30 6
@@ -121,7 +132,6 @@
 
 # define STFTL40 8
 # define STFTR40 9
-
 
 /**
 ** Мордаха "злой"
@@ -140,8 +150,8 @@
 ** Мордаха "больно"
 **/
 
-#define STFOUCH 6
-#define STFOUCH_COL 5
+# define STFOUCH 6
+# define STFOUCH_COL 5
 
 # define STFOUCH0 0
 # define STFOUCH1 1
@@ -153,8 +163,8 @@
 ** Мордаха "убил"
 **/
 
-#define STFKILL 7
-#define STFKILL_COL 5
+# define STFKILL 7
+# define STFKILL_COL 5
 
 # define STFKILL0 0
 # define STFKILL1 1
@@ -176,7 +186,7 @@
 # define CHGGB0 3
 
 /**
-**	ружье 
+**	ружье
 **/
 
 # define SHTF 9
@@ -252,7 +262,7 @@
 # define MISLC0 12
 # define MISLD0 13
 
-typedef struct	s_patch
+typedef struct		s_patch
 {
 	unsigned short	width;
 	unsigned short	height;
@@ -265,16 +275,16 @@ typedef struct	s_patch
 	int				type;
 	char			name[8];
 	SDL_Surface		*surface;
-}				t_patch;
+}					t_patch;
 
-typedef struct	s_directory
+typedef struct		s_directory
 {
-	int		filepos;
-	int		size;
-	char	name[8];
-}				t_directory;
+	int				filepos;
+	int				size;
+	char			name[8];
+}					t_directory;
 
-typedef struct	s_wad
+typedef struct		s_wad
 {
 	char			identification[4];
 	unsigned int	numlumps;
@@ -285,52 +295,50 @@ typedef struct	s_wad
 	int				fd;
 	int				fr;
 	// unsigned char	*colormap;
-}				t_wad;
+}					t_wad;
 
-typedef struct	s_sub_hud
+typedef struct		s_sub_hud
 {
-	t_patch		*patch;
-	SDL_Rect	rect;
-	SDL_Surface	*scr;
-}				t_sub_hud;
+	t_patch			*patch;
+	SDL_Rect		rect;
+	SDL_Surface		*scr;
+}					t_sub_hud;
 
-typedef struct	s_hud
+typedef struct		s_hud
 {
-	char		colormap[14][256 * 3];
-	int			pal;
-	t_patch		*patch;
-	t_sub_hud	**patches;
-	SDL_Surface	*lmp;
-	SDL_Surface	*scr;
+	char			colormap[14][256 * 3];
+	int				pal;
+	t_patch			*patch;
+	t_sub_hud		**patches;
+	SDL_Surface		*lmp;
+	SDL_Surface		*scr;
+}					t_hud;
 
-
-}				t_hud;
-
-typedef struct	s_value
+typedef struct		s_value
 {
-	int		ammo;
-	int		health;
-	int		arms;
-	int		armor;
-	int		bull[2];
-	int		shel[2];
-	int		rckt[2];
-	int		cell[2];
-}				t_value;
+	int				ammo;
+	int				health;
+	int				arms;
+	int				armor;
+	int				bull[2];
+	int				shel[2];
+	int				rckt[2];
+	int				cell[2];
+}					t_value;
 
-typedef struct	s_pars_colum
+typedef struct		s_pars_colum
 {
-	int			*pixel;
-	int			x;
-	int			i;
-	int			col;
-	int			index;
-	int			size;
-}				t_pars_colum;
+	int				*pixel;
+	int				x;
+	int				i;
+	int				col;
+	int				index;
+	int				size;
+}					t_pars_colum;
 
-t_patch			*init_patch(t_wad *wad);
-// void			free_patch(t_patch *patch);
-void			pars_patch(t_patch *patch);
-t_patch			*load_patch(char *name_file, char *name_dir);
+t_patch				*init_patch(t_wad *wad);
+// void				free_patch(t_patch *patch);
+void				pars_patch(t_patch *patch);
+t_patch				*load_patch(char *name_file, char *name_dir);
 
 #endif

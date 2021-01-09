@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   archiver.h                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
+/*   Updated: 2021/01/06 07:04:10 by ecelsa           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef UTILITS_H
 # define UTILITS_H
 
-#include "engine.h"
+# include "engine.h"
 
 float			point_side(float px, float py, t_xy vert, t_xy vert1);
 int				y_for_x(t_line wall, int x);
@@ -18,11 +30,10 @@ t_fline			rotate_wall(t_fline wall, t_player player);
 t_line			perspective_transform(t_fline w, float z, float yaw, int color);
 void			exc(const char *file, const char *function);
 void			clean(t_engine *engine);
-void 			load_img(t_engine *engine, char *name, int n);
+void			load_img(t_engine *engine, char *name, int n);
 t_xy			point_proection(t_fline wall, t_xyz p);
 float			get_vec_angle(float x1, float y1, float x2, float y2);
 Uint32			get_pixel_color(SDL_Surface *surface, int x, int y);
 void			anim_delete(t_engine *engine, int i);
-
 
 #endif

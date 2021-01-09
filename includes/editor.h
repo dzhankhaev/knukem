@@ -69,8 +69,8 @@ typedef struct		s_sdl
 
 typedef struct		s_xyint
 {
-	int			x;
-	int			y;
+	int				x;
+	int				y;
 }					t_xyint;
 
 typedef struct		s_xy
@@ -79,23 +79,23 @@ typedef struct		s_xy
 	float			y;
 }					t_xy;
 
-typedef struct	s_xyz
+typedef struct		s_xyz
 {
-	float		x;
-	float		y;
-	float		z;
-}				t_xyz;
+	float			x;
+	float			y;
+	float			z;
+}					t_xyz;
 
 typedef struct		s_sect
 {
-	float		floor;
-	float		ceil;
-	t_xy		*vertex;		//	Координаты всех вершин данного сектора, причем первая координаты дублируется в конце
-	int		 *neighbors;		//	Номера всех соседей данного сектора
-	unsigned	npoints;		//	Количество соседей
-	int			door;			//	-1 не является дверью. Остальное показывает насколько дверь закрыта
-	float		oldf;			//	уровень пола, если сектор является дверью
-			
+	float			floor;
+	float			ceil;
+	t_xy			*vertex;		//	Координаты всех вершин данного сектора, причем первая координаты дублируется в конце
+	int				*neighbors;		//	Номера всех соседей данного сектора
+	unsigned		npoints;		//	Количество соседей
+	int				door;			//	-1 не является дверью. Остальное показывает насколько дверь закрыта
+	float			oldf;			//	уровень пола, если сектор является дверью
+
 }					t_sect;
 
 
@@ -104,40 +104,40 @@ typedef struct		s_button
 	SDL_Surface		*texture;
 	SDL_Rect		dstrect;
 	SDL_Color		color;
-	int			 state;
+	int				state;
 	char			*title;
 	t_xyz			*sprite_coords;
 	int				num;
 }					t_button;
 
-typedef	struct	s_player
+typedef	struct		s_player
 {
-	t_xyz		where;			//	текущая позиция
-	t_xyz		velocity;		//	вектор скорости движения
-	SDL_Surface	*picture;
-	int			picked;
-	float		angle;			//	угол поворота
-	float		anglesin;		//	синус угла поворота
-	float		anglecos;		//	косинус угла поворота
-	float		vangle;			//	угол вертикального поворота
-	int 		sector;			//	текущий сектор
-	int			wsad[4];		//	ключи передвижения. 1 - движение, 0 - его отсутстие
-	int			falling;		//	1 - игрок падает, 0 - не падает. Игрок может падать вверх. Если 1, будет применено ускорение
-	int			flying;			//	флаг = 1 только если игрок летит вверх или вниз. ФЛАГ НЕ ОПРЕДЕЛЯЕТ НАХОДИТСЯ ИГРОК В РЕЖИМЕ ПОЛЕТА ИЛИ НЕТ
-	int			ground;			//	грок стоит на земле
-	float		eyeheight;		//	текущая высота камеры
-	float		speed;			//	текущая максимальная скорость
-	int			deep_sh;		//	затенение
-	SDL_Event	event;
-}				t_player;
+	t_xyz			where;			//	текущая позиция
+	t_xyz			velocity;		//	вектор скорости движения
+	SDL_Surface		*picture;
+	int				picked;
+	float			angle;			//	угол поворота
+	float			anglesin;		//	синус угла поворота
+	float			anglecos;		//	косинус угла поворота
+	float			vangle;			//	угол вертикального поворота
+	int 			sector;			//	текущий сектор
+	int				wsad[4];		//	ключи передвижения. 1 - движение, 0 - его отсутстие
+	int				falling;		//	1 - игрок падает, 0 - не падает. Игрок может падать вверх. Если 1, будет применено ускорение
+	int				flying;			//	флаг = 1 только если игрок летит вверх или вниз. ФЛАГ НЕ ОПРЕДЕЛЯЕТ НАХОДИТСЯ ИГРОК В РЕЖИМЕ ПОЛЕТА ИЛИ НЕТ
+	int				ground;			//	грок стоит на земле
+	float			eyeheight;		//	текущая высота камеры
+	float			speed;			//	текущая максимальная скорость
+	int				deep_sh;		//	затенение
+	SDL_Event		event;
+}					t_player;
 
-typedef	struct s_labels
+typedef	struct		s_labels
 {
 	SDL_Surface		*surf;
 	SDL_Rect		dst;
-}				t_labels;
+}					t_labels;
 
-typedef	struct	s_sprites
+typedef	struct		s_sprites
 {
 	t_button		buttons[5];
 	// t_xyz			*enemies;
@@ -147,8 +147,7 @@ typedef	struct	s_sprites
 	t_xyz			where_player;
 	int				picked;
 	t_xy			swap;
-}				t_sprites;
-
+}					t_sprites;
 
 typedef struct		s_all
 {
@@ -161,8 +160,8 @@ typedef struct		s_all
 	t_sect			*sectors;//массив с данными о секторах
 	t_sect			*temp;
 	int				num_sectors;//количество секторов
-	int 			step;//шаг (масштаб)
-	int 			iso; //изометрия вкл/выкл
+	int				step;//шаг (масштаб)
+	int				iso; //изометрия вкл/выкл
 	SDL_Color		color;
 	TTF_Font		*font;
 	TTF_Font		*s_font;
@@ -176,13 +175,11 @@ typedef struct		s_all
 	t_xy			min_coord;
 	t_xy			max_coord;
 	SDL_Rect		area;//область редактирования
-	SDL_Surface	 *texture;//текстура-подложка
+	SDL_Surface		*texture;//текстура-подложка
 	int				threed;
 	t_button		buttons[BUTTONS];//кнопки
 	t_sdl			*sdl;//
 }					t_all;
-
-
 
 void				init_all(t_all *all); // инициализируем модули
 void				add_sprite(t_all *all, int x, int y, int type);
@@ -190,30 +187,34 @@ void				error_and_close(const char *file, const char *function); // аварий
 void				on_event(t_all *all, SDL_Event *event); //обработка событий
 void				map_click(t_xyz *mouse, t_all *all);
 int					load_map(char *name, t_all *all); // загрузка карты
-int				 load_texture(t_all *all);// звгрузка текстур
+int					load_texture(t_all *all);// звгрузка текстур
 int					load_buttons(t_all *all, t_button *btn);
 void				draw_all(t_all *all, t_sdl *sdl, t_button *btn);//отрисовка
 int					write_map(char *name, t_all *all);
 void				draw_temp(t_all *all, t_sdl *sdl, t_sect *temp, t_xy delta);//несохраненный сектор
 void				draw_map(t_sdl *sdl, t_sect *sect, t_all *all);
-void				draw_sprite_picked(t_all *all, t_sdl *sdl, t_sprites *sprites, t_xy *c);
+void				draw_sprite_picked(t_all *all, t_sdl *sdl,
+				t_sprites *sprites, t_xy *c);
 void				draw_grid(t_all *all, SDL_Rect *area, int step);
 void				draw_texture(t_sdl *sdl, SDL_Rect area, SDL_Surface *txt);
 void				draw_fill_rect(t_all *all, SDL_Rect area, SDL_Color color);
-void				draw_rect(t_all *all, SDL_Rect area, SDL_Color color, int border);
-void				draw_line(t_all *all, t_xy *start, t_xy *fin, SDL_Color color);
+void				draw_rect(t_all *all, SDL_Rect area, SDL_Color color,
+				int border);
+void				draw_line(t_all *all, t_xy *start, t_xy *fin,
+				SDL_Color color);
 void				draw_circle(t_sdl *sdl, t_xy coord, int r, SDL_Color color);
 void				draw_ui(t_all *all, t_sdl *sdl, t_button *btn);
 void				draw_sprites(t_all *all, t_sprites *sprites);
 void				new_sector(t_all *all, int x, int y);
-void				get_neighbours(t_sect *sector, t_all 	*all, int n);
+void				get_neighbours(t_sect *sector, t_all *all, int n);
 float				point_side1(float px, float py, t_xy vert, t_xy vert1);
 int					check_sector(t_sect *sect);
 int					which_sector(t_all *all, t_sect *sectors, t_xyz where);
 t_xy				which_sprite(t_all *all, t_sprites *sprites, t_xyz where);
 void				remove_sector(t_all *all, t_sect *sectors);
-SDL_Surface			*get_text_surface(t_all *all, char *name, TTF_Font *font, SDL_Color color);
-void					put_pxl(t_sdl *sdl, SDL_Color col, int x, int y);
-SDL_Surface	 	*get_texture2(char *file);
+SDL_Surface			*get_text_surface(t_all *all, char *name, TTF_Font *font,
+				SDL_Color color);
+void				put_pxl(t_sdl *sdl, SDL_Color col, int x, int y);
+SDL_Surface			*get_texture2(char *file);
 
-# endif
+#endif
