@@ -159,7 +159,7 @@ int write_map(char *name, t_all *all)
         j = 1;
         if (vert[i][0] != 0)
         {
-            printf("vertex %d  ", i);
+            printf("vertex\t%d\t", i);
             while(j <= vert[i][0])
             {
                 printf(" %d", vert[i][j]);
@@ -177,7 +177,7 @@ int write_map(char *name, t_all *all)
     {
         //while (j < all->sectors[i].npoints)
           //  printf("y = %d, x = %d ", i, (int)all->sectors[i].vertex[j++].x);
-        printf("sector  %d %d   ", (int)all->sectors[i].floor, (int)all->sectors[i].ceil);
+        printf("sector\t%d %d\t", (int)all->sectors[i].floor, (int)all->sectors[i].ceil);
         j = 1;
         while(j < all->sectors[i].npoints)
         {
@@ -195,8 +195,8 @@ int write_map(char *name, t_all *all)
         i++;
         printf("\n");
     }
-    printf("player  %d %d %d %d\n", (int)all->player.where.x, 
-        (int)all->player.where.y, (int)all->player.where.z, all->player.sector);
+    printf("player\t%d %d %d %d\n", (int)all->player.where.x,
+        (int)all->player.where.y, (int)all->player.angle, all->player.sector);
     ft_memdel((void*)vert);
 
     write_sprites(&all->sprites);
