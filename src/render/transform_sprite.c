@@ -149,9 +149,5 @@ int		transform_sprite(t_engine *engine)
 		|| cut_sprite.x0 * -K > cut_sprite.y0
 		|| cut_sprite.x1 * K < cut_sprite.y1)
 		return (0);
-	/*if (engine->sprites1->weapon_sprite->rotated_where.x <= 0
-		|| engine->sprites1->weapon_sprite->rotated_where.x * -K >
-		   engine->sprites1->weapon_sprite->rotated_where.y)
-		return (0); //то что не было отрезано и находится частично за спиной, а так же то что целиком лежит вне видимости тоже не рендерим.*/
 	return (1);
 }

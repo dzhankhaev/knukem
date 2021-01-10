@@ -68,10 +68,10 @@ RM = /snap/clion/138/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rokosbasil/projects/knukem_merge2
+CMAKE_SOURCE_DIR = /home/rokosbasil/projects/knukem_master
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rokosbasil/projects/knukem_merge2/cmake-build-debug
+CMAKE_BINARY_DIR = /home/rokosbasil/projects/knukem_master/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rokosbasil/projects/knukem_merge2/cmake-build-debug/CMakeFiles /home/rokosbasil/projects/knukem_merge2/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rokosbasil/projects/knukem_master/cmake-build-debug/CMakeFiles /home/rokosbasil/projects/knukem_master/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rokosbasil/projects/knukem_merge2/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rokosbasil/projects/knukem_master/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -2060,6 +2060,60 @@ libft/get_next_line.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/libft/get_next_line.c.s
 .PHONY : libft/get_next_line.c.s
 
+src/animations/do_door_anim.o: src/animations/do_door_anim.c.o
+
+.PHONY : src/animations/do_door_anim.o
+
+# target to build an object file
+src/animations/do_door_anim.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/animations/do_door_anim.c.o
+.PHONY : src/animations/do_door_anim.c.o
+
+src/animations/do_door_anim.i: src/animations/do_door_anim.c.i
+
+.PHONY : src/animations/do_door_anim.i
+
+# target to preprocess a source file
+src/animations/do_door_anim.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/animations/do_door_anim.c.i
+.PHONY : src/animations/do_door_anim.c.i
+
+src/animations/do_door_anim.s: src/animations/do_door_anim.c.s
+
+.PHONY : src/animations/do_door_anim.s
+
+# target to generate assembly for a file
+src/animations/do_door_anim.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/animations/do_door_anim.c.s
+.PHONY : src/animations/do_door_anim.c.s
+
+src/animations/start_door_anim.o: src/animations/start_door_anim.c.o
+
+.PHONY : src/animations/start_door_anim.o
+
+# target to build an object file
+src/animations/start_door_anim.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/animations/start_door_anim.c.o
+.PHONY : src/animations/start_door_anim.c.o
+
+src/animations/start_door_anim.i: src/animations/start_door_anim.c.i
+
+.PHONY : src/animations/start_door_anim.i
+
+# target to preprocess a source file
+src/animations/start_door_anim.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/animations/start_door_anim.c.i
+.PHONY : src/animations/start_door_anim.c.i
+
+src/animations/start_door_anim.s: src/animations/start_door_anim.c.s
+
+.PHONY : src/animations/start_door_anim.s
+
+# target to generate assembly for a file
+src/animations/start_door_anim.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/animations/start_door_anim.c.s
+.PHONY : src/animations/start_door_anim.c.s
+
 src/archiver.o: src/archiver.c.o
 
 .PHONY : src/archiver.o
@@ -2114,32 +2168,86 @@ src/cut_wall.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/cut_wall.c.s
 .PHONY : src/cut_wall.c.s
 
-src/door_animations.o: src/door_animations.c.o
+src/dash_board.o: src/dash_board.c.o
 
-.PHONY : src/door_animations.o
+.PHONY : src/dash_board.o
 
 # target to build an object file
-src/door_animations.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/door_animations.c.o
-.PHONY : src/door_animations.c.o
+src/dash_board.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/dash_board.c.o
+.PHONY : src/dash_board.c.o
 
-src/door_animations.i: src/door_animations.c.i
+src/dash_board.i: src/dash_board.c.i
 
-.PHONY : src/door_animations.i
+.PHONY : src/dash_board.i
 
 # target to preprocess a source file
-src/door_animations.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/door_animations.c.i
-.PHONY : src/door_animations.c.i
+src/dash_board.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/dash_board.c.i
+.PHONY : src/dash_board.c.i
 
-src/door_animations.s: src/door_animations.c.s
+src/dash_board.s: src/dash_board.c.s
 
-.PHONY : src/door_animations.s
+.PHONY : src/dash_board.s
 
 # target to generate assembly for a file
-src/door_animations.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/door_animations.c.s
-.PHONY : src/door_animations.c.s
+src/dash_board.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/dash_board.c.s
+.PHONY : src/dash_board.c.s
+
+src/dash_board_fill_hud.o: src/dash_board_fill_hud.c.o
+
+.PHONY : src/dash_board_fill_hud.o
+
+# target to build an object file
+src/dash_board_fill_hud.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/dash_board_fill_hud.c.o
+.PHONY : src/dash_board_fill_hud.c.o
+
+src/dash_board_fill_hud.i: src/dash_board_fill_hud.c.i
+
+.PHONY : src/dash_board_fill_hud.i
+
+# target to preprocess a source file
+src/dash_board_fill_hud.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/dash_board_fill_hud.c.i
+.PHONY : src/dash_board_fill_hud.c.i
+
+src/dash_board_fill_hud.s: src/dash_board_fill_hud.c.s
+
+.PHONY : src/dash_board_fill_hud.s
+
+# target to generate assembly for a file
+src/dash_board_fill_hud.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/dash_board_fill_hud.c.s
+.PHONY : src/dash_board_fill_hud.c.s
+
+src/dash_board_sub.o: src/dash_board_sub.c.o
+
+.PHONY : src/dash_board_sub.o
+
+# target to build an object file
+src/dash_board_sub.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/dash_board_sub.c.o
+.PHONY : src/dash_board_sub.c.o
+
+src/dash_board_sub.i: src/dash_board_sub.c.i
+
+.PHONY : src/dash_board_sub.i
+
+# target to preprocess a source file
+src/dash_board_sub.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/dash_board_sub.c.i
+.PHONY : src/dash_board_sub.c.i
+
+src/dash_board_sub.s: src/dash_board_sub.c.s
+
+.PHONY : src/dash_board_sub.s
+
+# target to generate assembly for a file
+src/dash_board_sub.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/dash_board_sub.c.s
+.PHONY : src/dash_board_sub.c.s
 
 src/editor/door_mod.o: src/editor/door_mod.c.o
 
@@ -2546,33 +2654,6 @@ src/map_editor/draw_map.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/draw_map.c.s
 .PHONY : src/map_editor/draw_map.c.s
 
-src/map_editor/draw_sprites.o: src/map_editor/draw_sprites.c.o
-
-.PHONY : src/map_editor/draw_sprites.o
-
-# target to build an object file
-src/map_editor/draw_sprites.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/draw_sprites.c.o
-.PHONY : src/map_editor/draw_sprites.c.o
-
-src/map_editor/draw_sprites.i: src/map_editor/draw_sprites.c.i
-
-.PHONY : src/map_editor/draw_sprites.i
-
-# target to preprocess a source file
-src/map_editor/draw_sprites.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/draw_sprites.c.i
-.PHONY : src/map_editor/draw_sprites.c.i
-
-src/map_editor/draw_sprites.s: src/map_editor/draw_sprites.c.s
-
-.PHONY : src/map_editor/draw_sprites.s
-
-# target to generate assembly for a file
-src/map_editor/draw_sprites.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/draw_sprites.c.s
-.PHONY : src/map_editor/draw_sprites.c.s
-
 src/map_editor/draw_ui.o: src/map_editor/draw_ui.c.o
 
 .PHONY : src/map_editor/draw_ui.o
@@ -2843,33 +2924,6 @@ src/map_editor/pixels.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/pixels.c.s
 .PHONY : src/map_editor/pixels.c.s
 
-src/map_editor/reader.o: src/map_editor/reader.c.o
-
-.PHONY : src/map_editor/reader.o
-
-# target to build an object file
-src/map_editor/reader.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/reader.c.o
-.PHONY : src/map_editor/reader.c.o
-
-src/map_editor/reader.i: src/map_editor/reader.c.i
-
-.PHONY : src/map_editor/reader.i
-
-# target to preprocess a source file
-src/map_editor/reader.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/reader.c.i
-.PHONY : src/map_editor/reader.c.i
-
-src/map_editor/reader.s: src/map_editor/reader.c.s
-
-.PHONY : src/map_editor/reader.s
-
-# target to generate assembly for a file
-src/map_editor/reader.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/reader.c.s
-.PHONY : src/map_editor/reader.c.s
-
 src/map_editor/sector_add.o: src/map_editor/sector_add.c.o
 
 .PHONY : src/map_editor/sector_add.o
@@ -2977,6 +3031,33 @@ src/map_editor/sector_remove.s: src/map_editor/sector_remove.c.s
 src/map_editor/sector_remove.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/sector_remove.c.s
 .PHONY : src/map_editor/sector_remove.c.s
+
+src/map_editor/sprites.o: src/map_editor/sprites.c.o
+
+.PHONY : src/map_editor/sprites.o
+
+# target to build an object file
+src/map_editor/sprites.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/sprites.c.o
+.PHONY : src/map_editor/sprites.c.o
+
+src/map_editor/sprites.i: src/map_editor/sprites.c.i
+
+.PHONY : src/map_editor/sprites.i
+
+# target to preprocess a source file
+src/map_editor/sprites.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/sprites.c.i
+.PHONY : src/map_editor/sprites.c.i
+
+src/map_editor/sprites.s: src/map_editor/sprites.c.s
+
+.PHONY : src/map_editor/sprites.s
+
+# target to generate assembly for a file
+src/map_editor/sprites.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/map_editor/sprites.c.s
+.PHONY : src/map_editor/sprites.c.s
 
 src/map_editor/texture.o: src/map_editor/texture.c.o
 
@@ -3329,33 +3410,6 @@ src/render/render_scene.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_scene.c.s
 .PHONY : src/render/render_scene.c.s
 
-src/render/render_sky.o: src/render/render_sky.c.o
-
-.PHONY : src/render/render_sky.o
-
-# target to build an object file
-src/render/render_sky.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_sky.c.o
-.PHONY : src/render/render_sky.c.o
-
-src/render/render_sky.i: src/render/render_sky.c.i
-
-.PHONY : src/render/render_sky.i
-
-# target to preprocess a source file
-src/render/render_sky.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_sky.c.i
-.PHONY : src/render/render_sky.c.i
-
-src/render/render_sky.s: src/render/render_sky.c.s
-
-.PHONY : src/render/render_sky.s
-
-# target to generate assembly for a file
-src/render/render_sky.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/render/render_sky.c.s
-.PHONY : src/render/render_sky.c.s
-
 src/render/sprite_render.o: src/render/sprite_render.c.o
 
 .PHONY : src/render/sprite_render.o
@@ -3572,6 +3626,33 @@ src/unpack.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/unpack.c.s
 .PHONY : src/unpack.c.s
 
+src/utilits/anim_delete.o: src/utilits/anim_delete.c.o
+
+.PHONY : src/utilits/anim_delete.o
+
+# target to build an object file
+src/utilits/anim_delete.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/anim_delete.c.o
+.PHONY : src/utilits/anim_delete.c.o
+
+src/utilits/anim_delete.i: src/utilits/anim_delete.c.i
+
+.PHONY : src/utilits/anim_delete.i
+
+# target to preprocess a source file
+src/utilits/anim_delete.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/anim_delete.c.i
+.PHONY : src/utilits/anim_delete.c.i
+
+src/utilits/anim_delete.s: src/utilits/anim_delete.c.s
+
+.PHONY : src/utilits/anim_delete.s
+
+# target to generate assembly for a file
+src/utilits/anim_delete.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/anim_delete.c.s
+.PHONY : src/utilits/anim_delete.c.s
+
 src/utilits/exit_options.o: src/utilits/exit_options.c.o
 
 .PHONY : src/utilits/exit_options.o
@@ -3706,6 +3787,33 @@ src/utilits/math/mathf.s: src/utilits/math/mathf.c.s
 src/utilits/math/mathf.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math/mathf.c.s
 .PHONY : src/utilits/math/mathf.c.s
+
+src/utilits/math/mathf2.o: src/utilits/math/mathf2.c.o
+
+.PHONY : src/utilits/math/mathf2.o
+
+# target to build an object file
+src/utilits/math/mathf2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math/mathf2.c.o
+.PHONY : src/utilits/math/mathf2.c.o
+
+src/utilits/math/mathf2.i: src/utilits/math/mathf2.c.i
+
+.PHONY : src/utilits/math/mathf2.i
+
+# target to preprocess a source file
+src/utilits/math/mathf2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math/mathf2.c.i
+.PHONY : src/utilits/math/mathf2.c.i
+
+src/utilits/math/mathf2.s: src/utilits/math/mathf2.c.s
+
+.PHONY : src/utilits/math/mathf2.s
+
+# target to generate assembly for a file
+src/utilits/math/mathf2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d-k3d.dir/build.make CMakeFiles/d-k3d.dir/src/utilits/math/mathf2.c.s
+.PHONY : src/utilits/math/mathf2.c.s
 
 src/utilits/math/perspective_transform.o: src/utilits/math/perspective_transform.c.o
 
@@ -4037,15 +4145,27 @@ help:
 	@echo "... libft/get_next_line.o"
 	@echo "... libft/get_next_line.i"
 	@echo "... libft/get_next_line.s"
+	@echo "... src/animations/do_door_anim.o"
+	@echo "... src/animations/do_door_anim.i"
+	@echo "... src/animations/do_door_anim.s"
+	@echo "... src/animations/start_door_anim.o"
+	@echo "... src/animations/start_door_anim.i"
+	@echo "... src/animations/start_door_anim.s"
 	@echo "... src/archiver.o"
 	@echo "... src/archiver.i"
 	@echo "... src/archiver.s"
 	@echo "... src/cut_wall.o"
 	@echo "... src/cut_wall.i"
 	@echo "... src/cut_wall.s"
-	@echo "... src/door_animations.o"
-	@echo "... src/door_animations.i"
-	@echo "... src/door_animations.s"
+	@echo "... src/dash_board.o"
+	@echo "... src/dash_board.i"
+	@echo "... src/dash_board.s"
+	@echo "... src/dash_board_fill_hud.o"
+	@echo "... src/dash_board_fill_hud.i"
+	@echo "... src/dash_board_fill_hud.s"
+	@echo "... src/dash_board_sub.o"
+	@echo "... src/dash_board_sub.i"
+	@echo "... src/dash_board_sub.s"
 	@echo "... src/editor/door_mod.o"
 	@echo "... src/editor/door_mod.i"
 	@echo "... src/editor/door_mod.s"
@@ -4091,9 +4211,6 @@ help:
 	@echo "... src/map_editor/draw_map.o"
 	@echo "... src/map_editor/draw_map.i"
 	@echo "... src/map_editor/draw_map.s"
-	@echo "... src/map_editor/draw_sprites.o"
-	@echo "... src/map_editor/draw_sprites.i"
-	@echo "... src/map_editor/draw_sprites.s"
 	@echo "... src/map_editor/draw_ui.o"
 	@echo "... src/map_editor/draw_ui.i"
 	@echo "... src/map_editor/draw_ui.s"
@@ -4124,9 +4241,6 @@ help:
 	@echo "... src/map_editor/pixels.o"
 	@echo "... src/map_editor/pixels.i"
 	@echo "... src/map_editor/pixels.s"
-	@echo "... src/map_editor/reader.o"
-	@echo "... src/map_editor/reader.i"
-	@echo "... src/map_editor/reader.s"
 	@echo "... src/map_editor/sector_add.o"
 	@echo "... src/map_editor/sector_add.i"
 	@echo "... src/map_editor/sector_add.s"
@@ -4139,6 +4253,9 @@ help:
 	@echo "... src/map_editor/sector_remove.o"
 	@echo "... src/map_editor/sector_remove.i"
 	@echo "... src/map_editor/sector_remove.s"
+	@echo "... src/map_editor/sprites.o"
+	@echo "... src/map_editor/sprites.i"
+	@echo "... src/map_editor/sprites.s"
 	@echo "... src/map_editor/texture.o"
 	@echo "... src/map_editor/texture.i"
 	@echo "... src/map_editor/texture.s"
@@ -4178,9 +4295,6 @@ help:
 	@echo "... src/render/render_scene.o"
 	@echo "... src/render/render_scene.i"
 	@echo "... src/render/render_scene.s"
-	@echo "... src/render/render_sky.o"
-	@echo "... src/render/render_sky.i"
-	@echo "... src/render/render_sky.s"
 	@echo "... src/render/sprite_render.o"
 	@echo "... src/render/sprite_render.i"
 	@echo "... src/render/sprite_render.s"
@@ -4205,6 +4319,9 @@ help:
 	@echo "... src/unpack.o"
 	@echo "... src/unpack.i"
 	@echo "... src/unpack.s"
+	@echo "... src/utilits/anim_delete.o"
+	@echo "... src/utilits/anim_delete.i"
+	@echo "... src/utilits/anim_delete.s"
 	@echo "... src/utilits/exit_options.o"
 	@echo "... src/utilits/exit_options.i"
 	@echo "... src/utilits/exit_options.s"
@@ -4220,6 +4337,9 @@ help:
 	@echo "... src/utilits/math/mathf.o"
 	@echo "... src/utilits/math/mathf.i"
 	@echo "... src/utilits/math/mathf.s"
+	@echo "... src/utilits/math/mathf2.o"
+	@echo "... src/utilits/math/mathf2.i"
+	@echo "... src/utilits/math/mathf2.s"
 	@echo "... src/utilits/math/perspective_transform.o"
 	@echo "... src/utilits/math/perspective_transform.i"
 	@echo "... src/utilits/math/perspective_transform.s"
