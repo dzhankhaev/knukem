@@ -16,8 +16,8 @@ void    del_sprites(t_all *all, t_sprites *sprites, int sect_num)
             sprite_sector = which_sector(all, all->sectors, sprites->buttons[i].sprite_coords[j]);
             if(sprite_sector == sect_num)
             {
-                sprite_remove(sprites, (t_xy){i, j});
-                // printf("del sect = %d sprite sect = %d\n", sect_num, sprite_sector);
+                sprite_remove(all, sprites, (t_xy){i, j});
+                printf("del sect = %d sprite sect = %d\n", sect_num, sprite_sector);
             }
             j++;
         }
@@ -63,6 +63,7 @@ void    remove_sector(t_all *all, t_sect *sectors)
     del = &all->sectors[all->swap_num];
     if(all->swap_num != -1)
     {
+        del_sprites(all, &all->sprites, all->swap_num);
         drop_neighbors(all->sectors, del->neighbors, del->npoints, all->swap_num);
         free(all->sectors[all->swap_num].vertex);
         free(all->sectors[all->swap_num].neighbors);
@@ -75,6 +76,6 @@ void    remove_sector(t_all *all, t_sect *sectors)
         all->num_sectors -= 1;
         get_neighbours(&all->sectors[all->swap_num], all, all->swap_num);
         all->swap_num = -1;
-        del_sprites(all, &all->sprites, all->swap_num);
+        
     }
 }

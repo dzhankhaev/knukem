@@ -223,7 +223,7 @@ int write_map(char *name, t_all *all)
     ft_putnbr_fd((int)all->player.where.z, fd);
     ft_putchar_fd(' ', fd);
     ft_putnbr_fd(all->player.sector, fd);
-    ft_putchar_fd(' ', fd);
+    ft_putchar_fd('\n', fd);
 
     ft_memdel((void*)vert);
 

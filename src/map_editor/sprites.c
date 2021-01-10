@@ -1,21 +1,27 @@
 #include "editor.h"
 
-void    sprite_remove(t_sprites *sprites, t_xy pos)
+void    sprite_remove(t_all *all, t_sprites *sprites, t_xy pos)
 {
     int i;
     int j;
     t_xyz *coords;
-    // printf("i = %dj = %d\n", (int)pos.x, (int)pos.y);
+    printf("i = %dj = %d\n", (int)pos.x, (int)pos.y);
 
-    // i = pos.x;
-    // j = pos.y;
-    // coords = sprites->buttons[i].sprite_coords;
-    // while(j + 1 < sprites->buttons[i].num)
-    // {
-    //     coords[j] = coords[j + 1];
-    //     j++;
-    // }
-    // coords = ft_realloc((void*)coords, --sprites->buttons[i].num);
+    if(pos.x == 4)
+    {
+        all->player.where = (t_xyz){-1, -1, -1};
+        all->player.sector = -1;
+        return ;
+    }
+    i = pos.x;
+    j = pos.y;
+    coords = sprites->buttons[i].sprite_coords;
+    while(j + 1 < sprites->buttons[i].num)
+    {
+        coords[j] = coords[j + 1];
+        j++;
+    }
+    coords = ft_realloc((void*)coords, --sprites->buttons[i].num);
 }
 
 void	draw_sprite_picked(t_all *all, t_sdl *sdl, t_sprites *sprites, t_xy *c)
@@ -76,13 +82,13 @@ void    add_sprite(t_all *all, int x, int y, int type)
     coords = all->sprites.buttons[type].sprite_coords;
     if(type == PLAYER && (sect = which_sector(all, all->sectors, (t_xyz){x, y, all->draw_floors.x})) != -1)
     {
-        coords[0] = (t_xyz){x, y, sect};
+        coords[0] = (t_xyz){x, y, all->draw_floors.x};
         all->player.sector = sect;
     }
     else if((sect = which_sector(all, all->sectors, (t_xyz){x, y, all->draw_floors.x})) != -1)
     {
         coords = ft_realloc(coords, sizeof(t_xyz) * (++all->sprites.buttons[type].num));
-        coords[all->sprites.buttons[type].num - 1] = (t_xyz){x, y, sect};
+        coords[all->sprites.buttons[type].num - 1] = (t_xyz){x, y, all->draw_floors.x};
         all->sprites.buttons[type].sprite_coords = coords;
     }
     else

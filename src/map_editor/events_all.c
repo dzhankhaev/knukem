@@ -12,11 +12,11 @@
 
 #include "editor.h"
 
-void	mode_switch(t_all *all)
+int	mode_switch(t_all *all, int mode)
 {
 	SDL_Surface *temp;
 
-	if (all->player.where.z != -1)
+	if (all->player.where.z != -1 && mode)
 	{
 		all->threed = 1;
 		temp = get_text_surface(all, "Entering 3D!", all->font, RED);
@@ -25,7 +25,7 @@ void	mode_switch(t_all *all)
 		SDL_Delay(1000);
 		SDL_FreeSurface(temp);
 	}
-	else
+	else if (all->player.where.z == -1)
 	{
 		temp = get_text_surface(all, "Set player!", all->font, RED);
 		draw_texture(all->sdl, (SDL_Rect){W/2 - 175, H/2 - 25, 300, 50}, temp);
@@ -42,10 +42,10 @@ void	key_press(t_all *all)
 
 	keystate = SDL_GetKeyboardState(NULL);
 	if (keystate[SDL_SCANCODE_ESCAPE])
-		mode_switch(all);
+		mode_switch(all, 1);
 	else if (keystate[SDL_SCANCODE_DELETE])
 		remove_sector(all, all->sectors);
-	else if (keystate[SDL_SCANCODE_TAB])
+	else if (keystate[SDL_SCANCODE_TAB] && mode_switch(all, 0))
 		write_map("new", all);
 	else if (keystate[SDL_SCANCODE_RIGHT])
 		all->d.x += 1;
