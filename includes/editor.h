@@ -207,5 +207,6 @@ SDL_Surface			*get_text_surface(t_all *all, char *name, TTF_Font *font, SDL_Colo
 void       			put_pxl(t_sdl *sdl, SDL_Color col, int x, int y);
 void				sprite_remove(t_all *all, t_sprites *sprites, t_xy pos);
 SDL_Surface			*get_texture2(char *file);
+int                 ispointincube(t_xyz point, t_xyz cubecenter, t_xyz borders, float centerzoffset);
 
 # endif
