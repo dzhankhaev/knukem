@@ -55,7 +55,7 @@ void    draw_sprite(t_all *all, t_button *sprite, int type)
         loc = (SDL_Rect){(coords[i].x * all->step) + all->delta.x - all->step/2,
             (coords[i].y * all->step) + all->delta.y - all->step/2,
                 all->step, all->step};
-        if(all->sectors[(int)coords[i].z].floor >= all->draw_floors.x  && loc.x > all->area.x)
+        if(coords[i].z >= all->draw_floors.x  && loc.x > all->area.x)
         {
             if(all->sprites.swap.x == type && all->sprites.swap.y == i)
                 draw_circle(all->sdl, (t_xy){loc.x + all->step/2, loc.y + all->step/2}, all->step/2, YELLOW);
