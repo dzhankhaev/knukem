@@ -9,6 +9,7 @@ void	normi_sprite(t_sprites1 sprite, t_player player)
 	sprite.weapon_sprite->cut_translated_where.y0 = sprite.weapon_sprite->cut_sprite_where.y0 - player.where.y;
 	sprite.weapon_sprite->cut_translated_where.x1 = sprite.weapon_sprite->cut_sprite_where.x1 - player.where.x;
 	sprite.weapon_sprite->cut_translated_where.y1 = sprite.weapon_sprite->cut_sprite_where.y1 - player.where.y;
+
 }
 
 void	rotate_sprite(t_sprites1 sprite, t_player player)
@@ -29,7 +30,7 @@ void	rotate_sprite(t_sprites1 sprite, t_player player)
 
 void	vrotate2(t_sprites1 *sprite, t_player player) //используется для обработки вертикального угла взгляда
 {
-	sprite->weapon_sprite->rotated_where.z = -sprite->weapon_sprite->where.z + player.where.z +
+	sprite->weapon_sprite->rotated_where.z = player.where.z - sprite->weapon_sprite->where.z +
 			sprite->weapon_sprite->rotated_where.x * player.vangle;
 }
 
@@ -53,7 +54,6 @@ void	perspective_transform2(t_sprites1 sprite, t_player player)
 void	render_sprite(t_engine *engine)
 {
 	t_all temp;
-	double scale;
 	t_sprites1 *sprite;
 
 	sprite = engine->sprites1;
