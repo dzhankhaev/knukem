@@ -1,5 +1,23 @@
 #include "editor.h"
 
+void    sprite_remove(t_sprites *sprites, t_xy pos)
+{
+    int i;
+    int j;
+    t_xyz *coords;
+    // printf("i = %dj = %d\n", (int)pos.x, (int)pos.y);
+
+    // i = pos.x;
+    // j = pos.y;
+    // coords = sprites->buttons[i].sprite_coords;
+    // while(j + 1 < sprites->buttons[i].num)
+    // {
+    //     coords[j] = coords[j + 1];
+    //     j++;
+    // }
+    // coords = ft_realloc((void*)coords, --sprites->buttons[i].num);
+}
+
 void	draw_sprite_picked(t_all *all, t_sdl *sdl, t_sprites *sprites, t_xy *c)
 {
 	SDL_Rect loc;

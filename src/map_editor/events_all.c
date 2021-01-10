@@ -66,7 +66,6 @@ void		level_buttons(t_all *all, t_button *buttons, SDL_MouseButtonEvent *event)
 	int	dy;
 	int	count;
 
-	printf("x = %d y = %d\n", event->x, event->y);
 
 	i = 2;
 	count = (all->buttons[NEW_SECT].state == 1 || \

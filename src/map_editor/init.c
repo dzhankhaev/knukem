@@ -21,26 +21,26 @@ void	load_fonts(t_sdl *sdl, t_all *all)
 	}
 }
 
-static void			init_sdl(t_sdl *sdl, t_all *all)
-{
-	sdl->window = NULL;
-	if (SDL_Init(SDL_INIT_VIDEO) != 0)
-		error_and_close(__FILE__, __FUNCTION__);
-	if (!(sdl->window = SDL_CreateWindow("Map Editor",
-			SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, W,
-			H, SDL_WINDOW_SHOWN)))
-	{
-		SDL_Quit();
-		error_and_close(__FILE__, __FUNCTION__);
-	}
-	if (!(sdl->screen = SDL_GetWindowSurface(sdl->window)))
-	{
-		SDL_DestroyWindow(sdl->window);
-		SDL_Quit();
-		error_and_close(__FILE__, __FUNCTION__);
-	}
-	load_fonts(sdl, all);
-}
+// static void			init_sdl(t_sdl *sdl, t_all *all)
+// {
+// 	sdl->window = NULL;
+// 	if (SDL_Init(SDL_INIT_VIDEO) != 0)
+// 		error_and_close(__FILE__, __FUNCTION__);
+// 	if (!(sdl->window = SDL_CreateWindow("Map Editor",
+// 			SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, W,
+// 			H, SDL_WINDOW_SHOWN)))
+// 	{
+// 		SDL_Quit();
+// 		error_and_close(__FILE__, __FUNCTION__);
+// 	}
+// 	if (!(sdl->screen = SDL_GetWindowSurface(sdl->window)))
+// 	{
+// 		SDL_DestroyWindow(sdl->window);
+// 		SDL_Quit();
+// 		error_and_close(__FILE__, __FUNCTION__);
+// 	}
+// 	load_fonts(sdl, all);
+// }
 
 int		scaling(SDL_Rect area, t_xyz mapsize)
 {

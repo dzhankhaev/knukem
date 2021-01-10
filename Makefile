@@ -79,7 +79,7 @@ SRC := main.c\
 	map_editor/sector_remove.c\
 	map_editor/sector_neighbors.c\
 	map_editor/sector_add.c\
-	map_editor/draw_sprites.c\
+	map_editor/sprites.c\
 	map_editor/obj_detection.c\
 	archiver/archiver.c\
 	archiver/pack.c\

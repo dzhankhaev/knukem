@@ -53,7 +53,7 @@ int		check_sector_shape(t_sect *sect)
 			}
 		}
 	}
-	printf("ok\n");
+	// printf("ok\n");
 	return 1;
 }
 

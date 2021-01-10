@@ -95,7 +95,7 @@ void    interact(t_all *all)
 int main_editor(t_engine *engine, char *name, t_all *all)
 {
     init_all(all); // инициализация всех модулей
-	printf("level z = %d\n", (int)all->draw_floors.y);
+	// printf("level z = %d\n", (int)all->draw_floors.y);
 	if (load_texture(all) != 0)
 		error_and_close(__FILE__, __FUNCTION__); //загрузка текстур
 	interact(all);// основная функция взаимодействия

@@ -48,12 +48,12 @@ static void	draw(t_engine *engine)
 		engine->present++;
 	}
 //	engine->present--;
-	while (1 && engine->present != engine->queue)
-	{
-		if (transform_sprite(engine))
-			render_sprite(engine);
-		engine->present--;
-	}
+	// while (1 && engine->present != engine->queue)
+	// {
+	// 	if (transform_sprite(engine))
+	// 		render_sprite(engine);
+	// 	engine->present--;
+	// }
 	render_minimap_hud(engine->minimap, engine->screen);
 }
 
