@@ -19,6 +19,7 @@ int	mode_switch(t_all *all, int mode)
 	if (all->player.where.z != -1 && mode)
 	{
 		all->threed = 1;
+		init_floors(all->sectors, all->num_sectors);
 		temp = get_text_surface(all, "Entering 3D!", all->font, RED);
 		draw_texture(all->sdl, (SDL_Rect){W/2 - 175, H/2 - 25, 300, 50}, temp);
 		SDL_UpdateWindowSurface(all->sdl->window);
@@ -177,7 +178,7 @@ void	on_mouse(t_all *all, SDL_MouseButtonEvent *event)
 		if (all->mouse.z == 1)
 		{
 			all->mouse = (t_xyz){event->x - temp->x, event->y - temp->y};//пишем координаты мыши на карте
-			map_click(&all->mouse, all);
+			map_click(&all->mouse, all, event);
 		}
 	}
 	else if (event->x < W * 0.25 && event->y < H * 0.2)

@@ -30,7 +30,11 @@ void	draw_sector(t_sect *sect, t_all *all, SDL_Color color, t_xy delta)
 		// 	isometric(all, &s, (t_xyz){10, 1, 0}, sect[i].floor - all->mapsize.z/4 * all->step/2);
 		// 	isometric(all, &f, (t_xyz){10, 1, 0}, sect[i].floor - all->mapsize.z/4 * all->step/2);
 		// }
-		color = (sect->neighbors[i] < 0 && i < sect->npoints) ? RED : BLUE;
+		
+		if (sect->door >=0)
+			color = color;
+		else
+			color = (sect->neighbors[i] < 0 && i < sect->npoints) ? RED : BLUE;
 		if (sect->floor >= all->draw_floors.x && \
 			sect->floor <= all->draw_floors.y)
 		{
@@ -42,10 +46,26 @@ void	draw_sector(t_sect *sect, t_all *all, SDL_Color color, t_xy delta)
 	}
 }
 
+void	draw_doors(t_all *all, t_sect *sectors)
+{
+	int i;
+	t_sect	*temp;
+
+	i = 0;
+	while (i < all->num_sectors)
+	{
+		temp = &sectors[i];
+		if (temp->door == 0)
+			draw_sector(temp, all, GREEN, all->delta);
+		else if (temp->door == 1)
+			draw_sector(temp, all, LAZUR, all->delta);
+		i++;
+	}
+}
+
 void	draw_map(t_sdl *sdl, t_sect *sect, t_all *all)
 {
 	int		i;
-	int		j;
 	t_xyz	s;
 	t_xyz	f;
 	t_sect	*temp;
@@ -53,11 +73,12 @@ void	draw_map(t_sdl *sdl, t_sect *sect, t_all *all)
 	i = 0;
 	while (i < all->num_sectors)
 	{
-		j = 0;
 		temp = &sect[i];
-		draw_sector(temp, all, all->color, all->delta);
+		if (temp->door < 0)
+			draw_sector(temp, all, all->color, all->delta);
 		i++;
 	}
+	draw_doors(all, all->sectors);
 	if (all->swap_num != -1)
 		draw_sector(&sect[all->swap_num], all, YELLOW, all->delta);
 }

@@ -179,7 +179,7 @@ void	            init_all(t_all *all); // инициализируем моду�
 void				add_sprite(t_all *all, int x, int y, int type);
 void                error_and_close(const char *file, const char *function); // аварийное завершение программы
 void                on_event(t_all *all, SDL_Event *event); //обработка событий
-void				map_click(t_xyz *mouse, t_all *all);
+void				map_click(t_xyz *mouse, t_all *all, SDL_MouseButtonEvent *event);
 int					load_map(char *name, t_all *all); // загрузка карты
 int                 load_texture(t_all *all);// звгрузка текстур
 int					load_buttons(t_all *all, t_button *btn);
@@ -207,5 +207,6 @@ SDL_Surface			*get_text_surface(t_all *all, char *name, TTF_Font *font, SDL_Colo
 void       			put_pxl(t_sdl *sdl, SDL_Color col, int x, int y);
 void				sprite_remove(t_all *all, t_sprites *sprites, t_xy pos);
 SDL_Surface			*get_texture2(char *file);
+void				init_floors(t_sect *sectors, int num);
 
 # endif

@@ -21,19 +21,27 @@ void	select_sprite(t_all *all, int x, int y)
 	all->sprites.swap = which_sprite(all, &all->sprites, where);
 }
 
-void	select_sector(t_all *all, int x, int y)
+void	select_sector(t_all *all, int x, int y, SDL_MouseButtonEvent *event)
 {
 	t_xyz	where;
+	t_sect	*sect;
 
 	where = (t_xyz){x, y, all->draw_floors.x};
 	all->swap_num = which_sector(all, all->sectors, where);
+	sect = &all->sectors[all->swap_num];
+	if (event->button == SDL_BUTTON_RIGHT)
+	{
+		sect->door = sect->door == -1 ? 0 : (sect->door == 0 ? 1 : -1);
+		all->swap_num = -1;
+	}
+
 	// printf("%f\n",all->draw_floors.x);
 	// else
 		// all->swap = NULL;
 	
 }
 
-void	map_click(t_xyz *mouse, t_all *all)
+void	map_click(t_xyz *mouse, t_all *all, SDL_MouseButtonEvent *event)
 {
 	int x;
 	int y;
@@ -53,5 +61,5 @@ void	map_click(t_xyz *mouse, t_all *all)
 	else if(all->buttons[1].state && all->sprites.picked == -1)
 		select_sprite(all, x, y);
 	else
-		select_sector(all, x, y);
+		select_sector(all, x, y, event);
 }
