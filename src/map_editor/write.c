@@ -212,6 +212,8 @@ int write_map(char *name, t_all *all)
             ft_putchar_fd(' ', fd);
             j++;
         }
+        ft_putchar_fd('\t', fd);
+        ft_putnbr_fd(all->sectors[i].door, fd);
         i++;
         ft_putchar_fd('\n', fd);
     }
