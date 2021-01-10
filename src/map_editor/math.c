@@ -1,3 +1,16 @@
+#include "editor.h"
+
+float	vector_cross_product1(float x0, float y0, float x1, float y1)
+{
+	return ((x0) * (y1) - (x1) * (y0));
+}
+
+float			point_side1(float px, float py, t_xy vert, t_xy vert1)
+{
+	return (vector_cross_product1(vert1.x - vert.x, vert1.y - vert.y,
+								 px - vert.x, py - vert.y));
+}
+
 // void	isometric(t_all *all, t_xy *s, t_xyz rot, float add)
 // {
 // 	t_xyz temp;

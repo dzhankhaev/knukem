@@ -208,5 +208,8 @@ void       			put_pxl(t_sdl *sdl, SDL_Color col, int x, int y);
 void				sprite_remove(t_all *all, t_sprites *sprites, t_xy pos);
 SDL_Surface			*get_texture2(char *file);
 void				init_floors(t_sect *sectors, int num);
+void				normalize(t_sect *sectors, int num, t_all *all);
+int					**get_vertexes(t_all *all);
+int					get_order_num(t_xy coord, int **vert);
 
 # endif
