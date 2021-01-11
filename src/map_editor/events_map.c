@@ -31,7 +31,8 @@ void	select_sector(t_all *all, int x, int y, SDL_MouseButtonEvent *event)
 	sect = &all->sectors[all->swap_num];
 	if (event->button == SDL_BUTTON_RIGHT)
 	{
-		sect->door = sect->door == -1 ? 0 : (sect->door == 0 ? 1 : -1);
+		sect->door = sect->door == -1 ? 0 : (sect->door == 0 ?\
+			sect->ceil - sect->oldf : -1);
 		all->swap_num = -1;
 	}
 

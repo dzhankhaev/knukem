@@ -30,7 +30,7 @@ void    write_sect_vert(t_all *all, int **vert, int i, int fd)
     int j;
 
     ft_putstr_fd("sector\t", fd);
-    ft_putnbr_fd((int)all->sectors[i].floor, fd);
+    ft_putnbr_fd((int)all->sectors[i].oldf, fd);
     ft_putchar_fd(' ', fd);
     ft_putnbr_fd((int)all->sectors[i].ceil, fd);
     ft_putchar_fd('\t', fd);
