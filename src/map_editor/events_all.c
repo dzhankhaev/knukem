@@ -19,6 +19,7 @@ int	mode_switch(t_all *all, int mode)
 	if (all->player.where.z != -1 && mode)
 	{
 		all->threed = 1;
+		normalize(all->sectors, all->num_sectors, all);
 		temp = get_text_surface(all, "Entering 3D!", all->font, RED);
 		draw_texture(all->sdl, (SDL_Rect){W/2 - 175, H/2 - 25, 300, 50}, temp);
 		SDL_UpdateWindowSurface(all->sdl->window);

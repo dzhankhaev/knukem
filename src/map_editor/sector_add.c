@@ -67,6 +67,7 @@ void    new_sector(t_all *all, int x, int y)
 		all->sectors[all->num_sectors - 1].vertex = malloc(sizeof(t_xy) * all->temp->npoints);
 		all->sectors[all->num_sectors - 1].npoints = all->temp->npoints;
 		all->sectors[all->num_sectors - 1].floor = all->temp->floor;
+		all->sectors[all->num_sectors - 1].oldf = all->temp->floor;
 		all->sectors[all->num_sectors - 1].ceil = all->temp->ceil; 
 		all->sectors[all->num_sectors - 1].door = -1;
 		all->sectors[all->num_sectors - 1].txf = 1;
