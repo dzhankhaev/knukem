@@ -33,7 +33,7 @@ int     which_sector(t_all *all, t_sect *sectors, t_xyz where)
     while(i < all->num_sectors)
     {
         j = 0;
-        if(where.z == all->sectors[i].floor)
+        if(where.z == all->sectors[i].oldf)
             while(j < all->sectors[i].npoints)
             {
                 p = point_side1(where.x, where.y, sectors[i].vertex[j], sectors[i].vertex[j + 1]);

@@ -12,6 +12,28 @@
 
 #include "editor.h"
 
+int		sprites_in_sect(t_all *all, t_button *sprites, int num)
+{
+	int i;
+	int j;
+
+	i = 0;
+	while(i < 4)
+	{
+		j = 0;
+		while(j < sprites[i].num)
+		{
+			if(which_sector(all, all->sectors, sprites[i].sprite_coords[j]) == num)
+				return 1;
+			j++;
+		}
+		i++;
+	}
+	if(all->player.sector == num)
+		return 1;
+	return 0;
+}
+
 void	select_sprite(t_all *all, int x, int y)
 {	
 	t_xyz	where;
@@ -28,11 +50,16 @@ void	select_sector(t_all *all, int x, int y, SDL_MouseButtonEvent *event)
 
 	where = (t_xyz){x, y, all->draw_floors.x};
 	all->swap_num = which_sector(all, all->sectors, where);
-	sect = &all->sectors[all->swap_num];
-	if (event->button == SDL_BUTTON_RIGHT)
+	if (event->button == SDL_BUTTON_RIGHT &&\
+		!(sprites_in_sect(all, all->sprites.buttons, all->swap_num)))
 	{
+		sect = &all->sectors[all->swap_num];
 		sect->door = sect->door == -1 ? 0 : (sect->door == 0 ?\
 			sect->ceil - sect->oldf : -1);
+		if(sect->door > 0)
+			sect->floor += sect->door;
+		else if(sect->door <= 0)
+			sect->floor = sect->oldf; 
 		all->swap_num = -1;
 	}
 
