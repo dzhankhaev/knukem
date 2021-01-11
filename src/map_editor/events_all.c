@@ -41,7 +41,7 @@ void	key_press(t_all *all)
 	const Uint8	*keystate;
 
 	keystate = SDL_GetKeyboardState(NULL);
-	if (keystate[SDL_SCANCODE_ESCAPE])
+	if (keystate[SDL_SCANCODE_E])
 		mode_switch(all, 1);
 	else if (keystate[SDL_SCANCODE_DELETE])
 		remove_sector(all, all->sectors);
