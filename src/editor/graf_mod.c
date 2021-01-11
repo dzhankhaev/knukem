@@ -13,7 +13,7 @@
 #include "engine.h"
 #include "utilits.h"
 
-static void	graf_memalloc(t_engine *engine, int sectorno, int i)
+static void		graf_memalloc(t_engine *engine, int sectorno, int i)
 {
 	t_graf *graf;
 
@@ -35,36 +35,57 @@ static void	graf_memalloc(t_engine *engine, int sectorno, int i)
 			engine->edit.txno == -1 ? 1 : engine->edit.txno};
 }
 
-static void	create_coord(t_engine *engine, int sectorno)
+static t_fline get_coord(t_fline c)
+{
+	float	t;
+
+	if (c.x0 < c.x1 && c.y0 > c.y1)
+	{
+		t = c.x0;
+		c.x0 = c.x1;
+		c.x1 = t;
+		t = c.y0;
+		c.y0 = c.y1;
+		c.y1 = t;
+	}
+	else if (c.x0 > c.x1 && c.y0 > c.y1)
+	{
+		t = c.x0;
+		c.x0 = c.x1;
+		c.x1 = t;
+		t = c.y0;
+		c.y0 = c.y1;
+		c.y1 = t;
+	}
+	return (c);
+}
+
+static void		create_coord(t_engine *engine, int sectorno)
 {
 	t_graf	*graf;
 	float	angle;
 	t_xy	a;
 	t_xy	b;
+	t_fline	c;
 
 	graf = &engine->graf[sectorno];
+	c = get_coord(graf->coord[graf->g_num - 1]);
 	//проекция
-	a = point_proection(graf->coord[graf->g_num - 1],
+	a = point_proection(c,
 				(t_xyz){engine->player.where.x,
 						engine->player.where.y, 0});
-	angle = get_vec_angle(graf->coord[graf->g_num - 1].x1
-				- graf->coord[graf->g_num - 1].x0,
-				graf->coord[graf->g_num - 1].y1
-				- graf->coord[graf->g_num - 1].y0, 1, 0);
+	angle = get_vec_angle(c.x1
+				- c.x0,
+				c.y1
+				- c.y0, 1, 0);
 	//прокладывание отрезка вдоль стены
-	a.x -= engine->player.where.x;
-	a.y -= engine->player.where.y;
 	b.x = a.x + 1 * cosf(angle);
 	b.y = a.y + 1 * sinf(angle);
-	a.x += engine->player.where.x;
-	a.y += engine->player.where.y;
-	b.x += engine->player.where.x;
-	b.y += engine->player.where.y;
 	graf->coord[graf->g_num - 1] = (t_fline){a.x, b.x, a.y, b.y,
 			graf->coord[graf->g_num - 1].color};
 }
 
-void		graf_mod(t_engine *engine, int sectorno, int i)
+void			graf_mod(t_engine *engine, int sectorno, int i)
 {
 	//если стена модифицируема и включен режим редактора граффити
 	if (engine->edit.mod_w != -1 && engine->edit.graf == 2)
