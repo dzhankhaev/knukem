@@ -80,6 +80,7 @@ static void		loop(t_engine *engine, int neighbor, t_ixyz t, int i)
 				a->oy[1] = y_for_x(a->wall[5], a->x);
 		if (engine->sectors[engine->present->sectorno].door > -1)
 			a->oy[1] = y_for_x(a->wall[4], a->x);
+
 		render_wall(engine, neighbor, t);
 		a->x += 1;
 	}

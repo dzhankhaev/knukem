@@ -106,7 +106,7 @@ typedef struct			s_edit
 	int					hchange[4];			//	модификаторы высоты пола и потолка
 	int 				mod_s;				//	этот сектор будет модифицирован											}
 	int					mod_w;				//	эта стена будет модифицирована											 }текстуры
-	int					mod_tx;				//	1 - пол, 2 - потолок, 3 - нижняя линия раздела, 4 - верхняя, 0 - стена	}
+	int					mod_tx;				//	0 - пол, 1 - потолок, 2 - стена, 3 - нижняя линия раздела, 4 - верхняя, }
 	int					txno;				//	эту текстуру назначим
 	int					graf;				//	0 ничего, 1 режим граффити, 2 поставить граффити, 3 удалить граффити
 	int					door;				//	0 ничего, 1 назначить/удалить дверь, 2 закрыть, 3 открыть
@@ -164,6 +164,7 @@ typedef struct			s_vplane
 	int					topy[W];//верхняя координата
 	int					boty[W];//нижняя координата
 	float				z;
+	int					s;		//сектор
 }						t_vplane;
 
 //структура для каждого врага
@@ -264,7 +265,7 @@ void					perspective_transform2(t_sprites1 sprite, t_player player);
 void					graf_proccesing(t_engine *engine, int sectorno, int i);
 void					graf_mod(t_engine *engine, int sectorno, int i);
 t_ixyz					tx_wall_mod(t_engine *engine, int sectorno, int i);
-t_ixyz					tx_plane_mod(t_engine *engine, int sectorno, int i);
+t_ixyz					tx_plane_mod(t_engine *engine, int sectorno);
 void					door_mod(t_engine *engine, int neighbor, int i);
 void					door_anim(t_engine *engine);
 void					start_door_anim(t_engine *engine, int sec, int nei, int i);

@@ -88,6 +88,10 @@ typedef struct		s_sect
     unsigned		npoints;		//	Количество соседей
     int				door;			//	-1 не является дверью. Остальное показывает насколько дверь закрыта
     float			oldf;			//	уровень пола, если сектор является дверью
+    int				txf;
+    int				txc;
+    int				txw0;
+    int				txw1;
 
 }					t_sect;
 

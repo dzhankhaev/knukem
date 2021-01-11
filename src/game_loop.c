@@ -89,6 +89,7 @@ void		game_loop(t_engine *engine, t_all *all)
 		keys_manager(engine);
 		move(engine);
 		SDL_LockSurface(engine->screen);
+		SDL_FillRect(engine->screen, 0, 0x000000);
 		draw(engine);
 		door_anim(engine);
 		SDL_UnlockSurface(engine->screen);

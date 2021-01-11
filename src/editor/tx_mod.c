@@ -45,6 +45,7 @@ t_ixyz			tx_plane_mod(t_engine *engine, int sectorno)
 			engine->edit.txno = -1;
 		}
 	}
-	return ((t_ixyz){engine->sectors[sectorno].txf,
-				  engine->sectors[sectorno].txc, 0});
+	return ((t_ixyz){engine->sectors[engine->vpfloor.s].txf,
+					 engine->sectors[engine->vpfloor.s].txc, 0});
 }
+//изначально должно было ретёрнить по индексу sectorno, но иногда текстура выбиралась неправильно. Почему не смог понять

@@ -30,6 +30,7 @@ static void	get_vplanes(t_engine *engine)
 	engine->vpfloor.boty[a->x] = engine->bline[a->x];	//нижняя линия пола
 	engine->vpfloor.z = engine->player.where.z -
 			engine->sectors[engine->present->sectorno].floor;
+	engine->vpfloor.s = engine->present->sectorno;
 }
 
 void		ceil_and_floor_init(t_engine *engine)
