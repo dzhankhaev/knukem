@@ -68,8 +68,11 @@ void    new_sector(t_all *all, int x, int y)
 		all->sectors[all->num_sectors - 1].npoints = all->temp->npoints;
 		all->sectors[all->num_sectors - 1].floor = all->temp->floor;
 		all->sectors[all->num_sectors - 1].ceil = all->temp->ceil; 
-		all->sectors[all->num_sectors - 1].door = -1; 
-
+		all->sectors[all->num_sectors - 1].door = -1;
+		all->sectors[all->num_sectors - 1].txf = 1;
+		all->sectors[all->num_sectors - 1].txc = 1;
+		all->sectors[all->num_sectors - 1].txw0 = 1;
+		all->sectors[all->num_sectors - 1].txw1 = 1;
 		while( i < all->temp->npoints)
 		{
 			all->sectors[all->num_sectors - 1].vertex[i] = all->temp->vertex[i];

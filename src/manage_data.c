@@ -86,6 +86,12 @@ void	load_sector(t_engine *engine, t_all *all, char **split, t_xy *vert)
         sect->door = ft_atoi(split[4]);
     else
         sect->door = -1;
+	sub = ft_strsplit(split[5], ' ');
+	sect->txf = ft_atoi(sub[0]);
+	sect->txc = ft_atoi(sub[1]);
+	sect->txw0 = ft_atoi(sub[2]);
+	sect->txw1 = ft_atoi(sub[3]);
+	ft_free_split(sub);
 }
 
 void	load_player(t_engine *engine, char **split)

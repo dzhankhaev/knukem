@@ -63,7 +63,15 @@ void    write_sectors(t_all *all, int **vert, int fd)
         }
         ft_putchar_fd('\t', fd);
         ft_putnbr_fd(all->sectors[i].door, fd);
-        i++;
+		ft_putchar_fd('\t', fd);
+		ft_putnbr_fd(all->sectors[i].txf, fd);
+		ft_putchar_fd(' ', fd);
+		ft_putnbr_fd(all->sectors[i].txc, fd);
+		ft_putchar_fd(' ', fd);
+		ft_putnbr_fd(all->sectors[i].txw0, fd);
+		ft_putchar_fd(' ', fd);
+		ft_putnbr_fd(all->sectors[i].txw1, fd);
+		i++;
         ft_putchar_fd('\n', fd);
     }
 }

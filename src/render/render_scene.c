@@ -93,7 +93,7 @@ void			render_scene(t_engine *engine, int sectorno, int neighbor, int i)
 	rendering_init(engine, sectorno, neighbor);
 	txset = tx_wall_mod(engine, sectorno, i);
 	loop(engine, neighbor, txset, i);
-	txset = tx_plane_mod(engine, sectorno, i);
+	txset = tx_plane_mod(engine, sectorno);
 	render_hplane(engine, &engine->vpfloor, txset.x);
 	render_hplane(engine, &engine->vpceil, txset.y);
 	graf_proccesing(engine, sectorno, i);
