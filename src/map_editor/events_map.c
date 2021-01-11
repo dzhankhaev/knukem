@@ -50,7 +50,7 @@ void	select_sector(t_all *all, int x, int y, SDL_MouseButtonEvent *event)
 
 	where = (t_xyz){x, y, all->draw_floors.x};
 	all->swap_num = which_sector(all, all->sectors, where);
-	if (event->button == SDL_BUTTON_RIGHT &&\
+	if (event->button == SDL_BUTTON_RIGHT && all->swap_num != -1 &&\
 		!(sprites_in_sect(all, all->sprites.buttons, all->swap_num)))
 	{
 		sect = &all->sectors[all->swap_num];
