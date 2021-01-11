@@ -21,18 +21,6 @@ void	load_fonts(t_sdl *sdl, t_all *all)
 	}
 }
 
-void	init_floors(t_sect *sectors, int num)
-{
-	int i;
-
-	i = 0;
-	while (i < num)
-	{
-		sectors[i].oldf = sectors[i].floor;
-		i++;
-	}
-}
-
 int		scaling(SDL_Rect area, t_xyz mapsize)
 {
 	int scale;

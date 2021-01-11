@@ -43,7 +43,7 @@ static void	draw(t_engine *engine)
      * END
      */
     //engine->present--;
-    while (engine->present != engine->queue)
+    while (0&engine->present != engine->queue)
     {
         if (transform_sprite(engine)) {
             render_sprite(engine);
@@ -55,28 +55,28 @@ static void	draw(t_engine *engine)
 
 void		game_loop(t_engine *engine, t_all *all)
 {
-    int		time;
+	int		time;
 
-    time = 0;
-    while (!engine->close_request)
-    {
-        if (engine->edit.mod)
-        {
-            SDL_SetRelativeMouseMode(SDL_FALSE);
-            engine->edit.mod = main_editor(engine, "map-clear", all);
+	time = 0;
+	while (!engine->close_request)
+	{
+		if (engine->edit.mod)
+		{
+			SDL_SetRelativeMouseMode(SDL_FALSE);
+			engine->edit.mod = main_editor(engine, "map-clear", all);
 //			SDL_SetRelativeMouseMode(SDL_TRUE); //скрывает курсор, он движется относительно окна
-        }
-        reset(engine);
-        keys_manager(engine);
-        move(engine);
-        SDL_LockSurface(engine->screen);
-        draw(engine);
-        door_anim(engine);
-        SDL_UnlockSurface(engine->screen);
-        real_time_edit(engine);
-        if (SDL_GetTicks() - time < 32)
-            SDL_Delay(32 - SDL_GetTicks() + time);
-        time = SDL_GetTicks();
-        SDL_UpdateWindowSurface(engine->window);
-    }
+		}
+		reset(engine);
+		keys_manager(engine);
+		move(engine);
+		SDL_LockSurface(engine->screen);
+		draw(engine);
+		door_anim(engine);
+		SDL_UnlockSurface(engine->screen);
+		real_time_edit(engine);
+		if (SDL_GetTicks() - time < 32)
+			SDL_Delay(32 - SDL_GetTicks() + time);
+		time = SDL_GetTicks();
+		SDL_UpdateWindowSurface(engine->window);
+	}
 }
