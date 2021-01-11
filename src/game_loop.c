@@ -53,6 +53,23 @@ static void	draw(t_engine *engine)
     render_minimap_hud(engine->minimap, engine->screen);
 }
 
+static int	check_anim(t_engine *engine)
+{
+	int	q;
+	int	i;
+
+	i = 0;
+	while (i < engine->num_sectors)
+	{
+		q = -2;
+		while (q < 30)
+			if (engine->danimbuf[(q += 2)] == i)
+				return (0);
+		i++;
+	}
+	return (1);
+}
+
 void		game_loop(t_engine *engine, t_all *all)
 {
 	int		time;
@@ -60,12 +77,14 @@ void		game_loop(t_engine *engine, t_all *all)
 	time = 0;
 	while (!engine->close_request)
 	{
-		if (engine->edit.mod)
+		if (engine->edit.mod && check_anim(engine))
 		{
 			SDL_SetRelativeMouseMode(SDL_FALSE);
 			engine->edit.mod = main_editor(engine, "map-clear", all);
 //			SDL_SetRelativeMouseMode(SDL_TRUE); //скрывает курсор, он движется относительно окна
 		}
+		else
+			engine->edit.mod = 0;
 		reset(engine);
 		keys_manager(engine);
 		move(engine);
