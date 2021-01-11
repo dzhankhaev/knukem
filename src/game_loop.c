@@ -30,7 +30,7 @@ static void	draw(t_engine *engine)
     //все переменные ниже нужно сбрасывать каждый новый кадр
     engine->max_queue = MAX_QUEUE;
     engine->queue = queue;
-    *engine->queue = (t_queue){engine->player.sector, 0, W - 1, -1, 0};
+    *engine->queue = (t_queue){engine->player.sector, 0, W - 1, -1};
     engine->future = engine->queue + 1;
     engine->present = engine->queue;
     while (engine->present != engine->future)
