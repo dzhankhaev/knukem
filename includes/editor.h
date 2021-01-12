@@ -217,7 +217,7 @@ void				draw_line(t_all *all, t_xy *start, t_xy *fin, SDL_Color color);
 void				draw_circle(t_sdl *sdl, t_xy coord, int r, SDL_Color color);
 void				draw_ui(t_all *all, t_sdl *sdl, t_button *btn);
 void				draw_sprites(t_all *all, t_sprites *sprites);
-void    			new_sector(t_all *all, int x, int y);
+void    			new_sector(t_all *all, t_sect *temp, int x, int y);
 void				get_neighbours(t_sect *sector, t_all 	*all, int n);
 float				point_side1(float px, float py, t_xy vert, t_xy vert1);
 int					check_sector(t_sect *sect);

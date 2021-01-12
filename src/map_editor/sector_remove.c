@@ -58,15 +58,20 @@ void    drop_neighbors(t_sect *sectors, int *neighbors, int num, int del)
 void    remove_sector(t_all *all, t_sect *sectors)
 {
     t_sect *del;
-    int *temp;/// записать соседейй сюда, удалить сектор, пройтись по этим секторам для поиска соседей. 
 
     del = &all->sectors[all->swap_num];
     if(all->swap_num != -1)
     {
         del_sprites(all, &all->sprites, all->swap_num);
         drop_neighbors(all->sectors, del->neighbors, del->npoints, all->swap_num);
-        free(all->sectors[all->swap_num].vertex);
-        free(all->sectors[all->swap_num].neighbors);
+        free(del->vertex);
+        free(del->neighbors);
+        if (del->graf.g_num > 0)
+        {
+            free(del->graf.coord);
+            free(del->graf.z);
+            free(del->graf.wall);
+        }
 		if (all->num_sectors > 1 && all->swap_num != all->num_sectors - 1)
         {
             all->sectors[all->swap_num] = all->sectors[all->num_sectors - 1];

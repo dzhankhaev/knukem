@@ -74,15 +74,16 @@ void	map_click(t_xyz *mouse, t_all *all, SDL_MouseButtonEvent *event)
 	int x;
 	int y;
 
-	x = all->point.x - all->d.x - ((all->area.w/(2 * all->step)) - round(all->mapsize.x/2));
-	y = all->point.y - all->d.y - ((all->area.h/(2 * all->step)) - round(all->mapsize.y/2));
-	// printf("button[1] = %d\nsprite picked = %d\n", all->buttons[1].state, all->sprites.picked);
-	if(all->buttons[0].state)
+	x = all->point.x - all->d.x - ((all->area.w / (2 * all->step)) -\
+		round(all->mapsize.x / 2));
+	y = all->point.y - all->d.y - ((all->area.h / (2 * all->step)) -\
+		round(all->mapsize.y / 2));
+	if(all->buttons[NEW_SECT].state)
 	{
 		all->temp->floor = all->set_floors.x;
         all->temp->ceil = all->set_floors.y;
 		all->temp->neighbors = NULL;
-        new_sector(all, x, y);
+        new_sector(all, all->temp, x, y);
 	}
     else if(all->buttons[1].state && all->sprites.picked != -1)
 		add_sprite(all, x, y, all->sprites.picked);

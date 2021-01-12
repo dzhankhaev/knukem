@@ -2,9 +2,9 @@
 
 t_xy	*remove_vertex(t_xy *vert, int num, int npoints)
 {
-	int i;
-	int j;
-	t_xy *tmp;
+	int		i;
+	int		j;
+	t_xy	*tmp;
 	
 	i = 0;
 	j = 0;
@@ -25,9 +25,9 @@ t_xy	*remove_vertex(t_xy *vert, int num, int npoints)
 
 int		check_sector_shape(t_sect *sect)
 {
-	t_xy *temp;
-	int i;
-	float side;
+	t_xy	*temp;
+	int		i;
+	float	side;
 
 	i = 0;
 	temp = sect->vertex;
@@ -53,7 +53,6 @@ int		check_sector_shape(t_sect *sect)
 			}
 		}
 	}
-	// printf("ok\n");
 	return 1;
 }
 
