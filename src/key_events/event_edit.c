@@ -6,7 +6,7 @@
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
-/*   Updated: 2021/01/06 07:04:10 by ecelsa           ###   ########.fr       */
+/*   Updated: 2021/01/12 19:35:09 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	event_edit2(t_player *player, t_edit *edit)
 		edit->door = 1;
 	else if (player->event.key.keysym.sym == SDLK_f)
 		edit->door = 2;
+
+	
 }
 
 void	event_edit(t_player *player, t_edit *edit)

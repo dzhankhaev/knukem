@@ -6,7 +6,7 @@
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
-/*   Updated: 2021/01/12 18:10:17 by ecelsa           ###   ########.fr       */
+/*   Updated: 2021/01/12 19:29:16 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ typedef struct	s_hud
 typedef struct	s_inp_hud
 {
 	int				health;
+	int				buttons;
 	int				weapons;
 	int				curr_weap;
 	int				ammo[6];

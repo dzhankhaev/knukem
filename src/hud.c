@@ -6,7 +6,7 @@
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 22:47:49 by ecelsa            #+#    #+#             */
-/*   Updated: 2021/01/12 18:13:26 by ecelsa           ###   ########.fr       */
+/*   Updated: 2021/01/12 20:55:00 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,7 @@ void			put_hud(t_engine *engine)
 	}
 	// if (inp->health != hud->health || inp->weapons != hud->weapon || inp->face != hud->face || inp->fire)
 	{
-		// ft_bzero(engine->screen->pixels,engine->screen->pitch * engine->screen->h);
+		// ft_bzero(engine->hud.scr->pixels,engine->hud.scr->pitch * engine->hud.scr->h);
 		engine->hud.health = inp->health;
 		hud->weapon = inp->weapons;
 		hud->face = inp->face;
@@ -148,6 +148,18 @@ void			put_hud(t_engine *engine)
 			else
 				hud->rect = (SDL_Rect){.x = 111 + (i - 5) * 12, .y = 14};
 			if (inp->weapons & (1 << (i - 1)))
+				SDL_BlitSurface(hud->num_wp_y[i], NULL, hud->scr, &hud->rect);
+			else
+				SDL_BlitSurface(hud->num_wp_g[i], NULL, hud->scr, &hud->rect);
+		}
+		i = 0;
+		while (++i < 10)
+		{
+			if (i < 6)
+				hud->rect = (SDL_Rect){.x = 194 + (i - 2) * 11, .y = 4};
+			else
+				hud->rect = (SDL_Rect){.x = 194 + (i - 7) * 11, .y = 14};
+			if (inp->buttons >= i)
 				SDL_BlitSurface(hud->num_wp_y[i], NULL, hud->scr, &hud->rect);
 			else
 				SDL_BlitSurface(hud->num_wp_g[i], NULL, hud->scr, &hud->rect);
