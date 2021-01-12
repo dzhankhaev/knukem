@@ -147,23 +147,22 @@ void	load_data(t_engine *engine, t_all *all)
 
 void unload_data(t_engine *engine)
 {
-    int	i;
+	int	i;
 
-    i = 0;
-    while (i < engine->num_sectors)
-    {
-        free(engine->sectors[i].vertex);
-        free(engine->sectors[i].neighbors);
-        if (engine->graf[i].g_num > 0)
-        {
-            free(engine->graf[i].wall);
-            free(engine->graf[i].z);
-            free(engine->graf[i].coord);
-        }
-        i++;
-    }
-    free(engine->sectors);
-    free(engine->graf);
-    engine->sectors = NULL;
-    engine->num_sectors = 0;
+	i = 0;
+	while (i < engine->num_sectors)
+	{
+		free(engine->sectors[i].vertex);
+		free(engine->sectors[i].neighbors);
+		if (engine->sectors[i].graf.g_num > 0)
+		{
+			free(engine->sectors[i].graf.wall);
+			free(engine->sectors[i].graf.z);
+			free(engine->sectors[i].graf.coord);
+		}
+		i++;
+	}
+	free(engine->sectors);
+	engine->sectors = NULL;
+	engine->num_sectors = 0;
 }

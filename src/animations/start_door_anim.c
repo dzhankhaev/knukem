@@ -44,9 +44,9 @@ static int	match2(t_engine *engine, int sec, int wall)
 	int	t;
 
 	t = 0;
-	while (t < engine->graf[sec].g_num)
+	while (t < engine->sectors[sec].graf.g_num)
 	{
-		if (engine->graf[sec].wall[t] == wall)
+		if (engine->sectors[sec].graf.wall[t] == wall)
 			return (1);
 		t++;
 	}

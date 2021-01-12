@@ -17,7 +17,7 @@ static void		graf_memalloc(t_engine *engine, int sectorno, int i)
 {
 	t_graf *graf;
 
-	graf = &engine->graf[sectorno];
+	graf = &engine->sectors[sectorno].graf;
 	graf->g_num++;
 	//выделяем память
 	graf->wall = (int *)ft_realloc(graf->wall, sizeof(int) * graf->g_num);
@@ -68,7 +68,7 @@ static void		create_coord(t_engine *engine, int sectorno)
 	t_xy	b;
 	t_fline	c;
 
-	graf = &engine->graf[sectorno];
+	graf = &engine->sectors[sectorno].graf;
 	c = get_coord(graf->coord[graf->g_num - 1]);
 	//проекция
 	a = point_proection(c,
@@ -100,13 +100,13 @@ void			graf_mod(t_engine *engine, int sectorno, int i)
 	//если подана команда на удаление граффити
 	if (engine->edit.graf == 3)
 	{
-		free(engine->graf[sectorno].coord);
-		free(engine->graf[sectorno].z);
-		free(engine->graf[sectorno].wall);
-		engine->graf[sectorno].coord = 0;
-		engine->graf[sectorno].z = 0;
-		engine->graf[sectorno].wall = 0;
-		engine->graf[sectorno].g_num = 0;
+		free(engine->sectors[sectorno].graf.coord);
+		free(engine->sectors[sectorno].graf.z);
+		free(engine->sectors[sectorno].graf.wall);
+		engine->sectors[sectorno].graf.coord = 0;
+		engine->sectors[sectorno].graf.z = 0;
+		engine->sectors[sectorno].graf.wall = 0;
+		engine->sectors[sectorno].graf.g_num = 0;
 		engine->edit.graf = 0;
 	}
 }

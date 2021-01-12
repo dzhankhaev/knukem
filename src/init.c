@@ -52,13 +52,12 @@ void			general_init2(t_engine *engine)
 	int	i;
 
 	i = 0;
-	engine->graf = (t_graf *)malloc(sizeof(t_graf) * (engine->num_sectors));
 	while (i < engine->num_sectors)
 	{
-		engine->graf[i].g_num = 0;
-		engine->graf[i].wall = 0;
-		engine->graf[i].coord = 0;
-		engine->graf[i].z = 0;
+		engine->sectors[i].graf.g_num = 0;
+		engine->sectors[i].graf.wall = 0;
+		engine->sectors[i].graf.coord = 0;
+		engine->sectors[i].graf.z = 0;
 		engine->sectors[i].oldf = engine->sectors[i].floor;
 		if (engine->sectors[i].door > -1)
 			engine->sectors[i].floor += engine->sectors[i].door;

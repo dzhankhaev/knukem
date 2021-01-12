@@ -54,6 +54,15 @@
 # define BAZOOKA 3
 # define PLAYER 4
 
+typedef struct			s_fline		//	стена для вычислений
+{
+	float				x0;
+	float				x1;
+	float				y0;
+	float				y1;
+	Uint32				color;
+}						t_fline;
+
 typedef struct	    s_sdl
 {
     SDL_Window	    *window;
@@ -79,6 +88,14 @@ typedef struct	s_xyz
     float		z;
 }				t_xyz;
 
+typedef struct			s_graf
+{
+	int					g_num;		//	количество граффити в секторе
+	float				*z;			//	высота
+	t_fline				*coord;		//	вектор
+	int					*wall;		//	номер стены сектора
+}						t_graf;
+
 typedef struct		s_sect
 {
     float			floor;
@@ -92,6 +109,7 @@ typedef struct		s_sect
     int				txc;
     int				txw0;
     int				txw1;
+    t_graf			graf;
 
 }					t_sect;
 
@@ -145,7 +163,6 @@ typedef	struct	s_sprites
     int				picked;
     t_xy			swap;
 }				t_sprites;
-
 
 typedef struct      s_all
 {

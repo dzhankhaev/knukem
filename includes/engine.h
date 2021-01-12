@@ -104,15 +104,6 @@ typedef struct			s_line		//	стена для экранных координа�
 	Uint32				color;
 }						t_line;
 
-typedef struct			s_fline		//	стена для вычислений
-{
-	float				x0;
-	float				x1;
-	float				y0;
-	float				y1;
-	Uint32				color;
-}						t_fline;
-
 typedef struct			s_ixyz
 {
 	int 				x;
@@ -147,14 +138,6 @@ typedef struct			s_img
 	SDL_Surface			*tx;
 	char				name[15];
 }						t_img;
-
-typedef struct			s_graf
-{
-	int					g_num;		//	количество граффити в секторе
-	float				*z;			//	высота
-	t_fline				*coord;		//	вектор
-	int					*wall;		//	номер стены сектора
-}						t_graf;
 
 typedef struct			s_temp
 {
@@ -252,7 +235,6 @@ typedef struct			s_engine
 	t_temp				rend_wall;			//используется в rendel_Wall тобы обойти норму
 	t_temp2				rend_plane;			//используется при рендеринге пола и потолка
 	t_img				img[10];
-	t_graf				*graf;				//для каждого сектора создаётся раздел с граффити
 	t_sprites1			*sprites1;
 	t_hud				hud;
 	t_inp_hud			hud_inp;				//для задачи параметров отрисовки HUD

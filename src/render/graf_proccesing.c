@@ -40,7 +40,7 @@ static void	loop_graf(t_engine *engine, t_line w0, t_line w1, int x)
 					(t_line){0, 0, oy0, oy1, 0}, w0.color);
 }
 
-static void	render_graf(t_engine *engine, t_graf graf, t_fline *w, int t)
+static void	render_graf(t_engine *engine, t_graf *graf, t_fline *w, int t)
 {
 	float	z;
 	t_line	w0;
@@ -48,9 +48,9 @@ static void	render_graf(t_engine *engine, t_graf graf, t_fline *w, int t)
 	t_xy	x;
 
 	z = engine->player.where.z;
-	w0 = perspective_transform(*w,z - graf.z[t] + 1,
+	w0 = perspective_transform(*w,z - graf->z[t] + 1,
 						engine->player.vangle, w->color);
-	w1 = perspective_transform(*w,z - graf.z[t] - 1,
+	w1 = perspective_transform(*w,z - graf->z[t] - 1,
 						engine->player.vangle, FLOOR_COLOR);
 	x.x = (float)imax(imin(w0.x0, w0.x1), engine->present->x0);
 	x.y = (float)imin(imax(w1.x0, w1.x1), engine->present->x1);
@@ -71,17 +71,17 @@ static void	render_graf(t_engine *engine, t_graf graf, t_fline *w, int t)
 
 void		graf_proccesing(t_engine *engine, int sectorno, int i)
 {
-	t_graf	graf;
+	t_graf	*graf;
 	t_fline	w;
 	int		t;
 
-	graf = engine->graf[sectorno];
+	graf = &engine->sectors[sectorno].graf;
 	t = 0;
-	while (t < graf.g_num)
+	while (t < graf->g_num)
 	{
-		if (graf.wall[t] == i)
+		if (graf->wall[t] == i)
 		{
-			w = graf.coord[t];
+			w = graf->coord[t];
 			if (transform_wall(engine, &w))
 			{
 				if (engine->edit.door == 2 &&
