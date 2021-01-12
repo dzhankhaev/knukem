@@ -21,7 +21,7 @@ int	mode_switch(t_all *all, int mode)
 		all->threed = 1;
 		normalize(all->sectors, all->num_sectors, all);
 		temp = get_text_surface(all, "Entering 3D!", all->font, RED);
-		draw_texture(all->sdl, (SDL_Rect){W/2 - 175, H/2 - 25, 300, 50}, temp);
+		draw_texture(all->sdl->screen, (SDL_Rect){W/2 - 175, H/2 - 25, 300, 50}, temp);
 		SDL_UpdateWindowSurface(all->sdl->window);
 		SDL_Delay(1000);
 		SDL_FreeSurface(temp);
@@ -29,7 +29,7 @@ int	mode_switch(t_all *all, int mode)
 	else if (all->player.where.z == -1)
 	{
 		temp = get_text_surface(all, "Set player!", all->font, RED);
-		draw_texture(all->sdl, (SDL_Rect){W/2 - 175, H/2 - 25, 300, 50}, temp);
+		draw_texture(all->sdl->screen, (SDL_Rect){W/2 - 175, H/2 - 25, 300, 50}, temp);
 		SDL_UpdateWindowSurface(all->sdl->window);
 		SDL_Delay(1000);
 		SDL_FreeSurface(temp);

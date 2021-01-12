@@ -32,7 +32,7 @@ void	draw_line(t_all *all, t_xy *start, t_xy *fin, SDL_Color color)
 		x = x + dx;
 		y = y + dy;
 		i++;
-		put_pxl(all->sdl, color, x, y);
+		put_pxl(all->sdl->screen, color, x, y);
 	} 	
 }
 
@@ -51,7 +51,7 @@ void	draw_circle(t_sdl *sdl, t_xy coord, int r, SDL_Color col)
 			angle = (2 * M_PI * i)/20;
 			dx = r * cosf(angle);
 			dy = r * sinf(angle);
-			put_pxl(sdl, col, roundf(coord.x + dx), roundf(coord.y + dy));
+			put_pxl(sdl->screen, col, roundf(coord.x + dx), roundf(coord.y + dy));
 			i++;
 		}
 		r--;
@@ -94,7 +94,7 @@ void    draw_fill_rect(t_all *all, SDL_Rect area, SDL_Color color)
         y = area.y;
         while(y < area.y + area.h)
         {
-			put_pxl(all->sdl, color, x, y);
+			put_pxl(all->sdl->screen, color, x, y);
             y++;
         }
         x++;
@@ -113,7 +113,7 @@ Uint32		get_pixel_color1(SDL_Surface *surface, const int x,\
 	return (rgb);
 }
 
-void    draw_texture(t_sdl *sdl, SDL_Rect area, SDL_Surface *txt)
+void    draw_texture(SDL_Surface *screen, SDL_Rect area, SDL_Surface *txt)
 {
     float x;
     float y;
@@ -130,8 +130,8 @@ void    draw_texture(t_sdl *sdl, SDL_Rect area, SDL_Surface *txt)
         while(x < area.w)
         {
             col = get_pixel_color1(txt,kx*x, ky*y);
-			if(col >> 24 != 0 && col ^ 0xFF00FFFF)
-				put_pxl(sdl, (SDL_Color){col >> 16, col >> 8, col, 255}, area.x + x, area.y + y);
+			if(col >> 24 != 0)
+				put_pxl(screen, (SDL_Color){col >> 16, col >> 8, col, 255}, area.x + x, area.y + y);
 			x++;
         }
 		y++;

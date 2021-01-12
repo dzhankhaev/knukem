@@ -210,7 +210,7 @@ void				draw_temp(t_all *all, t_sdl *sdl, t_sect *temp, t_xy delta);//несох
 void				draw_map(t_sdl *sdl, t_sect *sect, t_all *all);
 void				draw_sprite_picked(t_all *all, t_sdl *sdl, t_sprites *sprites, t_xy *c);
 void				draw_grid(t_all *all, SDL_Rect *area, int step);
-void    			draw_texture(t_sdl *sdl, SDL_Rect area, SDL_Surface *txt);
+void    			draw_texture(SDL_Surface *screen, SDL_Rect area, SDL_Surface *txt);
 void    			draw_fill_rect(t_all *all, SDL_Rect area, SDL_Color color);
 void				draw_rect(t_all *all, SDL_Rect area, SDL_Color color, int border);
 void				draw_line(t_all *all, t_xy *start, t_xy *fin, SDL_Color color);
@@ -225,7 +225,7 @@ int					which_sector(t_all *all, t_sect *sectors, t_xyz where);
 t_xy				which_sprite(t_all *all, t_sprites *sprites, t_xyz where);
 void				remove_sector(t_all *all, t_sect *sectors);
 SDL_Surface			*get_text_surface(t_all *all, char *name, TTF_Font *font, SDL_Color color);
-void       			put_pxl(t_sdl *sdl, SDL_Color col, int x, int y);
+void       			put_pxl(SDL_Surface *screen, SDL_Color col, int x, int y);
 void				sprite_remove(t_all *all, t_sprites *sprites, t_xy pos);
 SDL_Surface			*get_texture2(char *file);
 void				init_floors(t_sect *sectors, int num);
