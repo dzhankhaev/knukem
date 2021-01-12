@@ -6,7 +6,7 @@
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
-/*   Updated: 2021/01/06 07:04:10 by ecelsa           ###   ########.fr       */
+/*   Updated: 2021/01/12 18:10:17 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,34 @@
 # define CAMERA_DX 0.01f			//	чувствительность по оси X
 # define VLIMIT 2.5f				//	Граница вертикального поворота
 # define WEAPON_SPRITE_NUM 1		//	Количество спрайтов оружия
+
+typedef struct	s_hud
+{
+	SDL_Surface		*scr;
+	SDL_Rect		rect;
+	int				health;
+	int				weapon;
+	int				face;
+	SDL_Surface		*hud;
+	SDL_Surface		*arms;
+	SDL_Surface		*pis[6];
+	SDL_Surface		*num_h[11];
+	SDL_Surface		*num_wp_g[10];
+	SDL_Surface		*num_wp_y[10];
+	SDL_Surface		*face_s[3];
+}				t_hud;
+
+typedef struct	s_inp_hud
+{
+	int				health;
+	int				weapons;
+	int				curr_weap;
+	int				ammo[6];
+	int				face;
+	int				fire;
+	int 			flag;
+}				t_inp_hud;
+
 
 typedef struct			s_queue
 {
@@ -225,6 +253,8 @@ typedef struct			s_engine
 	t_img				img[10];
 	t_graf				*graf;				//для каждого сектора создаётся раздел с граффити
 	t_sprites1			*sprites1;
+	t_hud				hud;
+	t_inp_hud			hud_inp;				//для задачи параметров отрисовки HUD
 }						t_engine;
 
 void					init_engine(t_engine *engine, t_all *all);
@@ -269,5 +299,8 @@ t_ixyz					tx_plane_mod(t_engine *engine, int sectorno);
 void					door_mod(t_engine *engine, int neighbor, int i);
 void					door_anim(t_engine *engine);
 void					start_door_anim(t_engine *engine, int sec, int nei, int i);
+// void					put_hud(SDL_Surface *scr, t_inp_hud *inp);
+void					put_hud(t_engine *engine);
+void					load_surfaces(const char *dirs, t_hud *hud_);
 
 #endif

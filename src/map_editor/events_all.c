@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   events_all.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sisidra <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:32:36 by sisidra           #+#    #+#             */
-/*   Updated: 2020/11/27 13:32:39 by sisidra          ###   ########.fr       */
+/*   Updated: 2021/01/12 17:48:01 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	mode_switch(t_all *all, int mode)
 		SDL_Delay(1000);
 		SDL_FreeSurface(temp);
 	}
-
+	return(1);
 }
 
 void	key_press(t_all *all)

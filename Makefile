@@ -23,6 +23,7 @@ HEADERS := engine.h\
 SRC := main.c\
 	run_queue.c\
 	init.c\
+	hud.c\
 	lighting.c\
 	transform_wall.c\
 	cut_wall.c\

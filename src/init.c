@@ -6,7 +6,7 @@
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
-/*   Updated: 2021/01/06 07:04:10 by ecelsa           ###   ########.fr       */
+/*   Updated: 2021/01/12 18:11:23 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,9 @@ void			general_init(t_engine *engine)
 	engine->edit.mod_tx = 0;
 	engine->edit.mod = 1;
 	engine->edit.graf = 0;
+	engine->hud_inp = (t_inp_hud){.weapons = 0b11101, .health = 125, .face = 1,
+														.flag = 0, .fire = 0};
+	load_surfaces("textur/", &engine->hud);
 	general_init2(engine);
 	init_minimap(engine);
 }
