@@ -148,10 +148,10 @@ int		transform_sprite(t_engine *engine)
     //printf("\rx0 = %f, y0 = %f, x1 = %f, y1 = %f", cut_sprite.x0, cut_sprite.y0, cut_sprite.x1, cut_sprite.y1);
     //printf("x3 = %f, y3 = %f, x4 = %f, y4 = %f", sprites1->weapon_sprite->cut_sprite_where.x, cut_sprite.y0, cut_sprite.x1, cut_sprite.y1);
     //printf("\r%i", ispointincube(3, engine->player.where, weaponSprites->where, 1));
-    printf("ispc = %i, x = %f, y = %f, z = %f, \t\t\tsprite.X = %f, sprite.y = %f, sprite.z = %f\n",
+    /*printf("ispc = %i, x = %f, y = %f, z = %f, \t\t\tsprite.X = %f, sprite.y = %f, sprite.z = %f\n",
            ispointincube(engine->player.where, weaponSprites->where, (t_xyz){2, 2, 20},0),
            engine->player.where.x, engine->player.where.y, engine->player.where.z,
-           weaponSprites->where.x, weaponSprites->where.y, weaponSprites->where.z);
+           weaponSprites->where.x, weaponSprites->where.y, weaponSprites->where.z);*/
     if (ispointincube(engine->player.where, weaponSprites->where, (t_xyz){10, 10, 26},30)
         || cut_sprite.x0 <= 0 || cut_sprite.x1 <= 0
 		|| cut_sprite.x0 * -K > cut_sprite.y0

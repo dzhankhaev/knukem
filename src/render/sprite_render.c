@@ -1,5 +1,6 @@
 #include "engine.h"
 #include "editor.h"
+#include "utilits.h"
 
 void	normi_sprite(t_sprites1 sprite, t_player player)
 {
@@ -51,6 +52,94 @@ void	perspective_transform2(t_sprites1 sprite, t_player player)
 																	 / sprite.weapon_sprite->cut_rotated_where.x1 * (H >> 1));
 }
 
+/*
+ * Получаем точку (вершину) начала отрезка (края сектора) с которым пересекается отрезок игрок-спрайт
+ * */
+int get_intersection_wall_player_vertex(t_engine *engine, int sectorno)
+{
+    int		i;
+    //int		sectorno;
+    t_fline wall;
+    t_fline plsprline;
+
+    i = 0;
+    //sectorno = engine->present->sectorno;
+    /*
+     * Проверяем все вершины сектора (т.е. все края сектора) на пересечение отрезком игрок-спрайт
+     * */
+    while (i < engine->sectors[sectorno].npoints)
+    {
+        wall = (t_fline){
+                engine->sectors[engine->present->sectorno].vertex[i].x,
+                engine->sectors[engine->present->sectorno].vertex[i + 1].x,
+                engine->sectors[engine->present->sectorno].vertex[i].y,
+                engine->sectors[engine->present->sectorno].vertex[i + 1].y,
+                0};
+        plsprline = (t_fline){engine->player.where.x, engine->sprites1->weapon_sprite->where.x,
+                              engine->player.where.y, engine->sprites1->weapon_sprite->where.y, 0};
+        if (determine_intersection(wall, plsprline))
+            return (i);
+        i++;
+    }
+    /*
+     * Почему-то такие пересечения находятся не всегда /TODO
+     * */
+    return (-1);
+}
+
+/*
+ * Функция проверяет пересечение отрезка игрок-спрайт с отрезком края сектора (отрезок между двумя вершинами)
+ * */
+int is_sprite_visible(t_engine *engine)
+{
+	int wallvertex;
+	int sectorno;
+	int neighbour_sect;
+
+	sectorno = engine->present->sectorno;
+	/*
+	 * Находим точку (вершину) начала отрезка у с которым пересекается отрезок игрок-спрайт
+	 * Иногда такой вершины не находится. Почему - непонятно \TODO
+	 * */
+	if ((wallvertex = get_intersection_wall_player_vertex(engine, sectorno)) < 0)
+	{
+		printf("AAAAAAAAAA\n");
+		return (1);
+	}
+	/*
+	 * Если пересекаемый край сектора стена, то спрайт рендерить не нужно
+	 * */
+	if ((neighbour_sect = engine->sectors[sectorno].neighbors[wallvertex]) < 0)
+	{
+		printf("BBBBBBBBBB\n");
+		return (0);
+	}
+	/*
+	 * Последовательно проверяем все сектора вдоль отрезка игрок-спрайт
+	 * Здесь фризит при пересечении сектора \TODO
+	 * */
+	while (sectorno != engine->sprites1->weapon_sprite->sector)
+	{
+		printf("FREEEEEEEZY\n");
+		if (neighbour_sect < 0)
+		{
+			printf("CCCCCCCCC\n");
+			return (0);
+		}
+		else
+		{
+			sectorno = neighbour_sect;
+			wallvertex = get_intersection_wall_player_vertex(engine, sectorno);
+			neighbour_sect = engine->sectors[sectorno].neighbors[wallvertex];
+		}
+	}
+	/*
+	 * Если пересечения со стеной не произошло, то спрайт виден.
+	 * */
+	printf("DDDDDDDDD\n");
+	return (1);
+}
+
 void	render_sprite(t_engine *engine)
 {
 	t_all temp;
@@ -77,5 +166,9 @@ void	render_sprite(t_engine *engine)
 		|| engine->sprites1->weapon_sprite->rotated_where.x * -K >
 		engine->sprites1->weapon_sprite->rotated_where.y)
 		return ;*/
-	draw_texture(temp.sdl, engine->sprites1->weapon_sprite->dstrect, engine->sprites1->weapon_sprite->texture);
+	/*
+	 * Проверяем видимость спрайта сквозь стены и затем рендерим его
+	 * */
+	if (is_sprite_visible(engine))
+	    draw_texture(temp.sdl, engine->sprites1->weapon_sprite->dstrect, engine->sprites1->weapon_sprite->texture);
 }
