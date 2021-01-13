@@ -75,7 +75,7 @@ void		game_loop(t_engine *engine, t_all *all)
 {
 	int		time;
 
-	engine->player.game_mode = 0;
+	engine->player.game_mode = 1;
 	time = 0;
 	while (!engine->close_request)
 	{
