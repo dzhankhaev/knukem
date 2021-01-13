@@ -24,6 +24,7 @@ SRC := main.c\
 	run_queue.c\
 	init.c\
 	hud.c\
+	scaled.c\
 	lighting.c\
 	transform_wall.c\
 	cut_wall.c\

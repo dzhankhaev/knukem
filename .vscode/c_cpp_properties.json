@@ -3,9 +3,10 @@
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceFolder}/includes/",
+                "${workspaceFolder}/includes/*",
                 "${workspaceFolder}/libft/",
                 "${workspaceFolder}/frameworks/SDL2.framework/Headers/",
+                "${workspaceFolder}/frameworks/",
                 "${workspaceFolder}/frameworks/SDL2_image.framework/Headers/",
                 "${workspaceFolder}/includes"
             ],

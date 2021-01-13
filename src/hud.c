@@ -6,12 +6,13 @@
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 22:47:49 by ecelsa            #+#    #+#             */
-/*   Updated: 2021/01/12 20:55:00 by ecelsa           ###   ########.fr       */
+/*   Updated: 2021/01/13 02:29:46 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "engine.h"
 #include "libft.h"
+// #include "SDL.h"
 
 int				load_hud_face_pis_yenum(t_hud *hud, char *file_name, int len, int i)
 {
@@ -122,18 +123,23 @@ void			put_hud(t_engine *engine)
 	// if (inp->health != hud->health || inp->weapons != hud->weapon || inp->face != hud->face || inp->fire)
 	{
 		// ft_bzero(engine->hud.scr->pixels,engine->hud.scr->pitch * engine->hud.scr->h);
+		// draw_texture()
 		engine->hud.health = inp->health;
 		hud->weapon = inp->weapons;
 		hud->face = inp->face;
-		SDL_BlitSurface(hud->scr, NULL, hud->hud, NULL);
+		
+		// draw_texture(hud->hud,(SDL_Rect){.x = 0, .y =0,.w = hud->hud->w,.h =hud->hud->h},hud->scr);
+		// SDL_BlitSurface(hud->scr, NULL, hud->hud, NULL);
 		if (inp->health / 100 > 0)
 		{
 			hud->rect = (SDL_Rect){.x = 49 + 0 * 14, .y = 4};
-			SDL_BlitSurface(hud->num_h[inp->health / 100], NULL, hud->scr, &hud->rect);
+			blit_scaled(hud->num_h[inp->health / 100], NULL, hud->scr, &hud->rect);
+			// SDL_BlitSurface(hud->num_h[inp->health / 100], NULL, hud->scr, &hud->rect);
 		}
 		hud->rect = (SDL_Rect){.x = 49 + 1 * 14, .y = 4};
-		SDL_BlitSurface(hud->num_h[(inp->health / 10) % 10], NULL,
-														hud->scr, &hud->rect);
+		draw_texture(hud->scr, hud->rect, hud->num_h[(inp->health / 10) % 10]);
+		// SDL_BlitSurface(hud->num_h[(inp->health / 10) % 10], NULL,
+														// hud->scr, &hud->rect);
 		hud->rect = (SDL_Rect){.x = 49 + 2 * 14, .y = 4};
 		SDL_BlitSurface(hud->num_h[inp->health % 10], NULL, hud->scr, &hud->rect);
 		hud->rect = (SDL_Rect){.x = 49 + 3 * 14, .y = 4};
@@ -167,9 +173,14 @@ void			put_hud(t_engine *engine)
 		hud->rect = (SDL_Rect){.x = 148, .y = 2};
 		SDL_BlitSurface(hud->face_s[2], NULL, hud->scr, &hud->rect);
 		coef = scr->w / hud->hud->w;
-		hud->rect = (SDL_Rect){.x = 0, .y = scr->h - scr->w / 10,
+		// hud->rect = (SDL_Rect){.x = 0, .y = scr->h - scr->w / 10,
+		hud->rect = (SDL_Rect){.x = 0, .y = scr->w / 10,
 												.w = scr->w, .h = scr->w / 10};
 		SDL_BlitScaled(hud->scr, NULL, scr, &hud->rect);
+		// ft_bzero(engine->hud.scr->pixels,engine->hud.scr->pitch * engine->hud.scr->h);
+		RESIZE(hud->scr->pixels, engine->screen->pixels,hud->scr->w,hud->scr->h, scr->w, scr->w / 10);
+		hud->rect.y *= 2;
+		draw_texture(scr, hud->rect, hud->scr);
 		hud->rect = (SDL_Rect){.x = (scr->w - hud->pis[b]->w * coef) >> 1,
 					.y = scr->h - scr->w / 10 - hud->pis[b]->h * coef,
 						.w = hud->pis[b]->w * coef, .h = hud->pis[b]->h * coef};

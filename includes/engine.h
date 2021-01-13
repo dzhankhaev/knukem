@@ -6,7 +6,7 @@
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
-/*   Updated: 2021/01/12 19:29:16 by ecelsa           ###   ########.fr       */
+/*   Updated: 2021/01/12 22:54:44 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -303,5 +303,6 @@ void					start_door_anim(t_engine *engine, int sec, int nei, int i);
 // void					put_hud(SDL_Surface *scr, t_inp_hud *inp);
 void					put_hud(t_engine *engine);
 void					load_surfaces(const char *dirs, t_hud *hud_);
+void RESIZE(uint* src, uint* dest, uint ws, uint hs, uint wd, uint hd);
 
 #endif

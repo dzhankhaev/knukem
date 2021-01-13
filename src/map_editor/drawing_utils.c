@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_utils.c                                       :+:      :+:    :+:   */
+/*   drawing_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sisidra <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:32:11 by sisidra           #+#    #+#             */
-/*   Updated: 2020/11/27 13:32:13 by sisidra          ###   ########.fr       */
+/*   Updated: 2021/01/13 19:53:29 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	draw_line(t_all *all, t_xy *start, t_xy *fin, SDL_Color color)
 		x = x + dx;
 		y = y + dy;
 		i++;
-		put_pxl(all->sdl, color, x, y);
+		put_pxl(all->sdl->screen, color, x, y);
 	} 	
 }
 
@@ -51,7 +51,7 @@ void	draw_circle(t_sdl *sdl, t_xy coord, int r, SDL_Color col)
 			angle = (2 * M_PI * i)/20;
 			dx = r * cosf(angle);
 			dy = r * sinf(angle);
-			put_pxl(sdl, col, roundf(coord.x + dx), roundf(coord.y + dy));
+			put_pxl(sdl->screen, col, roundf(coord.x + dx), roundf(coord.y + dy));
 			i++;
 		}
 		r--;
@@ -94,7 +94,7 @@ void    draw_fill_rect(t_all *all, SDL_Rect area, SDL_Color color)
         y = area.y;
         while(y < area.y + area.h)
         {
-			put_pxl(all->sdl, color, x, y);
+			put_pxl(all->sdl->screen, color, x, y);
             y++;
         }
         x++;
@@ -113,12 +113,13 @@ Uint32		get_pixel_color1(SDL_Surface *surface, const int x,\
 	return (rgb);
 }
 
-void    draw_texture(t_sdl *sdl, SDL_Rect area, SDL_Surface *txt)
+void    draw_texture(SDL_Surface *scr, SDL_Rect area, SDL_Surface *txt)
 {
     float x;
     float y;
     Uint32 col;
 	float kx, ky;
+	
 	
 	kx = (float)txt->w / area.w;
 	ky = (float)txt->h / area.h;
@@ -131,7 +132,54 @@ void    draw_texture(t_sdl *sdl, SDL_Rect area, SDL_Surface *txt)
         {
             col = get_pixel_color1(txt,kx*x, ky*y);
 			if(col >> 24 != 0 && col ^ 0xFF00FFFF)
-				put_pxl(sdl, (SDL_Color){col >> 16, col >> 8, col, 255}, area.x + x, area.y + y);
+				put_pxl(scr, (SDL_Color){col >> 16, col >> 8, col, 255}, area.x + x, area.y + y);
+			x++;
+        }
+		y++;
+    }
+}
+
+SDL_Color	get_pt(SDL_Surface *scr, int x, int y)
+{
+	SDL_Color pixel;
+	int		pt_s;
+	uint8_t	*pt;
+	pt_s = scr->format->BytesPerPixel;
+	pt = &scr->pixels[(scr->w * y + x) * pt_s];
+	pixel = (SDL_Color){.a = pt[3], .r = pt[2], .g = pt[1], .b = pt[0]};
+	
+	return(pixel);
+}
+
+void	blit_scaled(SDL_Surface *src, SDL_Rect *srcrect, SDL_Surface *dst,
+															SDL_Rect *dstrect)
+{
+	float x;
+    float y;
+    SDL_Color col;
+	float kx, ky;
+	char	*px;
+	px = dst->pixels;
+	if (srcrect)
+	{
+		kx = srcrect->w / (float)((dstrect->w) ? dstrect->w : dst->w);
+		ky = srcrect->h / (float)((dstrect->h) ? dstrect->h : dst->h);
+	}
+	else
+	{
+		kx = src->w / (float)((dstrect->w) ? dstrect->w : dst->w);
+		ky = src->h / (float)((dstrect->h) ? dstrect->h : dst->h);
+	}
+    y = 0;
+	int i = ((dstrect->h) ? dstrect->h : dst->h);
+    while(y < i)
+    {
+        x = 0;
+        while(x < ((dstrect->w) ? dstrect->w : dst->w))
+        {
+            col = get_pt(src,kx*x, ky*y);
+			// if(col >> 24 != 0 && col ^ 0xFF00FFFF)
+			// 	put_pxl(dst, col, dstrect.x + x, dstrect.y + y);
 			x++;
         }
 		y++;

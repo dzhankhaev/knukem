@@ -1,69 +1,16 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "(lldb) Launch",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/doom-nukem",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "lldb",
-        }
-    ]
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug",
+			"program": "${workspaceFolder}/a.out",
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		}
+	]
 }
-||||||| 1784372
-=======
-{
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "(lldb) Launch",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/arch",
-            "args": [ "${input:componentName}" ],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "lldb"
-        }
-    ],
-    "inputs": [
-        {
-          "type": "pickString",
-          "id": "componentType",
-          "description": "What type of component do you want to create?",
-          "options": [
-            "component",
-            "directive",
-            "pipe",
-            "service",
-            "class",
-            "guard",
-            "interface",
-            "enum",
-            "enum"
-          ],
-          "default": "component"
-        },
-        {
-          "type": "promptString",
-          "id": "componentName",
-          "description": "Name your component.",
-          "default": "files test_pack /Library/Caches/Doom"
-        }
-      ]
-
-}
->>>>>>> master

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_all.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sisidra <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:31:12 by sisidra           #+#    #+#             */
-/*   Updated: 2020/11/27 13:31:42 by sisidra          ###   ########.fr       */
+/*   Updated: 2021/01/13 00:42:04 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	draw_sector_info(t_sect sect, t_sdl *sdl, int n, t_all *all)
 	area = (SDL_Rect){W - 105, 5, 100, 25};
 	num = ft_itoa(n);
 	tmp = get_text_surface(all, ft_strjoin("s e c t o r ", num), all->s_font, YELLOW);
-	draw_texture(sdl, area, tmp);
+	draw_texture(sdl->screen, area, tmp);
 	SDL_FreeSurface(tmp);
 	free(num);
 }
@@ -55,6 +55,8 @@ void	draw_all(t_all *all, t_sdl *sdl, t_button *btn)
 		(round(all->mapsize.y / 2) * all->step) + all->d.y * all->step;
 	draw_area(sdl, all);
 	draw_ui(all, sdl, btn);
+
+	
 	if (all->swap_num != -1)
 		draw_sector_info(all->sectors[all->swap_num], sdl, all->swap_num, all);
 	draw_sprites(all, &all->sprites);

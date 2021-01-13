@@ -77,5 +77,5 @@ void	render_sprite(t_engine *engine)
 		|| engine->sprites1->weapon_sprite->rotated_where.x * -K >
 		engine->sprites1->weapon_sprite->rotated_where.y)
 		return ;*/
-	draw_texture(temp.sdl, engine->sprites1->weapon_sprite->dstrect, engine->sprites1->weapon_sprite->texture);
+	draw_texture(temp.sdl->screen, engine->sprites1->weapon_sprite->dstrect, engine->sprites1->weapon_sprite->texture);
 }

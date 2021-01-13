@@ -6,21 +6,21 @@
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/06 06:30:07 by ecelsa            #+#    #+#             */
-/*   Updated: 2021/01/07 22:28:14 by ecelsa           ###   ########.fr       */
+/*   Updated: 2021/01/13 02:29:36 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef EDITOR_H
 # define EDITOR_H
-
 # ifdef __linux__
-#  include "SDL2/SDL.h"
-#  include "SDL2/SDL_ttf.h"
-#  include "SDL2/SDL_image.h"
-# elif __APPLE__
-#  include <SDL2/SDL.h>
-#  include <SDL2_ttf/SDL_ttf.h>
-#  include <SDL2_image/SDL_image.h>
-# endif
+#   include "SDL2/SDL.h"
+#   include "SDL2/SDL_ttf.h"
+#   include "SDL2/SDL_image.h"
+#  elif __APPLE__
+#   include <SDL2/SDL.h>
+#   include <SDL2_ttf/SDL_ttf.h>
+#   include <SDL2_image/SDL_image.h>
+#  endif
 
 # include <stdio.h>
 # include <stdlib.h>
@@ -193,7 +193,7 @@ void				draw_temp(t_all *all, t_sdl *sdl, t_sect *temp, t_xy delta);//несох
 void				draw_map(t_sdl *sdl, t_sect *sect, t_all *all);
 void				draw_sprite_picked(t_all *all, t_sdl *sdl, t_sprites *sprites, t_xy *c);
 void				draw_grid(t_all *all, SDL_Rect *area, int step);
-void    			draw_texture(t_sdl *sdl, SDL_Rect area, SDL_Surface *txt);
+void    			draw_texture(SDL_Surface *scr, SDL_Rect area, SDL_Surface *txt);
 void    			draw_fill_rect(t_all *all, SDL_Rect area, SDL_Color color);
 void				draw_rect(t_all *all, SDL_Rect area, SDL_Color color, int border);
 void				draw_line(t_all *all, t_xy *start, t_xy *fin, SDL_Color color);
@@ -208,7 +208,7 @@ int					which_sector(t_all *all, t_sect *sectors, t_xyz where);
 t_xy				which_sprite(t_all *all, t_sprites *sprites, t_xyz where);
 void				remove_sector(t_all *all, t_sect *sectors);
 SDL_Surface			*get_text_surface(t_all *all, char *name, TTF_Font *font, SDL_Color color);
-void       			put_pxl(t_sdl *sdl, SDL_Color col, int x, int y);
+void       			put_pxl(SDL_Surface *scr, SDL_Color col, int x, int y);
 void				sprite_remove(t_all *all, t_sprites *sprites, t_xy pos);
 SDL_Surface			*get_texture2(char *file);
 void				init_floors(t_sect *sectors, int num);
@@ -216,5 +216,6 @@ void				normalize(t_sect *sectors, int num, t_all *all);
 int					**get_vertexes(t_all *all);
 int					get_order_num(t_xy coord, int **vert);
 int                 ispointincube(t_xyz point, t_xyz cubecenter, t_xyz borders, float centerzoffset);
+void	            blit_scaled(SDL_Surface *src, SDL_Rect *srcrect, SDL_Surface *dst, SDL_Rect *dstrect);
 
 # endif
