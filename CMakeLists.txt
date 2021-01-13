@@ -165,7 +165,7 @@ add_executable(d-k3d
 		libft/ft_swap.c
 		libft/ft_tolower.c
 		libft/ft_toupper.c
-		libft/get_next_line.c)
+		libft/get_next_line.c src/editor/delete_one_graf.c)
 
 include_directories(d-k3d
 		includes/
