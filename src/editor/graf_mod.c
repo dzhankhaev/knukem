@@ -97,7 +97,7 @@ void			graf_mod(t_engine *engine, int sectorno, int i)
 			create_coord(engine, sectorno);
 		}
 	}
-	//если подана команда на удаление граффити
+	//если подана команда на удаление всех граффити
 	if (engine->edit.graf == 3)
 	{
 		free(engine->sectors[sectorno].graf.coord);
@@ -109,4 +109,6 @@ void			graf_mod(t_engine *engine, int sectorno, int i)
 		engine->sectors[sectorno].graf.g_num = 0;
 		engine->edit.graf = 0;
 	}
+	else if (engine->edit.graf_wall > -1)
+		delete_one_graf(engine, sectorno);
 }

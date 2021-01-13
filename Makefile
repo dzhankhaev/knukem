@@ -37,6 +37,7 @@ SRC := main.c\
 	editor/door_mod.c\
 	editor/real_time_edit.c\
 	editor/graf_mod.c\
+	editor/delete_one_graf.c\
 	editor/tx_mod.c\
 	movement/move.c\
 	movement/fall.c\

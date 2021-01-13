@@ -31,10 +31,15 @@ void	event_edit2(t_player *player, t_edit *edit)
 			edit->mod = 1;
 		else if (player->event.key.keysym.sym == SDLK_g)
 			edit->graf++;
-		else if (player->event.key.keysym.sym == SDLK_DELETE)
+		else if (player->event.key.keysym.sym == SDLK_BACKSPACE)
 			edit->graf = 3;
 		else if (player->event.key.keysym.sym == SDLK_h)
 			edit->door = 1;
+	}
+	else
+	{
+		if (player->event.key.keysym.sym == SDLK_g)
+			edit->graf_wall = -2;
 	}
 	if (player->event.key.keysym.sym == SDLK_f)
 		edit->door = 2;

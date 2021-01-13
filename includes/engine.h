@@ -129,6 +129,7 @@ typedef struct			s_edit
 	int					mod_tx;				//	0 - пол, 1 - потолок, 2 - стена, 3 - нижняя линия раздела, 4 - верхняя, }
 	int					txno;				//	эту текстуру назначим
 	int					graf;				//	0 ничего, 1 режим граффити, 2 поставить граффити, 3 удалить граффити
+	int					graf_wall;
 	int					door;				//	0 ничего, 1 назначить/удалить дверь, 2 закрыть, 3 открыть
 	int					mod;				//
 }						t_edit;
@@ -277,6 +278,7 @@ void					rotate_sprite(t_sprites1 sprite, t_player player);
 void					perspective_transform2(t_sprites1 sprite, t_player player);
 void					graf_proccesing(t_engine *engine, int sectorno, int i);
 void					graf_mod(t_engine *engine, int sectorno, int i);
+void					delete_one_graf(t_engine *engine, int sectorno);
 t_ixyz					tx_wall_mod(t_engine *engine, int sectorno, int i);
 t_ixyz					tx_plane_mod(t_engine *engine, int sectorno);
 void					door_mod(t_engine *engine, int neighbor, int i);

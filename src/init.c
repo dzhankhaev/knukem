@@ -136,4 +136,5 @@ void			init_engine(t_engine *engine, t_all *all)
 	all->player = engine->player;
 	sdl_img(engine);
 	load_sprites(engine);
+//	SDL_SetRelativeMouseMode(SDL_TRUE);
 }

@@ -18,6 +18,7 @@ static void	reset(t_engine *engine)
     engine->edit.door = 0;		//
     if (engine->edit.graf != 1)	//в режиме граффити текстуры помещений менять нельзя
         engine->edit.txno = -1;
+    engine->edit.graf_wall = -1;
 }
 
 static void	draw(t_engine *engine)
@@ -74,7 +75,7 @@ void		game_loop(t_engine *engine, t_all *all)
 {
 	int		time;
 
-	engine->player.game_mode = 1;
+	engine->player.game_mode = 0;
 	time = 0;
 	while (!engine->close_request)
 	{
@@ -95,10 +96,10 @@ void		game_loop(t_engine *engine, t_all *all)
 		door_anim(engine);
 		SDL_UnlockSurface(engine->screen);
 		real_time_edit(engine);
+		put_hud(engine);
 		if (SDL_GetTicks() - time < 32)
 			SDL_Delay(32 - SDL_GetTicks() + time);
 		time = SDL_GetTicks();
-        put_hud(engine);
 		SDL_UpdateWindowSurface(engine->window);
 	}
 }
