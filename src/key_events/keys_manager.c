@@ -6,7 +6,7 @@
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
-/*   Updated: 2021/01/06 07:04:10 by ecelsa           ###   ########.fr       */
+/*   Updated: 2021/01/12 20:55:18 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@ static void		keyboard_event(t_engine *engine, t_player *player, t_edit *edit)
 				engine->player.deep_sh = engine->player.deep_sh ? 0 : 1;
 			else if (player->event.key.keysym.sym == SDLK_ESCAPE)	//	закрытие
 				engine->close_request = 1;
+			else if (player->event.key.keysym.sym == SDLK_KP_PLUS)
+				engine->hud_inp.buttons += (engine->hud_inp.buttons < 9) ? 1 : 0; 
+			else if (player->event.key.keysym.sym == SDLK_KP_MINUS)
+				engine->hud_inp.buttons -= (engine->hud_inp.buttons) ? 1 : 0; 
 		}
 		if (player->event.type == SDL_QUIT)
 			engine->close_request = 1;

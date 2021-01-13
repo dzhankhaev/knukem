@@ -6,7 +6,7 @@
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
-/*   Updated: 2021/01/06 07:04:10 by ecelsa           ###   ########.fr       */
+/*   Updated: 2021/01/12 19:29:16 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,35 @@
 # define VLIMIT 2.5f				//	Граница вертикального поворота
 # define WEAPON_SPRITE_NUM 1		//	Количество спрайтов оружия
 
+typedef struct	s_hud
+{
+	SDL_Surface		*scr;
+	SDL_Rect		rect;
+	int				health;
+	int				weapon;
+	int				face;
+	SDL_Surface		*hud;
+	SDL_Surface		*arms;
+	SDL_Surface		*pis[6];
+	SDL_Surface		*num_h[11];
+	SDL_Surface		*num_wp_g[10];
+	SDL_Surface		*num_wp_y[10];
+	SDL_Surface		*face_s[3];
+}				t_hud;
+
+typedef struct	s_inp_hud
+{
+	int				health;
+	int				buttons;
+	int				weapons;
+	int				curr_weap;
+	int				ammo[6];
+	int				face;
+	int				fire;
+	int 			flag;
+}				t_inp_hud;
+
+
 typedef struct			s_queue
 {
 	int					sectorno;	//	номер сектора
@@ -75,15 +104,6 @@ typedef struct			s_line		//	стена для экранных координа�
 	Uint32				color;
 }						t_line;
 
-typedef struct			s_fline		//	стена для вычислений
-{
-	float				x0;
-	float				x1;
-	float				y0;
-	float				y1;
-	Uint32				color;
-}						t_fline;
-
 typedef struct			s_ixyz
 {
 	int 				x;
@@ -106,7 +126,7 @@ typedef struct			s_edit
 	int					hchange[4];			//	модификаторы высоты пола и потолка
 	int 				mod_s;				//	этот сектор будет модифицирован											}
 	int					mod_w;				//	эта стена будет модифицирована											 }текстуры
-	int					mod_tx;				//	1 - пол, 2 - потолок, 3 - нижняя линия раздела, 4 - верхняя, 0 - стена	}
+	int					mod_tx;				//	0 - пол, 1 - потолок, 2 - стена, 3 - нижняя линия раздела, 4 - верхняя, }
 	int					txno;				//	эту текстуру назначим
 	int					graf;				//	0 ничего, 1 режим граффити, 2 поставить граффити, 3 удалить граффити
 	int					door;				//	0 ничего, 1 назначить/удалить дверь, 2 закрыть, 3 открыть
@@ -118,14 +138,6 @@ typedef struct			s_img
 	SDL_Surface			*tx;
 	char				name[15];
 }						t_img;
-
-typedef struct			s_graf
-{
-	int					g_num;		//	количество граффити в секторе
-	float				*z;			//	высота
-	t_fline				*coord;		//	вектор
-	int					*wall;		//	номер стены сектора
-}						t_graf;
 
 typedef struct			s_temp
 {
@@ -164,6 +176,7 @@ typedef struct			s_vplane
 	int					topy[W];//верхняя координата
 	int					boty[W];//нижняя координата
 	float				z;
+	int					s;		//сектор
 }						t_vplane;
 
 //структура для каждого врага
@@ -222,8 +235,9 @@ typedef struct			s_engine
 	t_temp				rend_wall;			//используется в rendel_Wall тобы обойти норму
 	t_temp2				rend_plane;			//используется при рендеринге пола и потолка
 	t_img				img[10];
-	t_graf				*graf;				//для каждого сектора создаётся раздел с граффити
 	t_sprites1			*sprites1;
+	t_hud				hud;
+	t_inp_hud			hud_inp;				//для задачи параметров отрисовки HUD
 }						t_engine;
 
 void					init_engine(t_engine *engine, t_all *all);
@@ -264,9 +278,12 @@ void					perspective_transform2(t_sprites1 sprite, t_player player);
 void					graf_proccesing(t_engine *engine, int sectorno, int i);
 void					graf_mod(t_engine *engine, int sectorno, int i);
 t_ixyz					tx_wall_mod(t_engine *engine, int sectorno, int i);
-t_ixyz					tx_plane_mod(t_engine *engine, int sectorno, int i);
+t_ixyz					tx_plane_mod(t_engine *engine, int sectorno);
 void					door_mod(t_engine *engine, int neighbor, int i);
 void					door_anim(t_engine *engine);
 void					start_door_anim(t_engine *engine, int sec, int nei, int i);
+// void					put_hud(SDL_Surface *scr, t_inp_hud *inp);
+void					put_hud(t_engine *engine);
+void					load_surfaces(const char *dirs, t_hud *hud_);
 
 #endif

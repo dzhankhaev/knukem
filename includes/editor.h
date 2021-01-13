@@ -54,6 +54,15 @@
 # define BAZOOKA 3
 # define PLAYER 4
 
+typedef struct			s_fline		//	стена для вычислений
+{
+	float				x0;
+	float				x1;
+	float				y0;
+	float				y1;
+	Uint32				color;
+}						t_fline;
+
 typedef struct	    s_sdl
 {
     SDL_Window	    *window;
@@ -79,6 +88,14 @@ typedef struct	s_xyz
     float		z;
 }				t_xyz;
 
+typedef struct			s_graf
+{
+	int					g_num;		//	количество граффити в секторе
+	float				*z;			//	высота
+	t_fline				*coord;		//	вектор
+	int					*wall;		//	номер стены сектора
+}						t_graf;
+
 typedef struct		s_sect
 {
     float			floor;
@@ -88,6 +105,11 @@ typedef struct		s_sect
     unsigned		npoints;		//	Количество соседей
     int				door;			//	-1 не является дверью. Остальное показывает насколько дверь закрыта
     float			oldf;			//	уровень пола, если сектор является дверью
+    int				txf;
+    int				txc;
+    int				txw0;
+    int				txw1;
+    t_graf			graf;
 
 }					t_sect;
 
@@ -142,7 +164,6 @@ typedef	struct	s_sprites
     t_xy			swap;
 }				t_sprites;
 
-
 typedef struct      s_all
 {
     t_player        player;// переменная игрока.
@@ -189,14 +210,14 @@ void				draw_temp(t_all *all, t_sdl *sdl, t_sect *temp, t_xy delta);//несох
 void				draw_map(t_sdl *sdl, t_sect *sect, t_all *all);
 void				draw_sprite_picked(t_all *all, t_sdl *sdl, t_sprites *sprites, t_xy *c);
 void				draw_grid(t_all *all, SDL_Rect *area, int step);
-void    			draw_texture(t_sdl *sdl, SDL_Rect area, SDL_Surface *txt);
+void    			draw_texture(SDL_Surface *screen, SDL_Rect area, SDL_Surface *txt);
 void    			draw_fill_rect(t_all *all, SDL_Rect area, SDL_Color color);
 void				draw_rect(t_all *all, SDL_Rect area, SDL_Color color, int border);
 void				draw_line(t_all *all, t_xy *start, t_xy *fin, SDL_Color color);
 void				draw_circle(t_sdl *sdl, t_xy coord, int r, SDL_Color color);
 void				draw_ui(t_all *all, t_sdl *sdl, t_button *btn);
 void				draw_sprites(t_all *all, t_sprites *sprites);
-void    			new_sector(t_all *all, int x, int y);
+void    			new_sector(t_all *all, t_sect *temp, int x, int y);
 void				get_neighbours(t_sect *sector, t_all 	*all, int n);
 float				point_side1(float px, float py, t_xy vert, t_xy vert1);
 int					check_sector(t_sect *sect);
@@ -204,10 +225,13 @@ int					which_sector(t_all *all, t_sect *sectors, t_xyz where);
 t_xy				which_sprite(t_all *all, t_sprites *sprites, t_xyz where);
 void				remove_sector(t_all *all, t_sect *sectors);
 SDL_Surface			*get_text_surface(t_all *all, char *name, TTF_Font *font, SDL_Color color);
-void       			put_pxl(t_sdl *sdl, SDL_Color col, int x, int y);
+void       			put_pxl(SDL_Surface *screen, SDL_Color col, int x, int y);
 void				sprite_remove(t_all *all, t_sprites *sprites, t_xy pos);
 SDL_Surface			*get_texture2(char *file);
 void				init_floors(t_sect *sectors, int num);
+void				normalize(t_sect *sectors, int num, t_all *all);
+int					**get_vertexes(t_all *all);
+int					get_order_num(t_xy coord, int **vert);
 int                 ispointincube(t_xyz point, t_xyz cubecenter, t_xyz borders, float centerzoffset);
 
 # endif

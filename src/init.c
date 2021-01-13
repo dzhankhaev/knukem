@@ -6,7 +6,7 @@
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
-/*   Updated: 2021/01/06 07:04:10 by ecelsa           ###   ########.fr       */
+/*   Updated: 2021/01/12 19:53:26 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,15 @@ void			general_init2(t_engine *engine)
 	int	i;
 
 	i = 0;
-	engine->graf = (t_graf *)malloc(sizeof(t_graf) * (engine->num_sectors));
 	while (i < engine->num_sectors)
 	{
-		engine->graf[i].g_num = 0;
-		engine->graf[i].wall = 0;
-		engine->graf[i].coord = 0;
-		engine->graf[i].z = 0;
+		engine->sectors[i].graf.g_num = 0;
+		engine->sectors[i].graf.wall = 0;
+		engine->sectors[i].graf.coord = 0;
+		engine->sectors[i].graf.z = 0;
+		engine->sectors[i].oldf = engine->sectors[i].floor;
+		if (engine->sectors[i].door > -1)
+			engine->sectors[i].floor += engine->sectors[i].door;
 		i++;
 	}
 	i = 0;
@@ -82,6 +84,9 @@ void			general_init(t_engine *engine)
 	engine->edit.mod_tx = 0;
 	engine->edit.mod = 1;
 	engine->edit.graf = 0;
+	engine->hud_inp = (t_inp_hud){.weapons = 0b11101, .health = 125, .face = 1,
+											.buttons = 0, .flag = 0, .fire = 0};
+	load_surfaces("textur/", &engine->hud);
 	general_init2(engine);
 	init_minimap(engine);
 }

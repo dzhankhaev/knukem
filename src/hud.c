@@ -6,40 +6,12 @@
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 22:47:49 by ecelsa            #+#    #+#             */
-/*   Updated: 2020/11/17 12:32:48 by ecelsa           ###   ########.fr       */
+/*   Updated: 2021/01/12 20:55:00 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "engine.h"
 #include "libft.h"
-
-typedef struct	s_hud
-{
-	SDL_Surface		*scr;
-	SDL_Rect		rect;
-	int				health;
-	int				weapon;
-	int				face;
-	SDL_Surface		*hud;
-	SDL_Surface		*arms;
-	SDL_Surface		*pis[6];
-	SDL_Surface		*num_h[11];
-	SDL_Surface		*num_wp_g[10];
-	SDL_Surface		*num_wp_y[10];
-	SDL_Surface		*face_s[3];
-}				t_hud;
-
-typedef struct	s_inp_hud
-{
-	int				health;
-	int				weapons;
-	int				curr_weap;
-	int				ammo[6];
-	int				face;
-	int				fire;
-	int 			flag;
-}				t_inp_hud;
-
 
 int				load_hud_face_pis_yenum(t_hud *hud, char *file_name, int len, int i)
 {
@@ -86,47 +58,56 @@ int				load_hud_hnum_gnum(t_hud *hud, char *file_name, int len, int i)
 	return (1);
 }
 
-t_hud			*load_surfaces(const char *dirs)
+void			load_surfaces(const char *dirs, t_hud *hud_)
 {
-	t_hud	*hud;
+	t_hud	hud;
 	char	*file_name;
 	int		len;
-
-	hud = (t_hud*)malloc(sizeof(t_hud));	
-	hud->health = -1;
-	hud->weapon = -1;
-	hud->face = -1;
+	
+	// hud = (t_hud*)malloc(sizeof(t_hud));	
+	hud.health = -1;
+	hud.weapon = -1;
+	hud.face = -1;
 	len = ft_strlen(dirs);
 	file_name = (char*)malloc(len + 13);
 	ft_strcpy(file_name, dirs);
 	ft_strcpy(file_name + len, "STBAR.png");
-	hud->hud = IMG_Load(file_name);
+	hud.hud = IMG_Load(file_name);
 	ft_strcpy(file_name + len, "STARMS.png");
-	hud->arms = IMG_Load(file_name);
-	hud->scr = SDL_CreateRGBSurface(0, 320, 32, 32,
+	hud.arms = IMG_Load(file_name);
+	hud.scr = SDL_CreateRGBSurface(0, 320, 32, 32,
 											0xff0000, 0xff00, 0xff, 0xff000000);
-	SDL_BlitSurface(hud->hud, NULL, hud->scr, NULL);
-	load_hud_face_pis_yenum(hud, file_name, len, -1);
-	load_hud_hnum_gnum(hud, file_name, len, -1);
+	SDL_BlitSurface(hud.hud, NULL, hud.scr, NULL);
+	load_hud_face_pis_yenum(&hud, file_name, len, -1);
+	load_hud_hnum_gnum(&hud, file_name, len, -1);
 	free(file_name);
-	return (hud);
+	*hud_ = hud;
+	// return (hud);
 }
 
-void			put_hud(SDL_Surface *scr, t_inp_hud *inp)
+
+
+// void			put_hud(SDL_Surface *scr, t_inp_hud *inp)
+void			put_hud(t_engine *engine)
 {
-	static t_hud			*hud = NULL;
+	// static t_hud			*hud = NULL;
+	t_hud					*hud;
+	SDL_Surface				*scr;
+	t_inp_hud				*inp;
 	static unsigned int		last_tick = 0;
 	unsigned int			curr_tick;
 	static int				b = 0;
 	int						i;
 	int						coef;
 
-	if (hud == NULL)
-		hud = load_surfaces("textur/");
+	hud = &engine->hud;
+	scr = engine->screen;
+	inp = &engine->hud_inp;
+	// if (hud == NULL)
+	// 	hud = load_surfaces("textur/");
 	if (last_tick == 0)
 		last_tick = SDL_GetTicks();
 	curr_tick = SDL_GetTicks();
-
 	if (curr_tick > (last_tick + 100))
 	{
 		last_tick = curr_tick;
@@ -140,8 +121,8 @@ void			put_hud(SDL_Surface *scr, t_inp_hud *inp)
 	}
 	// if (inp->health != hud->health || inp->weapons != hud->weapon || inp->face != hud->face || inp->fire)
 	{
-		ft_bzero(scr->pixels,scr->pitch * scr->h);
-		hud->health = inp->health;
+		// ft_bzero(engine->hud.scr->pixels,engine->hud.scr->pitch * engine->hud.scr->h);
+		engine->hud.health = inp->health;
 		hud->weapon = inp->weapons;
 		hud->face = inp->face;
 		SDL_BlitSurface(hud->scr, NULL, hud->hud, NULL);
@@ -167,6 +148,18 @@ void			put_hud(SDL_Surface *scr, t_inp_hud *inp)
 			else
 				hud->rect = (SDL_Rect){.x = 111 + (i - 5) * 12, .y = 14};
 			if (inp->weapons & (1 << (i - 1)))
+				SDL_BlitSurface(hud->num_wp_y[i], NULL, hud->scr, &hud->rect);
+			else
+				SDL_BlitSurface(hud->num_wp_g[i], NULL, hud->scr, &hud->rect);
+		}
+		i = 0;
+		while (++i < 10)
+		{
+			if (i < 6)
+				hud->rect = (SDL_Rect){.x = 194 + (i - 2) * 11, .y = 4};
+			else
+				hud->rect = (SDL_Rect){.x = 194 + (i - 7) * 11, .y = 14};
+			if (inp->buttons >= i)
 				SDL_BlitSurface(hud->num_wp_y[i], NULL, hud->scr, &hud->rect);
 			else
 				SDL_BlitSurface(hud->num_wp_g[i], NULL, hud->scr, &hud->rect);

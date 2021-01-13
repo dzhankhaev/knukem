@@ -14,29 +14,38 @@
 
 t_ixyz			tx_wall_mod(t_engine *engine, int sectorno, int i)
 {
-	t_ixyz	txset;
-
-	txset = (t_ixyz){abs(engine->sectors[sectorno].neighbors[i]), 1, 2};
 	//если стена модифицируема и была выбрана текстура и не включен режим граффити
-	if (engine->edit.mod_w != -1 && engine->edit.txno != -1 &&
-	!engine->edit.graf)
+	if (engine->edit.mod_w != -1 && engine->edit.txno != -1 && !engine->edit.graf)
 	{
-		if (engine->sectors[sectorno].neighbors[i] <= -1)
+		if (engine->sectors[sectorno].neighbors[i] <= -1
+		&& engine->edit.mod_tx == 2)
 			engine->sectors[sectorno].neighbors[i] = engine->edit.txno * -1;
-		if (engine->edit.mod_tx == 0)
-			txset = (t_ixyz){abs(engine->sectors[sectorno].neighbors[i]), 1, 2};
 		else if (engine->edit.mod_tx == 3)
-			txset = (t_ixyz){0, engine->edit.txno, 2};
+			engine->sectors[sectorno].txw0 = engine->edit.txno;
 		else if (engine->edit.mod_tx == 4)
-			txset = (t_ixyz){0, 1, engine->edit.txno};
+			engine->sectors[sectorno].txw1 = engine->edit.txno;
 	}
-	return (txset);
+	return ((t_ixyz){abs(engine->sectors[sectorno].neighbors[i]),
+			engine->sectors[sectorno].txw0, engine->sectors[sectorno].txw1});
 }
 
-t_ixyz			tx_plane_mod(t_engine *engine, int sectorno, int i)
+t_ixyz			tx_plane_mod(t_engine *engine, int sectorno)
 {
-	t_ixyz txset;
-
-	txset = (t_ixyz){3, 4, 0};
-	return (txset);
+	//если была выбрана текстура и не включен режим граффити
+	if (engine->edit.txno != -1 && !engine->edit.graf)
+	{
+		if (engine->edit.mod_tx == 0)
+		{
+			engine->sectors[sectorno].txf = engine->edit.txno;
+			engine->edit.txno = -1;
+		}
+		else if (engine->edit.mod_tx == 1)
+		{
+			engine->sectors[sectorno].txc = engine->edit.txno;
+			engine->edit.txno = -1;
+		}
+	}
+	return ((t_ixyz){engine->sectors[engine->vpfloor.s].txf,
+					 engine->sectors[engine->vpfloor.s].txc, 0});
 }
+//изначально должно было ретёрнить по индексу sectorno, но иногда текстура выбиралась неправильно. Почему не смог понять

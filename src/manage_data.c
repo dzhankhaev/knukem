@@ -86,6 +86,12 @@ void	load_sector(t_engine *engine, t_all *all, char **split, t_xy *vert)
         sect->door = ft_atoi(split[4]);
     else
         sect->door = -1;
+	sub = ft_strsplit(split[5], ' ');
+	sect->txf = ft_atoi(sub[0]);
+	sect->txc = ft_atoi(sub[1]);
+	sect->txw0 = ft_atoi(sub[2]);
+	sect->txw1 = ft_atoi(sub[3]);
+	ft_free_split(sub);
 }
 
 void	load_player(t_engine *engine, char **split)
@@ -119,7 +125,7 @@ void	load_data(t_engine *engine, t_all *all)
     vert = NULL;
     vertices = 0;
     *engine = (t_engine){.sectors = NULL, .num_sectors = 0};
-    fd = open("map-clear.txt", O_RDONLY);
+    fd = open("new_map.txt", O_RDONLY);
     *all = (t_all){.mapsize = (t_xyz){0, 0, 0}, .min_coord = (t_xy){0, 0}};
     all->max_coord = (t_xy){0, 0};
     while (get_next_line(fd, &buf))
@@ -141,23 +147,22 @@ void	load_data(t_engine *engine, t_all *all)
 
 void unload_data(t_engine *engine)
 {
-    int	i;
+	int	i;
 
-    i = 0;
-    while (i < engine->num_sectors)
-    {
-        free(engine->sectors[i].vertex);
-        free(engine->sectors[i].neighbors);
-        if (engine->graf[i].g_num > 0)
-        {
-            free(engine->graf[i].wall);
-            free(engine->graf[i].z);
-            free(engine->graf[i].coord);
-        }
-        i++;
-    }
-    free(engine->sectors);
-    free(engine->graf);
-    engine->sectors = NULL;
-    engine->num_sectors = 0;
+	i = 0;
+	while (i < engine->num_sectors)
+	{
+		free(engine->sectors[i].vertex);
+		free(engine->sectors[i].neighbors);
+		if (engine->sectors[i].graf.g_num > 0)
+		{
+			free(engine->sectors[i].graf.wall);
+			free(engine->sectors[i].graf.z);
+			free(engine->sectors[i].graf.coord);
+		}
+		i++;
+	}
+	free(engine->sectors);
+	engine->sectors = NULL;
+	engine->num_sectors = 0;
 }

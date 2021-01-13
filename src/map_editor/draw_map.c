@@ -25,18 +25,12 @@ void	draw_sector(t_sect *sect, t_all *all, SDL_Color color, t_xy delta)
 				(sect->vertex[i].y * all->step) + delta.y};
 		f = (t_xy){(sect->vertex[i + 1].x * all->step) + delta.x, \
 				(sect->vertex[i + 1].y * all->step) + delta.y};
-		// if (all->iso)
-		// {
-		// 	isometric(all, &s, (t_xyz){10, 1, 0}, sect[i].floor - all->mapsize.z/4 * all->step/2);
-		// 	isometric(all, &f, (t_xyz){10, 1, 0}, sect[i].floor - all->mapsize.z/4 * all->step/2);
-		// }
-		
 		if (sect->door >=0)
 			color = color;
 		else
 			color = (sect->neighbors[i] < 0 && i < sect->npoints) ? RED : BLUE;
-		if (sect->floor >= all->draw_floors.x && \
-			sect->floor <= all->draw_floors.y)
+		if (sect->oldf >= all->draw_floors.x && \
+			sect->oldf <= all->draw_floors.y)
 		{
 			draw_line(all, &s, &f, \
 				&all->sectors[all->swap_num] == sect ? YELLOW : color);
@@ -57,7 +51,7 @@ void	draw_doors(t_all *all, t_sect *sectors)
 		temp = &sectors[i];
 		if (temp->door == 0)
 			draw_sector(temp, all, GREEN, all->delta);
-		else if (temp->door == 1)
+		else if (temp->door > 0)
 			draw_sector(temp, all, LAZUR, all->delta);
 		i++;
 	}

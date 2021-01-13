@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   events_all.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sisidra <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:32:36 by sisidra           #+#    #+#             */
-/*   Updated: 2020/11/27 13:32:39 by sisidra          ###   ########.fr       */
+/*   Updated: 2021/01/12 17:48:01 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	mode_switch(t_all *all, int mode)
 	if (all->player.where.z != -1 && mode)
 	{
 		all->threed = 1;
-		init_floors(all->sectors, all->num_sectors);
+		normalize(all->sectors, all->num_sectors, all);
 		temp = get_text_surface(all, "Entering 3D!", all->font, RED);
-		draw_texture(all->sdl, (SDL_Rect){W/2 - 175, H/2 - 25, 300, 50}, temp);
+		draw_texture(all->sdl->screen, (SDL_Rect){W/2 - 175, H/2 - 25, 300, 50}, temp);
 		SDL_UpdateWindowSurface(all->sdl->window);
 		SDL_Delay(1000);
 		SDL_FreeSurface(temp);
@@ -29,12 +29,12 @@ int	mode_switch(t_all *all, int mode)
 	else if (all->player.where.z == -1)
 	{
 		temp = get_text_surface(all, "Set player!", all->font, RED);
-		draw_texture(all->sdl, (SDL_Rect){W/2 - 175, H/2 - 25, 300, 50}, temp);
+		draw_texture(all->sdl->screen, (SDL_Rect){W/2 - 175, H/2 - 25, 300, 50}, temp);
 		SDL_UpdateWindowSurface(all->sdl->window);
 		SDL_Delay(1000);
 		SDL_FreeSurface(temp);
 	}
-
+	return(1);
 }
 
 void	key_press(t_all *all)
@@ -42,7 +42,7 @@ void	key_press(t_all *all)
 	const Uint8	*keystate;
 
 	keystate = SDL_GetKeyboardState(NULL);
-	if (keystate[SDL_SCANCODE_ESCAPE])
+	if (keystate[SDL_SCANCODE_E])
 		mode_switch(all, 1);
 	else if (keystate[SDL_SCANCODE_DELETE])
 		remove_sector(all, all->sectors);

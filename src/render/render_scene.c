@@ -80,6 +80,7 @@ static void		loop(t_engine *engine, int neighbor, t_ixyz t, int i)
 				a->oy[1] = y_for_x(a->wall[5], a->x);
 		if (engine->sectors[engine->present->sectorno].door > -1)
 			a->oy[1] = y_for_x(a->wall[4], a->x);
+
 		render_wall(engine, neighbor, t);
 		a->x += 1;
 	}
@@ -93,7 +94,7 @@ void			render_scene(t_engine *engine, int sectorno, int neighbor, int i)
 	rendering_init(engine, sectorno, neighbor);
 	txset = tx_wall_mod(engine, sectorno, i);
 	loop(engine, neighbor, txset, i);
-	txset = tx_plane_mod(engine, sectorno, i);
+	txset = tx_plane_mod(engine, sectorno);
 	render_hplane(engine, &engine->vpfloor, txset.x);
 	render_hplane(engine, &engine->vpceil, txset.y);
 	graf_proccesing(engine, sectorno, i);

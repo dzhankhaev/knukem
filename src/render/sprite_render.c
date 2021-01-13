@@ -166,9 +166,15 @@ void	render_sprite(t_engine *engine)
 		|| engine->sprites1->weapon_sprite->rotated_where.x * -K >
 		engine->sprites1->weapon_sprite->rotated_where.y)
 		return ;*/
+<<<<<<< HEAD
 	/*
 	 * Проверяем видимость спрайта сквозь стены и затем рендерим его
 	 * */
 	if (is_sprite_visible(engine))
 	    draw_texture(temp.sdl, engine->sprites1->weapon_sprite->dstrect, engine->sprites1->weapon_sprite->texture);
+||||||| f716230
+	draw_texture(temp.sdl, engine->sprites1->weapon_sprite->dstrect, engine->sprites1->weapon_sprite->texture);
+=======
+	draw_texture(temp.sdl->screen, engine->sprites1->weapon_sprite->dstrect, engine->sprites1->weapon_sprite->texture);
+>>>>>>> 28ac88b609aa0686d0a9dc5fa50fcdf55f8579a8
 }

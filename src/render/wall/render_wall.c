@@ -30,7 +30,6 @@ void		render_wall(t_engine *engine, int neighbor, t_ixyz t)
 
 	a = &engine->rend_wall;
 	a->z = engine->player.deep_sh ? deep_shading(engine, a->w, a->x) : 0;
-
 	if (neighbor > -1)
 	{
 		//imin(y[2], y[1]) если потолок соседа ниже пола, то рисуем до пола, иначе до потолка

@@ -36,7 +36,7 @@ void	draw_sprite_picked(t_all *all, t_sdl *sdl, t_sprites *sprites, t_xy *c)
     {
 		loc = (SDL_Rect){all->point.x * all->step + c->x - all->step/2 + all->area.x,
 			 all->point.y * all->step + c->y - all->step/2 + all->area.y, all->step, all->step};
-	    draw_texture(sdl, loc, sprites->buttons[sprites->picked].texture);
+	    draw_texture(sdl->screen, loc, sprites->buttons[sprites->picked].texture);
     }
 }
 
@@ -59,7 +59,7 @@ void    draw_sprite(t_all *all, t_button *sprite, int type)
         {
             if(all->sprites.swap.x == type && all->sprites.swap.y == i)
                 draw_circle(all->sdl, (t_xy){loc.x + all->step/2, loc.y + all->step/2}, all->step/2, YELLOW);
-            draw_texture(all->sdl, loc, texture);
+            draw_texture(all->sdl->screen, loc, texture);
         }
         i++;
     }
@@ -79,13 +79,14 @@ void    add_sprite(t_all *all, int x, int y, int type)
     t_xyz   *coords;
     int sect;
 
+    sect = which_sector(all, all->sectors, (t_xyz){x, y, all->draw_floors.x});
     coords = all->sprites.buttons[type].sprite_coords;
-    if(type == PLAYER && (sect = which_sector(all, all->sectors, (t_xyz){x, y, all->draw_floors.x})) != -1)
+    if(type == PLAYER && sect != -1 && all->sectors[sect].door == -1)
     {
         coords[0] = (t_xyz){x, y, all->draw_floors.x};
         all->player.sector = sect;
     }
-    else if((sect = which_sector(all, all->sectors, (t_xyz){x, y, all->draw_floors.x})) != -1)
+    else if(sect != -1 && all->sectors[sect].door == -1)
     {
         coords = ft_realloc(coords, sizeof(t_xyz) * (++all->sprites.buttons[type].num));
         coords[all->sprites.buttons[type].num - 1] = (t_xyz){x, y, all->draw_floors.x};

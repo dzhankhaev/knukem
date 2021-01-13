@@ -51,32 +51,47 @@ void    validate_sector(t_sect *sect, t_all *all)
 	ft_memdel((void*)&all->temp->vertex);
 }
 
-void    new_sector(t_all *all, int x, int y)
+void	init_new_sector(t_sect *sect, t_sect *temp)
+{
+		sect->npoints = temp->npoints;
+		sect->floor = temp->floor;
+		sect->oldf = temp->floor;
+		sect->ceil = temp->ceil; 
+		sect->door = -1;
+		sect->txf = 1;
+		sect->txc = 1;
+		sect->txw0 = 1;
+		sect->txw1 = 1;
+		sect->graf.g_num = 0;
+		sect->graf.coord = NULL;
+		sect->graf.wall = NULL;
+		sect->graf.z = 0;
+}
+
+void    new_sector(t_all *all, t_sect *temp, int x, int y)
 {
     int i = 0;
+	int *num_sect;
 
-	all->min_coord.x = x < all->min_coord.x ? x : all->min_coord.x;
-	all->min_coord.y = y < all->min_coord.y ? y : all->min_coord.y;
-	all->max_coord.x = x > all->max_coord.x ? x : all->max_coord.x;
-	all->max_coord.y = y > all->max_coord.y ? y : all->max_coord.y;
-    all->temp->vertex = ft_realloc(all->temp->vertex, (++all->temp->npoints) * sizeof(t_xy));
-	all->temp->vertex[all->temp->npoints - 1] = (t_xy){x, y};
-	if (all->temp->vertex[0].x == x && all->temp->vertex[0].y == y && all->temp->npoints != 1)
+	num_sect = &all->num_sectors;
+	all->min_coord.x = fmin(x, all->min_coord.x);
+	all->min_coord.y = fmin(y, all->min_coord.y);
+	all->max_coord.x = fmax(x, all->max_coord.x);
+	all->max_coord.y = fmax(y, all->max_coord.y);
+    temp->vertex = ft_realloc(temp->vertex, (++temp->npoints) * sizeof(t_xy));
+	temp->vertex[temp->npoints - 1] = (t_xy){x, y};
+	if (temp->vertex[0].x == x && temp->vertex[0].y == y && temp->npoints != 1)
 	{
-		all->sectors = ft_realloc(all->sectors, ++(all->num_sectors) * sizeof(t_sect));
-		all->sectors[all->num_sectors - 1].vertex = malloc(sizeof(t_xy) * all->temp->npoints);
-		all->sectors[all->num_sectors - 1].npoints = all->temp->npoints;
-		all->sectors[all->num_sectors - 1].floor = all->temp->floor;
-		all->sectors[all->num_sectors - 1].ceil = all->temp->ceil; 
-		all->sectors[all->num_sectors - 1].door = -1; 
-
-		while( i < all->temp->npoints)
+		all->sectors = ft_realloc(all->sectors, ++(*num_sect) * sizeof(t_sect));
+		all->sectors[*num_sect - 1].vertex = malloc(sizeof(t_xy) * temp->npoints);
+		init_new_sector(&all->sectors[*num_sect - 1], temp);
+		while( i < temp->npoints)
 		{
-			all->sectors[all->num_sectors - 1].vertex[i] = all->temp->vertex[i];
+			all->sectors[*num_sect - 1].vertex[i] = temp->vertex[i];
 			i++;
 		}
-		all->sectors[all->num_sectors - 1].npoints--;
-		validate_sector(&all->sectors[all->num_sectors - 1], all);
-		all->temp->npoints = 0;
+		all->sectors[*num_sect - 1].npoints--;
+		validate_sector(&all->sectors[*num_sect - 1], all);
+		temp->npoints = 0;
 	}
 }

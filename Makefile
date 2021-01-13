@@ -23,6 +23,7 @@ HEADERS := engine.h\
 SRC := main.c\
 	run_queue.c\
 	init.c\
+	hud.c\
 	lighting.c\
 	transform_wall.c\
 	cut_wall.c\
@@ -73,8 +74,10 @@ SRC := main.c\
 	map_editor/events_map.c\
 	map_editor/init.c\
 	map_editor/texture.c\
+	map_editor/prewrite.c\
 	map_editor/write.c\
 	map_editor/pixels.c\
+	map_editor/math.c\
 	map_editor/sector_check.c\
 	map_editor/sector_remove.c\
 	map_editor/sector_neighbors.c\
