@@ -41,7 +41,7 @@ static void	general_moves(t_player *player)
 
 static void	flying(t_player *player)
 {
-	if (player->event.key.keysym.sym == SDLK_v)	//режим полета
+	if (player->game_mode && player->event.key.keysym.sym == SDLK_v)	//режим полета
 	{
 		player->flying = player->event.type == SDL_KEYDOWN;
 		if (player->flying)
@@ -51,7 +51,7 @@ static void	flying(t_player *player)
 			player->velocity.z = VSPEED;//вверх
 		}
 	}
-	else if (player->event.key.keysym.sym == SDLK_c)
+	else if (player->game_mode && player->event.key.keysym.sym == SDLK_c)
 	{
 		player->flying = player->event.type == SDL_KEYDOWN;
 		if (player->flying)
