@@ -144,6 +144,7 @@ typedef	struct	s_player
     float		speed;			//	текущая максимальная скорость
     int			deep_sh;		//	затенение
     SDL_Event	event;
+    int			game_mode;
 }				t_player;
 
 typedef	struct s_labels
