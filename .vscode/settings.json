@@ -1,5 +1,5 @@
 {
-	"editor.rulers": [80],
+	"editor.rulers": [84],
 	"files.associations": {
 		"__hash_table": "c",
 		"__split_buffer": "c",
