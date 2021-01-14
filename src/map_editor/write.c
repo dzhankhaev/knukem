@@ -76,35 +76,6 @@ void    write_sectors(t_all *all, int **vert, int fd)
     }
 }
 
-void    write_sprites(t_sprites *sprites, int fd)
-{
-    int     i;
-    int     j;
-    char    *array[5] = {"gun", "enemy", "aid", "bazooka", "player"};
-    t_xyz   *temp;
-
-    i = 0;
-    while(i < 4)
-    {
-        j = 0;
-        while(j < sprites->buttons[i].num)
-        {
-            temp = sprites->buttons[i].sprite_coords;
-            ft_putstr_fd(array[i], fd);
-            ft_putchar_fd('\t', fd);
-            ft_putnbr_fd((int)temp[j].x, fd);
-            ft_putchar_fd('\t', fd);
-            ft_putnbr_fd((int)temp[j].y, fd);
-            ft_putchar_fd('\t', fd);
-            ft_putnbr_fd((int)temp[j].z, fd);
-            ft_putchar_fd('\n', fd);
-            j++;
-        }
-        i++;
-    }
-}
-
-
 int     write_map(char *name, t_all *all)
 {
     int fd;// для корректной работы, fd должен быть открыт как-то так open("new_map.txt", O_WRONLY | O_CREAT, S_IWUSR | S_IRUSR);
@@ -128,6 +99,5 @@ int     write_map(char *name, t_all *all)
     ft_putnbr_fd(all->player.sector, fd);
     ft_putchar_fd('\n', fd);
     ft_memdel((void*)vert);
-    write_sprites(&all->sprites, fd);
     return (0);
 }

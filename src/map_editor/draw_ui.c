@@ -55,16 +55,6 @@ void	draw_digits(t_sdl *sdl, t_all *all, int x, int y)
 	else if(all->swap_num >= 0)
 		set_level_digits(all, (int)all->sectors[all->swap_num].floor, 
 			(int)all->sectors[all->swap_num].ceil);
-	// {
-	// 	x = (int)all->set_floors.x;
-	// 	y = (int)all->set_floors.y;
-	// 	tmp = get_text_surface(all, ft_itoa(x), all->font, BLUE);
-	// 	draw_texture(sdl, area[2], tmp);
-	// 	SDL_FreeSurface(tmp);
-	// 	tmp = get_text_surface(all, ft_itoa(y), all->font, BLUE);
-	// 	draw_texture(sdl, area[3], tmp);
-	// 	SDL_FreeSurface(tmp);	
-	// }
 }
 
 void	draw_buttons(t_all *all, t_sdl *sdl, t_button *btn, int num)
@@ -91,20 +81,6 @@ void	draw_buttons(t_all *all, t_sdl *sdl, t_button *btn, int num)
 	
 }
 
-void	draw_sprite_buttons(t_all *all, t_sdl *sdl, t_button *buttons)
-{
-	int i;
-
-	i = 0;
-	while(i < 5)
-	{
-		if(buttons[i].state == 1)
-			draw_rect(all, buttons[i].dstrect, GREEN, 3);
-		draw_texture(sdl->screen, buttons[i].dstrect, buttons[i].texture);
-		i++;
-	}
-}
-
 void	draw_labels(t_all *all, t_labels label[5], int num)
 {
 	int i;
@@ -126,7 +102,4 @@ void	draw_ui(t_all *all, t_sdl *sdl, t_button *btn)
 	else
 		draw_labels(all, all->labels, 2);
 	draw_digits(sdl, all, all->draw_floors.x, all->draw_floors.y);
-	//draw_buttons(all, sdl, btn);
-	if(!(all->buttons[NEW_SECT].state))
-		draw_sprite_buttons(all, sdl, all->sprites.buttons);
 }

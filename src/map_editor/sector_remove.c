@@ -1,30 +1,5 @@
 #include "editor.h"
 
-void    del_sprites(t_all *all, t_sprites *sprites, int sect_num)
-{
-    int i;
-    int j;
-    int sprite_sector;
-
-    i = 0;
-    sprite_sector = -1;
-    while(i <= 4)
-    {
-        j = 0;
-        while(j < sprites->buttons[i].num)
-        {
-            sprite_sector = which_sector(all, all->sectors, sprites->buttons[i].sprite_coords[j]);
-            if(sprite_sector == sect_num)
-            {
-                sprite_remove(all, sprites, (t_xy){i, j});
-                printf("del sect = %d sprite sect = %d\n", sect_num, sprite_sector);
-            }
-            j++;
-        }
-        i++;
-    }
-}
-
 void    del_neighbour(int *arr, int len, int num)
 {
     int i;
@@ -62,7 +37,6 @@ void    remove_sector(t_all *all, t_sect *sectors)
     del = &all->sectors[all->swap_num];
     if(all->swap_num != -1)
     {
-        del_sprites(all, &all->sprites, all->swap_num);
         drop_neighbors(all->sectors, del->neighbors, del->npoints, all->swap_num);
         ft_memdel((void*)del->vertex);
         ft_memdel((void*)del->neighbors);

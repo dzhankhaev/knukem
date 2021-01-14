@@ -42,7 +42,6 @@ void	draw_area(t_sdl *sdl, t_all *all)
 			all->point.y * all->step + c.y + all->area.y}, 2, WHITE);
 	if (all->temp->npoints > 0 && all->buttons[0].state == 1)
 		draw_temp(all, sdl, all->temp, all->delta);
-	draw_sprite_picked(all, sdl, &all->sprites, &c);
 }
 
 void	draw_all(t_all *all, t_sdl *sdl, t_button *btn)
@@ -57,5 +56,4 @@ void	draw_all(t_all *all, t_sdl *sdl, t_button *btn)
 	draw_ui(all, sdl, btn);
 	if (all->swap_num != -1)
 		draw_sector_info(all->sectors[all->swap_num], sdl, all->swap_num, all);
-	draw_sprites(all, &all->sprites);
 }

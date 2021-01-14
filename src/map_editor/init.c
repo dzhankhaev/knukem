@@ -53,5 +53,4 @@ void    init_all(t_all *all)
 	// all->player.where.z = all->player.sector;
 	all->iso = 0;
 	all->set_floors = (t_xy){0, 10};
-	all->sprites.picked = -1;
 }
