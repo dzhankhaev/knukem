@@ -32,7 +32,7 @@
 # define FPS 200
 # define PICT_HEIGHT 50
 # define PICT_WIDTH 90
-# define BUTTONS 10
+# define BUTTONS 18
 # define FUNC_BUT 2
 # define OBJ_SIDE 57
 # define EYE_HEIGHT 6
@@ -47,6 +47,16 @@
 # define YELLOW (SDL_Color){255, 255, 33, 255}
 
 # define NEW_SECT 0
+
+# define FLOOR 0
+# define CEIL 1
+# define SHOW 2
+# define FROM 3
+# define TO 4
+# define INVENTORY 5
+# define SPEED 6
+# define GRAVITY 7
+# define AMMO 8
 
 typedef struct			s_fline		//	стена для вычислений
 {
@@ -110,12 +120,22 @@ typedef struct		s_sect
 
 typedef struct      s_button
 {
-    SDL_Surface		*texture;
+    
     SDL_Rect        dstrect;
+    char			*title;
     SDL_Color		color;
     int             state;
-    char			*title;
+    SDL_Surface		*texture;
 }                   t_button;
+
+typedef struct  s_settings
+{
+    int         inventory;
+    int         speed;
+    int         gravity;
+    int         ammo;
+}               t_settings;
+
 
 typedef	struct	s_player
 {
@@ -137,6 +157,7 @@ typedef	struct	s_player
     int			deep_sh;		//	затенение
     SDL_Event	event;
     int			game_mode;
+    t_settings  settings;
 }				t_player;
 
 typedef	struct s_labels
@@ -161,7 +182,7 @@ typedef struct      s_all
     SDL_Color		color;
     TTF_Font		*font;
     TTF_Font		*s_font;
-    t_labels		labels[5];
+    t_labels		labels[9];
     t_xy			draw_floors;//уровни отрисовки этажей
     t_xy			set_floors;//установка высоты нового сектора
     t_xyint			point;//координаты ближайшей точки курсора
@@ -187,6 +208,7 @@ int					load_buttons(t_all *all, t_button *btn);
 void                draw_all(t_all *all, t_sdl *sdl, t_button *btn);//отрисовка
 int					write_map(char *name, t_all *all);
 void				draw_temp(t_all *all, t_sdl *sdl, t_sect *temp, t_xy delta);//несохраненный сектор
+void                draw_player(t_all *all, t_sdl *sdl, t_player *player, t_xy *c);
 void				draw_map(t_sdl *sdl, t_sect *sect, t_all *all);
 void				draw_grid(t_all *all, SDL_Rect *area, int step);
 void    			draw_texture(SDL_Surface *screen, SDL_Rect area, SDL_Surface *txt);
@@ -201,7 +223,7 @@ float				point_side1(float px, float py, t_xy vert, t_xy vert1);
 int					check_sector(t_sect *sect);
 int					which_sector(t_all *all, t_sect *sectors, t_xyz where);
 void				remove_sector(t_all *all, t_sect *sectors);
-SDL_Surface			*get_text_surface(t_all *all, char *name, TTF_Font *font, SDL_Color color);
+SDL_Surface			*get_text_surface(char *name, TTF_Font *font, SDL_Color color);
 void       			put_pxl(SDL_Surface *screen, SDL_Color col, int x, int y);
 SDL_Surface			*get_texture2(char *file);
 void				init_floors(t_sect *sectors, int num);

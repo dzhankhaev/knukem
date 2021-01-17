@@ -57,6 +57,20 @@ void	draw_doors(t_all *all, t_sect *sectors)
 	}
 }
 
+void	draw_player(t_all *all, t_sdl *sdl, t_player *player, t_xy *c)
+{
+	SDL_Rect loc;
+
+	if (all->player.picked == 0 && all->player.sector != -1)
+		loc = (SDL_Rect){(player->where.x * all->step) + all->delta.x - all->step/2,
+		 (player->where.y * all->step) + all->delta.y - all->step/2,
+	 		 all->step, all->step};
+	else if (all->player.picked == 1)
+		loc = (SDL_Rect){all->point.x * all->step + c->x - all->step/2 + all->area.x,
+			 all->point.y * all->step + c->y - all->step/2 + all->area.y, all->step, all->step};
+	draw_texture(sdl->screen, loc, player->picture);
+}
+
 void	draw_map(t_sdl *sdl, t_sect *sect, t_all *all)
 {
 	int		i;

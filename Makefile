@@ -126,7 +126,7 @@ $(FT_LIB):
 	@make -C $(FT)
 
 $(NAME) : $(OBJP)
-			@gcc -g $(FLAG) $(OBJP) $(FT_INC) $(FT_LNK) $(INC) $(SDL)  $(LIB) -o $(NAME)
+			@gcc $(FLAG) $(OBJP) $(FT_INC) $(FT_LNK) $(INC) $(SDL)  $(LIB) -o $(NAME)
 			@echo "$(CLEAR_LINE)$(BLUE_FONT)[$(NAME)] $(YELLOW_FONT)Finished compilation. Output file : $(VIOLET_FONT)$(PWD)/$(NAME)$(RESET_FORM)"
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADERSP)

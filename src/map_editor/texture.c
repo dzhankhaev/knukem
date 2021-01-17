@@ -26,33 +26,41 @@ SDL_Surface     *get_texture2(char *file)
 	return(surface);
 }
 
-SDL_Surface	*get_text_surface(t_all *all, char *name, TTF_Font *font, SDL_Color color)
+SDL_Surface	*get_text_surface(char *name, TTF_Font *font, SDL_Color color)
 {
     SDL_Surface *text;
-	int 		shift;
-    
-	shift = 15 * ft_strlen(name);
-    //text = SDL_CreateRGBSurface(1, target.w, target.h, 32 , 255, 255, 0, 0);
     if(!(text = TTF_RenderText_Blended(font, name, color)))
-        printf("text printing error!\n");
-    // free(&name);
-	return(text);
+        error_and_close(__FILE__, __FUNCTION__);
+	  return(text);
 }
 
 int             extra_buttons(t_all *all, t_button *buttons)
-{
-    buttons[6].dstrect = (SDL_Rect){25, H * 0.46, 50, 50};
-    buttons[6].title = ft_strdup(" - ");
-    buttons[6].color = WHITE;
-    buttons[7].dstrect = (SDL_Rect){(W / 4 - 4) - 75, H * 0.46, 50, 50};
-    buttons[7].title = ft_strdup(" + ");
-    buttons[7].color = WHITE;
-    buttons[8].dstrect = (SDL_Rect){25, H * 0.58, 50, 50};
-    buttons[8].title = ft_strdup(" - ");
-    buttons[8].color = WHITE;
-    buttons[9].dstrect = (SDL_Rect){(W / 4 - 4) - 75, H * 0.58, 50, 50};
-    buttons[9].title = ft_strdup(" + ");
-    buttons[9].color = WHITE;
+{    
+    buttons[6] = (t_button){(SDL_Rect){W / 4 - 150, H * 0.15, 50, 50},\
+		ft_strdup(" - "), WHITE};//inventory
+    buttons[7] = (t_button){(SDL_Rect){W / 4 - 50, H * 0.15, 50, 50},\
+		ft_strdup(" + "), WHITE};//inventory
+    buttons[8] = (t_button){(SDL_Rect){W / 4 - 150, H * 0.21, 50, 50},\
+		ft_strdup(" - "), WHITE};//speed
+    buttons[9] = (t_button){(SDL_Rect){W / 4 - 50, H * 0.21, 50, 50},\
+		ft_strdup(" + "), WHITE};//speed
+    buttons[10] = (t_button){(SDL_Rect){W / 4 - 150, H * 0.27, 50, 50},\
+		ft_strdup(" - "), WHITE};//gravity
+    buttons[11] = (t_button){(SDL_Rect){W / 4 - 50, H * 0.27, 50, 50},\
+		ft_strdup(" + "), WHITE};//gravity
+    buttons[12] = (t_button){(SDL_Rect){W / 4 - 150, H * 0.33, 50, 50},\
+		ft_strdup(" - "), WHITE};//ammo
+    buttons[13] = (t_button){(SDL_Rect){W / 4 - 50, H * 0.33, 50, 50},\
+		ft_strdup(" + "), WHITE};//ammo
+    buttons[14] = (t_button){(SDL_Rect){25, H * 0.46, 50, 50},\
+		ft_strdup(" - "), WHITE};
+    buttons[15] = (t_button){(SDL_Rect){(W / 4 - 4) - 75, H * 0.46, 50, 50},\
+		ft_strdup(" + "), WHITE};
+    buttons[16] = (t_button){(SDL_Rect){25, H * 0.58, 50, 50},\
+		ft_strdup(" - "), WHITE};
+    buttons[17] = (t_button){(SDL_Rect){(W / 4 - 4) - 75, H * 0.58, 50, 50},\
+		ft_strdup(" + "), WHITE};
+	  
     return 0;
 }
 
@@ -60,22 +68,18 @@ int             load_buttons(t_all *all, t_button *buttons)
 {
     int i;
 
-    buttons[0].dstrect = (SDL_Rect){W / 16, H * 0.01, W/8, 50};
-    buttons[0].title = ft_strdup("NEW SECTOR");
-    buttons[1].dstrect = (SDL_Rect){W/16, H * 0.1, W/8, 50};
-    buttons[1].title = ft_strdup("SET SPRITE");
-    buttons[2].dstrect = (SDL_Rect){25, H * 0.75, 50, 50};
-    buttons[2].title = ft_strdup(" - ");
-    buttons[2].color = WHITE;
-    buttons[3].dstrect = (SDL_Rect){(W / 4 - 4) - 75, H * 0.75, 50, 50};
-    buttons[3].title = ft_strdup(" + ");
-    buttons[3].color = WHITE;
-    buttons[4].dstrect = (SDL_Rect){25, H * 0.86, 50, 50};
-    buttons[4].title = ft_strdup(" - ");
-    buttons[4].color = WHITE;
-    buttons[5].dstrect = (SDL_Rect){(W / 4 - 4) - 75, H * 0.86, 50, 50};
-    buttons[5].title = ft_strdup(" + ");
-    buttons[5].color = WHITE;
+	buttons[0] = (t_button){(SDL_Rect){W / 16, H * 0.01, W / 8, 50},\
+		ft_strdup("NEW SECTOR")};
+    buttons[1] = (t_button){(SDL_Rect){W/16, H * 0.07, W/8, 50},\
+		ft_strdup("SET PLAYER")};
+    buttons[2] = (t_button){(SDL_Rect){25, H * 0.75, 50, 50},\
+		ft_strdup(" - "), WHITE};
+    buttons[3] = (t_button){(SDL_Rect){(W / 4 - 4) - 75, H * 0.75, 50, 50},\
+		ft_strdup(" + "), WHITE};
+    buttons[4] = (t_button){(SDL_Rect){25, H * 0.86, 50, 50},\
+		ft_strdup(" - "), WHITE};
+    buttons[5] = (t_button){(SDL_Rect){(W / 4 - 4) - 75, H * 0.86, 50, 50},\
+		ft_strdup(" + "), WHITE};
     extra_buttons(all, buttons);
     i = 0;
     while(i < BUTTONS)
@@ -85,16 +89,24 @@ int             load_buttons(t_all *all, t_button *buttons)
 
 int             load_labels(t_all *all, t_labels *labels)
 {
-    labels[0].dst = (SDL_Rect){W / 16, H * 0.4, W / 8, 50};
-    labels[0].surf = get_text_surface(all, "FLOOR HEIGHT", all->font, BLACK);
-    labels[1].dst = (SDL_Rect){W / 16, H * 0.52, W / 8, 50};
-    labels[1].surf = get_text_surface(all, "CEIL HEIGHT", all->font, BLACK);
-    labels[2].dst = (SDL_Rect){W / 16, H * 0.68, W / 8, 50};
-    labels[2].surf = get_text_surface(all, "SHOW FLOORS", all->font, BLACK);
-    labels[3].dst = (SDL_Rect){W / 16 + W / 96, H * 0.81 , W / 10, 30};
-    labels[3].surf = get_text_surface(all, "FROM", all->font, BLACK);
-    labels[4].dst = (SDL_Rect){W / 11 , H * 0.92, W / 16, 30};
-    labels[4].surf = get_text_surface(all, "TO", all->font, BLACK);
+    labels[FLOOR].dst = (SDL_Rect){W / 16, H * 0.4, W / 8, 50};
+    labels[FLOOR].surf = get_text_surface("FLOOR HEIGHT", all->font, BLACK);
+    labels[CEIL].dst = (SDL_Rect){W / 16, H * 0.52, W / 8, 50};
+    labels[CEIL].surf = get_text_surface("CEIL HEIGHT", all->font, BLACK);
+    labels[SHOW].dst = (SDL_Rect){W / 16, H * 0.68, W / 8, 50};
+    labels[SHOW].surf = get_text_surface("SHOW FLOORS", all->font, BLACK);
+    labels[FROM].dst = (SDL_Rect){W / 16 + W / 96, H * 0.81 , W / 10, 30};
+    labels[FROM].surf = get_text_surface("FROM", all->font, BLACK);
+    labels[TO].dst = (SDL_Rect){W / 11 , H * 0.92, W / 16, 30};
+    labels[TO].surf = get_text_surface("TO", all->font, BLACK);
+    labels[INVENTORY].dst = (SDL_Rect){15, H * 0.17, W / 10, 30};
+    labels[INVENTORY].surf = get_text_surface("INV.size", all->font, BLACK);
+    labels[SPEED].dst = (SDL_Rect){15, H * 0.23, W / 10, 30};
+    labels[SPEED].surf = get_text_surface("SPEED", all->font, BLACK);
+    labels[GRAVITY].dst = (SDL_Rect){15, H * 0.29 , W / 10, 30};
+    labels[GRAVITY].surf = get_text_surface("GRAVITY", all->font, BLACK);
+    labels[AMMO].dst = (SDL_Rect){15 , H * 0.35, W / 10, 30};
+    labels[AMMO].surf = get_text_surface("AMMO", all->font, BLACK);
     
     return(1);
 

@@ -16,23 +16,24 @@ int	mode_switch(t_all *all, int mode)
 {
 	SDL_Surface *temp;
 
-	if (all->player.where.z != -1 && mode)
+	if (all->player.sector != -1 && mode)
 	{
 		all->threed = 1;
 		normalize(all->sectors, all->num_sectors, all);
-		temp = get_text_surface(all, "Entering 3D!", all->font, RED);
+		temp = get_text_surface("Entering 3D!", all->font, RED);
 		draw_texture(all->sdl->screen, (SDL_Rect){W/2 - 175, H/2 - 25, 300, 50}, temp);
 		SDL_UpdateWindowSurface(all->sdl->window);
 		SDL_Delay(1000);
 		SDL_FreeSurface(temp);
 	}
-	else if (all->player.where.z == -1)
+	else if (all->player.sector == -1)
 	{
-		temp = get_text_surface(all, "Set player!", all->font, RED);
+		temp = get_text_surface("Set player!", all->font, RED);
 		draw_texture(all->sdl->screen, (SDL_Rect){W/2 - 175, H/2 - 25, 300, 50}, temp);
 		SDL_UpdateWindowSurface(all->sdl->window);
 		SDL_Delay(1000);
 		SDL_FreeSurface(temp);
+		return (0);
 	}
 	return(1);
 }
@@ -109,7 +110,7 @@ void	button_click(t_all *all, t_button *buttons, SDL_MouseButtonEvent *event, in
 		}
 		i++;
 	}
-	// all->player.picked = buttons[1].state == 1 ? 1 : 0;
+	all->player.picked = buttons[1].state == 1 ? 1 : 0;
 }
 
 void	closest_point(t_all *all, t_xyint point)
@@ -117,7 +118,7 @@ void	closest_point(t_all *all, t_xyint point)
 	t_xy	   c;
 
 	c = (t_xy){(all->area.w / 2) % all->step, (all->area.h / 2) % all->step};
-	if(all->player.picked != -1)
+	if(all->player.picked)
 	{
 		all->point.x = ((float)point.x - all->area.x - c.x) / all->step;
 		all->point.y = ((float)point.y - all->area.y - c.y) / all->step;
@@ -132,16 +133,18 @@ void	closest_point(t_all *all, t_xyint point)
 
 void	sprite_click(t_all *all, t_button *buttons, SDL_MouseButtonEvent *event, int i)
 {
-	int	dx;
-	int	dy;
+	int			dx;
+	int			dy;
+	SDL_Rect	target;
 
 	while(i < 5)
 	{
-		dx = event->x - buttons[i].dstrect.x;
-		dy = event->y - buttons[i].dstrect.y;
+		target = buttons[i].dstrect;
+		dx = event->x - target.x;
+		dy = event->y - target.y;
 		if(all->mouse.z == 1)
 		{
-			if(dx > 0 && dy > 0 && dx < buttons[i].dstrect.w && dy < buttons[i].dstrect.h)
+			if(dx > 0 && dy > 0 && dx < target.w && dy < target.h)
 				buttons[i].state = buttons[i].state == 1 ? 0 : 1;
 			else
 				buttons[i].state = 0;

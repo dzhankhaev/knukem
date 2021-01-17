@@ -23,10 +23,10 @@ void	set_level_digits(t_all *all, int x, int y)
 	cy = ft_itoa(y);
 	area[0] = (SDL_Rect){W / 11, H * 0.46, W / 16, 50};
 	area[1] = (SDL_Rect){W / 11, H * 0.58, W / 16, 50};
-	tmp = get_text_surface(all, cx, all->font, BLUE);
+	tmp = get_text_surface(cx, all->font, BLUE);
 	draw_texture(all->sdl->screen, area[0], tmp);
 	SDL_FreeSurface(tmp);
-	tmp = get_text_surface(all, cy, all->font, BLUE);
+	tmp = get_text_surface(cy, all->font, BLUE);
 	draw_texture(all->sdl->screen, area[1], tmp);
 	SDL_FreeSurface(tmp);
 	free(cx);
@@ -44,10 +44,10 @@ void	draw_digits(t_sdl *sdl, t_all *all, int x, int y)
 	// area[3] = (SDL_Rect){W / 11, H * 0.58, W / 16, 50};
 	x = (int)all->draw_floors.x;
 	y = (int)all->draw_floors.y;
-	tmp = get_text_surface(all, ft_itoa(x), all->font, BLUE);
+	tmp = get_text_surface(ft_itoa(x), all->font, BLUE);
 	draw_texture(sdl->screen, area[0], tmp);
 	SDL_FreeSurface(tmp);
-	tmp = get_text_surface(all, ft_itoa(y), all->font, BLUE);
+	tmp = get_text_surface(ft_itoa(y), all->font, BLUE);
 	draw_texture(sdl->screen, area[1], tmp);
 	SDL_FreeSurface(tmp);
 	if (all->buttons[0].state == 1)
@@ -68,7 +68,7 @@ void	draw_buttons(t_all *all, t_sdl *sdl, t_button *btn, int num)
 	{ 
 		btn[i].color = btn[i].state == 1 ? RED : btn[i].color;
 		
-		btn[i].texture = get_text_surface(all, btn[i].title, all->font, btn[i].color);
+		btn[i].texture = get_text_surface(btn[i].title, all->font, btn[i].color);
 		draw_texture(sdl->screen, btn[i].dstrect, btn[i].texture);
 		if (i >= 2)
 		{
@@ -80,18 +80,51 @@ void	draw_buttons(t_all *all, t_sdl *sdl, t_button *btn, int num)
     }
 	
 }
+void	draw_label(t_all *all, char *name, SDL_Rect area, SDL_Color color)
+{
+	SDL_Surface *surf;
+
+	surf = get_text_surface(name, all->font, BLUE);
+	draw_texture(all->sdl->screen, area, surf);
+	SDL_FreeSurface(surf);
+}
 
 void	draw_labels(t_all *all, t_labels label[5], int num)
 {
 	int i;
 
 	i = num;
-	while(i < 5)
+	while(i < 9)
 	{
 		draw_texture(all->sdl->screen, label[i].dst, label[i].surf);
 		i++;
 	}
 	draw_buttons(all, all->sdl, all->buttons, num);
+}
+
+void	draw_setting_digits(t_all *all, t_settings *settings)
+{
+	char		*digit;
+	SDL_Rect	area;
+
+	digit = NULL;
+	digit = ft_itoa(settings->inventory);
+	area = (SDL_Rect){W / 4 - 100, H * 0.15, 50, 50};
+	draw_label(all, digit, area, BLUE);
+	ft_memdel((void*)&digit);
+	digit = ft_itoa(settings->speed);
+	area = (SDL_Rect){W / 4 - 100, H * 0.21, 50, 50};
+	draw_label(all, digit, area, BLUE);
+	ft_memdel((void*)&digit);
+	digit = ft_itoa(settings->gravity);
+	area = (SDL_Rect){W / 4 - 100, H * 0.27, 50, 50};
+	draw_label(all, digit, area, BLUE);
+	ft_memdel((void*)&digit);
+	digit = ft_itoa(settings->ammo);
+	area = (SDL_Rect){W / 4 - 100, H * 0.33, 50, 50};
+	draw_label(all, digit, area, BLUE);
+	ft_memdel((void*)&digit);
+
 }
 
 void	draw_ui(t_all *all, t_sdl *sdl, t_button *btn)
@@ -102,4 +135,5 @@ void	draw_ui(t_all *all, t_sdl *sdl, t_button *btn)
 	else
 		draw_labels(all, all->labels, 2);
 	draw_digits(sdl, all, all->draw_floors.x, all->draw_floors.y);
+	draw_setting_digits(all, &all->player.settings);
 }

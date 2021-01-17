@@ -38,6 +38,38 @@ void	select_sector(t_all *all, int x, int y, SDL_MouseButtonEvent *event)
 	
 }
 
+void		set_player(int x, int y, t_all *all)
+{
+	t_xyz	where;
+	int		sect;
+
+	where = (t_xyz){x, y, all->draw_floors.x};
+	sect = which_sector(all, all->sectors, where);
+	if(sect != -1)
+	{
+		if(all->sectors[sect].ceil - all->sectors[sect].floor > 6 &&\
+			all->sectors[sect].door == -1)
+		{
+			all->player.where = where;
+			all->player.sector = sect;
+			all->player.picked = 0;
+			all->buttons[1].state = 0;
+			all->buttons[1].color = WHITE;
+		}
+	}
+}
+
+int		pre_check(t_all *all, t_xyz point, t_sect *sect)
+{
+	int res;
+
+	if(sect->npoints > 0)
+		if(point.x == sect->vertex[sect->npoints - 1].x &&\
+			point.y == sect->vertex[sect->npoints - 1].y)
+			return (0);
+	return(1);
+}
+
 void	map_click(t_xyz *mouse, t_all *all, SDL_MouseButtonEvent *event)
 {
 	int x;
@@ -52,8 +84,11 @@ void	map_click(t_xyz *mouse, t_all *all, SDL_MouseButtonEvent *event)
 		all->temp->floor = all->set_floors.x;
         all->temp->ceil = all->set_floors.y;
 		all->temp->neighbors = NULL;
-        new_sector(all, all->temp, x, y);
+		if(pre_check(all, (t_xyz){x, y, all->draw_floors.x}, all->temp))
+        	new_sector(all, all->temp, x, y);
 	}
+	else if(all->player.picked)
+		set_player(x, y, all);
 	else
 		select_sector(all, x, y, event);
 }

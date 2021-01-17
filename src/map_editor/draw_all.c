@@ -23,7 +23,7 @@ void	draw_sector_info(t_sect sect, t_sdl *sdl, int n, t_all *all)
 	str = NULL;
 	area = (SDL_Rect){W - 105, 5, 100, 25};
 	num = ft_itoa(n);
-	tmp = get_text_surface(all, ft_strjoin("s e c t o r ", num), all->s_font, YELLOW);
+	tmp = get_text_surface(ft_strjoin("s e c t o r ", num), all->s_font, YELLOW);
 	draw_texture(sdl->screen, area, tmp);
 	SDL_FreeSurface(tmp);
 	free(num);
@@ -42,6 +42,7 @@ void	draw_area(t_sdl *sdl, t_all *all)
 			all->point.y * all->step + c.y + all->area.y}, 2, WHITE);
 	if (all->temp->npoints > 0 && all->buttons[0].state == 1)
 		draw_temp(all, sdl, all->temp, all->delta);
+	draw_player(all, sdl, &all->player, &c);
 }
 
 void	draw_all(t_all *all, t_sdl *sdl, t_button *btn)
