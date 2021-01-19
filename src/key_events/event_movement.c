@@ -71,7 +71,7 @@ static void	additional(t_player *player)
 		player->falling = 1;		//активируем ускорение для плавного падения
 		player->eyeheight = EYE_HEIGHT -
 							(player->event.type == SDL_KEYDOWN) * DSIT_HEIGHT;	//изменяем высоту взгляда
-		player->speed = MOVE_SPEED +
+		player->speed = player->move_speed +
 						(player->event.type == SDL_KEYDOWN) * DSIT_SPEED;	//изменяем скорость
 	}
 	else if (player->event.key.keysym.sym == SDLK_x)	//падение на живот
@@ -80,15 +80,15 @@ static void	additional(t_player *player)
 		player->falling = 1;
 		player->eyeheight = EYE_HEIGHT -
 							(player->event.type == SDL_KEYDOWN) * DFALL_HEIGHT;
-		player->speed = MOVE_SPEED +
+		player->speed = player->move_speed +
 						(player->event.type == SDL_KEYDOWN) * DFALL_SPEED;
 	}
 	else if (player->event.key.keysym.sym == SDLK_LSHIFT
-			&& (player->speed == MOVE_SPEED
-			|| player->speed == MOVE_SPEED + DSPRINT_SPEED)) //	только когда игрок стоит или бежит
+		&& (player->speed == player->move_speed || player->speed ==
+		player->move_speed + (((float)player->settings.speed / 100.f) * 0.3f))) //	только когда игрок стоит или бежит
 	{
-		player->speed = MOVE_SPEED +
-						(player->event.type == SDL_KEYDOWN) * DSPRINT_SPEED;
+		player->speed = player->move_speed + (player->event.type == SDL_KEYDOWN)
+				* (((float)player->settings.speed / 100.f) * 0.3f);
 	}
 }
 

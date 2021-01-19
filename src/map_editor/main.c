@@ -121,6 +121,8 @@ void    interact(t_all *all)
 
 int main_editor(t_engine *engine, char *name, t_all *all)
 {
+	if (&engine->player == &all->player)
+		printf("YY\n");
     init_all(all); // инициализация всех модулей
 	// printf("level z = %d\n", (int)all->draw_floors.y);
 	if (load_texture(all) != 0)
@@ -129,6 +131,10 @@ int main_editor(t_engine *engine, char *name, t_all *all)
 	engine->sectors = all->sectors;
 	engine->player.where = all->player.where;
 	engine->player.sector = all->player.sector;
+	engine->player.settings = all->player.settings;
+	engine->player.move_speed = ((float)engine->player.settings.speed / 100.f)
+								* 0.3f + MOVE_SPEED;
+	engine->player.speed = engine->player.move_speed;
 	engine->num_sectors = all->num_sectors;
 	return (0);
 }

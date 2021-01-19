@@ -41,7 +41,8 @@ static int	check_inter2(t_engine *engine, float *dx, float *dy, int old)
 	while (s < sect->npoints)
 	{
 		if (point_side(player->where.x + *dx, player->where.y + *dy,
-	sect->vertex[s], sect->vertex[s + 1]) < 0 && engine->player.sector == old)
+	sect->vertex[s], sect->vertex[s + 1]) < 0
+	&& engine->player.sector == old)
 		{
 			*dx = 0;
 			*dy = 0;

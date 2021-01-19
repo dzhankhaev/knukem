@@ -39,7 +39,7 @@
 # define KNEE_HEIGHT 2				//	высота объекта, которую можно перешагивать
 # define ACCELERATION_PLUS 0.6f		//	ускорение. плюс при ускорении
 # define ACCELERATION_MINUS 0.8f	//	ускорение. минус при торможении
-# define MOVE_SPEED 0.2f			//	[0.1;**]
+# define MOVE_SPEED 0.1f			//	[0.1;**]
 # define DFALL_SPEED -0.11f			//	изменение скорости при падении на живот
 # define DSIT_SPEED -0.07f			//	изменение скорости при приседе
 # define DSPRINT_SPEED 0.1f			//	изменение скорости при беге

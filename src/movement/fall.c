@@ -16,7 +16,8 @@ void	fall(t_player *player, t_sect *sectors)
 {
 	if (player->falling || player->flying)
 	{
-		player->velocity.z -= VACCEL * !player->flying;
+		player->velocity.z -= ((float)player->settings.gravity / 1000.f)
+				* !player->flying;
 		//если падаю вниз и если достиг пола - останавливаю падение и зануляю скорость
 		if (player->velocity.z < 0 && player->where.z + player->velocity.z
 					< sectors[player->sector].floor + player->eyeheight)

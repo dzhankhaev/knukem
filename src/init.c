@@ -79,7 +79,9 @@ void			general_init(t_engine *engine)
 	engine->player.ground = 1;
 	engine->player.eyeheight = EYE_HEIGHT;
 	engine->player.vangle = 0.f;
-	engine->player.speed = MOVE_SPEED;
+	engine->player.move_speed = ((float)engine->player.settings.speed / 100.f)
+			* 0.3f + MOVE_SPEED;
+	engine->player.speed = engine->player.move_speed;
 	engine->player.deep_sh = 0;
 	engine->edit.mod_tx = 0;
 	engine->edit.mod = 1;
@@ -136,5 +138,5 @@ void			init_engine(t_engine *engine, t_all *all)
 	all->player = engine->player;
 	sdl_img(engine);
 	load_sprites(engine);
-//	SDL_SetRelativeMouseMode(SDL_TRUE);
+	SDL_SetRelativeMouseMode(SDL_TRUE);
 }

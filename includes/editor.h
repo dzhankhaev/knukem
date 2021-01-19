@@ -154,6 +154,7 @@ typedef	struct	s_player
     int			ground;			//	грок стоит на земле
     float		eyeheight;		//	текущая высота камеры
     float		speed;			//	текущая максимальная скорость
+    float		move_speed;		//	Максимальная скорость
     int			deep_sh;		//	затенение
     SDL_Event	event;
     int			game_mode;

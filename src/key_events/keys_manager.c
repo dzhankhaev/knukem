@@ -96,8 +96,8 @@ void			keys_manager(t_engine *engine)
 	engine->rend_plane.pcos = cosf(-engine->player.angle);	//используется для рендеринга горизонтальных поверхностей
 	engine->rend_plane.psin = sinf(-engine->player.angle);	//
 	get_move_vector(player, move_vec);
-	acceleration = player->wsad[0] || player->wsad[1] || player->wsad[2]
-					|| player->wsad[3] ? ACCELERATION_PLUS : ACCELERATION_MINUS;
+	acceleration = (player->wsad[0] || player->wsad[1] || player->wsad[2]
+				|| player->wsad[3] ? ACCELERATION_PLUS : ACCELERATION_MINUS);
 	player->velocity.x = player->velocity.x * acceleration
 					+ move_vec[0] * acceleration;
 	player->velocity.y = player->velocity.y * acceleration
