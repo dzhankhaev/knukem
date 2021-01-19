@@ -99,7 +99,7 @@ void	load_player(t_engine *engine, char **split)
     char **sub;
 
     sub = ft_strsplit(split[1], ' ');
-    if (ft_arrlen((void**)sub) == 4)
+    if (ft_arrlen((void**)sub) == 8)
     {
         engine->player.where = (t_xyz){ft_atof(sub[0]), ft_atof(sub[1]), 0};
         engine->player.velocity = (t_xyz){0, 0, 0};
@@ -110,7 +110,11 @@ void	load_player(t_engine *engine, char **split)
         engine->player.sector = ft_atoi(sub[3]);
         engine->player.where.z =
                 engine->sectors[engine->player.sector].floor + EYE_HEIGHT;
-    }
+		engine->player.settings.inventory = ft_atoi(sub[4]);
+		engine->player.settings.speed = ft_atoi(sub[5]);
+		engine->player.settings.ammo = ft_atoi(sub[6]);
+		engine->player.settings.gravity = ft_atoi(sub[7]);
+	}
     ft_free_split(sub);
 }
 
