@@ -196,6 +196,7 @@ typedef struct      s_all
     int				threed;
     t_button        buttons[BUTTONS];//кнопки
     t_sdl           *sdl;//
+    char			*name;
 }                   t_all;
 
 void	            init_all(t_all *all); // инициализируем модули
@@ -232,5 +233,6 @@ void				normalize(t_sect *sectors, int num, t_all *all);
 int					**get_vertexes(t_all *all);
 int					get_order_num(t_xy coord, int **vert);
 int                 ispointincube(t_xyz point, t_xyz cubecenter, t_xyz borders, float centerzoffset);
+void				new_map();
 
 # endif

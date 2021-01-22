@@ -123,7 +123,6 @@ static void		sdl_img(t_engine *engine)
 
 void			init_engine(t_engine *engine, t_all *all)
 {
-	ft_bzero(engine, sizeof(*engine));
 	load_data(engine, all);
 	sdl(engine);
 	all->num_sectors = engine->num_sectors;

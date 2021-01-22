@@ -29,6 +29,7 @@ SRC := main.c\
 	cut_wall.c\
 	manage_data.c\
 	game_loop.c\
+	new_map.c\
 	animations/do_door_anim.c\
 	animations/start_door_anim.c\
 	key_events/keys_manager.c\
