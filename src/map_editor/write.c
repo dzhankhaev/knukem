@@ -71,6 +71,28 @@ void    write_sectors(t_all *all, int **vert, int fd)
 		ft_putnbr_fd(all->sectors[i].txw0, fd);
 		ft_putchar_fd(' ', fd);
 		ft_putnbr_fd(all->sectors[i].txw1, fd);
+		ft_putchar_fd('\t', fd);
+		ft_putnbr_fd(all->sectors[i].graf.g_num, fd);
+		ft_putchar_fd('\t', fd);
+		j = 0;
+		while (j < all->sectors[i].graf.g_num)
+		{
+			ft_putnbr_fd(all->sectors[i].graf.wall[j], fd);
+			ft_putchar_fd(' ', fd);
+			ft_putnbr_fd((int)(all->sectors[i].graf.z[j] * 1024.f), fd);
+			ft_putchar_fd(' ', fd);
+			ft_putnbr_fd((int)(all->sectors[i].graf.coord[j].x0 * 1024.f), fd);
+			ft_putchar_fd(' ', fd);
+			ft_putnbr_fd((int)(all->sectors[i].graf.coord[j].x1 * 1024.f), fd);
+			ft_putchar_fd(' ', fd);
+			ft_putnbr_fd((int)(all->sectors[i].graf.coord[j].y0 * 1024.f), fd);
+			ft_putchar_fd(' ', fd);
+			ft_putnbr_fd((int)(all->sectors[i].graf.coord[j].y1 * 1024.f), fd);
+			ft_putchar_fd(' ', fd);
+			ft_putnbr_fd((int)(all->sectors[i].graf.coord[j].color), fd);
+			ft_putchar_fd(' ', fd);
+			j++;
+		}
 		i++;
         ft_putchar_fd('\n', fd);
     }
