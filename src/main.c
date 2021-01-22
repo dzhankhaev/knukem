@@ -33,26 +33,25 @@ void setup_window_icon(t_engine *engine)
 
 void	arg_check(t_engine *engine, t_all *all, int av, char **ac)
 {
-	char	*name;
-
-	name = NULL;
 	ft_bzero(engine, sizeof(*engine));
 	engine->player.game_mode = 1;
 	if (av == 1)
-		new_map();
+	{
+		all->name = ft_strdup("new_map.txt");
+		new_map(all->name);
+	}
 	else if (av == 2)
-		name = ac[1];
+		all->name = ft_strdup(ac[1]);
 	else if (av == 3)
 	{
 		if (ac[2][0] == 'g' && ac[2][1] == '\0')
 		{
-			name = ac[1];
+			all->name = ft_strdup(ac[1]);
 			engine->player.game_mode = 0;
 		}
 		else
 			exit(0);
 	}
-	all->name = name;
 }
 
 int		main(int av, char **ac)

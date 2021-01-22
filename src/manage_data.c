@@ -163,12 +163,10 @@ void	load_data(t_engine *engine, t_all *all)
 
     vert = NULL;
     vertices = 0;
-	if (all->name == NULL)
-		fd = open("new_map.txt", O_RDONLY);
-	else
-		fd = open(all->name, O_RDONLY);
-	*all = (t_all){.mapsize = (t_xyz){0, 0, 0}, .min_coord = (t_xy){0, 0}};
 
+	fd = open(all->name, O_RDONLY);
+	all->min_coord = (t_xy){0, 0};
+	all->mapsize = (t_xyz){0, 0, 0};
 	all->max_coord = (t_xy){0, 0};
 	while (get_next_line(fd, &buf))
     {

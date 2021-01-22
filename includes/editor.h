@@ -233,6 +233,6 @@ void				normalize(t_sect *sectors, int num, t_all *all);
 int					**get_vertexes(t_all *all);
 int					get_order_num(t_xy coord, int **vert);
 int                 ispointincube(t_xyz point, t_xyz cubecenter, t_xyz borders, float centerzoffset);
-void				new_map();
+void				new_map(char *name);
 
 # endif

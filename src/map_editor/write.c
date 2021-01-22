@@ -128,10 +128,7 @@ int				write_map(char *name, t_all *all)
         normalize(all->sectors, all->num_sectors, all);
     vert = get_vertexes(all);
 
-	if (all->name == NULL)
-		fd = open("new_map.txt", O_TRUNC | O_WRONLY | O_CREAT, S_IWUSR | S_IRUSR);
-	else
-		fd = open(all->name, O_TRUNC | O_WRONLY | O_CREAT, S_IWUSR | S_IRUSR);
+	fd = open(all->name, O_TRUNC | O_WRONLY | O_CREAT, S_IWUSR | S_IRUSR);
 
     write_vertexes(all, vert, fd);
     write_sectors(all, vert, fd);

@@ -61,13 +61,8 @@ static void	sector(int fd)
 	ft_putchar_fd('\n', fd);
 }
 
-void		new_map()
+static void	player(int fd)
 {
-	int	fd;
-
-	fd = open("new_map.txt", O_TRUNC | O_WRONLY | O_CREAT, S_IWUSR | S_IRUSR);
-	vertex(fd);
-	sector(fd);
 	ft_putstr_fd("player\t", fd);
 	ft_putnbr_fd(3, fd);
 	ft_putchar_fd(' ', fd);
@@ -85,5 +80,18 @@ void		new_map()
 	ft_putchar_fd(' ', fd);
 	ft_putnbr_fd(50, fd);
 	ft_putchar_fd(' ', fd);
+}
+
+void		new_map(char *name)
+{
+	int	fd;
+	int	i;
+
+	fd = open(name, O_TRUNC | O_WRONLY | O_CREAT, S_IWUSR | S_IRUSR);
+	if (fd == -1)
+		exit(0);
+	vertex(fd);
+	sector(fd);
+	player(fd);
 	close(fd);
 }
