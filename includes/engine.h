@@ -257,8 +257,7 @@ void					init_ceil_floor(t_engine *engine, t_sect sector, t_line *wall);
 void					init_wall(t_engine *engine, t_sect sector, t_line *wall);
 t_fline					cut_wall(t_fline wall, t_xy i1, t_xy i2);						//разрезает стену для попадания в fov
 void					minimap(t_engine *engine, t_xy v0, t_xy v1, Uint32 color);			//рисуется отдельно для каждой стены
-void					minimap_cut(t_engine *engine, t_xy v0, t_xy v1, Uint32 color);		//показывает только то, что в поле зрения
-void					render_minimap_hud(t_minimap minimap, SDL_Surface *screen);		//рисуется один раз на кадр
+void					render_minimap_hud(t_minimap *minimap, SDL_Surface *screen);		//рисуется один раз на кадр
 void					run_queue(t_engine *engine);
 int						check_repeat(t_engine *engine, int sectorno, int neighbor);
 void					render_line(t_line p, SDL_Surface *screen, t_line borders);		//линия в пределах указанных границ

@@ -47,23 +47,17 @@ void 		run_queue(t_engine *engine)
 {
 	int		i;
 	int		sectorno;
-	int		color;
 
 	i = 0;
 	sectorno = engine->present->sectorno;
 	while (i < engine->sectors[sectorno].npoints)
 	{
-		if (engine->sectors[sectorno].neighbors[i] <= -1)
-			engine->wall.color = abs(engine->sectors[sectorno].neighbors[i]);
-		else
-			engine->wall.color = 0;
-		color = engine->wall.color;
 		engine->wall = (t_fline){
 				engine->sectors[engine->present->sectorno].vertex[i].x,
 				engine->sectors[engine->present->sectorno].vertex[i + 1].x,
 				engine->sectors[engine->present->sectorno].vertex[i].y,
 				engine->sectors[engine->present->sectorno].vertex[i + 1].y,
-				engine->wall.color};
+				0};
 		if (transform_wall(engine, &engine->wall))
 		{
 			choose_edit(engine, i);
@@ -72,12 +66,6 @@ void 		run_queue(t_engine *engine)
 		}
 		/*if (transform_sprite(engine))
 			render_sprite(engine);*/
-		if (engine->minimap.mod)
-			minimap(engine, engine->sectors[sectorno].vertex[i],
-			engine->sectors[sectorno].vertex[i + 1], color);
-		else
-			minimap_cut(engine, (t_xy){engine->wall.x0, engine->wall.y0},
-				(t_xy){engine->wall.x1, engine->wall.y1}, engine->wall.color);
 		i++;
 	}
 }

@@ -22,6 +22,30 @@ static void	reset(t_engine *engine)
 	engine->player.shot = 0;
 }
 
+void 		run_minimap_queue(t_engine *engine)
+{
+	int		i;
+	int		sectorno;
+	int		neighbor;
+
+	i = 0;
+	sectorno = engine->present->sectorno;
+	while (i < engine->sectors[sectorno].npoints)
+	{
+		neighbor = engine->sectors[sectorno].neighbors[i];
+		if (neighbor <= -1)
+			engine->wall.color = WALL_COLOR;
+		else
+			engine->wall.color = EDGE_COLOR * engine->player.game_mode;
+		minimap(engine, engine->sectors[sectorno].vertex[i],
+				engine->sectors[sectorno].vertex[i + 1], engine->wall.color);
+		if (engine->future + 1 != engine->queue + engine->max_queue &&
+			neighbor > -1 && check_repeat(engine, sectorno, neighbor))
+			*(engine->future++) = (t_queue){neighbor, 0, W, sectorno};
+		i++;
+	}
+}
+
 static void	draw(t_engine *engine)
 {
     /*
@@ -40,11 +64,24 @@ static void	draw(t_engine *engine)
         run_queue(engine);
         engine->present++;
     }
+	if (engine->minimap.mod)
+	{
+		render_minimap_hud(&engine->minimap, engine->screen);
+		engine->future = engine->queue + 1;
+		engine->present = engine->queue;
+		ft_bzero(engine->queue + 1, sizeof(t_queue) * (MAX_QUEUE - 1));
+		while (engine->present != engine->future)
+		{
+			run_minimap_queue(engine);
+			engine->present++;
+		}
+	}
     //printf("%i\n", SDL_GetTicks() - start);
     /*
      * END
      */
     //engine->present--;
+    /*
     while (engine->present != engine->queue)
     {
         if (transform_sprite(engine)) {
@@ -52,7 +89,7 @@ static void	draw(t_engine *engine)
         }
         engine->present--;
     }
-    render_minimap_hud(engine->minimap, engine->screen);
+    */
 }
 
 static int	check_anim(t_engine *engine)

@@ -44,7 +44,7 @@ static void		init_minimap(t_engine *engine)
 	engine->minimap.player_vertical.y1 = engine->minimap.point.y + 3;
 	engine->minimap.borders = (t_line){W - W / 4, W,0, H / 3,
 									0x555555};
-	engine->minimap.mod = 0;
+	engine->minimap.mod = 1;
 }
 
 void			general_init2(t_engine *engine)
@@ -137,5 +137,5 @@ void			init_engine(t_engine *engine, t_all *all)
 	all->player = engine->player;
 	sdl_img(engine);
 	load_sprites(engine);
-	SDL_SetRelativeMouseMode(SDL_TRUE);
+//	SDL_SetRelativeMouseMode(SDL_TRUE);
 }
