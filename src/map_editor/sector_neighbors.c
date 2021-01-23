@@ -40,12 +40,9 @@ int		is_neighbor(t_all *all, t_xy coord, t_xy coord2, t_xy height, int self)
             while (j < all->sectors[i].npoints)
             {
                 if(coord.x == temp[j].x && coord.y == temp[j].y)
-                {
-
                     if (check_match(&all->sectors[i], (t_xyz){coord2.x, coord2.y,  j},
                         temp, self))
                         return(i);
-                }
                 j++;
             }
         i++;
@@ -53,30 +50,65 @@ int		is_neighbor(t_all *all, t_xy coord, t_xy coord2, t_xy height, int self)
 	return (-1);
 }
 
-void	get_neighbours(t_sect *sector, t_all 	*all, int self)
+int		sector_orientation(t_sect *sect, t_xy one, t_xy two)
+{
+	int temp;
+	int side;
+	int i;
+
+	side = 0;
+	i = 0;
+	while(i < sect->npoints)
+	{
+		temp = point_side1(sect->vertex[i].x, sect->vertex[i].y, one, two);
+		if(temp > 0)
+			side = 1;
+		else if (temp < 0)
+			side = -1;
+		i++;
+	}
+	return(side);
+}
+
+int		check_sect_intersection(t_all *all, int num, t_xy one, t_xy two)
+{
+	int sect1;
+	int	sect2;
+
+	if(num == -1)
+		return (0);
+	sect1 = sector_orientation(&all->sectors[num], one, two);
+	sect2 = sector_orientation(&all->sectors[all->num_sectors -1], one, two);
+	if(sect2 == 0 || sect1 == sect2)
+		return(1);
+	return(0);
+}
+
+int	get_neighbours(t_sect *sector, t_all *all, int self)
 {
 	int i;
     t_xy h;
 	int n;
- 
-	if (all->num_sectors == 1)
+	int res;
+
+	h = (t_xy){sector->floor, sector->ceil};
+	n = sector->npoints;
+	sector->neighbors = (int*)malloc(sizeof(int) * n);
+	i = 0;
+	while(i < sector->npoints - 1)
 	{
-		n = sector->npoints;
-		sector->neighbors = (int*)malloc(sizeof(int) * n);
-		while(--n >= 0)
-			sector->neighbors[n] = -1;
+		res = 0;
+		sector->neighbors[i] = is_neighbor(all, sector->vertex[i],
+			sector->vertex[i + 1], h, self);
+		res = res == 1 ? 1 : check_sect_intersection(all, sector->neighbors[i], sector->vertex[i],
+				sector->vertex[i + 1]);
+		i++;
 	}
-	else
-	{
-        h = (t_xy){sector->floor, sector->ceil};
-		n = sector->npoints;
-		sector->neighbors = (int*)malloc(sizeof(int) * n);
-        i = 0;
-		while(i < sector->npoints - 1)
-		{
-			sector->neighbors[i] = is_neighbor(all, sector->vertex[i], sector->vertex[i + 1], h, self);
-			i++;
-		}
-		sector->neighbors[i] = is_neighbor(all, sector->vertex[i], sector->vertex[0], h, self);
-	}
+	sector->neighbors[i] = is_neighbor(all, sector->vertex[i],
+		sector->vertex[0], h, self);
+	res = res == 1 ? 1 : check_sect_intersection(all, sector->neighbors[i], sector->vertex[i],
+				sector->vertex[i + 1]);
+	if (res)
+		return(1);
+	return (0);
 }

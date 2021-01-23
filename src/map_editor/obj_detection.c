@@ -1,5 +1,21 @@
 #include "editor.h"
 
+int     inside_sector(t_xyint point, t_sect *sector)
+{
+    int i;
+    int p;
+
+    i = 0;
+    while(i < sector->npoints)
+    {
+        p = point_side1(point.x, point.y, sector->vertex[i], sector->vertex[i + 1]);
+        if (p == 0)
+            return (0);
+        i++;
+    }
+    return (1);
+}
+
 int     which_sector(t_all *all, t_sect *sectors, t_xyz where)
 {
     int i;
@@ -19,7 +35,7 @@ int     which_sector(t_all *all, t_sect *sectors, t_xyz where)
                     break;
                 j++;
             }
-        if(p > 0)
+        if(p >= 0)
             return(i);
         i++;
     }

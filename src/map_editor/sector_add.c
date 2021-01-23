@@ -41,14 +41,27 @@ int		check_intersections(t_sect *sect)
 
 void    validate_sector(t_sect *sect, t_all *all)
 {
+	int n;
+	int failure;
+
+	failure = 0;
     check_sector(sect);
-	get_neighbours(sect, all, all->num_sectors - 1);
-	if (check_intersections(sect))
+	if (all->num_sectors == 1)
+	{
+		n = sect->npoints;
+		sect->neighbors = (int*)malloc(sizeof(int) * n);
+		while(--n >= 0)
+			sect->neighbors[n] = -1;
+	}
+	else
+		failure = get_neighbours(sect, all, all->num_sectors - 1);
+	if (failure || check_intersections(sect))
 	{
 		all->swap_num = all->num_sectors - 1; 
 		remove_sector(all, sect);
 	}
-	ft_memdel((void*)&all->temp->vertex);
+	// else
+	// 	free(all->temp->vertex);//тут случается дабфри!
 }
 
 void	init_new_sector(t_sect *sect, t_sect *temp)
@@ -80,7 +93,7 @@ void    new_sector(t_all *all, t_sect *temp, int x, int y)
 	all->max_coord.y = fmax(y, all->max_coord.y);
     temp->vertex = ft_realloc(temp->vertex, (++temp->npoints) * sizeof(t_xy));
 	temp->vertex[temp->npoints - 1] = (t_xy){x, y};
-	if (temp->vertex[0].x == x && temp->vertex[0].y == y && temp->npoints != 1)
+	if (temp->vertex[0].x == x && temp->vertex[0].y == y && temp->npoints > 3)
 	{
 		all->sectors = ft_realloc(all->sectors, ++(*num_sect) * sizeof(t_sect));
 		all->sectors[*num_sect - 1].vertex = malloc(sizeof(t_xy) * temp->npoints);

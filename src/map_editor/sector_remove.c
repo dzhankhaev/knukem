@@ -38,13 +38,13 @@ void    remove_sector(t_all *all, t_sect *sectors)
     if(all->swap_num != -1)
     {
         drop_neighbors(all->sectors, del->neighbors, del->npoints, all->swap_num);
-        ft_memdel((void*)del->vertex);
-        ft_memdel((void*)del->neighbors);
+        free(del->vertex);
+        free(del->neighbors);
         if (del->graf.g_num > 0)
         {
-            ft_memdel((void*)del->graf.coord);
-            ft_memdel((void*)del->graf.z);
-            ft_memdel((void*)del->graf.wall);
+            free(del->graf.coord);
+            free(del->graf.z);
+            free(del->graf.wall);
         }
 		if (all->num_sectors > 1 && all->swap_num != all->num_sectors - 1)
         {

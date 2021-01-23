@@ -61,12 +61,18 @@ void		set_player(int x, int y, t_all *all)
 
 int		pre_check(t_all *all, t_xyz point, t_sect *sect)
 {
-	int res;
+	int num;
 
 	if(sect->npoints > 0)
 		if(point.x == sect->vertex[sect->npoints - 1].x &&\
 			point.y == sect->vertex[sect->npoints - 1].y)
 			return (0);
+	if((num = which_sector(all, all->sectors, point)) > -1)
+	{
+		if(inside_sector((t_xyint){point.x, point.y}, &all->sectors[num]))
+			return(0);
+	}
+		
 	return(1);
 }
 

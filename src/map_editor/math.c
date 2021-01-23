@@ -10,7 +10,12 @@ float			point_side1(float px, float py, t_xy vert, t_xy vert1)
 	return (vector_cross_product1(vert1.x - vert.x, vert1.y - vert.y,
 								 px - vert.x, py - vert.y));
 }
+// D = (х3 - х1) * (у2 - у1) - (у3 - у1) * (х2 - х1)
 
+// float			point_side1(float px, float py, t_xy vert, t_xy vert1)
+// {
+// 	double 
+// }
 // void	isometric(t_all *all, t_xy *s, t_xyz rot, float add)
 // {
 // 	t_xyz temp;
