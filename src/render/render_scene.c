@@ -58,8 +58,8 @@ static void		loop(t_engine *engine, int neighbor, t_ixyz t, int i)
 	t_temp	*a;
 
 	a = &engine->rend_wall;
-	//потребуется для вычисления света и текстур. Для других вычислений нужно упорядочить
 	ifdoor(engine, engine->present->sectorno, neighbor, i);
+	//потребуется для вычисления света и текстур. Для других вычислений нужно упорядочить
 	a->w = a->wall[0];
 	to_x_order(a->wall);
 	a->l = engine->wall;
