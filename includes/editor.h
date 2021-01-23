@@ -157,8 +157,9 @@ typedef	struct	s_player
     float		move_speed;		//	Максимальная скорость
     int			deep_sh;		//	затенение
     SDL_Event	event;
-    int			game_mode;
+    int			game_mode;		//	1 создатель, 0 игрок
     t_settings  settings;
+    int			cur_inv;		//	Сколько мест в инвентаре занято
 }				t_player;
 
 typedef	struct s_labels

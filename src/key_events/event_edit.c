@@ -17,7 +17,9 @@ void	event_edit2(t_player *player, t_edit *edit)
 {
 	if (player->game_mode)
 	{
-		if (player->event.key.keysym.sym == SDLK_1)
+		if (player->event.key.keysym.sym == SDLK_0)
+			edit->txno = 0;
+		else if (player->event.key.keysym.sym == SDLK_1)
 			edit->txno = 1;
 		else if (player->event.key.keysym.sym == SDLK_2)
 			edit->txno = 2;
@@ -40,6 +42,11 @@ void	event_edit2(t_player *player, t_edit *edit)
 	{
 		if (player->event.key.keysym.sym == SDLK_g)
 			edit->graf_wall = -2;
+		else if (player->event.key.keysym.sym == SDLK_r)
+		{
+			edit->graf = 2;
+			edit->txno = 0;
+		}
 	}
 	if (player->event.key.keysym.sym == SDLK_f)
 		edit->door = 2;

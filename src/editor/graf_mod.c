@@ -93,8 +93,17 @@ void			graf_mod(t_engine *engine, int sectorno, int i)
 		engine->edit.graf = 0;
 		if (engine->sectors[sectorno].neighbors[i] <= -1)
 		{
-			graf_memalloc(engine, sectorno, i);
-			create_coord(engine, sectorno);
+			if (engine->player.game_mode)
+			{
+				graf_memalloc(engine, sectorno, i);
+				create_coord(engine, sectorno);
+			}
+			else if (!engine->player.game_mode && engine->player.cur_inv > 0)
+			{
+				graf_memalloc(engine, sectorno, i);
+				create_coord(engine, sectorno);
+				engine->player.cur_inv--;
+			}
 		}
 	}
 	//если подана команда на удаление всех граффити
@@ -109,6 +118,11 @@ void			graf_mod(t_engine *engine, int sectorno, int i)
 		engine->sectors[sectorno].graf.g_num = 0;
 		engine->edit.graf = 0;
 	}
-	else if (engine->edit.graf_wall > -1)
+	else if (engine->edit.graf_wall > -1
+	&& engine->player.cur_inv < engine->player.settings.inventory &&
+	engine->sectors[sectorno].graf.coord[engine->edit.graf_wall].color == 0)
+	{
 		delete_one_graf(engine, sectorno);
+		engine->player.cur_inv++;
+	}
 }
