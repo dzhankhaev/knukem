@@ -78,6 +78,21 @@ static float	angle_fix(float angle)
 	return (angle);
 }
 
+static void		eyeheight_correcting(t_engine *engine)
+{
+	float ceil;
+	float floor;
+
+	ceil = engine->sectors[engine->player.sector].ceil;
+	floor = engine->sectors[engine->player.sector].floor;
+	while (engine->player.stand && engine->player.eyeheight
+	+ HEAD_HEIGHT > ceil - floor)
+		engine->player.eyeheight--;
+	if (engine->player.stand && engine->player.eyeheight
+	+ HEAD_HEIGHT < ceil - floor)
+		engine->player.eyeheight = EYE_HEIGHT;
+}
+
 void			keys_manager(t_engine *engine)
 {
 	int			x;
@@ -88,6 +103,7 @@ void			keys_manager(t_engine *engine)
 
 	player = &engine->player;
 	keyboard_event(engine, player, &engine->edit);
+	eyeheight_correcting(engine);
 	SDL_GetRelativeMouseState(&x, &y);	//	позиция относительно предыдущей позиции
 	player->vangle = clamp(player->vangle + y * CAMERA_DY, -VLIMIT, VLIMIT);	//вертикальный поворот
 	player->angle = angle_fix(player->angle + x * CAMERA_DX); //	горизонтальный поворот

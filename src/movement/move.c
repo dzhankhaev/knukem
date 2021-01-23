@@ -62,10 +62,11 @@ static void	step(t_engine *engine, int s, float *dx, float *dy)
 	sect = &engine->sectors[player->sector];
 	if (sect->neighbors[s] >= 0)
 	{
-		//	Ударяемся ли головой? || Можем ли перешагнуть?
 		if (player->where.z + HEAD_HEIGHT >
 	engine->sectors[sect->neighbors[s]].ceil || player->where.z -
-	player->eyeheight + KNEE_HEIGHT < engine->sectors[sect->neighbors[s]].floor)
+	player->eyeheight + KNEE_HEIGHT < engine->sectors[sect->neighbors[s]].floor
+	|| player->where.z + HEAD_HEIGHT + engine->sectors[sect->neighbors[s]].floor
+	> engine->sectors[sect->neighbors[s]].ceil)
 			vec_proect(sect->vertex[s], sect->vertex[s + 1], dx, dy);
 		else
 		{

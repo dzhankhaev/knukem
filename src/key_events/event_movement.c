@@ -70,9 +70,10 @@ static void	additional(t_player *player)
 		player->ground = 0;			//ускорение применяется только если игрок не на земле
 		player->falling = 1;		//активируем ускорение для плавного падения
 		player->eyeheight = EYE_HEIGHT -
-							(player->event.type == SDL_KEYDOWN) * DSIT_HEIGHT;	//изменяем высоту взгляда
+				(player->event.type == SDL_KEYDOWN) * DSIT_HEIGHT;	//изменяем высоту взгляда
 		player->speed = player->move_speed +
 						(player->event.type == SDL_KEYDOWN) * DSIT_SPEED;	//изменяем скорость
+		player->stand = player->event.type != SDL_KEYDOWN;
 	}
 	else if (player->event.key.keysym.sym == SDLK_x)	//падение на живот
 	{
@@ -82,6 +83,7 @@ static void	additional(t_player *player)
 							(player->event.type == SDL_KEYDOWN) * DFALL_HEIGHT;
 		player->speed = player->move_speed +
 						(player->event.type == SDL_KEYDOWN) * DFALL_SPEED;
+		player->stand = player->event.type != SDL_KEYDOWN;
 	}
 	else if (player->event.key.keysym.sym == SDLK_LSHIFT
 		&& (player->speed == player->move_speed || player->speed ==

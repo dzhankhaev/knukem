@@ -74,6 +74,7 @@ void			general_init(t_engine *engine)
 	engine->player.cur_inv = engine->player.settings.inventory;
 	engine->player.cur_am = engine->player.settings.ammo;
 	engine->player.shot = 0;
+	engine->player.stand = 1;
 	engine->player.falling = 0;
 	engine->player.flying = 0;
 	engine->player.ground = 1;
