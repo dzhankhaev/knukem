@@ -56,6 +56,7 @@ SRC := main.c\
 	render/minimap.c\
 	render/render_hplane.c\
 	render/render_scene.c\
+	render/render_cross.c\
 	render/sprite_render.c\
 	render/transform_sprite.c\
 	render/ceil_and_floor_init.c\

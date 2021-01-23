@@ -269,6 +269,7 @@ void					fall(t_player *player, t_sect *sectors);
 Uint32					deep_shading(t_engine *engine, t_line wall, int x);			//модификатор освещения в зависимости от дальности
 Uint32					get_shadow(Uint32 z, Uint32 color);								//применить модификатор освещения
 void					real_time_edit(t_engine *engine);
+void					render_cross(t_engine *engine);
 void					render_hplane(t_engine *engine, t_vplane *p, int txno);
 int						main_editor(t_engine *engine, char *name, t_all *all);
 void					render_sprite(t_engine *engine);
