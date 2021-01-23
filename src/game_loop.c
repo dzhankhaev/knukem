@@ -19,6 +19,7 @@ static void	reset(t_engine *engine)
     if (engine->edit.graf != 1)	//в режиме граффити текстуры помещений менять нельзя
         engine->edit.txno = -1;
     engine->edit.graf_wall = -1;
+	engine->player.shot = 0;
 }
 
 static void	draw(t_engine *engine)

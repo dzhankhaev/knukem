@@ -160,6 +160,8 @@ typedef	struct	s_player
     int			game_mode;		//	1 создатель, 0 игрок
     t_settings  settings;
     int			cur_inv;		//	Сколько мест в инвентаре занято
+    int			cur_am;			//	Сколько патронов имеется
+    int			shot;			//	0 ничего, 1 выстрел
 }				t_player;
 
 typedef	struct s_labels
