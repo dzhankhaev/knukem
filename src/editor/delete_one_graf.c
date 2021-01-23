@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   graf_mod.c                                         :+:      :+:    :+:   */
+/*   delete_one_graf.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,8 +14,11 @@
 
 static void	copy_graf(t_graf *graf, int t, t_graf *graf2)
 {
-	int q = 0;
-	int	k = 0;
+	int q;
+	int	k;
+
+	q = 0;
+	k = 0;
 	while (k < graf->g_num + 1)
 	{
 		if (k == t)

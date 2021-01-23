@@ -14,7 +14,6 @@
 
 t_ixyz			tx_wall_mod(t_engine *engine, int sectorno, int i)
 {
-	//если стена модифицируема и была выбрана текстура и не включен режим граффити и включен режим редактора
 	if (engine->edit.mod_w != -1 && engine->edit.txno != -1
 	&& !engine->edit.graf && engine->player.game_mode)
 	{
@@ -32,7 +31,6 @@ t_ixyz			tx_wall_mod(t_engine *engine, int sectorno, int i)
 
 t_ixyz			tx_plane_mod(t_engine *engine, int sectorno)
 {
-	//если была выбрана текстура и не включен режим граффити и включен режим редактора
 	if (engine->edit.txno != -1 && !engine->edit.graf
 	&& engine->player.game_mode)
 	{
@@ -48,6 +46,5 @@ t_ixyz			tx_plane_mod(t_engine *engine, int sectorno)
 		}
 	}
 	return ((t_ixyz){engine->sectors[engine->vpfloor.s].txf,
-					 engine->sectors[engine->vpfloor.s].txc, 0});
+			engine->sectors[engine->vpfloor.s].txc, 0});
 }
-//изначально должно было ретёрнить по индексу sectorno, но иногда текстура выбиралась неправильно. Почему не смог понять

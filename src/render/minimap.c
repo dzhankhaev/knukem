@@ -46,14 +46,14 @@ void			fill_borders(t_minimap *minimap, SDL_Surface *screen)
 	while (i < borders.y1)
 	{
 		render_line((t_line){borders.x0, borders.x1, i, i, borders.color},
-			  screen, borders);
+				screen, borders);
 		i += 2;
 	}
 	i = borders.x0;
 	while (i < borders.x1)
 	{
 		render_line((t_line){i, i, borders.y0, borders.y1, borders.color},
-			  screen, borders);
+				screen, borders);
 		i += 2;
 	}
 }
@@ -76,7 +76,6 @@ void			render_minimap_hud(t_minimap *minimap, SDL_Surface *screen)
 				screen, minimap->borders);
 }
 
-// Это обычная миникарта
 void			minimap(t_engine *engine, t_xy v0, t_xy v1, Uint32 color)
 {
 	t_line			wall;

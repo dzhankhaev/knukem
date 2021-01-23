@@ -119,7 +119,7 @@ void    interact(t_all *all)
 	}
 }
 
-int main_editor(t_engine *engine, char *name, t_all *all)
+int main_editor(t_engine *engine, t_all *all)
 {
 	if (&engine->player == &all->player)
 		printf("YY\n");

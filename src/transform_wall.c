@@ -18,14 +18,13 @@ static t_fline	fov_wall_cut(t_fline wall)
 	t_xy	i1;
 	t_xy	i2;
 
-	//пересечение между лучом видимости и стеной
 	i1 = intersection_point(wall,
 					(t_fline){0, RAY_POINT_X, 0, -RAY_POINT_Y});
 	i2 = intersection_point(wall,
 					(t_fline){0, RAY_POINT_X, 0, RAY_POINT_Y});
 	return (cut_wall(wall, i1, i2));
 }
-//	сопоставим координаты текстуры координатам стены после отрезания не попавших в кадр частей
+
 void			tex_init(t_engine *engine, t_fline w, t_fline ow)
 {
 	if (fabsf(w.y1 - w.y0) > fabsf(w.x1 - w.x0))
@@ -46,20 +45,17 @@ void			tex_init(t_engine *engine, t_fline w, t_fline ow)
 
 int				transform_wall(t_engine *engine, t_fline *wall)
 {
-	t_fline	ow; //	текущая стена без отрезания частей, не попавших в кадр
+	t_fline	ow;
 
-	// перемещает координату в СИ игрового мира.
 	*wall = rotate_wall(*wall, engine->player);
-	//после поворота координата X является глубиной
-	//Y - положение слева (отрицательный) или справа (положительный)
 	if (wall->x0 <= 0 && wall->x1 <= 0)
-		return (0); //стены за спиной не рендерятся
+		return (0);
 	ow = *wall;
-	*wall = fov_wall_cut(*wall);	//обрезаем частично попавшие в поле зрения стены
+	*wall = fov_wall_cut(*wall);
 	tex_init(engine, *wall, ow);
 	if (wall->x0 <= 0 || wall->x1 <= 0
 		|| wall->x0 * -K > wall->y0
 		|| wall->x1 * K < wall->y1)
-		return (0); //то что не было отрезано и находится частично за спиной, а так же то что целиком лежит вне видимости тоже не рендерим.
+		return (0);
 	return (1);
 }

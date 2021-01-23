@@ -14,34 +14,6 @@
 #include "utilits.h"
 #include "events.h"
 
-static void		keyboard_event(t_engine *engine, t_player *player, t_edit *edit)
-{
-	while (SDL_PollEvent(&player->event))
-	{
-		if (player->event.type == SDL_KEYDOWN || player->event.type == SDL_KEYUP) //плавные
-		{
-			event_movement(engine);		//всё что связано с движением игрока
-			event_edit(player, edit);	//всё что связано с редактированием карты
-		}
-		if (player->event.type == SDL_KEYDOWN)	//однократные
-		{
-			event_edit2(player, edit);
-			if (player->event.key.keysym.sym == SDLK_m)		//	режим миникарты
-				engine->minimap.mod = engine->minimap.mod ? 0 : 1;
-			else if (player->event.key.keysym.sym == SDLK_l)	//	затенение
-				engine->player.deep_sh = engine->player.deep_sh ? 0 : 1;
-			else if (player->event.key.keysym.sym == SDLK_ESCAPE)	//	закрытие
-				engine->close_request = 1;
-			else if (player->event.key.keysym.sym == SDLK_KP_PLUS)
-				engine->hud_inp.buttons += (engine->hud_inp.buttons < 9) ? 1 : 0; 
-			else if (player->event.key.keysym.sym == SDLK_KP_MINUS)
-				engine->hud_inp.buttons -= (engine->hud_inp.buttons) ? 1 : 0; 
-		}
-		if (player->event.type == SDL_QUIT)
-			engine->close_request = 1;
-	}
-}
-
 static void		get_move_vector(t_player *player, float *move_vec)
 {
 	move_vec[0] = 0;
@@ -68,7 +40,6 @@ static void		get_move_vector(t_player *player, float *move_vec)
 	}
 }
 
-//не выходим за пределы круга [~0;~359]
 static float	angle_fix(float angle)
 {
 	if (angle > 6.265732f)
@@ -104,13 +75,13 @@ void			keys_manager(t_engine *engine)
 	player = &engine->player;
 	keyboard_event(engine, player, &engine->edit);
 	eyeheight_correcting(engine);
-	SDL_GetRelativeMouseState(&x, &y);	//	позиция относительно предыдущей позиции
-	player->vangle = clamp(player->vangle + y * CAMERA_DY, -VLIMIT, VLIMIT);	//вертикальный поворот
-	player->angle = angle_fix(player->angle + x * CAMERA_DX); //	горизонтальный поворот
+	SDL_GetRelativeMouseState(&x, &y);
+	player->vangle = clamp(player->vangle + y * CAMERA_DY, -VLIMIT, VLIMIT);
+	player->angle = angle_fix(player->angle + x * CAMERA_DX);
 	player->anglesin = sinf(player->angle);
 	player->anglecos = cosf(player->angle);
-	engine->rend_plane.pcos = cosf(-engine->player.angle);	//используется для рендеринга горизонтальных поверхностей
-	engine->rend_plane.psin = sinf(-engine->player.angle);	//
+	engine->rend_plane.pcos = cosf(-engine->player.angle);
+	engine->rend_plane.psin = sinf(-engine->player.angle);
 	get_move_vector(player, move_vec);
 	acceleration = (player->wsad[0] || player->wsad[1] || player->wsad[2]
 				|| player->wsad[3] ? ACCELERATION_PLUS : ACCELERATION_MINUS);

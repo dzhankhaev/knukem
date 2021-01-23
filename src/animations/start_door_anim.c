@@ -16,10 +16,8 @@ static void	put_anim(t_engine *engine, int door)
 {
 	int	q;
 
-	q = -2;
-	while (q < 30)
-		if (engine->danimbuf[(q += 2)] == door)
-			return ;
+	if (check_door_anim(engine, door))
+		return ;
 	q = 0;
 	while (q < 30)
 	{
@@ -42,7 +40,6 @@ static void	put_anim(t_engine *engine, int door)
 	}
 }
 
-//есть ли граффити на прилегающей стене
 static int	match2(t_engine *engine, int sec, int wall)
 {
 	int	t;
@@ -60,17 +57,15 @@ static int	match2(t_engine *engine, int sec, int wall)
 static int	match(t_engine *engine, int sec, int dsec, int k)
 {
 	int wall;
-	//для двери находим соответствующую грань соседа
+
 	if (engine->sectors[sec].neighbors[k] == dsec)
 	{
-		//стена слева
 		if (k == 0)
 			wall = engine->sectors[sec].npoints - 1;
 		else
 			wall = k - 1;
 		if (match2(engine, sec, wall))
 			return (1);
-		//стена справа
 		if (k == engine->sectors[sec].npoints - 1)
 			wall = 0;
 		else
@@ -88,15 +83,12 @@ static int	check_graf_control(t_engine *engine, int dsec)
 	int	sec;
 
 	q = 0;
-	//проходим по стенам двери
 	while (q < engine->sectors[dsec].npoints)
 	{
-		//смотрим в соседний сектор
 		sec = engine->sectors[dsec].neighbors[q];
 		if (sec > -1)
 		{
 			k = 0;
-			//проходим по стенам соседа
 			while (k < engine->sectors[sec].npoints)
 			{
 				if (match(engine, sec, dsec, k))
@@ -112,24 +104,21 @@ static int	check_graf_control(t_engine *engine, int dsec)
 void		start_door_anim(t_engine *engine, int sec, int nei, int i)
 {
 	int door;
-	//если игрок смотрит на дверь
+
 	if (engine->edit.mod_w == i && nei > -1 && nei == engine->edit.mod_s &&
 			engine->edit.door == 2 && engine->sectors[nei].door > -1
 			&& check_graf_control(engine, nei))
 		put_anim(engine, nei);
-	//если игрок смотрит на граффити
 	if (engine->edit.door == 4)
 	{
 		engine->edit.door = 0;
-		//стена слева
 		if (i == 0)
 			door = engine->sectors[sec].neighbors[engine->sectors[sec].npoints
-										 								- 1];
+						- 1];
 		else
 			door = engine->sectors[sec].neighbors[i - 1];
 		if (door > -1 && engine->sectors[door].door > -1)
 			put_anim(engine, door);
-		//стена справа
 		if (i == engine->sectors[sec].npoints - 1)
 			door = engine->sectors[sec].neighbors[0];
 		else

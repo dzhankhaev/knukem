@@ -63,8 +63,6 @@ add_executable(d-k3d
 		src/render/minimap.c
 		src/render/render_hplane.c
 		src/render/render_scene.c
-		src/render/sprite_render.c
-		src/render/transform_sprite.c
 		src/utilits
 		src/utilits/math
 		src/utilits/math/determine_intersection.c
@@ -165,7 +163,7 @@ add_executable(d-k3d
 		libft/ft_swap.c
 		libft/ft_tolower.c
 		libft/ft_toupper.c
-		libft/get_next_line.c src/editor/delete_one_graf.c src/new_map.c src/render/render_cross.c)
+		libft/get_next_line.c src/editor/delete_one_graf.c src/new_map.c src/render/render_cross.c src/animations/check_door_anim.c src/key_events/keyboard_event.c src/utilits/ispointincube.c)
 
 include_directories(d-k3d
 		includes/

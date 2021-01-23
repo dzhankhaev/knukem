@@ -14,24 +14,10 @@
 #include "editor.h"
 #include "utilits.h"
 
-void			load_sprites(t_engine *engine) //TODO (coordinates hardcoded)
-{
-	engine->sprites1 = (t_sprites1*)malloc(sizeof(t_sprites1));
-	engine->sprites1->weapon_sprite = (t_weapon_sprites*)malloc(sizeof(t_weapon_sprites) * WEAPON_SPRITE_NUM);
-	engine->sprites1->weapon_sprite->sector = 0;
-	engine->sprites1->weapon_sprite->where.x = 10;
-	engine->sprites1->weapon_sprite->where.y = 10;
-	engine->sprites1->weapon_sprite->where.z = 5;
-	engine->sprites1->weapon_sprite->visible = 1;
-	if(!(engine->sprites1->weapon_sprite->texture = get_texture2("shotgun.bmp")))
-		error_and_close(__FILE__, __FUNCTION__);
-	//engine->sprites1.weapon_sprite->dstrect = (SDL_Rect){W / 10, H * 0.2, 200, 200};
-}
-
 static void		init_minimap(t_engine *engine)
 {
 	engine->minimap.point = (t_xy){W - W / 8, H / 6};
-	engine->minimap.scale =  W / 200;
+	engine->minimap.scale = W / 200;
 	engine->minimap.player_horizontal.color = 0x4444FF;
 	engine->minimap.player_horizontal.x0 = engine->minimap.point.x - 5;
 	engine->minimap.player_horizontal.y0 = engine->minimap.point.y;
@@ -42,7 +28,7 @@ static void		init_minimap(t_engine *engine)
 	engine->minimap.player_vertical.y0 = engine->minimap.point.y - 11;
 	engine->minimap.player_vertical.x1 = engine->minimap.point.x;
 	engine->minimap.player_vertical.y1 = engine->minimap.point.y + 3;
-	engine->minimap.borders = (t_line){W - W / 4, W,0, H / 3,
+	engine->minimap.borders = (t_line){W - W / 4, W, 0, H / 3,
 									0x555555};
 	engine->minimap.mod = 1;
 }
@@ -92,51 +78,4 @@ void			general_init(t_engine *engine)
 	load_surfaces("textur/", &engine->hud);
 	general_init2(engine);
 	init_minimap(engine);
-}
-
-static void		sdl(t_engine *engine)
-{
-	if (SDL_Init(SDL_INIT_VIDEO) != 0)
-		exc(__FILE__, __FUNCTION__);
-	if (!(engine->window = SDL_CreateWindow("doom-nukem",
-											SDL_WINDOWPOS_CENTERED,
-											SDL_WINDOWPOS_CENTERED,
-											W, H,
-											0)))
-	{
-		SDL_Quit();
-		exc(__FILE__, __FUNCTION__);
-	}
-	if (!(engine->screen = SDL_GetWindowSurface(engine->window)))
-	{
-		SDL_DestroyWindow(engine->window);
-		SDL_Quit();
-		exc(__FILE__, __FUNCTION__);
-	}
-}
-
-static void		sdl_img(t_engine *engine)
-{
-	if ((IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG) != IMG_INIT_PNG)
-	{
-		SDL_FreeSurface(engine->screen);
-		SDL_DestroyWindow(engine->window);
-		SDL_Quit();
-		exc(__FILE__, __FUNCTION__);
-	}
-}
-
-void			init_engine(t_engine *engine, t_all *all)
-{
-	load_data(engine, all);
-	sdl(engine);
-	all->num_sectors = engine->num_sectors;
-	all->sdl = (t_sdl *)malloc(sizeof(t_sdl) * 1);
-	all->sdl->window = engine->window;
-	all->sdl->screen = engine->screen;
-	all->sectors = engine->sectors;
-	all->player = engine->player;
-	sdl_img(engine);
-	load_sprites(engine);
-//	SDL_SetRelativeMouseMode(SDL_TRUE);
 }

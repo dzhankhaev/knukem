@@ -19,12 +19,10 @@ static void		graf_memalloc(t_engine *engine, int sectorno, int i)
 
 	graf = &engine->sectors[sectorno].graf;
 	graf->g_num++;
-	//выделяем память
 	graf->wall = (int *)ft_realloc(graf->wall, sizeof(int) * graf->g_num);
 	graf->z = (float *)ft_realloc(graf->z, sizeof(float) * graf->g_num);
 	graf->coord = (t_fline *)ft_realloc(graf->coord,
 							sizeof(t_fline) * graf->g_num);
-	//заносим необходимые данные
 	graf->wall[graf->g_num - 1] = i;
 	graf->z[graf->g_num - 1] = engine->player.where.z;
 	graf->coord[graf->g_num - 1] =
@@ -35,7 +33,7 @@ static void		graf_memalloc(t_engine *engine, int sectorno, int i)
 			engine->edit.txno == -1 ? 1 : engine->edit.txno};
 }
 
-static t_fline get_coord(t_fline c)
+static t_fline	get_coord(t_fline c)
 {
 	float	t;
 
@@ -70,7 +68,6 @@ static void		create_coord(t_engine *engine, int sectorno)
 
 	graf = &engine->sectors[sectorno].graf;
 	c = get_coord(graf->coord[graf->g_num - 1]);
-	//проекция
 	a = point_proection(c,
 				(t_xyz){engine->player.where.x,
 						engine->player.where.y, 0});
@@ -78,35 +75,14 @@ static void		create_coord(t_engine *engine, int sectorno)
 				- c.x0,
 				c.y1
 				- c.y0, 1, 0);
-	//прокладывание отрезка вдоль стены
 	b.x = a.x + 1 * cosf(angle);
 	b.y = a.y + 1 * sinf(angle);
 	graf->coord[graf->g_num - 1] = (t_fline){a.x, b.x, a.y, b.y,
 			graf->coord[graf->g_num - 1].color};
 }
 
-void			graf_mod(t_engine *engine, int sectorno, int i)
+static void		delete_graf(t_engine *engine, int sectorno)
 {
-	//если стена модифицируема и включен режим редактора граффити
-	if (engine->edit.mod_w != -1 && engine->edit.graf == 2)
-	{
-		engine->edit.graf = 0;
-		if (engine->sectors[sectorno].neighbors[i] <= -1)
-		{
-			if (engine->player.game_mode)
-			{
-				graf_memalloc(engine, sectorno, i);
-				create_coord(engine, sectorno);
-			}
-			else if (!engine->player.game_mode && engine->player.cur_inv > 0)
-			{
-				graf_memalloc(engine, sectorno, i);
-				create_coord(engine, sectorno);
-				engine->player.cur_inv--;
-			}
-		}
-	}
-	//если подана команда на удаление всех граффити
 	if (engine->edit.graf == 3)
 	{
 		free(engine->sectors[sectorno].graf.coord);
@@ -125,4 +101,27 @@ void			graf_mod(t_engine *engine, int sectorno, int i)
 		delete_one_graf(engine, sectorno);
 		engine->player.cur_inv++;
 	}
+}
+
+void			graf_mod(t_engine *engine, int sectorno, int i)
+{
+	if (engine->edit.mod_w != -1 && engine->edit.graf == 2)
+	{
+		engine->edit.graf = 0;
+		if (engine->sectors[sectorno].neighbors[i] <= -1)
+		{
+			if (engine->player.game_mode)
+			{
+				graf_memalloc(engine, sectorno, i);
+				create_coord(engine, sectorno);
+			}
+			else if (!engine->player.game_mode && engine->player.cur_inv > 0)
+			{
+				graf_memalloc(engine, sectorno, i);
+				create_coord(engine, sectorno);
+				engine->player.cur_inv--;
+			}
+		}
+	}
+	delete_graf(engine, sectorno);
 }

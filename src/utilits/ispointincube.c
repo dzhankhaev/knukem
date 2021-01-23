@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fall.c                                             :+:      :+:    :+:   */
+/*   ispointincube.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,25 +11,15 @@
 /* ************************************************************************** */
 
 #include "engine.h"
+#include "utilits.h"
 
-void	fall(t_player *player, t_sect *sectors)
+int	ispointincube(t_xyz point, t_xyz cubecenter, t_xyz borders,
+				float centerzoffset)
 {
-	if (player->falling || player->flying)
-	{
-		player->velocity.z -= ((float)player->settings.gravity / 1000.f)
-				* !player->flying;
-		if (player->velocity.z < 0 && player->where.z + player->velocity.z
-					< sectors[player->sector].floor + player->eyeheight)
-		{
-			player->velocity.z = 0;
-			player->falling = 0;
-			player->ground = 1;
-		}
-		else if (player->velocity.z > 0 && player->where.z + player->velocity.z
-										> sectors[player->sector].ceil)
-			player->velocity.z = 0;
-		player->where.z += player->velocity.z;
-	}
-	if (player->ground)
-		player->where.z = sectors[player->sector].floor + player->eyeheight;
+	return ((cubecenter.x + borders.x > point.x
+		& point.x > cubecenter.x - borders.x)
+		&& (cubecenter.y + borders.y > point.y
+		& point.y > cubecenter.y - borders.y)
+		&& (cubecenter.z + centerzoffset + borders.z > point.z
+		& point.z > cubecenter.z + centerzoffset - borders.z));
 }

@@ -9,6 +9,7 @@
 /*   Updated: 2021/01/07 22:28:14 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef EDITOR_H
 # define EDITOR_H
 
@@ -58,7 +59,7 @@
 # define GRAVITY 7
 # define AMMO 8
 
-typedef struct			s_fline		//	стена для вычислений
+typedef struct			s_fline
 {
 	float				x0;
 	float				x1;
@@ -236,7 +237,7 @@ void				init_floors(t_sect *sectors, int num);
 void				normalize(t_sect *sectors, int num, t_all *all);
 int					**get_vertexes(t_all *all);
 int					get_order_num(t_xy coord, int **vert);
-int                 ispointincube(t_xyz point, t_xyz cubecenter, t_xyz borders, float centerzoffset);
 void				new_map(char *name);
+int                 ispointincube(t_xyz point, t_xyz cubecenter, t_xyz borders, float centerzoffset); // ГДЕ ЭТО ИСПОЛЬЗУЕТСЯ??
 
 # endif

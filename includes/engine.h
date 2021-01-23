@@ -270,12 +270,7 @@ Uint32					get_shadow(Uint32 z, Uint32 color);								//применить мо�
 void					real_time_edit(t_engine *engine);
 void					render_cross(t_engine *engine);
 void					render_hplane(t_engine *engine, t_vplane *p, int txno);
-int						main_editor(t_engine *engine, char *name, t_all *all);
-void					render_sprite(t_engine *engine);
-int						transform_sprite(t_engine *engine);
-void					normi_sprite(t_sprites1 sprite, t_player player);
-void					rotate_sprite(t_sprites1 sprite, t_player player);
-void					perspective_transform2(t_sprites1 sprite, t_player player);
+int						main_editor(t_engine *engine, t_all *all);
 void					graf_proccesing(t_engine *engine, int sectorno, int i);
 void					graf_mod(t_engine *engine, int sectorno, int i);
 void					delete_one_graf(t_engine *engine, int sectorno);
@@ -287,5 +282,8 @@ void					start_door_anim(t_engine *engine, int sec, int nei, int i);
 // void					put_hud(SDL_Surface *scr, t_inp_hud *inp);
 void					put_hud(t_engine *engine);
 void					load_surfaces(const char *dirs, t_hud *hud_);
+int						check_door_anim(t_engine *engine, int door);
+void					keyboard_event(t_engine *engine, t_player *player,
+					t_edit *edit);
 
 #endif

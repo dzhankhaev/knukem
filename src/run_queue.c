@@ -13,11 +13,7 @@
 #include "engine.h"
 #include "utilits.h"
 
-/*
- * мы перемещаемся из А в В. Если в очереди был переход из В в А, то это возврат назад. Так делать нельзя.
- * это справедливо для выпуклых секторов
- */
-int				check_repeat(t_engine *engine, int sectorno, int neighbor)
+int			check_repeat(t_engine *engine, int sectorno, int neighbor)
 {
 	t_queue *temp;
 
@@ -31,19 +27,19 @@ int				check_repeat(t_engine *engine, int sectorno, int neighbor)
 	return (1);
 }
 
-static void choose_edit(t_engine *engine, int i)
+static void	choose_edit(t_engine *engine, int i)
 {
 	if (engine->edit.mod_s == 0x01ab01 &&
 		determine_intersection(engine->wall, (t_fline){0, 50, 0, 0}))
 	{
 		engine->edit.mod_s =
-				engine->sectors[engine->present->sectorno].neighbors[i];	//этот сектор можно модифицировать
+				engine->sectors[engine->present->sectorno].neighbors[i];
 		if (engine->edit.mod_w == -1)
 			engine->edit.mod_w = i;
 	}
 }
 
-void 		run_queue(t_engine *engine)
+void		run_queue(t_engine *engine)
 {
 	int		i;
 	int		sectorno;
@@ -61,11 +57,9 @@ void 		run_queue(t_engine *engine)
 		if (transform_wall(engine, &engine->wall))
 		{
 			choose_edit(engine, i);
-			render_scene(engine, sectorno,    //текущий сектор
-				engine->sectors[sectorno].neighbors[i], i);		//его сосед, границу с которым мы обрабатываем.
+			render_scene(engine, sectorno,
+				engine->sectors[sectorno].neighbors[i], i);
 		}
-		/*if (transform_sprite(engine))
-			render_sprite(engine);*/
 		i++;
 	}
 }

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   door_mod.c                                         :+:      :+:    :+:   */
+/*   check_door_anim.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,40 +12,13 @@
 
 #include "engine.h"
 
-static int	check_nei(t_engine *engine, int neighbor)
-{
-	int	q;
-	int	s;
-
-	q = 0;
-	while (q < engine->sectors[neighbor].npoints)
-	{
-		s = engine->sectors[neighbor].neighbors[q];
-		if (s > -1)
-			if (engine->sectors[s].door != -1)
-				return (0);
-		q++;
-	}
-	return (1);
-}
-
-void		door_mod(t_engine *engine, int neighbor, int i)
+int	check_door_anim(t_engine *engine, int door)
 {
 	int q;
 
-	if (engine->edit.mod_w == i && neighbor > -1
-		&& neighbor == engine->edit.mod_s && engine->edit.door == 1)
-	{
-		q = -2;
-		while (q < 30)
-			if (engine->danimbuf[(q += 2)] == neighbor)
-				return ;
-		if (engine->sectors[neighbor].door == -1 && check_nei(engine, neighbor))
-			engine->sectors[neighbor].door = 0;
-		else
-		{
-			engine->sectors[neighbor].door = -1;
-			engine->sectors[neighbor].floor = engine->sectors[neighbor].oldf;
-		}
-	}
+	q = -2;
+	while (q < 30)
+		if (engine->danimbuf[(q += 2)] == door)
+			return (1);
+	return (0);
 }

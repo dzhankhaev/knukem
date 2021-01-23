@@ -1,54 +1,62 @@
-/*
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_engine.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
+/*   Updated: 2021/01/12 19:53:26 by ecelsa           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "engine.h"
+#include "editor.h"
+#include "utilits.h"
 
-static int	ft_create_window(t_engine *engine)
+static void		sdl(t_engine *engine)
 {
-	engine->window = SDL_CreateWindow("Doom Nukem",
-									SDL_WINDOWPOS_CENTERED,
-									SDL_WINDOWPOS_CENTERED,
-									engine->w, engine->h,
-									0);
-	if (!engine->window)
-	{
-		printf("Failed to create window!");
-		return (1);
-	}
-	return (0);
-}
-
-static int	ft_load_screen(t_engine *engine)
-{
-	engine->screen = SDL_GetWindowSurface(engine->window);
-	if (!engine->screen)
-	{
-		printf("Failed to load screen!");
-		return (1);
-	}
-	return (0);
-}
-
-int			init_engine(t_engine *engine)
-{
-	bzero(engine, sizeof(*engine) - 12);
-	load_data(engine);
 	if (SDL_Init(SDL_INIT_VIDEO) != 0)
+		exc(__FILE__, __FUNCTION__);
+	if (!(engine->window = SDL_CreateWindow("doom-nukem",
+							SDL_WINDOWPOS_CENTERED,
+							SDL_WINDOWPOS_CENTERED,
+							W, H,
+							0)))
 	{
-		printf("Couldn't initialize SDL!");
-		return (1);
+		SDL_Quit();
+		exc(__FILE__, __FUNCTION__);
 	}
-	if (ft_create_window(engine) != 0 || ft_load_screen(engine) != 0)
-		return (1);
-	// SDL_SetRelativeMouseMode(SDL_TRUE); //скрывает курсор, он движется относительно окна
-	return (0);
+	if (!(engine->screen = SDL_GetWindowSurface(engine->window)))
+	{
+		SDL_DestroyWindow(engine->window);
+		SDL_Quit();
+		exc(__FILE__, __FUNCTION__);
+	}
 }
 
-void		clean_up(t_engine *engine)
+static void		sdl_img(t_engine *engine)
 {
-	unload_data(engine);
-	if (engine->screen)
+	if ((IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG) != IMG_INIT_PNG)
+	{
 		SDL_FreeSurface(engine->screen);
-	if (engine->window)
 		SDL_DestroyWindow(engine->window);
-	SDL_Quit();
+		SDL_Quit();
+		exc(__FILE__, __FUNCTION__);
+	}
 }
-*/
+
+void			init_engine(t_engine *engine, t_all *all)
+{
+	load_data(engine, all);
+	sdl(engine);
+	all->num_sectors = engine->num_sectors;
+	all->sdl = (t_sdl *)malloc(sizeof(t_sdl) * 1);
+	all->sdl->window = engine->window;
+	all->sdl->screen = engine->screen;
+	all->sectors = engine->sectors;
+	all->player = engine->player;
+	engine->max_queue = MAX_QUEUE;
+	sdl_img(engine);
+	SDL_SetRelativeMouseMode(SDL_TRUE);
+}

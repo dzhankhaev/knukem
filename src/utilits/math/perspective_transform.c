@@ -12,18 +12,12 @@
 
 #include "utilits.h"
 
-//используется для обработки вертикального угла взгляда
 static t_xyz	vrotate(t_xyz p, float vangle)
 {
 	p.z = p.z + p.x * vangle;
 	return (p);
 }
 
-//Х - глубина, Y - положение (слева, справа)
-//В экранных X - столбцы, Y - строки
-//для обратного преобразования
-//X = z / (((float)(wall.y0 << 1) / H - 1) - vangle);
-//Y = X * (((float)wall.x0 - (W / 2.f)) / (W / 2.f));
 t_line			perspective_transform(t_fline w, float z, float vangle,
 										int color)
 {
