@@ -93,6 +93,13 @@ void    new_sector(t_all *all, t_sect *temp, int x, int y)
 	all->max_coord.x = fmax(x, all->max_coord.x);
 	all->max_coord.y = fmax(y, all->max_coord.y);
     temp->vertex = ft_realloc(temp->vertex, (++temp->npoints) * sizeof(t_xy));
+	if (temp->npoints == 20)
+	{
+		print_message(all, RED, "Vertex limit!", 1000);
+		x = temp->vertex[0].x;
+		y = temp->vertex[0].y;
+
+	}
 	temp->vertex[temp->npoints - 1] = (t_xy){x, y};
 	if (temp->vertex[0].x == x && temp->vertex[0].y == y && temp->npoints > 3)
 	{
