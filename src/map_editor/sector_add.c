@@ -82,6 +82,21 @@ void	init_new_sector(t_sect *sect, t_sect *temp)
 		sect->graf.z = 0;
 }
 
+void	check_vert(t_all *all, int *x, int *y, t_sect *temp)
+{
+	if (temp->npoints == 20)
+	{
+		print_message(all, RED, "Vertex limit!", 1000);
+		*x = temp->vertex[0].x;
+		*y = temp->vertex[0].y;
+
+	}
+	while (abs(*x) > 300)
+		*x -= *x < 0 ? -1 : 1;
+	while (abs(*y) > 300)
+		*y -= *y < 0 ? -1 : 1;
+}
+
 void    new_sector(t_all *all, t_sect *temp, int x, int y)
 {
     int i = 0;
@@ -93,13 +108,7 @@ void    new_sector(t_all *all, t_sect *temp, int x, int y)
 	all->max_coord.x = fmax(x, all->max_coord.x);
 	all->max_coord.y = fmax(y, all->max_coord.y);
     temp->vertex = ft_realloc(temp->vertex, (++temp->npoints) * sizeof(t_xy));
-	if (temp->npoints == 20)
-	{
-		print_message(all, RED, "Vertex limit!", 1000);
-		x = temp->vertex[0].x;
-		y = temp->vertex[0].y;
-
-	}
+	check_vert(all, &x, &y, temp);
 	temp->vertex[temp->npoints - 1] = (t_xy){x, y};
 	if (temp->vertex[0].x == x && temp->vertex[0].y == y && temp->npoints > 3)
 	{
