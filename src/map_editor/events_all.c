@@ -12,27 +12,31 @@
 
 #include "editor.h"
 
-int	mode_switch(t_all *all, int mode)
+void	print_message(t_all *all, SDL_Color color, char *text, int delay)
 {
 	SDL_Surface *temp;
+	SDL_Rect area;
 
+	area = (SDL_Rect){W/2 - 175, H/2 - 25, 300, 50};
+	temp = get_text_surface(text, all->font, color);
+	draw_fill_rect(all, area, GREY);
+	draw_texture(all->sdl->screen, area, temp);
+	SDL_UpdateWindowSurface(all->sdl->window);
+	SDL_Delay(1000);
+	SDL_FreeSurface(temp);
+}
+
+int	mode_switch(t_all *all, int mode)
+{
 	if (all->player.sector != -1 && mode)
 	{
 		all->threed = 1;
 		normalize(all->sectors, all->num_sectors, all);
-		temp = get_text_surface("Entering 3D!", all->font, RED);
-		draw_texture(all->sdl->screen, (SDL_Rect){W/2 - 175, H/2 - 25, 300, 50}, temp);
-		SDL_UpdateWindowSurface(all->sdl->window);
-		SDL_Delay(1000);
-		SDL_FreeSurface(temp);
+		print_message(all, RED, "Entering 3D!", 1000);
 	}
 	else if (all->player.sector == -1)
 	{
-		temp = get_text_surface("Set player!", all->font, RED);
-		draw_texture(all->sdl->screen, (SDL_Rect){W/2 - 175, H/2 - 25, 300, 50}, temp);
-		SDL_UpdateWindowSurface(all->sdl->window);
-		SDL_Delay(1000);
-		SDL_FreeSurface(temp);
+		print_message(all, RED, "Set player!", 1000);
 		return (0);
 	}
 	return(1);
@@ -45,7 +49,7 @@ void	key_press(t_all *all)
 	keystate = SDL_GetKeyboardState(NULL);
 	if (keystate[SDL_SCANCODE_E])
 		mode_switch(all, 1);
-	else if (keystate[SDL_SCANCODE_DELETE])
+	else if (keystate[SDL_SCANCODE_DELETE] || keystate[SDL_SCANCODE_BACKSPACE])
 		remove_sector(all, all->sectors);
 	else if (keystate[SDL_SCANCODE_TAB] && mode_switch(all, 0))
 		write_map("new", all);

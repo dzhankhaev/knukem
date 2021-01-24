@@ -57,11 +57,12 @@ void    validate_sector(t_sect *sect, t_all *all)
 		failure = get_neighbours(sect, all, all->num_sectors - 1);
 	if (failure || check_intersections(sect))
 	{
-		all->swap_num = all->num_sectors - 1; 
+		all->swap_num = all->num_sectors - 1;
+		print_message(all, RED, "Invalid Sector!", 1000);
 		remove_sector(all, sect);
 	}
 	// else
-	// 	free(all->temp->vertex);//тут случается дабфри!
+	// free(all->temp->vertex);//тут случается дабфри!
 }
 
 void	init_new_sector(t_sect *sect, t_sect *temp)
