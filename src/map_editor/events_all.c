@@ -12,7 +12,7 @@
 
 #include "editor.h"
 
-void	print_message(t_all *all, SDL_Color color, char *text, int delay)
+int	print_message(t_all *all, SDL_Color color, char *text, int delay)
 {
 	SDL_Surface *temp;
 	SDL_Rect area;
@@ -24,6 +24,7 @@ void	print_message(t_all *all, SDL_Color color, char *text, int delay)
 	SDL_UpdateWindowSurface(all->sdl->window);
 	SDL_Delay(1000);
 	SDL_FreeSurface(temp);
+	return (0);
 }
 
 int	mode_switch(t_all *all, int mode)
@@ -54,15 +55,15 @@ void	key_press(t_all *all)
 	else if (keystate[SDL_SCANCODE_TAB] && mode_switch(all, 0))
 		write_map("new", all);
 	else if (keystate[SDL_SCANCODE_RIGHT])
-		all->d.x += 1;
+		all->d.x += abs((int)(all->d.x)) <= 300 ? 1 : print_message(all, RED, "size limit!", 1000);
 	else if (keystate[SDL_SCANCODE_LEFT])
-		all->d.x -= 1;//(all->step > 1) ? 1 : 0;
+		all->d.x -= abs((int)(all->d.x)) <= 300 ? 1 : print_message(all, RED, "size limit!", 1000);
 	else if (keystate[SDL_SCANCODE_I])
 		all->iso = (all->iso == 0) ? 1 : 0;
 	else if (keystate[SDL_SCANCODE_UP])
-		all->d.y -= 1;
+		all->d.y -= abs((int)(all->d.x)) <= 300 ? 1 : print_message(all, RED, "size limit!", 1000);
 	else if (keystate[SDL_SCANCODE_DOWN])
-		all->d.y += 1;
+		all->d.y += abs((int)(all->d.x)) <= 300 ? 1 : print_message(all, RED, "size limit!", 1000);
 }
 
 void		level_buttons(t_all *all, t_button *buttons, SDL_MouseButtonEvent *event)

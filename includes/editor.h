@@ -224,6 +224,7 @@ float				point_side1(float px, float py, t_xy vert, t_xy vert1);
 int					check_sector(t_sect *sect);
 int                 inside_sector(t_xyint point, t_sect *sector);
 int					which_sector(t_all *all, t_sect *sectors, t_xyz where);
+int                 *which_sectors(t_all *all, t_sect *sectors, t_xyz where);
 void				remove_sector(t_all *all, t_sect *sectors);
 SDL_Surface			*get_text_surface(char *name, TTF_Font *font, SDL_Color color);
 void       			put_pxl(SDL_Surface *screen, SDL_Color col, int x, int y);
@@ -234,7 +235,7 @@ int					**get_vertexes(t_all *all);
 int					get_order_num(t_xy coord, int **vert);
 int                 is_intersectred(t_xy v11, t_xy v12, t_xy v21, t_xy v22);
 int                 ispointincube(t_xyz point, t_xyz cubecenter, t_xyz borders, float centerzoffset);
-void				print_message(t_all *all, SDL_Color color, char *text, int delay);
+int				print_message(t_all *all, SDL_Color color, char *text, int delay);
 
 
 # endif

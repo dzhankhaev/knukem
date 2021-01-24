@@ -59,6 +59,43 @@ void		set_player(int x, int y, t_all *all)
 	}
 }
 
+int		is_vector_equal(t_xy a0, t_xy a1, t_xy b0, t_xy b1)
+{
+	if ((a0.x == b0.x && a0.y == b0.y) || (a0.x == b1.x && a0.y == b1.y))
+		if ((a1.x == b0.x && a1.y == b0.y) || (a1.x == b1.x && a1.y == b1.y))
+			return (1);
+	return (0);
+}
+
+int		is_portal(t_all *all, t_xyz point, t_sect *sect)
+{
+	int i;
+	int *num;
+	t_xyz tmp;
+	t_sect tmp_sect;
+
+	if (sect->npoints >= 1)
+	{
+		num = which_sectors(all, all->sectors, point);
+		while (*num != -1)
+		{
+			i = 1;
+			tmp_sect = all->sectors[num[0]];
+			while(i <= tmp_sect.npoints)
+			{
+				if(is_vector_equal(sect->vertex[sect->npoints - 1],
+					(t_xy){point.x, point.y}, tmp_sect.vertex[i],
+							tmp_sect.vertex[i - 1]) &&
+								tmp_sect.neighbors[i - 1] != -1)
+					return (1);
+				i++;
+			}
+			num++;
+		}
+	}
+	return (0);
+}
+
 int		pre_check(t_all *all, t_xyz point, t_sect *sect)
 {
 	int num;
@@ -67,12 +104,13 @@ int		pre_check(t_all *all, t_xyz point, t_sect *sect)
 		if(point.x == sect->vertex[sect->npoints - 1].x &&\
 			point.y == sect->vertex[sect->npoints - 1].y)
 			return (0);
+	if(is_portal(all, point, sect))
+		return (0);
 	if((num = which_sector(all, all->sectors, point)) > -1)
 	{
 		if(inside_sector((t_xyint){point.x, point.y}, &all->sectors[num]))
 			return(0);
 	}
-		
 	return(1);
 }
 

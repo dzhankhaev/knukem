@@ -79,7 +79,6 @@ int		check_sect_intersection(t_all *all, int num, t_xy one, t_xy two)
 		return (0);
 	sect1 = sector_orientation(&all->sectors[num], one, two);
 	sect2 = sector_orientation(&all->sectors[all->num_sectors -1], one, two);
-	printf("sect1 = %d sect2 = %d\n", sect1, sect2);
 	if(sect2 == 0 || sect1 == sect2)
 		return(1);
 	return(0);
@@ -103,15 +102,12 @@ int	get_neighbours(t_sect *sector, t_all *all, int self)
 			sector->vertex[i + 1], h, self);
 		res = res == 1 ? 1 : check_sect_intersection(all, sector->neighbors[i], sector->vertex[i],
 				sector->vertex[i + 1]);
-		printf("res for %d iter = %d\n", i, res);
 		i++;
 	}
-	printf("res after loop = %d\n", res);
 	sector->neighbors[i] = is_neighbor(all, sector->vertex[i],
 		sector->vertex[0], h, self);
 	res = res == 1 ? 1 : check_sect_intersection(all, sector->neighbors[i], sector->vertex[i],
 				sector->vertex[i + 1]);
-	printf("res = %d\n", res);
 	if (res)
 		return(1);
 	return (0);
