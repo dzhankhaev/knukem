@@ -35,9 +35,9 @@ static void	reset(t_engine *engine)
 
 void		run_minimap_queue(t_engine *engine)
 {
-	int		i;
-	int		sectorno;
-	int		neighbor;
+	unsigned int	i;
+	int				sectorno;
+	int				neighbor;
 
 	i = 0;
 	sectorno = engine->present->sectorno;

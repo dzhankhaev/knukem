@@ -278,7 +278,8 @@ t_ixyz					tx_wall_mod(t_engine *engine, int sectorno, int i);
 t_ixyz					tx_plane_mod(t_engine *engine, int sectorno);
 void					door_mod(t_engine *engine, int neighbor, int i);
 void					door_anim(t_engine *engine);
-void					start_door_anim(t_engine *engine, int sec, int nei, int i);
+void					start_door_anim(t_engine *engine, int sec, int nei, 
+	unsigned int i);
 // void					put_hud(SDL_Surface *scr, t_inp_hud *inp);
 void					put_hud(t_engine *engine);
 void					load_surfaces(const char *dirs, t_hud *hud_);

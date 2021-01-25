@@ -84,7 +84,7 @@ void	draw_label(t_all *all, char *name, SDL_Rect area, SDL_Color color)
 {
 	SDL_Surface *surf;
 
-	surf = get_text_surface(name, all->font, BLUE);
+	surf = get_text_surface(name, all->font, color);
 	draw_texture(all->sdl->screen, area, surf);
 	SDL_FreeSurface(surf);
 }

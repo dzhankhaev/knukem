@@ -22,7 +22,7 @@ int	print_message(t_all *all, SDL_Color color, char *text, int delay)
 	draw_fill_rect(all, area, GREY);
 	draw_texture(all->sdl->screen, area, temp);
 	SDL_UpdateWindowSurface(all->sdl->window);
-	SDL_Delay(1000);
+	SDL_Delay(delay);
 	SDL_FreeSurface(temp);
 	return (0);
 }
@@ -170,8 +170,8 @@ void	on_mouse(t_all *all, SDL_MouseButtonEvent *event)
 		closest_point(all, all->point);
 		if (all->mouse.z == 1)
 		{
-			all->mouse = (t_xyz){event->x - temp->x, event->y - temp->y};//пишем координаты мыши на карте
-			map_click(&all->mouse, all, event);
+			all->mouse = (t_xyz){event->x - temp->x, event->y - temp->y, 0};//пишем координаты мыши на карте
+			map_click(all, event);
 		}
 	}
 	else if (event->x < W * 0.25 && event->y < H * 0.2)

@@ -12,7 +12,7 @@
 
 #include "editor.h"
 
-void	draw_sector_info(t_sect sect, t_sdl *sdl, int n, t_all *all)
+void	draw_sector_info(t_sdl *sdl, int n, t_all *all)
 {
 	SDL_Surface *tmp;
 	char		*str;
@@ -36,7 +36,7 @@ void	draw_area(t_sdl *sdl, t_all *all)
 	c = (t_xy){(all->area.w / 2) % all->step, (all->area.h / 2) % all->step};
 	draw_fill_rect(all, all->area, BLACK);
 	draw_grid(all, &all->area, all->step);
-	draw_map(sdl, all->sectors, all);
+	draw_map(all->sectors, all);
 	if (all->buttons[NEW_SECT].state == 1)
 		draw_circle(sdl, (t_xy){all->point.x * all->step + c.x + all->area.x,
 			all->point.y * all->step + c.y + all->area.y}, 2, WHITE);
@@ -48,8 +48,6 @@ void	draw_area(t_sdl *sdl, t_all *all)
 
 void	draw_all(t_all *all, t_sdl *sdl, t_button *btn)
 {
-	Uint32 state;
-
 	all->delta.x = all->area.x + all->area.w / 2 -
 		(round(all->mapsize.x / 2) * all->step) + all->d.x * all->step;
 	all->delta.y = all->area.y + all->area.h / 2 -
@@ -57,5 +55,5 @@ void	draw_all(t_all *all, t_sdl *sdl, t_button *btn)
 	draw_area(sdl, all);
 	draw_ui(all, sdl, btn);
 	if (all->swap_num != -1)
-		draw_sector_info(all->sectors[all->swap_num], sdl, all->swap_num, all);
+		draw_sector_info(sdl, all->swap_num, all);
 }

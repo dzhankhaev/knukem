@@ -14,8 +14,8 @@
 
 static int	check_nei(t_engine *engine, int neighbor)
 {
-	int	q;
-	int	s;
+	unsigned int	q;
+	int				s;
 
 	q = 0;
 	while (q < engine->sectors[neighbor].npoints)

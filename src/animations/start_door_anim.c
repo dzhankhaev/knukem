@@ -54,7 +54,7 @@ static int	match2(t_engine *engine, int sec, int wall)
 	return (0);
 }
 
-static int	match(t_engine *engine, int sec, int dsec, int k)
+static int	match(t_engine *engine, int sec, int dsec, unsigned int k)
 {
 	int wall;
 
@@ -78,9 +78,9 @@ static int	match(t_engine *engine, int sec, int dsec, int k)
 
 static int	check_graf_control(t_engine *engine, int dsec)
 {
-	int	q;
-	int	k;
-	int	sec;
+	unsigned int	q;
+	unsigned int	k;
+	int				sec;
 
 	q = 0;
 	while (q < engine->sectors[dsec].npoints)
@@ -101,11 +101,11 @@ static int	check_graf_control(t_engine *engine, int dsec)
 	return (1);
 }
 
-void		start_door_anim(t_engine *engine, int sec, int nei, int i)
+void		start_door_anim(t_engine *engine, int sec, int nei, unsigned int i)
 {
 	int door;
 
-	if (engine->edit.mod_w == i && nei > -1 && nei == engine->edit.mod_s &&
+	if (engine->edit.mod_w == (int)i && nei > -1 && nei == engine->edit.mod_s &&
 			engine->edit.door == 2 && engine->sectors[nei].door > -1
 			&& check_graf_control(engine, nei))
 		put_anim(engine, nei);

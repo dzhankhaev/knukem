@@ -19,9 +19,9 @@ static t_fline	fov_wall_cut(t_fline wall)
 	t_xy	i2;
 
 	i1 = intersection_point(wall,
-					(t_fline){0, RAY_POINT_X, 0, -RAY_POINT_Y});
+					(t_fline){0, RAY_POINT_X, 0, -RAY_POINT_Y, 0});
 	i2 = intersection_point(wall,
-					(t_fline){0, RAY_POINT_X, 0, RAY_POINT_Y});
+					(t_fline){0, RAY_POINT_X, 0, RAY_POINT_Y, 0});
 	return (cut_wall(wall, i1, i2));
 }
 

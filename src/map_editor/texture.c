@@ -1,6 +1,6 @@
 #include "editor.h"
 
-SDL_Surface     *get_texture(char *file, t_sdl *sdl)
+SDL_Surface     *get_texture(char *file)
 {
 	SDL_Surface		*surface;
     char            *dir;
@@ -37,29 +37,29 @@ SDL_Surface	*get_text_surface(char *name, TTF_Font *font, SDL_Color color)
 int             extra_buttons(t_all *all, t_button *buttons)
 {    
     buttons[6] = (t_button){(SDL_Rect){W / 4 - 150, H * 0.15, 50, 50},\
-		ft_strdup(" - "), WHITE};//inventory
+		ft_strdup(" - "), WHITE, 0, NULL};//inventory
     buttons[7] = (t_button){(SDL_Rect){W / 4 - 50, H * 0.15, 50, 50},\
-		ft_strdup(" + "), WHITE};//inventory
+		ft_strdup(" + "), WHITE, 0, NULL};//inventory
     buttons[8] = (t_button){(SDL_Rect){W / 4 - 150, H * 0.21, 50, 50},\
-		ft_strdup(" - "), WHITE};//speed
+		ft_strdup(" - "), WHITE, 0, NULL};//speed
     buttons[9] = (t_button){(SDL_Rect){W / 4 - 50, H * 0.21, 50, 50},\
-		ft_strdup(" + "), WHITE};//speed
+		ft_strdup(" + "), WHITE, 0, NULL};//speed
     buttons[10] = (t_button){(SDL_Rect){W / 4 - 150, H * 0.27, 50, 50},\
-		ft_strdup(" - "), WHITE};//gravity
+		ft_strdup(" - "), WHITE, 0, NULL};//gravity
     buttons[11] = (t_button){(SDL_Rect){W / 4 - 50, H * 0.27, 50, 50},\
-		ft_strdup(" + "), WHITE};//gravity
+		ft_strdup(" + "), WHITE, 0, NULL};//gravity
     buttons[12] = (t_button){(SDL_Rect){W / 4 - 150, H * 0.33, 50, 50},\
-		ft_strdup(" - "), WHITE};//ammo
+		ft_strdup(" - "), WHITE, 0, NULL};//ammo
     buttons[13] = (t_button){(SDL_Rect){W / 4 - 50, H * 0.33, 50, 50},\
-		ft_strdup(" + "), WHITE};//ammo
+		ft_strdup(" + "), WHITE, 0, NULL};//ammo
     buttons[14] = (t_button){(SDL_Rect){25, H * 0.46, 50, 50},\
-		ft_strdup(" - "), WHITE};
+		ft_strdup(" - "), WHITE, 0, NULL};
     buttons[15] = (t_button){(SDL_Rect){(W / 4 - 4) - 75, H * 0.46, 50, 50},\
-		ft_strdup(" + "), WHITE};
+		ft_strdup(" + "), WHITE, 0, NULL};
     buttons[16] = (t_button){(SDL_Rect){25, H * 0.58, 50, 50},\
-		ft_strdup(" - "), WHITE};
+		ft_strdup(" - "), WHITE, 0, NULL};
     buttons[17] = (t_button){(SDL_Rect){(W / 4 - 4) - 75, H * 0.58, 50, 50},\
-		ft_strdup(" + "), WHITE};
+		ft_strdup(" + "), WHITE, 0, NULL};
 	  
     return 0;
 }

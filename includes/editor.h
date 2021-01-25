@@ -208,7 +208,7 @@ void	            init_all(t_all *all); // инициализируем моду�
 void				add_sprite(t_all *all, int x, int y, int type);
 void                error_and_close(const char *file, const char *function); // аварийное завершение программы
 void                on_event(t_all *all, SDL_Event *event); //обработка событий
-void				map_click(t_xyz *mouse, t_all *all, SDL_MouseButtonEvent *event);
+void				map_click(t_all *all, SDL_MouseButtonEvent *event);
 int					load_map(char *name, t_all *all); // загрузка карты
 int                 load_texture(t_all *all);// звгрузка текстур
 int					load_buttons(t_all *all, t_button *btn);
@@ -216,7 +216,7 @@ void                draw_all(t_all *all, t_sdl *sdl, t_button *btn);//отрис
 int					write_map(char *name, t_all *all);
 void				draw_temp(t_all *all, t_sdl *sdl, t_sect *temp, t_xy delta);//несохраненный сектор
 void                draw_player(t_all *all, t_sdl *sdl, t_player *player, t_xy *c);
-void				draw_map(t_sdl *sdl, t_sect *sect, t_all *all);
+void				draw_map(t_sect *sect, t_all *all);
 void				draw_grid(t_all *all, SDL_Rect *area, int step);
 void    			draw_texture(SDL_Surface *screen, SDL_Rect area, SDL_Surface *txt);
 void    			draw_fill_rect(t_all *all, SDL_Rect area, SDL_Color color);

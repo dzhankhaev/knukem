@@ -69,10 +69,9 @@ int		is_vector_equal(t_xy a0, t_xy a1, t_xy b0, t_xy b1)
 
 int		is_portal(t_all *all, t_xyz point, t_sect *sect)
 {
-	int i;
-	int *num;
-	t_xyz tmp;
-	t_sect tmp_sect;
+	unsigned int	i;
+	int				*num;
+	t_sect			tmp_sect;
 
 	if (sect->npoints >= 1)
 	{
@@ -114,7 +113,7 @@ int		pre_check(t_all *all, t_xyz point, t_sect *sect)
 	return(1);
 }
 
-void	map_click(t_xyz *mouse, t_all *all, SDL_MouseButtonEvent *event)
+void	map_click(t_all *all, SDL_MouseButtonEvent *event)
 {
 	int x;
 	int y;

@@ -22,8 +22,8 @@ static int	check_inter(t_engine *engine, int s, float *dx, float *dy)
 	px = engine->player.where.x;
 	py = engine->player.where.y;
 	vert = engine->sectors[engine->player.sector].vertex;
-	if (determine_intersection((t_fline){px, px + *dx, py, py + *dy},
-		(t_fline){vert[s].x, vert[s + 1].x, vert[s].y, vert[s + 1].y}) &&
+	if (determine_intersection((t_fline){px, px + *dx, py, py + *dy, 0},
+		(t_fline){vert[s].x, vert[s + 1].x, vert[s].y, vert[s + 1].y, 0}) &&
 		point_side(px + *dx, py + *dy, vert[s], vert[s + 1]) < 0)
 		return (1);
 	return (0);
@@ -31,9 +31,9 @@ static int	check_inter(t_engine *engine, int s, float *dx, float *dy)
 
 static int	check_inter2(t_engine *engine, float *dx, float *dy, int old)
 {
-	t_sect		*sect;
-	t_player	*player;
-	int			s;
+	t_sect			*sect;
+	t_player		*player;
+	unsigned int	s;
 
 	player = &engine->player;
 	sect = &engine->sectors[player->sector];
@@ -93,10 +93,10 @@ static void	step(t_engine *engine, int s, float *dx, float *dy)
 
 void		move(t_engine *engine)
 {
-	int		s;
-	int		old;
-	float	*dx;
-	float	*dy;
+	unsigned int	s;
+	int				old;
+	float			*dx;
+	float			*dy;
 
 	fall(&engine->player, engine->sectors);
 	old = engine->player.sector;
