@@ -42,7 +42,8 @@ void	draw_area(t_sdl *sdl, t_all *all)
 			all->point.y * all->step + c.y + all->area.y}, 2, WHITE);
 	if (all->temp->npoints > 0 && all->buttons[0].state == 1)
 		draw_temp(all, sdl, all->temp, all->delta);
-	draw_player(all, sdl, &all->player, &c);
+	if(all->player.sector != -1)
+		draw_player(all, sdl, &all->player, &c);
 }
 
 void	draw_all(t_all *all, t_sdl *sdl, t_button *btn)

@@ -225,10 +225,12 @@ void				draw_line(t_all *all, t_xy *start, t_xy *fin, SDL_Color color);
 void				draw_circle(t_sdl *sdl, t_xy coord, int r, SDL_Color color);
 void				draw_ui(t_all *all, t_sdl *sdl, t_button *btn);
 void    			new_sector(t_all *all, t_sect *temp, int x, int y);
-void				get_neighbours(t_sect *sector, t_all 	*all, int n);
+int                 get_neighbours(t_sect *sector, t_all 	*all, int n);
 float				point_side1(float px, float py, t_xy vert, t_xy vert1);
 int					check_sector(t_sect *sect);
+int                 inside_sector(t_xyint point, t_sect *sector);
 int					which_sector(t_all *all, t_sect *sectors, t_xyz where);
+int                 *which_sectors(t_all *all, t_sect *sectors, t_xyz where);
 void				remove_sector(t_all *all, t_sect *sectors);
 SDL_Surface			*get_text_surface(char *name, TTF_Font *font, SDL_Color color);
 void       			put_pxl(SDL_Surface *screen, SDL_Color col, int x, int y);
@@ -237,7 +239,9 @@ void				init_floors(t_sect *sectors, int num);
 void				normalize(t_sect *sectors, int num, t_all *all);
 int					**get_vertexes(t_all *all);
 int					get_order_num(t_xy coord, int **vert);
+int                 is_intersectred(t_xy v11, t_xy v12, t_xy v21, t_xy v22);
+int                 ispointincube(t_xyz point, t_xyz cubecenter, t_xyz borders, float centerzoffset);
+int				print_message(t_all *all, SDL_Color color, char *text, int delay);
 void				new_map(char *name);
-int                 ispointincube(t_xyz point, t_xyz cubecenter, t_xyz borders, float centerzoffset); // ГДЕ ЭТО ИСПОЛЬЗУЕТСЯ??
 
 # endif

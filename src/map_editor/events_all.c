@@ -12,27 +12,32 @@
 
 #include "editor.h"
 
-int	mode_switch(t_all *all, int mode)
+int	print_message(t_all *all, SDL_Color color, char *text, int delay)
 {
 	SDL_Surface *temp;
+	SDL_Rect area;
 
+	area = (SDL_Rect){W/2 - 175, H/2 - 25, 300, 50};
+	temp = get_text_surface(text, all->font, color);
+	draw_fill_rect(all, area, GREY);
+	draw_texture(all->sdl->screen, area, temp);
+	SDL_UpdateWindowSurface(all->sdl->window);
+	SDL_Delay(1000);
+	SDL_FreeSurface(temp);
+	return (0);
+}
+
+int	mode_switch(t_all *all, int mode)
+{
 	if (all->player.sector != -1 && mode)
 	{
 		all->threed = 1;
 		normalize(all->sectors, all->num_sectors, all);
-		temp = get_text_surface("Entering 3D!", all->font, RED);
-		draw_texture(all->sdl->screen, (SDL_Rect){W/2 - 175, H/2 - 25, 300, 50}, temp);
-		SDL_UpdateWindowSurface(all->sdl->window);
-		SDL_Delay(1000);
-		SDL_FreeSurface(temp);
+		print_message(all, RED, "Entering 3D!", 1000);
 	}
 	else if (all->player.sector == -1)
 	{
-		temp = get_text_surface("Set player!", all->font, RED);
-		draw_texture(all->sdl->screen, (SDL_Rect){W/2 - 175, H/2 - 25, 300, 50}, temp);
-		SDL_UpdateWindowSurface(all->sdl->window);
-		SDL_Delay(1000);
-		SDL_FreeSurface(temp);
+		print_message(all, RED, "Set player!", 1000);
 		return (0);
 	}
 	return(1);
@@ -45,20 +50,20 @@ void	key_press(t_all *all)
 	keystate = SDL_GetKeyboardState(NULL);
 	if (keystate[SDL_SCANCODE_E])
 		mode_switch(all, 1);
-	else if (keystate[SDL_SCANCODE_DELETE])
+	else if (keystate[SDL_SCANCODE_DELETE] || keystate[SDL_SCANCODE_BACKSPACE])
 		remove_sector(all, all->sectors);
 	else if (keystate[SDL_SCANCODE_TAB] && mode_switch(all, 0))
 		write_map("new", all);
 	else if (keystate[SDL_SCANCODE_RIGHT])
-		all->d.x += 1;
+		all->d.x += abs((int)(all->d.x)) <= 300 ? 1 : print_message(all, RED, "size limit!", 1000);
 	else if (keystate[SDL_SCANCODE_LEFT])
-		all->d.x -= 1;//(all->step > 1) ? 1 : 0;
+		all->d.x -= abs((int)(all->d.x)) <= 300 ? 1 : print_message(all, RED, "size limit!", 1000);
 	else if (keystate[SDL_SCANCODE_I])
 		all->iso = (all->iso == 0) ? 1 : 0;
 	else if (keystate[SDL_SCANCODE_UP])
-		all->d.y -= 1;
+		all->d.y -= abs((int)(all->d.x)) <= 300 ? 1 : print_message(all, RED, "size limit!", 1000);
 	else if (keystate[SDL_SCANCODE_DOWN])
-		all->d.y += 1;
+		all->d.y += abs((int)(all->d.x)) <= 300 ? 1 : print_message(all, RED, "size limit!", 1000);
 }
 
 void		level_buttons(t_all *all, t_button *buttons, SDL_MouseButtonEvent *event)
