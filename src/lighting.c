@@ -1,16 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   lighting.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
+/*   Updated: 2021/01/12 19:53:26 by ecelsa           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "utilits.h"
 
-Uint32			deep_shading(t_engine *engine, t_line wall, int x)
+Uint32	deep_shading(t_engine *engine, t_line wall, int x)
 {
 	float	z;
-//найти модификатор освещения в зависимости от дальности
-//эта формула линейной интерполяции https://en.wikipedia.org/wiki/Linear_interpolation
+
 	z = (((float)(x - wall.x0) * (engine->wall.x1 - engine->wall.x0)
 			/ (float)(wall.x1 - wall.x0) + engine->wall.x0));
 	return ((Uint32)(z * DEEP_SHADING));
 }
 
-Uint32		get_shadow(Uint32 z, Uint32 color)
+Uint32	get_shadow(Uint32 z, Uint32 color)
 {
 	Uint32	r;
 	Uint32	g;

@@ -23,7 +23,7 @@ static int	check_inter(t_engine *engine, int s, float *dx, float *dy)
 	py = engine->player.where.y;
 	vert = engine->sectors[engine->player.sector].vertex;
 	if (determine_intersection((t_fline){px, px + *dx, py, py + *dy},
-			(t_fline){vert[s].x, vert[s + 1].x, vert[s].y, vert[s + 1].y}) &&
+		(t_fline){vert[s].x, vert[s + 1].x, vert[s].y, vert[s + 1].y}) &&
 		point_side(px + *dx, py + *dy, vert[s], vert[s + 1]) < 0)
 		return (1);
 	return (0);
@@ -41,7 +41,8 @@ static int	check_inter2(t_engine *engine, float *dx, float *dy, int old)
 	while (s < sect->npoints)
 	{
 		if (point_side(player->where.x + *dx, player->where.y + *dy,
-	sect->vertex[s], sect->vertex[s + 1]) < 0 && engine->player.sector == old)
+			sect->vertex[s], sect->vertex[s + 1]) < 0
+			&& engine->player.sector == old)
 		{
 			*dx = 0;
 			*dy = 0;
@@ -49,6 +50,18 @@ static int	check_inter2(t_engine *engine, float *dx, float *dy, int old)
 		}
 		s++;
 	}
+	return (0);
+}
+
+static int	check(t_engine *engine, t_player *player, t_sect *sect, int s)
+{
+	if (player->where.z + HEAD_HEIGHT >
+	engine->sectors[sect->neighbors[s]].ceil || player->where.z -
+	player->eyeheight + KNEE_HEIGHT < engine->sectors[sect->neighbors[s]].floor
+	|| player->eyeheight + HEAD_HEIGHT
+	+ engine->sectors[sect->neighbors[s]].floor
+	> engine->sectors[sect->neighbors[s]].ceil)
+		return (1);
 	return (0);
 }
 
@@ -61,10 +74,7 @@ static void	step(t_engine *engine, int s, float *dx, float *dy)
 	sect = &engine->sectors[player->sector];
 	if (sect->neighbors[s] >= 0)
 	{
-		//	Ударяемся ли головой? || Можем ли перешагнуть?
-		if (player->where.z + HEAD_HEIGHT >
-	engine->sectors[sect->neighbors[s]].ceil || player->where.z -
-	player->eyeheight + KNEE_HEIGHT < engine->sectors[sect->neighbors[s]].floor)
+		if (check(engine, player, sect, s))
 			vec_proect(sect->vertex[s], sect->vertex[s + 1], dx, dy);
 		else
 		{
@@ -81,16 +91,20 @@ static void	step(t_engine *engine, int s, float *dx, float *dy)
 		vec_proect(sect->vertex[s], sect->vertex[s + 1], dx, dy);
 }
 
-static void	move_player(float *dx, float *dy, t_engine *engine)
+void		move(t_engine *engine)
 {
 	int		s;
 	int		old;
+	float	*dx;
+	float	*dy;
 
+	fall(&engine->player, engine->sectors);
 	old = engine->player.sector;
+	dx = &engine->player.velocity.x;
+	dy = &engine->player.velocity.y;
 	s = 0;
 	while (s < engine->sectors[engine->player.sector].npoints)
 	{
-		// Проверяет произошло ли пересечение стороны сектора
 		if (check_inter(engine, s, dx, dy))
 		{
 			step(engine, s, dx, dy);
@@ -103,11 +117,3 @@ static void	move_player(float *dx, float *dy, t_engine *engine)
 	engine->player.where.x += *dx;
 	engine->player.where.y += *dy;
 }
-
-void		move(t_engine *engine)
-{
-	fall(&engine->player, engine->sectors);
-	move_player(&engine->player.velocity.x, &engine->player.velocity.y, engine);
-}
-
-

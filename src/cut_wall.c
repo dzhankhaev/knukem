@@ -44,8 +44,6 @@ static t_fline	cut2(t_fline wall, t_xy i2)
 	return (wall);
 }
 
-//обрежет стену, которая частично попала в поле зрения
-//по левому лучу видимости и по правому
 t_fline			cut_wall(t_fline wall, t_xy i1, t_xy i2)
 {
 	float	t;

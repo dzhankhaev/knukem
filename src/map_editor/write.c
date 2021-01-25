@@ -71,12 +71,55 @@ void    write_sectors(t_all *all, int **vert, int fd)
 		ft_putnbr_fd(all->sectors[i].txw0, fd);
 		ft_putchar_fd(' ', fd);
 		ft_putnbr_fd(all->sectors[i].txw1, fd);
+		ft_putchar_fd('\t', fd);
+		ft_putnbr_fd(all->sectors[i].graf.g_num, fd);
+		ft_putchar_fd('\t', fd);
+		j = 0;
+		while (j < all->sectors[i].graf.g_num)
+		{
+			ft_putnbr_fd(all->sectors[i].graf.wall[j], fd);
+			ft_putchar_fd(' ', fd);
+			ft_putnbr_fd((int)(all->sectors[i].graf.z[j] * 1024.f), fd);
+			ft_putchar_fd(' ', fd);
+			ft_putnbr_fd((int)(all->sectors[i].graf.coord[j].x0 * 1024.f), fd);
+			ft_putchar_fd(' ', fd);
+			ft_putnbr_fd((int)(all->sectors[i].graf.coord[j].x1 * 1024.f), fd);
+			ft_putchar_fd(' ', fd);
+			ft_putnbr_fd((int)(all->sectors[i].graf.coord[j].y0 * 1024.f), fd);
+			ft_putchar_fd(' ', fd);
+			ft_putnbr_fd((int)(all->sectors[i].graf.coord[j].y1 * 1024.f), fd);
+			ft_putchar_fd(' ', fd);
+			ft_putnbr_fd((int)(all->sectors[i].graf.coord[j].color), fd);
+			ft_putchar_fd(' ', fd);
+			j++;
+		}
 		i++;
         ft_putchar_fd('\n', fd);
     }
 }
 
-int     write_map(char *name, t_all *all)
+static void		write_player(t_all *all, int fd)
+{
+	ft_putstr_fd("player\t", fd);
+	ft_putnbr_fd((int)all->player.where.x, fd);
+	ft_putchar_fd(' ', fd);
+	ft_putnbr_fd((int)all->player.where.y, fd);
+	ft_putchar_fd(' ', fd);
+	ft_putnbr_fd(0, fd);
+	ft_putchar_fd(' ', fd);
+	ft_putnbr_fd(all->player.sector, fd);
+	ft_putchar_fd(' ', fd);
+	ft_putnbr_fd(all->player.settings.inventory, fd);
+	ft_putchar_fd(' ', fd);
+	ft_putnbr_fd(all->player.settings.speed, fd);
+	ft_putchar_fd(' ', fd);
+	ft_putnbr_fd(all->player.settings.ammo, fd);
+	ft_putchar_fd(' ', fd);
+	ft_putnbr_fd(all->player.settings.gravity, fd);
+	ft_putchar_fd('\n', fd);
+}
+
+int				write_map(char *name, t_all *all)
 {
     int fd;// для корректной работы, fd должен быть открыт как-то так open("new_map.txt", O_WRONLY | O_CREAT, S_IWUSR | S_IRUSR);
     int **vert;//массив вершин, где номер строки - координата y, первое значение в строке - 
@@ -85,19 +128,11 @@ int     write_map(char *name, t_all *all)
         normalize(all->sectors, all->num_sectors, all);
     vert = get_vertexes(all);
 
-    fd = open("new_map.txt", O_TRUNC | O_WRONLY | O_CREAT, S_IWUSR | S_IRUSR);
+	fd = open(all->name, O_TRUNC | O_WRONLY | O_CREAT, S_IWUSR | S_IRUSR);
 
     write_vertexes(all, vert, fd);
     write_sectors(all, vert, fd);
-    ft_putstr_fd("player\t", fd);
-    ft_putnbr_fd((int)all->player.where.x, fd);
-    ft_putchar_fd(' ', fd);
-    ft_putnbr_fd((int)all->player.where.y, fd);
-    ft_putchar_fd(' ', fd);
-    ft_putnbr_fd((int)all->player.where.z, fd);
-    ft_putchar_fd(' ', fd);
-    ft_putnbr_fd(all->player.sector, fd);
-    ft_putchar_fd('\n', fd);
+	write_player(all, fd);
     ft_memdel((void*)vert);
     return (0);
 }

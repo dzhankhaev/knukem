@@ -23,17 +23,21 @@ HEADERS := engine.h\
 SRC := main.c\
 	run_queue.c\
 	init.c\
+	init_engine.c\
 	hud.c\
 	lighting.c\
 	transform_wall.c\
 	cut_wall.c\
 	manage_data.c\
 	game_loop.c\
+	new_map.c\
 	animations/do_door_anim.c\
 	animations/start_door_anim.c\
+	animations/check_door_anim.c\
 	key_events/keys_manager.c\
 	key_events/event_edit.c\
 	key_events/event_movement.c\
+	key_events/keyboard_event.c\
 	editor/door_mod.c\
 	editor/real_time_edit.c\
 	editor/graf_mod.c\
@@ -52,11 +56,11 @@ SRC := main.c\
     utilits/exit_options.c\
     utilits/load_img.c\
     utilits/anim_delete.c\
+    utilits/ispointincube.c\
 	render/minimap.c\
 	render/render_hplane.c\
 	render/render_scene.c\
-	render/sprite_render.c\
-	render/transform_sprite.c\
+	render/render_cross.c\
 	render/ceil_and_floor_init.c\
 	render/graf_proccesing.c\
 	render/wall/render_wall.c\

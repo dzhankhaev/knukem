@@ -39,7 +39,7 @@
 # define KNEE_HEIGHT 2				//	высота объекта, которую можно перешагивать
 # define ACCELERATION_PLUS 0.6f		//	ускорение. плюс при ускорении
 # define ACCELERATION_MINUS 0.8f	//	ускорение. минус при торможении
-# define MOVE_SPEED 0.2f			//	[0.1;**]
+# define MOVE_SPEED 0.1f			//	[0.1;**]
 # define DFALL_SPEED -0.11f			//	изменение скорости при падении на живот
 # define DSIT_SPEED -0.07f			//	изменение скорости при приседе
 # define DSPRINT_SPEED 0.1f			//	изменение скорости при беге
@@ -257,8 +257,7 @@ void					init_ceil_floor(t_engine *engine, t_sect sector, t_line *wall);
 void					init_wall(t_engine *engine, t_sect sector, t_line *wall);
 t_fline					cut_wall(t_fline wall, t_xy i1, t_xy i2);						//разрезает стену для попадания в fov
 void					minimap(t_engine *engine, t_xy v0, t_xy v1, Uint32 color);			//рисуется отдельно для каждой стены
-void					minimap_cut(t_engine *engine, t_xy v0, t_xy v1, Uint32 color);		//показывает только то, что в поле зрения
-void					render_minimap_hud(t_minimap minimap, SDL_Surface *screen);		//рисуется один раз на кадр
+void					render_minimap_hud(t_minimap *minimap, SDL_Surface *screen);		//рисуется один раз на кадр
 void					run_queue(t_engine *engine);
 int						check_repeat(t_engine *engine, int sectorno, int neighbor);
 void					render_line(t_line p, SDL_Surface *screen, t_line borders);		//линия в пределах указанных границ
@@ -269,13 +268,9 @@ void					fall(t_player *player, t_sect *sectors);
 Uint32					deep_shading(t_engine *engine, t_line wall, int x);			//модификатор освещения в зависимости от дальности
 Uint32					get_shadow(Uint32 z, Uint32 color);								//применить модификатор освещения
 void					real_time_edit(t_engine *engine);
+void					render_cross(t_engine *engine);
 void					render_hplane(t_engine *engine, t_vplane *p, int txno);
-int						main_editor(t_engine *engine, char *name, t_all *all);
-void					render_sprite(t_engine *engine);
-int						transform_sprite(t_engine *engine);
-void					normi_sprite(t_sprites1 sprite, t_player player);
-void					rotate_sprite(t_sprites1 sprite, t_player player);
-void					perspective_transform2(t_sprites1 sprite, t_player player);
+int						main_editor(t_engine *engine, t_all *all);
 void					graf_proccesing(t_engine *engine, int sectorno, int i);
 void					graf_mod(t_engine *engine, int sectorno, int i);
 void					delete_one_graf(t_engine *engine, int sectorno);
@@ -287,5 +282,8 @@ void					start_door_anim(t_engine *engine, int sec, int nei, int i);
 // void					put_hud(SDL_Surface *scr, t_inp_hud *inp);
 void					put_hud(t_engine *engine);
 void					load_surfaces(const char *dirs, t_hud *hud_);
+int						check_door_anim(t_engine *engine, int door);
+void					keyboard_event(t_engine *engine, t_player *player,
+					t_edit *edit);
 
 #endif

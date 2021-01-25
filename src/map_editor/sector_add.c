@@ -79,7 +79,7 @@ void	init_new_sector(t_sect *sect, t_sect *temp)
 		sect->graf.g_num = 0;
 		sect->graf.coord = NULL;
 		sect->graf.wall = NULL;
-		sect->graf.z = 0;
+		sect->graf.z = NULL;
 }
 
 void	check_vert(t_all *all, int *x, int *y, t_sect *temp)

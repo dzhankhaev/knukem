@@ -9,6 +9,7 @@
 /*   Updated: 2021/01/07 22:28:14 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef EDITOR_H
 # define EDITOR_H
 
@@ -58,7 +59,7 @@
 # define GRAVITY 7
 # define AMMO 8
 
-typedef struct			s_fline		//	стена для вычислений
+typedef struct			s_fline
 {
 	float				x0;
 	float				x1;
@@ -152,13 +153,17 @@ typedef	struct	s_player
     int			falling;		//	1 - игрок падает, 0 - не падает. Игрок может падать вверх. Если 1, будет применено ускорение
     int			flying;			//	флаг = 1 только если игрок летит вверх или вниз. ФЛАГ НЕ ОПРЕДЕЛЯЕТ НАХОДИТСЯ ИГРОК В РЕЖИМЕ ПОЛЕТА ИЛИ НЕТ
     int			ground;			//	грок стоит на земле
-    int         stand;
+    int			stand;
     float		eyeheight;		//	текущая высота камеры
     float		speed;			//	текущая максимальная скорость
+    float		move_speed;		//	Максимальная скорость
     int			deep_sh;		//	затенение
     SDL_Event	event;
-    int			game_mode;
+    int			game_mode;		//	1 создатель, 0 игрок
     t_settings  settings;
+    int			cur_inv;		//	Сколько мест в инвентаре занято
+    int			cur_am;			//	Сколько патронов имеется
+    int			shot;			//	0 ничего, 1 выстрел
 }				t_player;
 
 typedef	struct s_labels
@@ -196,6 +201,7 @@ typedef struct      s_all
     int				threed;
     t_button        buttons[BUTTONS];//кнопки
     t_sdl           *sdl;//
+    char			*name;
 }                   t_all;
 
 void	            init_all(t_all *all); // инициализируем модули
@@ -236,6 +242,6 @@ int					get_order_num(t_xy coord, int **vert);
 int                 is_intersectred(t_xy v11, t_xy v12, t_xy v21, t_xy v22);
 int                 ispointincube(t_xyz point, t_xyz cubecenter, t_xyz borders, float centerzoffset);
 int				print_message(t_all *all, SDL_Color color, char *text, int delay);
-
+void				new_map(char *name);
 
 # endif

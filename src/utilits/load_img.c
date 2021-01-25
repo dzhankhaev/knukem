@@ -54,7 +54,6 @@ void		get_filename(char *name, char *sn)
 	}
 }
 
-//https://habr.com/ru/post/456656/
 void		load_img(t_engine *engine, char *name, int n)
 {
 	SDL_Surface *img;

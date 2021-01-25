@@ -21,7 +21,7 @@ static void	anim0(t_engine *engine, int anim, int dsec, int i)
 		if (engine->player.sector == dsec)
 			engine->sectors[dsec].door -= 1;
 		engine->sectors[dsec].floor = engine->sectors[dsec].oldf
-									  + engine->sectors[dsec].door;
+							+ engine->sectors[dsec].door;
 		if (engine->sectors[dsec].floor >= engine->sectors[dsec].ceil)
 			anim_delete(engine, i);
 	}
@@ -31,14 +31,13 @@ static void	anim0(t_engine *engine, int anim, int dsec, int i)
 		if (engine->player.sector == dsec)
 			engine->sectors[dsec].door += 1;
 		engine->sectors[dsec].floor = engine->sectors[dsec].oldf
-									  + engine->sectors[dsec].door;
+							+ engine->sectors[dsec].door;
 		if (engine->sectors[dsec].floor <= engine->sectors[dsec].oldf)
 			anim_delete(engine, i);
-
 	}
 }
 
-void 		door_anim(t_engine *engine)
+void		door_anim(t_engine *engine)
 {
 	int i;
 	int dsec;

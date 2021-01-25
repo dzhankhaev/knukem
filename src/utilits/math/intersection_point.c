@@ -13,7 +13,6 @@
 #include "engine.h"
 #include "utilits.h"
 
-//найдём Xa, Ya - точки пересечения двух прямых
 static t_xy		vertical1(t_fline wall, t_fline twall)
 {
 	float xa;
@@ -32,7 +31,7 @@ static t_xy		vertical1(t_fline wall, t_fline twall)
 	}
 	return (t_xy){-1.f, -1.f};
 }
-//найдём Xa, Ya - точки пересечения двух прямых
+
 static t_xy		vertical2(t_fline wall, t_fline twall)
 {
 	float xa;
@@ -65,10 +64,10 @@ static t_xy		general(t_fline wall, t_fline twall)
 	b1 = wall.y0 - a1 * wall.x0;
 	b2 = twall.y0 - a2 * twall.x0;
 	if (a1 == a2)
-		return (t_xy){-1.f, -1.f}; //отрезки параллельны
+		return (t_xy){-1.f, -1.f};
 	xa = (b2 - b1) / (a1 - a2);
 	if ((xa < fmaxf(wall.x0, twall.x0)) || (xa > fminf(wall.x1, twall.x1)))
-		return (t_xy){-1.f, -1.f}; //точка Xa находится вне пересечения проекций отрезков на ось X
+		return (t_xy){-1.f, -1.f};
 	else
 		return (t_xy){xa, a2 * xa + b2};
 }
@@ -93,15 +92,12 @@ t_xy			intersection_point(t_fline wall, t_fline twall)
 {
 	wall = swap(wall);
 	twall = swap(twall);
-	//Если конец первого отрезка находится левее начала правого отрезка (по оси X), то отрезки точно не имеют точки пересечения.
 	if (wall.x1 < twall.x0)
 		return ((t_xy){-1.f, -1.f});
-	//если первый отрезок вертикальный
 	if (wall.x0 == wall.x1)
 		return (vertical1(wall, twall));
-		// если второй отрезок вертикальный
 	else if (twall.x0 == twall.x1)
 		return (vertical2(wall, twall));
-	else //оба отрезка невертикальные
+	else
 		return (general(wall, twall));
 }

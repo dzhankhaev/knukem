@@ -27,14 +27,14 @@ static void		loop(t_engine *engine, int *x_table, t_vplane *p, int x)
 		y1 = p->topy[x];
 		y2 = p->boty[x];
 		if (y2 < y1)
-			continue ;	//	при возможных пропусках точек на границах (а они есть), алгоритм развалится
-		while (y1 < *y_top)		//если верхняя линия поднимается
+			continue ;
+		while (y1 < *y_top)
 			x_table[--(*y_top)] = x;
-		while (y2 > *y_bot)		//если нижняя линия опускается
+		while (y2 > *y_bot)
 			x_table[++(*y_bot)] = x;
-		while (*y_top < y1)		//если верхняя линия опускается
+		while (*y_top < y1)
 			render_hline(engine, *y_top, x_table[(*y_top)++], x);
-		while (*y_bot > y2)		//если нижняя линия поднимается
+		while (*y_bot > y2)
 			render_hline(engine, *y_bot, x_table[(*y_bot)--], x);
 	}
 }
@@ -52,7 +52,6 @@ void			render_hplane(t_engine *engine, t_vplane *p, int txno)
 	while (y <= engine->rend_plane.y_bot)
 		x_table[y++] = p->minx;
 	loop(engine, x_table, p, p->minx);
-	//заливаем промежуток между top и bottom
 	y = engine->rend_plane.y_top;
 	while (y <= engine->rend_plane.y_bot)
 	{

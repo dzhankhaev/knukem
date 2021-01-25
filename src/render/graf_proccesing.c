@@ -48,10 +48,10 @@ static void	render_graf(t_engine *engine, t_graf *graf, t_fline *w, int t)
 	t_xy	x;
 
 	z = engine->player.where.z;
-	w0 = perspective_transform(*w,z - graf->z[t] + 1,
-						engine->player.vangle, w->color);
-	w1 = perspective_transform(*w,z - graf->z[t] - 1,
-						engine->player.vangle, FLOOR_COLOR);
+	w0 = perspective_transform(*w, z - graf->z[t] + 1,
+		engine->player.vangle, w->color);
+	w1 = perspective_transform(*w, z - graf->z[t] - 1,
+		engine->player.vangle, FLOOR_COLOR);
 	x.x = (float)imax(imin(w0.x0, w0.x1), engine->present->x0);
 	x.y = (float)imin(imax(w1.x0, w1.x1), engine->present->x1);
 	engine->rend_wall.w = w0;
@@ -76,8 +76,8 @@ void		graf_proccesing(t_engine *engine, int sectorno, int i)
 	int		t;
 
 	graf = &engine->sectors[sectorno].graf;
-	t = 0;
-	while (t < graf->g_num)
+	t = -1;
+	while (++t < graf->g_num)
 	{
 		if (graf->wall[t] == i)
 		{
@@ -85,7 +85,7 @@ void		graf_proccesing(t_engine *engine, int sectorno, int i)
 			if (transform_wall(engine, &w))
 			{
 				if ((engine->edit.door == 2 || engine->edit.graf_wall == -2) &&
-					determine_intersection(w,(t_fline){0, 3, 0, 0}))
+					determine_intersection(w, (t_fline){0, 3, 0, 0}))
 				{
 					engine->edit.door = engine->edit.door == 2 ? 4
 							: engine->edit.door;
@@ -95,6 +95,5 @@ void		graf_proccesing(t_engine *engine, int sectorno, int i)
 				render_graf(engine, graf, &w, t);
 			}
 		}
-		t++;
 	}
 }
