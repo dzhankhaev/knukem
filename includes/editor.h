@@ -175,8 +175,6 @@ typedef	struct s_labels
 typedef struct      s_all
 {
     t_player        player;// переменная игрока.
-    t_sect          *swap;//указатель на выбранный сектор
-    int				on; // индикатор запуска редактора
     int				swap_num;
     t_xy			delta; // дельта области редактирования
     t_xy			d; // дельта сдвига карты
@@ -184,10 +182,8 @@ typedef struct      s_all
     t_sect			*temp;
     int				num_sectors;//количество секторов
     int 			step;//шаг (масштаб)
-    int 			iso; //изометрия вкл/выкл
     SDL_Color		color;
     TTF_Font		*font;
-    TTF_Font		*s_font;
     t_labels		labels[9];
     t_xy			draw_floors;//уровни отрисовки этажей
     t_xy			set_floors;//установка высоты нового сектора
@@ -205,7 +201,6 @@ typedef struct      s_all
 }                   t_all;
 
 void	            init_all(t_all *all); // инициализируем модули
-void				add_sprite(t_all *all, int x, int y, int type);
 void                error_and_close(const char *file, const char *function); // аварийное завершение программы
 void                on_event(t_all *all, SDL_Event *event); //обработка событий
 void				map_click(t_all *all, SDL_MouseButtonEvent *event);
@@ -241,7 +236,7 @@ int					**get_vertexes(t_all *all);
 int					get_order_num(t_xy coord, int **vert);
 int                 is_intersectred(t_xy v11, t_xy v12, t_xy v21, t_xy v22);
 int                 ispointincube(t_xyz point, t_xyz cubecenter, t_xyz borders, float centerzoffset);
-int				print_message(t_all *all, SDL_Color color, char *text, int delay);
+int                 print_message(t_all *all, SDL_Color color, char *text, int delay);
 void				new_map(char *name);
 
 # endif

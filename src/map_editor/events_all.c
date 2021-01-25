@@ -55,18 +55,20 @@ void	key_press(t_all *all)
 	else if (keystate[SDL_SCANCODE_TAB] && mode_switch(all, 0))
 		write_map(all);
 	else if (keystate[SDL_SCANCODE_RIGHT])
-		all->d.x += abs((int)(all->d.x)) <= 300 ? 1 : print_message(all, RED, "size limit!", 1000);
+		all->d.x += abs((int)(all->d.x)) <= 300 ? 1 :
+			print_message(all, RED, "size limit!", 1000);
 	else if (keystate[SDL_SCANCODE_LEFT])
-		all->d.x -= abs((int)(all->d.x)) <= 300 ? 1 : print_message(all, RED, "size limit!", 1000);
-	else if (keystate[SDL_SCANCODE_I])
-		all->iso = (all->iso == 0) ? 1 : 0;
+		all->d.x -= abs((int)(all->d.x)) <= 300 ? 1 :
+			print_message(all, RED, "size limit!", 1000);
 	else if (keystate[SDL_SCANCODE_UP])
-		all->d.y -= abs((int)(all->d.x)) <= 300 ? 1 : print_message(all, RED, "size limit!", 1000);
+		all->d.y -= abs((int)(all->d.x)) <= 300 ? 1 :
+			print_message(all, RED, "size limit!", 1000);
 	else if (keystate[SDL_SCANCODE_DOWN])
-		all->d.y += abs((int)(all->d.x)) <= 300 ? 1 : print_message(all, RED, "size limit!", 1000);
+		all->d.y += abs((int)(all->d.x)) <= 300 ? 1 :
+			print_message(all, RED, "size limit!", 1000);
 }
 
-void		level_buttons(t_all *all, t_button *buttons, SDL_MouseButtonEvent *event)
+void		level_buttons(t_all *all, t_button *btns, SDL_MouseButtonEvent *event)
 {
 	int i;
 	int	dx;
@@ -79,43 +81,43 @@ void		level_buttons(t_all *all, t_button *buttons, SDL_MouseButtonEvent *event)
 		all->swap_num >= 0) ? BUTTONS : BUTTONS - 4;
 	while(i < count)
 	{
-		dx = event->x - buttons[i].dstrect.x;
-		dy = event->y - buttons[i].dstrect.y;
+		dx = event->x - btns[i].dstrect.x;
+		dy = event->y - btns[i].dstrect.y;
 		if(all->mouse.z == 1)
-			if(dx > 0 && dy > 0 && dx < buttons[i].dstrect.w && dy < buttons[i].dstrect.h)
-				buttons[i].state = buttons[i].state == 1 ? 0 : 1;
+			if(dx > 0 && dy > 0 && dx < btns[i].dstrect.w && dy < btns[i].dstrect.h)
+				btns[i].state = btns[i].state == 1 ? 0 : 1;
 		i++;
 	}
 }
 
-void	button_click(t_all *all, t_button *buttons, SDL_MouseButtonEvent *event, int i)
+void	button_click(t_all *all, t_button *btns, SDL_MouseButtonEvent *event, int i)
 {
 	int	dx;
 	int	dy;
 
 	while(i < BUTTONS - 8)
 	{
-		dx = event->x - buttons[i].dstrect.x;
-		dy = event->y - buttons[i].dstrect.y;
+		dx = event->x - btns[i].dstrect.x;
+		dy = event->y - btns[i].dstrect.y;
 		if(all->mouse.z == 1)
 		{
-			if(dx > 0 && dy > 0 && dx < buttons[i].dstrect.w && dy < buttons[i].dstrect.h)
-				buttons[i].state = buttons[i].state == 1 ? 0 : 1;
+			if(dx > 0 && dy > 0 && dx < btns[i].dstrect.w && dy < btns[i].dstrect.h)
+				btns[i].state = btns[i].state == 1 ? 0 : 1;
 			else
-				buttons[i].state = 0;
+				btns[i].state = 0;
 			all->swap_num = -1;
 		}
 		else if(all->mouse.z == 0)
 		{
-			if(dx > 0 && dy > 0 && dx < buttons[i].dstrect.w && dy < buttons[i].dstrect.h &&
-			buttons[i].state != 1)
-				buttons[i].color = GREY;
+			if(dx > 0 && dy > 0 && dx < btns[i].dstrect.w && dy < btns[i].dstrect.h
+			&& btns[i].state != 1)
+				btns[i].color = GREY;
 			else
-				buttons[i].color = WHITE;
+				btns[i].color = WHITE;
 		}
 		i++;
 	}
-	all->player.picked = buttons[1].state == 1 ? 1 : 0;
+	all->player.picked = btns[1].state == 1 ? 1 : 0;
 }
 
 void	closest_point(t_all *all, t_xyint point)
@@ -136,7 +138,7 @@ void	closest_point(t_all *all, t_xyint point)
 	
 }
 
-void	sprite_click(t_all *all, t_button *buttons, SDL_MouseButtonEvent *event, int i)
+void	sprite_click(t_all *all, t_button *btns, SDL_MouseButtonEvent *event, int i)
 {
 	int			dx;
 	int			dy;
@@ -144,15 +146,15 @@ void	sprite_click(t_all *all, t_button *buttons, SDL_MouseButtonEvent *event, in
 
 	while(i < 5)
 	{
-		target = buttons[i].dstrect;
+		target = btns[i].dstrect;
 		dx = event->x - target.x;
 		dy = event->y - target.y;
 		if(all->mouse.z == 1)
 		{
 			if(dx > 0 && dy > 0 && dx < target.w && dy < target.h)
-				buttons[i].state = buttons[i].state == 1 ? 0 : 1;
+				btns[i].state = btns[i].state == 1 ? 0 : 1;
 			else
-				buttons[i].state = 0;
+				btns[i].state = 0;
 		}
 		i++;
 	}

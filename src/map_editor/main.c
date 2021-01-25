@@ -105,7 +105,7 @@ void    interact(t_all *all)
 			sector_change(all, all->sectors, all->swap_num);
 		
 		if(event.type == SDL_KEYDOWN || event.type == SDL_KEYUP || event.type == SDL_MOUSEMOTION
-			|| event.type == SDL_MOUSEBUTTONUP || event.type == SDL_MOUSEBUTTONDOWN || all->on)
+			|| event.type == SDL_MOUSEBUTTONUP || event.type == SDL_MOUSEBUTTONDOWN)
 		{
 			SDL_LockSurface(all->sdl->screen);
 			ft_bzero((void*)all->sdl->screen->pixels, (size_t)(4 * W * H));
@@ -115,18 +115,12 @@ void    interact(t_all *all)
 			SDL_UpdateWindowSurface(all->sdl->window);
 			SDL_FreeSurface(all->sdl->screen);
 		}
-		all->on = 0;
 	}
 }
 
 int main_editor(t_engine *engine, t_all *all)
 {
-	if (&engine->player == &all->player)
-		printf("YY\n");
-    init_all(all); // инициализация всех модулей
-	// printf("level z = %d\n", (int)all->draw_floors.y);
-	if (load_texture(all) != 0)
-		error_and_close(__FILE__, __FUNCTION__); //загрузка текстур
+	all->threed = 0;
 	interact(all);// основная функция взаимодействия
 	engine->sectors = all->sectors;
 	engine->player.where = all->player.where;

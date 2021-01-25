@@ -54,15 +54,39 @@ void	arg_check(t_engine *engine, t_all *all, int av, char **ac)
 	}
 }
 
+void	clean_all(t_all *all)
+{
+	int i;
+
+	TTF_CloseFont(all->font);
+	all->font=NULL;
+	TTF_Quit();
+	if(all->temp->npoints)
+		free(all->temp->vertex);
+	if(all->temp->neighbors)
+		free(all->temp->neighbors);
+	free(all->temp);
+	all->temp = NULL;
+	i = 0;
+	while (i < 9)
+		SDL_FreeSurface(all->labels[i++].surf);
+	i = 0;
+	while (i < BUTTONS)
+		free(all->buttons[i++].title);
+
+}
+
 int		main(int av, char **ac)
 {
 	t_engine	engine;
 	t_all		all;
 
 	arg_check(&engine, &all, av, ac);
+	init_all(&all);
 	init_engine(&engine, &all);
 	general_init(&engine);
 	setup_window_icon(&engine);
+	load_texture(&all);
 	load_img(&engine, "wall1.png", 0);
 	load_img(&engine, "wall2.png", 1);
 	load_img(&engine, "wall3.png", 2);
@@ -71,5 +95,6 @@ int		main(int av, char **ac)
 	load_img(&engine, "sky1.png", 5);
 	game_loop(&engine, &all);
 	clean(&engine);
+	clean_all(&all);
 	return (0);
 }
