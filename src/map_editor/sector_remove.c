@@ -36,7 +36,7 @@ void    remove_sector(t_all *all, t_sect *sectors)
 
     if(all->swap_num != -1)
     {
-        del = &all->sectors[all->swap_num];
+        del = &sectors[all->swap_num];
         drop_neighbors(all->sectors, del->neighbors, del->npoints, all->swap_num);
         free(del->vertex);
         free(del->neighbors);
@@ -47,11 +47,11 @@ void    remove_sector(t_all *all, t_sect *sectors)
             free(del->graf.wall);
         }
 		if (all->num_sectors > 1 && all->swap_num != all->num_sectors - 1)
-            all->sectors[all->swap_num] = all->sectors[all->num_sectors - 1];
+            sectors[all->swap_num] = sectors[all->num_sectors - 1];
         if (all->swap_num == all->player.sector)
             all->player.sector = -1;
         all->num_sectors -= 1;
-        get_neighbours(&all->sectors[all->swap_num], all, all->swap_num);
+        get_neighbours(&sectors[all->swap_num], all, all->swap_num);
         all->swap_num = -1;
     }
 }

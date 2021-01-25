@@ -53,7 +53,7 @@ void	key_press(t_all *all)
 	else if (keystate[SDL_SCANCODE_DELETE] || keystate[SDL_SCANCODE_BACKSPACE])
 		remove_sector(all, all->sectors);
 	else if (keystate[SDL_SCANCODE_TAB] && mode_switch(all, 0))
-		write_map("new", all);
+		write_map(all);
 	else if (keystate[SDL_SCANCODE_RIGHT])
 		all->d.x += abs((int)(all->d.x)) <= 300 ? 1 : print_message(all, RED, "size limit!", 1000);
 	else if (keystate[SDL_SCANCODE_LEFT])

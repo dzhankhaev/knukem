@@ -20,8 +20,9 @@ int		is_intersectred(t_xy v11, t_xy v12, t_xy v21, t_xy v22)
 
 int		check_intersections(t_sect *sect)
 {
-	int i, j;
-	t_xy *v;
+	unsigned int	i;
+	unsigned int	j;
+	t_xy			*v;
 	
 	i = 0;
 	v = sect->vertex;
@@ -99,9 +100,10 @@ void	check_vert(t_all *all, int *x, int *y, t_sect *temp)
 
 void    new_sector(t_all *all, t_sect *temp, int x, int y)
 {
-    int i = 0;
-	int *num_sect;
+    unsigned int	i;
+	int				*num_sect;
 
+	i = 0;
 	num_sect = &all->num_sectors;
 	all->min_coord.x = fmin(x, all->min_coord.x);
 	all->min_coord.y = fmin(y, all->min_coord.y);

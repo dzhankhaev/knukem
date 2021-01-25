@@ -44,9 +44,9 @@ int *sorted_insert(int *line, int n, int *k)
 
 int *get_x(t_sect *sectors, int num, int y, int *line)
 {
-    int i;
-    int j;
-    int k;
+    int             i;
+    unsigned int    j;
+    int             k;
 
     k = 0;
     i = 0;
@@ -84,8 +84,8 @@ int    **get_vertexes(t_all *all)
 
 void    normalize(t_sect *sectors, int num, t_all *all)
 {
-    int i;
-    int j;
+    int             i;
+    unsigned int    j;
 
     i = 0;
     while(i < num)

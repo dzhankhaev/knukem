@@ -211,9 +211,9 @@ void                on_event(t_all *all, SDL_Event *event); //обработка
 void				map_click(t_all *all, SDL_MouseButtonEvent *event);
 int					load_map(char *name, t_all *all); // загрузка карты
 int                 load_texture(t_all *all);// звгрузка текстур
-int					load_buttons(t_all *all, t_button *btn);
+int					load_buttons(t_button *btn);
 void                draw_all(t_all *all, t_sdl *sdl, t_button *btn);//отрисовка
-int					write_map(char *name, t_all *all);
+int					write_map(t_all *all);
 void				draw_temp(t_all *all, t_sdl *sdl, t_sect *temp, t_xy delta);//несохраненный сектор
 void                draw_player(t_all *all, t_sdl *sdl, t_player *player, t_xy *c);
 void				draw_map(t_sect *sect, t_all *all);

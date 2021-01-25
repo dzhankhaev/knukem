@@ -27,7 +27,7 @@ void    write_vertexes(t_all *all, int **vert, int fd)
 
 void    write_sect_vert(t_all *all, int **vert, int i, int fd)
 {
-    int j;
+    unsigned int j;
 
     ft_putstr_fd("sector\t", fd);
     ft_putnbr_fd((int)all->sectors[i].oldf, fd);
@@ -45,8 +45,8 @@ void    write_sect_vert(t_all *all, int **vert, int i, int fd)
 
 void    write_sectors(t_all *all, int **vert, int fd)
 {
-    int i;
-    int j;
+    int             i;
+    unsigned int    j;
 
     i = 0;
     while(i < all->num_sectors)
@@ -75,7 +75,7 @@ void    write_sectors(t_all *all, int **vert, int fd)
 		ft_putnbr_fd(all->sectors[i].graf.g_num, fd);
 		ft_putchar_fd('\t', fd);
 		j = 0;
-		while (j < all->sectors[i].graf.g_num)
+		while ((int)j < all->sectors[i].graf.g_num)
 		{
 			ft_putnbr_fd(all->sectors[i].graf.wall[j], fd);
 			ft_putchar_fd(' ', fd);
@@ -119,7 +119,7 @@ static void		write_player(t_all *all, int fd)
 	ft_putchar_fd('\n', fd);
 }
 
-int				write_map(char *name, t_all *all)
+int				write_map(t_all *all)
 {
     int fd;// для корректной работы, fd должен быть открыт как-то так open("new_map.txt", O_WRONLY | O_CREAT, S_IWUSR | S_IRUSR);
     int **vert;//массив вершин, где номер строки - координата y, первое значение в строке - 

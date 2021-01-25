@@ -2,8 +2,8 @@
 
 int     inside_sector(t_xyint point, t_sect *sector)
 {
-    int i;
-    int p;
+    unsigned int    i;
+    int             p;
 
     i = 0;
     while(i < sector->npoints)
@@ -18,10 +18,10 @@ int     inside_sector(t_xyint point, t_sect *sector)
 
 int     which_sector(t_all *all, t_sect *sectors, t_xyz where)
 {
-    int i;
-    int p;
+    int             i;
+    int             p;
+    unsigned    int j;
 
-    int j;
     i = 0;
     p = 0;
     while(i < all->num_sectors)
@@ -45,11 +45,11 @@ int     which_sector(t_all *all, t_sect *sectors, t_xyz where)
 int     *which_sectors(t_all *all, t_sect *sectors, t_xyz where)
 {
     int i;
-    int p;
-    int *ret;
-    int count;
-
-    int j;
+    int             p;
+    int             *ret;
+    int             count;
+    unsigned int    j;
+    
     i = 0;
     p = 0;
     count = 0;

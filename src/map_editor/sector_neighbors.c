@@ -27,16 +27,17 @@ int		height_intersection(int x, int y, t_xy h)
 
 int		is_neighbor(t_all *all, t_xy coord, t_xy coord2, t_xy height, int self)
 {
-	int i;
-	int j;
-	t_xy	*temp;
+	unsigned int	i;
+	unsigned int	j;
+	t_xy			*temp;
 
 	i = 0;
-	while(i < all->num_sectors - 1)
+	while((int)i < all->num_sectors - 1)
 	{
 		j = 0;
 		temp = all->sectors[i].vertex;
-        if (height_intersection(all->sectors[i].floor, all->sectors[i].ceil, height) && i != self)
+        if (height_intersection(all->sectors[i].floor, all->sectors[i].ceil, height)
+			&& (int)i != self)
             while (j < all->sectors[i].npoints)
             {
                 if(coord.x == temp[j].x && coord.y == temp[j].y)
@@ -52,9 +53,9 @@ int		is_neighbor(t_all *all, t_xy coord, t_xy coord2, t_xy height, int self)
 
 int		sector_orientation(t_sect *sect, t_xy one, t_xy two)
 {
-	int temp;
-	int side;
-	int i;
+	int				temp;
+	int				side;
+	unsigned int	i;
 
 	side = 0;
 	i = 0;
@@ -86,10 +87,10 @@ int		check_sect_intersection(t_all *all, int num, t_xy one, t_xy two)
 
 int	get_neighbours(t_sect *sector, t_all *all, int self)
 {
-	int i;
-    t_xy h;
-	int n;
-	int res;
+	unsigned int	i;
+    t_xy			h;
+	int				n;
+	int				res;
 
 	h = (t_xy){sector->floor, sector->ceil};
 	n = sector->npoints;

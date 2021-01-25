@@ -88,9 +88,9 @@ int		write_top_infiles(char *output_file, int max_len, int lens, int *start)
 
 int		max_len_filename(char *files, int *lens)
 {
-	int		max_len;
-	int		fd;
-	char	*buf;
+	unsigned long	max_len;
+	int				fd;
+	char			*buf;
 
 	*lens = 0;
 	buf = NULL;

@@ -25,9 +25,9 @@ t_xy	*remove_vertex(t_xy *vert, int num, int npoints)
 
 int		check_sector_shape(t_sect *sect)
 {
-	t_xy	*temp;
-	int		i;
-	float	side;
+	t_xy			*temp;
+	unsigned int	i;
+	float			side;
 
 	i = 0;
 	temp = sect->vertex;
@@ -58,8 +58,8 @@ int		check_sector_shape(t_sect *sect)
 
 int		revert_sector(t_sect *sect)
 {
-	t_xy *temp;
-	int i;
+	t_xy			*temp;
+	unsigned int	i;
 
 	i = 0;
 	if(!(temp = (t_xy*)malloc(sizeof(t_xy) * sect->npoints)))
@@ -77,11 +77,10 @@ int		revert_sector(t_sect *sect)
 
 int		check_sector_order(t_sect *sect)
 {
-	int			res;
-	int			i;
-	int			num;
-	t_xy	vertex1;
-	t_xy	vertex2;
+	int				res;
+	unsigned int	i;
+	t_xy			vertex1;
+	t_xy			vertex2;
 
 	res = 0;
 	i = 0;
