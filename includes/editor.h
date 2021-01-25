@@ -140,7 +140,7 @@ typedef struct  s_settings
 
 typedef	struct	s_player
 {
-    t_xyz		where;			//	текущая позиция
+    t_xyz		where;
     t_xyz		velocity;		//	вектор скорости движения
     SDL_Surface	*picture;
     int			picked;
