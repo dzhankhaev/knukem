@@ -12,6 +12,18 @@
 
 #include "engine.h"
 
+static void		inloop(t_engine *engine, int *y_top, int x, int *x_table)
+{
+	(*y_top)++;
+	render_hline(engine, *y_top, x_table[*y_top], x);
+}
+
+static void		inloop2(t_engine *engine, int *y_bot, int x, int *x_table)
+{
+	(*y_bot)--;
+	render_hline(engine, *y_bot, x_table[*y_bot], x);
+}
+
 static void		loop(t_engine *engine, int *x_table, t_vplane *p, int x)
 {
 	int			y1;
@@ -33,9 +45,9 @@ static void		loop(t_engine *engine, int *x_table, t_vplane *p, int x)
 		while (y2 > *y_bot)
 			x_table[++(*y_bot)] = x;
 		while (*y_top < y1)
-			render_hline(engine, *y_top, x_table[(*y_top)++], x);
+			inloop(engine, y_top, x, x_table);
 		while (*y_bot > y2)
-			render_hline(engine, *y_bot, x_table[(*y_bot)--], x);
+			inloop2(engine, y_bot, x, x_table);
 	}
 }
 

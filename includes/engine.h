@@ -19,7 +19,7 @@
 # include <unistd.h>
 # include <string.h>
 
-# define MAX_QUEUE 64				//	максимальная длина очереди секторов
+# define MAX_QUEUE 64
 //вычисленные заранее координаты конечной точки лучей видимости для фов 90. Подробнее в transform_wall.c
 # define RAY_POINT_X 35.f			//	50.f * cosf(HFOV/2)
 # define RAY_POINT_Y 35.f			//	50.f * sinf(HFOV/2)

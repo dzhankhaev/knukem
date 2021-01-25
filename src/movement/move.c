@@ -22,8 +22,8 @@ static int	check_inter(t_engine *engine, int s, float *dx, float *dy)
 	px = engine->player.where.x;
 	py = engine->player.where.y;
 	vert = engine->sectors[engine->player.sector].vertex;
-	if (determine_intersection((t_fline){px, px + *dx, py, py + *dy},
-		(t_fline){vert[s].x, vert[s + 1].x, vert[s].y, vert[s + 1].y}) &&
+	if (determine_intersection((t_fline){px, px + *dx, py, py + *dy, 0},
+		(t_fline){vert[s].x, vert[s + 1].x, vert[s].y, vert[s + 1].y, 0}) &&
 		point_side(px + *dx, py + *dy, vert[s], vert[s + 1]) < 0)
 		return (1);
 	return (0);

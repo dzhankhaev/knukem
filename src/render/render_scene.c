@@ -30,7 +30,7 @@ static void		rendering_init(t_engine *engine, int sectorno, int neighbor)
 	}
 }
 
-static void		ifdoor(t_engine *engine, int sectorno, int neighbor, int i)
+static void		ifdoor(t_engine *engine, int sectorno, int neighbor)
 {
 	t_temp	*a;
 
@@ -51,12 +51,12 @@ static void		ifdoor(t_engine *engine, int sectorno, int neighbor, int i)
 	}
 }
 
-static void		loop(t_engine *engine, int neighbor, t_ixyz t, int i)
+static void		loop(t_engine *engine, int neighbor, t_ixyz t)
 {
 	t_temp	*a;
 
 	a = &engine->rend_wall;
-	ifdoor(engine, engine->present->sectorno, neighbor, i);
+	ifdoor(engine, engine->present->sectorno, neighbor);
 	a->w = a->wall[0];
 	to_x_order(a->wall);
 	a->l = engine->wall;
@@ -87,7 +87,7 @@ void			render_scene(t_engine *engine,
 	door_mod(engine, neighbor, i);
 	rendering_init(engine, sectorno, neighbor);
 	txset = tx_wall_mod(engine, sectorno, i);
-	loop(engine, neighbor, txset, i);
+	loop(engine, neighbor, txset);
 	txset = tx_plane_mod(engine, sectorno);
 	render_hplane(engine, &engine->vpfloor, txset.x);
 	render_hplane(engine, &engine->vpceil, txset.y);

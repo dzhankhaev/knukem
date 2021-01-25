@@ -30,7 +30,7 @@ int			check_repeat(t_engine *engine, int sectorno, int neighbor)
 static void	choose_edit(t_engine *engine, int i)
 {
 	if (engine->edit.mod_s == 0x01ab01 &&
-		determine_intersection(engine->wall, (t_fline){0, 50, 0, 0}))
+		determine_intersection(engine->wall, (t_fline){0, 50, 0, 0, 0}))
 	{
 		engine->edit.mod_s =
 				engine->sectors[engine->present->sectorno].neighbors[i];

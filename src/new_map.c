@@ -97,7 +97,6 @@ static void	player(int fd)
 void		new_map(char *name)
 {
 	int	fd;
-	int	i;
 
 	fd = open(name, O_TRUNC | O_WRONLY | O_CREAT, S_IWUSR | S_IRUSR);
 	if (fd == -1)

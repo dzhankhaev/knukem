@@ -33,12 +33,12 @@ void		render_wall(t_engine *engine, int neighbor, t_ixyz t)
 	if (neighbor > -1)
 	{
 		render_vline(engine, (t_line){a->x, a->x, a->y[0],
-					imin(a->y[2], a->y[1])}, get_op1(a), t.z);
+					imin(a->y[2], a->y[1]), 0}, get_op1(a), t.z);
 		render_vline(engine, (t_line){a->x, a->x, imax(a->y[3],
-					a->y[0]), a->y[1]}, get_op2(a), t.y);
+					a->y[0]), a->y[1], 0}, get_op2(a), t.y);
 		get_lines(engine);
 	}
 	else if (neighbor < 0)
 		render_vline(engine, (t_line){a->x, a->x, a->y[0],
-						a->y[1]}, get_op3(a), t.x);
+						a->y[1], 0}, get_op3(a), t.x);
 }

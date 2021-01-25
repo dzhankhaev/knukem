@@ -85,7 +85,7 @@ void		graf_proccesing(t_engine *engine, int sectorno, int i)
 			if (transform_wall(engine, &w))
 			{
 				if ((engine->edit.door == 2 || engine->edit.graf_wall == -2) &&
-					determine_intersection(w, (t_fline){0, 3, 0, 0}))
+					determine_intersection(w, (t_fline){0, 3, 0, 0, 0}))
 				{
 					engine->edit.door = engine->edit.door == 2 ? 4
 							: engine->edit.door;

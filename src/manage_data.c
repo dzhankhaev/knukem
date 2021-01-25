@@ -116,10 +116,8 @@ void	load_sector(t_engine *engine, t_all *all, char **split, t_xy *vert)
     while (++i < arr_len)
         sect->neighbors[i] = ft_atoi(sub[i]);
     ft_free_split(sub);
-    if (ft_arrlen((void**)split) >= 5)
-        sect->door = ft_atoi(split[4]);
-    else
-        sect->door = -1;
+	if (ft_arrlen((void**)split) >= 5)
+		sect->door = ft_atoi(split[4]);
 	sub = ft_strsplit(split[5], ' ');
 	sect->txf = ft_atoi(sub[0]);
 	sect->txc = ft_atoi(sub[1]);
