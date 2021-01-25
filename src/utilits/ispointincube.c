@@ -16,10 +16,10 @@
 int	ispointincube(t_xyz point, t_xyz cubecenter, t_xyz borders,
 				float centerzoffset)
 {
-	return ((cubecenter.x + borders.x > point.x
-		& point.x > cubecenter.x - borders.x)
-		&& (cubecenter.y + borders.y > point.y
-		& point.y > cubecenter.y - borders.y)
-		&& (cubecenter.z + centerzoffset + borders.z > point.z
-		& point.z > cubecenter.z + centerzoffset - borders.z));
+	return (((cubecenter.x + borders.x > point.x) &
+		(point.x > cubecenter.x - borders.x)) &&
+		((cubecenter.y + borders.y > point.y) &
+		(point.y > cubecenter.y - borders.y)) &&
+		((cubecenter.z + centerzoffset + borders.z > point.z) &
+		(point.z > cubecenter.z + centerzoffset - borders.z)));
 }
