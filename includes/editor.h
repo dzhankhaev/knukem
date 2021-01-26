@@ -196,7 +196,7 @@ typedef struct      s_all
     SDL_Surface     *texture;//текстура-подложка
     int				threed;
     t_button        buttons[BUTTONS];//кнопки
-    t_sdl           *sdl;//
+    t_sdl           sdl;//
     char			*name;
 }                   t_all;
 

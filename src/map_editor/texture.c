@@ -5,7 +5,6 @@ SDL_Surface     *get_texture(char *file)
 	SDL_Surface		*surface;
     char            *dir;
 
-    dir = (char*)malloc(sizeof(char) * (ft_strlen(file) + 10));
     dir = ft_strjoin("textures/", file);
 	if(!(surface = SDL_LoadBMP(dir)))
         error_and_close(__FILE__, __FUNCTION__);

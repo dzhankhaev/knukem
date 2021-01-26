@@ -24,10 +24,10 @@ void	set_level_digits(t_all *all, int x, int y)
 	area[0] = (SDL_Rect){W / 11, H * 0.46, W / 16, 50};
 	area[1] = (SDL_Rect){W / 11, H * 0.58, W / 16, 50};
 	tmp = get_text_surface(cx, all->font, BLUE);
-	draw_texture(all->sdl->screen, area[0], tmp);
+	draw_texture(all->sdl.screen, area[0], tmp);
 	SDL_FreeSurface(tmp);
 	tmp = get_text_surface(cy, all->font, BLUE);
-	draw_texture(all->sdl->screen, area[1], tmp);
+	draw_texture(all->sdl.screen, area[1], tmp);
 	SDL_FreeSurface(tmp);
 	free(cx);
 	free(cy);
@@ -85,7 +85,7 @@ void	draw_label(t_all *all, char *name, SDL_Rect area, SDL_Color color)
 	SDL_Surface *surf;
 
 	surf = get_text_surface(name, all->font, color);
-	draw_texture(all->sdl->screen, area, surf);
+	draw_texture(all->sdl.screen, area, surf);
 	SDL_FreeSurface(surf);
 }
 
@@ -96,10 +96,10 @@ void	draw_labels(t_all *all, t_labels label[5], int num)
 	i = num;
 	while(i < 9)
 	{
-		draw_texture(all->sdl->screen, label[i].dst, label[i].surf);
+		draw_texture(all->sdl.screen, label[i].dst, label[i].surf);
 		i++;
 	}
-	draw_buttons(all, all->sdl, all->buttons, num);
+	draw_buttons(all, &all->sdl, all->buttons, num);
 }
 
 void	draw_setting_digits(t_all *all, t_settings *settings)

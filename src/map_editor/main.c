@@ -107,13 +107,13 @@ void    interact(t_all *all)
 		if(event.type == SDL_KEYDOWN || event.type == SDL_KEYUP || event.type == SDL_MOUSEMOTION
 			|| event.type == SDL_MOUSEBUTTONUP || event.type == SDL_MOUSEBUTTONDOWN)
 		{
-			SDL_LockSurface(all->sdl->screen);
-			ft_bzero((void*)all->sdl->screen->pixels, (size_t)(4 * W * H));
-			draw_all(all, all->sdl, all->buttons);
+			SDL_LockSurface(all->sdl.screen);
+			ft_bzero((void*)all->sdl.screen->pixels, (size_t)(4 * W * H));
+			draw_all(all, &all->sdl, all->buttons);
 			event.type = 0; // отрисовка
-			SDL_UnlockSurface(all->sdl->screen);
-			SDL_UpdateWindowSurface(all->sdl->window);
-			SDL_FreeSurface(all->sdl->screen);
+			SDL_UnlockSurface(all->sdl.screen);
+			SDL_UpdateWindowSurface(all->sdl.window);
+			SDL_FreeSurface(all->sdl.screen);
 		}
 	}
 }

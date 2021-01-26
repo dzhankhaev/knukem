@@ -82,11 +82,10 @@ int		main(int av, char **ac)
 	t_all		all;
 
 	arg_check(&engine, &all, av, ac);
-	init_all(&all);
 	init_engine(&engine, &all);
+	init_all(&all);
 	general_init(&engine);
 	setup_window_icon(&engine);
-	load_texture(&all);
 	load_img(&engine, "wall1.png", 0);
 	load_img(&engine, "wall2.png", 1);
 	load_img(&engine, "wall3.png", 2);
@@ -96,5 +95,5 @@ int		main(int av, char **ac)
 	game_loop(&engine, &all);
 	clean(&engine);
 	clean_all(&all);
-	return (0);
+	exit(0);
 }

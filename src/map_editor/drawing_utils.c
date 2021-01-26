@@ -32,7 +32,7 @@ void	draw_line(t_all *all, t_xy *start, t_xy *fin, SDL_Color color)
 		x = x + dx;
 		y = y + dy;
 		i++;
-		put_pxl(all->sdl->screen, color, x, y);
+		put_pxl(all->sdl.screen, color, x, y);
 	} 	
 }
 
@@ -94,7 +94,7 @@ void    draw_fill_rect(t_all *all, SDL_Rect area, SDL_Color color)
         y = area.y;
         while(y < area.y + area.h)
         {
-			put_pxl(all->sdl->screen, color, x, y);
+			put_pxl(all->sdl.screen, color, x, y);
             y++;
         }
         x++;

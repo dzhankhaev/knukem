@@ -14,31 +14,37 @@
 #include "editor.h"
 #include "utilits.h"
 
-static void		sdl(t_engine *engine)
+static void		sdl(t_engine *engine, t_all *all)
 {
 	if (SDL_Init(SDL_INIT_VIDEO) != 0)
-		exc(__FILE__, __FUNCTION__);
-	if (!(engine->window = SDL_CreateWindow("doom-nukem",
-							SDL_WINDOWPOS_CENTERED,
-							SDL_WINDOWPOS_CENTERED,
-							W, H,
-							0)))
 	{
+		free(all->name);
+		exc(__FILE__, __FUNCTION__);
+	}
+	if (!(engine->window = SDL_CreateWindow("doom-nukem",
+											SDL_WINDOWPOS_CENTERED,
+											SDL_WINDOWPOS_CENTERED,
+											W, H,
+											0)))
+	{
+		free(all->name);
 		SDL_Quit();
 		exc(__FILE__, __FUNCTION__);
 	}
 	if (!(engine->screen = SDL_GetWindowSurface(engine->window)))
 	{
+		free(all->name);
 		SDL_DestroyWindow(engine->window);
 		SDL_Quit();
 		exc(__FILE__, __FUNCTION__);
 	}
 }
 
-static void		sdl_img(t_engine *engine)
+static void		sdl_img(t_engine *engine, t_all *all)
 {
 	if ((IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG) != IMG_INIT_PNG)
 	{
+		free(all->name);
 		SDL_FreeSurface(engine->screen);
 		SDL_DestroyWindow(engine->window);
 		SDL_Quit();
@@ -46,17 +52,42 @@ static void		sdl_img(t_engine *engine)
 	}
 }
 
+static void		load_fonts(t_sdl *sdl, t_all *all, t_engine *engine)
+{
+	if (TTF_Init()==-1)
+	{
+		free(all->name);
+		SDL_FreeSurface(engine->screen);
+		SDL_DestroyWindow(sdl->window);
+		SDL_Quit();
+		error_and_close(__FILE__, __FUNCTION__);
+	}
+
+	all->font = NULL;
+	all->font = TTF_OpenFont("fonts/CRA75.ttf", 36);
+	if (!all->font)
+	{
+		free(all->name);
+		SDL_FreeSurface(engine->screen);
+		SDL_DestroyWindow(sdl->window);
+		SDL_Quit();
+		error_and_close(__FILE__, __FUNCTION__);
+	}
+}
+
 void			init_engine(t_engine *engine, t_all *all)
 {
+	sdl(engine, all);
+	sdl_img(engine, all);
+	all->sdl.window = engine->window;
+	all->sdl.screen = engine->screen;
+	load_fonts(&all->sdl, all, engine);
 	load_data(engine, all);
-	sdl(engine);
 	all->num_sectors = engine->num_sectors;
-	all->sdl = (t_sdl *)malloc(sizeof(t_sdl) * 1);
-	all->sdl->window = engine->window;
-	all->sdl->screen = engine->screen;
 	all->sectors = engine->sectors;
 	all->player = engine->player;
 	engine->max_queue = MAX_QUEUE;
-	sdl_img(engine);
-	SDL_SetRelativeMouseMode(SDL_TRUE);
+	load_texture(all);
+//	SDL_SetRelativeMouseMode(SDL_TRUE);
+
 }

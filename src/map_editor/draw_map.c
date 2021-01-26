@@ -32,7 +32,7 @@ void	draw_sector(t_sect *sect, t_all *all, SDL_Color color, t_xy delta)
 		{
 			draw_line(all, &s, &f, \
 				&all->sectors[all->swap_num] == sect ? YELLOW : color);
-			draw_circle(all->sdl, s, 2, GREEN);
+			draw_circle(&all->sdl, s, 2, GREEN);
 		}
 		i++;
 	}

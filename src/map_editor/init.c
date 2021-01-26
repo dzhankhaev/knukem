@@ -1,23 +1,6 @@
 #include "editor.h"
 
-void	load_fonts(t_sdl *sdl, t_all *all)
-{
-		if(TTF_Init()==-1) 
-	{
-    	SDL_DestroyWindow(sdl->window);
-		SDL_Quit();
-		error_and_close(__FILE__, __FUNCTION__);
-	}
 
-	all->font = NULL;
-	all->font = TTF_OpenFont("fonts/CRA75.ttf", 36);
-	if(!all->font) 
-	{
-    	SDL_DestroyWindow(sdl->window);
-		SDL_Quit();
-		error_and_close(__FILE__, __FUNCTION__);
-	}
-}
 
 int		scaling(SDL_Rect area, t_xyz mapsize)
 {
@@ -34,7 +17,6 @@ int		scaling(SDL_Rect area, t_xyz mapsize)
 
 void    init_all(t_all *all)
 {
-	load_fonts(all->sdl, all);
 	all->mouse.z = 0; // переменная нажатия ЛКМ
 	all->area = (SDL_Rect){W/4, 0, W - W/4, H}; // Область карты
 	all->step = scaling(all->area, all->mapsize);
