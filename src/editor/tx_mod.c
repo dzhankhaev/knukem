@@ -24,6 +24,7 @@ t_ixyz			tx_wall_mod(t_engine *engine, int sectorno, int i)
 			engine->sectors[sectorno].txw0 = engine->edit.txno;
 		else if (engine->edit.mod_tx == 4)
 			engine->sectors[sectorno].txw1 = engine->edit.txno;
+
 	}
 	return ((t_ixyz){abs(engine->sectors[sectorno].neighbors[i]),
 			engine->sectors[sectorno].txw0, engine->sectors[sectorno].txw1});
@@ -34,6 +35,7 @@ t_ixyz			tx_plane_mod(t_engine *engine, int sectorno)
 	if (engine->edit.txno != -1 && !engine->edit.graf
 	&& engine->player.game_mode)
 	{
+		printf("%d\n", engine->edit.graf);
 		if (engine->edit.mod_tx == 0)
 		{
 			engine->sectors[sectorno].txf = engine->edit.txno;

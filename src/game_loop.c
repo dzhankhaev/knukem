@@ -52,7 +52,7 @@ void		run_minimap_queue(t_engine *engine)
 			< engine->player.where.z + 6)
 			* (engine->sectors[sectorno].floor > engine->player.where.z - 12);
 		minimap(engine, engine->sectors[sectorno].vertex[i],
-				engine->sectors[sectorno].vertex[i + 1], engine->wall.color);
+			engine->sectors[sectorno].vertex[i + 1], engine->wall.color);
 		if (engine->future + 1 != engine->queue + engine->max_queue &&
 			neighbor > -1 && check_repeat(engine, sectorno, neighbor))
 			*(engine->future++) = (t_queue){neighbor, 0, W, sectorno};

@@ -57,7 +57,6 @@ void			general_init(t_engine *engine)
 {
 	engine->borders = (t_line){0, W, 0, H, 0x555555};
 	engine->player.cur_inv = 0;
-	engine->player.cur_inv = engine->player.settings.inventory;
 	engine->player.cur_am = engine->player.settings.ammo;
 	engine->player.shot = 0;
 	engine->player.stand = 1;

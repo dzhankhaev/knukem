@@ -31,9 +31,12 @@ static void	put_anim(t_engine *engine, int door)
 				engine->danimbuf[q + 1] = 1;
 			else
 				engine->danimbuf[q] = -1;
-			if (engine->player.game_mode || engine->player.cur_am)
+			if (!engine->player.game_mode && engine->player.cur_am &&
+			engine->edit.door != 4)
+			{
+				engine->player.shot = 1;
 				engine->player.cur_am--;
-			engine->player.shot = 1;
+			}
 			break ;
 		}
 		q += 2;
@@ -111,7 +114,6 @@ void		start_door_anim(t_engine *engine, int sec, int nei, unsigned int i)
 		put_anim(engine, nei);
 	if (engine->edit.door == 4)
 	{
-		engine->edit.door = 0;
 		if (i == 0)
 			door = engine->sectors[sec].neighbors[engine->sectors[sec].npoints
 						- 1];
@@ -125,5 +127,6 @@ void		start_door_anim(t_engine *engine, int sec, int nei, unsigned int i)
 			door = engine->sectors[sec].neighbors[i + 1];
 		if (door > -1 && engine->sectors[door].door > -1)
 			put_anim(engine, door);
+		engine->edit.door = 0;
 	}
 }
