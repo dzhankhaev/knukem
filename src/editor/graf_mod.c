@@ -114,12 +114,14 @@ void			graf_mod(t_engine *engine, int sectorno, int i)
 			{
 				graf_memalloc(engine, sectorno, i);
 				create_coord(engine, sectorno);
+				engine->edit.txno = -1;
 			}
 			else if (!engine->player.game_mode && engine->player.cur_inv > 0)
 			{
 				graf_memalloc(engine, sectorno, i);
 				create_coord(engine, sectorno);
 				engine->player.cur_inv--;
+				engine->edit.txno = -1;
 			}
 		}
 	}

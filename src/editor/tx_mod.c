@@ -35,7 +35,6 @@ t_ixyz			tx_plane_mod(t_engine *engine, int sectorno)
 	if (engine->edit.txno != -1 && !engine->edit.graf
 	&& engine->player.game_mode)
 	{
-		printf("%d\n", engine->edit.graf);
 		if (engine->edit.mod_tx == 0)
 		{
 			engine->sectors[sectorno].txf = engine->edit.txno;

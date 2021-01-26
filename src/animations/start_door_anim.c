@@ -21,8 +21,7 @@ static void	put_anim(t_engine *engine, int door)
 	q = 0;
 	while (q < 30)
 	{
-		if (engine->danimbuf[q] == -1
-		&& (engine->player.game_mode || engine->player.cur_am))
+		if (engine->danimbuf[q] == -1)
 		{
 			engine->danimbuf[q] = door;
 			if (engine->sectors[door].floor < engine->sectors[door].ceil)
@@ -110,7 +109,8 @@ void		start_door_anim(t_engine *engine, int sec, int nei, unsigned int i)
 
 	if (engine->edit.mod_w == (int)i && nei > -1 && nei == engine->edit.mod_s &&
 			engine->edit.door == 2 && engine->sectors[nei].door > -1
-			&& check_graf_control(engine, nei))
+			&& check_graf_control(engine, nei)
+			&& (engine->player.game_mode || engine->player.cur_am))
 		put_anim(engine, nei);
 	if (engine->edit.door == 4)
 	{
