@@ -58,6 +58,7 @@ void	clean_all(t_all *all)
 {
 	int i;
 
+	free(all->name);
 	TTF_CloseFont(all->font);
 	all->font=NULL;
 	TTF_Quit();
@@ -95,5 +96,6 @@ int		main(int av, char **ac)
 	game_loop(&engine, &all);
 	clean(&engine);
 	clean_all(&all);
+	SDL_Quit();
 	exit(0);
 }

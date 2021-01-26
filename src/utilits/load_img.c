@@ -57,6 +57,7 @@ void		get_filename(char *name, char *sn)
 void		load_img(t_engine *engine, char *name, int n)
 {
 	SDL_Surface *img;
+	SDL_Surface	*i;
 	char		fname[24];
 
 	get_filename(name, engine->img[n].name);
@@ -66,10 +67,13 @@ void		load_img(t_engine *engine, char *name, int n)
 		clean(engine);
 		exc(__FILE__, __FUNCTION__);
 	}
+	i = img;
 	if (!(img = SDL_ConvertSurface(img, engine->screen->format, 0)))
 	{
+		SDL_FreeSurface(i);
 		clean(engine);
 		exc(__FILE__, __FUNCTION__);
 	}
+	SDL_FreeSurface(i);
 	engine->img[n].tx = img;
 }

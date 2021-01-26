@@ -32,9 +32,13 @@ void		clean(t_engine *engine)
 {
 	unload_data(engine);
 	IMG_Quit();
+	SDL_FreeSurface(engine->img[0].tx);
+	SDL_FreeSurface(engine->img[1].tx);
+	SDL_FreeSurface(engine->img[2].tx);
+	SDL_FreeSurface(engine->img[3].tx);
+	SDL_FreeSurface(engine->img[4].tx);
 	if (engine->screen)
 		SDL_FreeSurface(engine->screen);
 	if (engine->window)
 		SDL_DestroyWindow(engine->window);
-	SDL_Quit();
 }
