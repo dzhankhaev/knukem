@@ -96,6 +96,9 @@ void    write_sectors(t_all *all, int **vert, int fd)
 		i++;
         ft_putchar_fd('\n', fd);
     }
+    ft_putstr_fd("final sector\t", fd);
+    ft_putnbr_fd(all->fin_sect, fd);
+    ft_putchar_fd('\n', fd);
 }
 
 static void		write_player(t_all *all, int fd)

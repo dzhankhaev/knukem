@@ -52,6 +52,7 @@ void    remove_sector(t_all *all, t_sect *sectors)
             all->player.sector = -1;
         all->num_sectors -= 1;
         get_neighbours(&sectors[all->swap_num], all, all->swap_num);
+        all->fin_sect = all->swap_num == all->fin_sect ? -1 : all->fin_sect;
         all->swap_num = -1;
     }
 }

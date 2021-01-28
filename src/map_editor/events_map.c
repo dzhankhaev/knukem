@@ -31,11 +31,12 @@ void	select_sector(t_all *all, int x, int y, SDL_MouseButtonEvent *event)
 			sect->floor = sect->oldf; 
 		all->swap_num = -1;
 	}
-
-	// printf("%f\n",all->draw_floors.x);
-	// else
-		// all->swap = NULL;
-	
+	else if (event->button == SDL_BUTTON_MIDDLE && all->swap_num != -1 &&\
+		all->player.sector != all->swap_num && all->sectors[all->swap_num].door < 0)
+	{
+		all->fin_sect = all->swap_num;
+		all->swap_num = -1;
+	}
 }
 
 void		set_player(int x, int y, t_all *all)
@@ -48,7 +49,7 @@ void		set_player(int x, int y, t_all *all)
 	if(sect != -1)
 	{
 		if(all->sectors[sect].ceil - all->sectors[sect].floor > 6 &&\
-			all->sectors[sect].door == -1)
+			all->sectors[sect].door == -1 && sect != all->fin_sect)
 		{
 			all->player.where = where;
 			all->player.sector = sect;

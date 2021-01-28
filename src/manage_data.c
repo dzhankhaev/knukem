@@ -175,6 +175,8 @@ void	load_data(t_engine *engine, t_all *all)
             load_sector(engine, all, split, vert);
         else if (ft_strequ(split[0], "player"))
             load_player(engine, split);
+        else if (ft_strequ(split[0], "final sector"))
+            all->fin_sect = ft_atoi(split[1]);
         ft_free_split(split);
         ft_strdel(&buf);
     }

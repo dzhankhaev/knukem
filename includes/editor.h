@@ -46,6 +46,7 @@
 # define GREEN (SDL_Color){0, 255, 0, 255}
 # define LAZUR (SDL_Color){54, 209, 183, 255}
 # define YELLOW (SDL_Color){255, 255, 33, 255}
+# define ORANGE (SDL_Color){255, 128, 0, 255}
 
 # define NEW_SECT 0
 
@@ -176,13 +177,13 @@ typedef struct      s_all
 {
     t_player        player;// переменная игрока.
     int				swap_num;
+    int             fin_sect;
     t_xy			delta; // дельта области редактирования
     t_xy			d; // дельта сдвига карты
     t_sect          *sectors;//массив с данными о секторах
     t_sect			*temp;
     int				num_sectors;//количество секторов
     int 			step;//шаг (масштаб)
-    SDL_Color		color;
     TTF_Font		*font;
     t_labels		labels[9];
     t_xy			draw_floors;//уровни отрисовки этажей

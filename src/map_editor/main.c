@@ -76,9 +76,9 @@ void	game_setting_values(t_settings *set, t_button *btns)
 	else if (i == 11 && set->gravity < 100)
 		set->gravity += 10;
 	else if (i == 12 && set->ammo > 0)
-		set->ammo -= 5;
+		set->ammo -= 1;
 	else if (i == 13 && set->ammo < 30)
-		set->ammo += 5;
+		set->ammo += 1;
 }
 
 void    interact(t_all *all)

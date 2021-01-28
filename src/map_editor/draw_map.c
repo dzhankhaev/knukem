@@ -17,7 +17,9 @@ void	draw_sector(t_sect *sect, t_all *all, SDL_Color color, t_xy delta)
 	unsigned int	i;
 	t_xy			s;
 	t_xy			f;
+	SDL_Color		col;
 
+	col = color;
 	i = 0;
 	while (i < sect->npoints)
 	{
@@ -26,12 +28,12 @@ void	draw_sector(t_sect *sect, t_all *all, SDL_Color color, t_xy delta)
 		f = (t_xy){(sect->vertex[i + 1].x * all->step) + delta.x, \
 				(sect->vertex[i + 1].y * all->step) + delta.y};
 		if (sect->door < 0)
-			color = (sect->neighbors[i] < 0 && i < sect->npoints) ? RED : BLUE;
+			col = (sect->neighbors[i] < 0 && i < sect->npoints) ? color : BLUE;
 		if (sect->oldf >= all->draw_floors.x && \
 			sect->oldf <= all->draw_floors.y)
 		{
 			draw_line(all, &s, &f, \
-				&all->sectors[all->swap_num] == sect ? YELLOW : color);
+				&all->sectors[all->swap_num] == sect ? YELLOW : col);
 			draw_circle(&all->sdl, s, 2, GREEN);
 		}
 		i++;
@@ -80,12 +82,14 @@ void	draw_map(t_sect *sect, t_all *all)
 	{
 		temp = &sect[i];
 		if (temp->door < 0)
-			draw_sector(temp, all, all->color, all->delta);
+			draw_sector(temp, all, RED, all->delta);
 		i++;
 	}
 	draw_doors(all, all->sectors);
 	if (all->swap_num != -1)
 		draw_sector(&sect[all->swap_num], all, YELLOW, all->delta);
+	if (all->fin_sect != -1)
+		draw_sector(&sect[all->fin_sect], all, ORANGE, all->delta);
 }
 
 t_xy	get_coords(t_all *all)

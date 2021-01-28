@@ -40,6 +40,11 @@ int	mode_switch(t_all *all, int mode)
 		print_message(all, RED, "Set player!", 1000);
 		return (0);
 	}
+	else if (all->fin_sect == -1)
+	{
+		print_message(all, RED, "Set final sector!", 1000);
+		return (0);
+	}
 	return(1);
 }
 
