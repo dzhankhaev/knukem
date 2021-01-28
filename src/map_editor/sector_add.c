@@ -55,15 +55,15 @@ void    validate_sector(t_sect *sect, t_all *all)
 			sect->neighbors[n] = -1;
 	}
 	else
-		failure = get_neighbours(sect, all, all->num_sectors - 1);
-	if (failure || check_intersections(sect))
 	{
-		all->swap_num = all->num_sectors - 1;
-		print_message(all, RED, "Invalid Sector!", 1000);
-		remove_sector(all, sect);
+		failure = get_neighbours(sect, all, all->num_sectors - 1);
+		if (failure || check_intersections(sect))
+		{
+			all->swap_num = all->num_sectors == 0 ? 0 : all->num_sectors - 1;
+			print_message(all, RED, "Invalid Sector!", 1000);
+			remove_sector(all, all->sectors);
+		}
 	}
-	// else
-	// free(all->temp->vertex);//тут случается дабфри!
 }
 
 void	init_new_sector(t_sect *sect, t_sect *temp)

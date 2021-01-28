@@ -109,7 +109,5 @@ int	get_neighbours(t_sect *sector, t_all *all, int self)
 		sector->vertex[0], h, self);
 	res = res == 1 ? 1 : check_sect_intersection(all, sector->neighbors[i], sector->vertex[i],
 				sector->vertex[i + 1]);
-	if (res)
-		return(1);
-	return (0);
+	return(res);
 }
