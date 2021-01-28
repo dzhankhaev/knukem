@@ -66,7 +66,8 @@ void	load_tx(t_engine *engine, char *name)
 	int			fd;
 	int			i;
 
-	fd = open(name, O_RDONLY);
+	if (!(fd = open(name, O_RDONLY)))
+		exc(__FILE__, __FUNCTION__);
 	i = 0;
 	while (get_next_line(fd, &line))
 	{
@@ -74,10 +75,15 @@ void	load_tx(t_engine *engine, char *name)
 		free(line);
 	}
 	if (i != 10)
+	{
+		fd = 0;
+		while (fd < i)
+			SDL_FreeSurface(engine->img[fd++].tx);
 		exc(__FILE__, __FUNCTION__);
+	}
 	load_img(engine, "textures/icon.png", 10);
-	SDL_SetWindowIcon(engine->window, engine->img[10].tx);
 	close(fd);
+	SDL_SetWindowIcon(engine->window, engine->img[10].tx);
 }
 
 int		main(int av, char **ac)
