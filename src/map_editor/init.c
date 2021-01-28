@@ -1,7 +1,5 @@
 #include "editor.h"
 
-
-
 int		scaling(SDL_Rect area, t_xyz mapsize)
 {
 	int scale;

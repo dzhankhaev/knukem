@@ -88,6 +88,5 @@ void			init_engine(t_engine *engine, t_all *all)
 	all->player = engine->player;
 	engine->max_queue = MAX_QUEUE;
 	load_texture(all);
-//	SDL_SetRelativeMouseMode(SDL_TRUE);
-
+	SDL_SetRelativeMouseMode(SDL_TRUE);
 }

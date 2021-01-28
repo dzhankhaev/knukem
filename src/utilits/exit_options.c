@@ -30,13 +30,13 @@ void		exc(const char *file, const char *function)
 
 void		clean(t_engine *engine)
 {
+	int	i;
+
+	i = 0;
 	unload_data(engine);
 	IMG_Quit();
-	SDL_FreeSurface(engine->img[0].tx);
-	SDL_FreeSurface(engine->img[1].tx);
-	SDL_FreeSurface(engine->img[2].tx);
-	SDL_FreeSurface(engine->img[3].tx);
-	SDL_FreeSurface(engine->img[4].tx);
+	while (i < 11)
+		SDL_FreeSurface(engine->img[i++].tx);
 	if (engine->screen)
 		SDL_FreeSurface(engine->screen);
 	if (engine->window)

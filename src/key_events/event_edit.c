@@ -13,7 +13,7 @@
 #include "engine.h"
 #include "events.h"
 
-void	event_edit22(t_player *player, t_edit *edit)
+static void	numbers(t_player *player, t_edit *edit)
 {
 	if (player->event.key.keysym.sym == SDLK_0)
 		edit->txno = 0;
@@ -25,7 +25,22 @@ void	event_edit22(t_player *player, t_edit *edit)
 		edit->txno = 3;
 	else if (player->event.key.keysym.sym == SDLK_4)
 		edit->txno = 4;
-	else if (player->event.key.keysym.sym == SDLK_BACKQUOTE)
+	else if (player->event.key.keysym.sym == SDLK_5)
+		edit->txno = 5;
+	else if (player->event.key.keysym.sym == SDLK_6)
+		edit->txno = 6;
+	else if (player->event.key.keysym.sym == SDLK_7)
+		edit->txno = 7;
+	else if (player->event.key.keysym.sym == SDLK_8)
+		edit->txno = 8;
+	else if (player->event.key.keysym.sym == SDLK_9)
+		edit->txno = 9;
+}
+
+void	event_edit22(t_player *player, t_edit *edit)
+{
+	numbers(player, edit);
+	if (player->event.key.keysym.sym == SDLK_BACKQUOTE)
 		edit->mod_tx = edit->mod_tx == 4 ? 0 : edit->mod_tx + 1;
 	else if (player->event.key.keysym.sym == SDLK_e)
 		edit->mod = 1;

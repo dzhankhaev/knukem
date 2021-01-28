@@ -14,23 +14,6 @@
 #include "editor.h"
 #include "utilits.h"
 
-/**
- * Setup a window app icon
- */
-void setup_window_icon(t_engine *engine)
-{
-	SDL_Surface *iconSurface;
-	load_img(engine, "icon.png", 6);
-	iconSurface = engine->img[6].tx;
-	//iconSurface = IMG_Load("textures/icon.png");
-
-	// The icon requires the window pointer NOT the renderer
-	SDL_SetWindowIcon(engine->window, iconSurface);
-
-	// ...and can now free the appicon surface
-	SDL_FreeSurface(iconSurface);
-}
-
 void	arg_check(t_engine *engine, t_all *all, int av, char **ac)
 {
 	ft_bzero(engine, sizeof(*engine));
@@ -77,6 +60,26 @@ void	clean_all(t_all *all)
 
 }
 
+void	load_tx(t_engine *engine, char *name)
+{
+	char		*line;
+	int			fd;
+	int			i;
+
+	fd = open(name, O_RDONLY);
+	i = 0;
+	while (get_next_line(fd, &line))
+	{
+		load_img(engine, line, i++);
+		free(line);
+	}
+	if (i != 10)
+		exc(__FILE__, __FUNCTION__);
+	load_img(engine, "textures/icon.png", 10);
+	SDL_SetWindowIcon(engine->window, engine->img[10].tx);
+	close(fd);
+}
+
 int		main(int av, char **ac)
 {
 	t_engine	engine;
@@ -84,15 +87,9 @@ int		main(int av, char **ac)
 
 	arg_check(&engine, &all, av, ac);
 	init_engine(&engine, &all);
+	load_tx(&engine, "nmap.txt");
 	init_all(&all);
 	general_init(&engine);
-	setup_window_icon(&engine);
-	load_img(&engine, "wall1.png", 0);
-	load_img(&engine, "wall2.png", 1);
-	load_img(&engine, "wall3.png", 2);
-	load_img(&engine, "floor1.png", 3);
-	load_img(&engine, "ceil1.png", 4);
-	load_img(&engine, "sky1.png", 5);
 	game_loop(&engine, &all);
 	clean(&engine);
 	clean_all(&all);

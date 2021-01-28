@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <string.h>
+# include <sys/stat.h>
 
 # define MAX_QUEUE 64
 //вычисленные заранее координаты конечной точки лучей видимости для фов 90. Подробнее в transform_wall.c
@@ -137,7 +138,6 @@ typedef struct			s_edit
 typedef struct			s_img
 {
 	SDL_Surface			*tx;
-	char				name[15];
 }						t_img;
 
 typedef struct			s_temp
@@ -235,7 +235,7 @@ typedef struct			s_engine
 	int					u1;					//
 	t_temp				rend_wall;			//используется в rendel_Wall тобы обойти норму
 	t_temp2				rend_plane;			//используется при рендеринге пола и потолка
-	t_img				img[10];
+	t_img				img[11];
 	t_sprites1			*sprites1;
 	t_hud				hud;
 	t_inp_hud			hud_inp;				//для задачи параметров отрисовки HUD
