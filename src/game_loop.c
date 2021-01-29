@@ -123,6 +123,8 @@ void		game_loop(t_engine *engine, t_all *all)
 			engine->edit.mod = 0;
 		reset(engine);
 		keys_manager(engine);
+		while (engine->player.sector == all->fin_sect && !engine->close_request)
+			keys_manager(engine);
 		move(engine);
 		draw(engine);
 		door_anim(engine);
