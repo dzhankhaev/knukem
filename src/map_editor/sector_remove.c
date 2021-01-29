@@ -54,5 +54,6 @@ void    remove_sector(t_all *all, t_sect *sectors)
         get_neighbours(&sectors[all->swap_num], all, all->swap_num);
         all->fin_sect = all->swap_num == all->fin_sect ? -1 : all->fin_sect;
         all->swap_num = -1;
+        all->player.sector = which_sector(all, all->sectors, all->player.where);
     }
 }
