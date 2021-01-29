@@ -75,6 +75,18 @@ static void		load_fonts(t_sdl *sdl, t_all *all, t_engine *engine)
 	}
 }
 
+void	init_blank_map(t_engine *engine, t_all *all)
+{
+	all->min_coord = (t_xy){0, 0};
+	all->mapsize = (t_xyz){0, 0, 0};
+	all->max_coord = (t_xy){0, 0};
+	all->num_sectors = 0;
+	all->player.sector = -1;
+	all->draw_floors = (t_xy){0,0};
+	all->fin_sect = -1;
+    all->draw_floors = (t_xy){0, 10};
+}
+
 void			init_engine(t_engine *engine, t_all *all)
 {
 	sdl(engine, all);
@@ -82,10 +94,15 @@ void			init_engine(t_engine *engine, t_all *all)
 	all->sdl.window = engine->window;
 	all->sdl.screen = engine->screen;
 	load_fonts(&all->sdl, all, engine);
-	load_data(engine, all);
-	all->num_sectors = engine->num_sectors;
-	all->sectors = engine->sectors;
-	all->player = engine->player;
+	if(!(all->threed))
+	{
+		load_data(engine, all);
+		all->num_sectors = engine->num_sectors;
+		all->sectors = engine->sectors;
+		all->player = engine->player;
+	}
+	else
+		init_blank_map(engine, all);
 	engine->max_queue = MAX_QUEUE;
 	load_texture(all);
 	SDL_SetRelativeMouseMode(SDL_TRUE);

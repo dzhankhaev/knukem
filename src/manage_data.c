@@ -163,6 +163,8 @@ void	load_data(t_engine *engine, t_all *all)
     vertices = 0;
 
 	fd = open(all->name, O_RDONLY);
+    if (fd == -1)
+        error_and_close(__FILE__, __FUNCTION__);
 	all->min_coord = (t_xy){0, 0};
 	all->mapsize = (t_xyz){0, 0, 0};
 	all->max_coord = (t_xy){0, 0};

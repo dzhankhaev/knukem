@@ -20,8 +20,9 @@ void	arg_check(t_engine *engine, t_all *all, int av, char **ac)
 	engine->player.game_mode = 1;
 	if (av == 1)
 	{
-		all->name = ft_strdup("new_map.txt");
-		new_map(all->name);
+		all->threed = 1;
+		// all->name = ft_strdup("new_map.txt");
+		// new_map(all->name);
 	}
 	else if (av == 2)
 		all->name = ft_strdup(ac[1]);
