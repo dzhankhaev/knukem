@@ -111,8 +111,11 @@ void			put_hud(t_engine *engine)
 	if (curr_tick > (last_tick + 100))
 	{
 		last_tick = curr_tick;
-		if (inp->fire && b < 2)
+		if (inp->fire && b < 2 && inp->ammo > 0)
+		{
 			b++;
+			(inp->ammo)--;
+		}
 		else
 		{
 			inp->fire = 0;
@@ -140,7 +143,20 @@ void			put_hud(t_engine *engine)
 		SDL_BlitSurface(hud->num_h[10], NULL, hud->scr, &hud->rect);
 		hud->rect = (SDL_Rect){.x = 104, .y = 0};
 		SDL_BlitSurface(hud->arms, NULL, hud->scr, &hud->rect);
+
+		if (inp->ammo / 100 > 0)
+		{
+			hud->rect = (SDL_Rect){.x = 2 + 0 * 14, .y = 4};
+			SDL_BlitSurface(hud->num_h[inp->ammo / 100], NULL, hud->scr, &hud->rect);
+		}
+		hud->rect = (SDL_Rect){.x = 2 + 1 * 14, .y = 4};
+		SDL_BlitSurface(hud->num_h[(inp->ammo / 10) % 10], NULL,
+														hud->scr, &hud->rect);
+		hud->rect = (SDL_Rect){.x = 2 + 2 * 14, .y = 4};
+		SDL_BlitSurface(hud->num_h[inp->ammo % 10], NULL, hud->scr, &hud->rect);
+
 		i = 1;
+
 		while (++i < 8)
 		{
 			if (i < 5)
@@ -170,13 +186,13 @@ void			put_hud(t_engine *engine)
 		hud->rect = (SDL_Rect){.x = 0, .y = scr->h - scr->w / 10,
 												.w = scr->w, .h = scr->w / 10};
 		SDL_BlitScaled(hud->scr, NULL, scr, &hud->rect);
-		hud->rect = (SDL_Rect){.x = (scr->w - hud->pis[b]->w * coef) >> 1,
+		hud->rect = (SDL_Rect){.x = (scr->w - 45 - hud->pis[b]->w * coef) >> 1,
 					.y = scr->h - scr->w / 10 - hud->pis[b]->h * coef,
 						.w = hud->pis[b]->w * coef, .h = hud->pis[b]->h * coef};
 		SDL_BlitScaled(hud->pis[b], NULL, scr, &hud->rect);
 		if (b == 1)
 		{
-			hud->rect = (SDL_Rect){.x = ((scr->w - (hud->pis[b]->w - 72) * coef) >> 1),
+			hud->rect = (SDL_Rect){.x = ((scr->w - 45 - (hud->pis[b]->w - 72) * coef) >> 1),
 					.y = scr->h - scr->w / 10 - (hud->pis[b]->h + 21) * coef,
 						.w = hud->pis[5]->w * coef, .h = hud->pis[5]->h * coef};
 			SDL_BlitScaled(hud->pis[5], NULL, scr, &hud->rect);

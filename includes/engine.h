@@ -73,7 +73,7 @@ typedef struct	s_inp_hud
 	int				buttons;
 	int				weapons;
 	int				curr_weap;
-	int				ammo[6];
+	int				ammo;
 	int				face;
 	int				fire;
 	int 			flag;

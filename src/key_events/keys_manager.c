@@ -70,12 +70,19 @@ void			keys_manager(t_engine *engine)
 	int			y;
 	float		move_vec[2];
 	float		acceleration;
+	uint32_t	mouse_btn;
 	t_player	*player;
 
 	player = &engine->player;
 	keyboard_event(engine, player, &engine->edit);
 	eyeheight_correcting(engine);
-	SDL_GetRelativeMouseState(&x, &y);
+	mouse_btn = SDL_GetRelativeMouseState(&x, &y);
+	// if (SDL_BUTTON (X) == 1)
+	// {
+		// printf("%#x - btn %i\n", mouse_btn, SDL_BUTTON (mouse_btn));
+	// }
+	if (mouse_btn & SDL_BUTTON_LMASK)
+		engine->hud_inp.fire = 1;
 	player->vangle = clamp(player->vangle + y * CAMERA_DY, -VLIMIT, VLIMIT);
 	player->angle = angle_fix(player->angle + x * CAMERA_DX);
 	player->anglesin = sinf(player->angle);
