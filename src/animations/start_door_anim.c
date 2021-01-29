@@ -32,10 +32,8 @@ static void	put_anim(t_engine *engine, int door)
 				engine->danimbuf[q] = -1;
 			if (!engine->player.game_mode && engine->player.cur_am &&
 			engine->edit.door != 4)
-			{
-				engine->player.shot = 1;
 				engine->player.cur_am--;
-			}
+			engine->player.shot = 1;
 			break ;
 		}
 		q += 2;

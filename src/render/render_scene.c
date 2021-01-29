@@ -94,6 +94,9 @@ void			render_scene(t_engine *engine,
 	graf_proccesing(engine, sectorno, i);
 	start_door_anim(engine, sectorno, neighbor, i);
 	graf_mod(engine, sectorno, i);
+	engine->hud_inp.buttons = engine->player.cur_inv;
+	if (engine->player.shot)
+		engine->hud_inp.fire = engine->player.shot;
 	engine->edit.mod_w = -1;
 	render_line((t_line){0, W - 1, 0, 0, 0},
 			engine->screen, engine->borders);

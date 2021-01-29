@@ -126,5 +126,4 @@ void			graf_mod(t_engine *engine, int sectorno, int i)
 		}
 	}
 	delete_graf(engine, sectorno);
-	engine->hud_inp.buttons = engine->player.cur_inv;
 }
