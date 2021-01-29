@@ -85,6 +85,7 @@ void	init_blank_map(t_engine *engine, t_all *all)
 	all->draw_floors = (t_xy){0,0};
 	all->fin_sect = -1;
     all->draw_floors = (t_xy){0, 10};
+	all->name = ft_strdup("new_map.txt");
 }
 
 void			init_engine(t_engine *engine, t_all *all)
