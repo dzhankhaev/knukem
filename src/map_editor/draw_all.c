@@ -16,15 +16,18 @@ void	draw_sector_info(t_sdl *sdl, int n, t_all *all)
 {
 	SDL_Surface *tmp;
 	char		*num;
+	char		*t;
 	SDL_Rect	area;
 
 	tmp = NULL;
 	area = (SDL_Rect){W - 105, 5, 100, 25};
 	num = ft_itoa(n);
-	tmp = get_text_surface(ft_strjoin("s e c t o r ", num), all->font, YELLOW);
+	t = ft_strjoin("s e c t o r ", num);
+	free(num);
+	tmp = get_text_surface(t, all->font, YELLOW);
+	free(t);
 	draw_texture(sdl->screen, area, tmp);
 	SDL_FreeSurface(tmp);
-	free(num);
 }
 
 void	draw_area(t_sdl *sdl, t_all *all)

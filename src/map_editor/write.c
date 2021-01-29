@@ -124,8 +124,9 @@ static void		write_player(t_all *all, int fd)
 
 int				write_map(t_all *all)
 {
+	int	i;
     int fd;// для корректной работы, fd должен быть открыт как-то так open("new_map.txt", O_WRONLY | O_CREAT, S_IWUSR | S_IRUSR);
-    int **vert;//массив вершин, где номер строки - координата y, первое значение в строке - 
+    int **vert;//массив вершин, где номер строки - координата y, первое значение в строке -
                                                 //количество вершин, далее - координаты x вершин.
     if (all->min_coord.x < 0 || all->min_coord.y < 0)
         normalize(all->sectors, all->num_sectors, all);
@@ -136,6 +137,12 @@ int				write_map(t_all *all)
     write_vertexes(all, vert, fd);
     write_sectors(all, vert, fd);
 	write_player(all, fd);
-    ft_memdel((void*)vert);
+	i = 0;
+	while (i <= all->max_coord.y)
+	{
+		free(vert[i]);
+		i++;
+	}
+	free(vert);
     return (0);
 }

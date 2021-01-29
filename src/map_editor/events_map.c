@@ -72,11 +72,13 @@ int		is_portal(t_all *all, t_xyz point, t_sect *sect)
 {
 	unsigned int	i;
 	int				*num;
+	int				*t;
 	t_sect			tmp_sect;
 
 	if (sect->npoints >= 1)
 	{
 		num = which_sectors(all, all->sectors, point);
+		t = num;
 		while (*num != -1)
 		{
 			i = 1;
@@ -87,11 +89,15 @@ int		is_portal(t_all *all, t_xyz point, t_sect *sect)
 					(t_xy){point.x, point.y}, tmp_sect.vertex[i],
 							tmp_sect.vertex[i - 1]) &&
 								tmp_sect.neighbors[i - 1] != -1)
+				{
+					free(t);
 					return (1);
+				}
 				i++;
 			}
 			num++;
 		}
+		free(t);
 	}
 	return (0);
 }

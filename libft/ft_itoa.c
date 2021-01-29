@@ -43,6 +43,8 @@ char			*ft_itoa(int n)
 
 	nb = n;
 	len = ft_get_int_len(nb);
+	if (nb == 0)
+		return (ft_strdup("0"));
 	if (!(s = (char*)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	s[len--] = '\0';
@@ -51,8 +53,6 @@ char			*ft_itoa(int n)
 		nb *= -1;
 		s[0] = '-';
 	}
-	if (nb == 0)
-		return (ft_strdup("0"));
 	while (nb > 0)
 	{
 		s[len] = (nb % 10) + 48;
