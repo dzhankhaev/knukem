@@ -58,6 +58,7 @@ typedef struct	s_hud
 	int				health;
 	int				weapon;
 	int				face;
+	SDL_Surface		*ammo_b;
 	SDL_Surface		*hud;
 	SDL_Surface		*arms;
 	SDL_Surface		*pis[6];
