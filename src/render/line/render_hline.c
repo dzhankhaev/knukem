@@ -30,10 +30,10 @@ void	render_hline(t_engine *engine, int y, int xbegin, int xend)
 	while (x < xend)
 	{
 		a->mapy = a->mapx * (((float)x - (W >> 1)) / (W >> 1));
-		a->txy = (int)(((a->cosx + a->mapy * a->psin) + engine->player.where.x)
-			* 256) % a->tx->h;
-		a->txx = (int)(((a->sinx + a->mapy * a->pcos) + engine->player.where.y)
-			* 256) % a->tx->w;
+		a->txy = abs((int)(((a->cosx + a->mapy * a->psin) + engine->player.where.x)
+			* 256) % a->tx->h);
+		a->txx = abs((int)(((a->sinx + a->mapy * a->pcos) + engine->player.where.y)
+			* 256) % a->tx->w);
 		temp[(y * W) + x] = get_shadow(engine->player.deep_sh * a->mapx
 				* DEEP_SHADING, get_pixel_color(a->tx, a->txx, a->txy));
 		x++;
