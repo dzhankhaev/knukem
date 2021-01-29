@@ -30,7 +30,7 @@ static void		graf_memalloc(t_engine *engine, int sectorno, int i)
 			engine->sectors[sectorno].vertex[i + 1].x,
 			engine->sectors[sectorno].vertex[i].y,
 			engine->sectors[sectorno].vertex[i + 1].y,
-			engine->edit.txno == -1 ? 1 : engine->edit.txno};
+			engine->edit.txno == -1 ? 0 : engine->edit.txno};
 }
 
 static t_fline	get_coord(t_fline c)
