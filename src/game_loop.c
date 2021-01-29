@@ -12,6 +12,7 @@
 
 #include "engine.h"
 #include "events.h"
+#include "editor.h"
 
 static void	reset(t_engine *engine)
 {
@@ -123,8 +124,11 @@ void		game_loop(t_engine *engine, t_all *all)
 			engine->edit.mod = 0;
 		reset(engine);
 		keys_manager(engine);
-		if(engine->player.sector == all->fin_sect && !engine->close_request)
+		while(engine->player.sector == all->fin_sect && !engine->close_request)
+		{
+			print_message(all, RED, "GAME OVER", 200);
 			keys_manager(engine);
+		}
 		move(engine);
 		draw(engine);
 		door_anim(engine);
