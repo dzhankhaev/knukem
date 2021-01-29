@@ -23,11 +23,6 @@ static void	once_events(t_engine *engine, t_player *player, t_edit *edit)
 		engine->player.deep_sh = engine->player.deep_sh ? 0 : 1;
 	else if (player->event.key.keysym.sym == SDLK_ESCAPE)
 		engine->close_request = 1;
-	else if (player->event.key.keysym.sym == SDLK_KP_PLUS)
-		engine->hud_inp.buttons +=
-				(engine->hud_inp.buttons < 9) ? 1 : 0;
-	else if (player->event.key.keysym.sym == SDLK_KP_MINUS)
-		engine->hud_inp.buttons -= (engine->hud_inp.buttons) ? 1 : 0;
 }
 
 void		keyboard_event(t_engine *engine, t_player *player, t_edit *edit)
