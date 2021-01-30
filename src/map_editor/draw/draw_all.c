@@ -20,9 +20,9 @@ void	draw_sector_info(t_sdl *sdl, int n, t_all *all)
 	SDL_Rect	area;
 
 	tmp = NULL;
-	area = (SDL_Rect){W - 115, 5, 100, 25};
+	area = (SDL_Rect){W - 105, 5, 100, 25};
 	num = ft_itoa(n);
-	t = ft_strjoin("SECTOR  ", num);
+	t = ft_strjoin("s e c t o r ", num);
 	free(num);
 	tmp = get_text_surface(t, all->font, YELLOW);
 	free(t);
@@ -37,14 +37,14 @@ void	draw_area(t_sdl *sdl, t_all *all)
 	c = (t_xy){(all->area.w / 2) % all->step, (all->area.h / 2) % all->step};
 	draw_fill_rect(all, all->area, BLACK);
 	draw_grid(all, &all->area, all->step);
-	if(all->num_sectors)
+	if (all->num_sectors)
 		draw_map(all->sectors, all);
 	if (all->buttons[NEW_SECT].state == 1)
 		draw_circle(sdl, (t_xy){all->point.x * all->step + c.x + all->area.x,
 			all->point.y * all->step + c.y + all->area.y}, 2, WHITE);
 	if (all->temp->npoints > 0 && all->buttons[0].state == 1)
 		draw_temp(all, sdl, all->temp, all->delta);
-	if(all->player.sector != -1)
+	if (all->player.sector != -1)
 		draw_player(all, sdl, &all->player, &c);
 }
 

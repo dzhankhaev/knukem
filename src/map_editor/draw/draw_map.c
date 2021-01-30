@@ -12,37 +12,9 @@
 
 #include "editor.h"
 
-void	draw_sector(t_sect *sect, t_all *all, SDL_Color color, t_xy delta)
-{
-	unsigned int	i;
-	t_xy			s;
-	t_xy			f;
-	SDL_Color		col;
-
-	col = color;
-	i = 0;
-	while (i < sect->npoints)
-	{
-		s = (t_xy){(sect->vertex[i].x * all->step) + delta.x, \
-				(sect->vertex[i].y * all->step) + delta.y};
-		f = (t_xy){(sect->vertex[i + 1].x * all->step) + delta.x, \
-				(sect->vertex[i + 1].y * all->step) + delta.y};
-		if (sect->door < 0)
-			col = (sect->neighbors[i] < 0 && i < sect->npoints) ? color : BLUE;
-		if (sect->oldf >= all->draw_floors.x && \
-			sect->oldf <= all->draw_floors.y)
-		{
-			draw_line(all, &s, &f, \
-				&all->sectors[all->swap_num] == sect ? YELLOW : col);
-			draw_circle(&all->sdl, s, 2, GREEN);
-		}
-		i++;
-	}
-}
-
 void	draw_doors(t_all *all, t_sect *sectors)
 {
-	int i;
+	int		i;
 	t_sect	*temp;
 
 	i = 0;
@@ -60,15 +32,17 @@ void	draw_doors(t_all *all, t_sect *sectors)
 void	draw_player(t_all *all, t_sdl *sdl, t_player *player, t_xy *c)
 {
 	SDL_Rect loc;
-	
-	loc = (SDL_Rect){0,0,0,0};
+
+	loc = (SDL_Rect){0, 0, 0, 0};
 	if (all->player.picked == 0 && all->player.sector != -1)
-		loc = (SDL_Rect){(player->where.x * all->step) + all->delta.x - all->step/2,
-		 (player->where.y * all->step) + all->delta.y - all->step/2,
-	 		 all->step, all->step};
+		loc = (SDL_Rect){(player->where.x * all->step) + all->delta.x - \
+		all->step / 2, (player->where.y * all->step) + all->delta.y - \
+		all->step / 2, all->step, all->step};
 	else if (all->player.picked == 1)
-		loc = (SDL_Rect){all->point.x * all->step + c->x - all->step/2 + all->area.x,
-			 all->point.y * all->step + c->y - all->step/2 + all->area.y, all->step, all->step};
+		loc = (SDL_Rect){all->point.x * all->step + c->x - all->step /\
+			2 + all->area.x,
+			all->point.y * all->step + c->y - all->step / 2 + \
+				all->area.y, all->step, all->step};
 	draw_texture(sdl->screen, loc, player->picture);
 }
 
@@ -90,17 +64,6 @@ void	draw_map(t_sect *sect, t_all *all)
 		draw_sector(&sect[all->swap_num], all, YELLOW, all->delta);
 	if (all->fin_sect != -1)
 		draw_sector(&sect[all->fin_sect], all, ORANGE, all->delta);
-}
-
-t_xy	get_coords(t_all *all)
-{
-	t_xy	xy;
-
-	xy.x = all->point.x - all->d.x - (all->area.w / \
-		(2 * all->step) - round(all->mapsize.x / 2));
-	xy.y = all->point.y - all->d.y - (all->area.h / \
-		(2 * all->step) - round(all->mapsize.y / 2));
-	return (xy);
 }
 
 void	draw_temp(t_all *all, t_sdl *sdl, t_sect *temp, t_xy d)
