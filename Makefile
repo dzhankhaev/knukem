@@ -70,16 +70,17 @@ SRC := main.c\
 	render/line/render_vline.c\
 	render/line/render_hline.c\
 	map_editor/main.c\
-	map_editor/digits.c\
-	map_editor/draw_ui.c\
-	map_editor/draw_map.c\
-	map_editor/draw_map_obj.c\
-	map_editor/draw_all.c\
-	map_editor/drawing_utils.c\
+	map_editor/draw/digits.c\
+	map_editor/draw/draw_ui.c\
+	map_editor/draw/draw_map.c\
+	map_editor/draw/draw_map_obj.c\
+	map_editor/draw/draw_all.c\
+	map_editor/draw/drawing_utils.c\
 	map_editor/errors.c\
-	map_editor/events_all.c\
-	map_editor/events_key.c\
-	map_editor/events_map.c\
+	map_editor/events/events_all.c\
+	map_editor/events/events_key.c\
+	map_editor/events/events_map.c\
+	map_editor/events/events_processing.c\
 	map_editor/init.c\
 	map_editor/texture.c\
 	map_editor/texture2.c\
@@ -87,10 +88,10 @@ SRC := main.c\
 	map_editor/write.c\
 	map_editor/pixels.c\
 	map_editor/math.c\
-	map_editor/sector_check.c\
-	map_editor/sector_remove.c\
-	map_editor/sector_neighbors.c\
-	map_editor/sector_add.c\
+	map_editor/sector/sector_check.c\
+	map_editor/sector/sector_remove.c\
+	map_editor/sector/sector_neighbors.c\
+	map_editor/sector/sector_add.c\
 	map_editor/obj_detection.c\
 	archiver/archiver.c\
 	archiver/pack.c\

@@ -224,6 +224,7 @@ void	            draw_label(t_all *all, char *name, SDL_Rect area, SDL_Color col
 void				draw_circle(t_sdl *sdl, t_xy coord, int r, SDL_Color color);
 void				draw_ui(t_all *all, t_sdl *sdl, t_button *btn);
 void	            draw_sector(t_sect *sect, t_all *all, SDL_Color color, t_xy delta);
+void	            processing(t_all *all);
 int		            is_vector_equal(t_xy a0, t_xy a1, t_xy b0, t_xy b1);
 void    			new_sector(t_all *all, t_sect *temp, int x, int y);
 int                 get_neighbours(t_sect *sector, t_all 	*all, int n);
