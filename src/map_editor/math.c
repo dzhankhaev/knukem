@@ -10,28 +10,29 @@ float			point_side1(float px, float py, t_xy vert, t_xy vert1)
 	return (vector_cross_product1(vert1.x - vert.x, vert1.y - vert.y,
 								 px - vert.x, py - vert.y));
 }
-// D = (х3 - х1) * (у2 - у1) - (у3 - у1) * (х2 - х1)
 
-// float			point_side1(float px, float py, t_xy vert, t_xy vert1)
-// {
-// 	double 
-// }
-// void	isometric(t_all *all, t_xy *s, t_xyz rot, float add)
-// {
-// 	t_xyz temp;
-// 	t_xyz start;
+int		is_vector_equal(t_xy a0, t_xy a1, t_xy b0, t_xy b1)
+{
+	if ((a0.x == b0.x && a0.y == b0.y) || (a0.x == b1.x && a0.y == b1.y))
+		if ((a1.x == b0.x && a1.y == b0.y) || (a1.x == b1.x && a1.y == b1.y))
+			return (1);
+	return (0);
+}
 
-// 	start = (t_xyz){s->x, s->y, add};
-// 	rot = (t_xyz){(M_PI / 25 * rot.x), (M_PI / 25 * rot.y), (M_PI / 135 * rot.z) * -1};
-// 	temp.y = all->area.h / 2 + start.y * cos(rot.x) + start.z * sin(rot.x);
-// 	temp.z = -(start.y * sin(rot.x)) + start.z * cos(rot.x);
-// 	s->y = temp.y;
-// 	start.z = temp.z;
-// 	temp.x = all->area.w/2 + start.x * cos(rot.y) + start.z * sin(rot.y);
-// 	temp.z = -(start.x * sin(rot.y)) + start.z * cos(rot.y);
-// 	s->x = temp.x;
-// 	start.z = temp.z;
-// 	s->x -= all->area.w/2;
-// 	s->y -= all->area.h/4; 
+void	closest_point(t_all *all, t_xyint point)
+{
+	t_xy	   c;
 
-// }
+	c = (t_xy){(all->area.w / 2) % all->step, (all->area.h / 2) % all->step};
+	if(all->player.picked)
+	{
+		all->point.x = ((float)point.x - all->area.x - c.x) / all->step;
+		all->point.y = ((float)point.y - all->area.y - c.y) / all->step;
+	}
+	else
+	{
+		all->point.x = round(((float)point.x - all->area.x - c.x) / all->step);
+		all->point.y = round(((float)point.y - all->area.y - c.y) / all->step);
+	}
+	
+}

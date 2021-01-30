@@ -116,6 +116,7 @@ void		game_loop(t_engine *engine, t_all *all)
 	{
 		if (engine->edit.mod && check_anim(engine))
 		{
+			print_message(all, RED, "Entering 2D!", 500);
 			SDL_SetRelativeMouseMode(SDL_FALSE);
 			engine->edit.mod = main_editor(engine, all);
 			SDL_SetRelativeMouseMode(SDL_TRUE);
@@ -126,8 +127,8 @@ void		game_loop(t_engine *engine, t_all *all)
 		keys_manager(engine);
 		while(engine->player.sector == all->fin_sect && !engine->close_request)
 		{
-			print_message(all, RED, "GAME OVER", 200);
-			keys_manager(engine);
+			print_message(all, RED, "GAME OVER", 1000);
+			engine->close_request = 0;
 		}
 		move(engine);
 		draw(engine);
@@ -139,4 +140,5 @@ void		game_loop(t_engine *engine, t_all *all)
 		time = SDL_GetTicks();
 		SDL_UpdateWindowSurface(engine->window);
 	}
+	print_message(all, RED, "Exiting", 500);
 }

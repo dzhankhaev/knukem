@@ -209,6 +209,8 @@ int					load_map(char *name, t_all *all); // загрузка карты
 int                 load_texture(t_all *all);// звгрузка текстур
 int					load_buttons(t_button *btn);
 void                draw_all(t_all *all, t_sdl *sdl, t_button *btn);//отрисовка
+void	            draw_digits(t_sdl *sdl, t_all *all, int x, int y);
+void	            draw_setting_digits(t_all *all, t_settings *settings);
 int					write_map(t_all *all);
 void				draw_temp(t_all *all, t_sdl *sdl, t_sect *temp, t_xy delta);//несохраненный сектор
 void                draw_player(t_all *all, t_sdl *sdl, t_player *player, t_xy *c);
@@ -218,8 +220,11 @@ void    			draw_texture(SDL_Surface *screen, SDL_Rect area, SDL_Surface *txt);
 void    			draw_fill_rect(t_all *all, SDL_Rect area, SDL_Color color);
 void				draw_rect(t_all *all, SDL_Rect area, SDL_Color color, int border);
 void				draw_line(t_all *all, t_xy *start, t_xy *fin, SDL_Color color);
+void	            draw_label(t_all *all, char *name, SDL_Rect area, SDL_Color color);
 void				draw_circle(t_sdl *sdl, t_xy coord, int r, SDL_Color color);
 void				draw_ui(t_all *all, t_sdl *sdl, t_button *btn);
+void	            draw_sector(t_sect *sect, t_all *all, SDL_Color color, t_xy delta);
+int		            is_vector_equal(t_xy a0, t_xy a1, t_xy b0, t_xy b1);
 void    			new_sector(t_all *all, t_sect *temp, int x, int y);
 int                 get_neighbours(t_sect *sector, t_all 	*all, int n);
 float				point_side1(float px, float py, t_xy vert, t_xy vert1);
@@ -231,13 +236,16 @@ void				remove_sector(t_all *all, t_sect *sectors);
 SDL_Surface			*get_text_surface(char *name, TTF_Font *font, SDL_Color color);
 void       			put_pxl(SDL_Surface *screen, SDL_Color col, int x, int y);
 SDL_Surface			*get_texture2(char *file);
+t_xy                get_coords(t_all *all);
 void				init_floors(t_sect *sectors, int num);
 void				normalize(t_sect *sectors, int num, t_all *all);
 int					**get_vertexes(t_all *all);
 int					get_order_num(t_xy coord, int **vert);
 int                 is_intersectred(t_xy v11, t_xy v12, t_xy v21, t_xy v22);
 int                 ispointincube(t_xyz point, t_xyz cubecenter, t_xyz borders, float centerzoffset);
+void	            key_press(t_all *all);
 int                 print_message(t_all *all, SDL_Color color, char *text, int delay);
 void				new_map(char *name);
+void                closest_point(t_all *all, t_xyint point);
 
 # endif

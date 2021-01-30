@@ -37,14 +37,14 @@ void	draw_area(t_sdl *sdl, t_all *all)
 	c = (t_xy){(all->area.w / 2) % all->step, (all->area.h / 2) % all->step};
 	draw_fill_rect(all, all->area, BLACK);
 	draw_grid(all, &all->area, all->step);
-	if(all->num_sectors)
+	if (all->num_sectors)
 		draw_map(all->sectors, all);
 	if (all->buttons[NEW_SECT].state == 1)
 		draw_circle(sdl, (t_xy){all->point.x * all->step + c.x + all->area.x,
 			all->point.y * all->step + c.y + all->area.y}, 2, WHITE);
 	if (all->temp->npoints > 0 && all->buttons[0].state == 1)
 		draw_temp(all, sdl, all->temp, all->delta);
-	if(all->player.sector != -1)
+	if (all->player.sector != -1)
 		draw_player(all, sdl, &all->player, &c);
 }
 

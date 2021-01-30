@@ -37,6 +37,8 @@ void		keyboard_event(t_engine *engine, t_player *player, t_edit *edit)
 		}
 		if (player->event.type == SDL_KEYDOWN)
 			once_events(engine, player, edit);
+		if (player->event.type == SDL_MOUSEBUTTONDOWN)
+			
 		if (player->event.type == SDL_QUIT)
 			engine->close_request = 1;
 	}
