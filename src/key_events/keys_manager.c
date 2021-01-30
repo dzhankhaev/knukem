@@ -75,7 +75,8 @@ void			keys_manager(t_engine *engine)
 	player = &engine->player;
 	keyboard_event(engine, player, &engine->edit);
 	eyeheight_correcting(engine);
-	SDL_GetRelativeMouseState(&x, &y);
+	if (SDL_GetRelativeMouseState(&x, &y) & SDL_BUTTON_LMASK)
+		engine->hud_inp.fire = 1;
 	player->vangle = clamp(player->vangle + y * CAMERA_DY, -VLIMIT, VLIMIT);
 	player->angle = angle_fix(player->angle + x * CAMERA_DX);
 	player->anglesin = sinf(player->angle);

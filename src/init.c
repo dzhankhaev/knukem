@@ -73,8 +73,8 @@ void			general_init(t_engine *engine)
 	engine->edit.mod = 1;
 	engine->edit.graf = 0;
 	engine->hud_inp = (t_inp_hud){.weapons = 0b11101, .health = 125, .face = 1,
-											.buttons = 0, .flag = 0, .fire = 0};
-	load_surfaces("textur/", &engine->hud);
+	.buttons = 0, .flag = 0, .fire = 0, .ammo = engine->player.cur_am};
+	load_surfaces("textures/hud/", &engine->hud);
 	general_init2(engine);
 	init_minimap(engine);
 }
