@@ -33,7 +33,7 @@ int	mode_switch(t_all *all, int mode)
 	{
 		all->threed = 1;
 		normalize(all->sectors, all->num_sectors, all);
-		print_message(all, RED, "Entering 3D!", 1000);
+		print_message(all, RED, "Entering 3D!", 500);
 	}
 	else if (all->player.sector == -1)
 	{
