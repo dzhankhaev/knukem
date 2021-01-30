@@ -113,12 +113,8 @@ void			put_hud(t_engine *engine)
 	if (curr_tick > (last_tick + 100))
 	{
 		last_tick = curr_tick;
-		if (inp->fire && b < 3 && inp->ammo > 0)
-		{
-			if (b == 1)
-				(inp->ammo)--;
+		if (inp->fire && b < 3)
 			b++;
-		}
 		else
 		{
 			inp->fire = 0;
