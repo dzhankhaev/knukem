@@ -60,7 +60,7 @@ void    validate_sector(t_sect *sect, t_all *all)
 		if (failure || check_intersections(sect))
 		{
 			all->swap_num = all->num_sectors == 0 ? 0 : all->num_sectors - 1;
-			print_message(all, RED, "Invalid Sector!", 1000);
+			print_message(all, RED, "INVALID SECTOR!", 1000);
 			remove_sector(all, all->sectors);
 		}
 	}
@@ -87,7 +87,7 @@ void	check_vert(t_all *all, int *x, int *y, t_sect *temp)
 {
 	if (temp->npoints == 20)
 	{
-		print_message(all, RED, "Vertex limit!", 1000);
+		print_message(all, RED, "VERTEX LIMIT!", 1000);
 		*x = temp->vertex[0].x;
 		*y = temp->vertex[0].y;
 

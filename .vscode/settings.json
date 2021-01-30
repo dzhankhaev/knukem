@@ -17,6 +17,7 @@
 		"iostream": "cpp",
 		"algorithm": "cpp"
 	},
-	"editor.insertSpaces": false
+	"editor.insertSpaces": false,
+	"cmake.configureOnOpen": true
 
 }
