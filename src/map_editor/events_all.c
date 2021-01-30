@@ -29,7 +29,8 @@ int	print_message(t_all *all, SDL_Color color, char *text, int delay)
 
 int	mode_switch(t_all *all, int mode)
 {
-	if (all->player.sector != -1 && mode)
+	if ((all->player.sector = which_sector(all, all->sectors, all->player.where))\
+		!= -1 && mode)
 	{
 		all->threed = 1;
 		normalize(all->sectors, all->num_sectors, all);
