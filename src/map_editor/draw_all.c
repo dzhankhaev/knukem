@@ -20,9 +20,9 @@ void	draw_sector_info(t_sdl *sdl, int n, t_all *all)
 	SDL_Rect	area;
 
 	tmp = NULL;
-	area = (SDL_Rect){W - 105, 5, 100, 25};
+	area = (SDL_Rect){W - 115, 5, 100, 25};
 	num = ft_itoa(n);
-	t = ft_strjoin("s e c t o r ", num);
+	t = ft_strjoin("SECTOR  ", num);
 	free(num);
 	tmp = get_text_surface(t, all->font, YELLOW);
 	free(t);

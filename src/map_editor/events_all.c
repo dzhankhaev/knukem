@@ -29,20 +29,22 @@ int	print_message(t_all *all, SDL_Color color, char *text, int delay)
 
 int	mode_switch(t_all *all, int mode)
 {
-	if (all->player.sector != -1 && mode)
+	if ((all->player.sector = which_sector(all, all->sectors, all->player.where))
+		!= -1 && mode)
 	{
 		all->threed = 1;
 		normalize(all->sectors, all->num_sectors, all);
-		print_message(all, RED, "Entering 3D!", 500);
+		print_message(all, RED, "ENTER 3D!", 1000);
+
 	}
 	else if (all->player.sector == -1)
 	{
-		print_message(all, RED, "Set player!", 1000);
+		print_message(all, RED, "SET PLAYER!", 1000);
 		return (0);
 	}
 	else if (all->fin_sect == -1)
 	{
-		print_message(all, RED, "Set final sector!", 1000);
+		print_message(all, RED, "SET FINAL SECTOR!", 1000);
 		return (0);
 	}
 	return(1);
@@ -61,16 +63,16 @@ void	key_press(t_all *all)
 		write_map(all);
 	else if (keystate[SDL_SCANCODE_RIGHT])
 		all->d.x += abs((int)(all->d.x)) <= 300 ? 1 :
-			print_message(all, RED, "size limit!", 1000);
+			print_message(all, RED, "SIZE LIMIT!", 1000);
 	else if (keystate[SDL_SCANCODE_LEFT])
 		all->d.x -= abs((int)(all->d.x)) <= 300 ? 1 :
-			print_message(all, RED, "size limit!", 1000);
+			print_message(all, RED, "SIZE LIMIT!", 1000);
 	else if (keystate[SDL_SCANCODE_UP])
 		all->d.y -= abs((int)(all->d.x)) <= 300 ? 1 :
-			print_message(all, RED, "size limit!", 1000);
+			print_message(all, RED, "SIZE LIMIT!", 1000);
 	else if (keystate[SDL_SCANCODE_DOWN])
 		all->d.y += abs((int)(all->d.x)) <= 300 ? 1 :
-			print_message(all, RED, "size limit!", 1000);
+			print_message(all, RED, "SIZE LIMIT!", 1000);
 }
 
 void		level_buttons(t_all *all, t_button *btns, SDL_MouseButtonEvent *event)
