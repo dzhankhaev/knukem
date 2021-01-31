@@ -142,7 +142,7 @@ void	load_player(t_engine *engine, char **split)
         engine->player.vangle = 0;
         engine->player.sector = ft_atoi(sub[3]);
         engine->player.where.z =
-                engine->sectors[engine->player.sector].floor + EYE_HEIGHT;
+        engine->sectors[engine->player.sector].floor + EYE_HEIGHT;
 		engine->player.settings.inventory = ft_atoi(sub[4]);
 		engine->player.settings.speed = ft_atoi(sub[5]);
 		engine->player.settings.ammo = ft_atoi(sub[6]);
