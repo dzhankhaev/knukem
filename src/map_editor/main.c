@@ -47,7 +47,7 @@ void	interact(t_all *all)
 			event.type = 0;
 			SDL_UnlockSurface(all->sdl.screen);
 			SDL_UpdateWindowSurface(all->sdl.window);
-			SDL_FreeSurface(all->sdl.screen);
+			// SDL_FreeSurface(all->sdl.screen);
 		}
 	}
 }

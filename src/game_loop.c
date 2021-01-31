@@ -125,7 +125,7 @@ void		game_loop(t_engine *engine, t_all *all)
 			engine->edit.mod = 0;
 		reset(engine);
 		keys_manager(engine);
-		while(engine->player.sector == all->fin_sect && !engine->close_request)
+		if(engine->player.sector == all->fin_sect && !engine->close_request)
 		{
 			print_message(all, RED, "GAME OVER", 1000);
 			engine->close_request = 0;
