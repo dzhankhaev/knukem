@@ -208,6 +208,8 @@ void				map_click(t_all *all, SDL_MouseButtonEvent *event);
 int					load_map(char *name, t_all *all); // загрузка карты
 int                 load_texture(t_all *all);// звгрузка текстур
 int					load_buttons(t_button *btn);
+int                 check_sect_intersect(t_all *all, int num, t_xy one, t_xy two);
+void                check_vert(t_all *all, int *x, int *y, t_sect *temp);
 void                draw_all(t_all *all, t_sdl *sdl, t_button *btn);//отрисовка
 void	            draw_digits(t_sdl *sdl, t_all *all, int x, int y);
 void	            draw_setting_digits(t_all *all, t_settings *settings);
@@ -236,7 +238,6 @@ int                 *which_sectors(t_all *all, t_sect *sectors, t_xyz where);
 void				remove_sector(t_all *all, t_sect *sectors);
 SDL_Surface			*get_text_surface(char *name, TTF_Font *font, SDL_Color color);
 void       			put_pxl(SDL_Surface *screen, SDL_Color col, int x, int y);
-SDL_Surface			*get_texture2(char *file);
 t_xy                get_coords(t_all *all);
 void				init_floors(t_sect *sectors, int num);
 void				normalize(t_sect *sectors, int num, t_all *all);
@@ -248,5 +249,6 @@ void	            key_press(t_all *all);
 int                 print_message(t_all *all, SDL_Color color, char *text, int delay);
 void				new_map(char *name);
 void                closest_point(t_all *all, t_xyint point);
+void                write_sectors(t_all *all, int **vert, int fd);
 
 # endif

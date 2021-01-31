@@ -84,11 +84,13 @@ SRC := main.c\
 	map_editor/init.c\
 	map_editor/texture.c\
 	map_editor/texture2.c\
-	map_editor/prewrite.c\
-	map_editor/write.c\
+	map_editor/write/prewrite.c\
+	map_editor/write/write.c\
+	map_editor/write/write_sectors.c\
 	map_editor/pixels.c\
 	map_editor/math.c\
 	map_editor/sector/sector_check.c\
+	map_editor/sector/sector_check_2.c\
 	map_editor/sector/sector_remove.c\
 	map_editor/sector/sector_neighbors.c\
 	map_editor/sector/sector_add.c\
