@@ -77,14 +77,15 @@ static void		load_fonts(t_sdl *sdl, t_all *all, t_engine *engine)
 
 void	init_blank_map(t_engine *engine, t_all *all)
 {
+	all->sectors = NULL;
 	all->min_coord = (t_xy){0, 0};
 	all->mapsize = (t_xyz){0, 0, 0};
 	all->max_coord = (t_xy){0, 0};
 	all->num_sectors = 0;
 	all->player.sector = -1;
-	all->draw_floors = (t_xy){0,0};
+	all->draw_floors = (t_xy){0, 10};
 	all->fin_sect = -1;
-    all->draw_floors = (t_xy){0, 10};
+	all->player.settings = (t_settings){1, 10, 10, 0};
 	all->name = ft_strdup("new_map.txt");
 }
 
