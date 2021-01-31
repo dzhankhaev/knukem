@@ -59,6 +59,8 @@ void	set_player(int x, int y, t_all *all)
 			all->buttons[1].state = 0;
 			all->buttons[1].color = WHITE;
 		}
+		else
+			print_message(all, RED, "NOT GOOD!", 1000);		
 	}
 }
 
