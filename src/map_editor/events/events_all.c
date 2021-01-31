@@ -114,5 +114,12 @@ void	on_event(t_all *all, SDL_Event *event)
 		all->mouse.z = 1;
 	else if (event->button.type == SDL_MOUSEBUTTONUP)
 		all->mouse.z = 0;
+	else if (event->wheel.type == SDL_MOUSEWHEEL)
+	{
+		if (event->wheel.y < 0)
+			all->step -= all->step > 10 ? 2 : 0;
+		else if (event->wheel.y > 0)
+			all->step += all->step < 50 ? 2 : 0;
+	}
 	on_mouse(all, &event->button);
 }
