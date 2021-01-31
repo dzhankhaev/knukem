@@ -31,12 +31,12 @@ void	init_all(t_all *all)
 	all->area = (SDL_Rect){W / 4, 0, W - W / 4, H};
 	all->step = scaling(all->area, all->mapsize);
 	all->point = (t_xyint){0, 0};
-	all->temp = NULL;
-	all->temp = (t_sect*)malloc(sizeof(t_sect));
-	all->temp->neighbors = NULL;
 	all->swap_num = -1;
 	all->d = (t_xy){0, 0};
 	all->threed = 0;
+	all->temp = NULL;
+	all->temp = (t_sect*)malloc(sizeof(t_sect));
+	all->temp->neighbors = NULL;
 	all->temp->npoints = 0;
 	all->temp->vertex = NULL;
 	all->player.picked = 0;
