@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   events_map.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sisidra <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/27 13:32:47 by sisidra           #+#    #+#             */
+/*   Updated: 2020/11/27 13:32:49 by sisidra          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "editor.h"
 
 int check_match(t_sect  *sect, t_xyz coord, t_xy *temp, int sect_num)
@@ -51,40 +63,6 @@ int		is_neighbor(t_all *all, t_xy coord, t_xy coord2, t_xy height, int self)
 	return (-1);
 }
 
-int		sector_orientation(t_sect *sect, t_xy one, t_xy two)
-{
-	int				temp;
-	int				side;
-	unsigned int	i;
-
-	side = 0;
-	i = 0;
-	while(i < sect->npoints)
-	{
-		temp = point_side1(sect->vertex[i].x, sect->vertex[i].y, one, two);
-		if(temp > 0)
-			side = 1;
-		else if (temp < 0)
-			side = -1;
-		i++;
-	}
-	return(side);
-}
-
-int		check_sect_intersection(t_all *all, int num, t_xy one, t_xy two)
-{
-	int sect1;
-	int	sect2;
-
-	if(num == -1)
-		return (0);
-	sect1 = sector_orientation(&all->sectors[num], one, two);
-	sect2 = sector_orientation(&all->sectors[all->num_sectors -1], one, two);
-	if(sect2 == 0 || sect1 == sect2)
-		return(1);
-	return(0);
-}
-
 int	get_neighbours(t_sect *sector, t_all *all, int self)
 {
 	unsigned int	i;
@@ -101,13 +79,13 @@ int	get_neighbours(t_sect *sector, t_all *all, int self)
 	{
 		sector->neighbors[i] = is_neighbor(all, sector->vertex[i],
 			sector->vertex[i + 1], h, self);
-		res = res == 1 ? 1 : check_sect_intersection(all, sector->neighbors[i], sector->vertex[i],
+		res = res == 1 ? 1 : check_sect_intersect(all, sector->neighbors[i], sector->vertex[i],
 				sector->vertex[i + 1]);
 		i++;
 	}
 	sector->neighbors[i] = is_neighbor(all, sector->vertex[i],
 		sector->vertex[0], h, self);
-	res = res == 1 ? 1 : check_sect_intersection(all, sector->neighbors[i], sector->vertex[i],
+	res = res == 1 ? 1 : check_sect_intersect(all, sector->neighbors[i], sector->vertex[i],
 				sector->vertex[i + 1]);
 	return(res);
 }

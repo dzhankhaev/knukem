@@ -15,7 +15,8 @@
 		"ratio": "c",
 		"chrono": "cpp",
 		"iostream": "cpp",
-		"algorithm": "cpp"
+		"algorithm": "cpp",
+		"editor.h": "c"
 	},
 	"editor.insertSpaces": false,
 	"cmake.configureOnOpen": true

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   events_map.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sisidra <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/27 13:32:47 by sisidra           #+#    #+#             */
+/*   Updated: 2020/11/27 13:32:49 by sisidra          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "editor.h"
 
 t_xy	*remove_vertex(t_xy *vert, int num, int npoints)
@@ -5,11 +17,11 @@ t_xy	*remove_vertex(t_xy *vert, int num, int npoints)
 	int		i;
 	int		j;
 	t_xy	*tmp;
-	
+
 	i = 0;
 	j = 0;
 	tmp = (t_xy*)malloc(sizeof(t_xy) * (npoints));
-	while(j < npoints)
+	while (j < npoints)
 	{
 		if (j == num)
 			j++;
@@ -53,7 +65,7 @@ int		check_sector_shape(t_sect *sect)
 			}
 		}
 	}
-	return 1;
+	return (1);
 }
 
 int		revert_sector(t_sect *sect)
@@ -62,9 +74,9 @@ int		revert_sector(t_sect *sect)
 	unsigned int	i;
 
 	i = 0;
-	if(!(temp = (t_xy*)malloc(sizeof(t_xy) * sect->npoints)))
+	if (!(temp = (t_xy*)malloc(sizeof(t_xy) * sect->npoints)))
 		exit(0);
-	while(i < sect->npoints)
+	while (i < sect->npoints)
 	{
 		temp[i] = sect->vertex[sect->npoints - i];
 		i++;
@@ -72,7 +84,7 @@ int		revert_sector(t_sect *sect)
 	temp[i] = temp[0];
 	free(sect->vertex);
 	sect->vertex = temp;
-	return 0;
+	return (0);
 }
 
 int		check_sector_order(t_sect *sect)
@@ -96,7 +108,7 @@ int		check_sector_order(t_sect *sect)
 
 int		check_sector(t_sect *sect)
 {
-	if(!(check_sector_order(sect)))
+	if (!(check_sector_order(sect)))
 		revert_sector(sect);
-	return(check_sector_shape(sect));
+	return (check_sector_shape(sect));
 }
