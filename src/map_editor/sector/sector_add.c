@@ -82,6 +82,8 @@ void	init_new_sector(t_sect *sect, t_sect *temp)
 {
 	if (!(sect->vertex = malloc(sizeof(t_xy) * temp->npoints)))
 		error_and_close(__FILE__, __FUNCTION__);
+	if (!(sect->neighbors = malloc(sizeof(t_xy) * temp->npoints)))
+		error_and_close(__FILE__, __FUNCTION__);
 	sect->npoints = temp->npoints;
 	sect->floor = temp->floor;
 	sect->oldf = temp->floor;
@@ -115,7 +117,7 @@ void	new_sector(t_all *all, t_sect *temp, int x, int y)
 	{
 		all->sectors = ft_realloc(all->sectors, ++(*num_sect) * sizeof(t_sect));
 		init_new_sector(&all->sectors[*num_sect - 1], temp);
-		while (i < temp->npoints)
+		while (i <= temp->npoints)
 		{
 			all->sectors[*num_sect - 1].vertex[i] = temp->vertex[i];
 			i++;

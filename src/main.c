@@ -46,12 +46,10 @@ void	clean_all(t_all *all)
 	TTF_CloseFont(all->font);
 	all->font=NULL;
 	TTF_Quit();
-	if(all->temp->npoints)
-		free(all->temp->vertex);
-	if(all->temp->neighbors)
-		free(all->temp->neighbors);
-	free(all->temp);
-	all->temp = NULL;
+	if(all->temp.npoints)
+		free(all->temp.vertex);
+	if(all->temp.neighbors)
+		free(all->temp.neighbors);
 	i = 0;
 	while (i < 9)
 		SDL_FreeSurface(all->labels[i++].surf);

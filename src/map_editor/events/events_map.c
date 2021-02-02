@@ -83,7 +83,7 @@ int		is_portal(t_all *all, t_xyz point, t_sect *sect)
 			{
 				if (is_vector_equal(sect->vertex[sect->npoints - 1],
 (t_xy){point.x, point.y}, tmp_sect.vertex[i], tmp_sect.vertex[i - 1]) &&\
-								tmp_sect.neighbors[i - 1] != -1)
+tmp_sect.neighbors[i - 1] != -1)
 				{
 					free(t);
 					return (1);
@@ -106,7 +106,10 @@ int		pre_check(t_all *all, t_xyz point, t_sect *sect)
 			point.y == sect->vertex[sect->npoints - 1].y)
 			return (0);
 	if (is_portal(all, point, sect))
+	{
+		print_message(all, RED, "PORTAL EXISTS!", 1000);
 		return (0);
+	}
 	if ((num = which_sector(all, all->sectors, point)) > -1)
 	{
 		if (inside_sector((t_xyint){point.x, point.y}, &all->sectors[num]))
@@ -126,11 +129,11 @@ void	map_click(t_all *all, SDL_MouseButtonEvent *event)
 		round(all->mapsize.y / 2));
 	if (all->buttons[NEW_SECT].state)
 	{
-		all->temp->floor = all->set_floors.x;
-		all->temp->ceil = all->set_floors.y;
-		all->temp->neighbors = NULL;
-		if (pre_check(all, (t_xyz){x, y, all->draw_floors.x}, all->temp))
-			new_sector(all, all->temp, x, y);
+		all->temp.floor = all->set_floors.x;
+		all->temp.ceil = all->set_floors.y;
+		all->temp.neighbors = NULL;
+		if (pre_check(all, (t_xyz){x, y, all->set_floors.x}, &all->temp))
+			new_sector(all, &all->temp, x, y);
 	}
 	else if (all->player.picked)
 		set_player(x, y, all);
