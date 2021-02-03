@@ -58,6 +58,7 @@ void	draw_labels(t_all *all, t_labels label[5], int num)
 
 void	draw_ui(t_all *all, t_sdl *sdl, t_button *btn)
 {
+	draw_fill_rect(all, (SDL_Rect){0, 0, W / 4, H}, GREY);
 	draw_fill_rect(all, (SDL_Rect){4, 4, W / 4 - 8, H - 8}, LAZUR);
 	if (btn[NEW_SECT].state || all->swap_num >= 0)
 		draw_labels(all, all->labels, 0);

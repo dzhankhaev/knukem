@@ -23,9 +23,9 @@ void	draw_sector_info(t_sdl *sdl, int n, t_all *all)
 	area = (SDL_Rect){W - 105, 5, 100, 25};
 	num = ft_itoa(n);
 	t = ft_strjoin("s e c t o r ", num);
-	free(num);
+	ft_memdel((void*)&num);
 	tmp = get_text_surface(t, all->font, YELLOW);
-	free(t);
+	ft_memdel((void*)&t);
 	draw_texture(sdl->screen, area, tmp);
 	SDL_FreeSurface(tmp);
 }
