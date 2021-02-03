@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "editor.h"
+#include "archiver.h"
 
 void		write_vertexes(t_all *all, int **vert, int fd)
 {
@@ -79,5 +80,6 @@ int			write_map(t_all *all)
 		i++;
 	}
 	free(vert);
+	pack_files("textures/files","map.map");
 	return (0);
 }

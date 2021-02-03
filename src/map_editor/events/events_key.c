@@ -43,7 +43,7 @@ void	key_press(t_all *all)
 		print_message(all, RED, "EXITING", 1000);
 		mode_switch(all, 1);
 	}
-	else if (keystate[SDL_SCANCODE_ESC])
+	else if (keystate[SDL_SCANCODE_ESCAPE])
 		all->threed = 2;
 	else if (keystate[SDL_SCANCODE_DELETE] || keystate[SDL_SCANCODE_BACKSPACE])
 		remove_sector(all, all->sectors);

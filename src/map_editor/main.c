@@ -31,7 +31,7 @@ void	interact(t_all *all)
 
 	while ((last_time = SDL_GetTicks()) && all->threed == 0)
 	{
-		while (SDL_WaitEvent(&event))
+		while (SDL_PollEvent(&event))
 		{
 			on_event(all, &event);
 			cur_time = SDL_GetTicks();
