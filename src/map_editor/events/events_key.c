@@ -20,12 +20,12 @@ int		mode_switch(t_all *all, int mode)
 		normalize(all->sectors, all->num_sectors, all);
 		print_message(all, RED, "ENTERING 3D!", 500);
 	}
-	else if (all->player.sector == -1)
+	if (all->player.sector == -1)
 	{
 		print_message(all, RED, "SET PLAYER!", 1000);
 		return (0);
 	}
-	else if (all->fin_sect == -1)
+	if (all->fin_sect == -1)
 	{
 		print_message(all, RED, "SET FINAL SECTOR!", 1000);
 		return (0);
@@ -40,7 +40,7 @@ void	key_press(t_all *all)
 	keystate = SDL_GetKeyboardState(NULL);
 	if (keystate[SDL_SCANCODE_E])
 		mode_switch(all, 1);
-	else if (keystate[SDL_SCANCODE_ESCAPE])
+	else if (keystate[SDL_SCANCODE_ESCAPE] && mode_switch(all, 0))
 	{
 		print_message(all, RED, "EXITING", 1000);
 		mode_switch(all, 1);

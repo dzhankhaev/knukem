@@ -30,7 +30,7 @@ t_xy	*remove_vertex(t_xy *vert, int num, int npoints)
 		j++;
 	}
 	tmp[npoints - 1] = tmp[0];
-	free(vert);
+	ft_memdel((void*)&vert);
 	vert = tmp;
 	return (vert);
 }
@@ -74,15 +74,15 @@ int		revert_sector(t_sect *sect)
 	unsigned int	i;
 
 	i = 0;
-	if (!(temp = (t_xy*)malloc(sizeof(t_xy) * sect->npoints)))
-		exit(0);
+	if (!(temp = (t_xy*)malloc(sizeof(t_xy) * (sect->npoints + 1))))
+		error_and_close(__FILE__, __FUNCTION__);
 	while (i < sect->npoints)
 	{
 		temp[i] = sect->vertex[sect->npoints - i];
 		i++;
 	}
 	temp[i] = temp[0];
-	free(sect->vertex);
+	ft_memdel((void*)&sect->vertex);
 	sect->vertex = temp;
 	return (0);
 }
