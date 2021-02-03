@@ -69,6 +69,8 @@ int				load_buttons(t_button *buttons)
 		ft_strdup(" - "), WHITE, 0, NULL};
 	buttons[5] = (t_button){(SDL_Rect){(W / 4 - 4) - 75, H * 0.86, 50, 50},\
 		ft_strdup(" + "), WHITE, 0, NULL};
+	buttons[18] = (t_button){(SDL_Rect){W / 16, H * 0.13, W / 8, 50},\
+		ft_strdup("SAVE"), WHITE, 0, NULL};
 	extra_buttons(buttons);
 	i = 0;
 	while (i < BUTTONS)

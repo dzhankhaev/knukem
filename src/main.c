@@ -12,25 +12,28 @@
 
 #include "engine.h"
 #include "editor.h"
+#include "archiver.h"
 #include "utilits.h"
 
 void	arg_check(t_engine *engine, t_all *all, int av, char **ac)
 {
 	ft_bzero(engine, sizeof(*engine));
+	all->name = ft_strdup("textures/map-clear.txt");
 	engine->player.game_mode = 1;
 	if (av == 1)
 	{
+		unpack_files("default.map", "");
 		all->threed = 1;
 		// all->name = ft_strdup("new_map.txt");
 		// new_map(all->name);
 	}
 	else if (av == 2)
-		all->name = ft_strdup(ac[1]);
+		unpack_files(ac[1], "");
 	else if (av == 3)
 	{
 		if (ac[2][0] == 'g' && ac[2][1] == '\0')
 		{
-			all->name = ft_strdup(ac[1]);
+			unpack_files(ac[1], "");
 			engine->player.game_mode = 0;
 		}
 		else
@@ -91,10 +94,11 @@ int		main(int av, char **ac)
 {
 	t_engine	engine;
 	t_all		all;
-
+	// pack_files("./textures/files.map", "map77.map");
+	// unpack_files("default.map","");
 	arg_check(&engine, &all, av, ac);
 	init_engine(&engine, &all);
-	load_tx(&engine, "nmap.txt");
+	load_tx(&engine, "./textures/nmap.txt");
 	init_all(&all);
 	general_init(&engine);
 	game_loop(&engine, &all);
