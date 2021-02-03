@@ -24,11 +24,11 @@ void	set_level_digits(t_all *all, int x, int y)
 	area[0] = (SDL_Rect){W / 11, H * 0.46, W / 16, 50};
 	area[1] = (SDL_Rect){W / 11, H * 0.58, W / 16, 50};
 	tmp = get_text_surface(cx, all->font, BLUE);
-	free(cx);
+	ft_memdel((void*)&cx);
 	draw_texture(all->sdl.screen, area[0], tmp);
 	SDL_FreeSurface(tmp);
 	tmp = get_text_surface(cy, all->font, BLUE);
-	free(cy);
+	ft_memdel((void*)&cy);
 	draw_texture(all->sdl.screen, area[1], tmp);
 	SDL_FreeSurface(tmp);
 }
@@ -45,12 +45,12 @@ void	draw_digits(t_sdl *sdl, t_all *all, int x, int y)
 	y = (int)all->draw_floors.y;
 	t = ft_itoa(x);
 	tmp = get_text_surface(t, all->font, BLUE);
-	free(t);
+	ft_memdel((void*)&t);
 	draw_texture(sdl->screen, area[0], tmp);
 	SDL_FreeSurface(tmp);
 	t = ft_itoa(y);
 	tmp = get_text_surface(t, all->font, BLUE);
-	free(t);
+	ft_memdel((void*)&t);
 	draw_texture(sdl->screen, area[1], tmp);
 	SDL_FreeSurface(tmp);
 	if (all->buttons[0].state == 1)

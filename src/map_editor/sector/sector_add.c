@@ -117,7 +117,7 @@ void	new_sector(t_all *all, t_sect *temp, int x, int y)
 	{
 		all->sectors = ft_realloc(all->sectors, ++(*num_sect) * sizeof(t_sect));
 		init_new_sector(&all->sectors[*num_sect - 1], temp);
-		while (i <= temp->npoints)
+		while (i < temp->npoints)
 		{
 			all->sectors[*num_sect - 1].vertex[i] = temp->vertex[i];
 			i++;

@@ -14,8 +14,7 @@
 
 int		mode_switch(t_all *all, int mode)
 {
-	if ((all->player.sector = which_sector(all, all->sectors, \
-	all->player.where)) != -1 && mode)
+	if (all->player.sector != -1 && mode)
 	{
 		all->threed = 1;
 		normalize(all->sectors, all->num_sectors, all);
@@ -40,7 +39,12 @@ void	key_press(t_all *all)
 
 	keystate = SDL_GetKeyboardState(NULL);
 	if (keystate[SDL_SCANCODE_E])
+	{
+		print_message(all, RED, "EXITING", 1000);
 		mode_switch(all, 1);
+	}
+	else if (keystate[SDL_SCANCODE_ESC])
+		all->threed = 2;
 	else if (keystate[SDL_SCANCODE_DELETE] || keystate[SDL_SCANCODE_BACKSPACE])
 		remove_sector(all, all->sectors);
 	else if (keystate[SDL_SCANCODE_TAB] && mode_switch(all, 0))

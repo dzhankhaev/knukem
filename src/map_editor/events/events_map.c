@@ -85,14 +85,14 @@ int		is_portal(t_all *all, t_xyz point, t_sect *sect)
 (t_xy){point.x, point.y}, tmp_sect.vertex[i], tmp_sect.vertex[i - 1]) &&\
 tmp_sect.neighbors[i - 1] != -1)
 				{
-					free(t);
+					ft_memdel((void*)&t);
 					return (1);
 				}
 				i++;
 			}
 			num++;
 		}
-		free(t);
+		ft_memdel((void*)&t);
 	}
 	return (0);
 }
@@ -113,7 +113,11 @@ int		pre_check(t_all *all, t_xyz point, t_sect *sect)
 	if ((num = which_sector(all, all->sectors, point)) > -1)
 	{
 		if (inside_sector((t_xyint){point.x, point.y}, &all->sectors[num]))
+		{
+			printf("sector = %d\n", num);
+			print_message(all, RED, "INSIDE SECTOR!", 1000);
 			return (0);
+		}
 	}
 	return (1);
 }
