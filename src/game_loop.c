@@ -119,16 +119,17 @@ void		game_loop(t_engine *engine, t_all *all)
 			print_message(all, RED, "Entering 2D!", 500);
 			SDL_SetRelativeMouseMode(SDL_FALSE);
 			engine->edit.mod = main_editor(engine, all);
+			engine->close_request = all->threed == 2 ? 1 : 0;
 			SDL_SetRelativeMouseMode(SDL_TRUE);
 		}
 		else
 			engine->edit.mod = 0;
 		reset(engine);
 		keys_manager(engine);
-		if(engine->player.sector == all->fin_sect && !engine->close_request)
+		if (engine->player.sector == all->fin_sect)
 		{
 			print_message(all, RED, "GAME OVER", 1000);
-			engine->close_request = 0;
+			engine->close_request = 1;
 		}
 		move(engine);
 		draw(engine);
