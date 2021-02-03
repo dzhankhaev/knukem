@@ -39,12 +39,12 @@ void	key_press(t_all *all)
 
 	keystate = SDL_GetKeyboardState(NULL);
 	if (keystate[SDL_SCANCODE_E])
+		mode_switch(all, 1);
+	else if (keystate[SDL_SCANCODE_ESCAPE])
 	{
 		print_message(all, RED, "EXITING", 1000);
-		mode_switch(all, 1);
-	}
-	else if (keystate[SDL_SCANCODE_ESC])
 		all->threed = 2;
+	}
 	else if (keystate[SDL_SCANCODE_DELETE] || keystate[SDL_SCANCODE_BACKSPACE])
 		remove_sector(all, all->sectors);
 	else if (keystate[SDL_SCANCODE_TAB] && mode_switch(all, 0))
