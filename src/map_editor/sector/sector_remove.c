@@ -50,20 +50,23 @@ void    remove_sector(t_all *all, t_sect *sectors)
     {
         del = &sectors[all->swap_num];
         drop_neighbors(all->sectors, del->neighbors, del->npoints, all->swap_num);
-        free(del->vertex);
-        free(del->neighbors);
+        ft_memdel((void*)&del->vertex);
+        ft_memdel((void*)&del->neighbors);
         if (del->graf.g_num > 0)
         {
-            free(del->graf.coord);
-            free(del->graf.z);
-            free(del->graf.wall);
+            ft_memdel((void*)&del->graf.coord);
+            ft_memdel((void*)&del->graf.z);
+            ft_memdel((void*)&del->graf.wall);
         }
 		if (all->num_sectors > 1 && all->swap_num != all->num_sectors - 1)
+        {
             sectors[all->swap_num] = sectors[all->num_sectors - 1];
+            get_neighbours(&sectors[all->swap_num], all, all->swap_num);
+        }
         if (all->swap_num == all->player.sector)
             all->player.sector = -1;
         all->num_sectors -= 1;
-        get_neighbours(&sectors[all->swap_num], all, all->swap_num);
+        all->sectors = ft_realloc(all->sectors, sizeof(t_sect) * all->num_sectors);
         all->fin_sect = all->swap_num == all->fin_sect ? -1 : all->fin_sect;
         all->swap_num = -1;
         all->player.sector = which_sector(all, all->sectors, all->player.where);

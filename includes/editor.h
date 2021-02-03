@@ -181,7 +181,7 @@ typedef struct      s_all
     t_xy			delta; // дельта области редактирования
     t_xy			d; // дельта сдвига карты
     t_sect          *sectors;//массив с данными о секторах
-    t_sect			*temp;
+    t_sect			temp;
     int				num_sectors;//количество секторов
     int 			step;//шаг (масштаб)
     TTF_Font		*font;

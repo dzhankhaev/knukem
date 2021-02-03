@@ -72,7 +72,6 @@ int	get_neighbours(t_sect *sector, t_all *all, int self)
 
 	h = (t_xy){sector->floor, sector->ceil};
 	n = sector->npoints;
-	sector->neighbors = (int*)malloc(sizeof(int) * n);
 	i = 0;
 	res = 0;
 	while(i < sector->npoints - 1)

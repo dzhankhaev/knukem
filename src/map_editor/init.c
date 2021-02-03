@@ -34,11 +34,10 @@ void	init_all(t_all *all)
 	all->swap_num = -1;
 	all->d = (t_xy){0, 0};
 	all->threed = 0;
-	all->temp = NULL;
-	all->temp = (t_sect*)malloc(sizeof(t_sect));
-	all->temp->neighbors = NULL;
-	all->temp->npoints = 0;
-	all->temp->vertex = NULL;
+	all->temp.neighbors = NULL;
+	all->temp.npoints = 0;
+	all->temp.vertex = NULL;
 	all->player.picked = 0;
 	all->set_floors = (t_xy){0, 10};
+	all->fin_sect = 0;
 }

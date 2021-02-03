@@ -49,7 +49,7 @@ int		which_sector(t_all *all, t_sect *sectors, t_xyz where)
 					break ;
 				j++;
 			}
-		if (p > 0)
+		if (p >= 0)
 			return (i);
 		i++;
 	}
