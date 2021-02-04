@@ -29,12 +29,15 @@ unsigned char	crc_xor(char *file, int check)
 	buf = (char*)malloc(sb.st_size);
 	read(fd, buf, sb.st_size);
 	sb.st_size -= (check == 1) ? 1 : 0;
-	while (++i < sb.st_size)
+	while (++i < sb.st_size - check * 3)
 		ret ^= buf[i];
 	if (check == 1)
-		ret = (buf[i] == ret) ? 1 : 0;
+		ret = (buf[i + 3] == ret) ? 1 : 0;
 	else
+	{
+		write(fd, "crc", 3);
 		write(fd, &ret, 1);
+	}
 	ft_strdel(&buf);
 	close(fd);
 	return (ret);

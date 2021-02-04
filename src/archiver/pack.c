@@ -124,5 +124,6 @@ int		pack_files(char *files, char *output_file)
 	lseek(fd, 0, SEEK_SET);
 	fill_body(fd, -1);
 	close(fd);
+	crc_xor(output_file,0);
 	return (1);
 }

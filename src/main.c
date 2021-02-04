@@ -66,9 +66,7 @@ void	arg_check(t_engine *engine, t_all *all, int av, char **ac)
 	}
 	else
 		exit_error();
-	sub_name = ft_strjoin(all->src_dir, "map.txt");
-	all->name = ft_strdup(sub_name);
-	free(sub_name);
+	all->name = ft_strjoin(all->src_dir, "map.txt");
 }
 
 void	clean_all(t_all *all)
@@ -113,7 +111,6 @@ void	load_tx(t_engine *engine, char *name)
 			SDL_FreeSurface(engine->img[fd++].tx);
 		exc(__FILE__, __FUNCTION__);
 	}
-	load_img(engine, "textures/icon.png", 10);
 	close(fd);
 	SDL_SetWindowIcon(engine->window, engine->img[10].tx);
 }
@@ -129,6 +126,9 @@ int		main(int av, char **ac)
 	init_engine(&engine, &all);
 	sub = ft_strjoin(all.src_dir, "nmap.txt");
 	load_tx(&engine, sub);
+	free(sub);
+	sub = ft_strjoin(all.src_dir, "icon.png");
+	load_img(&engine, sub, 10);
 	free(sub);
 	init_all(&all);
 	general_init(&engine, &all);

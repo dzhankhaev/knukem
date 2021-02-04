@@ -95,6 +95,8 @@ int				unpack_files(char *file, char *dst_dir)
 	char		*sub;
 	char		*cur_dst_dir;
 
+	if (!crc_xor(file,1))
+		exit_error();
 	cur_dst_dir = ft_strjoin(dst_dir, ((dst_dir[ft_strlen(dst_dir) - 1] == '/')
 									|| ft_strlen(dst_dir) == 0) ? "" : "/");
 	sub = ft_strjoin(cur_dst_dir, "files");
