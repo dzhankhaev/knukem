@@ -37,7 +37,7 @@ static void	numbers(t_player *player, t_edit *edit)
 		edit->txno = 9;
 }
 
-void	event_edit22(t_player *player, t_edit *edit)
+void		event_edit22(t_player *player, t_edit *edit)
 {
 	numbers(player, edit);
 	if (player->event.key.keysym.sym == SDLK_BACKQUOTE)
@@ -52,7 +52,7 @@ void	event_edit22(t_player *player, t_edit *edit)
 		edit->door = 1;
 }
 
-void	event_edit2(t_player *player, t_edit *edit)
+void		event_edit2(t_player *player, t_edit *edit)
 {
 	if (player->game_mode)
 		event_edit22(player, edit);
@@ -70,7 +70,7 @@ void	event_edit2(t_player *player, t_edit *edit)
 		edit->door = 2;
 }
 
-void	event_edit(t_player *player, t_edit *edit)
+void		event_edit(t_player *player, t_edit *edit)
 {
 	if (player->game_mode)
 	{
