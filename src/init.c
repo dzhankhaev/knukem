@@ -53,8 +53,10 @@ void			general_init2(t_engine *engine)
 	}
 }
 
-void			general_init(t_engine *engine)
+void			general_init(t_engine *engine, t_all *all)
 {
+	char	*sub_name;
+
 	engine->borders = (t_line){0, W, 0, H, 0x555555};
 	engine->player.cur_inv = 0;
 	engine->player.cur_am = engine->player.settings.ammo;
@@ -74,7 +76,9 @@ void			general_init(t_engine *engine)
 	engine->edit.graf = 0;
 	engine->hud_inp = (t_inp_hud){.weapons = 0b11101, .health = 125, .face = 1,
 	.buttons = 0, .flag = 0, .fire = 0, .ammo = engine->player.cur_am};
-	load_surfaces("textures/hud/", &engine->hud);
+	sub_name = ft_strjoin(all->src_dir, "hud/");
+	load_surfaces(sub_name, &engine->hud);
+	free(sub_name);
 	general_init2(engine);
 	init_minimap(engine);
 }

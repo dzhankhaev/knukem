@@ -244,7 +244,7 @@ typedef struct			s_engine
 }						t_engine;
 
 void					init_engine(t_engine *engine, t_all *all);
-void					general_init(t_engine *engine);
+void					general_init(t_engine *engine, t_all *all);
 void					load_data(t_engine *engine, t_all *all);
 void					unload_data(t_engine *engine);
 void					game_loop(t_engine *engine, t_all *all);

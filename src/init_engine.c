@@ -54,6 +54,8 @@ static void		sdl_img(t_engine *engine, t_all *all)
 
 static void		load_fonts(t_sdl *sdl, t_all *all, t_engine *engine)
 {
+	char *sub_name;
+	
 	if (TTF_Init()==-1)
 	{
 		free(all->name);
@@ -64,7 +66,9 @@ static void		load_fonts(t_sdl *sdl, t_all *all, t_engine *engine)
 	}
 
 	all->font = NULL;
-	all->font = TTF_OpenFont("fonts/CRA75.ttf", 36);
+	sub_name = ft_strjoin(all->src_dir, "fonts/CRA75.ttf");
+	all->font = TTF_OpenFont(sub_name, 36);
+	free(sub_name);
 	if (!all->font)
 	{
 		free(all->name);

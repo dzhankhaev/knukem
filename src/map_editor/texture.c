@@ -12,12 +12,12 @@
 
 #include "editor.h"
 
-SDL_Surface		*get_texture(char *file)
+SDL_Surface		*get_texture(char *file, t_all *all)
 {
 	SDL_Surface	*surface;
 	char		*dir;
 
-	dir = ft_strjoin("textures/", file);
+	dir = ft_strjoin(all->src_dir, file);
 	if (!(surface = SDL_LoadBMP(dir)))
 		error_and_close(__FILE__, __FUNCTION__);
 	free(dir);
@@ -105,7 +105,7 @@ int				load_texture(t_all *all)
 		error_and_close(__FILE__, __FUNCTION__);
 	if (!(load_labels(all, all->labels) == 1))
 		error_and_close(__FILE__, __FUNCTION__);
-	if (!(all->player.picture = get_texture("player.bmp")))
+	if (!(all->player.picture = get_texture("player.bmp", all)))
 		error_and_close(__FILE__, __FUNCTION__);
 	return (0);
 }

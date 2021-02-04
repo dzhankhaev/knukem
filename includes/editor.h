@@ -199,6 +199,8 @@ typedef struct      s_all
     t_button        buttons[BUTTONS];//кнопки
     t_sdl           sdl;//
     char			*name;
+    char            *src_dir;
+    char            *src_map;
 }                   t_all;
 
 void	            init_all(t_all *all); // инициализируем модули

@@ -65,6 +65,7 @@ int			write_map(t_all *all)
 	int	i;
 	int fd;
 	int **vert;
+	char *sub;
 
 	if (all->min_coord.x < 0 || all->min_coord.y < 0)
 		normalize(all->sectors, all->num_sectors, all);
@@ -80,6 +81,8 @@ int			write_map(t_all *all)
 		i++;
 	}
 	free(vert);
-	pack_files("textures/files","map.map");
+	sub = ft_strjoin(all->src_dir, "files");
+	pack_files(sub, "map.map");
+	free(sub);
 	return (0);
 }

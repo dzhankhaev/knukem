@@ -16,25 +16,31 @@
 int				load_hud_face_pis_yenum(t_hud *hud, char *file_name, int len, int i)
 {
 	ft_strcpy(file_name + len, "STFST00.png");
-	hud->face_s[0] = IMG_Load(file_name);
+	if (!(hud->face_s[0] = IMG_Load(file_name)))
+		exit(0);
 	ft_strcpy(file_name + len, "STFST01.png");
-	hud->face_s[1] = IMG_Load(file_name);
+	if (!(hud->face_s[1] = IMG_Load(file_name)))
+		exit(0);
 	ft_strcpy(file_name + len, "STFST02.png");
-	hud->face_s[2] = IMG_Load(file_name);
+	if (!(hud->face_s[2] = IMG_Load(file_name)))
+		exit(0);
 	ft_strcpy(file_name + len, "PISGA0.png");
 	while (++i < 5)
 	{
 		file_name[len + 4] = 'A' + i;
-		hud->pis[i] = IMG_Load(file_name);
+		if (!(hud->pis[i] = IMG_Load(file_name)))
+			exit(0);
 	}
 	ft_strcpy(file_name + len, "PISFA0.png");
-	hud->pis[5] = IMG_Load(file_name);
+	if (!(hud->pis[5] = IMG_Load(file_name)))
+		exit(0);
 	ft_strcpy(file_name + len, "STYSNUM .png");
 	i = -1;
 	while (++i < 10)
 	{
 		file_name[len + 7] = i + '0';
-		hud->num_wp_y[i] = IMG_Load(file_name);
+		if (!(hud->num_wp_y[i] = IMG_Load(file_name)))
+			exit(0);
 	}
 	return (1);
 }
@@ -48,12 +54,14 @@ int				load_hud_hnum_gnum(t_hud *hud, char *file_name, int len, int i)
 		{
 			file_name[len + 2] = 'G';
 			file_name[len + 6] = i + '0';
-			hud->num_wp_g[i] = IMG_Load(file_name);
+			if (!(hud->num_wp_g[i] = IMG_Load(file_name)))
+				exit(0);
 			file_name[len + 2] = 'T';
 		}
 		else
 			ft_strcpy(file_name + len, "STTPRCNT.png");
-		hud->num_h[i] = IMG_Load(file_name);
+		if (!(hud->num_h[i] = IMG_Load(file_name)))
+			exit(0);
 	}
 	return (1);
 }
@@ -72,11 +80,14 @@ void			load_surfaces(const char *dirs, t_hud *hud_)
 	file_name = (char*)malloc(len + 13);
 	ft_strcpy(file_name, dirs);
 	ft_strcpy(file_name + len, "STBAR.png");
-	hud.hud = IMG_Load(file_name);
+	if (!(hud.hud = IMG_Load(file_name)))
+		exit(0);
 	ft_strcpy(file_name + len, "ammo_b.png");
-	hud.ammo_b = IMG_Load(file_name);
+	if (!(hud.ammo_b = IMG_Load(file_name)))
+		exit(0);
 	ft_strcpy(file_name + len, "STARMS.png");
-	hud.arms = IMG_Load(file_name);
+	if (!(hud.arms = IMG_Load(file_name)))
+		exit(0);
 	hud.scr = SDL_CreateRGBSurface(0, 320, 32, 32,
 											0xff0000, 0xff00, 0xff, 0xff000000);
 	SDL_BlitSurface(hud.hud, NULL, hud.scr, NULL);

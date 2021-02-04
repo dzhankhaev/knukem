@@ -13,21 +13,35 @@
 #include "engine.h"
 #include "editor.h"
 #include "utilits.h"
+#include "archiver.h"
 
 void	arg_check(t_engine *engine, t_all *all, int av, char **ac)
 {
+	int fd;
+	struct stat		sb;
+	char			*sub_name;
+	
 	ft_bzero(engine, sizeof(*engine));
-	all->name = ft_strdup("textures/map.txt");
 	engine->player.game_mode = 1;
 	if (av == 1)
 	{
 		all->threed = 1;
-		unpack_files("default.map","");
+		if (stat("default.map", &sb) == 0 && !S_ISDIR(sb.st_mode))
+			unpack_files("default.map", "");
+		else if ((stat("textures", &sb) == 0) && (S_ISDIR(sb.st_mode)))
+			all->src_dir = ft_strdup("textures/");
+		else
+			exit_error();
 		// all->name = ft_strdup("new_map.txt");
 		// new_map(all->name);
 	}
-	else if (av == 2)
-		unpack_files(ac[1], "");
+	else if (av == 2 && (stat(ac[1], &sb) == 0))
+	{
+		if (!S_ISDIR(sb.st_mode))
+			unpack_files(ac[1], "");
+		else if ((stat(ac[1], &sb) == 0) && (S_ISDIR(sb.st_mode)))
+			all->src_dir = ft_strdup(ac[1]);
+	}
 	else if (av == 3)
 	{
 		if (ac[2][0] == 'g' && ac[2][1] == '\0')
@@ -38,6 +52,9 @@ void	arg_check(t_engine *engine, t_all *all, int av, char **ac)
 		else
 			exit(0);
 	}
+	sub_name = ft_strjoin(all->src_dir, "map.txt");
+	all->name = ft_strdup("textures/map.txt");
+	free(sub_name);
 }
 
 void	clean_all(t_all *all)
@@ -91,13 +108,16 @@ int		main(int av, char **ac)
 {
 	t_engine	engine;
 	t_all		all;
+	char		*sub;
 
-	// pack_files("textures/files","default.map");
+	// pack_files("textures/files","map1.map");
 	arg_check(&engine, &all, av, ac);
 	init_engine(&engine, &all);
-	load_tx(&engine, "textures/nmap.txt");
+	sub = ft_strjoin(all.src_dir, "nmap.txt");
+	load_tx(&engine, sub);
+	free(sub);
 	init_all(&all);
-	general_init(&engine);
+	general_init(&engine, &all);
 	game_loop(&engine, &all);
 	clean(&engine);
 	clean_all(&all);
