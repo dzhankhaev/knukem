@@ -21,10 +21,7 @@ void	arg_check(t_engine *engine, t_all *all, int av, char **ac)
 	engine->player.game_mode = 1;
 	if (av == 1)
 	{
-		all->threed = 1;
 		unpack_files("default.map","");
-		// all->name = ft_strdup("new_map.txt");
-		// new_map(all->name);
 	}
 	else if (av == 2)
 		unpack_files(ac[1], "");
@@ -92,7 +89,7 @@ int		main(int av, char **ac)
 	t_engine	engine;
 	t_all		all;
 
-	// pack_files("textures/files","default.map");
+//	 pack_files("textures/files","default.map");
 	arg_check(&engine, &all, av, ac);
 	init_engine(&engine, &all);
 	load_tx(&engine, "textures/nmap.txt");

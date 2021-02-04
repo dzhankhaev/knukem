@@ -1,9 +1,0 @@
-vertex	0	 0 6
-vertex	6	 8
-vertex	8	 1
-vertex	9	 11
-vertex	14	 3
-sector	0 10	1 2 3 0	-1 -1 1 -1 	-1	1 1 1 1	0	
-sector	0 10	2 4 5 3	0 -1 -1 -1 	-1	1 1 1 1	0	
-final sector	0
-player	6 9 0 1 1 10 0 10
