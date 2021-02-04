@@ -25,7 +25,6 @@ void	arg_check(t_engine *engine, t_all *all, int av, char **ac)
 	engine->player.game_mode = 1;
 	if (av == 1)
 	{
-<<<<<<< HEAD
 		all->threed = 1;
 		if (stat("default.map", &sb) == 0 && !S_ISDIR(sb.st_mode))
 			unpack_files("default.map", "");
@@ -35,9 +34,6 @@ void	arg_check(t_engine *engine, t_all *all, int av, char **ac)
 			exit_error();
 		// all->name = ft_strdup("new_map.txt");
 		// new_map(all->name);
-=======
-		unpack_files("default.map","");
->>>>>>> 5a813b4c1936fe537401fa56ab49dc83d130b12f
 	}
 	else if (av == 2 && (stat(ac[1], &sb) == 0))
 	{
@@ -114,11 +110,7 @@ int		main(int av, char **ac)
 	t_all		all;
 	char		*sub;
 
-<<<<<<< HEAD
 	// pack_files("textures/files","map1.map");
-=======
-//	 pack_files("textures/files","default.map");
->>>>>>> 5a813b4c1936fe537401fa56ab49dc83d130b12f
 	arg_check(&engine, &all, av, ac);
 	init_engine(&engine, &all);
 	sub = ft_strjoin(all.src_dir, "nmap.txt");
