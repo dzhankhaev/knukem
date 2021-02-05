@@ -108,7 +108,12 @@ void	on_mouse(t_all *all, SDL_MouseButtonEvent *event)
 
 void	on_event(t_all *all, SDL_Event *event)
 {
-	if (event->key.type == SDL_KEYDOWN)
+	if (event->type == SDL_QUIT)
+	{
+		if (mode_switch(all, 1))
+			all->threed = 2;
+	}
+	else if (event->key.type == SDL_KEYDOWN)
 		key_press(all);
 	else if (event->button.type == SDL_MOUSEBUTTONDOWN)
 		all->mouse.z = 1;

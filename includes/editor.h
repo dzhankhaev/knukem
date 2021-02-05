@@ -252,5 +252,6 @@ int                 print_message(t_all *all, SDL_Color color, char *text, int d
 void				new_map(char *name);
 void                closest_point(t_all *all, t_xyint point);
 void                write_sectors(t_all *all, int **vert, int fd);
+int					mode_switch(t_all *all, int mode);
 
 # endif
