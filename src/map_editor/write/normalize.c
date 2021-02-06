@@ -12,16 +12,21 @@
 
 #include "editor.h"
 
-void	norm_sect(t_sect *sect, int j, t_xy	*min)
+void	norm_sect(t_sect *sect, t_xy *min)
 {
-	sect->vertex[j].x += (min->x < 0) ? -min->x : min->x;
-	sect->vertex[j].y += (min->y < 0) ? -min->y : min->y;
+	int i;
+
 	if (sect->graf.g_num > 0)
-	{	
-		sect->graf.coord->x0 += (min->x < 0) ? -min->x : min->x;
-		sect->graf.coord->x1 += (min->x < 0) ? -min->x : min->x;
-		sect->graf.coord->y0 += (min->y < 0) ? -min->y : min->y;
-		sect->graf.coord->y1 += (min->y < 0) ? -min->y : min->y;
+	{
+		i = 0;
+		while (i < sect->graf.g_num)
+		{
+			sect->graf.coord[i].x0 += (min->x < 0) ? -min->x : min->x;
+			sect->graf.coord[i].x1 += (min->x < 0) ? -min->x : min->x;
+			sect->graf.coord[i].y0 += (min->y < 0) ? -min->y : min->y;
+			sect->graf.coord[i].y1 += (min->y < 0) ? -min->y : min->y;
+			i++;
+		}
 	}
 }
 
@@ -38,9 +43,11 @@ void	normalize(t_sect *sectors, int num, t_all *all)
 		j = 0;
 		while (j <= sectors[i].npoints)
 		{
-			norm_sect(&sectors[i], j, min);
+			sectors[i].vertex[j].x += (min->x < 0) ? -min->x : min->x;
+			sectors[i].vertex[j].y += (min->y < 0) ? -min->y : min->y;
 			j++;
 		}
+		norm_sect(&sectors[i], min);
 		i++;
 	}
 	all->player.where.x += (min->x < 0) ? -min->x : min->x;
