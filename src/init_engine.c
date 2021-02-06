@@ -54,9 +54,9 @@ static void		sdl_img(t_engine *engine, t_all *all)
 
 static void		load_fonts(t_sdl *sdl, t_all *all, t_engine *engine)
 {
-	char *sub_name;
-	
-	if (TTF_Init()==-1)
+	char	*sub_name;
+
+	if (TTF_Init() == -1)
 	{
 		free(all->name);
 		SDL_FreeSurface(engine->screen);
@@ -64,7 +64,6 @@ static void		load_fonts(t_sdl *sdl, t_all *all, t_engine *engine)
 		SDL_Quit();
 		error_and_close(__FILE__, __FUNCTION__);
 	}
-
 	all->font = NULL;
 	sub_name = ft_strjoin(all->src_dir, "fonts/CRA75.ttf");
 	all->font = TTF_OpenFont(sub_name, 36);
@@ -79,7 +78,7 @@ static void		load_fonts(t_sdl *sdl, t_all *all, t_engine *engine)
 	}
 }
 
-void	init_blank_map(t_engine *engine, t_all *all)
+static void		init_blank_map(t_engine *engine, t_all *all)
 {
 	all->sectors = NULL;
 	all->min_coord = (t_xy){0, 0};
@@ -90,7 +89,6 @@ void	init_blank_map(t_engine *engine, t_all *all)
 	all->draw_floors = (t_xy){0, 10};
 	all->fin_sect = -1;
 	all->player.settings = (t_settings){1, 10, 10, 0};
-	// all->name = ft_strdup("new_map.txt");
 }
 
 void			init_engine(t_engine *engine, t_all *all)
@@ -100,7 +98,7 @@ void			init_engine(t_engine *engine, t_all *all)
 	all->sdl.window = engine->window;
 	all->sdl.screen = engine->screen;
 	load_fonts(&all->sdl, all, engine);
-	if(!(all->threed))
+	if (!(all->threed))
 	{
 		load_data(engine, all);
 		all->num_sectors = engine->num_sectors;

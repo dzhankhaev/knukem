@@ -246,8 +246,10 @@ typedef struct			s_engine
 void					init_engine(t_engine *engine, t_all *all);
 void					general_init(t_engine *engine, t_all *all);
 void					load_data(t_engine *engine, t_all *all);
+void					load_sector(t_engine *engine, t_all *all, char **split, t_xy *vert);
 void					unload_data(t_engine *engine);
 void					game_loop(t_engine *engine, t_all *all);
+void					draw(t_engine *engine);
 int						transform_wall(t_engine *engine, t_fline *wall);
 void					render_scene(t_engine *engine, int sectorno, int neighbor, int i);
 void					ceil_and_floor_init(t_engine *engine);

@@ -33,10 +33,14 @@ static void		init_minimap(t_engine *engine)
 	engine->minimap.mod = 1;
 }
 
-void			general_init2(t_engine *engine)
+static void		general_init2(t_engine *engine, t_all *all)
 {
-	int	i;
+	int		i;
+	char	*sub_name;
 
+	sub_name = ft_strjoin(all->src_dir, "hud/");
+	load_surfaces(sub_name, &engine->hud);
+	free(sub_name);
 	i = 0;
 	while (i < engine->num_sectors)
 	{
@@ -55,8 +59,6 @@ void			general_init2(t_engine *engine)
 
 void			general_init(t_engine *engine, t_all *all)
 {
-	char	*sub_name;
-
 	engine->borders = (t_line){0, W, 0, H, 0x555555};
 	engine->player.cur_inv = 0;
 	engine->player.cur_am = engine->player.settings.ammo;
@@ -76,9 +78,6 @@ void			general_init(t_engine *engine, t_all *all)
 	engine->edit.graf = 0;
 	engine->hud_inp = (t_inp_hud){.weapons = 0b11101, .health = 125, .face = 1,
 	.buttons = 0, .flag = 0, .fire = 0, .ammo = engine->player.cur_am};
-	sub_name = ft_strjoin(all->src_dir, "hud/");
-	load_surfaces(sub_name, &engine->hud);
-	free(sub_name);
-	general_init2(engine);
+	general_init2(engine, all);
 	init_minimap(engine);
 }

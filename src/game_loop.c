@@ -34,62 +34,6 @@ static void	reset(t_engine *engine)
 	engine->player.shot = 0;
 }
 
-void		run_minimap_queue(t_engine *engine)
-{
-	unsigned int	i;
-	int				sectorno;
-	int				neighbor;
-
-	i = 0;
-	sectorno = engine->present->sectorno;
-	while (i < engine->sectors[sectorno].npoints)
-	{
-		neighbor = engine->sectors[sectorno].neighbors[i];
-		if (neighbor <= -1)
-			engine->wall.color = WALL_COLOR;
-		else
-			engine->wall.color = EDGE_COLOR * engine->player.game_mode;
-		engine->wall.color *= (engine->sectors[sectorno].floor
-			< engine->player.where.z + 6)
-			* (engine->sectors[sectorno].floor > engine->player.where.z - 12);
-		minimap(engine, engine->sectors[sectorno].vertex[i],
-			engine->sectors[sectorno].vertex[i + 1], engine->wall.color);
-		if (engine->future + 1 != engine->queue + engine->max_queue &&
-			neighbor > -1 && check_repeat(engine, sectorno, neighbor))
-			*(engine->future++) = (t_queue){neighbor, 0, W, sectorno};
-		i++;
-	}
-}
-
-static void	draw(t_engine *engine)
-{
-	t_queue	queue[MAX_QUEUE];
-
-	SDL_LockSurface(engine->screen);
-	SDL_FillRect(engine->screen, 0, 0x000000);
-	engine->queue = queue;
-	*engine->queue = (t_queue){engine->player.sector, 0, W - 1, -1};
-	engine->future = engine->queue + 1;
-	engine->present = engine->queue;
-	while (engine->present != engine->future)
-	{
-		run_queue(engine);
-		engine->present++;
-	}
-	if (engine->minimap.mod)
-	{
-		render_minimap_hud(&engine->minimap, engine->screen);
-		engine->future = engine->queue + 1;
-		engine->present = engine->queue;
-		while (engine->present != engine->future)
-		{
-			run_minimap_queue(engine);
-			engine->present++;
-		}
-	}
-	SDL_UnlockSurface(engine->screen);
-}
-
 static int	check_anim(t_engine *engine)
 {
 	int	q;
@@ -107,6 +51,20 @@ static int	check_anim(t_engine *engine)
 	return (1);
 }
 
+static void	editor(t_engine *engine, t_all *all)
+{
+	if (engine->edit.mod && check_anim(engine))
+	{
+		print_message(all, RED, "Entering 2D!", 500);
+		SDL_SetRelativeMouseMode(SDL_FALSE);
+		engine->edit.mod = main_editor(engine, all);
+		engine->close_request = all->threed == 2 ? 1 : 0;
+		SDL_SetRelativeMouseMode(SDL_TRUE);
+	}
+	else
+		engine->edit.mod = 0;
+}
+
 void		game_loop(t_engine *engine, t_all *all)
 {
 	int		time;
@@ -114,16 +72,7 @@ void		game_loop(t_engine *engine, t_all *all)
 	time = 0;
 	while (!engine->close_request)
 	{
-		if (engine->edit.mod && check_anim(engine))
-		{
-			print_message(all, RED, "Entering 2D!", 500);
-			SDL_SetRelativeMouseMode(SDL_FALSE);
-			engine->edit.mod = main_editor(engine, all);
-			engine->close_request = all->threed == 2 ? 1 : 0;
-			SDL_SetRelativeMouseMode(SDL_TRUE);
-		}
-		else
-			engine->edit.mod = 0;
+		editor(engine, all);
 		reset(engine);
 		keys_manager(engine);
 		if (engine->player.sector == all->fin_sect)

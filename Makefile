@@ -29,6 +29,7 @@ SRC := main.c\
 	transform_wall.c\
 	cut_wall.c\
 	game_loop.c\
+	draw.c\
 	new_map.c\
 	loader/manage_data.c\
 	loader/load_sector.c\
