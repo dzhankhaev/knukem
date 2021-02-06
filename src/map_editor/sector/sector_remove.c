@@ -12,63 +12,67 @@
 
 #include "editor.h"
 
-void    del_neighbour(int *arr, int len, int num)
+void	del_neighbour(int *arr, int len, int num)
 {
-    int i;
+	int i;
 
-    i = 0;
-    while (i < len)
-    {
-        if(arr[i] == num)
-            arr[i] = -1;
-        i++;
-    }
+	i = 0;
+	while (i < len)
+	{
+		if (arr[i] == num)
+			arr[i] = -1;
+		i++;
+	}
 }
 
-void    drop_neighbors(t_sect *sectors, int *neighbors, int num, int del)
+void	drop_neighs(t_sect *sectors, int *neighbors, int num, int del)
 {
-    int i;
-    int index;
+	int i;
+	int index;
 
-    i = 0;
-    while (i < num)
-    {
-        if(neighbors[i] > -1)
-        {
-            index = neighbors[i];
-            del_neighbour(sectors[index].neighbors, sectors[index].npoints, del);
-        }
-        i++;
-    }
+	i = 0;
+	while (i < num)
+	{
+		if (neighbors[i] > -1)
+		{
+			index = neighbors[i];
+			del_neighbour(sectors[index].neighbors, \
+				sectors[index].npoints, del);
+		}
+		i++;
+	}
 }
 
-void    remove_sector(t_all *all, t_sect *sectors)
+void	free_graf(t_graf *graf)
 {
-    t_sect *del;
+	ft_memdel((void*)&graf->coord);
+	ft_memdel((void*)&graf->z);
+	ft_memdel((void*)&graf->wall);
+}
 
-    if(all->swap_num != -1)
-    {
-        del = &sectors[all->swap_num];
-        drop_neighbors(all->sectors, del->neighbors, del->npoints, all->swap_num);
-        ft_memdel((void*)&del->vertex);
-        ft_memdel((void*)&del->neighbors);
-        if (del->graf.g_num > 0)
-        {
-            ft_memdel((void*)&del->graf.coord);
-            ft_memdel((void*)&del->graf.z);
-            ft_memdel((void*)&del->graf.wall);
-        }
+void	remove_sector(t_all *all, t_sect *sectors)
+{
+	t_sect *del;
+
+	if (all->swap_num != -1)
+	{
+		del = &sectors[all->swap_num];
+		drop_neighs(all->sectors, del->neighbors, del->npoints, all->swap_num);
+		ft_memdel((void*)&del->vertex);
+		ft_memdel((void*)&del->neighbors);
+		if (del->graf.g_num > 0)
+			free_graf(&del->graf);
 		if (all->num_sectors > 1 && all->swap_num != all->num_sectors - 1)
-        {
-            sectors[all->swap_num] = sectors[all->num_sectors - 1];
-            get_neighbours(&sectors[all->swap_num], all, all->swap_num);
-        }
-        if (all->swap_num == all->player.sector)
-            all->player.sector = -1;
-        all->num_sectors -= 1;
-        all->sectors = ft_realloc(all->sectors, sizeof(t_sect) * all->num_sectors);
-        all->fin_sect = all->swap_num == all->fin_sect ? -1 : all->fin_sect;
-        all->swap_num = -1;
-        all->player.sector = which_sector(all, all->sectors, all->player.where);
-    }
+		{
+			sectors[all->swap_num] = sectors[all->num_sectors - 1];
+			get_neighbours(&sectors[all->swap_num], all, all->swap_num);
+		}
+		if (all->swap_num == all->player.sector)
+			all->player.sector = -1;
+		all->num_sectors -= 1;
+		all->sectors = ft_realloc(all->sectors, sizeof(t_sect) * \
+			all->num_sectors);
+		all->fin_sect = all->swap_num == all->fin_sect ? -1 : all->fin_sect;
+		all->swap_num = -1;
+	}
 }

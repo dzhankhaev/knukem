@@ -56,6 +56,22 @@ int		which_sector(t_all *all, t_sect *sectors, t_xyz where)
 	return (-1);
 }
 
+int		get_rel_pos(int npoints, t_xyz where, t_xy *vert1, t_xy *vert2)
+{
+	int j;
+	int p;
+
+	j = 0;
+	while (j < npoints)
+	{
+		p = point_side1(where.x, where.y, *vert1, *vert2);
+		if (p < 0)
+			break ;
+		j++;
+	}
+	return (p);
+}
+
 int		*which_sectors(t_all *all, t_sect *sectors, t_xyz where)
 {
 	int				i;
@@ -67,24 +83,17 @@ int		*which_sectors(t_all *all, t_sect *sectors, t_xyz where)
 	i = 0;
 	p = 0;
 	count = 0;
-	ret = malloc(4);
+	ret = malloc(sizeof(int));
 	while (i < all->num_sectors)
 	{
 		j = 0;
-		if (where.z == all->sectors[i].oldf)
-			while (j < all->sectors[i].npoints)
-			{
-				p = point_side1(where.x, where.y, sectors[i].vertex[j],\
-					sectors[i].vertex[j + 1]);
-				if (p < 0)
-					break ;
-				j++;
-			}
+		if (where.z == sectors[i].oldf)
+			p = get_rel_pos(sectors[i].npoints, where, &sectors[i].vertex[j],\
+			&sectors[i].vertex[j + 1]);
 		if (p >= 0)
 		{
 			ret = ft_realloc(ret, sizeof(int) * (count + 2));
-			ret[count] = i;
-			count++;
+			ret[count++] = i;
 		}
 		i++;
 	}

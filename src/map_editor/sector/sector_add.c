@@ -115,7 +115,7 @@ void	new_sector(t_all *all, t_sect *temp, int x, int y)
 	temp->vertex[temp->npoints - 1] = (t_xy){x, y};
 	if (temp->vertex[0].x == x && temp->vertex[0].y == y && temp->npoints > 3)
 	{
-		all->sectors = ft_realloc(all->sectors, (++(*num_sect)) * sizeof(t_sect));
+		all->sectors = ft_realloc(all->sectors, ++(*num_sect) * sizeof(t_sect));
 		init_new_sector(&all->sectors[*num_sect - 1], temp);
 		while (i < temp->npoints)
 		{
