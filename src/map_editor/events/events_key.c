@@ -12,14 +12,8 @@
 
 #include "editor.h"
 
-int		mode_switch(t_all *all, int mode)
+int		mode_switch(t_all *all)
 {
-	if (all->player.sector != -1 && mode)
-	{
-		all->threed = 1;
-		normalize(all->sectors, all->num_sectors, all);
-		print_message(all, RED, "ENTERING 3D!", 500);
-	}
 	if (all->player.sector == -1)
 	{
 		print_message(all, RED, "SET PLAYER!", 1000);
@@ -30,6 +24,11 @@ int		mode_switch(t_all *all, int mode)
 		print_message(all, RED, "SET FINAL SECTOR!", 1000);
 		return (0);
 	}
+	else
+	{
+		normalize(all->sectors, all->num_sectors, all);
+		print_message(all, RED, "ENTERING 3D!", 500);
+	}
 	return (1);
 }
 
@@ -38,18 +37,13 @@ void	key_press(t_all *all)
 	const Uint8	*keystate;
 
 	keystate = SDL_GetKeyboardState(NULL);
-	if (keystate[SDL_SCANCODE_E])
-		mode_switch(all, 1);
-	else if (keystate[SDL_SCANCODE_ESCAPE])
-	{
-		if (mode_switch(all, 1))
-			all->threed = 2;
-	}
-	else if (keystate[SDL_SCANCODE_ESCAPE])
+	if (keystate[SDL_SCANCODE_E] && mode_switch(all))
+		all->threed = 1;
+	else if (keystate[SDL_SCANCODE_ESCAPE] && mode_switch(all))
 		all->threed = 2;
 	else if (keystate[SDL_SCANCODE_DELETE] || keystate[SDL_SCANCODE_BACKSPACE])
 		remove_sector(all, all->sectors);
-	else if (keystate[SDL_SCANCODE_TAB] && mode_switch(all, 0))
+	else if (keystate[SDL_SCANCODE_TAB] && mode_switch(all))
 		write_map(all);
 	else if (keystate[SDL_SCANCODE_RIGHT])
 		all->d.x += abs((int)(all->d.x)) <= 300 ? 1 :
