@@ -16,7 +16,9 @@
 		"chrono": "cpp",
 		"iostream": "cpp",
 		"algorithm": "cpp",
-		"editor.h": "c"
+		"editor.h": "c",
+		"archiver.h": "c",
+		"engine.h": "c"
 	},
 	"editor.insertSpaces": false,
 	"cmake.configureOnOpen": true

@@ -67,7 +67,7 @@ static void		load_fonts(t_sdl *sdl, t_all *all, t_engine *engine)
 	all->font = NULL;
 	sub_name = ft_strjoin(all->src_dir, "fonts/CRA75.ttf");
 	all->font = TTF_OpenFont(sub_name, 36);
-	free(sub_name);
+	ft_strdel(&sub_name);
 	if (!all->font)
 	{
 		free(all->name);

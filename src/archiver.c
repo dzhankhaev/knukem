@@ -45,15 +45,3 @@ void			exit_error(void)
 	ft_putendl(strerror(errno));
 	exit(errno);
 }
-
-/*int				main(int argc, char **argv)
-{
-	if (argc == 4)
-	{
-		pack_files(argv[1], argv[2]);
-		crc_xor(argv[2], 0);
-		if ((crc_xor(argv[2], 1)) == 1)
-			unpack_files(argv[2], argv[3]);
-	}
-	return (0);
-}*/

@@ -82,7 +82,7 @@ int			write_map(t_all *all)
 	}
 	free(vert);
 	sub = ft_strjoin(all->src_dir, "files");
-	pack_files(sub, "map.map");
+	pack_files(sub, "map.map", all->src_dir);
 	free(sub);
 	return (0);
 }

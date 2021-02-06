@@ -48,7 +48,7 @@ int				create_file(int fd_in, t_pack_head head, char *file_name)
 	buf = NULL;
 	make_dir(file_name);
 	if ((fd = open(file_name, O_RDWR | O_TRUNC | O_CREAT, 999)) < 0)
-		exit_error();
+		exit_error(0);
 	buf = (char*)malloc(head.len);
 	lseek(fd_in, head.start_byte, 0);
 	read(fd_in, buf, head.len);
@@ -68,7 +68,7 @@ int				crate_files_from_pack(t_pack_pre pre, int fd_in,
 
 	sub = ft_strjoin(dst_dir, "files");
 	if ((fd_files = open(sub, O_RDWR | O_TRUNC | O_CREAT, 999)) < 0)
-		exit_error();
+		exit_error(0);
 	ft_strdel(&sub);
 	head.file_name = (char*)malloc(sizeof(char) * (pre.len_field - 8));
 	i = -1;
@@ -96,7 +96,7 @@ int				unpack_files(char *file, char *dst_dir)
 	char		*cur_dst_dir;
 
 	if (!crc_xor(file,1))
-		exit_error();
+		exit_error(ENOEXEC);
 	cur_dst_dir = ft_strjoin(dst_dir, ((dst_dir[ft_strlen(dst_dir) - 1] == '/')
 									|| ft_strlen(dst_dir) == 0) ? "" : "/");
 	sub = ft_strjoin(cur_dst_dir, "files");

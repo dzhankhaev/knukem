@@ -39,8 +39,8 @@ typedef struct		s_pack_head
 }					t_pack_head;
 
 unsigned char		crc_xor(char *file, int check);
-void				exit_error(void);
+void				exit_error(int error);
 int					unpack_files(char *file, char *dst_dir);
-int					pack_files(char *files, char *output_file);
+int					pack_files(char *files, char *output_file, char *src_dir);
 
 #endif

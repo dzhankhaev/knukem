@@ -11,26 +11,30 @@
 /* ************************************************************************** */
 
 #include "archiver.h"
+#include "editor.h"
 
-int		fill_heads(int out_fd, int st_byte, char *files, int size_head)
+int		fill_heads(int out_fd, int st_byte, char *files, int size_head, char *src_dir)
 {
 	int				fd;
 	char			*buf;
 	char			*file_name;
 	struct stat		sb;
+	char			*sub;
 
 	file_name = (char*)malloc(size_head + 1);
 	if ((fd = open(files, O_RDONLY)) < 1)
 		return (0);
 	while (get_next_line(fd, &buf))
 	{
-		stat(buf, &sb);
+		sub = ft_strjoin(src_dir, buf);
+		stat(sub, &sb);
 		ft_bzero(file_name, size_head - 8);
 		ft_strcpy(file_name, buf);
 		write(out_fd, file_name, size_head - 8);
 		write(out_fd, &sb.st_size, 4);
 		write(out_fd, &st_byte, 4);
 		st_byte += sb.st_size + 1;
+		ft_strdel(&sub);
 		ft_strdel(&buf);
 	}
 	ft_strdel(&file_name);
@@ -39,12 +43,13 @@ int		fill_heads(int out_fd, int st_byte, char *files, int size_head)
 	return (1);
 }
 
-int		fill_body(int fd_w, int i)
+int		fill_body(int fd_w, int i, char *src_dir)
 {
 	t_pack_pre		pre;
 	int				cur_pos;
 	int				fd;
 	char			*buf;
+	char			*sub;
 	t_pack_head		head;
 
 	read(fd_w, &pre, sizeof(t_pack_pre));
@@ -54,7 +59,9 @@ int		fill_body(int fd_w, int i)
 	{
 		read(fd_w, head.file_name, pre.len_field - 8);
 		read(fd_w, &head.len, 8);
-		fd = open(head.file_name, O_RDONLY);
+		sub = ft_strjoin(src_dir, head.file_name);
+		fd = open(sub, O_RDONLY);
+		ft_strdel(&sub);
 		buf = (char*)malloc(head.len);
 		read(fd, buf, head.len);
 		close(fd);
@@ -74,7 +81,7 @@ int		write_top_infiles(char *output_file, int max_len, int lens, int *start)
 
 	fd_w = 0;
 	if ((fd_w = open(output_file, O_RDWR | O_TRUNC | O_CREAT, 999)) < 0)
-		exit_error();
+		exit_error(0);
 	write(fd_w, "knukem\0\0", 8);
 	write(fd_w, &max_len, sizeof(max_len));
 	write(fd_w, &lens, sizeof(lens));
@@ -96,7 +103,7 @@ int		max_len_filename(char *files, int *lens)
 	buf = NULL;
 	max_len = 0;
 	if ((fd = open(files, O_RDONLY)) < 0)
-		exit_error();
+		exit_error(0);
 	while (get_next_line(fd, &buf))
 	{
 		max_len = (ft_strlen(buf) > max_len) ? ft_strlen(buf) : max_len;
@@ -108,7 +115,7 @@ int		max_len_filename(char *files, int *lens)
 	return (max_len);
 }
 
-int		pack_files(char *files, char *output_file)
+int		pack_files(char *files, char *output_file, char *src_dir)
 {
 	int		fd;
 	int		max_len;
@@ -120,9 +127,9 @@ int		pack_files(char *files, char *output_file)
 	start = 0;
 	max_len = max_len_filename(files, &lens);
 	fd = write_top_infiles(output_file, max_len, lens, &start);
-	fill_heads(fd, start, files, max_len);
+	fill_heads(fd, start, files, max_len, src_dir);
 	lseek(fd, 0, SEEK_SET);
-	fill_body(fd, -1);
+	fill_body(fd, -1, src_dir);
 	close(fd);
 	crc_xor(output_file,0);
 	return (1);
