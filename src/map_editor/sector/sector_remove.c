@@ -70,10 +70,11 @@ void	remove_sector(t_all *all, t_sect *sectors)
 		}
 		if (all->swap_num == all->player.sector)
 			all->player.sector = -1;
-		all->num_sectors -= 1;
-		all->sectors = ft_realloc(all->sectors, sizeof(t_sect) * \
-			all->num_sectors);
 		all->fin_sect = all->swap_num == all->fin_sect ? -1 : all->fin_sect;
+		if (all->fin_sect == all->num_sectors - 1)
+			all->fin_sect = all->swap_num;
+		all->num_sectors -= 1;
+		all->sectors = ft_realloc(all->sectors, sizeof(t_sect) * all->num_sectors);
 		all->swap_num = -1;
 	}
 }
