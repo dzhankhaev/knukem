@@ -56,14 +56,12 @@ void	draw_map(t_sect *sect, t_all *all)
 	{
 		temp = &sect[i];
 		if (temp->door < 0)
-			draw_sector(temp, all, RED, all->delta);
+			draw_sector(temp, all, i == all->fin_sect ? ORANGE : RED, all->delta);
 		i++;
 	}
 	draw_doors(all, all->sectors);
 	if (all->swap_num != -1)
 		draw_sector(&sect[all->swap_num], all, YELLOW, all->delta);
-	if (all->fin_sect != -1)
-		draw_sector(&sect[all->fin_sect], all, ORANGE, all->delta);
 }
 
 void	draw_temp(t_all *all, t_sdl *sdl, t_sect *temp, t_xy d)
