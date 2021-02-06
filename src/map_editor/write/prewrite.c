@@ -94,30 +94,3 @@ int		**get_vertexes(t_all *all)
 	}
 	return (yx);
 }
-
-void	normalize(t_sect *sectors, int num, t_all *all)
-{
-	int				i;
-	unsigned int	j;
-	t_xy			*min;
-
-	min = &all->min_coord;
-	i = 0;
-	while (i < num)
-	{
-		j = 0;
-		while (j <= sectors[i].npoints)
-		{
-			sectors[i].vertex[j].x += (min->x < 0) ? -min->x : min->x;
-			sectors[i].vertex[j].y += (min->y < 0) ? -min->y : min->y;
-			j++;
-		}
-		i++;
-	}
-	all->player.where.x += (min->x < 0) ? -min->x : min->x;
-	all->player.where.y += (min->y < 0) ? -min->y : min->y;
-	all->max_coord.x += (min->x < 0) ? -min->x : 0;
-	all->max_coord.y += (min->y < 0) ? -min->y : 0;
-	min->x += (min->x < 0) ? -min->x : 0;
-	min->y += (min->y < 0) ? -min->y : 0;
-}

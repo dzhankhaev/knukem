@@ -87,6 +87,7 @@ SRC := main.c\
 	map_editor/texture.c\
 	map_editor/texture2.c\
 	map_editor/write/prewrite.c\
+	map_editor/write/normalize.c\
 	map_editor/write/write.c\
 	map_editor/write/write_sectors.c\
 	map_editor/pixels.c\
