@@ -100,6 +100,7 @@ typedef struct			s_graf
 	float				*z;			//	высота
 	t_fline				*coord;		//	вектор
 	int					*wall;		//	номер стены сектора
+	int					*u;
 }						t_graf;
 
 typedef struct		s_sect

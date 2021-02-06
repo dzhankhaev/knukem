@@ -39,5 +39,4 @@ void	init_all(t_all *all)
 	all->temp.vertex = NULL;
 	all->player.picked = 0;
 	all->set_floors = (t_xy){0, 10};
-	all->fin_sect = 0;
 }

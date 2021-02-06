@@ -96,6 +96,7 @@ void	init_new_sector(t_sect *sect, t_sect *temp)
 	sect->graf.g_num = 0;
 	sect->graf.coord = NULL;
 	sect->graf.wall = NULL;
+	sect->graf.u = NULL;
 	sect->graf.z = NULL;
 }
 

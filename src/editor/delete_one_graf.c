@@ -44,12 +44,15 @@ void		delete_one_graf(t_engine *engine, int sectorno)
 	graf2.coord = (t_fline *)malloc(sizeof(t_fline) * graf->g_num);
 	graf2.z = (float *)malloc(sizeof(float) * graf->g_num);
 	graf2.wall = (int *)malloc(sizeof(int) * graf->g_num);
+	graf2.u = (int *)malloc(sizeof(int) * graf->g_num);
 	copy_graf(graf, engine->edit.graf_wall, &graf2);
 	free(graf->coord);
 	free(graf->z);
 	free(graf->wall);
+	free(graf->u);
 	graf->coord = graf2.coord;
 	graf->z = graf2.z;
 	graf->wall = graf2.wall;
+	graf->u = graf2.u;
 	engine->edit.graf_wall = -1;
 }

@@ -20,9 +20,11 @@ static void		graf_memalloc(t_engine *engine, int sectorno, int i)
 	graf = &engine->sectors[sectorno].graf;
 	graf->g_num++;
 	graf->wall = (int *)ft_realloc(graf->wall, sizeof(int) * graf->g_num);
+	graf->u = (int *)ft_realloc(graf->u, sizeof(int) * graf->g_num);
 	graf->z = (float *)ft_realloc(graf->z, sizeof(float) * graf->g_num);
 	graf->coord = (t_fline *)ft_realloc(graf->coord,
 							sizeof(t_fline) * graf->g_num);
+	graf->u[graf->g_num - 1] = 1;
 	graf->wall[graf->g_num - 1] = i;
 	graf->z[graf->g_num - 1] = engine->player.where.z;
 	graf->coord[graf->g_num - 1] =
@@ -88,15 +90,18 @@ static void		delete_graf(t_engine *engine, int sectorno)
 		free(engine->sectors[sectorno].graf.coord);
 		free(engine->sectors[sectorno].graf.z);
 		free(engine->sectors[sectorno].graf.wall);
+		free(engine->sectors[sectorno].graf.u);
 		engine->sectors[sectorno].graf.coord = 0;
 		engine->sectors[sectorno].graf.z = 0;
 		engine->sectors[sectorno].graf.wall = 0;
+		engine->sectors[sectorno].graf.u = 0;
 		engine->sectors[sectorno].graf.g_num = 0;
 		engine->edit.graf = 0;
 	}
-	else if (engine->edit.graf_wall > -1
+	else if (engine->edit.graf_wall > -1 && engine->sectors[sectorno].graf.g_num > 0
 	&& engine->player.cur_inv < engine->player.settings.inventory &&
-	engine->sectors[sectorno].graf.coord[engine->edit.graf_wall].color == 0)
+	engine->sectors[sectorno].graf.coord[engine->edit.graf_wall].color == 0
+	&& engine->sectors[sectorno].graf.u[engine->edit.graf_wall] == 0)
 	{
 		delete_one_graf(engine, sectorno);
 		engine->player.cur_inv++;

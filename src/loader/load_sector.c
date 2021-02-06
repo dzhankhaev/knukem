@@ -40,6 +40,7 @@ static void	load_graf2(t_sect *sect, char **sub)
 	i = 0;
 	while (i < sect->graf.g_num * 7)
 	{
+		sect->graf.u[i / 7] = 0;
 		sect->graf.wall[i / 7] = ft_atoi(sub[i]);
 		sect->graf.z[i / 7] = (float)ft_atoi(sub[i + 1]) / 1024.f;
 		sect->graf.coord[i / 7].x0 = (float)ft_atoi(sub[i + 2]) / 1024.f;
@@ -58,6 +59,7 @@ static void	load_graf(t_sect *sect, char **split)
 	sect->graf.g_num = ft_atoi(split[6]);
 	if (sect->graf.g_num)
 	{
+		sect->graf.u = (int *)malloc(sizeof(int) * sect->graf.g_num);
 		sect->graf.wall = (int *)malloc(sizeof(int) * sect->graf.g_num);
 		sect->graf.z = (float *)malloc(sizeof(float) * sect->graf.g_num);
 		sect->graf.coord = (t_fline *)malloc(sizeof(t_fline)
@@ -68,6 +70,7 @@ static void	load_graf(t_sect *sect, char **split)
 	}
 	else
 	{
+		sect->graf.u = NULL;
 		sect->graf.wall = NULL;
 		sect->graf.z = NULL;
 		sect->graf.coord = NULL;

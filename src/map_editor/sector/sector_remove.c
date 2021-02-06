@@ -48,6 +48,7 @@ void	free_graf(t_graf *graf)
 	ft_memdel((void*)&graf->coord);
 	ft_memdel((void*)&graf->z);
 	ft_memdel((void*)&graf->wall);
+	ft_memdel((void*)&graf->u);
 }
 
 void	remove_sector(t_all *all, t_sect *sectors)
