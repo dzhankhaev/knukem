@@ -31,6 +31,7 @@ SRC := main.c\
 	game_loop.c\
 	draw.c\
 	new_map.c\
+	new_map_sector.c\
 	loader/manage_data.c\
 	loader/load_sector.c\
 	animations/do_door_anim.c\
