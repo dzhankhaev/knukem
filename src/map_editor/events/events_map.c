@@ -12,6 +12,27 @@
 
 #include "editor.h"
 
+int		doors_close(t_all *all)
+{
+	int 	i;
+	int 	*neighbors;
+	t_sect	*temp;
+
+	temp = &all->sectors[all->swap_num];
+	neighbors = temp->neighbors;
+	i = 0;
+	while (i < temp->npoints)
+	{
+		if (neighbors[i] > -1 && all->sectors[neighbors[i]].door > -1)
+		{
+			print_message(all, RED, "NEIGHBOR IS DOOR!", 500);
+			return (1);
+		}
+		i++;
+	}
+	return (0);
+}
+
 void	select_sector(t_all *all, int x, int y, SDL_MouseButtonEvent *event)
 {
 	t_xyz	where;
@@ -20,7 +41,7 @@ void	select_sector(t_all *all, int x, int y, SDL_MouseButtonEvent *event)
 	where = (t_xyz){x, y, all->draw_floors.x};
 	all->swap_num = which_sector(all, all->sectors, where);
 	if (event->button == SDL_BUTTON_RIGHT && all->swap_num != -1 &&\
-		all->player.sector != all->swap_num)
+		all->player.sector != all->swap_num && !(doors_close(all)))
 	{
 		sect = &all->sectors[all->swap_num];
 		if (sect->door == -1)
@@ -47,7 +68,7 @@ void	set_player(int x, int y, t_all *all)
 	int		sect;
 
 	where = (t_xyz){x, y, all->draw_floors.x};
-	sect = which_sector(all, all->sectors, where);
+	sect = which_sector_player(all, all->sectors, where);
 	if (sect != -1)
 	{
 		if (all->sectors[sect].ceil - all->sectors[sect].floor > 6 &&\
@@ -60,7 +81,7 @@ void	set_player(int x, int y, t_all *all)
 			all->buttons[1].color = WHITE;
 		}
 		else
-			print_message(all, RED, "NOT GOOD!", 1000);		
+			print_message(all, RED, "NOT GOOD!", 1000);
 	}
 }
 
@@ -82,8 +103,8 @@ int		is_portal(t_all *all, t_xyz point, t_sect *sect)
 			while (i <= tmp_sect.npoints)
 			{
 				if (is_vector_equal(sect->vertex[sect->npoints - 1],
-(t_xy){point.x, point.y}, tmp_sect.vertex[i], tmp_sect.vertex[i - 1]) &&\
-tmp_sect.neighbors[i - 1] != -1)
+	(t_xy){point.x, point.y}, tmp_sect.vertex[i], tmp_sect.vertex[i - 1]) &&\
+						tmp_sect.neighbors[i - 1] > -1)
 				{
 					ft_memdel((void*)&t);
 					return (1);
