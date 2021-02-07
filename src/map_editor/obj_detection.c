@@ -29,7 +29,7 @@ int		inside_sector(t_xyint point, t_sect *sector)
 	return (1);
 }
 
-int		which_sector_player(t_all *all, t_sect *sectors, t_xyz where)
+int		which_sector_p(t_all *all, t_sect *sectors, t_xyz where)
 {
 	int				i;
 	int				p;

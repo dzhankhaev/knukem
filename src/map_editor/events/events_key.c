@@ -31,7 +31,6 @@ int		mode_switch(t_all *all, int mode)
 			print_message(all, RED, "MAP SAVED!", 500);
 		else
 			print_message(all, RED, "ENTERING 3D!", 500);
-
 	}
 	return (1);
 }

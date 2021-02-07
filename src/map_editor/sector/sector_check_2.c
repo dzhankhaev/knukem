@@ -12,6 +12,27 @@
 
 #include "editor.h"
 
+int		doors_close(t_all *all)
+{
+	int		i;
+	int		*neighbors;
+	t_sect	*temp;
+
+	temp = &all->sectors[all->swap_num];
+	neighbors = temp->neighbors;
+	i = 0;
+	while (i < temp->npoints)
+	{
+		if (neighbors[i] > -1 && all->sectors[neighbors[i]].door > -1)
+		{
+			print_message(all, RED, "NEIGHBOR IS DOOR!", 500);
+			return (1);
+		}
+		i++;
+	}
+	return (0);
+}
+
 void	check_vert(t_all *all, int *x, int *y, t_sect *temp)
 {
 	if (temp->npoints == 20)

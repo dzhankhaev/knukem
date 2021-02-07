@@ -12,27 +12,6 @@
 
 #include "editor.h"
 
-int		doors_close(t_all *all)
-{
-	int 	i;
-	int 	*neighbors;
-	t_sect	*temp;
-
-	temp = &all->sectors[all->swap_num];
-	neighbors = temp->neighbors;
-	i = 0;
-	while (i < temp->npoints)
-	{
-		if (neighbors[i] > -1 && all->sectors[neighbors[i]].door > -1)
-		{
-			print_message(all, RED, "NEIGHBOR IS DOOR!", 500);
-			return (1);
-		}
-		i++;
-	}
-	return (0);
-}
-
 void	select_sector(t_all *all, int x, int y, SDL_MouseButtonEvent *event)
 {
 	t_xyz	where;
@@ -68,7 +47,7 @@ void	set_player(int x, int y, t_all *all)
 	int		sect;
 
 	where = (t_xyz){x, y, all->draw_floors.x};
-	sect = which_sector_player(all, all->sectors, where);
+	sect = which_sector_p(all, all->sectors, where);
 	if (sect != -1)
 	{
 		if (all->sectors[sect].ceil - all->sectors[sect].floor > 6 &&\
@@ -91,31 +70,27 @@ int		is_portal(t_all *all, t_xyz point, t_sect *sect)
 	int				*num;
 	int				*t;
 	t_sect			tmp_sect;
+	int				res;
 
-	if (sect->npoints >= 1)
+	res = 0;
+	num = which_sectors(all, all->sectors, point);
+	t = num;
+	while (*num != -1)
 	{
-		num = which_sectors(all, all->sectors, point);
-		t = num;
-		while (*num != -1)
+		i = 1;
+		tmp_sect = all->sectors[num[0]];
+		while (i <= tmp_sect.npoints)
 		{
-			i = 1;
-			tmp_sect = all->sectors[num[0]];
-			while (i <= tmp_sect.npoints)
-			{
-				if (is_vector_equal(sect->vertex[sect->npoints - 1],
-	(t_xy){point.x, point.y}, tmp_sect.vertex[i], tmp_sect.vertex[i - 1]) &&\
-						tmp_sect.neighbors[i - 1] > -1)
-				{
-					ft_memdel((void*)&t);
-					return (1);
-				}
-				i++;
-			}
-			num++;
+			if (is_vector_equal(sect->vertex[sect->npoints - 1],
+(t_xy){point.x, point.y}, tmp_sect.vertex[i], tmp_sect.vertex[i - 1]) &&\
+					tmp_sect.neighbors[i - 1] > -1)
+				res = 1;
+			i++;
 		}
-		ft_memdel((void*)&t);
+		num++;
 	}
-	return (0);
+	ft_memdel((void*)&t);
+	return (res);
 }
 
 int		pre_check(t_all *all, t_xyz point, t_sect *sect)
@@ -126,7 +101,7 @@ int		pre_check(t_all *all, t_xyz point, t_sect *sect)
 		if (point.x == sect->vertex[sect->npoints - 1].x &&\
 			point.y == sect->vertex[sect->npoints - 1].y)
 			return (0);
-	if (is_portal(all, point, sect))
+	if (sect->npoints >= 1 && is_portal(all, point, sect))
 	{
 		print_message(all, RED, "PORTAL EXISTS!", 1000);
 		return (0);

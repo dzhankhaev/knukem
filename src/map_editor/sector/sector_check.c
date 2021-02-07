@@ -12,7 +12,7 @@
 
 #include "editor.h"
 
-t_xy	*remove_vertex(t_xy *vert, int num, int npoints)
+t_xy		*remove_vertex(t_xy *vert, int num, int npoints)
 {
 	int		i;
 	int		j;
@@ -35,7 +35,7 @@ t_xy	*remove_vertex(t_xy *vert, int num, int npoints)
 	return (vert);
 }
 
-int		check_sector_shape(t_sect *sect)
+void		check_sector_shape(t_sect *sect)
 {
 	t_xy			*temp;
 	unsigned int	i;
@@ -54,21 +54,17 @@ int		check_sector_shape(t_sect *sect)
 			break ;
 		}
 		i++;
-		if (i == sect->npoints - 1)
-		{
-			side = point_side1(temp[0].x, temp[0].y, temp[i], temp[1]);
-			if (side > 0)
-			{
-				sect->vertex = remove_vertex(temp, 0, sect->npoints);
-				sect->npoints -= 1;
-				check_sector_shape(sect);
-			}
-		}
 	}
-	return (1);
+	side = point_side1(temp[0].x, temp[0].y, temp[i], temp[1]);
+	if (side > 0)
+	{
+		sect->vertex = remove_vertex(temp, 0, sect->npoints);
+		sect->npoints -= 1;
+		check_sector_shape(sect);
+	}
 }
 
-int		revert_sector(t_sect *sect)
+int			revert_sector(t_sect *sect)
 {
 	t_xy			*temp;
 	unsigned int	i;
@@ -87,7 +83,7 @@ int		revert_sector(t_sect *sect)
 	return (0);
 }
 
-int		check_sector_order(t_sect *sect)
+int			check_sector_order(t_sect *sect)
 {
 	int				res;
 	unsigned int	i;
@@ -106,9 +102,10 @@ int		check_sector_order(t_sect *sect)
 	return (res > 0 ? 0 : 1);
 }
 
-int		check_sector(t_sect *sect)
+int			check_sector(t_sect *sect)
 {
 	if (!(check_sector_order(sect)))
 		revert_sector(sect);
-	return (check_sector_shape(sect));
+	check_sector_shape(sect);
+	return (1);
 }
