@@ -16,6 +16,11 @@ int		mode_switch(t_all *all)
 {
 	if (all->player.sector == -1)
 	{
+		// if(is_player_at_wall(&all->sectors[all->player.sector], all->player.where))
+		// {
+		// 	all->player.sector = -1;
+		// 	print_message(all, RED, "PLAYER REMOVED FROM PORTAL!", 1000);
+		// }
 		print_message(all, RED, "SET PLAYER!", 1000);
 		return (0);
 	}

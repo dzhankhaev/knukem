@@ -28,9 +28,13 @@ void	arg_check(t_engine *engine, t_all *all, int av, char **ac)
 	{
 		all->src_dir = ft_strdup("textures/");
 		if (stat("default.map", &sb) == 0 && !S_ISDIR(sb.st_mode))
+		{
 			unpack_files("default.map", all->src_dir);
+			new_map("textures/map.txt");
+		}
 		else if (!((stat("textures/", &sb) == 0) && (S_ISDIR(sb.st_mode))))
 			exit_error(ENOENT);
+
 	}
 	else if (stat(ac[1], &sb) == 0)
 	{
