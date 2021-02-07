@@ -62,7 +62,6 @@ void	validate_sector(t_sect *sect, t_all *all)
 	if (all->num_sectors == 1)
 	{
 		n = sect->npoints;
-		sect->neighbors = (int*)malloc(sizeof(int) * n);
 		while (--n >= 0)
 			sect->neighbors[n] = -1;
 	}
@@ -82,7 +81,7 @@ void	init_new_sector(t_sect *sect, t_sect *temp)
 {
 	if (!(sect->vertex = malloc(sizeof(t_xy) * temp->npoints)))
 		error_and_close(__FILE__, __FUNCTION__);
-	if (!(sect->neighbors = malloc(sizeof(t_xy) * temp->npoints)))
+	if (!(sect->neighbors = malloc(sizeof(t_xy) * (temp->npoints - 1))))
 		error_and_close(__FILE__, __FUNCTION__);
 	sect->npoints = temp->npoints;
 	sect->floor = temp->floor;
