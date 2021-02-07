@@ -55,7 +55,7 @@ static void	editor(t_engine *engine, t_all *all)
 {
 	if (engine->edit.mod && check_anim(engine))
 	{
-		print_message(all, RED, "Entering 2D!", 500);
+		print_message(all, RED, "ENTERING 2D!", 500);
 		SDL_SetRelativeMouseMode(SDL_FALSE);
 		engine->edit.mod = main_editor(engine, all);
 		engine->close_request = all->threed == 2 ? 1 : 0;
@@ -90,5 +90,5 @@ void		game_loop(t_engine *engine, t_all *all)
 		time = SDL_GetTicks();
 		SDL_UpdateWindowSurface(engine->window);
 	}
-	print_message(all, RED, "Exiting", 500);
+	print_message(all, RED, "EXITING", 500);
 }

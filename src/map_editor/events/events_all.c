@@ -110,7 +110,7 @@ void	on_event(t_all *all, SDL_Event *event)
 {
 	if (event->type == SDL_QUIT)
 	{
-		if (mode_switch(all))
+		if (mode_switch(all, 0))
 			all->threed = 2;
 	}
 	else if (event->key.type == SDL_KEYDOWN)
