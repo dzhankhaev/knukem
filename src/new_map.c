@@ -120,9 +120,9 @@ static void	player(int fd)
 	ft_putchar_fd(' ', fd);
 	ft_putnbr_fd(0, fd);
 	ft_putchar_fd(' ', fd);
-	ft_putnbr_fd(0, fd);
-	ft_putchar_fd(' ', fd);
 	ft_putnbr_fd(1, fd);
+	ft_putchar_fd(' ', fd);
+	ft_putnbr_fd(0, fd);
 	ft_putchar_fd(' ', fd);
 	ft_putnbr_fd(50, fd);
 	ft_putchar_fd(' ', fd);
