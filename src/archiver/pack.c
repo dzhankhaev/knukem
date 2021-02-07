@@ -13,7 +13,8 @@
 #include "archiver.h"
 #include "editor.h"
 
-int		fill_heads(int out_fd, int st_byte, char *files, int size_head, char *src_dir)
+int		fill_heads(int out_fd, int st_byte, char *files, int size_head,
+															char *src_dir)
 {
 	int				fd;
 	char			*buf;
@@ -48,8 +49,7 @@ int		fill_body(int fd_w, int i, char *src_dir)
 	t_pack_pre		pre;
 	int				cur_pos;
 	int				fd;
-	char			*buf;
-	char			*sub;
+	char			*buf[2];
 	t_pack_head		head;
 
 	read(fd_w, &pre, sizeof(t_pack_pre));
@@ -59,15 +59,15 @@ int		fill_body(int fd_w, int i, char *src_dir)
 	{
 		read(fd_w, head.file_name, pre.len_field - 8);
 		read(fd_w, &head.len, 8);
-		sub = ft_strjoin(src_dir, head.file_name);
-		fd = open(sub, O_RDONLY);
-		ft_strdel(&sub);
-		buf = (char*)malloc(head.len);
-		read(fd, buf, head.len);
+		buf[1] = ft_strjoin(src_dir, head.file_name);
+		fd = open(buf[1], O_RDONLY);
+		ft_strdel(&buf[1]);
+		buf[0] = (char*)malloc(head.len);
+		read(fd, buf[0], head.len);
 		close(fd);
 		lseek(fd_w, head.start_byte, 0);
-		write(fd_w, buf, head.len);
-		free(buf);
+		write(fd_w, buf[0], head.len);
+		free(buf[0]);
 		cur_pos += pre.len_field;
 		lseek(fd_w, cur_pos, 0);
 	}
@@ -131,6 +131,6 @@ int		pack_files(char *files, char *output_file, char *src_dir)
 	lseek(fd, 0, SEEK_SET);
 	fill_body(fd, -1, src_dir);
 	close(fd);
-	crc_xor(output_file,0);
+	crc_xor(output_file, 0);
 	return (1);
 }

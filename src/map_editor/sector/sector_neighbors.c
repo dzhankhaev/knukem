@@ -53,7 +53,7 @@ int		is_neighbor(t_all *all, t_xy coord, t_xy coord2, t_xy height, int self)
 			while (j < all->sectors[i].npoints)
 			{
 				if (coord.x == temp[j].x && coord.y == temp[j].y)
-					if (check_match(&all->sectors[i], (t_xyz){coord2.x, coord2.y,  j},
+					if (check_match(&all->sectors[i], (t_xyz){coord2.x, coord2.y, j},
 						temp, self))
 						return (i);
 				j++;

@@ -14,7 +14,21 @@
 #include "utilits.h"
 #include "libft.h"
 
-int				load_hud_face_pis_yenum(t_hud *hud, char *file_name, int len, int i)
+void		hud_load_stysnum(t_hud *hud, char *file_name, int len)
+{
+	int		i;
+
+	i = -1;
+	ft_strcpy(file_name + len, "STYSNUM .png");
+	while (++i < 10)
+	{
+		file_name[len + 7] = i + '0';
+		if (!(hud->num_wp_y[i] = IMG_Load(file_name)))
+			exc(__FILE__, __FUNCTION__);
+	}
+}
+
+int			load_hud_face_pis_yenum(t_hud *hud, char *file_name, int len, int i)
 {
 	ft_strcpy(file_name + len, "STFST00.png");
 	if (!(hud->face_s[0] = IMG_Load(file_name)))
@@ -36,17 +50,11 @@ int				load_hud_face_pis_yenum(t_hud *hud, char *file_name, int len, int i)
 	if (!(hud->pis[5] = IMG_Load(file_name)))
 		exc(__FILE__, __FUNCTION__);
 	ft_strcpy(file_name + len, "STYSNUM .png");
-	i = -1;
-	while (++i < 10)
-	{
-		file_name[len + 7] = i + '0';
-		if (!(hud->num_wp_y[i] = IMG_Load(file_name)))
-			exc(__FILE__, __FUNCTION__);
-	}
+	hud_load_stysnum(hud, file_name, len);
 	return (1);
 }
 
-int				load_hud_hnum_gnum(t_hud *hud, char *file_name, int len, int i)
+int			load_hud_hnum_gnum(t_hud *hud, char *file_name, int len, int i)
 {
 	ft_strcpy(file_name + len, "STGNUM .png");
 	while (++i < 11)
@@ -67,16 +75,13 @@ int				load_hud_hnum_gnum(t_hud *hud, char *file_name, int len, int i)
 	return (1);
 }
 
-void			load_surfaces(const char *dirs, t_hud *hud_)
+void		load_surfaces(const char *dirs, t_hud *hud_)
 {
 	t_hud	hud;
 	char	*file_name;
 	int		len;
-	
-	// hud = (t_hud*)malloc(sizeof(t_hud));	
-	hud.health = -1;
-	hud.weapon = -1;
-	hud.face = -1;
+
+	ft_memset(&hud, 0xff, sizeof(t_hud));
 	len = ft_strlen(dirs);
 	file_name = (char*)malloc(len + 13);
 	ft_strcpy(file_name, dirs);
@@ -96,118 +101,114 @@ void			load_surfaces(const char *dirs, t_hud *hud_)
 	load_hud_hnum_gnum(&hud, file_name, len, -1);
 	free(file_name);
 	*hud_ = hud;
-	// return (hud);
 }
 
-
-
-// void			put_hud(SDL_Surface *scr, t_inp_hud *inp)
-void			put_hud(t_engine *engine)
+void		hud_put_num(int num, t_hud *hud, int x)
 {
-	// static t_hud			*hud = NULL;
-	t_hud					*hud;
-	SDL_Surface				*scr;
-	t_inp_hud				*inp;
+	hud->rect = (SDL_Rect){.x = x - 2, .y = 0};
+	SDL_BlitSurface(hud->ammo_b, NULL, hud->scr, &hud->rect);
+	if (num < 0)
+	{
+		num *= -1;
+		hud->rect = (SDL_Rect){.x = x + 3 * 14, .y = 4};
+		SDL_BlitSurface(hud->num_h[10], NULL, hud->scr, &hud->rect);
+	}
+	if (num / 100 > 0)
+	{
+		hud->rect = (SDL_Rect){.x = x + 0 * 14, .y = 4};
+		SDL_BlitSurface(hud->num_h[num / 100], NULL, hud->scr, &hud->rect);
+	}
+	hud->rect = (SDL_Rect){.x = x + 1 * 14, .y = 4};
+	SDL_BlitSurface(hud->num_h[(num / 10) % 10], NULL, hud->scr, &hud->rect);
+	hud->rect = (SDL_Rect){.x = x + 2 * 14, .y = 4};
+	SDL_BlitSurface(hud->num_h[num % 10], NULL, hud->scr, &hud->rect);
+}
+
+int			hud_check_next_frame(int *b, t_hud *hud, t_inp_hud *inp)
+{
 	static unsigned int		last_tick = 0;
 	unsigned int			curr_tick;
-	static int				b = 0;
-	int						i;
-	int						coef;
 
-	hud = &engine->hud;
-	scr = engine->screen;
-	inp = &engine->hud_inp;
-	// if (hud == NULL)
-	// 	hud = load_surfaces("textur/");
 	if (last_tick == 0)
 		last_tick = SDL_GetTicks();
 	curr_tick = SDL_GetTicks();
 	if (curr_tick > (last_tick + 100))
 	{
 		last_tick = curr_tick;
-		if (inp->fire && b < 3)
-			b++;
+		if (inp->fire && *b < 3)
+			(*b)++;
 		else
 		{
 			inp->fire = 0;
-			b = 0;
-
+			(*b) = 0;
 		}
 	}
-	// if (inp->health != hud->health || inp->weapons != hud->weapon || inp->face != hud->face || inp->fire)
+	return (1);
+}
+
+void		hud_put_cells(t_hud *hud, t_inp_hud *inp, t_hud_sub place, int par)
+{
+	int i;
+
+	i = place.p_st;
+	while (++i < place.p_col)
 	{
-		// ft_bzero(engine->hud.scr->pixels,engine->hud.scr->pitch * engine->hud.scr->h);
-		engine->hud.health = inp->health;
-		hud->weapon = inp->weapons;
-		hud->face = inp->face;
-		SDL_BlitSurface(hud->scr, NULL, hud->hud, NULL);
-		if (inp->health / 100 > 0)
-		{
-			hud->rect = (SDL_Rect){.x = 49 + 0 * 14, .y = 4};
-			SDL_BlitSurface(hud->num_h[inp->health / 100], NULL, hud->scr, &hud->rect);
-		}
-		hud->rect = (SDL_Rect){.x = 49 + 1 * 14, .y = 4};
-		SDL_BlitSurface(hud->num_h[(inp->health / 10) % 10], NULL,
-														hud->scr, &hud->rect);
-		hud->rect = (SDL_Rect){.x = 49 + 2 * 14, .y = 4};
-		SDL_BlitSurface(hud->num_h[inp->health % 10], NULL, hud->scr, &hud->rect);
-		hud->rect = (SDL_Rect){.x = 49 + 3 * 14, .y = 4};
-		SDL_BlitSurface(hud->num_h[10], NULL, hud->scr, &hud->rect);
-		hud->rect = (SDL_Rect){.x = 104, .y = 0};
-		SDL_BlitSurface(hud->arms, NULL, hud->scr, &hud->rect);
-		hud->rect = (SDL_Rect){.x = 0, .y = 0};
-		SDL_BlitSurface(hud->ammo_b, NULL, hud->scr, &hud->rect);
-		if (inp->ammo / 100 > 0)
-		{
-			hud->rect = (SDL_Rect){.x = 2 + 0 * 14, .y = 4};
-			SDL_BlitSurface(hud->num_h[inp->ammo / 100], NULL, hud->scr, &hud->rect);
-		}
-		hud->rect = (SDL_Rect){.x = 2 + 1 * 14, .y = 4};
-		SDL_BlitSurface(hud->num_h[(inp->ammo / 10) % 10], NULL,
-														hud->scr, &hud->rect);
-		hud->rect = (SDL_Rect){.x = 2 + 2 * 14, .y = 4};
-		SDL_BlitSurface(hud->num_h[inp->ammo % 10], NULL, hud->scr, &hud->rect);
-
-		i = 1;
-		while (++i < 8)
-		{
-			if (i < 5)
-				hud->rect = (SDL_Rect){.x = 111 + (i - 2) * 12, .y = 4};
-			else
-				hud->rect = (SDL_Rect){.x = 111 + (i - 5) * 12, .y = 14};
-			if (inp->weapons & (1 << (i - 1)))
-				SDL_BlitSurface(hud->num_wp_y[i], NULL, hud->scr, &hud->rect);
-			else
-				SDL_BlitSurface(hud->num_wp_g[i], NULL, hud->scr, &hud->rect);
-		}
-		i = 0;
-		while (++i < 10)
-		{
-			if (i < 6)
-				hud->rect = (SDL_Rect){.x = 194 + (i - 2) * 11, .y = 4};
-			else
-				hud->rect = (SDL_Rect){.x = 194 + (i - 7) * 11, .y = 14};
-			if (inp->buttons >= i)
-				SDL_BlitSurface(hud->num_wp_y[i], NULL, hud->scr, &hud->rect);
-			else
-				SDL_BlitSurface(hud->num_wp_g[i], NULL, hud->scr, &hud->rect);
-		}
-		hud->rect = (SDL_Rect){.x = 148, .y = 2};
-		SDL_BlitSurface(hud->face_s[2], NULL, hud->scr, &hud->rect);
-		coef = scr->w / hud->hud->w;
-		hud->rect = (SDL_Rect){.x = 0, .y = scr->h - scr->w / 10,
-												.w = scr->w, .h = scr->w / 10};
-		SDL_BlitScaled(hud->scr, NULL, scr, &hud->rect);
-		hud->rect = (SDL_Rect){.x = (scr->w - 42 - hud->pis[b]->w * coef) >> 1,
-					.y = scr->h - scr->w / 10 - hud->pis[b]->h * coef,
-						.w = hud->pis[b]->w * coef, .h = hud->pis[b]->h * coef};
-		SDL_BlitScaled(hud->pis[b], NULL, scr, &hud->rect);
-		if (b == 1)
-		{
-			hud->rect = (SDL_Rect){.x = ((scr->w - 42 - (hud->pis[b]->w - 72) * coef) >> 1),
-					.y = scr->h - scr->w / 10 - (hud->pis[b]->h + 21) * coef,
-						.w = hud->pis[5]->w * coef, .h = hud->pis[5]->h * coef};
-			SDL_BlitScaled(hud->pis[5], NULL, scr, &hud->rect);
-		}
+		if (i < place.p_w)
+			hud->rect = (SDL_Rect){.x = place.p_x + (i - 2) * place.p_dist,
+																		.y = 4};
+		else
+			hud->rect = (SDL_Rect){.x = place.p_x + (i - place.p_dist2) *
+														place.p_dist, .y = 14};
+		if (par & (1 << (i - 1)))
+			SDL_BlitSurface(hud->num_wp_y[i], NULL, hud->scr, &hud->rect);
+		else
+			SDL_BlitSurface(hud->num_wp_g[i], NULL, hud->scr, &hud->rect);
 	}
+}
+
+void		put_hud_pis(t_hud *hud, SDL_Surface *scr, int b)
+{
+	int		coef;
+
+	coef = scr->w / hud->hud->w;
+	hud->rect = (SDL_Rect){.x = (scr->w - 42 - hud->pis[b]->w * coef) >> 1,
+							.y = scr->h - scr->w / 10 - hud->pis[b]->h * coef,
+						.w = hud->pis[b]->w * coef, .h = hud->pis[b]->h * coef};
+	SDL_BlitScaled(hud->pis[b], NULL, scr, &hud->rect);
+	if (b == 1)
+	{
+		hud->rect = (SDL_Rect){.x = ((scr->w - 42 - (hud->pis[b]->w - 72) *
+				coef) >> 1), .y = scr->h - scr->w / 10 - (hud->pis[b]->h + 21) *
+				coef, .w = hud->pis[5]->w * coef, .h = hud->pis[5]->h * coef};
+		SDL_BlitScaled(hud->pis[5], NULL, scr, &hud->rect);
+	}
+}
+
+void		put_hud(t_engine *engine)
+{
+	t_hud					*hud;
+	t_inp_hud				*inp;
+	static int				b = 0;
+
+	hud = &engine->hud;
+	inp = &engine->hud_inp;
+	engine->hud.health = inp->health;
+	hud->weapon = inp->weapons;
+	hud->face = inp->face;
+	SDL_BlitSurface(hud->scr, NULL, hud->hud, NULL);
+	hud_check_next_frame(&b, hud, inp);
+	hud_put_num(inp->health * -1, hud, 49);
+	hud_put_num(inp->ammo, hud, 2);
+	hud->rect = (SDL_Rect){.x = 104, .y = 0};
+	SDL_BlitSurface(hud->arms, NULL, hud->scr, &hud->rect);
+	hud_put_cells(hud, inp, (t_hud_sub){.p_w = 5, .p_col = 8, .p_dist = 12,
+							.p_dist2 = 5, .p_x = 111, .p_st = 1}, inp->weapons);
+	hud_put_cells(hud, inp, (t_hud_sub){.p_w = 6, .p_col = 10, .p_dist = 11,
+							.p_dist2 = 7, .p_x = 194, .p_st = 0}, inp->buttons);
+	hud->rect = (SDL_Rect){.x = 148, .y = 2};
+	SDL_BlitSurface(hud->face_s[2], NULL, hud->scr, &hud->rect);
+	put_hud_pis(hud, engine->screen, b);
+	hud->rect = (SDL_Rect){.x = 0, .y = engine->screen->h - engine->screen->w /
+					10, .w = engine->screen->w, .h = engine->screen->w / 10};
+	SDL_BlitScaled(hud->scr, NULL, engine->screen, &hud->rect);
 }

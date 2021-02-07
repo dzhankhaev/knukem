@@ -1,5 +1,5 @@
 {
-	"editor.rulers": [84],
+	"editor.rulers": [80],
 	"files.associations": {
 		"__hash_table": "c",
 		"__split_buffer": "c",
@@ -18,7 +18,8 @@
 		"algorithm": "cpp",
 		"editor.h": "c",
 		"archiver.h": "c",
-		"engine.h": "c"
+		"engine.h": "c",
+		"utilits.h": "c"
 	},
 	"editor.insertSpaces": false,
 	"cmake.configureOnOpen": true

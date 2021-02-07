@@ -52,6 +52,16 @@
 # define VLIMIT 2.5f				//	Граница вертикального поворота
 # define WEAPON_SPRITE_NUM 1		//	Количество спрайтов оружия
 
+typedef struct	s_hud_sub
+{
+	int				p_x;
+	int				p_dist;
+	int				p_dist2;
+	int				p_col;
+	int				p_st;
+	int				p_w;
+}				t_hud_sub;
+
 typedef struct	s_hud
 {
 	SDL_Surface		*scr;

@@ -90,7 +90,7 @@ static void	sector1(int fd)
 	}
 }
 
-static void enders(int fd)
+static void	enders(int fd)
 {
 	int	i;
 
