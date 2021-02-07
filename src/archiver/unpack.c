@@ -79,6 +79,7 @@ int				crate_files_from_pack(t_pack_pre pre, int fd_in,
 		sub = ft_strjoin(dst_dir, head.file_name);
 		ft_putendl_fd(sub, fd_files);
 		create_file(fd_in, head, sub);
+		ft_strdel(&sub);
 		cur_pos += pre.len_field;
 		lseek(fd_in, cur_pos, 0);
 	}
@@ -106,5 +107,6 @@ int				unpack_files(char *file, char *dst_dir)
 	read(fd_in, &pre, sizeof(t_pack_pre));
 	cur_pos = lseek(fd_in, ((lseek(fd_in, 0, SEEK_CUR) >> 3) + 1) << 3, 0);
 	crate_files_from_pack(pre, fd_in, cur_dst_dir, cur_pos);
+	ft_strdel(&cur_dst_dir);
 	return (1);
 }

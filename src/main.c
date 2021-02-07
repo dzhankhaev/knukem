@@ -51,60 +51,6 @@ void	arg_check(t_engine *engine, t_all *all, int av, char **ac)
 	all->name = ft_strjoin(all->src_dir, "map.txt");
 }
 
-// void	arg_check(t_engine *engine, t_all *all, int av, char **ac)
-// {
-// 	int fd;
-// 	struct stat		sb;
-// 	char			*sub_name;
-	
-// 	int i = stat(ac[1], &sb);
-// 	ft_bzero(engine, sizeof(*engine));
-// 	engine->player.game_mode = 1;
-// 	if (av == 1)
-// 	{
-// 		all->threed = 1;
-// 		if (stat("default.map", &sb) == 0 && !S_ISDIR(sb.st_mode))
-// 		{
-// 			all->src_dir = ft_strdup("textures/");
-// 			unpack_files("default.map", "");
-// 		}
-// 		else if ((stat("textures", &sb) == 0) && (S_ISDIR(sb.st_mode)))
-// 		{
-// 			all->src_dir = ft_strdup("textures/");
-// 		}
-// 		else
-// 			exit_error(0);
-// 		// all->name = ft_strdup("new_map.txt");
-// 		// new_map(all->name);
-// 	}
-// 	else if (av == 2 && (stat(ac[1], &sb) == 0))
-// 	{
-// 		if (!S_ISDIR(sb.st_mode))
-// 		{
-// 			unpack_files(ac[1], "");
-// 			all->src_dir = ft_strdup("textures/");
-// 		}
-// 		else if ((stat(ac[1], &sb) == 0) && (S_ISDIR(sb.st_mode)))
-// 			all->src_dir = ft_strdup(ac[1]);
-// 		else
-// 			exit_error(0);
-// 	}
-// 	else if (av == 3)
-// 	{
-// 		if (ac[2][0] == 'g' && ac[2][1] == '\0')
-// 		{
-// 			unpack_files(ac[1], "");
-// 			all->src_dir = ft_strdup("textures/");
-// 			engine->player.game_mode = 0;
-// 		}
-// 		else
-// 			exit(0);
-// 	}
-// 	else
-// 		exit_error(0);
-// 	all->name = ft_strjoin(all->src_dir, "map.txt");
-// }
-
 void	clean_all(t_all *all)
 {
 	int i;
@@ -140,7 +86,7 @@ void	load_tx(t_engine *engine, char *name,t_all *all)
 	{
 		sub = ft_strjoin(all->src_dir, line);
 		load_img(engine, sub, i++);
-		ft_strdel(&line);
+		ft_strdel(&sub);
 		free(line);
 	}
 	if (i != 10)
