@@ -56,7 +56,7 @@ void		check_sector_shape(t_sect *sect)
 		i++;
 	}
 	side = point_side1(temp[0].x, temp[0].y, temp[i], temp[1]);
-	if (side > 0)
+	if (i == sect->npoints - 1 && side > 0)
 	{
 		sect->vertex = remove_vertex(temp, 0, sect->npoints);
 		sect->npoints -= 1;

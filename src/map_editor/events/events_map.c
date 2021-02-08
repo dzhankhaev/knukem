@@ -110,7 +110,6 @@ int		pre_check(t_all *all, t_xyz point, t_sect *sect)
 	{
 		if (inside_sector((t_xyint){point.x, point.y}, &all->sectors[num]))
 		{
-			printf("sector = %d\n", num);
 			print_message(all, RED, "INSIDE SECTOR!", 1000);
 			return (0);
 		}
