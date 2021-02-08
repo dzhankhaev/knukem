@@ -24,16 +24,16 @@ void	arg_check(t_engine *engine, t_all *all, int av, char **ac)
 	int i = stat(ac[1], &sb);
 	ft_bzero(engine, sizeof(*engine));
 	engine->player.game_mode = 1;
+	all->src_dir = ft_strdup("textures/");
 	if (av < 2)
 	{
 		all->src_dir = ft_strdup("textures/");
 		if (stat("default.map", &sb) == 0 && !S_ISDIR(sb.st_mode))
-		{
 			unpack_files("default.map", all->src_dir);
-			new_map("textures/map.txt");
-		}
 		else if (!((stat("textures/", &sb) == 0) && (S_ISDIR(sb.st_mode))))
 			exit_error(ENOENT);
+		new_map("textures/map.txt");
+
 
 	}
 	else if (stat(ac[1], &sb) == 0)
@@ -43,10 +43,10 @@ void	arg_check(t_engine *engine, t_all *all, int av, char **ac)
 			all->src_dir = ft_strdup("textures/");
 			unpack_files(ac[1], all->src_dir);
 		}
-		else
-			all->src_dir = (ac[1][ft_strlen(ac[1]) - 1] == '/') ? ft_strdup(ac[1]) :
-															ft_strjoin(ac[1], "/");
-			// all->src_dir = ft_strdup(ac[1]);
+		// else
+		// 	all->src_dir = (ac[1][ft_strlen(ac[1]) - 1] == '/') ? ft_strdup(ac[1]) :
+		// 													ft_strjoin(ac[1], "/");
+		// 	// all->src_dir = ft_strdup(ac[1]);
 		if (av > 2 && ft_strequ("g", ac[2]))
 			engine->player.game_mode = 0;
 	}

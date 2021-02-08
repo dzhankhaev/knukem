@@ -77,7 +77,7 @@ int				crate_files_from_pack(t_pack_pre pre, int fd_in,
 		read(fd_in, head.file_name, pre.len_field - 8);
 		read(fd_in, &head.len, 8);
 		sub = ft_strjoin(dst_dir, head.file_name);
-		ft_putendl_fd(sub, fd_files);
+		ft_putendl_fd(head.file_name, fd_files);
 		create_file(fd_in, head, sub);
 		ft_strdel(&sub);
 		cur_pos += pre.len_field;
