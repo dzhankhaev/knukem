@@ -24,6 +24,7 @@ void	arg_check(t_engine *engine, t_all *all, int av, char **ac)
 	int i = stat(ac[1], &sb);
 	ft_bzero(engine, sizeof(*engine));
 	engine->player.game_mode = 1;
+	all->src_dir = ft_strdup("textures/");
 	if (av < 2)
 	{
 		all->src_dir = ft_strdup("textures/");

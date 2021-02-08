@@ -1,6 +1,6 @@
-vertex	0	 0 4 16
-vertex	9	 0 4 16
-sector	0 10	2 5 4 1	-1 -1 -1 1 	-1	1 1 1 1	0	
-sector	0 10	4 3 0 1	0 -1 -1 -1 	-1	1 1 1 1	0	
+vertex	0	0 4 16
+vertex	9	0 4 16
+sector	0 10	2 5 4 1 	-1 -1 -1 1 	-1	1 1 1 1 	0
+sector	0 10	4 3 0 1 	0 -1 -1 -1 	-1	1 1 1 1 	0
 final sector	0
-player	3 3 0 1 0 50 10 50
+player	3 3 0 1 0 50 10 50 
