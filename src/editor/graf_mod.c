@@ -6,7 +6,7 @@
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
-/*   Updated: 2021/01/06 07:04:10 by ecelsa           ###   ########.fr       */
+/*   Updated: 2021/02/09 03:37:36 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,8 @@ static void		delete_graf(t_engine *engine, int sectorno)
 		engine->sectors[sectorno].graf.g_num = 0;
 		engine->edit.graf = 0;
 	}
-	else if (engine->edit.graf_wall > -1 && engine->sectors[sectorno].graf.g_num > 0
-	&& engine->player.cur_inv < engine->player.settings.inventory &&
+	else if (engine->edit.graf_wall > -1 && engine->sectors[sectorno].graf.g_num
+			> 0 && engine->player.cur_inv < engine->player.settings.inventory &&
 	engine->sectors[sectorno].graf.coord[engine->edit.graf_wall].color == 0
 	&& engine->sectors[sectorno].graf.u[engine->edit.graf_wall] == 0)
 	{
