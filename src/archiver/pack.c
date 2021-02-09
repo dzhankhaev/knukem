@@ -13,28 +13,26 @@
 #include "archiver.h"
 #include "editor.h"
 
-int		fill_heads(int out_fd, int st_byte, char *files, int size_head,
-															char *src_dir)
+int		fill_heads(char *files, char *src_dir, t_archiver *arch)
 {
 	int				fd;
 	char			*buf;
 	char			*file_name;
-	struct stat		sb;
 	char			*sub;
 
-	file_name = (char*)malloc(size_head + 1);
+	file_name = (char*)malloc(arch->max_title_len + 1);
 	if ((fd = open(files, O_RDONLY)) < 1)
 		return (0);
 	while (get_next_line(fd, &buf))
 	{
 		sub = ft_strjoin(src_dir, buf);
-		stat(sub, &sb);
-		ft_bzero(file_name, size_head - 8);
+		stat(sub, &arch->sb);
+		ft_bzero(file_name, arch->max_title_len - 8);
 		ft_strcpy(file_name, buf);
-		write(out_fd, file_name, size_head - 8);
-		write(out_fd, &sb.st_size, 4);
-		write(out_fd, &st_byte, 4);
-		st_byte += sb.st_size + 1;
+		write(arch->fd_out_file, file_name, arch->max_title_len - 8);
+		write(arch->fd_out_file, &arch->sb.st_size, 4);
+		write(arch->fd_out_file, &arch->pos_start_byte, 4);
+		arch->pos_start_byte += arch->sb.st_size + 1;
 		ft_strdel(&sub);
 		ft_strdel(&buf);
 	}
@@ -44,93 +42,83 @@ int		fill_heads(int out_fd, int st_byte, char *files, int size_head,
 	return (1);
 }
 
-int		fill_body(int fd_w, int i, char *src_dir)
+int		fill_body(t_archiver *arch, int i)
 {
-	t_pack_pre		pre;
 	int				cur_pos;
 	int				fd;
-	char			*buf[2];
-	t_pack_head		head;
 
-	read(fd_w, &pre, sizeof(t_pack_pre));
-	cur_pos = lseek(fd_w, ((lseek(fd_w, 0, SEEK_CUR) >> 3) + 1) << 3, 0);
-	head.file_name = (char*)malloc(sizeof(char) * (pre.len_field - 8));
-	while (++i < pre.num_of_file)
+	read(arch->fd_out_file, &(arch->pre), sizeof(t_pack_pre));
+	cur_pos = lseek(arch->fd_out_file, ((lseek(arch->fd_out_file, 0,
+												SEEK_CUR) >> 3) + 1) << 3, 0);
+	arch->head.file_name = (char*)malloc(arch->pre.len_field - 8);
+	while (++i < arch->pre.num_of_file)
 	{
-		read(fd_w, head.file_name, pre.len_field - 8);
-		read(fd_w, &head.len, 8);
-		buf[1] = ft_strjoin(src_dir, head.file_name);
-		fd = open(buf[1], O_RDONLY);
-		ft_strdel(&buf[1]);
-		buf[0] = (char*)malloc(head.len);
-		read(fd, buf[0], head.len);
+		read(arch->fd_out_file, arch->head.file_name, arch->pre.len_field - 8);
+		read(arch->fd_out_file, &(arch->head.len), 8);
+		arch->buf[1] = ft_strjoin(arch->src_dir, arch->head.file_name);
+		fd = open(arch->buf[1], O_RDONLY);
+		ft_strdel(&arch->buf[1]);
+		arch->buf[0] = (char*)malloc(arch->head.len);
+		read(fd, arch->buf[0], arch->head.len);
 		close(fd);
-		lseek(fd_w, head.start_byte, 0);
-		write(fd_w, buf[0], head.len);
-		free(buf[0]);
-		cur_pos += pre.len_field;
-		lseek(fd_w, cur_pos, 0);
+		lseek(arch->fd_out_file, arch->head.start_byte, 0);
+		write(arch->fd_out_file, arch->buf[0], arch->head.len);
+		free(arch->buf[0]);
+		cur_pos += arch->pre.len_field;
+		lseek(arch->fd_out_file, cur_pos, 0);
 	}
-	free(head.file_name);
+	free(arch->head.file_name);
 	return (1);
 }
 
-int		write_top_infiles(char *output_file, int max_len, int lens, int *start)
+void	write_top_infiles(t_archiver *arch)
 {
-	int			fd_w;
-
-	fd_w = 0;
-	if ((fd_w = open(output_file, O_RDWR | O_TRUNC | O_CREAT, 999)) < 0)
-		exit_error(0);
-	write(fd_w, "knukem\0\0", 8);
-	write(fd_w, &max_len, sizeof(max_len));
-	write(fd_w, &lens, sizeof(lens));
-	write(fd_w, "start\0\0\0", 8);
-	*start = max_len * lens + lseek(fd_w, 0, SEEK_CUR) + sizeof(start);
-	*start = (((*start >> 3) + 1) << 3) + 1;
-	write(fd_w, start, sizeof(int));
-	lseek(fd_w, ((lseek(fd_w, 0, SEEK_CUR) >> 3) + 1) << 3, 0);
-	return (fd_w);
+	if ((arch->fd_out_file = open(arch->output_file, O_RDWR | O_TRUNC | O_CREAT,
+																	999)) < 0)
+		exit_error(ENOENT);
+	write(arch->fd_out_file, "knukem\0\0", 8);
+	write(arch->fd_out_file, &arch->max_title_len, sizeof(arch->max_title_len));
+	write(arch->fd_out_file, &arch->num_files, sizeof(arch->num_files));
+	write(arch->fd_out_file, "start\0\0\0", 8);
+	arch->pos_start_byte = arch->max_title_len * arch->num_files +
+		lseek(arch->fd_out_file, 0, SEEK_CUR) + sizeof(arch->pos_start_byte);
+	arch->pos_start_byte = (((arch->pos_start_byte >> 3) + 1) << 3) + 1;
+	write(arch->fd_out_file, &arch->pos_start_byte, sizeof(int));
+	lseek(arch->fd_out_file, ((lseek(arch->fd_out_file, 0, SEEK_CUR) >> 3)
+																+ 1) << 3, 0);
 }
 
-int		max_len_filename(char *files, int *lens)
+void	max_len_filename(char *files, t_archiver *arch)
 {
-	unsigned long	max_len;
 	int				fd;
 	char			*buf;
 
-	*lens = 0;
 	buf = NULL;
-	max_len = 0;
 	if ((fd = open(files, O_RDONLY)) < 0)
 		exit_error(0);
 	while (get_next_line(fd, &buf))
 	{
-		max_len = (ft_strlen(buf) > max_len) ? ft_strlen(buf) : max_len;
-		(*lens)++;
+		if (ft_strlen(buf) > arch->max_title_len)
+			arch->max_title_len = ft_strlen(buf);
+		arch->num_files++;
 		ft_strdel(&buf);
 	}
-	max_len += sizeof(int) + sizeof(int) + 1;
+	arch->max_title_len += sizeof(int) + sizeof(int) + 1;
 	close(fd);
-	return (max_len);
 }
 
 int		pack_files(char *files, char *output_file, char *src_dir)
 {
-	int		fd;
-	int		max_len;
-	int		lens;
-	int		start;
+	t_archiver arch;
 
-	lens = 0;
-	max_len = 0;
-	start = 0;
-	max_len = max_len_filename(files, &lens);
-	fd = write_top_infiles(output_file, max_len, lens, &start);
-	fill_heads(fd, start, files, max_len, src_dir);
-	lseek(fd, 0, SEEK_SET);
-	fill_body(fd, -1, src_dir);
-	close(fd);
-	crc_xor(output_file, 0);
+	ft_bzero(&arch, sizeof(t_archiver));
+	arch.output_file = output_file;
+	max_len_filename(files, &arch);
+	write_top_infiles(&arch);
+	fill_heads(files, src_dir, &arch);
+	lseek(arch.fd_out_file, 0, SEEK_SET);
+	fill_body(&arch, -1);
+	close(arch.fd_out_file);
+	crc_xor(arch.output_file, 0);
 	return (1);
 }

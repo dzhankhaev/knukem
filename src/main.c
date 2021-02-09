@@ -17,36 +17,25 @@
 
 void	arg_check(t_engine *engine, t_all *all, int av, char **ac)
 {
-	int fd;
+	int				fd;
 	struct stat		sb;
 	char			*sub_name;
 
-	int i = stat(ac[1], &sb);
 	ft_bzero(engine, sizeof(*engine));
 	engine->player.game_mode = 1;
 	all->src_dir = ft_strdup("textures/");
 	if (av < 2)
 	{
-		all->src_dir = ft_strdup("textures/");
 		if (stat("default.map", &sb) == 0 && !S_ISDIR(sb.st_mode))
 			unpack_files("default.map", all->src_dir);
 		else if (!((stat("textures/", &sb) == 0) && (S_ISDIR(sb.st_mode))))
 			exit_error(ENOENT);
 		new_map("textures/map.txt");
-
-
 	}
 	else if (stat(ac[1], &sb) == 0)
 	{
 		if (!S_ISDIR(sb.st_mode))
-		{
-			all->src_dir = ft_strdup("textures/");
 			unpack_files(ac[1], all->src_dir);
-		}
-		// else
-		// 	all->src_dir = (ac[1][ft_strlen(ac[1]) - 1] == '/') ? ft_strdup(ac[1]) :
-		// 													ft_strjoin(ac[1], "/");
-		// 	// all->src_dir = ft_strdup(ac[1]);
 		if (av > 2 && ft_strequ("g", ac[2]))
 			engine->player.game_mode = 0;
 	}
@@ -61,11 +50,11 @@ void	clean_all(t_all *all)
 
 	free(all->name);
 	TTF_CloseFont(all->font);
-	all->font=NULL;
+	all->font = NULL;
 	TTF_Quit();
-	if(all->temp.npoints)
+	if (all->temp.npoints)
 		free(all->temp.vertex);
-	if(all->temp.neighbors)
+	if (all->temp.neighbors)
 		free(all->temp.neighbors);
 	i = 0;
 	while (i < 9)
@@ -73,10 +62,9 @@ void	clean_all(t_all *all)
 	i = 0;
 	while (i < BUTTONS)
 		free(all->buttons[i++].title);
-
 }
 
-void	load_tx(t_engine *engine, char *name,t_all *all)
+void	load_tx(t_engine *engine, char *name, t_all *all)
 {
 	char		*line;
 	int			fd;
@@ -110,7 +98,6 @@ int		main(int av, char **ac)
 	t_all		all;
 	char		*sub;
 
-	// pack_files("textures/files","map1.map");
 	arg_check(&engine, &all, av, ac);
 	init_engine(&engine, &all);
 	sub = ft_strjoin(all.src_dir, "nmap.txt");

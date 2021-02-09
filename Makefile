@@ -25,6 +25,7 @@ SRC := main.c\
 	init.c\
 	init_engine.c\
 	hud.c\
+	hud_sub.c\
 	lighting.c\
 	transform_wall.c\
 	cut_wall.c\

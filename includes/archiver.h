@@ -6,7 +6,7 @@
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
-/*   Updated: 2021/01/06 07:04:10 by ecelsa           ###   ########.fr       */
+/*   Updated: 2021/02/09 03:02:33 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,21 @@ typedef struct		s_pack_head
 	int			len;
 	int			start_byte;
 }					t_pack_head;
+
+typedef struct		s_archiver
+{
+	int				fd_out_file;
+	int				max_title_len;
+	int				num_files;
+	int				pos_start_byte;
+	char			*output_file;
+	char			*src_dir;
+	char			*buf[2];
+	struct stat		sb;
+	t_pack_pre		pre;
+	t_pack_head		head;
+
+}					t_archiver;
 
 unsigned char		crc_xor(char *file, int check);
 void				exit_error(int error);
