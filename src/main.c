@@ -6,7 +6,7 @@
 /*   By: ecelsa <ecelsa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 18:29:37 by ecelsa            #+#    #+#             */
-/*   Updated: 2021/01/06 07:04:10 by ecelsa           ###   ########.fr       */
+/*   Updated: 2021/02/09 03:49:52 by ecelsa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,11 +100,11 @@ int		main(int av, char **ac)
 
 	arg_check(&engine, &all, av, ac);
 	init_engine(&engine, &all);
-	sub = ft_strjoin(all.src_dir, "nmap.txt");
-	load_tx(&engine, sub, &all);
-	ft_strdel(&sub);
 	sub = ft_strjoin(all.src_dir, "icon.png");
 	load_img(&engine, sub, 10);
+	ft_strdel(&sub);
+	sub = ft_strjoin(all.src_dir, "nmap.txt");
+	load_tx(&engine, sub, &all);
 	ft_strdel(&sub);
 	init_all(&all);
 	general_init(&engine, &all);
