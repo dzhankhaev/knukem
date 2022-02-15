@@ -23,6 +23,8 @@
 
 
 ![Alt text](demo/2_demo.gif?raw=true "Title")
+
+![Alt text](demo/map.png?raw=true "Title")
 ## Installation
 Для компиляции и запуска требуется установить библиотеку SDL2
 
