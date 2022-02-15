@@ -1,5 +1,28 @@
 # Knukem
 Графический движок схожий с движком Duke Nukem 3D
+## Demo
+![Alt text](demo/1_demo.gif?raw=true "Title")
+
+Редактор уровней
+
+![Alt text](demo/edit_1_demo.gif?raw=true "Title")
+
+![Alt text](demo/edit_2_demo.gif?raw=true "Title")
+
+Наложение текстур
+
+![Alt text](demo/edit_3_demo.gif?raw=true "Title")
+
+Изменение высоты сектора и создание дверей
+
+![Alt text](demo/edit_4_demo.gif?raw=true "Title")
+
+Граффити и кнопки
+
+![Alt text](demo/edit_5_demo.gif?raw=true "Title")
+
+
+![Alt text](demo/2_demo.gif?raw=true "Title")
 ## Installation
 Для компиляции и запуска требуется установить библиотеку SDL2
 
@@ -7,6 +30,15 @@
 $ sudo apt-get install libsdl2-dev -y
 $ sudo apt-get install libsdl2-ttf-dev -y
 $ sudo apt-get install libsdl2-image-dev -y
+```
+В файле includes/engine.h определены постоянные, влияющие на физику мира и отрисовку. Можно изменить перед компиляцией.
+Компиляция
+```sh
+$ make
+```
+Запуск 
+```sh
+$ ./doom-nukem map.map
 ```
 ## Управление
 
@@ -23,12 +55,14 @@ $ sudo apt-get install libsdl2-image-dev -y
 | L | Режим освещения |
 
 Доступно в режиме игрока
+
 | Кнопка | Описание |
 | ------ | ------ |
 | R | Установка кнопки |
 | G | Удаление кнопки |
 
 Доступно в 3D режиме редактора
+
 | Кнопка | Описание |
 | ------ | ------ |
 | E | Переключение между 3д и 2д режимами |
@@ -44,6 +78,7 @@ $ sudo apt-get install libsdl2-image-dev -y
 Игрок может удалять и ставить только граффити с текстурой под номером 0 (граффити кнопка)
 
 Доступно в 2D режиме редактора
+
 | Кнопка | Описание |
 | ------ | ------ |
 | ЛКМ | Выделение сектора |
@@ -53,8 +88,6 @@ $ sudo apt-get install libsdl2-image-dev -y
 | tab | Сохранение карты в файл |
 | Е | Переход в 3Д режим |
 | Стрелки | Перемещение карты |
-
-Файлы *.map упакованные файлы, если при запуске не указать карту, грузится default.map,  хранящаяся в textures/map.txt.
 
 Для создания новой карты требуется:
 1.  Создать файл nmap.txt, в котором перечислить все текcтуры стен в количестве 10;
